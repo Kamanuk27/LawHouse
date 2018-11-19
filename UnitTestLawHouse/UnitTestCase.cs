@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLogic;
 using LawHouseLibrary;
 
+
 namespace UnitTestLawHouse
 {
     [TestClass]
@@ -12,8 +13,12 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCase()
         {
-            c1.GetCase(1);
-            Assert.Equals(c1.Id, 1);
+            //Case c1 = new Case();
+            //c1.GetCase(1);
+            //Assert.AreEqual(c1.Id, 1);
+
+            ICase c2 = c1.GetCase(1);
+            Assert.AreEqual(c2.Id, 1);
         }
     }
 }

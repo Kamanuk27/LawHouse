@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LawHouseLibrary;
 
-namespace LawHouseLibrary
+namespace DataAccess.Model
 {
-    public partial class Client
+    class CaseModel : ICase
     {
-
     }
 }

@@ -10,7 +10,7 @@ namespace DataAccess
     public class DatabaseFactory
     {
         private static DatabaseFactory _instance;
-        public IDataAccessAdapter percistance;
+        public IDataAccess percistance;
         public DatabaseFactory()
         {
 
@@ -22,14 +22,14 @@ namespace DataAccess
                 _instance = new DatabaseFactory();
             return _instance;
         }
-        public IDataAccessAdapter GetDataAccess()
+        public IDataAccess GetDataAccess()
         {
             //string database = ConfigurationManager.AppSettings["database"];
             //if (database == "sqlserver")
             //{
             //    percistance = new DatabaseAccess();
             //}
-            percistance = new DatabaseAccess();
+            percistance = new SqlAccess();
             return percistance;
         }
     }

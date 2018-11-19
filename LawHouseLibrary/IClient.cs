@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary
 {
-    public partial class Service
+    public abstract class IClient
     {
+
     }
 }

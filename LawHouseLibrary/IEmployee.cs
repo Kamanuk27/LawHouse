@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary
 {
-    public partial class Employee
+    public abstract class IEmployee
     {
 
     }

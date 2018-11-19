@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary
 {
-    public interface ICase
+    public abstract class ICase
     {
-         int Id { get; set; }
-        string Name { get; set; }
-        DateTime StartDate { get; set; }
-        DateTime EndDate { get; set; }
-        decimal NegPrice { get; set; }
-        decimal TotalPrice { get; set; }
-        string Service { get; set; }
-        string RespEmployee { get; set; }
-        string Client { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public decimal NegPrice { get; set; }
+        public decimal TotalPrice { get; set; }
+        public string Service { get; set; }
+        public string RespEmployee { get; set; }
+        public string Client { get; set; }
     }
 }

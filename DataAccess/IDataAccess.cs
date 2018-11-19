@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public interface IDataAccessAdapter
+    public interface IDataAccess
     {
-        List<CaseModel> GetCases();
-        CaseModel GetCase(int Id);
+        List< ICase> GetCases();
+        ICase GetCase(int Id);
     }
 }
