@@ -9,38 +9,29 @@ namespace DataAccess
 {
     public class DatabaseFactory
     {
-        private static DatabaseFactory instance = null;
-        private DatabaseFactory()
+        private static DatabaseFactory _instance;
+        public IDataAccessAdapter percistance;
+        public DatabaseFactory()
         {
 
         }
-
-        public static DatabaseFactory Instance
+        public static DatabaseFactory GetInstance()
         {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new DatabaseFactory();
-                }
 
-                return instance;
-            }
+            if (_instance == null)
+                _instance = new DatabaseFactory();
+            return _instance;
         }
-        public Catalogue GetDatabase()
+        public IDataAccessAdapter GetDataAccess()
         {
-            Catalogue empcat = null;
-            string database = ConfigurationManager.AppSettings["database"];
-            if (database == "test")
-            {
-                empcat = new Catalogue(new TestDB());
-            }
-            else if (database == "sqlserver")
-            {
-                empcat = new Catalogue(new DatabaseAccess());
-            }
-            return empcat;
+            //string database = ConfigurationManager.AppSettings["database"];
+            //if (database == "sqlserver")
+            //{
+            //    percistance = new DatabaseAccess();
+            //}
+            percistance = new DatabaseAccess();
+            return percistance;
         }
     }
 }
-}
+

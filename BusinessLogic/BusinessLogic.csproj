@@ -42,12 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Case.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="LhController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{7c0c7bf6-a9fd-4bee-be11-114c7e70fdad}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
+      <Project>{aa06d57b-6ef0-4741-b3c0-042996b99591}</Project>
+      <Name>LawHouseLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

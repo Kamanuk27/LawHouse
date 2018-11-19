@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,6 +83,10 @@
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{696110d2-ee61-4f08-8e9a-4b43b7081c3e}</Project>
       <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
+      <Project>{aa06d57b-6ef0-4741-b3c0-042996b99591}</Project>
+      <Name>LawHouseLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

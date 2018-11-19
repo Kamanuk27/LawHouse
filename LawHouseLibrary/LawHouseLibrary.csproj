@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C0C7BF6-A9FD-4BEE-BE11-114C7E70FDAD}</ProjectGuid>
+    <ProjectGuid>{AA06D57B-6EF0-4741-B3C0-042996B99591}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataAccess</RootNamespace>
-    <AssemblyName>DataAccess</AssemblyName>
+    <RootNamespace>LawHouseLibrary</RootNamespace>
+    <AssemblyName>LawHouseLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,22 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccess.cs" />
-    <Compile Include="DatabaseFactory.cs" />
-    <Compile Include="IDataAccessAdapter.cs" />
+    <Compile Include="CaseModel.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="ICase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
-      <Project>{aa06d57b-6ef0-4741-b3c0-042996b99591}</Project>
-      <Name>LawHouseLibrary</Name>
-    </ProjectReference>
+    <Compile Include="Service.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
