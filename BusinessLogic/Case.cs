@@ -32,10 +32,17 @@ namespace BusinessLogic
         public void GetCase(int id)
         {
             ICase c1 = new Case();
-            c1 = _data.GetCase(1);
+            c1 = _data.GetCase(id);
             Id = c1.Id;
             Name = c1.Name;
             StartDate = c1.StartDate;
+            EndDate = c1.EndDate;
+            NegPrice = c1.NegPrice;
+            TotalPrice = c1.TotalPrice;
+            RespEmployee = c1.RespEmployee;
+            Client = c1.Client;
+            Service = c1.Service;
+
         }
     }
 }
