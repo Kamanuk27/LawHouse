@@ -9,7 +9,7 @@ using LawHouseLibrary;
 
 namespace DataAccess
 {
-    class DatabaseAccess : IDataAccessAdapter
+    class DatabaseAccess : IDataAccess
     {
         private SqlConnection connection;
         private SqlCommand command = new SqlCommand();

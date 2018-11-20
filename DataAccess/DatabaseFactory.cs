@@ -10,26 +10,37 @@ namespace DataAccess
     public class DatabaseFactory
     {
         private static DatabaseFactory _instance;
-        public IDataAccessAdapter percistance;
+        public IDataAccess percistance;
         public DatabaseFactory()
         {
 
         }
-        public static DatabaseFactory GetInstance()
+        public static DatabaseFactory Instance
         {
-
-            if (_instance == null)
+            get
+            {
+                if (_instance == null)
                 _instance = new DatabaseFactory();
-            return _instance;
+                return _instance;
+
+            }
+
+           
         }
-        public IDataAccessAdapter GetDataAccess()
+        public DbController GetDataAccess()
         {
-            //string database = ConfigurationManager.AppSettings["database"];
-            //if (database == "sqlserver")
-            //{
-            //    percistance = new DatabaseAccess();
-            //}
-            percistance = new DatabaseAccess();
+            string database = ConfigurationManager.AppSettings["database"];
+            DbController percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new DbController( new DatabaseAccess());
+            }
+            else
+            {
+                //percistance = new DatabaseAccess();
+            }
+
             return percistance;
         }
     }

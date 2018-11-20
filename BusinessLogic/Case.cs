@@ -21,18 +21,20 @@ namespace BusinessLogic
         public string Client { get; set; }
         public string Service { get; set; }
 
-        DatabaseFactory factory = DatabaseFactory.GetInstance();
-        private IDataAccessAdapter _data;
+        //DatabaseFactory factory = DatabaseFactory.GetInstance();
+        //private IDataAccess _data;
+        private DbController dbController;
        
         public Case()
         {
-           _data = factory.GetDataAccess();
+            dbController = DatabaseFactory.Instance.GetDataAccess();
+            //_data = factory.GetDataAccess();
         }
     
         public void GetCase(int id)
         {
             ICase c1 = new Case();
-            c1 = _data.GetCase(id);
+            c1 = dbController.GetCase(id);
             Id = c1.Id;
             Name = c1.Name;
             StartDate = c1.StartDate;

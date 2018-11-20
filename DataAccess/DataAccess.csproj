@@ -44,7 +44,8 @@
   <ItemGroup>
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="DatabaseFactory.cs" />
-    <Compile Include="IDataAccessAdapter.cs" />
+    <Compile Include="DbController.cs" />
+    <Compile Include="IDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
