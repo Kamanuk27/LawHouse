@@ -22,17 +22,17 @@ namespace LawHouseGUI
         private void button1_Click_1(object sender, EventArgs e)
         {
             Case c1 = new Case();
-            int id = Convert.ToInt32(CaseNumtextBox.Text);
+            int id = Convert.ToInt32(InsertCaseIDtxt.Text);
             c1.GetCase(id);
-            idTextBox.Text = c1.Id.ToString();
-            textBox1.Text = c1.EndDate.ToString();
-            serviceTextBox.Text = c1.Service.ToString();
-            textBox2.Text = c1.StartDate.ToString();
-            nameTextBox.Text = c1.Name.ToString();
-            negPriceTextBox.Text = c1.NegPrice.ToString();
-            clientTextBox.Text = c1.Client.ToString();
-            respEmployeeTextBox.Text = c1.RespEmployee.ToString();
-            totalPriceTextBox.Text = c1.TotalPrice.ToString();
+            CaseIDtxb.Text = c1.Id.ToString();
+            EndDatetxt.Text = c1.EndDate.ToString();
+            Servicetxt.Text = c1.Service.ToString();
+            StartDatetxt.Text = c1.StartDate.ToString();
+            CaseNametxb.Text = c1.Name.ToString();
+            NegPricetxt.Text = c1.NegPrice.ToString();
+            Clienttxt.Text = c1.Client.ToString();
+            ResoEmptxt.Text = c1.RespEmployee.ToString();
+            TotalPricetxt.Text = c1.TotalPrice.ToString();
 
 
         }

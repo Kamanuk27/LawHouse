@@ -29,269 +29,77 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label clientLabel;
-            System.Windows.Forms.Label endDateLabel;
-            System.Windows.Forms.Label idLabel;
-            System.Windows.Forms.Label nameLabel;
-            System.Windows.Forms.Label negPriceLabel;
-            System.Windows.Forms.Label respEmployeeLabel;
-            System.Windows.Forms.Label serviceLabel;
-            System.Windows.Forms.Label startDateLabel;
-            System.Windows.Forms.Label totalPriceLabel;
-            this.CaseNumtextBox = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label8;
+            System.Windows.Forms.Label label9;
+            System.Windows.Forms.Label label10;
+            System.Windows.Forms.Label label11;
+            this.InsertCaseIDtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.clientTextBox = new System.Windows.Forms.TextBox();
-            this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.negPriceTextBox = new System.Windows.Forms.TextBox();
-            this.respEmployeeTextBox = new System.Windows.Forms.TextBox();
-            this.serviceTextBox = new System.Windows.Forms.TextBox();
-            this.totalPriceTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.C_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            clientLabel = new System.Windows.Forms.Label();
-            endDateLabel = new System.Windows.Forms.Label();
-            idLabel = new System.Windows.Forms.Label();
-            nameLabel = new System.Windows.Forms.Label();
-            negPriceLabel = new System.Windows.Forms.Label();
-            respEmployeeLabel = new System.Windows.Forms.Label();
-            serviceLabel = new System.Windows.Forms.Label();
-            startDateLabel = new System.Windows.Forms.Label();
-            totalPriceLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.caseBindingSource)).BeginInit();
+            this.CaseIDtxb = new System.Windows.Forms.TextBox();
+            this.CaseNametxb = new System.Windows.Forms.TextBox();
+            this.Clienttxt = new System.Windows.Forms.TextBox();
+            this.ResoEmptxt = new System.Windows.Forms.TextBox();
+            this.Servicetxt = new System.Windows.Forms.TextBox();
+            this.StartDatetxt = new System.Windows.Forms.TextBox();
+            this.EndDatetxt = new System.Windows.Forms.TextBox();
+            this.NegPricetxt = new System.Windows.Forms.TextBox();
+            this.TotalPricetxt = new System.Windows.Forms.TextBox();
+            this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // clientLabel
+            // InsertCaseIDtxt
             // 
-            clientLabel.AutoSize = true;
-            clientLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            clientLabel.Location = new System.Drawing.Point(36, 462);
-            clientLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            clientLabel.Name = "clientLabel";
-            clientLabel.Size = new System.Drawing.Size(57, 20);
-            clientLabel.TabIndex = 61;
-            clientLabel.Text = "Client:";
-            // 
-            // endDateLabel
-            // 
-            endDateLabel.AutoSize = true;
-            endDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            endDateLabel.Location = new System.Drawing.Point(36, 595);
-            endDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            endDateLabel.Name = "endDateLabel";
-            endDateLabel.Size = new System.Drawing.Size(84, 20);
-            endDateLabel.TabIndex = 63;
-            endDateLabel.Text = "End Date:";
-            // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(36, 395);
-            idLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(75, 20);
-            idLabel.TabIndex = 65;
-            idLabel.Text = "Case ID:";
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nameLabel.Location = new System.Drawing.Point(36, 428);
-            nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(102, 20);
-            nameLabel.TabIndex = 67;
-            nameLabel.Text = "Case Name:";
-            // 
-            // negPriceLabel
-            // 
-            negPriceLabel.AutoSize = true;
-            negPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            negPriceLabel.Location = new System.Drawing.Point(36, 628);
-            negPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            negPriceLabel.Name = "negPriceLabel";
-            negPriceLabel.Size = new System.Drawing.Size(88, 20);
-            negPriceLabel.TabIndex = 69;
-            negPriceLabel.Text = "Neg Price:";
-            // 
-            // respEmployeeLabel
-            // 
-            respEmployeeLabel.AutoSize = true;
-            respEmployeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            respEmployeeLabel.Location = new System.Drawing.Point(36, 494);
-            respEmployeeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            respEmployeeLabel.Name = "respEmployeeLabel";
-            respEmployeeLabel.Size = new System.Drawing.Size(131, 20);
-            respEmployeeLabel.TabIndex = 71;
-            respEmployeeLabel.Text = "Resp Employee:";
-            // 
-            // serviceLabel
-            // 
-            serviceLabel.AutoSize = true;
-            serviceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            serviceLabel.Location = new System.Drawing.Point(36, 528);
-            serviceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            serviceLabel.Name = "serviceLabel";
-            serviceLabel.Size = new System.Drawing.Size(70, 20);
-            serviceLabel.TabIndex = 73;
-            serviceLabel.Text = "Service:";
-            // 
-            // startDateLabel
-            // 
-            startDateLabel.AutoSize = true;
-            startDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            startDateLabel.Location = new System.Drawing.Point(36, 561);
-            startDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            startDateLabel.Name = "startDateLabel";
-            startDateLabel.Size = new System.Drawing.Size(91, 20);
-            startDateLabel.TabIndex = 75;
-            startDateLabel.Text = "Start Date:";
-           
-            // 
-            // totalPriceLabel
-            // 
-            totalPriceLabel.AutoSize = true;
-            totalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalPriceLabel.Location = new System.Drawing.Point(36, 661);
-            totalPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            totalPriceLabel.Name = "totalPriceLabel";
-            totalPriceLabel.Size = new System.Drawing.Size(95, 20);
-            totalPriceLabel.TabIndex = 77;
-            totalPriceLabel.Text = "Total Price:";
-            // 
-            // CaseNumtextBox
-            // 
-            this.CaseNumtextBox.Location = new System.Drawing.Point(154, 28);
-            this.CaseNumtextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CaseNumtextBox.Name = "CaseNumtextBox";
-            this.CaseNumtextBox.Size = new System.Drawing.Size(100, 22);
-            this.CaseNumtextBox.TabIndex = 61;
+            this.InsertCaseIDtxt.Location = new System.Drawing.Point(154, 28);
+            this.InsertCaseIDtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InsertCaseIDtxt.Name = "InsertCaseIDtxt";
+            this.InsertCaseIDtxt.Size = new System.Drawing.Size(100, 22);
+            this.InsertCaseIDtxt.TabIndex = 61;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 60;
-            this.label1.Text = "Case number";
+            this.label1.Text = "Sagsnummer";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(540, 27);
+            this.button1.Location = new System.Drawing.Point(505, 23);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
+            this.button1.Size = new System.Drawing.Size(93, 30);
             this.button1.TabIndex = 59;
-            this.button1.Text = "Get Cases";
+            this.button1.Text = "Få Sag";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // clientTextBox
-            // 
-            this.clientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "Client", true));
-            this.clientTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientTextBox.Location = new System.Drawing.Point(184, 458);
-            this.clientTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.clientTextBox.Name = "clientTextBox";
-            this.clientTextBox.Size = new System.Drawing.Size(265, 27);
-            this.clientTextBox.TabIndex = 62;
-            // 
-            // caseBindingSource
-            // 
-            this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
-            // 
-            // idTextBox
-            // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "Id", true));
-            this.idTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTextBox.Location = new System.Drawing.Point(184, 392);
-            this.idTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(265, 27);
-            this.idTextBox.TabIndex = 66;
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "Name", true));
-            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBox.Location = new System.Drawing.Point(184, 425);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(265, 27);
-            this.nameTextBox.TabIndex = 68;
-            // 
-            // negPriceTextBox
-            // 
-            this.negPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "NegPrice", true));
-            this.negPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.negPriceTextBox.Location = new System.Drawing.Point(184, 624);
-            this.negPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.negPriceTextBox.Name = "negPriceTextBox";
-            this.negPriceTextBox.Size = new System.Drawing.Size(265, 27);
-            this.negPriceTextBox.TabIndex = 70;
-            // 
-            // respEmployeeTextBox
-            // 
-            this.respEmployeeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "RespEmployee", true));
-            this.respEmployeeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.respEmployeeTextBox.Location = new System.Drawing.Point(184, 491);
-            this.respEmployeeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.respEmployeeTextBox.Name = "respEmployeeTextBox";
-            this.respEmployeeTextBox.Size = new System.Drawing.Size(265, 27);
-            this.respEmployeeTextBox.TabIndex = 72;
-            // 
-            // serviceTextBox
-            // 
-            this.serviceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "Service", true));
-            this.serviceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceTextBox.Location = new System.Drawing.Point(184, 524);
-            this.serviceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.serviceTextBox.Name = "serviceTextBox";
-            this.serviceTextBox.Size = new System.Drawing.Size(265, 27);
-            this.serviceTextBox.TabIndex = 74;
-            // 
-            // totalPriceTextBox
-            // 
-            this.totalPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.caseBindingSource, "TotalPrice", true));
-            this.totalPriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceTextBox.Location = new System.Drawing.Point(184, 657);
-            this.totalPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.totalPriceTextBox.Name = "totalPriceTextBox";
-            this.totalPriceTextBox.Size = new System.Drawing.Size(265, 27);
-            this.totalPriceTextBox.TabIndex = 78;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(184, 591);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 27);
-            this.textBox1.TabIndex = 79;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(184, 558);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 27);
-            this.textBox2.TabIndex = 80;
             // 
             // label2
             // 
@@ -299,44 +107,22 @@
             this.label2.Location = new System.Drawing.Point(697, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 17);
+            this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 81;
-            this.label2.Text = "Provided Sevice";
+            this.label2.Text = "Ydelse";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.C_ID,
-            this.C_Name,
-            this.C_Client});
+            this.Case_ID,
+            this.CaseName,
+            this.Client});
             this.dataGridView1.Location = new System.Drawing.Point(39, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(597, 273);
             this.dataGridView1.TabIndex = 82;
-            // 
-            // C_ID
-            // 
-            this.C_ID.HeaderText = "Case ID";
-            this.C_ID.Name = "C_ID";
-            this.C_ID.ReadOnly = true;
-            // 
-            // C_Name
-            // 
-            this.C_Name.FillWeight = 150F;
-            this.C_Name.HeaderText = "Case Name";
-            this.C_Name.Name = "C_Name";
-            this.C_Name.ReadOnly = true;
-            this.C_Name.Width = 150;
-            // 
-            // C_Client
-            // 
-            this.C_Client.FillWeight = 150F;
-            this.C_Client.HeaderText = "Client";
-            this.C_Client.Name = "C_Client";
-            this.C_Client.ReadOnly = true;
-            this.C_Client.Width = 150;
             // 
             // dataGridView2
             // 
@@ -357,67 +143,251 @@
             this.button2.Text = "Ny sag";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(35, 489);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(56, 20);
+            label3.TabIndex = 85;
+            label3.Text = "Klient:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(35, 622);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(84, 20);
+            label4.TabIndex = 86;
+            label4.Text = "Slut Dato:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(35, 422);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(65, 20);
+            label5.TabIndex = 87;
+            label5.Text = "Sag ID:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(35, 455);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(87, 20);
+            label6.TabIndex = 88;
+            label6.Text = "Sagsnavn:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(35, 655);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(88, 20);
+            label7.TabIndex = 89;
+            label7.Text = "Neg Price:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Location = new System.Drawing.Point(35, 521);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(153, 20);
+            label8.TabIndex = 90;
+            label8.Text = "Ansv. Medarbejder:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.Location = new System.Drawing.Point(35, 555);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(70, 20);
+            label9.TabIndex = 91;
+            label9.Text = "Service:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Location = new System.Drawing.Point(35, 588);
+            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(91, 20);
+            label10.TabIndex = 92;
+            label10.Text = "Start Dato:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.Location = new System.Drawing.Point(35, 688);
+            label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(95, 20);
+            label11.TabIndex = 93;
+            label11.Text = "Total Price:";
+            // 
+            // CaseIDtxb
+            // 
+            this.CaseIDtxb.Location = new System.Drawing.Point(198, 419);
+            this.CaseIDtxb.Name = "CaseIDtxb";
+            this.CaseIDtxb.Size = new System.Drawing.Size(292, 22);
+            this.CaseIDtxb.TabIndex = 94;
+            // 
+            // CaseNametxb
+            // 
+            this.CaseNametxb.Location = new System.Drawing.Point(198, 452);
+            this.CaseNametxb.Name = "CaseNametxb";
+            this.CaseNametxb.Size = new System.Drawing.Size(292, 22);
+            this.CaseNametxb.TabIndex = 95;
+            // 
+            // Clienttxt
+            // 
+            this.Clienttxt.Location = new System.Drawing.Point(198, 485);
+            this.Clienttxt.Name = "Clienttxt";
+            this.Clienttxt.Size = new System.Drawing.Size(292, 22);
+            this.Clienttxt.TabIndex = 96;
+            // 
+            // ResoEmptxt
+            // 
+            this.ResoEmptxt.Location = new System.Drawing.Point(198, 518);
+            this.ResoEmptxt.Name = "ResoEmptxt";
+            this.ResoEmptxt.Size = new System.Drawing.Size(292, 22);
+            this.ResoEmptxt.TabIndex = 97;
+            // 
+            // Servicetxt
+            // 
+            this.Servicetxt.Location = new System.Drawing.Point(198, 551);
+            this.Servicetxt.Name = "Servicetxt";
+            this.Servicetxt.Size = new System.Drawing.Size(292, 22);
+            this.Servicetxt.TabIndex = 98;
+            // 
+            // StartDatetxt
+            // 
+            this.StartDatetxt.Location = new System.Drawing.Point(198, 584);
+            this.StartDatetxt.Name = "StartDatetxt";
+            this.StartDatetxt.Size = new System.Drawing.Size(292, 22);
+            this.StartDatetxt.TabIndex = 99;
+            // 
+            // EndDatetxt
+            // 
+            this.EndDatetxt.Location = new System.Drawing.Point(198, 617);
+            this.EndDatetxt.Name = "EndDatetxt";
+            this.EndDatetxt.Size = new System.Drawing.Size(292, 22);
+            this.EndDatetxt.TabIndex = 100;
+            // 
+            // NegPricetxt
+            // 
+            this.NegPricetxt.Location = new System.Drawing.Point(198, 650);
+            this.NegPricetxt.Name = "NegPricetxt";
+            this.NegPricetxt.Size = new System.Drawing.Size(292, 22);
+            this.NegPricetxt.TabIndex = 101;
+            // 
+            // TotalPricetxt
+            // 
+            this.TotalPricetxt.Location = new System.Drawing.Point(198, 683);
+            this.TotalPricetxt.Name = "TotalPricetxt";
+            this.TotalPricetxt.Size = new System.Drawing.Size(292, 22);
+            this.TotalPricetxt.TabIndex = 102;
+            // 
+            // caseBindingSource
+            // 
+            this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
+            // 
+            // Case_ID
+            // 
+            this.Case_ID.HeaderText = "Sag ID";
+            this.Case_ID.Name = "Case_ID";
+            this.Case_ID.ReadOnly = true;
+            // 
+            // CaseName
+            // 
+            this.CaseName.HeaderText = "Sagsnavn";
+            this.CaseName.Name = "CaseName";
+            this.CaseName.ReadOnly = true;
+            // 
+            // Client
+            // 
+            this.Client.HeaderText = "Klient";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            // 
             // RegisterServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1633, 814);
+            this.Controls.Add(this.TotalPricetxt);
+            this.Controls.Add(this.NegPricetxt);
+            this.Controls.Add(this.EndDatetxt);
+            this.Controls.Add(this.StartDatetxt);
+            this.Controls.Add(this.Servicetxt);
+            this.Controls.Add(this.ResoEmptxt);
+            this.Controls.Add(this.Clienttxt);
+            this.Controls.Add(this.CaseNametxb);
+            this.Controls.Add(this.CaseIDtxb);
+            this.Controls.Add(label3);
+            this.Controls.Add(label4);
+            this.Controls.Add(label5);
+            this.Controls.Add(label6);
+            this.Controls.Add(label7);
+            this.Controls.Add(label8);
+            this.Controls.Add(label9);
+            this.Controls.Add(label10);
+            this.Controls.Add(label11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(clientLabel);
-            this.Controls.Add(this.clientTextBox);
-            this.Controls.Add(endDateLabel);
-            this.Controls.Add(idLabel);
-            this.Controls.Add(this.idTextBox);
-            this.Controls.Add(nameLabel);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(negPriceLabel);
-            this.Controls.Add(this.negPriceTextBox);
-            this.Controls.Add(respEmployeeLabel);
-            this.Controls.Add(this.respEmployeeTextBox);
-            this.Controls.Add(serviceLabel);
-            this.Controls.Add(this.serviceTextBox);
-            this.Controls.Add(startDateLabel);
-            this.Controls.Add(totalPriceLabel);
-            this.Controls.Add(this.totalPriceTextBox);
-            this.Controls.Add(this.CaseNumtextBox);
+            this.Controls.Add(this.InsertCaseIDtxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterServices";
             this.Text = "Sager";
-            ((System.ComponentModel.ISupportInitialize)(this.caseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox CaseNumtextBox;
+        private System.Windows.Forms.TextBox InsertCaseIDtxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource caseBindingSource;
-        private System.Windows.Forms.TextBox clientTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox negPriceTextBox;
-        private System.Windows.Forms.TextBox respEmployeeTextBox;
-        private System.Windows.Forms.TextBox serviceTextBox;
-        private System.Windows.Forms.TextBox totalPriceTextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_Client;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox CaseIDtxb;
+        private System.Windows.Forms.TextBox CaseNametxb;
+        private System.Windows.Forms.TextBox Clienttxt;
+        private System.Windows.Forms.TextBox ResoEmptxt;
+        private System.Windows.Forms.TextBox Servicetxt;
+        private System.Windows.Forms.TextBox StartDatetxt;
+        private System.Windows.Forms.TextBox EndDatetxt;
+        private System.Windows.Forms.TextBox NegPricetxt;
+        private System.Windows.Forms.TextBox TotalPricetxt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client;
     }
 }
