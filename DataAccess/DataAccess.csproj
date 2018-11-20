@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\CaseModel.cs" />
-    <Compile Include="SqlAccess.cs" />
+    <Compile Include="DatabaseAccess.cs" />
     <Compile Include="DatabaseFactory.cs" />
+    <Compile Include="DbController.cs" />
     <Compile Include="IDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

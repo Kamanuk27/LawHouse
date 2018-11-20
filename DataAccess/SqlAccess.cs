@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using LawHouseLibrary;
-using DataAccess.Model;
 
 namespace DataAccess
 {
-    class SqlAccess : IDataAccess
+    class DatabaseAccess : IDataAccess
     {
         private SqlConnection connection;
         private SqlCommand command = new SqlCommand();
@@ -41,7 +40,7 @@ namespace DataAccess
         }
 
 
-        public ICase GetCase(int id)
+        public CaseModel GetCase(int id)
         {
             string sqlString = "SELECT*FROM [dbo].[Case] WHERE ID = @id";
             command.Parameters.Clear();
@@ -70,9 +69,9 @@ namespace DataAccess
             return c1;
         }
 
-        public List<ICase> GetCases()
+        public List<CaseModel> GetCases()
         {
-            List<ICase> cases = new List<ICase>();
+            List<CaseModel> cases = new List<CaseModel>();
            
             string sqlString = "SELECT* FORM Case";
             PrepareSql(sqlString);

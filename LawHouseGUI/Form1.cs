@@ -18,10 +18,16 @@ namespace LawHouseGUI
         public Form1()
         {
             InitializeComponent();
-            Case c1 = new Case();
-            c1.GetCase(1);
-            textBox1.Text = c1.Id.ToString();
-            textBox2.Text = c1.Name.ToString();
+            //Case c1 = new Case();
+            //c1.GetCase(1);
+            //textBox1.Text = c1.Id.ToString();
+            //textBox2.Text = c1.Name.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegCaseForm regCase = new RegCaseForm();
+            regCase.Show();
         }
     }
 }

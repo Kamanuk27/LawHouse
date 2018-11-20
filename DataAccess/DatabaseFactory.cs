@@ -15,21 +15,32 @@ namespace DataAccess
         {
 
         }
-        public static DatabaseFactory GetInstance()
+        public static DatabaseFactory Instance
         {
-
-            if (_instance == null)
+            get
+            {
+                if (_instance == null)
                 _instance = new DatabaseFactory();
-            return _instance;
+                return _instance;
+
+            }
+
+           
         }
-        public IDataAccess GetDataAccess()
+        public DbController GetDataAccess()
         {
-            //string database = ConfigurationManager.AppSettings["database"];
-            //if (database == "sqlserver")
-            //{
-            //    percistance = new DatabaseAccess();
-            //}
-            percistance = new SqlAccess();
+            string database = ConfigurationManager.AppSettings["database"];
+            DbController percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new DbController( new DatabaseAccess());
+            }
+            else
+            {
+                //percistance = new DatabaseAccess();
+            }
+
             return percistance;
         }
     }
