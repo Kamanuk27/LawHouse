@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary
 {
-    public abstract class ICase
+    public abstract class ACase
     {
         public int Id { get; set; }
         public string Name { get; set; }

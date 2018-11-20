@@ -16,12 +16,13 @@ namespace UnitTestLawHouse
             c1.GetCase(1);
             Assert.AreEqual(c1.Id, 1);
         }
-        //[TestMethod]
-        //public void TestRegistrerService()
-        //{
-        //    int expected = 1;
-        //    int response = c1.RegisterService (2, 50);
-        //    Assert.AreEqual(response, 1);
-        //}
+        [TestMethod]
+        public void TestRegistrerService()
+        {
+            Service service = new Service();
+            int expected = 1;
+            int response = c1.RegisterService(service);
+            Assert.AreEqual(response, expected);
+        }
     }
 }

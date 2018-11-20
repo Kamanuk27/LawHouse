@@ -7,7 +7,7 @@ using LawHouseLibrary;
 
 namespace BusinessLogic
 {
-    class Employee : IEmployee
+    class Employee : AEmployee
     {
     }
 }

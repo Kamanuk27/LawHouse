@@ -135,7 +135,7 @@
             startDateLabel.Size = new System.Drawing.Size(58, 13);
             startDateLabel.TabIndex = 75;
             startDateLabel.Text = "Start Date:";
-            startDateLabel.Click += new System.EventHandler(this.startDateLabel_Click);
+           
             // 
             // totalPriceLabel
             // 

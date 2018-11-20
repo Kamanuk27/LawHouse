@@ -7,7 +7,8 @@ using LawHouseLibrary;
 
 namespace BusinessLogic
 {
-    public class Service : IService
+    public class Service : AService
     {
+
     }
 }

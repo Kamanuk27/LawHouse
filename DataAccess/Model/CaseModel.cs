@@ -7,7 +7,7 @@ using LawHouseLibrary;
 
 namespace DataAccess.Model
 {
-    class CaseModel : ICase
+    class CaseModel : ACase
     {
 
     }

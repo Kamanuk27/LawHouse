@@ -37,9 +37,5 @@ namespace LawHouseGUI
 
         }
 
-        private void startDateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -8,7 +8,7 @@ using LawHouseLibrary;
 
 namespace BusinessLogic
 {
-    public partial class Case : ICase
+    public partial class Case : ACase
     {
        
         private DbController dbController;
@@ -22,7 +22,7 @@ namespace BusinessLogic
         public void GetCase(int id)
         {
 
-            ICase c1 = dbController.GetCase(id);
+            ACase c1 = dbController.GetCase(id);
             Id = c1.Id;
             Name = c1.Name;
             StartDate = c1.StartDate;
@@ -35,11 +35,17 @@ namespace BusinessLogic
 
         }
 
-        //public int RegisterService(int hours, int km)
-        //{
-        //    int confirm = 0;
-        //    dbController.RegisterService(hours, km);
-        //    return confirm;
-        //}
+        public int RegisterService(AService s1)
+        {
+           
+            dbController.EditService(s1);
+            return 1;
+        }
+
+        public int NewCase(ACase c1)
+        {
+            dbController.NewCase(c1);
+            return 1;
+        }
     }
 }

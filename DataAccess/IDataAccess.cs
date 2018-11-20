@@ -10,8 +10,9 @@ namespace DataAccess
 {
     public interface IDataAccess
     {
-        List< ICase> GetCases();
-        ICase GetCase(int Id);
-        //int RegisterService(int hours, int km);
+        List< ACase> GetCases();
+        ACase GetCase(int Id);
+        int EditService(AService s1);
+        int NewCase(ACase c1);
     }
 }

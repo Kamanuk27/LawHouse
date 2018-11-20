@@ -32,13 +32,13 @@ namespace DataAccess
         }
 
 
-        public ICase GetCase(int id)
+        public ACase GetCase(int id)
         {
             string sqlString = "SELECT*FROM [dbo].[Case] WHERE ID = @id";
             command.Parameters.Clear();
             command.Parameters.Add(new SqlParameter("@id", id));
             PrepareSql(sqlString);
-            ICase c1 = new CaseModel();
+            ACase c1 = new CaseModel();
             SqlDataReader reader = null;
             reader = command.ExecuteReader();
 
@@ -61,9 +61,9 @@ namespace DataAccess
             return c1;
         }
 
-        public List<ICase> GetCases()
+        public List<ACase> GetCases()
         {
-            List<ICase> cases = new List<ICase>();
+            List<ACase> cases = new List<ACase>();
 
             string sqlString = "SELECT* FRoM [dbo].[Case]";
             PrepareSql(sqlString);
@@ -92,9 +92,38 @@ namespace DataAccess
             return cases;
         }
 
-        //public int RegisterService(int hours, int km)
-        //{
-            
-        //}
+        public int EditService(AService s1)
+        {
+            string sqlString = "INSERT INTO ProvidedServises (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
+                               "(@Employee_ID, @Case_ID, @Date, @Hours, @Km, @Comment)";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@Employee_ID", s1.EmployeeID));
+            command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
+            command.Parameters.Add(new SqlParameter("@Date", s1.Date));
+            command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
+            command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+            command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+
+           
+            ExecuteSql(sqlString);
+            return 1;
+        }
+        public int NewCase (ACase c1)
+        {
+            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
+                               "RespEmp_ID, Client_ID) VALUES " +
+                               "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @RespEmp_ID, @Client_ID)";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
+            command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
+            command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
+            command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
+            command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmployee));
+            command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
+
+
+            ExecuteSql(sqlString);
+            return 1;
+        }
     }
 }

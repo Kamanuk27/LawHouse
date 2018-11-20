@@ -10,8 +10,8 @@ namespace DataAccess
 {
     public class DbController
     {
-        public List<ICase> cases;
-        public ICase @case;
+        public List<ACase> cases;
+        public ACase @case;
 
         private IDataAccess persistenceLayer;
 
@@ -22,9 +22,17 @@ namespace DataAccess
             @case = new CaseModel();
         }
 
-        public ICase GetCase(int id)
+        public ACase GetCase(int id)
         {
             return persistenceLayer.GetCase(id);
+        }
+        public int EditService(AService s1)
+        {
+            return persistenceLayer.EditService(s1);
+        }
+        public int NewCase(ACase c1)
+        {
+            return persistenceLayer.NewCase(c1);
         }
 
 

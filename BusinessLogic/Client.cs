@@ -7,7 +7,7 @@ using LawHouseLibrary;
 
 namespace BusinessLogic
 {
-    class Client : IClient
+    class Client : AClient
     {
     }
 }
