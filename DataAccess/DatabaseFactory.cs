@@ -38,7 +38,7 @@ namespace DataAccess
             }
             else
             {
-                //percistance = new DatabaseAccess();
+                percistance = new DbController(new DatabaseAccess());
             }
 
             return percistance;

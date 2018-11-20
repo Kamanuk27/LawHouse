@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using LawHouseLibrary;
+using DataAccess.Model;
 
 namespace DataAccess
 {
@@ -14,24 +15,15 @@ namespace DataAccess
         private SqlConnection connection;
         private SqlCommand command = new SqlCommand();
 
-       
-        private string GetConnectionString()
-        {
-            return "Data Source = den1.mssql8.gear.host; Initial catalog = lawhouse; User ID = lawhouse; password = Kx584_?EtT5O";
-             
-        }
-
-        //Metoden åbner SQL-connection og indeholder command.
         private void PrepareSql(string sqlString)
         {
-            connection = new SqlConnection (GetConnectionString());
+            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
             connection.Open();
             command.Connection = connection;
             command.CommandText = sqlString;
         }
 
-        //Metoden bruges for ExecuteNonQuery() commands, som Create, Update, Delete.
-
+        
         private void ExecuteSql(string sqlString)
         {
             PrepareSql(sqlString);
@@ -40,13 +32,13 @@ namespace DataAccess
         }
 
 
-        public CaseModel GetCase(int id)
+        public ICase GetCase(int id)
         {
             string sqlString = "SELECT*FROM [dbo].[Case] WHERE ID = @id";
             command.Parameters.Clear();
             command.Parameters.Add(new SqlParameter("@id", id));
             PrepareSql(sqlString);
-            CaseModel c1 = new CaseModel();
+            ICase c1 = new CaseModel();
             SqlDataReader reader = null;
             reader = command.ExecuteReader();
 
@@ -57,23 +49,23 @@ namespace DataAccess
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
                     c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
-                    //c1.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                    c1.EndDate = reader["EndDate"] != DBNull.Value ? Convert.ToDateTime(reader["EndDate"]) : DateTime.MinValue;
                     c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
-                    c1.TotalPrice = reader ["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
+                    c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
                     c1.Service = reader["Service_ID"] != DBNull.Value ? reader["Service_ID"].ToString() : string.Empty;
                     c1.Client = reader["Client_ID"] != DBNull.Value ? reader["Client_ID"].ToString() : string.Empty;
-                    c1.Service = reader["RespEmp_ID"] != DBNull.Value ? reader["RespEmp_ID"].ToString() : string.Empty;
+                    c1.RespEmployee = reader["RespEmp_ID"] != DBNull.Value ? reader["RespEmp_ID"].ToString() : string.Empty;
                 }
             }
             connection.Close();
             return c1;
         }
 
-        public List<CaseModel> GetCases()
+        public List<ICase> GetCases()
         {
-            List<CaseModel> cases = new List<CaseModel>();
-           
-            string sqlString = "SELECT* FORM Case";
+            List<ICase> cases = new List<ICase>();
+
+            string sqlString = "SELECT* FRoM [dbo].[Case]";
             PrepareSql(sqlString);
             SqlDataReader reader = null;
             reader = command.ExecuteReader();
@@ -99,5 +91,10 @@ namespace DataAccess
             connection.Close();
             return cases;
         }
+
+        //public int RegisterService(int hours, int km)
+        //{
+            
+        //}
     }
 }

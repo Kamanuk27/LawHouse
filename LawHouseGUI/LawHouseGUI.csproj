@@ -66,11 +66,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegCaseForm.cs">
+    <Compile Include="RegisterServices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegCaseForm.Designer.cs">
-      <DependentUpon>RegCaseForm.cs</DependentUpon>
+    <Compile Include="RegisterServices.Designer.cs">
+      <DependentUpon>RegisterServices.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
@@ -90,10 +90,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegCaseForm.resx">
-      <DependentUpon>RegCaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="RegisterServices.resx">
+      <DependentUpon>RegisterServices.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\LawHouseLibrary.CaseModel.datasource" />
+    <None Include="Properties\DataSources\BusinessLogic.Case.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

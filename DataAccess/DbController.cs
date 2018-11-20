@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Model;
 using LawHouseLibrary;
 
 namespace DataAccess
 {
     public class DbController
     {
-
-
-        public List<ICase> empslist;
-        public CaseModel cm;
+        public List<ICase> cases;
+        public ICase @case;
 
         private IDataAccess persistenceLayer;
 
@@ -20,12 +19,12 @@ namespace DataAccess
         {
           //  empslist = new List<ICase>();
             this.persistenceLayer = persistenceLayer;
-            cm = new CaseModel();
+            @case = new CaseModel();
         }
 
-        public void GetCase(int id)
+        public ICase GetCase(int id)
         {
-            cm = persistenceLayer.GetCase(id);
+            return persistenceLayer.GetCase(id);
         }
 
 

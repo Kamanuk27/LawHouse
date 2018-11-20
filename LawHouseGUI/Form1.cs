@@ -26,8 +26,10 @@ namespace LawHouseGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RegCaseForm regCase = new RegCaseForm();
-            regCase.Show();
+            RegisterServices registerForm = new RegisterServices();
+            registerForm.Show();
         }
+
+       
     }
 }

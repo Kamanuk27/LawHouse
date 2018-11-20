@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{7c0c7bf6-a9fd-4bee-be11-114c7e70fdad}</Project>
+      <Project>{56bce708-2deb-46ce-9e09-04c5401170b3}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">

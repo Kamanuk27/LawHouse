@@ -9,5 +9,6 @@ namespace DataAccess.Model
 {
     class CaseModel : ICase
     {
+
     }
 }

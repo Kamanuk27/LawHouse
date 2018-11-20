@@ -12,5 +12,6 @@ namespace DataAccess
     {
         List< ICase> GetCases();
         ICase GetCase(int Id);
+        //int RegisterService(int hours, int km);
     }
 }
