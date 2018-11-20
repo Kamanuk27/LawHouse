@@ -74,7 +74,7 @@
             // 
             // InsertCaseIDtxt
             // 
-            this.InsertCaseIDtxt.Location = new System.Drawing.Point(154, 28);
+            this.InsertCaseIDtxt.Location = new System.Drawing.Point(158, 33);
             this.InsertCaseIDtxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InsertCaseIDtxt.Name = "InsertCaseIDtxt";
             this.InsertCaseIDtxt.Size = new System.Drawing.Size(100, 22);
@@ -104,10 +104,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(697, 54);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(917, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 81;
             this.label2.Text = "Ydelse";
             // 
@@ -121,13 +122,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(39, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(597, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(648, 273);
             this.dataGridView1.TabIndex = 82;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(700, 75);
+            this.dataGridView2.Location = new System.Drawing.Point(920, 75);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(793, 273);
@@ -311,27 +312,33 @@
             // 
             // Case_ID
             // 
+            this.Case_ID.FillWeight = 80F;
             this.Case_ID.HeaderText = "Sag ID";
             this.Case_ID.Name = "Case_ID";
             this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 80;
             // 
             // CaseName
             // 
+            this.CaseName.FillWeight = 181F;
             this.CaseName.HeaderText = "Sagsnavn";
             this.CaseName.Name = "CaseName";
             this.CaseName.ReadOnly = true;
+            this.CaseName.Width = 181;
             // 
             // Client
             // 
+            this.Client.FillWeight = 181F;
             this.Client.HeaderText = "Klient";
             this.Client.Name = "Client";
             this.Client.ReadOnly = true;
+            this.Client.Width = 181;
             // 
             // RegisterServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1633, 814);
+            this.ClientSize = new System.Drawing.Size(1775, 814);
             this.Controls.Add(this.TotalPricetxt);
             this.Controls.Add(this.NegPricetxt);
             this.Controls.Add(this.EndDatetxt);
@@ -359,7 +366,9 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterServices";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sager";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caseBindingSource)).EndInit();
