@@ -40,9 +40,26 @@ namespace BusinessLogic
 
         }
 
-        public List<CaseRepo> GetCases()
+        public List<Case> GetCases()
         {
-            return dbController.GetCases();
+            List<CaseRepo> casesDb = dbController.GetCases();
+            List<Case> cases = new List<Case>();
+            for (int i = 0; i < casesDb.Count; i++)
+            {
+                cases.Add(new Case());
+                cases[i].Id = casesDb[i].Id;
+                cases[i].Name = casesDb[i].Name;
+                cases[i].StartDate = casesDb[i].StartDate;
+                cases[i].EndDate = casesDb[i].EndDate;
+                cases[i].NegPrice = casesDb[i].NegPrice;
+                cases[i].TotalPrice = casesDb[i].TotalPrice;
+                cases[i].Service = casesDb[i].Service;
+                cases[i].Client = casesDb[i].Client;
+                cases[i].RespEmployee = casesDb[i].RespEmployee;
+
+            }
+           
+            return cases;
         }
 
         public List <ServiceRepo> GetProvidedServices()

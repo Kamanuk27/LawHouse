@@ -22,10 +22,7 @@ namespace DataAccess
                 if (_instance == null)
                 _instance = new DatabaseFactory();
                 return _instance;
-
             }
-
-           
         }
         public DbController GetDataAccess()
         {

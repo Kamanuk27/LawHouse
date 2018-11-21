@@ -10,9 +10,21 @@ namespace DataAccess
 {
     public class DbController
     {
-        //public List<ACase> cases;
-        //public ACase @case;
+        private static DbController _instance;
+        public IDataAccess percistance;
+        public DbController()
+        {
 
+        }
+        public static DbController Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new DbController();
+                return _instance;
+            }
+        }
         private IDataAccess persistenceLayer;
 
         public DbController(IDataAccess persistenceLayer)

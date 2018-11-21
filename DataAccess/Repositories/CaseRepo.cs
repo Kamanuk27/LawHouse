@@ -13,6 +13,7 @@ namespace DataAccess.Repositories
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public int HoursEstimate { get; set; }
         public decimal NegPrice { get; set; }
         public decimal TotalPrice { get; set; }
         public string Service { get; set; }

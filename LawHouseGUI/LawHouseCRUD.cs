@@ -11,13 +11,16 @@ using System.Windows.Forms;
 
 namespace LawHouseGUI
 {
-    public partial class RegisterServices : Form
+    public partial class LawHouseCRUD : Form
     {
-        public RegisterServices()
+        LhHandler handler;
+        public LawHouseCRUD()
         {
             InitializeComponent();
+            handler = LhHandler.Instance;
         }
        
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -37,6 +40,21 @@ namespace LawHouseGUI
 
         }
 
-        
+        private void LawHouseCRUD_Load(object sender, EventArgs e)
+        {
+            GriderStart();
+        }
+
+        private void GriderStart()
+        {
+            foreach (var c1 in handler.GetCases())
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = c1.Id;
+                dataGridView1.Rows[n].Cells[1].Value = c1.Name;
+                dataGridView1.Rows[n].Cells[2].Value = c1.RespEmployee;
+                dataGridView1.Rows[n].Cells[3].Value = c1.Client;
+            }
+        }
     }
 }
