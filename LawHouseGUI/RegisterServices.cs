@@ -31,11 +31,12 @@ namespace LawHouseGUI
             CaseNametxb.Text = c1.Name.ToString();
             NegPricetxt.Text = c1.NegPrice.ToString();
             Clienttxt.Text = c1.Client.ToString();
-            ResoEmptxt.Text = c1.RespEmployee.ToString();
+            ResoEmpCombo.Text = c1.RespEmployee.ToString();
             TotalPricetxt.Text = c1.TotalPrice.ToString();
 
 
         }
 
+        
     }
 }
