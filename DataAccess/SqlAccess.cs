@@ -114,7 +114,7 @@ namespace DataAccess
             return cases;
         }
 
-        public List<ServiceRepo> GetProvidedServices()
+        public List<ServiceRepo> GetProvidedServices(int caseId)
         {
             List < ServiceRepo> services = new List<ServiceRepo>();
             return services;

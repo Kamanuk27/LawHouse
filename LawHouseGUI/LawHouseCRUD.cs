@@ -13,11 +13,12 @@ namespace LawHouseGUI
 {
     public partial class LawHouseCRUD : Form
     {
-        LhHandler handler;
+        LhHandler Lhhandler;
+        
         public LawHouseCRUD()
         {
             InitializeComponent();
-            handler = LhHandler.Instance;
+            Lhhandler = LhHandler.Instance;
         }
        
 
@@ -47,7 +48,7 @@ namespace LawHouseGUI
 
         private void GriderStart()
         {
-            foreach (var c1 in handler.GetCases())
+            foreach (var c1 in Lhhandler.GetCases())
             {
                 int n = dataGridView1.Rows.Add();
                 dataGridView1.Rows[n].Cells[0].Value = c1.Id;

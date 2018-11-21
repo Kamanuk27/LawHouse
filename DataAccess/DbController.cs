@@ -47,9 +47,9 @@ namespace DataAccess
             return persistenceLayer.GetCases();
         }
 
-        public List <ServiceRepo> GetProvidedServices()
+        public List <ServiceRepo> GetProvidedServices(int caseId)
         {
-            return persistenceLayer.GetProvidedServices();
+            return persistenceLayer.GetProvidedServices(caseId);
         }
 
         public int EditService(ServiceRepo s1)

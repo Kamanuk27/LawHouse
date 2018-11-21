@@ -9,51 +9,49 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCase
     {
-        Case c1 = new Case();
+        LhHandler LhHandler = new LhHandler();
 
         [TestMethod]
         public void TestNewCaseReturnOne()
         {
-            Case c2 = new Case();
             int expected = 1;
-            int response = c1.NewCase(c2);
+            int response = LhHandler.NewCase(1);
             Assert.AreEqual(response, expected);
         }
         [TestMethod]
         public void TestGetCaseReturnCaseIdOne()
         {
-            c1.GetCase(1);
+            Case c1 = LhHandler.GetCase(1);
             Assert.AreEqual(c1.Id, 1);
         }
 
         [TestMethod]
         public void TestGetCaseReturnCase()
         {
-            c1.GetCase(1);
-            Type expectedType = typeof(CaseRepo);
+            Case c1 = LhHandler.GetCase(1);
+            Type expectedType = typeof(Case);
             Assert.IsInstanceOfType(c1, expectedType);
         }
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List <CaseRepo> cases =  c1.GetCases();
-            Assert.AreEqual(cases.Count, 2);
+            List <Case> cases =  LhHandler.GetCases();
+            Assert.AreEqual(2, cases.Count);
         }
 
         [TestMethod]
         public void TestGetProvidedServicesReturnTwoServices()
         {
-            List<ServiceRepo> services = c1.GetProvidedServices();
-            Assert.AreEqual(services.Count, 2);
+            List<Service> services = LhHandler.GetProvidedServices(1);
+            Assert.AreEqual(2, services.Count);
         }
 
         [TestMethod]
         public void TestEditServiceReturnOne()
         {
-            Service service = new Service();
             int expected = 1;
-            int response = c1.EditService(service);
+            int response = LhHandler.EditService(2, 50);
             Assert.AreEqual(response, expected);
         }
 

@@ -12,36 +12,40 @@ namespace BusinessLogic
     {
        
         private DbController dbController;
+        List<Service> services;
        
         public Case()
         {
             dbController = DatabaseFactory.Instance.GetDataAccess();
         }
 
-        public int NewCase(CaseRepo c1)
+        public int NewCase(Case c1)
         {
+            // jeg tor måske Case kan sendes uden oversættelse til CaseRepo ??
             dbController.NewCase(c1);
             return 1;
         }
 
-        public void GetCase(int id)
+        public Case GetCase(int id)
         {
-
-            CaseRepo c1 = dbController.GetCase(id);
-            Id = c1.Id;
-            Name = c1.Name;
-            StartDate = c1.StartDate;
-            EndDate = c1.EndDate;
-            NegPrice = c1.NegPrice;
-            TotalPrice = c1.TotalPrice;
-            RespEmployee = c1.RespEmployee;
-            Client = c1.Client;
-            Service = c1.Service;
-
+            CaseRepo caseRepo = dbController.GetCase(id);
+ 
+            Case c1 = new Case();
+            c1.Id = caseRepo.Id;
+            c1.Name = caseRepo.Name;
+            c1.StartDate = caseRepo.StartDate;
+            c1.EndDate = caseRepo.EndDate;
+            c1.NegPrice = caseRepo.NegPrice;
+            c1.TotalPrice = caseRepo.TotalPrice;
+            c1.RespEmployee = caseRepo.RespEmployee;
+            c1.Client = caseRepo.Client;
+            c1.Service = caseRepo.Service;
+            return c1;
         }
 
         public List<Case> GetCases()
         {
+            // oversætte CaseRepo til Case
             List<CaseRepo> casesDb = dbController.GetCases();
             List<Case> cases = new List<Case>();
             for (int i = 0; i < casesDb.Count; i++)
@@ -62,17 +66,30 @@ namespace BusinessLogic
             return cases;
         }
 
-        public List <ServiceRepo> GetProvidedServices()
+        public List <Service> GetProvidedServices(int caseId)
         {
-            return dbController.GetProvidedServices();
+            // her skal vi oversætte
+            List <ServiceRepo> servicesRepo = dbController.GetProvidedServices(caseId);
+            services = new List<Service>();
+            for (int i = 0; i < servicesRepo.Count; i++)
+            {
+                services.Add(new Service());
+                services[i].CaseID = servicesRepo[i].CaseID;
+                services[i].EmployeeID = servicesRepo[i].EmployeeID;
+                services[i].Date = servicesRepo[i].Date;
+                services[i].Hours = servicesRepo[i].Hours;
+                services[i].Km = servicesRepo[i].Km;
+                services[i].Comment = servicesRepo[i].Comment;
+            }
+            return services;
         }
 
-        public int EditService(ServiceRepo s1)
+        public int EditService(Service s1)
         {
            return dbController.EditService(s1);
         }
 
-        public int UpdateCase(CaseRepo c1)
+        public int UpdateCase(Case c1)
         {
             return dbController.UpdateCase(c1);
         }
