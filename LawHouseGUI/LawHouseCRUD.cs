@@ -18,9 +18,9 @@ namespace LawHouseGUI
         {
             InitializeComponent();
             handler = LhHandler.Instance;
+            GriderStart();
         }
        
-
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -40,11 +40,6 @@ namespace LawHouseGUI
 
         }
 
-        private void LawHouseCRUD_Load(object sender, EventArgs e)
-        {
-            GriderStart();
-        }
-
         private void GriderStart()
         {
             foreach (var c1 in handler.GetCases())
@@ -56,9 +51,6 @@ namespace LawHouseGUI
                 dataGridView1.Rows[n].Cells[3].Value = c1.Client;
             }
         }
-
-
-      
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -75,6 +67,7 @@ namespace LawHouseGUI
             ResoEmpCombo.Text = c1.RespEmployee.ToString();
             TotalPricetxt.Text = c1.TotalPrice.ToString();
             HoursEsttxt.Text = c1.HoursEstimate.ToString();
+            InsertCaseIDtxt.Text = id.ToString();
         }
     }
 }
