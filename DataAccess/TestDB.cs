@@ -3,33 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LawHouseLibrary;
+using DataAccess.Model;
+using DataAccess.Repositories;
 
 namespace DataAccess
 {
     class TestDB : IDataAccess
     {
-        public ACase GetCase(int Id)
+        public int NewCase(CaseRepo c1)
         {
-            throw new NotImplementedException();
+            return 1;
+        }
+        public CaseRepo GetCase(int id)
+        {
+            CaseRepo c1 = new CaseModel();
+            c1.Id = id;
+            return c1;
         }
 
-        public List<ACase> GetCases()
+        public List<CaseRepo> GetCases()
         {
-            throw new NotImplementedException();
+            List<CaseRepo> cases = new List<CaseRepo>();
+            cases.Add(new CaseModel(1));
+            cases.Add(new CaseModel(4));
+            return cases;
         }
 
-        public int EditService (AService s1)
+        public List <ServiceRepo> GetProvidedServices()
         {
-            throw new NotImplementedException();
+            List<ServiceRepo> services = new List<ServiceRepo>();
+            services.Add(new ServiceModel(2, 50));
+            services.Add(new ServiceModel(3, 100));
+            return services;
         }
-        public int NewCase(ACase c1)
+
+        public int EditService (ServiceRepo s1)
         {
             return 1;
         }
 
-      
+        public int UpdateCase(CaseRepo c1)
+        {
+            return 1;
+        }
 
-       
+        public int DeleteCase(int id)
+        {
+            return 1;
+        }
+
+        public int DeleteService(ServiceRepo s1)
+        {
+            return 1;
+        }
     }
 }

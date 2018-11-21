@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LawHouseLibrary;
 
-namespace DataAccess.Model
+namespace DataAccess.Repositories.Model
 {
-    class CaseModel : ACase
-    {
+    class EmployeeModel : EmployeeRepo
 
+    {
     }
 }

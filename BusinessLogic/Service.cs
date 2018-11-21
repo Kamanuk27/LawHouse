@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LawHouseLibrary;
+using DataAccess.Repositories;
 
 namespace BusinessLogic
 {
-    public class Service : AService
+    public class Service : ServiceRepo
     {
 
     }

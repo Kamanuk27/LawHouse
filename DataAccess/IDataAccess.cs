@@ -1,5 +1,5 @@
 ﻿
-using LawHouseLibrary;
+using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,13 @@ namespace DataAccess
 {
     public interface IDataAccess
     {
-        List< ACase> GetCases();
-        ACase GetCase(int Id);
-        int EditService(AService s1);
-        int NewCase(ACase c1);
+        int NewCase(CaseRepo c1);
+        CaseRepo GetCase(int Id);
+        List< CaseRepo> GetCases();
+        List<ServiceRepo> GetProvidedServices();
+        int EditService(ServiceRepo s1);
+        int UpdateCase(CaseRepo c1);
+        int DeleteCase(int id);
+        int DeleteService(ServiceRepo s1);
     }
 }

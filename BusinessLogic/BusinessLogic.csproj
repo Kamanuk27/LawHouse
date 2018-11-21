@@ -53,10 +53,6 @@
       <Project>{56bce708-2deb-46ce-9e09-04c5401170b3}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
-      <Project>{aa06d57b-6ef0-4741-b3c0-042996b99591}</Project>
-      <Name>LawHouseLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

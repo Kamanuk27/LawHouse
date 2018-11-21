@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary
+namespace DataAccess.Repositories
 {
-    public abstract class ACase
+    public abstract class CaseRepo
     {
+
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
@@ -17,13 +18,13 @@ namespace LawHouseLibrary
         public string Service { get; set; }
         public string RespEmployee { get; set; }
         public string Client { get; set; }
-        
-        public ACase()
+
+        public CaseRepo()
         {
 
         }
         // constractor for tests
-        public ACase(int id)
+        public CaseRepo(int id)
         {
             Id = id;
         }

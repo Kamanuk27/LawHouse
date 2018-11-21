@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouseGUI", "LawHouseGUI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestLawHouse", "UnitTestLawHouse\UnitTestLawHouse.csproj", "{8B56B8B4-CA74-4855-833D-4DC80D499EC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouseLibrary", "LawHouseLibrary\LawHouseLibrary.csproj", "{AA06D57B-6EF0-4741-B3C0-042996B99591}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{56BCE708-2DEB-46CE-9E09-04C5401170B3}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{8B56B8B4-CA74-4855-833D-4DC80D499EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B56B8B4-CA74-4855-833D-4DC80D499EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B56B8B4-CA74-4855-833D-4DC80D499EC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA06D57B-6EF0-4741-B3C0-042996B99591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA06D57B-6EF0-4741-B3C0-042996B99591}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA06D57B-6EF0-4741-B3C0-042996B99591}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA06D57B-6EF0-4741-B3C0-042996B99591}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56BCE708-2DEB-46CE-9E09-04C5401170B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{56BCE708-2DEB-46CE-9E09-04C5401170B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56BCE708-2DEB-46CE-9E09-04C5401170B3}.Release|Any CPU.ActiveCfg = Release|Any CPU

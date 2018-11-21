@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Model;
-using LawHouseLibrary;
+using DataAccess.Repositories;
 
 namespace DataAccess
 {
     public class DbController
     {
-        public List<ACase> cases;
-        public ACase @case;
+        //public List<ACase> cases;
+        //public ACase @case;
 
         private IDataAccess persistenceLayer;
 
@@ -19,23 +19,45 @@ namespace DataAccess
         {
           //  empslist = new List<ICase>();
             this.persistenceLayer = persistenceLayer;
-            @case = new CaseModel();
+            //@case = new CaseModel();
         }
-
-        public ACase GetCase(int id)
-        {
-            return persistenceLayer.GetCase(id);
-        }
-        public int EditService(AService s1)
-        {
-            return persistenceLayer.EditService(s1);
-        }
-        public int NewCase(ACase c1)
+        public int NewCase(CaseRepo c1)
         {
             return persistenceLayer.NewCase(c1);
         }
 
+        public CaseRepo GetCase(int id)
+        {
+            return persistenceLayer.GetCase(id);
+        }
+        public List <CaseRepo> GetCases()
+        {
+            return persistenceLayer.GetCases();
+        }
 
+        public List <ServiceRepo> GetProvidedServices()
+        {
+            return persistenceLayer.GetProvidedServices();
+        }
 
+        public int EditService(ServiceRepo s1)
+        {
+            return persistenceLayer.EditService(s1);
+        }
+
+        public int UpdateCase(CaseRepo c1)
+        {
+            return persistenceLayer.UpdateCase(c1);
+        }
+
+        public int DeleteCase(int id)
+        {
+            return persistenceLayer.DeleteCase(id);
+        }
+
+        public int DeleteService(ServiceRepo s1)
+        {
+            return persistenceLayer.DeleteService(s1);
+        }
     }
 }

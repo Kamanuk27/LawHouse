@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
-using LawHouseLibrary;
 using DataAccess.Model;
+using DataAccess.Repositories;
 
 namespace DataAccess
 {
@@ -24,21 +24,38 @@ namespace DataAccess
         }
 
         
-        private void ExecuteSql(string sqlString)
+        private int ExecuteSql(string sqlString)
         {
             PrepareSql(sqlString);
-            command.ExecuteNonQuery();
+            int rows = command.ExecuteNonQuery();
             connection.Close();
+            return rows;
         }
 
+        public int NewCase(CaseRepo c1)
+        {
+            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
+                               "RespEmp_ID, Client_ID) VALUES " +
+                               "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @RespEmp_ID, @Client_ID)";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
+            command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
+            command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
+            command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
+            command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmployee));
+            command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
 
-        public ACase GetCase(int id)
+
+            return ExecuteSql(sqlString);
+        }
+
+        public CaseRepo GetCase(int id)
         {
             string sqlString = "SELECT*FROM [dbo].[Case] WHERE ID = @id";
             command.Parameters.Clear();
             command.Parameters.Add(new SqlParameter("@id", id));
             PrepareSql(sqlString);
-            ACase c1 = new CaseModel();
+            CaseRepo c1 = new CaseModel();
             SqlDataReader reader = null;
             reader = command.ExecuteReader();
 
@@ -48,8 +65,8 @@ namespace DataAccess
                 {
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
-                    c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
-                    c1.EndDate = reader["EndDate"] != DBNull.Value ? Convert.ToDateTime(reader["EndDate"]) : DateTime.MinValue;
+                    c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]).Date : DateTime.Now.Date;
+                    c1.EndDate = reader["EndDate"] != DBNull.Value ? Convert.ToDateTime(reader["EndDate"]).Date : DateTime.MinValue.Date;
                     c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
                     c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
                     c1.Service = reader["Service_ID"] != DBNull.Value ? reader["Service_ID"].ToString() : string.Empty;
@@ -61,9 +78,9 @@ namespace DataAccess
             return c1;
         }
 
-        public List<ACase> GetCases()
+        public List<CaseRepo> GetCases()
         {
-            List<ACase> cases = new List<ACase>();
+            List<CaseRepo> cases = new List<CaseRepo>();
 
             string sqlString = "SELECT* FRoM [dbo].[Case]";
             PrepareSql(sqlString);
@@ -92,7 +109,13 @@ namespace DataAccess
             return cases;
         }
 
-        public int EditService(AService s1)
+        public List<ServiceRepo> GetProvidedServices()
+        {
+            List < ServiceRepo> services = new List<ServiceRepo>();
+            return services;
+        }
+
+        public int EditService(ServiceRepo s1)
         {
             string sqlString = "INSERT INTO ProvidedServises (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
                                "(@Employee_ID, @Case_ID, @Date, @Hours, @Km, @Comment)";
@@ -105,25 +128,25 @@ namespace DataAccess
             command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
 
            
-            ExecuteSql(sqlString);
-            return 1;
+            return ExecuteSql(sqlString);
+            
         }
-        public int NewCase (ACase c1)
+
+        public int UpdateCase(CaseRepo c1)
         {
-            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
-                               "RespEmp_ID, Client_ID) VALUES " +
-                               "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @RespEmp_ID, @Client_ID)";
-            command.Parameters.Clear();
-            command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
-            command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
-            command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
-            command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
-            command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmployee));
-            command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
-
-
-            ExecuteSql(sqlString);
             return 1;
         }
+
+        public int DeleteCase(int id)
+        {
+            return 1;
+
+        }
+
+        public int DeleteService(ServiceRepo s1)
+        {
+            return 1;
+        }
+        
     }
 }

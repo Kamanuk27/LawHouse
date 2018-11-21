@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Repositories;
 
-namespace BusinessLogic
+namespace DataAccess.Repositories
 {
-    class Client : ClientRepo
+    public abstract class ClientRepo
     {
+
     }
 }
