@@ -148,7 +148,7 @@ namespace DataAccess
 
         public int EditService(ServiceRepo s1)
         {
-            string sqlString = "INSERT INTO ProvidedServises (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
+            string sqlString = "INSERT INTO ProvidedServise (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
                                "(@Employee_ID, @Case_ID, @Date, @Hours, @Km, @Comment)";
             command.Parameters.Clear();
             command.Parameters.Add(new SqlParameter("@Employee_ID", s1.EmployeeID));
@@ -165,13 +165,27 @@ namespace DataAccess
 
         public int UpdateCase(CaseRepo c1)
         {
-            return 1;
+            string sqlString = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
+                               "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
+                               "WHERE ID = @id";
+            command.Parameters.Clear();
+
+            string[] names = c1.RespEmployee.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            command.Parameters.Add(new SqlParameter("@negPrice", c1.NegPrice));
+            command.Parameters.Add(new SqlParameter("@fName", names[0]));
+            command.Parameters.Add(new SqlParameter("@lName", names[1]));
+            command.Parameters.Add(new SqlParameter("@id", c1.Id));
+
+            return ExecuteSql(sqlString);
+           
         }
 
         public int DeleteCase(int id)
         {
-            return 1;
-
+            string sqlString = $"DELETE FROM [dbo].[Case] WHERE ID = @id";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@id", id));
+            return ExecuteSql(sqlString);
         }
 
         public int DeleteService(ServiceRepo s1)
