@@ -15,7 +15,7 @@ namespace BusinessLogic
 
         public Employee()
         {
-            dbController = DatabaseFactory.Instance.GetDataAccess();
+            dbController = DbController.Instance;
         }
 
         public List <string> GetLawyers()

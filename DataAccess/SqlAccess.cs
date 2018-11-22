@@ -10,7 +10,7 @@ using DataAccess.Repositories;
 
 namespace DataAccess
 {
-    class DatabaseAccess : IDataAccess
+    internal class SqlAccess : IDataAccess
     {
         private SqlConnection connection;
         private SqlCommand command = new SqlCommand();

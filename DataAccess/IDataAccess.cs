@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public interface IDataAccess
+    internal interface IDataAccess
     {
         int NewCase(CaseRepo c1);
         int NewService(ServiceRepo s1);

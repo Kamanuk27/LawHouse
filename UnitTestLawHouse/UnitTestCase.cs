@@ -2,14 +2,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLogic;
 using System.Collections.Generic;
-using DataAccess.Repositories;
+
+
 
 namespace UnitTestLawHouse
 {
     [TestClass]
     public class UnitTestCase
     {
-        LhHandler LhHandler = new LhHandler();
+        LhHandler LhHandler = LhHandler.Instance;
 
         [TestMethod]
         public void TestNewCaseReturnOne()
@@ -41,10 +42,28 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
+        public void TestGetCasesReturnListOfCases()
+        {
+            List<Case> cases = LhHandler.GetCases();
+            Type actual = cases[0].GetType();
+            Type expectedType = typeof(Case);
+            Assert.AreEqual(actual, expectedType);
+        }
+
+        [TestMethod]
         public void TestGetProvidedServicesReturnTwoServices()
         {
             List<Service> services = LhHandler.GetProvidedServices(1);
             Assert.AreEqual(2, services.Count);
+        }
+
+        [TestMethod]
+        public void TestGetProvidedServicesReturnListOfServices()
+        {
+            var services = LhHandler.GetProvidedServices(1);
+            Type actual = services[0].GetType();
+            Type expected = typeof(Service);
+            Assert.AreEqual(actual, expected);
         }
 
         [TestMethod]
@@ -55,6 +74,28 @@ namespace UnitTestLawHouse
             Assert.AreEqual(response, expected);
         }
 
-       
+        [TestMethod]
+        public void TestUpdateCaseReturnOne()
+        {
+            int expected = 1;
+            int response = LhHandler.UpdateCase(2, 2000, "Karina Nielsen");
+            Assert.AreEqual(response, expected);
+        }
+
+        [TestMethod]
+        public void TestDeleteCaseReturnOne()
+        {
+            int expected = 1;
+            int response = LhHandler.DeleteCase(4);
+            Assert.AreEqual(response, expected);
+        }
+
+        [TestMethod]
+        public void TestDeleteServiceReturnOne()
+        {
+            int expected = 1;
+            int response = LhHandler.DeleteService(2);
+            Assert.AreEqual(response, expected);
+        }
     }
 }
