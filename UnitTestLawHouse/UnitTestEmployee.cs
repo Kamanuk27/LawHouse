@@ -1,24 +1,48 @@
-﻿using BusinessLogic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BusinessLogic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse
 {
     [TestClass]
-    class UnitTestEmployee
+    public class UnitTestEmployee
     {
-        LhHandler LhHandler = new LhHandler();
+        LhHandler LhHandler = LhHandler.Instance;
 
         [TestMethod]
         public void TestGetLawyersReturnsListOfStrings()
         {
-            var c1 = LhHandler.GetLawyers();
-            Type expectedType = typeof(string);
-            Assert.IsInstanceOfType(c1, expectedType);
+            var lawyers = LhHandler.GetLawyers();
+            Type actual = lawyers[0].GetType();
+            Type expected = typeof(string);
+            Assert.AreEqual(actual, expected);
         }
+
+        [TestMethod]
+        public void TestGetLawyersReturnsTwoStrings()
+        {
+            int expected = 2;
+            int actual = LhHandler.GetLawyers().Count;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestGetEmplNamesReturnsListOfStrings()
+        {
+            var names = LhHandler.GetEmplNames();
+            Type actual = names[0].GetType();
+            Type expected = typeof(string);
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void TestGetEmplNamesReturnsTwoStrings()
+        {
+            int expected = 2;
+            int actual = LhHandler.GetEmplNames().Count;
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }

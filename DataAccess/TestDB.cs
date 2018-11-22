@@ -52,7 +52,7 @@ namespace DataAccess
             return 1;
         }
 
-        public int DeleteService(ServiceRepo s1)
+        public int DeleteService(int id)
         {
             return 1;
         }

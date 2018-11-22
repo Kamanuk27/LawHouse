@@ -10,7 +10,7 @@ using DataAccess.Repositories;
 
 namespace DataAccess
 {
-    class DatabaseAccess : IDataAccess
+    internal class SqlAccess : IDataAccess
     {
         private SqlConnection connection;
         private SqlCommand command = new SqlCommand();
@@ -188,13 +188,12 @@ namespace DataAccess
             return ExecuteSql(sqlString);
         }
 
-        public int DeleteService(ServiceRepo s1)
+        public int DeleteService(int id)
         {
             string sqlString = $"DELETE FROM ProvidedServises WHERE ID = @Id";
             command.Parameters.Clear();
-           // command.Parameters.Add(new SqlParameter("Id", Id));
-            ExecuteSql(sqlString);
-            return 1;
+            command.Parameters.Add(new SqlParameter("Id", id));
+            return ExecuteSql(sqlString);
         }
 
         public List<string> GetLawyers()

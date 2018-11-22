@@ -30,9 +30,7 @@ namespace BusinessLogic
 
         public int NewCase (int id) // her kommer mange variabler fra Form
         {
-            Case c1 = new Case();
-            c1.Id = id;
-           return  cHandler.NewCase(c1);
+           return  cHandler.NewCase(id); // her sender vi dem videre til Case
         }
 
         public Case GetCase(int id)
@@ -52,19 +50,12 @@ namespace BusinessLogic
 
         public int EditService(int hours, int km)
         {
-            Service s1 = new Service();
-            s1.Hours = hours;
-            s1.Km = km;
-            return cHandler.EditService(s1);
+            return cHandler.EditService(hours, km);
         }
 
         public int UpdateCase(int id, decimal negPrice, string respEmp )
         {
-            Case toUpdate = new Case();
-            toUpdate.Id = id;
-            toUpdate.RespEmployee = respEmp;
-            toUpdate.NegPrice = negPrice;
-            return cHandler.UpdateCase(toUpdate);
+            return cHandler.UpdateCase(id, negPrice, respEmp);
         }
 
         public int DeleteCase(int id)
@@ -72,10 +63,9 @@ namespace BusinessLogic
             return cHandler.DeleteCase(id);
         }
 
-        public int DeleteSrvice()
+        public int DeleteService(int id)
         {
-            Service toDelete = new Service();
-            return cHandler.DeleteService(toDelete);
+            return cHandler.DeleteService(id);
         }
 
         // metoder til dropdown felter

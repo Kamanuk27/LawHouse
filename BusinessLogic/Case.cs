@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using DataAccess;
 using DataAccess.Repositories;
 
+
 namespace BusinessLogic
 {
-    public partial class Case : CaseRepo
+    public class Case : CaseRepo
     {
        
         private DbController dbController;
@@ -16,12 +17,14 @@ namespace BusinessLogic
        
         public Case()
         {
-            dbController = DatabaseFactory.Instance.GetDataAccess();
+            dbController = DbController.Instance;
         }
 
-        public int NewCase(Case c1)
+        public int NewCase(int id)
         {
-            // jeg tor måske Case kan sendes uden oversættelse til CaseRepo ??
+            // jeg tror måske Case kan sendes uden oversættelse til CaseRepo ??
+            Case c1 = new Case();
+            c1.Id = id;
             dbController.NewCase(c1);
             return 1;
         }
@@ -86,14 +89,21 @@ namespace BusinessLogic
             return services;
         }
 
-        public int EditService(Service s1)
+        public int EditService(int hours, int km)
         {
-           return dbController.EditService(s1);
+            Service s1 = new Service();
+            s1.Hours = hours;
+            s1.Km = km;
+            return dbController.EditService(s1);
         }
 
-        public int UpdateCase(Case c1)
+        public int UpdateCase(int id, decimal negPrice, string respEmp)
         {
-            return dbController.UpdateCase(c1);
+            Case toUpdate = new Case();
+            toUpdate.Id = id;
+            toUpdate.RespEmployee = respEmp;
+            toUpdate.NegPrice = negPrice;
+            return dbController.UpdateCase(toUpdate);
         }
        
         public int DeleteCase(int id)
@@ -101,9 +111,9 @@ namespace BusinessLogic
             return dbController.DeleteCase(id);
         }
        
-        public int DeleteService (Service s1)
+        public int DeleteService (int id)
         {
-            return dbController.DeleteService(s1);
+            return dbController.DeleteService(id);
         }
     }
 }
