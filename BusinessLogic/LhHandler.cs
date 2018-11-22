@@ -9,10 +9,12 @@ namespace BusinessLogic
     public class LhHandler
     {
         private static LhHandler _instance;
-        Case cHandler; 
+        Case cHandler;
+        Employee eHandler;
         public LhHandler()
         {
             cHandler = new Case();
+            eHandler = new Employee();
         }
 
         // singleton - der kan være kun en instance af controller.
@@ -73,6 +75,17 @@ namespace BusinessLogic
             return cHandler.DeleteService(toDelete);
         }
 
-       
+        // metoder til dropdown felter
+        public List <string> GetLawyers()
+        {
+            return eHandler.GetLawyers();
+        }
+
+        public List <string> GetEmplNames()
+        {
+            return eHandler.GetEmplNames();
+        }
+
+
     }
 }

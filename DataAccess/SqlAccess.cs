@@ -182,6 +182,49 @@ namespace DataAccess
             ExecuteSql(sqlString);
             return 1;
         }
-        
+
+        public List<string> GetLawyers()
+        {
+            List<string> lawyers = new List<string>();
+            string sqlString = "SELECT FirstName, LastName FROM Employee WHERE Position = 'Advokat'";
+         
+            PrepareSql(sqlString);
+            SqlDataReader reader = null;
+            reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                  string e = $"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}";
+                    lawyers.Add(e);
+                }
+
+            }
+            connection.Close();
+            return lawyers;
+
+        }
+
+        public List<string> GetEmplNames()
+        {
+            List<string> emplNames = new List<string>();
+            string sqlString = "SELECT FirstName, LastName FROM Employee";
+
+            PrepareSql(sqlString);
+            SqlDataReader reader = null;
+            reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string e = $"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}";
+                    emplNames.Add(e);
+                }
+
+            }
+            connection.Close();
+            return emplNames;
+
+        }
     }
 }

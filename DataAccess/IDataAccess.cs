@@ -18,5 +18,7 @@ namespace DataAccess
         int UpdateCase(CaseRepo c1);
         int DeleteCase(int id);
         int DeleteService(ServiceRepo s1);
+        List<string> GetLawyers();
+        List<string> GetEmplNames();
     }
 }

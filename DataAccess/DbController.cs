@@ -71,5 +71,15 @@ namespace DataAccess
         {
             return persistenceLayer.DeleteService(s1);
         }
+
+        public List <string> GetLawyers()
+        {
+            return persistenceLayer.GetLawyers();
+        }
+
+        public List<string> GetEmplNames()
+        {
+            return persistenceLayer.GetEmplNames();
+        }
     }
 }

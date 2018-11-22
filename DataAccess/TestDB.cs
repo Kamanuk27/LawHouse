@@ -56,5 +56,21 @@ namespace DataAccess
         {
             return 1;
         }
+
+        public List<string> GetLawyers()
+        {
+            List<string> names = new List<string>();
+            names.Add("Ole");
+            names.Add("Karina");
+            return names;
+        }
+
+        public List<string> GetEmplNames()
+        {
+            List<string> names = new List<string>();
+            names.Add("Employee Ole");
+            names.Add("Employee Karina");
+            return names;
+        }
     }
 }
