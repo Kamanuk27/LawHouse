@@ -100,13 +100,6 @@ namespace DataAccess
                     CaseModel c1 = new CaseModel();
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
-                    //c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
-                    //c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
-                    //c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
-                    //c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
-                    //c1.Service = reader["ServiceName"] != DBNull.Value ? reader["ServiceName"].ToString() : string.Empty;
-
-                    //c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
                     c1.Client = $"{(reader["ClientfName"] != DBNull.Value ? reader["ClientfName"].ToString() : string.Empty)} " +
                                  $"{(reader["ClientlName"] != DBNull.Value ? reader["ClientlName"].ToString() : string.Empty)}";
 
@@ -124,7 +117,7 @@ namespace DataAccess
         public List<ServiceRepo> GetProvidedServices(int caseId)
         {
             List < ServiceRepo> services = new List<ServiceRepo>();
-            string sqlString = "SELECT * From ProvidedService where Case_ID = @caseId";
+            string sqlString = "SELECT * FROM ViewProvidedServices where Case_ID = @caseId";
             command.Parameters.Clear();
             command.Parameters.Add(new SqlParameter("@caseId", caseId));
             PrepareSql(sqlString);
@@ -135,9 +128,12 @@ namespace DataAccess
                 while (reader.Read())
                 {
                     ServiceModel s1 = new ServiceModel();
-                    s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
+
                     s1.ID = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    s1.EmployeeID = reader["Employee_ID"] != DBNull.Value ? Convert.ToInt32(reader["Employee_ID"]) : default(int);
+                    s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
+                    
+                    s1.EmployeeName = $"{(reader["EmployeefName"] != DBNull.Value ? reader["EmployeefName"].ToString() : string.Empty)} " +
+                                      $"{(reader["EmployeelName"] != DBNull.Value ? reader["EmployeelName"].ToString() : string.Empty)}";
                     s1.Date = reader["Date"] != DBNull.Value ? Convert.ToDateTime(reader["Date"]) : DateTime.MinValue;
                     s1.Hours = reader["Hours"] != DBNull.Value ? Convert.ToInt32(reader["Hours"]) : default(int);
                     s1.Km = reader["Km"] != DBNull.Value ? Convert.ToInt32(reader["Km"]) : default(int);
