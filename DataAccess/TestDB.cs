@@ -17,7 +17,7 @@ namespace DataAccess
 
         public int NewService(ServiceRepo s1)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public CaseRepo GetCase(int id)
@@ -43,7 +43,7 @@ namespace DataAccess
             return services;
         }
 
-        public int EditService (ServiceRepo s1)
+        public int UpdateService (ServiceRepo s1)
         {
             return 1;
         }

@@ -19,6 +19,14 @@ namespace UnitTestLawHouse
             int response = LhHandler.NewCase(1);
             Assert.AreEqual(response, expected);
         }
+
+        public void TestNewServiceReturnOne()
+        {
+            int expected = 1;
+            int response = LhHandler.NewService(2, DateTime.Now, 2, 100, "Møde i retten", "Karina Olsen");
+            Assert.AreEqual(response, expected);
+        }
+
         [TestMethod]
         public void TestGetCaseReturnCaseIdOne()
         {
@@ -66,19 +74,22 @@ namespace UnitTestLawHouse
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
-        public void TestEditServiceReturnOne()
-        {
-            int expected = 1;
-            int response = LhHandler.EditService(2, 50);
-            Assert.AreEqual(response, expected);
-        }
+      
 
         [TestMethod]
         public void TestUpdateCaseReturnOne()
         {
             int expected = 1;
             int response = LhHandler.UpdateCase(2, 2000, "Karina Nielsen");
+            Assert.AreEqual(response, expected);
+        }
+
+
+        [TestMethod]
+        public void TestUpdateServiceReturnOne()
+        {
+            int expected = 1;
+            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now);
             Assert.AreEqual(response, expected);
         }
 

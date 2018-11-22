@@ -16,7 +16,7 @@ namespace BusinessLogic
        
         public Case()
         {
-            dbController = DatabaseFactory.Instance.GetDataAccess();
+            dbController = DbController.Instance;
         }
 
         public int NewCase(Case c1)
@@ -24,6 +24,18 @@ namespace BusinessLogic
             // jeg tor måske Case kan sendes uden oversættelse til CaseRepo ??
             dbController.NewCase(c1);
             return 1;
+        }
+
+        public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmpl)
+        {
+            Service s1 = new Service();
+            s1.Date = date;
+            s1.CaseID = caseID;
+            s1.Hours = houres;
+            s1.Km = km;
+            s1.Comment = comment;
+            s1.EmployeeName = respEmpl;
+            return dbController.EditService(s1);
         }
 
         public Case GetCase(int id)
@@ -86,29 +98,25 @@ namespace BusinessLogic
             return services;
         }
 
-        public int EditService(Service s1)
+        public int UpdateCase(int id, decimal negPrice, string respEmp)
         {
-
-           return dbController.EditService(s1);
+            Case toUpdate = new Case();
+            toUpdate.Id = id;
+            toUpdate.RespEmployee = respEmp;
+            toUpdate.NegPrice = negPrice;
+            return dbController.UpdateCase(toUpdate);
         }
 
-        public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmpl)
+        public int UpdateService(int id, int hours, int km, DateTime date)
         {
-            Service s1 = new Service();
-            s1.Date = date;
-            s1.CaseID = caseID;
-            s1.Hours = houres;
-            s1.Km = km;
-            s1.Comment = comment;
-            s1.EmployeeName = respEmpl;
-            return dbController.NewService(s1);
+            Service toUpdate = new Service();
+            toUpdate.ID = id;
+            toUpdate.Hours = hours;
+            toUpdate.Date = date;
+            toUpdate.Km = km;
+            return dbController.UpdateService(toUpdate);
         }
 
-        public int UpdateCase(Case c1)
-        {
-            return dbController.UpdateCase(c1);
-        }
-       
         public int DeleteCase(int id)
         {
             return dbController.DeleteCase(id);

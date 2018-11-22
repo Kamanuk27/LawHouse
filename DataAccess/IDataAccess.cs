@@ -15,7 +15,7 @@ namespace DataAccess
         CaseRepo GetCase(int Id);
         List< CaseRepo> GetCases();
         List<ServiceRepo> GetProvidedServices(int caseId);
-        int EditService(ServiceRepo s1);
+        int UpdateService(ServiceRepo s1);
         int UpdateCase(CaseRepo c1);
         int DeleteCase(int id);
         int DeleteService(int id);

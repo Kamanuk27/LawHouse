@@ -378,7 +378,7 @@
             this.UpdateButt.TabIndex = 84;
             this.UpdateButt.Text = "Opdatere sag";
             this.UpdateButt.UseVisualStyleBackColor = false;
-            this.UpdateButt.Click += new System.EventHandler(this.UpdateButt_Click);
+            this.UpdateButt.Click += new System.EventHandler(this.UpdateCaseButton_Click);
             // 
             // CaseIDtxb
             // 
@@ -561,7 +561,7 @@
             this.YUpdate.TabIndex = 121;
             this.YUpdate.Text = "Opdatere ydelse";
             this.YUpdate.UseVisualStyleBackColor = true;
-            this.YUpdate.Click += new System.EventHandler(this.YUpdate_Click);
+            this.YUpdate.Click += new System.EventHandler(this.ServiceUpdate_Click);
             // 
             // YCommentTxt
             // 
@@ -656,7 +656,7 @@
             this.DeleteButt.TabIndex = 109;
             this.DeleteButt.Text = "Delete sage";
             this.DeleteButt.UseVisualStyleBackColor = false;
-            this.DeleteButt.Click += new System.EventHandler(this.DeleteButt_Click);
+            this.DeleteButt.Click += new System.EventHandler(this.DeleteCaseButton_Click);
             // 
             // RespEmpCombo
             // 

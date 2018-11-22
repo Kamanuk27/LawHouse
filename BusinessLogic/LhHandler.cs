@@ -37,8 +37,7 @@ namespace BusinessLogic
 
         public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl) // her kommer mange variabler fra Form
         {
-           
-            return cHandler.NewService(caseID, date, hours, km, comment, respEmpl);                                              
+           return cHandler.NewService(caseID, date, hours, km, comment, respEmpl);                                              
         }                                                                             
                                                                                       
         public Case GetCase(int id)                                                   
@@ -56,23 +55,14 @@ namespace BusinessLogic
             return cHandler.GetProvidedServices(caseId);
         }
 
-        public int EditService(int id, int hours, int km, DateTime date)
+        public int UpdateService(int id, int hours, int km, DateTime date)
         {
-            Service s1 = new Service();
-            s1.ID = id;
-            s1.Hours = hours;
-            s1.Date = date;
-            s1.Km = km;
-            return cHandler.EditService(s1);
+            return cHandler.UpdateService(id, hours, km, date);
         }
 
         public int UpdateCase(int id, decimal negPrice, string respEmp )
         {
-            Case toUpdate = new Case();
-            toUpdate.Id = id;
-            toUpdate.RespEmployee = respEmp;
-            toUpdate.NegPrice = negPrice;
-            return cHandler.UpdateCase(toUpdate);
+            return cHandler.UpdateCase(id, negPrice, respEmp);
         }
 
         public int DeleteCase(int id)
@@ -80,7 +70,7 @@ namespace BusinessLogic
             return cHandler.DeleteCase(id);
         }
 
-        public int DeleteSrvice(int id)
+        public int DeleteService(int id)
         {
             return cHandler.DeleteService(id);
         }

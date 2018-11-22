@@ -105,7 +105,7 @@ namespace LawHouseGUI
             YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString(); 
         }
 
-        private void UpdateButt_Click(object sender, EventArgs e)
+        private void UpdateCaseButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(CaseIDtxb.Text);
             decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
@@ -123,9 +123,9 @@ namespace LawHouseGUI
 
         }
 
-        private void DeleteButt_Click(object sender, EventArgs e)
+        private void DeleteCaseButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Slette Sage", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sag", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(CaseIDtxb.Text);
@@ -154,13 +154,13 @@ namespace LawHouseGUI
             return;
         }
 
-        private void YUpdate_Click(object sender, EventArgs e)
+        private void ServiceUpdate_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
             DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
             int houres = Convert.ToInt32(YHouresTxt.Text);
             int km = Convert.ToInt32(YKmTxt.Text);
-            int i = handler.EditService(id, houres, km, date);
+            int i = handler.UpdateService(id, houres, km, date);
             MessageBox.Show(i.ToString());
             ServiceDataGrid.Rows.Clear();
             YGriderstart();
@@ -187,7 +187,7 @@ namespace LawHouseGUI
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
-                int i = handler.DeleteSrvice(id);
+                int i = handler.DeleteService(id);
                 MessageBox.Show(i.ToString());
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
