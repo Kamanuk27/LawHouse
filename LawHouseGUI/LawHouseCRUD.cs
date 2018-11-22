@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataAccess.Repositories;
+
+
 
 namespace LawHouseGUI
 {
@@ -20,25 +22,25 @@ namespace LawHouseGUI
             InitializeComponent();
             handler = LhHandler.Instance;
             GriderStart();
+            FillComboBoxes();
         }
-       
+
+        public void FillComboBoxes()
+        {
+            foreach (var l1 in handler.GetLawyers())
+            {
+                RespEmpCombo.Items.Add(l1);
+            }
+
+            foreach (var m1 in handler.GetEmplNames())
+            {
+                YEmploeeCombox.Items.Add(m1);
+            }
+        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           
-            //int id = Convert.ToInt32(InsertCaseIDtxt.Text);
-            //var output = handler.GetCase(id);
-            //CaseIDtxb.Text = output.Id.ToString();
-            //EndDatetxt.Text = output.EndDate.ToString();
-            //Servicetxt.Text = output.Service.ToString();
-            //StartDatetxt.Text = output.StartDate.ToString();
-            //CaseNametxb.Text = output.Name.ToString();
-            //NegPricetxt.Text = output.NegPrice.ToString();
-            //Clienttxt.Text = output.Client.ToString();
-            //ResoEmpCombo.Text = output.RespEmployee.ToString();
-            //TotalPricetxt.Text = output.TotalPrice.ToString();
-
-
+         
         }
 
         private void GriderStart()
@@ -64,7 +66,7 @@ namespace LawHouseGUI
             CaseNametxb.Text = output.Name.ToString();
             NegPricetxt.Text = output.NegPrice.ToString();
             Clienttxt.Text = output.Client.ToString();
-            ResoEmpCombo.Text = output.RespEmployee.ToString();
+            RespEmpCombo.Text = output.RespEmployee.ToString();
             TotalPricetxt.Text = output.TotalPrice.ToString();
             HoursEsttxt.Text = output.HoursEstimate.ToString();
         }
@@ -93,5 +95,33 @@ namespace LawHouseGUI
             YHouresTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
             YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
         }
+
+        private void UpdateButt_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(CaseIDtxb.Text);
+            decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
+            string respEmpl = RespEmpCombo.Text;
+           
+            
+            //string service = Servicetxt.Text;
+            //DateTime start = Convert.ToDateTime(StartDatetxt.Text);
+            //string caseName = CaseNametxb.Text;
+            //string client = Clienttxt.Text;
+            //int total = Convert.ToInt32(TotalPricetxt.Text);
+            
+            int i = handler.UpdateCase(id, negPrice, respEmpl);
+            MessageBox.Show(i.ToString());
+        }
+
+        private void DeleteButt_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(CaseIDtxb.Text);
+            int i = handler.DeleteCase(id);
+            MessageBox.Show(i.ToString());
+
+            CaseDataGrid.Update();
+
+        }
     }
 }
+

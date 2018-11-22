@@ -38,7 +38,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InsertCaseIDtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.UpdateButt = new System.Windows.Forms.Button();
             this.CaseIDtxb = new System.Windows.Forms.TextBox();
             this.CaseNametxb = new System.Windows.Forms.TextBox();
             this.Clienttxt = new System.Windows.Forms.TextBox();
@@ -66,6 +66,8 @@
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.YCommentTxt = new System.Windows.Forms.RichTextBox();
             this.YKmTxt = new System.Windows.Forms.TextBox();
             this.YHouresTxt = new System.Windows.Forms.TextBox();
             this.YDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -76,7 +78,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.DeleteButt = new System.Windows.Forms.Button();
-            this.ResoEmpCombo = new System.Windows.Forms.ComboBox();
+            this.RespEmpCombo = new System.Windows.Forms.ComboBox();
             this.slutButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -85,8 +87,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.YCommentTxt = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -245,8 +245,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -365,17 +365,18 @@
             this.Km.ReadOnly = true;
             this.Km.Width = 65;
             // 
-            // button2
+            // UpdateButt
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(724, 487);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 44);
-            this.button2.TabIndex = 84;
-            this.button2.Text = "Opdatere sag";
-            this.button2.UseVisualStyleBackColor = false;
+            this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
+            this.UpdateButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateButt.Location = new System.Drawing.Point(724, 487);
+            this.UpdateButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UpdateButt.Name = "UpdateButt";
+            this.UpdateButt.Size = new System.Drawing.Size(152, 44);
+            this.UpdateButt.TabIndex = 84;
+            this.UpdateButt.Text = "Opdatere sag";
+            this.UpdateButt.UseVisualStyleBackColor = false;
+            this.UpdateButt.Click += new System.EventHandler(this.UpdateButt_Click);
             // 
             // CaseIDtxb
             // 
@@ -483,7 +484,7 @@
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.DeleteButt);
-            this.tabPage1.Controls.Add(this.ResoEmpCombo);
+            this.tabPage1.Controls.Add(this.RespEmpCombo);
             this.tabPage1.Controls.Add(this.slutButton);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.label13);
@@ -502,7 +503,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.CaseIDtxb);
             this.tabPage1.Controls.Add(this.Clienttxt);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.UpdateButt);
             this.tabPage1.Controls.Add(this.CaseNametxb);
             this.tabPage1.Controls.Add(label11);
             this.tabPage1.Controls.Add(label10);
@@ -523,23 +524,40 @@
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1117, 742);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(152, 44);
+            this.button3.TabIndex = 121;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // YCommentTxt
+            // 
+            this.YCommentTxt.Location = new System.Drawing.Point(1138, 576);
+            this.YCommentTxt.Name = "YCommentTxt";
+            this.YCommentTxt.Size = new System.Drawing.Size(209, 130);
+            this.YCommentTxt.TabIndex = 120;
+            this.YCommentTxt.Text = "";
+            // 
             // YKmTxt
             // 
-            this.YKmTxt.Location = new System.Drawing.Point(1117, 523);
+            this.YKmTxt.Location = new System.Drawing.Point(1138, 519);
             this.YKmTxt.Name = "YKmTxt";
             this.YKmTxt.Size = new System.Drawing.Size(209, 27);
             this.YKmTxt.TabIndex = 119;
             // 
             // YHouresTxt
             // 
-            this.YHouresTxt.Location = new System.Drawing.Point(1117, 483);
+            this.YHouresTxt.Location = new System.Drawing.Point(1138, 479);
             this.YHouresTxt.Name = "YHouresTxt";
             this.YHouresTxt.Size = new System.Drawing.Size(209, 27);
             this.YHouresTxt.TabIndex = 118;
             // 
             // YDateTimePicker1
             // 
-            this.YDateTimePicker1.Location = new System.Drawing.Point(1117, 443);
+            this.YDateTimePicker1.Location = new System.Drawing.Point(1138, 439);
             this.YDateTimePicker1.Name = "YDateTimePicker1";
             this.YDateTimePicker1.Size = new System.Drawing.Size(209, 27);
             this.YDateTimePicker1.TabIndex = 116;
@@ -547,7 +565,7 @@
             // YEmploeeCombox
             // 
             this.YEmploeeCombox.FormattingEnabled = true;
-            this.YEmploeeCombox.Location = new System.Drawing.Point(1117, 402);
+            this.YEmploeeCombox.Location = new System.Drawing.Point(1138, 398);
             this.YEmploeeCombox.Name = "YEmploeeCombox";
             this.YEmploeeCombox.Size = new System.Drawing.Size(209, 28);
             this.YEmploeeCombox.TabIndex = 115;
@@ -607,15 +625,16 @@
             this.DeleteButt.TabIndex = 109;
             this.DeleteButt.Text = "Delete sage";
             this.DeleteButt.UseVisualStyleBackColor = false;
+            this.DeleteButt.Click += new System.EventHandler(this.DeleteButt_Click);
             // 
-            // ResoEmpCombo
+            // RespEmpCombo
             // 
-            this.ResoEmpCombo.FormattingEnabled = true;
-            this.ResoEmpCombo.Location = new System.Drawing.Point(654, 403);
-            this.ResoEmpCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ResoEmpCombo.Name = "ResoEmpCombo";
-            this.ResoEmpCombo.Size = new System.Drawing.Size(222, 28);
-            this.ResoEmpCombo.TabIndex = 108;
+            this.RespEmpCombo.FormattingEnabled = true;
+            this.RespEmpCombo.Location = new System.Drawing.Point(654, 403);
+            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RespEmpCombo.Name = "RespEmpCombo";
+            this.RespEmpCombo.Size = new System.Drawing.Size(222, 28);
+            this.RespEmpCombo.TabIndex = 108;
             // 
             // slutButton
             // 
@@ -693,23 +712,6 @@
             // 
             this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
             // 
-            // YCommentTxt
-            // 
-            this.YCommentTxt.Location = new System.Drawing.Point(1117, 580);
-            this.YCommentTxt.Name = "YCommentTxt";
-            this.YCommentTxt.Size = new System.Drawing.Size(209, 130);
-            this.YCommentTxt.TabIndex = 120;
-            this.YCommentTxt.Text = "";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1117, 742);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 44);
-            this.button3.TabIndex = 121;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // LawHouseCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -739,7 +741,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView CaseDataGrid;
         private System.Windows.Forms.DataGridView ServiceDataGrid;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button UpdateButt;
         private System.Windows.Forms.TextBox CaseIDtxb;
         private System.Windows.Forms.TextBox CaseNametxb;
         private System.Windows.Forms.TextBox Clienttxt;
@@ -756,7 +758,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox HoursEsttxt;
-        private System.Windows.Forms.ComboBox ResoEmpCombo;
+        private System.Windows.Forms.ComboBox RespEmpCombo;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;

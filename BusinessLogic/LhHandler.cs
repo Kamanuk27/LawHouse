@@ -58,9 +58,12 @@ namespace BusinessLogic
             return cHandler.EditService(s1);
         }
 
-        public int UpdateCase()
+        public int UpdateCase(int id, decimal negPrice, string respEmp )
         {
             Case toUpdate = new Case();
+            toUpdate.Id = id;
+            toUpdate.RespEmployee = respEmp;
+            toUpdate.NegPrice = negPrice;
             return cHandler.UpdateCase(toUpdate);
         }
 
