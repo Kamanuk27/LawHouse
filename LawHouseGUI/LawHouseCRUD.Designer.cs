@@ -38,7 +38,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InsertCaseIDtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,6 +49,12 @@
             this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
+            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.CaseIDtxb = new System.Windows.Forms.TextBox();
             this.CaseNametxb = new System.Windows.Forms.TextBox();
@@ -60,6 +66,16 @@
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.YKmTxt = new System.Windows.Forms.TextBox();
+            this.YHouresTxt = new System.Windows.Forms.TextBox();
+            this.YDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.YEmploeeCombox = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.DeleteButt = new System.Windows.Forms.Button();
             this.ResoEmpCombo = new System.Windows.Forms.ComboBox();
             this.slutButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -69,12 +85,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Case_ID_for_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YCommentTxt = new System.Windows.Forms.RichTextBox();
+            this.button3 = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -139,7 +151,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(611, 448);
+            label7.Location = new System.Drawing.Point(551, 447);
             label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(88, 20);
@@ -150,12 +162,12 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(611, 411);
+            label8.Location = new System.Drawing.Point(551, 410);
             label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(153, 20);
+            label8.Size = new System.Drawing.Size(73, 20);
             label8.TabIndex = 90;
-            label8.Text = "Ansv. Medarbejder:";
+            label8.Text = "Advokat:";
             // 
             // label9
             // 
@@ -183,7 +195,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.Location = new System.Drawing.Point(611, 601);
+            label11.Location = new System.Drawing.Point(551, 600);
             label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(95, 20);
@@ -224,17 +236,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1209, 34);
+            this.label2.Location = new System.Drawing.Point(1004, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(153, 20);
             this.label2.TabIndex = 81;
-            this.label2.Text = "Ydelse";
+            this.label2.Text = "Ydelse på sagen:";
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -244,22 +256,23 @@
             this.CaseName,
             this.Resp_empl,
             this.Client});
-            this.CaseDataGrid.GridColor = System.Drawing.Color.Purple;
             this.CaseDataGrid.Location = new System.Drawing.Point(84, 64);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CaseDataGrid.Name = "CaseDataGrid";
             this.CaseDataGrid.RowTemplate.Height = 24;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CaseDataGrid.Size = new System.Drawing.Size(1007, 322);
+            this.CaseDataGrid.Size = new System.Drawing.Size(792, 322);
             this.CaseDataGrid.TabIndex = 82;
             this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
             this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
             // 
             // Case_ID
             // 
-            this.Case_ID.HeaderText = "Sag ID";
+            this.Case_ID.FillWeight = 50F;
+            this.Case_ID.HeaderText = "ID";
             this.Case_ID.Name = "Case_ID";
             this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 50;
             // 
             // CaseName
             // 
@@ -271,47 +284,98 @@
             // 
             // Resp_empl
             // 
-            this.Resp_empl.FillWeight = 200F;
-            this.Resp_empl.HeaderText = "Ansvarlig medarbejder";
+            this.Resp_empl.FillWeight = 150F;
+            this.Resp_empl.HeaderText = "Advokat";
             this.Resp_empl.Name = "Resp_empl";
             this.Resp_empl.ReadOnly = true;
-            this.Resp_empl.Width = 200;
+            this.Resp_empl.Width = 150;
             // 
             // Client
             // 
-            this.Client.FillWeight = 210F;
+            this.Client.FillWeight = 150F;
             this.Client.HeaderText = "Klient";
             this.Client.Name = "Client";
             this.Client.ReadOnly = true;
-            this.Client.Width = 210;
+            this.Client.Width = 150;
             // 
             // ServiceDataGrid
             // 
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
-            this.Employee_ID,
-            this.Case_ID_for_service,
+            this.Empl_id,
             this.Date,
+            this.Comments,
             this.Hours,
             this.Km});
-            this.ServiceDataGrid.Location = new System.Drawing.Point(1213, 64);
+            this.ServiceDataGrid.Location = new System.Drawing.Point(1008, 64);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
             this.ServiceDataGrid.RowTemplate.Height = 24;
-            this.ServiceDataGrid.Size = new System.Drawing.Size(677, 322);
+            this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServiceDataGrid.Size = new System.Drawing.Size(999, 322);
             this.ServiceDataGrid.TabIndex = 83;
+            this.ServiceDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ServiceDataGrid_CellMouseDoubleClick);
+            // 
+            // Service_Id
+            // 
+            this.Service_Id.FillWeight = 50F;
+            this.Service_Id.HeaderText = "ID";
+            this.Service_Id.Name = "Service_Id";
+            this.Service_Id.ReadOnly = true;
+            this.Service_Id.Width = 50;
+            // 
+            // Empl_id
+            // 
+            this.Empl_id.FillWeight = 150F;
+            this.Empl_id.HeaderText = "Advokat";
+            this.Empl_id.Name = "Empl_id";
+            this.Empl_id.ReadOnly = true;
+            this.Empl_id.Width = 150;
+            // 
+            // Date
+            // 
+            this.Date.FillWeight = 120F;
+            this.Date.HeaderText = "Dato";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 120;
+            // 
+            // Comments
+            // 
+            this.Comments.FillWeight = 230F;
+            this.Comments.HeaderText = "Ydelse";
+            this.Comments.Name = "Comments";
+            this.Comments.ReadOnly = true;
+            this.Comments.Width = 230;
+            // 
+            // Hours
+            // 
+            this.Hours.FillWeight = 90F;
+            this.Hours.HeaderText = "Timer";
+            this.Hours.Name = "Hours";
+            this.Hours.ReadOnly = true;
+            this.Hours.Width = 90;
+            // 
+            // Km
+            // 
+            this.Km.FillWeight = 65F;
+            this.Km.HeaderText = "Km";
+            this.Km.Name = "Km";
+            this.Km.ReadOnly = true;
+            this.Km.Width = 65;
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(948, 497);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(724, 487);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 48);
+            this.button2.Size = new System.Drawing.Size(152, 44);
             this.button2.TabIndex = 84;
             this.button2.Text = "Opdatere sag";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // CaseIDtxb
             // 
@@ -320,7 +384,7 @@
             this.CaseIDtxb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CaseIDtxb.Name = "CaseIDtxb";
             this.CaseIDtxb.ReadOnly = true;
-            this.CaseIDtxb.Size = new System.Drawing.Size(292, 27);
+            this.CaseIDtxb.Size = new System.Drawing.Size(213, 27);
             this.CaseIDtxb.TabIndex = 94;
             // 
             // CaseNametxb
@@ -330,7 +394,7 @@
             this.CaseNametxb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CaseNametxb.Name = "CaseNametxb";
             this.CaseNametxb.ReadOnly = true;
-            this.CaseNametxb.Size = new System.Drawing.Size(292, 27);
+            this.CaseNametxb.Size = new System.Drawing.Size(213, 27);
             this.CaseNametxb.TabIndex = 95;
             // 
             // Clienttxt
@@ -340,7 +404,7 @@
             this.Clienttxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clienttxt.Name = "Clienttxt";
             this.Clienttxt.ReadOnly = true;
-            this.Clienttxt.Size = new System.Drawing.Size(292, 27);
+            this.Clienttxt.Size = new System.Drawing.Size(213, 27);
             this.Clienttxt.TabIndex = 96;
             // 
             // Servicetxt
@@ -350,7 +414,7 @@
             this.Servicetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Servicetxt.Name = "Servicetxt";
             this.Servicetxt.ReadOnly = true;
-            this.Servicetxt.Size = new System.Drawing.Size(292, 27);
+            this.Servicetxt.Size = new System.Drawing.Size(213, 27);
             this.Servicetxt.TabIndex = 98;
             // 
             // StartDatetxt
@@ -360,7 +424,7 @@
             this.StartDatetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StartDatetxt.Name = "StartDatetxt";
             this.StartDatetxt.ReadOnly = true;
-            this.StartDatetxt.Size = new System.Drawing.Size(292, 27);
+            this.StartDatetxt.Size = new System.Drawing.Size(213, 27);
             this.StartDatetxt.TabIndex = 99;
             // 
             // EndDatetxt
@@ -370,25 +434,25 @@
             this.EndDatetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EndDatetxt.Name = "EndDatetxt";
             this.EndDatetxt.ReadOnly = true;
-            this.EndDatetxt.Size = new System.Drawing.Size(292, 27);
+            this.EndDatetxt.Size = new System.Drawing.Size(213, 27);
             this.EndDatetxt.TabIndex = 100;
             // 
             // NegPricetxt
             // 
             this.NegPricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NegPricetxt.Location = new System.Drawing.Point(799, 448);
+            this.NegPricetxt.Location = new System.Drawing.Point(654, 444);
             this.NegPricetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NegPricetxt.Name = "NegPricetxt";
-            this.NegPricetxt.Size = new System.Drawing.Size(292, 27);
+            this.NegPricetxt.Size = new System.Drawing.Size(222, 27);
             this.NegPricetxt.TabIndex = 101;
             // 
             // TotalPricetxt
             // 
             this.TotalPricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPricetxt.Location = new System.Drawing.Point(799, 598);
+            this.TotalPricetxt.Location = new System.Drawing.Point(654, 594);
             this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TotalPricetxt.Name = "TotalPricetxt";
-            this.TotalPricetxt.Size = new System.Drawing.Size(292, 27);
+            this.TotalPricetxt.Size = new System.Drawing.Size(222, 27);
             this.TotalPricetxt.TabIndex = 102;
             // 
             // tabControl1
@@ -402,11 +466,23 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1924, 750);
+            this.tabControl1.Size = new System.Drawing.Size(1924, 969);
             this.tabControl1.TabIndex = 103;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.YCommentTxt);
+            this.tabPage1.Controls.Add(this.YKmTxt);
+            this.tabPage1.Controls.Add(this.YHouresTxt);
+            this.tabPage1.Controls.Add(this.YDateTimePicker1);
+            this.tabPage1.Controls.Add(this.YEmploeeCombox);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.DeleteButt);
             this.tabPage1.Controls.Add(this.ResoEmpCombo);
             this.tabPage1.Controls.Add(this.slutButton);
             this.tabPage1.Controls.Add(this.textBox2);
@@ -437,50 +513,136 @@
             this.tabPage1.Controls.Add(label5);
             this.tabPage1.Controls.Add(label7);
             this.tabPage1.Controls.Add(label6);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1916, 717);
+            this.tabPage1.Size = new System.Drawing.Size(1916, 936);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // YKmTxt
+            // 
+            this.YKmTxt.Location = new System.Drawing.Point(1117, 523);
+            this.YKmTxt.Name = "YKmTxt";
+            this.YKmTxt.Size = new System.Drawing.Size(209, 27);
+            this.YKmTxt.TabIndex = 119;
+            // 
+            // YHouresTxt
+            // 
+            this.YHouresTxt.Location = new System.Drawing.Point(1117, 483);
+            this.YHouresTxt.Name = "YHouresTxt";
+            this.YHouresTxt.Size = new System.Drawing.Size(209, 27);
+            this.YHouresTxt.TabIndex = 118;
+            // 
+            // YDateTimePicker1
+            // 
+            this.YDateTimePicker1.Location = new System.Drawing.Point(1117, 443);
+            this.YDateTimePicker1.Name = "YDateTimePicker1";
+            this.YDateTimePicker1.Size = new System.Drawing.Size(209, 27);
+            this.YDateTimePicker1.TabIndex = 116;
+            // 
+            // YEmploeeCombox
+            // 
+            this.YEmploeeCombox.FormattingEnabled = true;
+            this.YEmploeeCombox.Location = new System.Drawing.Point(1117, 402);
+            this.YEmploeeCombox.Name = "YEmploeeCombox";
+            this.YEmploeeCombox.Size = new System.Drawing.Size(209, 28);
+            this.YEmploeeCombox.TabIndex = 115;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1004, 523);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 20);
+            this.label18.TabIndex = 114;
+            this.label18.Text = "Km:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1004, 484);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 20);
+            this.label17.TabIndex = 113;
+            this.label17.Text = "Timer:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1004, 581);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 20);
+            this.label16.TabIndex = 112;
+            this.label16.Text = "Ydelse:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1004, 445);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 20);
+            this.label15.TabIndex = 111;
+            this.label15.Text = "Dato:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1004, 406);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(107, 20);
+            this.label14.TabIndex = 110;
+            this.label14.Text = "Medarbejder:";
+            // 
+            // DeleteButt
+            // 
+            this.DeleteButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DeleteButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButt.Location = new System.Drawing.Point(725, 833);
+            this.DeleteButt.Name = "DeleteButt";
+            this.DeleteButt.Size = new System.Drawing.Size(152, 44);
+            this.DeleteButt.TabIndex = 109;
+            this.DeleteButt.Text = "Delete sage";
+            this.DeleteButt.UseVisualStyleBackColor = false;
+            // 
             // ResoEmpCombo
             // 
             this.ResoEmpCombo.FormattingEnabled = true;
-            this.ResoEmpCombo.Location = new System.Drawing.Point(799, 407);
+            this.ResoEmpCombo.Location = new System.Drawing.Point(654, 403);
             this.ResoEmpCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ResoEmpCombo.Name = "ResoEmpCombo";
-            this.ResoEmpCombo.Size = new System.Drawing.Size(292, 28);
+            this.ResoEmpCombo.Size = new System.Drawing.Size(222, 28);
             this.ResoEmpCombo.TabIndex = 108;
             // 
             // slutButton
             // 
-            this.slutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slutButton.Location = new System.Drawing.Point(948, 686);
+            this.slutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.slutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.slutButton.Location = new System.Drawing.Point(527, 833);
             this.slutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.slutButton.Name = "slutButton";
-            this.slutButton.Size = new System.Drawing.Size(143, 46);
+            this.slutButton.Size = new System.Drawing.Size(152, 44);
             this.slutButton.TabIndex = 107;
             this.slutButton.Text = "Afslut sage";
-            this.slutButton.UseVisualStyleBackColor = true;
+            this.slutButton.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(799, 638);
+            this.textBox2.Location = new System.Drawing.Point(654, 634);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 27);
+            this.textBox2.Size = new System.Drawing.Size(222, 27);
             this.textBox2.TabIndex = 106;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(613, 638);
+            this.label13.Location = new System.Drawing.Point(553, 637);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 20);
             this.label13.TabIndex = 105;
@@ -492,9 +654,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(83, 639);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(168, 20);
+            this.label12.Size = new System.Drawing.Size(173, 20);
             this.label12.TabIndex = 104;
-            this.label12.Text = "Forvented tidsforbrug";
+            this.label12.Text = "Forvented tidsforbrug:";
             // 
             // HoursEsttxt
             // 
@@ -503,7 +665,7 @@
             this.HoursEsttxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HoursEsttxt.Name = "HoursEsttxt";
             this.HoursEsttxt.ReadOnly = true;
-            this.HoursEsttxt.Size = new System.Drawing.Size(292, 27);
+            this.HoursEsttxt.Size = new System.Drawing.Size(213, 27);
             this.HoursEsttxt.TabIndex = 103;
             // 
             // tabPage2
@@ -512,7 +674,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1363, 717);
+            this.tabPage2.Size = new System.Drawing.Size(1916, 936);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -522,7 +684,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1363, 717);
+            this.tabPage3.Size = new System.Drawing.Size(1916, 936);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -531,47 +693,28 @@
             // 
             this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
             // 
-            // Service_Id
+            // YCommentTxt
             // 
-            this.Service_Id.HeaderText = "ID";
-            this.Service_Id.Name = "Service_Id";
-            this.Service_Id.ReadOnly = true;
+            this.YCommentTxt.Location = new System.Drawing.Point(1117, 580);
+            this.YCommentTxt.Name = "YCommentTxt";
+            this.YCommentTxt.Size = new System.Drawing.Size(209, 130);
+            this.YCommentTxt.TabIndex = 120;
+            this.YCommentTxt.Text = "";
             // 
-            // Employee_ID
+            // button3
             // 
-            this.Employee_ID.HeaderText = "Employee ID";
-            this.Employee_ID.Name = "Employee_ID";
-            this.Employee_ID.ReadOnly = true;
-            // 
-            // Case_ID_for_service
-            // 
-            this.Case_ID_for_service.HeaderText = "Case ID";
-            this.Case_ID_for_service.Name = "Case_ID_for_service";
-            this.Case_ID_for_service.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Hours
-            // 
-            this.Hours.HeaderText = "Hours";
-            this.Hours.Name = "Hours";
-            this.Hours.ReadOnly = true;
-            // 
-            // Km
-            // 
-            this.Km.HeaderText = "Km";
-            this.Km.Name = "Km";
-            this.Km.ReadOnly = true;
+            this.button3.Location = new System.Drawing.Point(1117, 742);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(152, 44);
+            this.button3.TabIndex = 121;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // LawHouseCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 750);
+            this.ClientSize = new System.Drawing.Size(1924, 969);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LawHouseCRUD";
@@ -614,16 +757,28 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox HoursEsttxt;
         private System.Windows.Forms.ComboBox ResoEmpCombo;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Service_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID_for_service;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empl_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comments;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hours;
         private System.Windows.Forms.DataGridViewTextBoxColumn Km;
+        private System.Windows.Forms.Button DeleteButt;
+        private System.Windows.Forms.TextBox YKmTxt;
+        private System.Windows.Forms.TextBox YHouresTxt;
+        private System.Windows.Forms.DateTimePicker YDateTimePicker1;
+        private System.Windows.Forms.ComboBox YEmploeeCombox;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RichTextBox YCommentTxt;
+        private System.Windows.Forms.Button button3;
     }
 }

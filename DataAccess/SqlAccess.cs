@@ -88,7 +88,7 @@ namespace DataAccess
         {
             List<CaseRepo> cases = new List<CaseRepo>();
 
-            string sqlString = "SELECT* FRoM ViewCases";
+            string sqlString = "SELECT* FROM ViewCases";
             PrepareSql(sqlString);
             SqlDataReader reader = null;
             reader = command.ExecuteReader();
