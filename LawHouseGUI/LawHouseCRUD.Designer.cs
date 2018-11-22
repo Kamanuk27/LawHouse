@@ -43,12 +43,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CaseDataGrid = new System.Windows.Forms.DataGridView();
             this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.CaseIDtxb = new System.Windows.Forms.TextBox();
             this.CaseNametxb = new System.Windows.Forms.TextBox();
@@ -69,6 +69,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Case_ID_for_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -78,8 +84,8 @@
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caseBindingSource)).BeginInit();
@@ -225,28 +231,29 @@
             this.label2.TabIndex = 81;
             this.label2.Text = "Ydelse";
             // 
-            // dataGridView1
+            // CaseDataGrid
             // 
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
+            this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.CaseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Case_ID,
             this.CaseName,
             this.Resp_empl,
             this.Client});
-            this.dataGridView1.GridColor = System.Drawing.Color.Purple;
-            this.dataGridView1.Location = new System.Drawing.Point(84, 64);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1007, 322);
-            this.dataGridView1.TabIndex = 82;
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            this.CaseDataGrid.GridColor = System.Drawing.Color.Purple;
+            this.CaseDataGrid.Location = new System.Drawing.Point(84, 64);
+            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CaseDataGrid.Name = "CaseDataGrid";
+            this.CaseDataGrid.RowTemplate.Height = 24;
+            this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CaseDataGrid.Size = new System.Drawing.Size(1007, 322);
+            this.CaseDataGrid.TabIndex = 82;
+            this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // Case_ID
             // 
@@ -278,15 +285,22 @@
             this.Client.ReadOnly = true;
             this.Client.Width = 210;
             // 
-            // dataGridView2
+            // ServiceDataGrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1213, 64);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(677, 322);
-            this.dataGridView2.TabIndex = 83;
+            this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Service_Id,
+            this.Employee_ID,
+            this.Case_ID_for_service,
+            this.Date,
+            this.Hours,
+            this.Km});
+            this.ServiceDataGrid.Location = new System.Drawing.Point(1213, 64);
+            this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ServiceDataGrid.Name = "ServiceDataGrid";
+            this.ServiceDataGrid.RowTemplate.Height = 24;
+            this.ServiceDataGrid.Size = new System.Drawing.Size(677, 322);
+            this.ServiceDataGrid.TabIndex = 83;
             // 
             // button2
             // 
@@ -388,7 +402,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1371, 750);
+            this.tabControl1.Size = new System.Drawing.Size(1924, 750);
             this.tabControl1.TabIndex = 103;
             // 
             // tabPage1
@@ -399,7 +413,7 @@
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.HoursEsttxt);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.CaseDataGrid);
             this.tabPage1.Controls.Add(this.TotalPricetxt);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.NegPricetxt);
@@ -407,7 +421,7 @@
             this.tabPage1.Controls.Add(this.EndDatetxt);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.StartDatetxt);
-            this.tabPage1.Controls.Add(this.dataGridView2);
+            this.tabPage1.Controls.Add(this.ServiceDataGrid);
             this.tabPage1.Controls.Add(this.Servicetxt);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.CaseIDtxb);
@@ -428,7 +442,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1363, 717);
+            this.tabPage1.Size = new System.Drawing.Size(1916, 717);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -517,19 +531,55 @@
             // 
             this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
             // 
+            // Service_Id
+            // 
+            this.Service_Id.HeaderText = "ID";
+            this.Service_Id.Name = "Service_Id";
+            this.Service_Id.ReadOnly = true;
+            // 
+            // Employee_ID
+            // 
+            this.Employee_ID.HeaderText = "Employee ID";
+            this.Employee_ID.Name = "Employee_ID";
+            this.Employee_ID.ReadOnly = true;
+            // 
+            // Case_ID_for_service
+            // 
+            this.Case_ID_for_service.HeaderText = "Case ID";
+            this.Case_ID_for_service.Name = "Case_ID_for_service";
+            this.Case_ID_for_service.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Hours
+            // 
+            this.Hours.HeaderText = "Hours";
+            this.Hours.Name = "Hours";
+            this.Hours.ReadOnly = true;
+            // 
+            // Km
+            // 
+            this.Km.HeaderText = "Km";
+            this.Km.Name = "Km";
+            this.Km.ReadOnly = true;
+            // 
             // LawHouseCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 750);
+            this.ClientSize = new System.Drawing.Size(1924, 750);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LawHouseCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Law House Advokater";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -544,8 +594,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource caseBindingSource;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView CaseDataGrid;
+        private System.Windows.Forms.DataGridView ServiceDataGrid;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox CaseIDtxb;
         private System.Windows.Forms.TextBox CaseNametxb;
@@ -569,5 +619,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Service_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID_for_service;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Km;
     }
 }

@@ -44,18 +44,18 @@ namespace LawHouseGUI
         {
             foreach (var c1 in handler.GetCases())
             {
-                int n = dataGridView1.Rows.Add();
-                dataGridView1.Rows[n].Cells[0].Value = c1.Id;
-                dataGridView1.Rows[n].Cells[1].Value = c1.Name;
-                dataGridView1.Rows[n].Cells[2].Value = c1.RespEmployee;
-                dataGridView1.Rows[n].Cells[3].Value = c1.Client;
+                int n = CaseDataGrid.Rows.Add();
+                CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
+                CaseDataGrid.Rows[n].Cells[1].Value = c1.Name;
+                CaseDataGrid.Rows[n].Cells[2].Value = c1.RespEmployee;
+                CaseDataGrid.Rows[n].Cells[3].Value = c1.Client;
             }
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Case c1 = new Case();
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+            int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             c1.GetCase(id);
             CaseIDtxb.Text = c1.Id.ToString();
             EndDatetxt.Text = c1.EndDate.ToString();
@@ -68,6 +68,22 @@ namespace LawHouseGUI
             TotalPricetxt.Text = c1.TotalPrice.ToString();
             HoursEsttxt.Text = c1.HoursEstimate.ToString();
             InsertCaseIDtxt.Text = id.ToString();
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ServiceDataGrid.Rows.Clear();
+            int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+            foreach (var service in handler.GetProvidedServices(id))
+            {
+                int n = ServiceDataGrid.Rows.Add();
+                ServiceDataGrid.Rows[n].Cells[0].Value = service.ID;
+                ServiceDataGrid.Rows[n].Cells[1].Value = service.EmployeeID;
+                ServiceDataGrid.Rows[n].Cells[2].Value = service.CaseID;
+                ServiceDataGrid.Rows[n].Cells[3].Value = service.Date;
+                ServiceDataGrid.Rows[n].Cells[4].Value = service.Hours;
+                ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
+            }
         }
     }
 }

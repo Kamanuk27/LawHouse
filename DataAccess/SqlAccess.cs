@@ -124,6 +124,29 @@ namespace DataAccess
         public List<ServiceRepo> GetProvidedServices(int caseId)
         {
             List < ServiceRepo> services = new List<ServiceRepo>();
+            string sqlString = "SELECT * From ProvidedService where Case_ID = @caseId";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@caseId", caseId));
+            PrepareSql(sqlString);
+            SqlDataReader reader = null;
+            reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    ServiceModel s1 = new ServiceModel();
+                    s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
+                    s1.ID = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    s1.EmployeeID = reader["Employee_ID"] != DBNull.Value ? Convert.ToInt32(reader["Employee_ID"]) : default(int);
+                    s1.Date = reader["Date"] != DBNull.Value ? Convert.ToDateTime(reader["Date"]) : DateTime.MinValue;
+                    s1.Hours = reader["Hours"] != DBNull.Value ? Convert.ToInt32(reader["Hours"]) : default(int);
+                    s1.Km = reader["Km"] != DBNull.Value ? Convert.ToInt32(reader["Km"]) : default(int);
+                    s1.Comment = reader["Comment"] != DBNull.Value ? reader["Comment"].ToString() : String.Empty;
+                    services.Add(s1);
+                }
+
+            }
+            connection.Close();
             return services;
         }
 
@@ -157,6 +180,10 @@ namespace DataAccess
 
         public int DeleteService(ServiceRepo s1)
         {
+            string sqlString = $"DELETE FROM ProvidedServises WHERE ID = @Id";
+            command.Parameters.Clear();
+           // command.Parameters.Add(new SqlParameter("Id", Id));
+            ExecuteSql(sqlString);
             return 1;
         }
         
