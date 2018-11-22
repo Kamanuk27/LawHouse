@@ -38,6 +38,7 @@ namespace BusinessLogic
             c1.NegPrice = caseRepo.NegPrice;
             c1.TotalPrice = caseRepo.TotalPrice;
             c1.RespEmployee = caseRepo.RespEmployee;
+            c1.HoursEstimate = caseRepo.HoursEstimate;
             c1.Client = caseRepo.Client;
             c1.Service = caseRepo.Service;
             return c1;

@@ -54,20 +54,20 @@ namespace LawHouseGUI
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Case c1 = new Case();
+           
             int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-            c1.GetCase(id);
-            CaseIDtxb.Text = c1.Id.ToString();
-            EndDatetxt.Text = c1.EndDate.ToString();
-            Servicetxt.Text = c1.Service.ToString();
-            StartDatetxt.Text = c1.StartDate.ToString();
-            CaseNametxb.Text = c1.Name.ToString();
-            NegPricetxt.Text = c1.NegPrice.ToString();
-            Clienttxt.Text = c1.Client.ToString();
-            ResoEmpCombo.Text = c1.RespEmployee.ToString();
-            TotalPricetxt.Text = c1.TotalPrice.ToString();
-            HoursEsttxt.Text = c1.HoursEstimate.ToString();
-            InsertCaseIDtxt.Text = id.ToString();
+            var output = handler.GetCase(id);
+            CaseIDtxb.Text = output.Id.ToString();
+            EndDatetxt.Text = output.EndDate.ToString();
+            Servicetxt.Text = output.Service.ToString();
+            StartDatetxt.Text = output.StartDate.ToString();
+            CaseNametxb.Text = output.Name.ToString();
+            NegPricetxt.Text = output.NegPrice.ToString();
+            Clienttxt.Text = output.Client.ToString();
+            ResoEmpCombo.Text = output.RespEmployee.ToString();
+            TotalPricetxt.Text = output.TotalPrice.ToString();
+            HoursEsttxt.Text = output.HoursEstimate.ToString();
+           
         }
     }
 }
