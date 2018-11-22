@@ -84,5 +84,14 @@ namespace LawHouseGUI
                 ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
             }
         }
+
+        private void ServiceDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            YEmploeeCombox.Text = ServiceDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+            YDateTimePicker1.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+            YCommentTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+            YHouresTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
+            YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+        }
     }
 }

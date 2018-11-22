@@ -77,7 +77,7 @@ namespace BusinessLogic
                 services.Add(new Service());
                 services[i].CaseID = servicesRepo[i].CaseID;
                 services[i].ID = servicesRepo[i].ID;
-                services[i].EmployeeID = servicesRepo[i].EmployeeID;
+                services[i].EmployeeName = servicesRepo[i].EmployeeName;
                 services[i].Date = servicesRepo[i].Date;
                 services[i].Hours = servicesRepo[i].Hours;
                 services[i].Km = servicesRepo[i].Km;
