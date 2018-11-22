@@ -8,7 +8,7 @@ using DataAccess.Repositories;
 
 namespace DataAccess
 {
-    class TestDB : IDataAccess
+    internal class TestDB : IDataAccess
     {
         public int NewCase(CaseRepo c1)
         {

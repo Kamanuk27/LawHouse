@@ -21,7 +21,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCaseReturnCaseIdOne()
         {
-            Case c1 = LhHandler.GetCase(1);
+            var c1 = LhHandler.GetCase(1);
             Assert.AreEqual(c1.Id, 1);
         }
 
