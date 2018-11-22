@@ -38,7 +38,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InsertCaseIDtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -66,7 +66,9 @@
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.NyYdButton = new System.Windows.Forms.Button();
+            this.YUpdate = new System.Windows.Forms.Button();
             this.YCommentTxt = new System.Windows.Forms.RichTextBox();
             this.YKmTxt = new System.Windows.Forms.TextBox();
             this.YHouresTxt = new System.Windows.Forms.TextBox();
@@ -239,14 +241,14 @@
             this.label2.Location = new System.Drawing.Point(1004, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 20);
+            this.label2.Size = new System.Drawing.Size(160, 20);
             this.label2.TabIndex = 81;
-            this.label2.Text = "Ydelse på sagen:";
+            this.label2.Text = "Ydelser på sagen:";
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -472,7 +474,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.NyYdButton);
+            this.tabPage1.Controls.Add(this.YUpdate);
             this.tabPage1.Controls.Add(this.YCommentTxt);
             this.tabPage1.Controls.Add(this.YKmTxt);
             this.tabPage1.Controls.Add(this.YHouresTxt);
@@ -524,14 +528,40 @@
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button2
             // 
-            this.button3.Location = new System.Drawing.Point(1117, 742);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 44);
-            this.button3.TabIndex = 121;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1392, 662);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(152, 44);
+            this.button2.TabIndex = 123;
+            this.button2.Text = "Delete ydelse";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // NyYdButton
+            // 
+            this.NyYdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.NyYdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NyYdButton.Location = new System.Drawing.Point(1392, 550);
+            this.NyYdButton.Name = "NyYdButton";
+            this.NyYdButton.Size = new System.Drawing.Size(152, 44);
+            this.NyYdButton.TabIndex = 122;
+            this.NyYdButton.Text = "Ny ydelse";
+            this.NyYdButton.UseVisualStyleBackColor = false;
+            this.NyYdButton.Click += new System.EventHandler(this.NyYdButton_Click);
+            // 
+            // YUpdate
+            // 
+            this.YUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YUpdate.Location = new System.Drawing.Point(1392, 437);
+            this.YUpdate.Name = "YUpdate";
+            this.YUpdate.Size = new System.Drawing.Size(152, 44);
+            this.YUpdate.TabIndex = 121;
+            this.YUpdate.Text = "Opdatere ydelse";
+            this.YUpdate.UseVisualStyleBackColor = true;
+            this.YUpdate.Click += new System.EventHandler(this.YUpdate_Click);
             // 
             // YCommentTxt
             // 
@@ -569,6 +599,7 @@
             this.YEmploeeCombox.Name = "YEmploeeCombox";
             this.YEmploeeCombox.Size = new System.Drawing.Size(209, 28);
             this.YEmploeeCombox.TabIndex = 115;
+            this.YEmploeeCombox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.YEmploeeCombox_KeyPress);
             // 
             // label18
             // 
@@ -635,6 +666,7 @@
             this.RespEmpCombo.Name = "RespEmpCombo";
             this.RespEmpCombo.Size = new System.Drawing.Size(222, 28);
             this.RespEmpCombo.TabIndex = 108;
+            this.RespEmpCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RespEmpCombo_KeyPress);
             // 
             // slutButton
             // 
@@ -781,6 +813,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox YCommentTxt;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button YUpdate;
+        private System.Windows.Forms.Button NyYdButton;
+        private System.Windows.Forms.Button button2;
     }
 }

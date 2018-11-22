@@ -11,13 +11,14 @@ namespace DataAccess
     public interface IDataAccess
     {
         int NewCase(CaseRepo c1);
+        int NewService(ServiceRepo s1);
         CaseRepo GetCase(int Id);
         List< CaseRepo> GetCases();
         List<ServiceRepo> GetProvidedServices(int caseId);
         int EditService(ServiceRepo s1);
         int UpdateCase(CaseRepo c1);
         int DeleteCase(int id);
-        int DeleteService(ServiceRepo s1);
+        int DeleteService(int id);
         List<string> GetLawyers();
         List<string> GetEmplNames();
     }

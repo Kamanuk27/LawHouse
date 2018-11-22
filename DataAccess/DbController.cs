@@ -38,6 +38,10 @@ namespace DataAccess
             return persistenceLayer.NewCase(c1);
         }
 
+        public int NewService(ServiceRepo s1)
+        {
+            return persistenceLayer.NewService(s1);
+        }
         public CaseRepo GetCase(int id)
         {
             return persistenceLayer.GetCase(id);
@@ -67,9 +71,9 @@ namespace DataAccess
             return persistenceLayer.DeleteCase(id);
         }
 
-        public int DeleteService(ServiceRepo s1)
+        public int DeleteService(int id)
         {
-            return persistenceLayer.DeleteService(s1);
+            return persistenceLayer.DeleteService(id);
         }
 
         public List <string> GetLawyers()

@@ -35,7 +35,13 @@ namespace BusinessLogic
            return  cHandler.NewCase(c1);
         }
 
-        public Case GetCase(int id)
+        public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl) // her kommer mange variabler fra Form
+        {
+           
+            return cHandler.NewService(caseID, date, hours, km, comment, respEmpl);                                              
+        }                                                                             
+                                                                                      
+        public Case GetCase(int id)                                                   
         {
             return cHandler.GetCase(id);
         }
@@ -50,10 +56,12 @@ namespace BusinessLogic
             return cHandler.GetProvidedServices(caseId);
         }
 
-        public int EditService(int hours, int km)
+        public int EditService(int id, int hours, int km, DateTime date)
         {
             Service s1 = new Service();
+            s1.ID = id;
             s1.Hours = hours;
+            s1.Date = date;
             s1.Km = km;
             return cHandler.EditService(s1);
         }
@@ -72,10 +80,9 @@ namespace BusinessLogic
             return cHandler.DeleteCase(id);
         }
 
-        public int DeleteSrvice()
+        public int DeleteSrvice(int id)
         {
-            Service toDelete = new Service();
-            return cHandler.DeleteService(toDelete);
+            return cHandler.DeleteService(id);
         }
 
         // metoder til dropdown felter

@@ -14,6 +14,12 @@ namespace DataAccess
         {
             return 1;
         }
+
+        public int NewService(ServiceRepo s1)
+        {
+            throw new NotImplementedException();
+        }
+
         public CaseRepo GetCase(int id)
         {
             CaseRepo c1 = new CaseModel();
@@ -52,7 +58,7 @@ namespace DataAccess
             return 1;
         }
 
-        public int DeleteService(ServiceRepo s1)
+        public int DeleteService(int id)
         {
             return 1;
         }

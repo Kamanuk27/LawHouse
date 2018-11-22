@@ -88,7 +88,20 @@ namespace BusinessLogic
 
         public int EditService(Service s1)
         {
+
            return dbController.EditService(s1);
+        }
+
+        public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmpl)
+        {
+            Service s1 = new Service();
+            s1.Date = date;
+            s1.CaseID = caseID;
+            s1.Hours = houres;
+            s1.Km = km;
+            s1.Comment = comment;
+            s1.EmployeeName = respEmpl;
+            return dbController.NewService(s1);
         }
 
         public int UpdateCase(Case c1)
@@ -101,9 +114,10 @@ namespace BusinessLogic
             return dbController.DeleteCase(id);
         }
        
-        public int DeleteService (Service s1)
+        public int DeleteService (int id)
         {
-            return dbController.DeleteService(s1);
+            return dbController.DeleteService(id);
         }
+
     }
 }

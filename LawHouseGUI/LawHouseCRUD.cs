@@ -17,12 +17,14 @@ namespace LawHouseGUI
     public partial class LawHouseCRUD : Form
     {
         LhHandler handler;
+
         public LawHouseCRUD()
         {
             InitializeComponent();
             handler = LhHandler.Instance;
             GriderStart();
             FillComboBoxes();
+
         }
 
         public void FillComboBoxes()
@@ -36,11 +38,12 @@ namespace LawHouseGUI
             {
                 YEmploeeCombox.Items.Add(m1);
             }
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-         
+
         }
 
         private void GriderStart()
@@ -58,7 +61,7 @@ namespace LawHouseGUI
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            var output =  handler.GetCase(id);
+            var output = handler.GetCase(id);
             CaseIDtxb.Text = output.Id.ToString();
             EndDatetxt.Text = output.EndDate.ToString();
             Servicetxt.Text = output.Service.ToString();
@@ -73,6 +76,11 @@ namespace LawHouseGUI
 
         private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+           YGriderstart();
+        }
+
+        private void YGriderstart()
+        {
             ServiceDataGrid.Rows.Clear();
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             foreach (var service in handler.GetProvidedServices(id))
@@ -85,6 +93,7 @@ namespace LawHouseGUI
                 ServiceDataGrid.Rows[n].Cells[4].Value = service.Hours;
                 ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
             }
+
         }
 
         private void ServiceDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -93,7 +102,7 @@ namespace LawHouseGUI
             YDateTimePicker1.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
             YCommentTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
             YHouresTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-            YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+            YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString(); 
         }
 
         private void UpdateButt_Click(object sender, EventArgs e)
@@ -101,25 +110,94 @@ namespace LawHouseGUI
             int id = Convert.ToInt32(CaseIDtxb.Text);
             decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
             string respEmpl = RespEmpCombo.Text;
-           
-            
+
+
             //string service = Servicetxt.Text;
             //DateTime start = Convert.ToDateTime(StartDatetxt.Text);
             //string caseName = CaseNametxb.Text;
             //string client = Clienttxt.Text;
             //int total = Convert.ToInt32(TotalPricetxt.Text);
-            
+
             int i = handler.UpdateCase(id, negPrice, respEmpl);
             MessageBox.Show(i.ToString());
+
         }
 
         private void DeleteButt_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(CaseIDtxb.Text);
-            int i = handler.DeleteCase(id);
-            MessageBox.Show(i.ToString());
+            DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Slette Sage", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(CaseIDtxb.Text);
+                int i = handler.DeleteCase(id);
+                MessageBox.Show(i.ToString());
+                CaseDataGrid.Rows.Clear();
+                GriderStart();
 
-            CaseDataGrid.Update();
+            }
+            else
+            {
+                MessageBox.Show("Annulleret");
+            }
+           
+        }
+
+        private void RespEmpCombo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
+
+        private void YEmploeeCombox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
+
+        private void YUpdate_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
+            DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
+            int houres = Convert.ToInt32(YHouresTxt.Text);
+            int km = Convert.ToInt32(YKmTxt.Text);
+            int i = handler.EditService(id, houres, km, date);
+            MessageBox.Show(i.ToString());
+            ServiceDataGrid.Rows.Clear();
+            YGriderstart();
+        }
+
+        private void NyYdButton_Click(object sender, EventArgs e)
+        {
+            int caseID = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+            DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
+            int hours = Convert.ToInt32(YHouresTxt.Text);
+            int km = Convert.ToInt32(YKmTxt.Text);
+            string comment = YCommentTxt.Text;
+            string respEmpl = YEmploeeCombox.Text;
+            int i = handler.NewService(caseID, date, hours, km, comment, respEmpl);
+            MessageBox.Show(i.ToString());
+            ServiceDataGrid.Rows.Clear();
+            YGriderstart();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Slette ydelse", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
+                int i = handler.DeleteSrvice(id);
+                MessageBox.Show(i.ToString());
+                ServiceDataGrid.Rows.Clear();
+                YGriderstart();
+
+            }
+            else
+            {
+                MessageBox.Show("Annulleret");
+            }
+
 
         }
     }

@@ -49,6 +49,24 @@ namespace DataAccess
             return ExecuteSql(sqlString);
         }
 
+        public int NewService(ServiceRepo s1)
+        {
+            string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
+                                                        "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
+                               " @Case_ID, @Date, @Hours, @Km, @Comment)";
+            string[] names = s1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
+            command.Parameters.Add(new SqlParameter("@Date", s1.Date));
+            command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
+            command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+            command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+            command.Parameters.Add(new SqlParameter("@fName", names[0]));
+            command.Parameters.Add(new SqlParameter("@lName", names[1]));
+            return ExecuteSql(sqlString);
+
+        }
+
         public CaseRepo GetCase(int id)
         {
             string sqlString = "SELECT*FROM ViewCases WHERE ID = @id";
@@ -148,17 +166,18 @@ namespace DataAccess
 
         public int EditService(ServiceRepo s1)
         {
-            string sqlString = "INSERT INTO ProvidedServise (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
-                               "(@Employee_ID, @Case_ID, @Date, @Hours, @Km, @Comment)";
+            string sqlString = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
+           
             command.Parameters.Clear();
-            command.Parameters.Add(new SqlParameter("@Employee_ID", s1.EmployeeID));
-            command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
+
+            //command.Parameters.Add(new SqlParameter("@Employee_ID", s1.EmployeeID));
+            //command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
             command.Parameters.Add(new SqlParameter("@Date", s1.Date));
             command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
             command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+            command.Parameters.Add(new SqlParameter("@id", s1.ID));
+            //command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
 
-           
             return ExecuteSql(sqlString);
             
         }
@@ -188,13 +207,12 @@ namespace DataAccess
             return ExecuteSql(sqlString);
         }
 
-        public int DeleteService(ServiceRepo s1)
+        public int DeleteService(int id)
         {
-            string sqlString = $"DELETE FROM ProvidedServises WHERE ID = @Id";
+            string sqlString = $"DELETE FROM ProvidedService WHERE ID = @Id";
             command.Parameters.Clear();
-           // command.Parameters.Add(new SqlParameter("Id", Id));
-            ExecuteSql(sqlString);
-            return 1;
+            command.Parameters.Add(new SqlParameter("Id", id));
+            return ExecuteSql(sqlString);
         }
 
         public List<string> GetLawyers()
