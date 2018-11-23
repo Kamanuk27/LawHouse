@@ -41,10 +41,7 @@ namespace LawHouseGUI
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
 
-        }
 
         private void GriderStart()
         {
@@ -63,9 +60,9 @@ namespace LawHouseGUI
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             var output = handler.GetCase(id);
             CaseIDtxb.Text = output.Id.ToString();
-            EndDatetxt.Text = output.EndDate.ToString();
+            EndDatetxt.Text = output.EndDate.ToShortDateString();
             Servicetxt.Text = output.Service.ToString();
-            StartDatetxt.Text = output.StartDate.ToString();
+            StartDatetxt.Text = output.StartDate.ToShortDateString();
             CaseNametxb.Text = output.Name.ToString();
             NegPricetxt.Text = output.NegPrice.ToString();
             Clienttxt.Text = output.Client.ToString();
@@ -76,7 +73,7 @@ namespace LawHouseGUI
 
         private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           YGriderstart();
+            YGriderstart();
         }
 
         private void YGriderstart()
@@ -88,7 +85,7 @@ namespace LawHouseGUI
                 int n = ServiceDataGrid.Rows.Add();
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.ID;
                 ServiceDataGrid.Rows[n].Cells[1].Value = service.EmployeeName;
-                ServiceDataGrid.Rows[n].Cells[2].Value = service.Date;
+                ServiceDataGrid.Rows[n].Cells[2].Value = service.Date.ToShortDateString();
                 ServiceDataGrid.Rows[n].Cells[3].Value = service.Comment;
                 ServiceDataGrid.Rows[n].Cells[4].Value = service.Hours;
                 ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
@@ -102,44 +99,50 @@ namespace LawHouseGUI
             YDateTimePicker1.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
             YCommentTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
             YHouresTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-            YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString(); 
+            YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
         }
 
         private void UpdateCaseButton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(CaseIDtxb.Text);
+            if (String.IsNullOrEmpty(CaseIDtxb.Text))
+            {
+           MessageBox.Show("Vælg sage først");
+            }
+            else
+            {
+                int id = Convert.ToInt32(CaseIDtxb.Text);
             decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
             string respEmpl = RespEmpCombo.Text;
-
-
-            //string service = Servicetxt.Text;
-            //DateTime start = Convert.ToDateTime(StartDatetxt.Text);
-            //string caseName = CaseNametxb.Text;
-            //string client = Clienttxt.Text;
-            //int total = Convert.ToInt32(TotalPricetxt.Text);
-
-            int i = handler.UpdateCase(id, negPrice, respEmpl);
-            MessageBox.Show(i.ToString());
-
+                int i = handler.UpdateCase(id, negPrice, respEmpl);
+                MessageBox.Show(i.ToString());
+            }
         }
 
         private void DeleteCaseButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sag", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            
+            if (String.IsNullOrEmpty(CaseIDtxb.Text))
             {
-                int id = Convert.ToInt32(CaseIDtxb.Text);
-                int i = handler.DeleteCase(id);
-                MessageBox.Show(i.ToString());
-                CaseDataGrid.Rows.Clear();
-                GriderStart();
-
+               MessageBox.Show("Vælg sage først");
             }
             else
             {
-                MessageBox.Show("Annulleret");
+                int id = Convert.ToInt32(CaseIDtxb.Text);
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sag", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int i = handler.DeleteCase(id);
+                    MessageBox.Show(i.ToString());
+                    CaseDataGrid.Rows.Clear();
+                    GriderStart();
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
             }
-           
+
+
         }
 
         private void RespEmpCombo_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,18 +159,28 @@ namespace LawHouseGUI
 
         private void ServiceUpdate_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
-            DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
-            int houres = Convert.ToInt32(YHouresTxt.Text);
-            int km = Convert.ToInt32(YKmTxt.Text);
-            int i = handler.UpdateService(id, houres, km, date);
-            MessageBox.Show(i.ToString());
-            ServiceDataGrid.Rows.Clear();
-            YGriderstart();
+
+            try
+            {
+                int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
+                DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
+                int houres = Convert.ToInt32(YHouresTxt.Text);
+                int km = Convert.ToInt32(YKmTxt.Text);
+                int i = handler.UpdateService(id, houres, km, date);
+                MessageBox.Show(i.ToString());
+                ServiceDataGrid.Rows.Clear();
+                YGriderstart();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg ydelse først");
+            }
         }
 
         private void NyYdButton_Click(object sender, EventArgs e)
         {
+            try
+            {
             int caseID = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
             int hours = Convert.ToInt32(YHouresTxt.Text);
@@ -178,26 +191,58 @@ namespace LawHouseGUI
             MessageBox.Show(i.ToString());
             ServiceDataGrid.Rows.Clear();
             YGriderstart();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg sage først");
+            }
+           
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void search_button_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Slette ydelse", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            for (int i = 0; i < CaseDataGrid.RowCount; i++)
+            {
+                CaseDataGrid.Rows[i].Selected = false;
+                for (int j = 0; j < CaseDataGrid.ColumnCount; j++)
+                    if (CaseDataGrid.Rows[i].Cells[j].Value != null)
+                        if (CaseDataGrid.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
+                        {
+                            CaseDataGrid.Rows[i].Selected = true;
+                            break;
+                        }
+
+            }
+        }
+
+        private void ServiseDeleteBut_Click(object sender, EventArgs e)
+        {
+
+            try
             {
                 int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
-                int i = handler.DeleteService(id);
-                MessageBox.Show(i.ToString());
-                ServiceDataGrid.Rows.Clear();
-                YGriderstart();
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Slette ydelse", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int i = handler.DeleteService(id);
+                    MessageBox.Show(i.ToString());
+                    ServiceDataGrid.Rows.Clear();
+                    YGriderstart();
 
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
             }
-            else
+            catch (Exception exception)
             {
-                MessageBox.Show("Annulleret");
+                 MessageBox.Show("Vælg ydelse først");
+               
             }
-
 
         }
     }
