@@ -13,6 +13,7 @@ namespace BusinessLogic
        
         private DbController dbController;
         List<Service> services;
+        Service s1;
        
         public Case()
         {
@@ -26,20 +27,9 @@ namespace BusinessLogic
             return 1;
         }
 
-        public int CloseCase(Case c1)
+        public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmp)
         {
-          return  dbController.CloseCase(c1);
-        }
-
-        public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmpl)
-        {
-            Service s1 = new Service();
-            s1.Date = date;
-            s1.CaseID = caseID;
-            s1.Hours = houres;
-            s1.Km = km;
-            s1.Comment = comment;
-            s1.EmployeeName = respEmpl;
+            s1 = new Service(caseID, date, houres,km, comment, respEmp);
             return dbController.EditService(s1);
         }
 
@@ -110,6 +100,21 @@ namespace BusinessLogic
             toUpdate.RespEmployee = respEmp;
             toUpdate.NegPrice = negPrice;
             return dbController.UpdateCase(toUpdate);
+        }
+        public decimal GetPrice(int id)
+        {
+            return dbController.GetPrice(id);
+        }
+
+       
+
+        public int CloseCase(int id, decimal totalPrice, DateTime endDate)
+        {
+            Case c1 = new Case();
+            c1.Id = id;
+            c1.TotalPrice = totalPrice;
+            c1.EndDate = endDate;
+            return dbController.CloseCase(c1);
         }
 
         public int UpdateService(int id, int hours, int km, DateTime date)

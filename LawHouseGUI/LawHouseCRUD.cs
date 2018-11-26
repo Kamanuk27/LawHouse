@@ -98,7 +98,7 @@ namespace LawHouseGUI
         {
             if (String.IsNullOrEmpty(CaseIDtxb.Text))
             {
-                 MessageBox.Show("Vælg en sag, der skal opdateres");
+                MessageBox.Show("Vælg en sag, der skal opdateres");
             }
             else
             {
@@ -106,24 +106,24 @@ namespace LawHouseGUI
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
                 int i = handler.UpdateCase(id, negPrice, respEmpl);
-                if (i==1)
+                if (i == 1)
                 {
-                   MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
+                    MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
                 }
                 else
                 {
                     MessageBox.Show("Sagen kunne ikke opdateres. Prøv igen");
                 }
-                
+
             }
         }
 
         private void DeleteCaseButton_Click(object sender, EventArgs e)
         {
-            
+
             if (String.IsNullOrEmpty(CaseIDtxb.Text))
             {
-               MessageBox.Show("Vælg en sag, der skal slettes");
+                MessageBox.Show("Vælg en sag, der skal slettes");
             }
             else
             {
@@ -171,7 +171,7 @@ namespace LawHouseGUI
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("Vælg ydelse først");
             }
@@ -181,22 +181,22 @@ namespace LawHouseGUI
         {
             try
             {
-            int caseID = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
-            int hours = Convert.ToInt32(YHouresTxt.Text);
-            int km = Convert.ToInt32(YKmTxt.Text);
-            string comment = YCommentTxt.Text;
-            string respEmpl = YEmploeeCombox.Text;
-            int i = handler.NewService(caseID, date, hours, km, comment, respEmpl);
-            MessageBox.Show(i.ToString());
-            ServiceDataGrid.Rows.Clear();
-            YGriderstart();
+                int caseID = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
+                int hours = Convert.ToInt32(YHouresTxt.Text);
+                int km = Convert.ToInt32(YKmTxt.Text);
+                string comment = YCommentTxt.Text;
+                string respEmpl = YEmploeeCombox.Text;
+                int i = handler.NewService(caseID, date, hours, km, comment, respEmpl);
+                MessageBox.Show(i.ToString());
+                ServiceDataGrid.Rows.Clear();
+                YGriderstart();
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("Vælg sage først");
             }
-           
+
 
         }
 
@@ -238,32 +238,26 @@ namespace LawHouseGUI
                     MessageBox.Show("Annulleret");
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-                 MessageBox.Show("Vælg ydelse først");
-               
+                MessageBox.Show("Vælg ydelse først");
+
             }
 
         }
 
-        private void ClosedCaseBut_Click(object sender, EventArgs e)
+        private void CloseCaseBut_Click(object sender, EventArgs e)
         {
-           try
+            try
             {
-                   int id = Convert.ToInt32(CaseIDtxb.Text);
+                int id = Convert.ToInt32(CaseIDtxb.Text);
 
-                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Afslut sage", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Afslutter sagen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    string caseName = CaseNametxb.Text;
-                    string clientName = Clienttxt.Text;
-                    string service_Name = Servicetxt.Text;
-                    DateTime startDate = Convert.ToDateTime(StartDatetxt.Text);
-                    string respEmpl = RespEmpCombo.Text;
                     decimal totalPrice = Convert.ToDecimal(TotalPricetxt.Text);
                     DateTime endDate = Convert.ToDateTime(EndCaseTimePictxt.Value.ToShortDateString());
-                    int i = handler.CloseCase(id, caseName, clientName, service_Name, startDate, respEmpl, totalPrice,
-                        endDate);
+                    int i = handler.CloseCase(id, totalPrice, endDate);
                     MessageBox.Show(i.ToString());
                 }
                 else
@@ -271,13 +265,28 @@ namespace LawHouseGUI
                     MessageBox.Show("Annulleret");
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-                MessageBox.Show("Vælg ydelse først");
+                MessageBox.Show("Vælg en sag først");
 
             }
         }
 
+        private void GetPrice_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(CaseIDtxb.Text))
+            {
+                MessageBox.Show("Vælg en sag for prisberegning");
+            }
+            else
+            {
+                int id = Convert.ToInt32(CaseIDtxb.Text);
+                decimal price = handler.GetPrice(id);
+                TotalPricetxt.Text = price.ToString();
+               
+            }
+          
+        }
     }
 }
 

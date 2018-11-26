@@ -83,5 +83,10 @@ namespace DataAccess
             names.Add("Employee Karina");
             return names;
         }
+
+        public decimal GetPrice(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

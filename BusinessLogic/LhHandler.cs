@@ -34,17 +34,9 @@ namespace BusinessLogic
             c1.Id = id;
            return  cHandler.NewCase(c1);
         }
-        public int CloseCase(int id, string caseName, string clientName, string service_Name, DateTime startDate, string respEmpl, decimal totalPrice, DateTime endDate)
+        public int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
-            Case c1 = new Case();
-            c1.Id = id;
-            c1.Name = caseName;
-            c1.Client = clientName;
-            c1.Service = service_Name;
-            c1.StartDate = startDate;
-            c1.RespEmployee = respEmpl;
-            c1.EndDate = endDate;
-            return cHandler.CloseCase(c1);
+            return cHandler.CloseCase(id, totalPrice, endDate);
         }
 
         public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl) // her kommer mange variabler fra Form
@@ -75,6 +67,11 @@ namespace BusinessLogic
         public int UpdateCase(int id, decimal negPrice, string respEmp )
         {
             return cHandler.UpdateCase(id, negPrice, respEmp);
+        }
+
+        public decimal GetPrice(int id)
+        {
+            return cHandler.GetPrice(id);
         }
 
         public int DeleteCase(int id)

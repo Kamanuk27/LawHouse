@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using DataAccess.Model;
 using DataAccess.Repositories;
+using System.Data;
 
 namespace DataAccess
 {
@@ -47,27 +48,7 @@ namespace DataAccess
 
             return ExecuteSql(sqlString);
         }
-        public int CloseCase(CaseRepo c1)
-        {
-            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
-                               "RespEmp_ID, Client_ID) VALUES " +
-                               "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @RespEmp_ID, @Client_ID)";
-            command.Parameters.Clear();
-            command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
-            command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
-            command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.TotalPrice));
-            command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
-
-            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            command.Parameters.Add(new SqlParameter("@fName", names[0]));
-            command.Parameters.Add(new SqlParameter("@lName", names[1]));
-
-            command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
-            command.Parameters.Add(new SqlParameter("@EndDate", c1.EndDate));
-
-
-            return ExecuteSql(sqlString);
-        }
+       
 
         public int NewService(ServiceRepo s1)
         {
@@ -184,20 +165,7 @@ namespace DataAccess
             return services;
         }
 
-        public int UpdateService(ServiceRepo s1)
-        {
-            string sqlString = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
-           
-            command.Parameters.Clear();
-            command.Parameters.Add(new SqlParameter("@Date", s1.Date));
-            command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
-            command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            command.Parameters.Add(new SqlParameter("@id", s1.ID));
-            
-            return ExecuteSql(sqlString);
-            
-        }
-
+      
         public int UpdateCase(CaseRepo c1)
         {
             string sqlString = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
@@ -210,6 +178,48 @@ namespace DataAccess
             command.Parameters.Add(new SqlParameter("@fName", names[0]));
             command.Parameters.Add(new SqlParameter("@lName", names[1]));
             command.Parameters.Add(new SqlParameter("@id", c1.Id));
+
+            return ExecuteSql(sqlString);
+
+        }
+
+        public decimal GetPrice(int id)
+        {
+            command.CommandText = "CalculatePrice";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@price", System.Data.SqlDbType.Decimal));
+            command.Parameters.Add(new SqlParameter("@id", id));
+            
+            command.Parameters["@price"].Direction = ParameterDirection.Output;
+
+            ExecuteSql(command.CommandText);
+        
+            decimal price = Convert.ToDecimal(command.Parameters["@price"].Value);
+
+            command = new SqlCommand();
+            return price;
+        }
+        public int CloseCase(CaseRepo c1)
+        {
+            string sqlString = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
+            command.Parameters.Clear();
+
+            command.Parameters.Add(new SqlParameter("@totalPrice", c1.TotalPrice));
+            command.Parameters.Add(new SqlParameter("@endDate", c1.EndDate));
+            command.Parameters.Add(new SqlParameter("@id", c1.Id));
+
+            return ExecuteSql(sqlString);
+        }
+        public int UpdateService(ServiceRepo s1)
+        {
+            string sqlString = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
+
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@Date", s1.Date));
+            command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
+            command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+            command.Parameters.Add(new SqlParameter("@id", s1.ID));
 
             return ExecuteSql(sqlString);
 
