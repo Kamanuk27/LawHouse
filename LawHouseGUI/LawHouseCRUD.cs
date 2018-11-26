@@ -1,13 +1,5 @@
 ﻿using BusinessLogic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -106,15 +98,23 @@ namespace LawHouseGUI
         {
             if (String.IsNullOrEmpty(CaseIDtxb.Text))
             {
-           MessageBox.Show("Vælg sage først");
+                 MessageBox.Show("Vælg en sag, der skal opdateres");
             }
             else
             {
                 int id = Convert.ToInt32(CaseIDtxb.Text);
-            decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
-            string respEmpl = RespEmpCombo.Text;
+                decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
+                string respEmpl = RespEmpCombo.Text;
                 int i = handler.UpdateCase(id, negPrice, respEmpl);
-                MessageBox.Show(i.ToString());
+                if (i==1)
+                {
+                   MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
+                }
+                else
+                {
+                    MessageBox.Show("Sagen kunne ikke opdateres. Prøv igen");
+                }
+                
             }
         }
 
@@ -123,12 +123,12 @@ namespace LawHouseGUI
             
             if (String.IsNullOrEmpty(CaseIDtxb.Text))
             {
-               MessageBox.Show("Vælg sage først");
+               MessageBox.Show("Vælg en sag, der skal slettes");
             }
             else
             {
                 int id = Convert.ToInt32(CaseIDtxb.Text);
-                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sag", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sagen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int i = handler.DeleteCase(id);
@@ -224,7 +224,7 @@ namespace LawHouseGUI
             try
             {
                 int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
-                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Slette ydelse", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter ydelsen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int i = handler.DeleteService(id);
