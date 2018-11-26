@@ -263,7 +263,7 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(84, 64);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            this.CaseDataGrid.RowTemplate.Height = 24;
+            this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(792, 322);
             this.CaseDataGrid.TabIndex = 82;
@@ -315,7 +315,7 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(1053, 64);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            this.ServiceDataGrid.RowTemplate.Height = 24;
+            this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(953, 322);
             this.ServiceDataGrid.TabIndex = 83;

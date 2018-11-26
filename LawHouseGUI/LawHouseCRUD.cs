@@ -33,7 +33,27 @@ namespace LawHouseGUI
 
         }
 
+        private void ClearServiceTxtBox()
+        {
+            YEmploeeCombox.Text = "";
+            YHouresTxt.Clear();
+            YKmTxt.Clear();
+            YCommentTxt.Clear();
+        }
+        private void ClearTxtBoxs()
+        {
+            CaseIDtxb.Clear();
+            CaseNametxb.Clear();
+            Clienttxt.Clear();
+            Servicetxt.Clear();
+            StartDatetxt.Clear();
+            EndDatetxt.Clear();
+            HoursEsttxt.Clear();
+            RespEmpCombo.Text = "";
+            NegPricetxt.Clear();
+            TotalPricetxt.Clear();
 
+        }
 
         private void GriderStart()
         {
@@ -133,6 +153,7 @@ namespace LawHouseGUI
                 {
                     int i = handler.DeleteCase(id);
                     MessageBox.Show(i.ToString());
+                    ClearTxtBoxs();
                     CaseDataGrid.Rows.Clear();
                     GriderStart();
                 }
@@ -162,6 +183,7 @@ namespace LawHouseGUI
 
             try
             {
+                // Подумать стоит ли вносить и комментарий в апдейт стринг//
                 int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
                 DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
                 int houres = Convert.ToInt32(YHouresTxt.Text);
@@ -189,6 +211,7 @@ namespace LawHouseGUI
                 string respEmpl = YEmploeeCombox.Text;
                 int i = handler.NewService(caseID, date, hours, km, comment, respEmpl);
                 MessageBox.Show(i.ToString());
+                ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
             }
@@ -229,6 +252,7 @@ namespace LawHouseGUI
                 {
                     int i = handler.DeleteService(id);
                     MessageBox.Show(i.ToString());
+                    ClearServiceTxtBox();
                     ServiceDataGrid.Rows.Clear();
                     YGriderstart();
 
@@ -250,15 +274,18 @@ namespace LawHouseGUI
         {
             try
             {
-                int id = Convert.ToInt32(CaseIDtxb.Text);
 
                 DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Afslutter sagen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    int id = Convert.ToInt32(CaseIDtxb.Text);
                     decimal totalPrice = Convert.ToDecimal(TotalPricetxt.Text);
                     DateTime endDate = Convert.ToDateTime(EndCaseTimePictxt.Value.ToShortDateString());
                     int i = handler.CloseCase(id, totalPrice, endDate);
                     MessageBox.Show(i.ToString());
+                    ClearTxtBoxs();
+                    CaseDataGrid.Rows.Clear();
+                    GriderStart();
                 }
                 else
                 {
