@@ -15,11 +15,7 @@ namespace DataAccess
             return 1;
         }
 
-        public int CloseCase(CaseRepo c1)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public int NewService(ServiceRepo s1)
         {
             return 1;
@@ -58,6 +54,16 @@ namespace DataAccess
             return 1;
         }
 
+        public decimal GetPrice(int id)
+        {
+            return 2000;
+        }
+
+        public int CloseCase(CaseRepo c1)
+        {
+            return 1;
+        }
+
         public int DeleteCase(int id)
         {
             return 1;
@@ -84,9 +90,6 @@ namespace DataAccess
             return names;
         }
 
-        public decimal GetPrice(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
