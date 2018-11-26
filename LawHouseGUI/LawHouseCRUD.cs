@@ -171,7 +171,7 @@ namespace LawHouseGUI
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
             }
-            catch (Exception exception)
+            catch (Exception )
             {
                 MessageBox.Show("Vælg ydelse først");
             }
@@ -192,7 +192,7 @@ namespace LawHouseGUI
             ServiceDataGrid.Rows.Clear();
             YGriderstart();
             }
-            catch (Exception exception)
+            catch (Exception )
             {
                 MessageBox.Show("Vælg sage først");
             }
@@ -238,13 +238,46 @@ namespace LawHouseGUI
                     MessageBox.Show("Annulleret");
                 }
             }
-            catch (Exception exception)
+            catch (Exception )
             {
                  MessageBox.Show("Vælg ydelse først");
                
             }
 
         }
+
+        private void ClosedCaseBut_Click(object sender, EventArgs e)
+        {
+           try
+            {
+                   int id = Convert.ToInt32(CaseIDtxb.Text);
+
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Afslut sage", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string caseName = CaseNametxb.Text;
+                    string clientName = Clienttxt.Text;
+                    string service_Name = Servicetxt.Text;
+                    DateTime startDate = Convert.ToDateTime(StartDatetxt.Text);
+                    string respEmpl = RespEmpCombo.Text;
+                    decimal totalPrice = Convert.ToDecimal(TotalPricetxt.Text);
+                    DateTime endDate = Convert.ToDateTime(EndCaseTimePictxt.Value.ToShortDateString());
+                    int i = handler.CloseCase(id, caseName, clientName, service_Name, startDate, respEmpl, totalPrice,
+                        endDate);
+                    MessageBox.Show(i.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Vælg ydelse først");
+
+            }
+        }
+
     }
 }
 

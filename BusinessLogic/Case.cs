@@ -26,6 +26,11 @@ namespace BusinessLogic
             return 1;
         }
 
+        public int CloseCase(Case c1)
+        {
+          return  dbController.CloseCase(c1);
+        }
+
         public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmpl)
         {
             Service s1 = new Service();

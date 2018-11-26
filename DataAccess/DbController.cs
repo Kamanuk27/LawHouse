@@ -37,6 +37,11 @@ namespace DataAccess
             return _persistenceLayer.NewCase(c1);
         }
 
+        public int CloseCase(CaseRepo c1)
+        {
+            return _persistenceLayer.CloseCase(c1);
+        }
+
         public int EditService(ServiceRepo s1)
         {
             return _persistenceLayer.NewService(s1);

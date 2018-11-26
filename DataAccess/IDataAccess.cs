@@ -11,6 +11,7 @@ namespace DataAccess
     internal interface IDataAccess
     {
         int NewCase(CaseRepo c1);
+        int CloseCase(CaseRepo c1);
         int NewService(ServiceRepo s1);
         CaseRepo GetCase(int Id);
         List< CaseRepo> GetCases();

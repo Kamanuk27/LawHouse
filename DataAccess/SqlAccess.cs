@@ -45,6 +45,26 @@ namespace DataAccess
             command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmployee));
             command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
 
+            return ExecuteSql(sqlString);
+        }
+        public int CloseCase(CaseRepo c1)
+        {
+            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
+                               "RespEmp_ID, Client_ID) VALUES " +
+                               "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @RespEmp_ID, @Client_ID)";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
+            command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
+            command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.TotalPrice));
+            command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
+
+            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            command.Parameters.Add(new SqlParameter("@fName", names[0]));
+            command.Parameters.Add(new SqlParameter("@lName", names[1]));
+
+            command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
+            command.Parameters.Add(new SqlParameter("@EndDate", c1.EndDate));
+
 
             return ExecuteSql(sqlString);
         }
@@ -185,14 +205,14 @@ namespace DataAccess
                                "WHERE ID = @id";
             command.Parameters.Clear();
 
-            string[] names = c1.RespEmployee.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             command.Parameters.Add(new SqlParameter("@negPrice", c1.NegPrice));
             command.Parameters.Add(new SqlParameter("@fName", names[0]));
             command.Parameters.Add(new SqlParameter("@lName", names[1]));
             command.Parameters.Add(new SqlParameter("@id", c1.Id));
 
             return ExecuteSql(sqlString);
-           
+
         }
 
         public int DeleteCase(int id)

@@ -15,6 +15,11 @@ namespace DataAccess
             return 1;
         }
 
+        public int CloseCase(CaseRepo c1)
+        {
+            throw new NotImplementedException();
+        }
+
         public int NewService(ServiceRepo s1)
         {
             return 1;

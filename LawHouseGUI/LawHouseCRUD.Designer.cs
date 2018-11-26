@@ -38,7 +38,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.search_button = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.EndCaseTimePictxt = new System.Windows.Forms.DateTimePicker();
             this.ServiseDeleteBut = new System.Windows.Forms.Button();
             this.NyYdButton = new System.Windows.Forms.Button();
             this.YUpdate = new System.Windows.Forms.Button();
@@ -81,14 +82,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.DeleteButt = new System.Windows.Forms.Button();
             this.RespEmpCombo = new System.Windows.Forms.ComboBox();
-            this.slutButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ClosedCaseBut = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.HoursEsttxt = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -197,7 +198,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.Location = new System.Drawing.Point(552, 619);
+            label11.Location = new System.Drawing.Point(551, 663);
             label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(95, 20);
@@ -248,8 +249,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -454,7 +455,7 @@
             // TotalPricetxt
             // 
             this.TotalPricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPricetxt.Location = new System.Drawing.Point(655, 613);
+            this.TotalPricetxt.Location = new System.Drawing.Point(654, 657);
             this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TotalPricetxt.Name = "TotalPricetxt";
             this.TotalPricetxt.Size = new System.Drawing.Size(222, 27);
@@ -476,6 +477,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.EndCaseTimePictxt);
             this.tabPage1.Controls.Add(this.ServiseDeleteBut);
             this.tabPage1.Controls.Add(this.NyYdButton);
             this.tabPage1.Controls.Add(this.YUpdate);
@@ -491,8 +494,7 @@
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.DeleteButt);
             this.tabPage1.Controls.Add(this.RespEmpCombo);
-            this.tabPage1.Controls.Add(this.slutButton);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.ClosedCaseBut);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.HoursEsttxt);
@@ -529,6 +531,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // EndCaseTimePictxt
+            // 
+            this.EndCaseTimePictxt.Location = new System.Drawing.Point(656, 613);
+            this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
+            this.EndCaseTimePictxt.Size = new System.Drawing.Size(221, 27);
+            this.EndCaseTimePictxt.TabIndex = 124;
             // 
             // ServiseDeleteBut
             // 
@@ -656,7 +665,7 @@
             this.DeleteButt.Name = "DeleteButt";
             this.DeleteButt.Size = new System.Drawing.Size(152, 44);
             this.DeleteButt.TabIndex = 109;
-            this.DeleteButt.Text = "Delete sage";
+            this.DeleteButt.Text = "Delete sag";
             this.DeleteButt.UseVisualStyleBackColor = false;
             this.DeleteButt.Click += new System.EventHandler(this.DeleteCaseButton_Click);
             // 
@@ -670,32 +679,24 @@
             this.RespEmpCombo.TabIndex = 108;
             this.RespEmpCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RespEmpCombo_KeyPress);
             // 
-            // slutButton
+            // ClosedCaseBut
             // 
-            this.slutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.slutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slutButton.Location = new System.Drawing.Point(527, 833);
-            this.slutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.slutButton.Name = "slutButton";
-            this.slutButton.Size = new System.Drawing.Size(152, 44);
-            this.slutButton.TabIndex = 107;
-            this.slutButton.Text = "Afslut sage";
-            this.slutButton.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(655, 653);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 27);
-            this.textBox2.TabIndex = 106;
+            this.ClosedCaseBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClosedCaseBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClosedCaseBut.Location = new System.Drawing.Point(527, 833);
+            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClosedCaseBut.Name = "ClosedCaseBut";
+            this.ClosedCaseBut.Size = new System.Drawing.Size(152, 44);
+            this.ClosedCaseBut.TabIndex = 107;
+            this.ClosedCaseBut.Text = "Afslut sag";
+            this.ClosedCaseBut.UseVisualStyleBackColor = false;
+            this.ClosedCaseBut.Click += new System.EventHandler(this.ClosedCaseBut_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(554, 656);
+            this.label13.Location = new System.Drawing.Point(555, 620);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 20);
             this.label13.TabIndex = 105;
@@ -746,6 +747,16 @@
             // 
             this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(724, 700);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 44);
+            this.button1.TabIndex = 125;
+            this.button1.Text = "Beregn pris";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // LawHouseCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -787,8 +798,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button slutButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button ClosedCaseBut;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox HoursEsttxt;
@@ -818,5 +828,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Comments;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hours;
         private System.Windows.Forms.DataGridViewTextBoxColumn Km;
+        private System.Windows.Forms.DateTimePicker EndCaseTimePictxt;
+        private System.Windows.Forms.Button button1;
     }
 }
