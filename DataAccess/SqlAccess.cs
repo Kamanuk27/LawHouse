@@ -194,7 +194,7 @@ namespace DataAccess
             command.Parameters["@price"].Direction = ParameterDirection.Output;
 
             ExecuteSql(command.CommandText);
-        
+            
             decimal price = Convert.ToDecimal(command.Parameters["@price"].Value);
 
             command = new SqlCommand();
