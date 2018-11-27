@@ -116,13 +116,14 @@ namespace BusinessLogic
             return dbController.CloseCase(c1);
         }
 
-        public int UpdateService(int id, int hours, int km, DateTime date)
+        public int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
             Service toUpdate = new Service();
             toUpdate.ID = id;
             toUpdate.Hours = hours;
             toUpdate.Date = date;
             toUpdate.Km = km;
+            toUpdate.Comment = comment;
             return dbController.UpdateService(toUpdate);
         }
 

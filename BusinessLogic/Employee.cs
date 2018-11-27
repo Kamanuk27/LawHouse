@@ -11,7 +11,6 @@ namespace BusinessLogic
     class Employee : EmployeeRepo
     {
         private DbController dbController;
-        List<Employee> employees;
 
         public Employee()
         {

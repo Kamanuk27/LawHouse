@@ -9,13 +9,12 @@ namespace BusinessLogic
     public class LhHandler
     {
         private static LhHandler _instance;
-        private Case _cHandler;
-        private Employee _eHandler;
-
+        Case cHandler;
+        Employee eHandler;
         public LhHandler()
         {
-            _cHandler = new Case();
-            _eHandler = new Employee();
+            cHandler = new Case();
+            eHandler = new Employee();
         }
 
         // singleton - der kan være kun en instance af controller.
@@ -29,70 +28,71 @@ namespace BusinessLogic
             }
         }
 
-        public int NewCase (string name) // her kommer mange variabler fra Form
+        public int NewCase (int id) // her kommer mange variabler fra Form
         {
-           return  _cHandler.NewCase(name);
+            Case c1 = new Case();
+            c1.Id = id;
+           return  cHandler.NewCase(c1);
         }
-       
-        public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
+        public int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
-           return _cHandler.NewService(caseID, date, hours, km, comment, respEmpl);                                              
+            return cHandler.CloseCase(id, totalPrice, endDate);
+        }
+
+        public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl) // her kommer mange variabler fra Form
+        {
+           return cHandler.NewService(caseID, date, hours, km, comment, respEmpl);                                              
         }                                                                             
                                                                                       
         public Case GetCase(int id)                                                   
         {
-            return _cHandler.GetCase(id);
+            return cHandler.GetCase(id);
         }
 
         public List <Case> GetCases()
         {
-            return _cHandler.GetCases();
+            return cHandler.GetCases();
         }
 
         public List <Service> GetProvidedServices(int caseId)
         {
-            return _cHandler.GetProvidedServices(caseId);
+            return cHandler.GetProvidedServices(caseId);
         }
 
-        public int UpdateService(int id, int hours, int km, DateTime date)
+        public int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
-            return _cHandler.UpdateService(id, hours, km, date);
+            return cHandler.UpdateService(id, hours, km, date, comment);
         }
 
         public int UpdateCase(int id, decimal negPrice, string respEmp )
         {
-            return _cHandler.UpdateCase(id, negPrice, respEmp);
+            return cHandler.UpdateCase(id, negPrice, respEmp);
         }
 
         public decimal GetPrice(int id)
         {
-            return _cHandler.GetPrice(id);
-        }
-
-        public int CloseCase(int id, decimal totalPrice, DateTime endDate)
-        {
-            return _cHandler.CloseCase(id, totalPrice, endDate);
+            return cHandler.GetPrice(id);
         }
 
         public int DeleteCase(int id)
         {
-            return _cHandler.DeleteCase(id);
+            return cHandler.DeleteCase(id);
         }
 
         public int DeleteService(int id)
         {
-            return _cHandler.DeleteService(id);
+            return cHandler.DeleteService(id);
         }
 
         // metoder til dropdown felter
         public List <string> GetLawyers()
         {
-            return _eHandler.GetLawyers();
+            return eHandler.GetLawyers();
         }
 
         public List <string> GetEmplNames()
         {
-            return _eHandler.GetEmplNames();
+            return eHandler.GetEmplNames();
         }
 
 
