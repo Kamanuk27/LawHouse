@@ -54,7 +54,12 @@
     <Compile Include="Repositories\Model\ServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ServiceRepo.cs" />
-    <Compile Include="SqlAccess.cs" />
+    <Compile Include="SqlController.cs" />
+    <Compile Include="SqlCreate.cs" />
+    <Compile Include="SqlDelete.cs" />
+    <Compile Include="SqlNonQuery.cs" />
+    <Compile Include="SqlRead.cs" />
+    <Compile Include="SqlUpdate.cs" />
     <Compile Include="TestDB.cs" />
   </ItemGroup>
   <ItemGroup>

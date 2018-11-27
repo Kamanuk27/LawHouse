@@ -31,7 +31,7 @@ namespace DataAccess
 
             if (database == "sqlserver")
             {
-                percistance = new DbController( new SqlAccess());
+                percistance = new DbController( new SqlController());
             }
             else
             {
