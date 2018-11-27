@@ -157,9 +157,9 @@
             label7.Location = new System.Drawing.Point(552, 466);
             label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(88, 20);
+            label7.Size = new System.Drawing.Size(86, 20);
             label7.TabIndex = 89;
-            label7.Text = "Neg Price:";
+            label7.Text = "Aftalt pris:";
             // 
             // label8
             // 
@@ -198,12 +198,12 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.Location = new System.Drawing.Point(551, 663);
+            label11.Location = new System.Drawing.Point(556, 661);
             label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(95, 20);
+            label11.Size = new System.Drawing.Size(73, 20);
             label11.TabIndex = 93;
-            label11.Text = "Total Price:";
+            label11.Text = "Slut Pris";
             // 
             // searchBox
             // 
@@ -472,7 +472,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1924, 1016);
+            this.tabControl1.Size = new System.Drawing.Size(1924, 939);
             this.tabControl1.TabIndex = 103;
             // 
             // tabPage1
@@ -527,7 +527,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1916, 983);
+            this.tabPage1.Size = new System.Drawing.Size(1916, 906);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -556,7 +556,7 @@
             // 
             this.ServiseDeleteBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ServiseDeleteBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiseDeleteBut.Location = new System.Drawing.Point(1615, 685);
+            this.ServiseDeleteBut.Location = new System.Drawing.Point(1615, 686);
             this.ServiseDeleteBut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ServiseDeleteBut.Name = "ServiseDeleteBut";
             this.ServiseDeleteBut.Size = new System.Drawing.Size(161, 44);
@@ -752,7 +752,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1916, 983);
+            this.tabPage2.Size = new System.Drawing.Size(1363, 717);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -762,7 +762,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1916, 983);
+            this.tabPage3.Size = new System.Drawing.Size(1363, 717);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -775,9 +775,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1016);
+            this.ClientSize = new System.Drawing.Size(1924, 939);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "LawHouseCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Law House Advokater";
