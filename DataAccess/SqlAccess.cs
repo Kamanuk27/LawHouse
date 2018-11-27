@@ -213,14 +213,14 @@ namespace DataAccess
         }
         public int UpdateService(ServiceRepo s1)
         {
-            string sqlString = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
+            string sqlString = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km, Comment = @comment WHERE ID = @id";
 
             command.Parameters.Clear();
             command.Parameters.Add(new SqlParameter("@Date", s1.Date));
             command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
             command.Parameters.Add(new SqlParameter("@Km", s1.Km));
             command.Parameters.Add(new SqlParameter("@id", s1.ID));
-
+            command.Parameters.Add(new SqlParameter("@comment", s1.Comment));
             return ExecuteSql(sqlString);
 
         }

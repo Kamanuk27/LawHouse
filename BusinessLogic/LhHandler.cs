@@ -59,9 +59,9 @@ namespace BusinessLogic
             return cHandler.GetProvidedServices(caseId);
         }
 
-        public int UpdateService(int id, int hours, int km, DateTime date)
+        public int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
-            return cHandler.UpdateService(id, hours, km, date);
+            return cHandler.UpdateService(id, hours, km, date, comment);
         }
 
         public int UpdateCase(int id, decimal negPrice, string respEmp )

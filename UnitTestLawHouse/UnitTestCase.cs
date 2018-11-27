@@ -89,7 +89,7 @@ namespace UnitTestLawHouse
         public void TestUpdateServiceReturnOne()
         {
             int expected = 1;
-            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now);
+            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now, "string");
             Assert.AreEqual(response, expected);
         }
 

@@ -606,6 +606,7 @@
             this.YKmTxt.Name = "YKmTxt";
             this.YKmTxt.Size = new System.Drawing.Size(209, 27);
             this.YKmTxt.TabIndex = 119;
+            this.YKmTxt.Text = "0";
             // 
             // YHouresTxt
             // 
@@ -614,6 +615,7 @@
             this.YHouresTxt.Name = "YHouresTxt";
             this.YHouresTxt.Size = new System.Drawing.Size(209, 27);
             this.YHouresTxt.TabIndex = 118;
+            this.YHouresTxt.Text = "0";
             // 
             // YDateTimePicker1
             // 
@@ -775,7 +777,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1016);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LawHouseCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Law House Advokater";
