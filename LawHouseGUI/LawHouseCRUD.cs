@@ -303,7 +303,7 @@ namespace LawHouseGUI
         {
             if (String.IsNullOrEmpty(CaseIDtxb.Text))
             {
-                MessageBox.Show("Vælg en sag for prisberegning");
+                MessageBox.Show("Vælg en sag for prisberegningen");
             }
             else
             {

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess;
 using DataAccess.Repositories;
 
@@ -20,8 +17,10 @@ namespace BusinessLogic
             dbController = DbController.Instance;
         }
 
-        public int NewCase(Case c1)
+        public int NewCase(string name)
         {
+            Case c1 = new Case();
+            c1.Name = name;
             // jeg tor måske Case kan sendes uden oversættelse til CaseRepo ??
             dbController.NewCase(c1);
             return 1;
@@ -30,7 +29,7 @@ namespace BusinessLogic
         public int NewService(int caseID, DateTime date, int houres, int km, string comment, string respEmp)
         {
             s1 = new Service(caseID, date, houres,km, comment, respEmp);
-            return dbController.EditService(s1);
+            return dbController.NewService(s1);
         }
 
         public Case GetCase(int id)

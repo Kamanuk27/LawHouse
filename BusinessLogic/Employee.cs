@@ -26,7 +26,5 @@ namespace BusinessLogic
            return dbController.GetEmplNames();
             
         }
-
-
     }
 }

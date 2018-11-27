@@ -38,7 +38,7 @@ namespace DataAccess
         }
 
        
-        public int EditService(ServiceRepo s1)
+        public int NewService(ServiceRepo s1)
         {
             return _persistenceLayer.NewService(s1);
         }
