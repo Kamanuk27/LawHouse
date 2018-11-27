@@ -183,12 +183,12 @@ namespace LawHouseGUI
 
             try
             {
-                // Подумать стоит ли вносить и комментарий в апдейт стринг//
                 int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
                 DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
                 int houres = Convert.ToInt32(YHouresTxt.Text);
                 int km = Convert.ToInt32(YKmTxt.Text);
-                int i = handler.UpdateService(id, houres, km, date);
+                string comment = YCommentTxt.Text;
+                int i = handler.UpdateService(id, houres, km, date, comment);
                 MessageBox.Show(i.ToString());
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
@@ -205,8 +205,8 @@ namespace LawHouseGUI
             {
                 int caseID = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
-                int hours = Convert.ToInt32(YHouresTxt.Text);
-                int km = Convert.ToInt32(YKmTxt.Text);
+                int hours = YHouresTxt.Text != null ? Convert.ToInt32(YHouresTxt.Text) : 0;
+                int km = YKmTxt.Text != null ? Convert.ToInt32(YKmTxt.Text) : 0;
                 string comment = YCommentTxt.Text;
                 string respEmpl = YEmploeeCombox.Text;
                 int i = handler.NewService(caseID, date, hours, km, comment, respEmpl);

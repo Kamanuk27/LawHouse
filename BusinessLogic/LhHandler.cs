@@ -28,11 +28,10 @@ namespace BusinessLogic
             }
         }
 
-        public int NewCase (int id) // her kommer mange variabler fra Form
+        public int NewCase (string name) // her kommer mange variabler fra Form
         {
-            Case c1 = new Case();
-            c1.Id = id;
-           return  cHandler.NewCase(c1);
+            
+           return  cHandler.NewCase(name);
         }
         public int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
