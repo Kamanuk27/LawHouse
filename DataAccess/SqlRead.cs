@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Repositories;
+using LawHouseLibrary.Entities;
 using System.Data;
 using System.Data.SqlClient;
-using DataAccess.Model;
 using System.Configuration;
+
 
 namespace DataAccess
 {
@@ -37,14 +34,14 @@ namespace DataAccess
             return rows;
         }
 
-        internal CaseRepo GetCase(int id)
+        internal Case GetCase(int id)
         {
             _command.CommandText = "SELECT*FROM ViewCases WHERE ID = @id";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
             PrepareSql();
-            CaseRepo c1 = new CaseModel();
+            Case c1 = new Case();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
 
@@ -73,9 +70,9 @@ namespace DataAccess
             return c1;
         }
 
-        internal List<CaseRepo> GetCases()
+        internal List<Case> GetCases()
         {
-            List<CaseRepo> cases = new List<CaseRepo>();
+            List<Case> cases = new List<Case>();
 
             _command.CommandText = "SELECT* FROM ViewCases";
             PrepareSql();
@@ -86,7 +83,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    CaseModel c1 = new CaseModel();
+                    Case c1 = new Case();
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
                     c1.Client = $"{(reader["ClientfName"] != DBNull.Value ? reader["ClientfName"].ToString() : string.Empty)} " +
@@ -103,9 +100,9 @@ namespace DataAccess
             return cases;
         }
 
-        internal List<ServiceRepo> GetProvidedServices(int caseId)
+        internal List<Service> GetProvidedServices(int caseId)
         {
-            List<ServiceRepo> services = new List<ServiceRepo>();
+            List<Service> services = new List<Service>();
             _command.CommandText = "SELECT * FROM ViewProvidedServices where Case_ID = @caseId";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@caseId", caseId));
@@ -116,9 +113,9 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    ServiceModel s1 = new ServiceModel();
+                    Service s1 = new Service();
 
-                    s1.ID = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    s1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
 
                     s1.EmployeeName = $"{(reader["EmployeefName"] != DBNull.Value ? reader["EmployeefName"].ToString() : string.Empty)} " +

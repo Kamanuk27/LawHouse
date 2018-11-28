@@ -1,24 +1,21 @@
 ﻿
-using DataAccess.Repositories;
+using LawHouseLibrary.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
     internal interface IDataAccess
     {
-        int NewCase(CaseRepo c1);
-        int NewService(ServiceRepo s1);
-        CaseRepo GetCase(int Id);
-        List< CaseRepo> GetCases();
-        List<ServiceRepo> GetProvidedServices(int caseId);
-        int UpdateService(ServiceRepo s1);
-        int UpdateCase(CaseRepo c1);
+        int NewCase(Case c1);
+        int NewService(Service s1);
+        Case GetCase(int Id);
+        List< Case> GetCases();
+        List<Service> GetProvidedServices(int caseId);
+        int UpdateService(Service s1);
+        int UpdateCase(Case c1);
         decimal GetPrice(int id);
-        int CloseCase(CaseRepo c1);
+        int CloseCase(Case c1);
         int DeleteCase(int id);
         int DeleteService(int id);
         List<string> GetLawyers();

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories
+namespace LawHouseLibrary.Entities
 {
-    public abstract class EmployeeRepo
+    public class Employee : Entity
     {
     }
 }

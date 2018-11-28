@@ -1,11 +1,8 @@
-﻿using DataAccess.Repositories;
+﻿using LawHouseLibrary.Entities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -40,33 +37,33 @@ namespace DataAccess
             return rows;
         }
 
-        internal int NewCase(CaseRepo c1)
+        internal int NewCase(Case c1)
         {
             _command = _create.NewCase(c1);
             return ExecuteNonQuery();
         }
 
 
-        internal int NewService(ServiceRepo s1)
+        internal int NewService(Service s1)
         {
             _command = _create.NewService(s1);
             return ExecuteNonQuery();
 
         }
 
-        internal int UpdateCase(CaseRepo c1)
+        internal int UpdateCase(Case c1)
         {
             _command = _update.UpdateCase(c1);
             return ExecuteNonQuery();
         }
 
-        internal int CloseCase(CaseRepo c1)
+        internal int CloseCase(Case c1)
         {
             _command = _update.CloseCase(c1);
             return ExecuteNonQuery();
         }
 
-        internal int UpdateService (ServiceRepo s1)
+        internal int UpdateService (Service s1)
         {
             _command = _update.UpdateService(s1);
             return ExecuteNonQuery();

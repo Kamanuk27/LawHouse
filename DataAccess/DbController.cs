@@ -1,10 +1,8 @@
-﻿using System;
+﻿using LawHouseLibrary.Entities;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Model;
-using DataAccess.Repositories;
+
+
 
 namespace DataAccess
 {
@@ -32,36 +30,36 @@ namespace DataAccess
           this._persistenceLayer = persistenceLayer;
            
         }
-        public int NewCase(CaseRepo c1)
+        public int NewCase(Case c1)
         {
             return _persistenceLayer.NewCase(c1);
         }
 
        
-        public int NewService(ServiceRepo s1)
+        public int NewService(Service s1)
         {
             return _persistenceLayer.NewService(s1);
         }
-        public CaseRepo GetCase(int id)
+        public Case GetCase(int id)
         {
             return _persistenceLayer.GetCase(id);
         }
-        public List <CaseRepo> GetCases()
+        public List <Case> GetCases()
         {
             return _persistenceLayer.GetCases();
         }
 
-        public List <ServiceRepo> GetProvidedServices(int caseId)
+        public List <Service> GetProvidedServices(int caseId)
         {
             return _persistenceLayer.GetProvidedServices(caseId);
         }
 
-        public int UpdateService(ServiceRepo s1)
+        public int UpdateService(Service s1)
         {
             return _persistenceLayer.UpdateService(s1);
         }
 
-        public int UpdateCase(CaseRepo c1)
+        public int UpdateCase(Case c1)
         {
             return _persistenceLayer.UpdateCase(c1);
         }
@@ -70,7 +68,7 @@ namespace DataAccess
         {
             return _persistenceLayer.GetPrice(id);
         }
-        public int CloseCase(CaseRepo c1)
+        public int CloseCase(Case c1)
         {
             return _persistenceLayer.CloseCase(c1);
         }

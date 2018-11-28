@@ -767,7 +767,7 @@
             // 
             // caseBindingSource
             // 
-            this.caseBindingSource.DataSource = typeof(BusinessLogic.Case);
+            this.caseBindingSource.DataSource = typeof(BusinessLogic.CaseRepository);
             // 
             // LawHouseCRUD
             // 

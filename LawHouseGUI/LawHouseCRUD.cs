@@ -8,12 +8,14 @@ namespace LawHouseGUI
 {
     public partial class LawHouseCRUD : Form
     {
-        LhHandler handler;
+        private CaseHandler _cHandler;
+        private HrHandler _hrHandler;
 
         public LawHouseCRUD()
         {
             InitializeComponent();
-            handler = LhHandler.Instance;
+            _cHandler = CaseHandler.Instance;
+            _hrHandler = HrHandler.Instance;
             GriderStart();
             FillComboBoxes();
 
@@ -21,12 +23,12 @@ namespace LawHouseGUI
 
         public void FillComboBoxes()
         {
-            foreach (var l1 in handler.GetLawyers())
+            foreach (var l1 in _hrHandler.GetLawyers())
             {
                 RespEmpCombo.Items.Add(l1);
             }
 
-            foreach (var m1 in handler.GetEmplNames())
+            foreach (var m1 in _hrHandler.GetEmplNames())
             {
                 YEmploeeCombox.Items.Add(m1);
             }
@@ -57,7 +59,7 @@ namespace LawHouseGUI
 
         private void GriderStart()
         {
-            foreach (var c1 in handler.GetCases())
+            foreach (var c1 in _cHandler.GetCases())
             {
                 int n = CaseDataGrid.Rows.Add();
                 CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
@@ -70,7 +72,7 @@ namespace LawHouseGUI
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            var output = handler.GetCase(id);
+            var output = _cHandler.GetCase(id);
             CaseIDtxb.Text = output.Id.ToString();
             EndDatetxt.Text = output.EndDate.ToShortDateString();
             Servicetxt.Text = output.Service.ToString();
@@ -92,7 +94,7 @@ namespace LawHouseGUI
         {
             ServiceDataGrid.Rows.Clear();
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            foreach (var service in handler.GetProvidedServices(id))
+            foreach (var service in _cHandler.GetProvidedServices(id))
             {
                 int n = ServiceDataGrid.Rows.Add();
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.ID;
@@ -125,7 +127,7 @@ namespace LawHouseGUI
                 int id = Convert.ToInt32(CaseIDtxb.Text);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
-                int i = handler.UpdateCase(id, negPrice, respEmpl);
+                int i = _cHandler.UpdateCase(id, negPrice, respEmpl);
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
@@ -151,7 +153,7 @@ namespace LawHouseGUI
                 DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sagen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int i = handler.DeleteCase(id);
+                    int i = _cHandler.DeleteCase(id);
                     MessageBox.Show(i.ToString());
                     ClearTxtBoxs();
                     CaseDataGrid.Rows.Clear();
@@ -188,7 +190,7 @@ namespace LawHouseGUI
                 int houres = Convert.ToInt32(YHouresTxt.Text);
                 int km = Convert.ToInt32(YKmTxt.Text);
                 string comment = YCommentTxt.Text;
-                int i = handler.UpdateService(id, houres, km, date, comment);
+                int i = _cHandler.UpdateService(id, houres, km, date, comment);
                 MessageBox.Show(i.ToString());
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
@@ -209,7 +211,7 @@ namespace LawHouseGUI
                 int km = YKmTxt.Text != null ? Convert.ToInt32(YKmTxt.Text) : 0;
                 string comment = YCommentTxt.Text;
                 string respEmpl = YEmploeeCombox.Text;
-                int i = handler.NewService(caseID, date, hours, km, comment, respEmpl);
+                int i = _cHandler.NewService(caseID, date, hours, km, comment, respEmpl);
                 MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
@@ -250,7 +252,7 @@ namespace LawHouseGUI
                 DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter ydelsen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int i = handler.DeleteService(id);
+                    int i = _cHandler.DeleteService(id);
                     MessageBox.Show(i.ToString());
                     ClearServiceTxtBox();
                     ServiceDataGrid.Rows.Clear();
@@ -281,7 +283,7 @@ namespace LawHouseGUI
                     int id = Convert.ToInt32(CaseIDtxb.Text);
                     decimal totalPrice = Convert.ToDecimal(TotalPricetxt.Text);
                     DateTime endDate = Convert.ToDateTime(EndCaseTimePictxt.Value.ToShortDateString());
-                    int i = handler.CloseCase(id, totalPrice, endDate);
+                    int i = _cHandler.CloseCase(id, totalPrice, endDate);
                     MessageBox.Show(i.ToString());
                     ClearTxtBoxs();
                     CaseDataGrid.Rows.Clear();
@@ -308,7 +310,7 @@ namespace LawHouseGUI
             else
             {
                 int id = Convert.ToInt32(CaseIDtxb.Text);
-                decimal price = handler.GetPrice(id);
+                decimal price = _cHandler.GetPrice(id);
                 TotalPricetxt.Text = price.ToString();
                
             }

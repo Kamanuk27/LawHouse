@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Repositories;
+using LawHouseLibrary.Entities;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -17,7 +17,7 @@ namespace DataAccess
             _command = new SqlCommand();
         }
 
-        internal SqlCommand UpdateCase(CaseRepo c1)
+        internal SqlCommand UpdateCase(Case c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
                                "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
@@ -34,7 +34,7 @@ namespace DataAccess
 
         }
 
-        internal SqlCommand UpdateService(ServiceRepo s1)
+        internal SqlCommand UpdateService(Service s1)
         {
             _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
 
@@ -42,13 +42,13 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
             _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
             _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            _command.Parameters.Add(new SqlParameter("@id", s1.ID));
+            _command.Parameters.Add(new SqlParameter("@id", s1.Id));
 
             return _command;
 
         }
 
-        internal SqlCommand CloseCase(CaseRepo c1)
+        internal SqlCommand CloseCase(Case c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
             _command.Parameters.Clear();

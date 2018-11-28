@@ -49,7 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTestLhHandler.cs" />
+    <Compile Include="UnitTestHrHandler.cs" />
+    <Compile Include="UnitTestCaseHandler.cs" />
     <Compile Include="UnitTestEmployee.cs" />
     <Compile Include="UnitTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{56BCE708-2DEB-46CE-9E09-04C5401170B3}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
+      <Project>{D8E833FC-716B-4CC5-9E17-2FD32749162A}</Project>
+      <Name>LawHouseLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

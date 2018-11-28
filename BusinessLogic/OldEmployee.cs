@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
-using DataAccess.Repositories;
+using LawHouseLibrary.Entities;
+
 
 namespace BusinessLogic
 {
-    class Employee : EmployeeRepo
+    class OldEmployee
     {
-        private DbController dbController;
+        internal DbController dbController;
+        internal List<Specialization> specializations;
 
-        public Employee()
+        public OldEmployee()
         {
             dbController = DbController.Instance;
         }

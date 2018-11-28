@@ -6,14 +6,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestLhHandler
+    public class UnitTestCaseHandler
     {
-        LhHandler LhHandler = LhHandler.Instance;
+        CaseHandler LhHandler = CaseHandler.Instance;
 
         [TestMethod]
         public void TestLhHandlerReturnOneInstance()
         {
-            LhHandler actual = new LhHandler();
+            CaseHandler actual = new CaseHandler();
             object.ReferenceEquals(LhHandler, actual);
         }
 
@@ -43,24 +43,24 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCaseReturnCase()
         {
-            Case c1 = LhHandler.GetCase(1);
-            Type expectedType = typeof(Case);
+            CaseRepository c1 = LhHandler.GetCase(1);
+            Type expectedType = typeof(CaseRepository);
             Assert.IsInstanceOfType(c1, expectedType);
         }
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List<Case> cases = LhHandler.GetCases();
+            List<CaseRepository> cases = LhHandler.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
         [TestMethod]
         public void TestGetCasesReturnListOfCases()
         {
-            List<Case> cases = LhHandler.GetCases();
+            List<CaseRepository> cases = LhHandler.GetCases();
             Type actual = cases[0].GetType();
-            Type expectedType = typeof(Case);
+            Type expectedType = typeof(CaseRepository);
             Assert.AreEqual(actual, expectedType);
         }
 
@@ -111,7 +111,7 @@ namespace UnitTestLawHouse
         public void TestUpdateServiceReturnOne()
         {
             int expected = 1;
-            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now);
+            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now, "comment");
             Assert.AreEqual(response, expected);
         }
 
@@ -129,40 +129,6 @@ namespace UnitTestLawHouse
             int expected = 1;
             int response = LhHandler.DeleteService(2);
             Assert.AreEqual(response, expected);
-        }
-
-        [TestMethod]
-        public void TestGetLawyersReturnsListOfStrings()
-        {
-            var lawyers = LhHandler.GetLawyers();
-            Type actual = lawyers[0].GetType();
-            Type expected = typeof(string);
-            Assert.AreEqual(actual, expected);
-        }
-
-        [TestMethod]
-        public void TestGetLawyersReturnsTwoStrings()
-        {
-            int expected = 2;
-            int actual = LhHandler.GetLawyers().Count;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestGetEmplNamesReturnsListOfStrings()
-        {
-            var names = LhHandler.GetEmplNames();
-            Type actual = names[0].GetType();
-            Type expected = typeof(string);
-            Assert.AreEqual(actual, expected);
-        }
-
-        [TestMethod]
-        public void TestGetEmplNamesReturnsTwoStrings()
-        {
-            int expected = 2;
-            int actual = LhHandler.GetEmplNames().Count;
-            Assert.AreEqual(expected, actual);
         }
     }
 }

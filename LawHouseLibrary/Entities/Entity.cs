@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccess.Repositories;
 
-namespace BusinessLogic
+namespace LawHouseLibrary.Entities
 {
-    class Client : ClientRepo
+    public abstract class Entity
     {
+        public int Id { get; set; }
     }
 }

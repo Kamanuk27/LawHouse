@@ -1,15 +1,14 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories
+namespace LawHouseLibrary.Entities
 {
-    public abstract class CaseRepo
+    public class Case : Entity
     {
-
-        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -20,12 +19,12 @@ namespace DataAccess.Repositories
         public string RespEmployee { get; set; }
         public string Client { get; set; }
 
-        public CaseRepo()
+        public Case()
         {
 
         }
         // constractor for tests
-        public CaseRepo(int id)
+        public Case(int id)
         {
             Id = id;
         }

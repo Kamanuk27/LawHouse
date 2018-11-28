@@ -1,9 +1,9 @@
-﻿using DataAccess.Repositories;
+﻿
 using System.Data;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
+using LawHouseLibrary.Entities;
 using System;
 
 namespace DataAccess
@@ -15,7 +15,7 @@ namespace DataAccess
         {
             _command = new SqlCommand();
         }
-        internal SqlCommand NewCase(CaseRepo c1)
+        internal SqlCommand NewCase(Case c1)
         {
             string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
                                "RespEmp_ID, Client_ID) VALUES " +
@@ -35,7 +35,7 @@ namespace DataAccess
             return _command;
         }
 
-        public SqlCommand NewService(ServiceRepo s1)
+        public SqlCommand NewService(Service s1)
         {
             string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
                                                         "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +

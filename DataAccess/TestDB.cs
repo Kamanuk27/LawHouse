@@ -1,55 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Model;
-using DataAccess.Repositories;
+using DataAccess.Models;
+using LawHouseLibrary.EntityModel;
 
 namespace DataAccess
 {
     internal class TestDB : IDataAccess
     {
-        public int NewCase(CaseRepo c1)
+        public int NewCase(CaseEntity c1)
         {
             return 1;
         }
 
        
-        public int NewService(ServiceRepo s1)
+        public int NewService(ServiceEntity s1)
         {
             return 1;
         }
 
-        public CaseRepo GetCase(int id)
+        public CaseEntity GetCase(int id)
         {
-            CaseRepo c1 = new CaseModel();
+            CaseEntity c1 = new CaseModel();
             c1.Id = id;
             return c1;
         }
 
-        public List<CaseRepo> GetCases()
+        public List<CaseEntity> GetCases()
         {
-            List<CaseRepo> cases = new List<CaseRepo>();
+            List<CaseEntity> cases = new List<CaseEntity>();
             cases.Add(new CaseModel(1));
             cases.Add(new CaseModel(4));
             return cases;
         }
 
-        public List <ServiceRepo> GetProvidedServices(int caseId)
+        public List <ServiceEntity> GetProvidedServices(int caseId)
         {
-            List<ServiceRepo> services = new List<ServiceRepo>();
+            List<ServiceEntity> services = new List<ServiceEntity>();
             services.Add(new ServiceModel(2, 50));
             services.Add(new ServiceModel(3, 100));
             return services;
         }
 
-        public int UpdateService (ServiceRepo s1)
+        public int UpdateService (ServiceEntity s1)
         {
             return 1;
         }
 
-        public int UpdateCase(CaseRepo c1)
+        public int UpdateCase(CaseEntity c1)
         {
             return 1;
         }
@@ -59,7 +56,7 @@ namespace DataAccess
             return 2000;
         }
 
-        public int CloseCase(CaseRepo c1)
+        public int CloseCase(CaseEntity c1)
         {
             return 1;
         }

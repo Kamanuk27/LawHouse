@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using DataAccess.Repositories;
+using LawHouseLibrary.Entities;
 
 namespace DataAccess
 {
@@ -14,34 +14,34 @@ namespace DataAccess
             _nonQuery = new SqlNonQuery();
             _read = new SqlRead();
         }
-        public int NewCase(CaseRepo c1)
+        public int NewCase(Case c1)
         {
             return  _nonQuery.NewCase(c1);
         }
        
 
-        public int NewService(ServiceRepo s1)
+        public int NewService(Service s1)
         {
            return _nonQuery.NewService(s1);
         }
 
-        public CaseRepo GetCase(int id)
+        public Case GetCase(int id)
         {
             return _read.GetCase(id);
         }
 
-        public List<CaseRepo> GetCases()
+        public List<Case> GetCases()
         {
             return _read.GetCases();                                              
         }
 
-        public List<ServiceRepo> GetProvidedServices(int caseId)
+        public List<Service> GetProvidedServices(int caseId)
         {
             return _read.GetProvidedServices(caseId);
         }
 
       
-        public int UpdateCase(CaseRepo c1)
+        public int UpdateCase(Case c1)
         {
             return _nonQuery.UpdateCase(c1);
 
@@ -51,11 +51,11 @@ namespace DataAccess
         {
             return _read.GetPrice(id);
         }
-        public int CloseCase(CaseRepo c1)
+        public int CloseCase(Case c1)
         {
             return _nonQuery.CloseCase(c1);
         }
-        public int UpdateService(ServiceRepo s1)
+        public int UpdateService(Service s1)
         {
             return _nonQuery.UpdateService(s1);
         }

@@ -4,26 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories
+namespace LawHouseLibrary.Entities
 {
-    public abstract class ServiceRepo
+    public class Service : Entity
     {
         public int CaseID { get; set; }
-        public int ID { get; set; }
         public int EmployeeID { get; set; }
         public string EmployeeName { get; set; }
         public DateTime Date { get; set; }
-        public double Hours { get; set; }
+        public int Hours { get; set; }
         public int Km { get; set; }
         public string Comment { get; set; }
 
-        public ServiceRepo()
+        public Service()
         {
 
         }
 
         // constractor for tests
-        public ServiceRepo (int hours, int km)
+        public Service( int hours, int km)
         {
             Hours = hours;
             Km = km;
