@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C0C7BF6-A9FD-4BEE-BE11-114C7E70FDAD}</ProjectGuid>
+    <ProjectGuid>{56BCE708-2DEB-46CE-9E09-04C5401170B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataAccess</RootNamespace>
@@ -42,10 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccess.cs" />
     <Compile Include="DatabaseFactory.cs" />
-    <Compile Include="IDataAccessAdapter.cs" />
+    <Compile Include="DbController.cs" />
+    <Compile Include="IDataAccess.cs" />
+    <Compile Include="Repositories\CaseRepo.cs" />
+    <Compile Include="Repositories\ClientRepo.cs" />
+    <Compile Include="Repositories\EmployeeRepo.cs" />
+    <Compile Include="Repositories\Model\CaseModel.cs" />
+    <Compile Include="Repositories\Model\ClientModel.cs" />
+    <Compile Include="Repositories\Model\EmployeeModel.cs" />
+    <Compile Include="Repositories\Model\ServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ServiceRepo.cs" />
+    <Compile Include="SqlController.cs" />
+    <Compile Include="SqlCreate.cs" />
+    <Compile Include="SqlDelete.cs" />
+    <Compile Include="SqlNonQuery.cs" />
+    <Compile Include="SqlRead.cs" />
+    <Compile Include="SqlUpdate.cs" />
+    <Compile Include="TestDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -53,11 +68,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
-      <Project>{aa06d57b-6ef0-4741-b3c0-042996b99591}</Project>
-      <Name>LawHouseLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary
+namespace DataAccess.Repositories.Model
 {
-    public partial class Employee
+    class ClientModel : ClientRepo
     {
-
     }
 }

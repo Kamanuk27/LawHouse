@@ -1,25 +1,31 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BusinessLogic;
 using System.Collections.Generic;
-
-
+using BusinessLogic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestCase
+    public class UnitTestLhHandler
     {
         LhHandler LhHandler = LhHandler.Instance;
+
+        [TestMethod]
+        public void TestLhHandlerReturnOneInstance()
+        {
+            LhHandler actual = new LhHandler();
+            object.ReferenceEquals(LhHandler, actual);
+        }
 
         [TestMethod]
         public void TestNewCaseReturnOne()
         {
             int expected = 1;
-            int response = LhHandler.NewCase(1);
+            int response = LhHandler.NewCase("test case");
             Assert.AreEqual(response, expected);
         }
 
+        [TestMethod]
         public void TestNewServiceReturnOne()
         {
             int expected = 1;
@@ -45,7 +51,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List <Case> cases =  LhHandler.GetCases();
+            List<Case> cases = LhHandler.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
@@ -74,7 +80,7 @@ namespace UnitTestLawHouse
             Assert.AreEqual(actual, expected);
         }
 
-      
+
 
         [TestMethod]
         public void TestUpdateCaseReturnOne()
@@ -84,12 +90,28 @@ namespace UnitTestLawHouse
             Assert.AreEqual(response, expected);
         }
 
+        [TestMethod]
+        public void TestGetPriceReturn2000()
+        {
+            decimal expected = 2000;
+            decimal response = LhHandler.GetPrice(1);
+            Assert.AreEqual(response, expected);
+        }
+
+        [TestMethod]
+        public void TestCloseCaseReturnOne()
+        {
+            int expected = 1;
+            int response = LhHandler.CloseCase(1, 2000, DateTime.Now);
+            Assert.AreEqual(response, expected);
+        }
+
 
         [TestMethod]
         public void TestUpdateServiceReturnOne()
         {
             int expected = 1;
-            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now, "string");
+            int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now);
             Assert.AreEqual(response, expected);
         }
 
@@ -107,6 +129,40 @@ namespace UnitTestLawHouse
             int expected = 1;
             int response = LhHandler.DeleteService(2);
             Assert.AreEqual(response, expected);
+        }
+
+        [TestMethod]
+        public void TestGetLawyersReturnsListOfStrings()
+        {
+            var lawyers = LhHandler.GetLawyers();
+            Type actual = lawyers[0].GetType();
+            Type expected = typeof(string);
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void TestGetLawyersReturnsTwoStrings()
+        {
+            int expected = 2;
+            int actual = LhHandler.GetLawyers().Count;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestGetEmplNamesReturnsListOfStrings()
+        {
+            var names = LhHandler.GetEmplNames();
+            Type actual = names[0].GetType();
+            Type expected = typeof(string);
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void TestGetEmplNamesReturnsTwoStrings()
+        {
+            int expected = 2;
+            int actual = LhHandler.GetEmplNames().Count;
+            Assert.AreEqual(expected, actual);
         }
     }
 }

@@ -7,29 +7,37 @@ using System.Configuration;
 
 namespace DataAccess
 {
-    public class DatabaseFactory
+    internal class DatabaseFactory
     {
         private static DatabaseFactory _instance;
-        public IDataAccessAdapter percistance;
-        public DatabaseFactory()
+        
+        internal DatabaseFactory()
         {
 
         }
-        public static DatabaseFactory GetInstance()
+        internal static DatabaseFactory Instance
         {
-
-            if (_instance == null)
+            get
+            {
+                if (_instance == null)
                 _instance = new DatabaseFactory();
-            return _instance;
+                return _instance;
+            }
         }
-        public IDataAccessAdapter GetDataAccess()
+        internal DbController GetDataAccess()
         {
-            //string database = ConfigurationManager.AppSettings["database"];
-            //if (database == "sqlserver")
-            //{
-            //    percistance = new DatabaseAccess();
-            //}
-            percistance = new DatabaseAccess();
+            string database = ConfigurationManager.AppSettings["database"];
+            DbController percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new DbController( new SqlController());
+            }
+            else
+            {
+                percistance = new DbController(new TestDB());
+            }
+
             return percistance;
         }
     }

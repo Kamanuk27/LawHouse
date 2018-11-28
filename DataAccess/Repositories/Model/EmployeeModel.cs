@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary
+namespace DataAccess.Repositories.Model
 {
-    public partial class Service
+    class EmployeeModel : EmployeeRepo
+
     {
     }
 }

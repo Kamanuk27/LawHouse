@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
-
-
 
 namespace LawHouseGUI
 {
-    public partial class Form1 : Form
+    public partial class Add_Employee : Form
     {
-        public Form1()
+        public Add_Employee()
         {
             InitializeComponent();
-            Case c1 = new Case();
-            c1.GetCase(1);
-            textBox1.Text = c1.Id.ToString();
-            textBox2.Text = c1.Name.ToString();
         }
     }
 }

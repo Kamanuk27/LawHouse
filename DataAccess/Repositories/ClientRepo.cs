@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary
+namespace DataAccess.Repositories
 {
-    public partial class Client
+    public abstract class ClientRepo
     {
 
     }

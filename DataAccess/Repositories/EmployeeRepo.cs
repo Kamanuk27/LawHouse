@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic
+namespace DataAccess.Repositories
 {
-    class LhController
+    public abstract class EmployeeRepo
     {
     }
 }
