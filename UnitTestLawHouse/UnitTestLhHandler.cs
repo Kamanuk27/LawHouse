@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using BusinessLogic;
+using LawHouseLibrary.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestCaseHandler
+    public class UnitTestLhHandler
     {
-        CaseHandler LhHandler = CaseHandler.Instance;
+        LhHandler LhHandler = LhHandler.Instance;
 
         [TestMethod]
         public void TestLhHandlerReturnOneInstance()
         {
-            CaseHandler actual = new CaseHandler();
+            LhHandler actual = new LhHandler();
             object.ReferenceEquals(LhHandler, actual);
         }
 
@@ -43,24 +44,24 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCaseReturnCase()
         {
-            CaseRepository c1 = LhHandler.GetCase(1);
-            Type expectedType = typeof(CaseRepository);
+            Case c1 = LhHandler.GetCase(1);
+            Type expectedType = typeof(Case);
             Assert.IsInstanceOfType(c1, expectedType);
         }
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List<CaseRepository> cases = LhHandler.GetCases();
+            List<Case> cases = LhHandler.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
         [TestMethod]
         public void TestGetCasesReturnListOfCases()
         {
-            List<CaseRepository> cases = LhHandler.GetCases();
+            List<Case> cases = LhHandler.GetCases();
             Type actual = cases[0].GetType();
-            Type expectedType = typeof(CaseRepository);
+            Type expectedType = typeof(Case);
             Assert.AreEqual(actual, expectedType);
         }
 
@@ -91,9 +92,9 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetPriceReturn2000()
+        public void TestGetPriceReturn3250()
         {
-            decimal expected = 2000;
+            decimal expected = 3250;
             decimal response = LhHandler.GetPrice(1);
             Assert.AreEqual(response, expected);
         }
@@ -129,6 +130,41 @@ namespace UnitTestLawHouse
             int expected = 1;
             int response = LhHandler.DeleteService(2);
             Assert.AreEqual(response, expected);
+        }
+
+        
+        [TestMethod]
+        public void TestGetLawyersReturnsListOfStrings()
+        {
+            var lawyers = LhHandler.GetLawyers();
+            Type actual = lawyers[0].GetType();
+            Type expected = typeof(string);
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void TestGetLawyersReturnsTwoStrings()
+        {
+            int expected = 2;
+            int actual = LhHandler.GetLawyers().Count;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestGetEmplNamesReturnsListOfStrings()
+        {
+            var names = LhHandler.GetEmplNames();
+            Type actual = names[0].GetType();
+            Type expected = typeof(string);
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void TestGetEmplNamesReturnsTwoStrings()
+        {
+            int expected = 2;
+            int actual = LhHandler.GetEmplNames().Count;
+            Assert.AreEqual(expected, actual);
         }
     }
 }

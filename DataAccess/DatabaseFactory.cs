@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace DataAccess
 {
-    internal class DatabaseFactory
+    public class DatabaseFactory
     {
         private static DatabaseFactory _instance;
         
@@ -15,7 +15,7 @@ namespace DataAccess
         {
 
         }
-        internal static DatabaseFactory Instance
+        public static DatabaseFactory Instance
         {
             get
             {
@@ -24,18 +24,18 @@ namespace DataAccess
                 return _instance;
             }
         }
-        internal DbController GetDataAccess()
+        public IDataAccess GetDataAccess()
         {
             string database = ConfigurationManager.AppSettings["database"];
-            DbController percistance = null;
+            IDataAccess percistance = null;
 
             if (database == "sqlserver")
             {
-                percistance = new DbController( new SqlController());
+                percistance =new SqlDataAccess();
             }
             else
             {
-                percistance = new DbController(new TestDB());
+                percistance = new TestDB();
             }
 
             return percistance;

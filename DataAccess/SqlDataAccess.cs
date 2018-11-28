@@ -4,16 +4,17 @@ using LawHouseLibrary.Entities;
 
 namespace DataAccess
 {
-    internal class SqlController : IDataAccess
+    internal class SqlDataAccess : IDataAccess
     {
         private SqlNonQuery _nonQuery;
         private SqlRead _read;
 
-        public SqlController()
+        public SqlDataAccess()
         {
             _nonQuery = new SqlNonQuery();
             _read = new SqlRead();
         }
+
         public int NewCase(Case c1)
         {
             return  _nonQuery.NewCase(c1);
@@ -46,11 +47,6 @@ namespace DataAccess
             return _nonQuery.UpdateCase(c1);
 
         }
-
-        public decimal GetPrice(int id)
-        {
-            return _read.GetPrice(id);
-        }
         public int CloseCase(Case c1)
         {
             return _nonQuery.CloseCase(c1);
@@ -78,6 +74,11 @@ namespace DataAccess
         public List<string> GetEmplNames()
         {
            return  _read.GetEmplNames();
+        }
+
+        public decimal[] GetUnitPrices()
+        {
+            return _read.GetUnitPrices();
         }
     }
 }

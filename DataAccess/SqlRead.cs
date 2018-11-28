@@ -174,22 +174,29 @@ namespace DataAccess
             return emplNames;
         }
 
-        internal decimal GetPrice(int id)
+        internal decimal [] GetUnitPrices()
         {
-            _command.CommandText = "CalculatePrice";
-            _command.CommandType = CommandType.StoredProcedure;
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@price", System.Data.SqlDbType.Decimal));
-            _command.Parameters.Add(new SqlParameter("@id", id));
+            _command.CommandText = "SELECT UnitRate FROM UnitRate";
+            decimal[] prices = new decimal[2];
 
-            _command.Parameters["@price"].Direction = ParameterDirection.Output;
-
-            ExecuteSql();
-
-            decimal price = Convert.ToDecimal(_command.Parameters["@price"].Value);
-
-            _command = new SqlCommand();
-            return price;
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        decimal d = Convert.ToDecimal(reader["UnitRate"]);
+                        prices[i] = d;
+                    }
+                }
+            }
+            connection.Close();
+            return prices;
         }
+
+
     }
 }

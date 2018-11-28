@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using BusinessLogic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BusinessLogic;
 
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestEmployee
+    public class UnitTestHR
     {
-        
-
+       
     }
 }

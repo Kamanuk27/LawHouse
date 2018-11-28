@@ -1,52 +1,52 @@
-﻿using System;
+﻿using LawHouseLibrary.Entities;
+using System;
 using System.Collections.Generic;
-using DataAccess.Models;
-using LawHouseLibrary.EntityModel;
+
 
 namespace DataAccess
 {
     internal class TestDB : IDataAccess
     {
-        public int NewCase(CaseEntity c1)
+        public int NewCase(Case c1)
         {
             return 1;
         }
 
        
-        public int NewService(ServiceEntity s1)
+        public int NewService(Service s1)
         {
             return 1;
         }
 
-        public CaseEntity GetCase(int id)
+        public Case GetCase(int id)
         {
-            CaseEntity c1 = new CaseModel();
+            Case c1 = new Case();
             c1.Id = id;
             return c1;
         }
 
-        public List<CaseEntity> GetCases()
+        public List<Case> GetCases()
         {
-            List<CaseEntity> cases = new List<CaseEntity>();
-            cases.Add(new CaseModel(1));
-            cases.Add(new CaseModel(4));
+            List<Case> cases = new List<Case>();
+            cases.Add(new Case(1));
+            cases.Add(new Case(4));
             return cases;
         }
 
-        public List <ServiceEntity> GetProvidedServices(int caseId)
+        public List <Service> GetProvidedServices(int caseId)
         {
-            List<ServiceEntity> services = new List<ServiceEntity>();
-            services.Add(new ServiceModel(2, 50));
-            services.Add(new ServiceModel(3, 100));
+            List<Service> services = new List<Service>();
+            services.Add(new Service(2, 50));
+            services.Add(new Service(3, 100));
             return services;
         }
 
-        public int UpdateService (ServiceEntity s1)
+        public int UpdateService (Service s1)
         {
             return 1;
         }
 
-        public int UpdateCase(CaseEntity c1)
+        public int UpdateCase(Case c1)
         {
             return 1;
         }
@@ -56,7 +56,7 @@ namespace DataAccess
             return 2000;
         }
 
-        public int CloseCase(CaseEntity c1)
+        public int CloseCase(Case c1)
         {
             return 1;
         }
@@ -87,6 +87,12 @@ namespace DataAccess
             return names;
         }
 
-       
+        public decimal[] GetUnitPrices()
+        {
+            decimal [] prices = new decimal[2];
+            prices[0] = 500;
+            prices[1] = 5;
+            return prices;
+        }
     }
 }

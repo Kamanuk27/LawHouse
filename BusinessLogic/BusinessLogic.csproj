@@ -41,16 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientRepository.cs" />
-    <Compile Include="EmployeeRepository.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="CaseRepository.cs" />
-    <Compile Include="OldEmployee.cs" />
-    <Compile Include="HrHandler.cs" />
-    <Compile Include="CaseHandler.cs" />
+    <Compile Include="Cases.cs" />
+    <Compile Include="DbController.cs" />
+    <Compile Include="HR.cs" />
+    <Compile Include="LhHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceRepository.cs" />
-    <Compile Include="SpecializationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
