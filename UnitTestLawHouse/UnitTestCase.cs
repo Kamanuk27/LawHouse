@@ -16,7 +16,7 @@ namespace UnitTestLawHouse
         public void TestNewCaseReturnOne()
         {
             int expected = 1;
-            int response = LhHandler.NewCase(1);
+            int response = LhHandler.NewCase("");
             Assert.AreEqual(response, expected);
         }
 
