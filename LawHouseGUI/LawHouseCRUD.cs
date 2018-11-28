@@ -190,6 +190,7 @@ namespace LawHouseGUI
                 string comment = YCommentTxt.Text;
                 int i = handler.UpdateService(id, houres, km, date, comment);
                 MessageBox.Show(i.ToString());
+                ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
             }
@@ -313,6 +314,32 @@ namespace LawHouseGUI
                
             }
           
+        }
+
+        private void CompanyRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            labelCVR.Visible = true;
+            labelComp.Visible = true;
+            NewClientCvr.Visible = true;
+            NewCleienCompany.Visible = true;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            labelCVR.Visible = false;
+            labelComp.Visible = false;
+            NewClientCvr.Visible = false;
+            NewCleienCompany.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Добавить на кнопку обновление клиентов в комбоКлиенты для создания кейсов
+        }
+
+        private void NewEmplButt_Click(object sender, EventArgs e)
+        {
+            //перезапустить загрузку комбо боксов для выбора адвокатов - так как мы добавили нового.
         }
     }
 }
