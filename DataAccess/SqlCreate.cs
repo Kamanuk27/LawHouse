@@ -56,23 +56,20 @@ namespace DataAccess
             return _command;
 
         }
-        public SqlCommand NewClient(Case c1)
+        public SqlCommand NewClient(Client c1)
         {
-            string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
-                               "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
-                               " @Case_ID, @Date, @Hours, @Km, @Comment)";
+            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) VALUES " +
+                               " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
 
             _command.CommandText = sqlString;
-
-            string[] names = c1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@Case_ID", c1.CaseID));
-            _command.Parameters.Add(new SqlParameter("@Date", c1.Date));
-            _command.Parameters.Add(new SqlParameter("@Hours", c1.Hours));
-            _command.Parameters.Add(new SqlParameter("@Km", c1.Km));
-            _command.Parameters.Add(new SqlParameter("@Comment", c1.Comment));
-            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
-            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
+            _command.Parameters.Add(new SqlParameter("@CprNo", c1.CprNo));
+            _command.Parameters.Add(new SqlParameter("@FirstName", c1.FirstName));
+            _command.Parameters.Add(new SqlParameter("@LastName", c1.LastName));
+            _command.Parameters.Add(new SqlParameter("@Address", c1.Address));
+            _command.Parameters.Add(new SqlParameter("@PostNo", c1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@Email", c1.Email));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", c1.PostNo));
 
             return _command;
 
