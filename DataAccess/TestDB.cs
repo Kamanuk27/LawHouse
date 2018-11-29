@@ -51,11 +51,6 @@ namespace DataAccess
             return 1;
         }
 
-        public decimal GetPrice(int id)
-        {
-            return 2000;
-        }
-
         public int CloseCase(Case c1)
         {
             return 1;
