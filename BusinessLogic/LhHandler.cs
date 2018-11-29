@@ -11,6 +11,7 @@ namespace BusinessLogic
     {
         public static LhHandler _instance;
         private Cases _cases;
+        private HR _hr;
 
         public static LhHandler Instance
         {
@@ -109,6 +110,9 @@ namespace BusinessLogic
             return _cases.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
 
-        
+        public int NewLegalService(string name, int hours, int time, decimal price)
+        {
+            return _hr.NewLegalService(name, hours, time, price);
+        }
     }
 }

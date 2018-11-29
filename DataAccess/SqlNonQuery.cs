@@ -67,6 +67,12 @@ namespace DataAccess
             _command = _create.NewEmployee(employee);
             return ExecuteNonQuery();
         }
+        internal int NewLegalService(LegalService legal)
+        {
+            _command = _create.NewLegalService(legal);
+            return ExecuteNonQuery();
+        }
+        
 
         internal int CloseCase(Case c1)
         {

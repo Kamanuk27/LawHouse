@@ -28,6 +28,7 @@ namespace LawHouseGUI
             {
                 RespEmpCombo.Items.Add(l1);
                 CrCaseAdvokat.Items.Add(l1);
+                SpecInsertCom.Items.Add(l1);
 
             }
 
@@ -35,6 +36,7 @@ namespace LawHouseGUI
             {
                 string name = s1.Name;
                 CrCaseServiceCom.Items.Add(name);
+                LServInsertCom.Items.Add(name);
             }
 
             foreach (var m1 in _handler.GetEmplNames())
@@ -384,6 +386,15 @@ namespace LawHouseGUI
                 }
             }
            
+        }
+
+        private void MakeNewServBut_Click(object sender, EventArgs e)
+        {
+            string name = MkServiceName.Text;
+            int hours = Convert.ToInt32(MkServiceHours.Text);
+            int time = Convert.ToInt32(MkServiceTime.Text);
+            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
+            _handler.NewLegalService(name, hours, time, price);
         }
     }
 }
