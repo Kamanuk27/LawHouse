@@ -76,7 +76,7 @@ namespace DataAccess
         }
         public SqlCommand NewEmployee(Employee e1)
         {
-            string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
+            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
                                " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
 
             _command.CommandText = sqlString;
@@ -93,8 +93,22 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@PayRatePrHour", e1.PayRatePrHour));
 
             return _command;
+        
+        }
+        public SqlCommand NewLegalService(LegalService lS1)
+        {
+            string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, FixedPrice, Price, TimeEstimate) VALUES " +
+                               " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+
+            _command.CommandText = sqlString;
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@Name", lS1.Name));
+            _command.Parameters.Add(new SqlParameter("@HoursEstimate", lS1.HoursEstimate));
+            _command.Parameters.Add(new SqlParameter("@FixedPrice", lS1.FixedPrice));
+            _command.Parameters.Add(new SqlParameter("@Price", lS1.Price));
+            _command.Parameters.Add(new SqlParameter("@TimeEstimate", lS1.TimeEstimate));
+            return _command;
 
         }
-       
     }
 }
