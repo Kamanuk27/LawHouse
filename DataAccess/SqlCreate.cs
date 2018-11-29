@@ -56,5 +56,26 @@ namespace DataAccess
             return _command;
 
         }
+        public SqlCommand NewClient(Case c1)
+        {
+            string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
+                               "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
+                               " @Case_ID, @Date, @Hours, @Km, @Comment)";
+
+            _command.CommandText = sqlString;
+
+            string[] names = s1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
+            _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
+            _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
+            _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+            _command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
+            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
+
+            return _command;
+
+        }
     }
 }
