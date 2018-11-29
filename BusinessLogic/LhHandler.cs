@@ -25,9 +25,9 @@ namespace BusinessLogic
         {
             _cases = new Cases();
         }
-        public int NewCase(string name) // her kommer mange variabler fra Form
+        public int NewCase(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice) 
         {
-          return _cases.NewCase(name);
+          return _cases.NewCase(caseName, client, service, startTime, respEmpl, negoPrice);
         }
         public int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
@@ -54,6 +54,11 @@ namespace BusinessLogic
         {
             return _cases.GetProvidedServices(caseId);
         }
+        public List<LegalService> GetLegalServices()
+        {
+            return _cases.GetLegalServices();
+        }
+        
 
         public int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
@@ -99,5 +104,11 @@ namespace BusinessLogic
         {
             return _cases.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
+        public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf, DateTime start, string position, decimal money)
+        {
+            return _cases.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+        }
+
+        
     }
 }

@@ -50,7 +50,12 @@ namespace DataAccess
             return _read.GetProvidedServices(caseId);
         }
 
-      
+        public List<LegalService> GetLegalServices()
+        {
+            return _read.GetLegalServices();
+        }
+
+
         public int UpdateCase(Case c1)
         {
             return _nonQuery.UpdateCase(c1);

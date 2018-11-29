@@ -52,7 +52,12 @@ namespace BusinessLogic
         {
             return _persistence.GetProvidedServices(caseId);
         }
+        internal List<LegalService> GetLegalServices()
+        {
+            return _persistence.GetLegalServices();
+        }
 
+        
         internal int UpdateService(Service s1)
         {
             return _persistence.UpdateService(s1);

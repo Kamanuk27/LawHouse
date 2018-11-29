@@ -8,9 +8,9 @@ namespace LawHouseLibrary.Entities
 {
     public class LegalService : Entity
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public int HoursEstimate { get; set; }
-        public bool FixedPrice { get; set; }
         public decimal Price { get; set; }
         public int TimeEstimate { get; set; }
 

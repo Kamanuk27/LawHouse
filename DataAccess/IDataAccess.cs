@@ -14,6 +14,7 @@ namespace DataAccess
         Case GetCase(int Id);
         List< Case> GetCases();
         List<Service> GetProvidedServices(int caseId);
+        List<LegalService> GetLegalServices();
         int UpdateService(Service s1);
         int UpdateCase(Case c1);
         int CloseCase(Case c1);

@@ -17,7 +17,7 @@ namespace LawHouseLibrary.Entities
         public string TlfNo { get; set; }
         public DateTime StartDate { get; set; }
         public string Position { get; set; }
-        public string PayRatePrHour { get; set; }
+        public decimal PayRatePrHour { get; set; }
 
         public Employee()
         {

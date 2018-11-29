@@ -41,6 +41,11 @@ namespace DataAccess
             return services;
         }
 
+        public List<LegalService> GetLegalServices()
+        {
+            throw new NotImplementedException();
+        }
+
         public int UpdateService (Service s1)
         {
             return 1;
