@@ -11,18 +11,26 @@ namespace BusinessLogic
     {
         private DbController _dbController;
         private List<Service> _provServices;
+        private List<LegalService> _legalServices;
         private Case _case;
         public Cases()
         {
             _dbController = DbController.Instance;
             _provServices = new List<Service>();
+            _legalServices = new List<LegalService>();
+
         }
 
 
-        internal int NewCase(string name) // her kommer mange variabler fra Form
+        internal int NewCase(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice) 
         {
             _case = new Case();
-            _case.Name = name;
+            _case.Name = caseName;
+            _case.Client = client;
+            _case.Service = service;
+            _case.StartDate = startTime;
+            _case.RespEmployee = respEmpl;
+            _case.NegPrice = negoPrice;
             return _dbController.NewCase(_case);
         }
         internal int CloseCase(int id, decimal totalPrice, DateTime endDate)
@@ -59,8 +67,13 @@ namespace BusinessLogic
 
         internal List<Service> GetProvidedServices(int caseId)
         {
-            _provServices= _dbController.GetProvidedServices(caseId);
+            _provServices = _dbController.GetProvidedServices(caseId);
             return _provServices;
+        }
+        internal List<LegalService> GetLegalServices()
+        {
+            _legalServices = _dbController.GetLegalServices();
+            return _legalServices;
         }
 
         internal int UpdateService(int id, int hours, int km, DateTime date, string comment)
@@ -148,6 +161,22 @@ namespace BusinessLogic
             client.Email = eMail;
             client.TlfNo = tlf;
             return _dbController.NewClient(client);
+        }
+        internal int NewEmployee(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf, DateTime start, string position, decimal money)
+        {
+            Employee employee = new Employee();
+            employee.CprNo = cpr;
+            employee.FirstName = fName;
+            employee.LastName = lName;
+            employee.Address = address;
+            employee.PostNo = postNo;
+            employee.Email = eMail;
+            employee.TlfNo = tlf;
+            employee.StartDate = start;
+            employee.Position = position;
+            employee.PayRatePrHour = money;
+            
+            return _dbController.NewEmployee(employee);
         }
     }
 }

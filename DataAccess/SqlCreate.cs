@@ -19,19 +19,28 @@ namespace DataAccess
         {
             string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
                                "RespEmp_ID, Client_ID) VALUES " +
-                               "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @RespEmp_ID, @Client_ID)";
+                               "(@CaseName, @StartDate, @NegotiatedPrice, " +
+                               "(SELECT ID FROM LegalServices WHERE Name = @Service_ID), " +
+                               "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName), " +
+                               "(SELECT ID FROM Client WHERE FirstName = @fCName AND LastName = @lCName))";
 
             _command.CommandText = sqlString;
-
             _command.Parameters.Clear();
+
             _command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
             _command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
             _command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
+
             _command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
-            _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmployee));
-            _command.Parameters.Add(new SqlParameter("@Client_ID", c1.Client));
 
+            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
+            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
 
+            string[] clientNames = c1.Client.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            _command.Parameters.Add(new SqlParameter("@fCName", clientNames[0]));
+            _command.Parameters.Add(new SqlParameter("@lCName", clientNames[1]));
+            
             return _command;
         }
 
@@ -58,8 +67,8 @@ namespace DataAccess
         }
         public SqlCommand NewClient(Client c1)
         {
-            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) VALUES " +
-                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
+            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) " +
+                               "VALUES (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
@@ -97,14 +106,13 @@ namespace DataAccess
         }
         public SqlCommand NewLegalService(LegalService lS1)
         {
-            string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, FixedPrice, Price, TimeEstimate) VALUES " +
-                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+            string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
+                               " (@Name, @HoursEstimate, @Price, @TimeEstimate)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@Name", lS1.Name));
             _command.Parameters.Add(new SqlParameter("@HoursEstimate", lS1.HoursEstimate));
-            _command.Parameters.Add(new SqlParameter("@FixedPrice", lS1.FixedPrice));
             _command.Parameters.Add(new SqlParameter("@Price", lS1.Price));
             _command.Parameters.Add(new SqlParameter("@TimeEstimate", lS1.TimeEstimate));
             return _command;

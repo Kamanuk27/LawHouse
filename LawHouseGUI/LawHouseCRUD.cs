@@ -1,6 +1,8 @@
 ﻿using BusinessLogic;
 using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Linq;
 
 
 
@@ -25,11 +27,23 @@ namespace LawHouseGUI
             foreach (var l1 in _handler.GetLawyers())
             {
                 RespEmpCombo.Items.Add(l1);
+                CrCaseAdvokat.Items.Add(l1);
+
+            }
+
+            foreach (var s1 in _handler.GetLegalServices())
+            {
+                string name = s1.Name;
+                CrCaseServiceCom.Items.Add(name);
             }
 
             foreach (var m1 in _handler.GetEmplNames())
             {
                 YEmploeeCombox.Items.Add(m1);
+            }
+            foreach (var cl1 in _handler.GetClientNames())
+            {
+                CrCaseClient.Items.Add(cl1);
             }
 
         }
@@ -331,7 +345,45 @@ namespace LawHouseGUI
 
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
-            //перезапустить загрузку комбо боксов для выбора адвокатов - так как мы добавили нового.
+            string cpr = NECprTxt.Text;
+            string fName = NEFnameTxt.Text;
+            string lName = NELnameTxt.Text;
+            string address = NEAdressTxt.Text;
+            int postNo = Convert.ToInt32(NEPostTxt.Text);
+            string eMail = NEEmailTxt.Text;
+            string tlf = NETlfTxt.Text;
+            DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
+            string position = NEmplPosition.Text;
+            decimal money = Convert.ToDecimal(NEmplMoney.Text);
+            _handler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+        }
+
+        private void NewCaseButt_Click(object sender, EventArgs e)
+        {
+            string caseName = CrCaseName.Text;
+            string client = CrCaseClient.Text;
+            string service = CrCaseServiceCom.Text;
+            DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
+            string respEmpl = CrCaseAdvokat.Text;
+            decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
+            _handler.NewCase(caseName, client, service, startTime, respEmpl, negoPrice);
+
+
+        }
+
+        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in _handler.GetLegalServices())
+            {
+                if (s.Name == CrCaseServiceCom.Text)
+                {
+                    CrCasePrice.Text = s.Price.ToString();
+                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
+                    CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
+                    CrCaseServID.Text = s.ID.ToString();
+                }
+            }
+           
         }
     }
 }
