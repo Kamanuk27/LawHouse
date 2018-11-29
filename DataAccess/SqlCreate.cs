@@ -59,7 +59,7 @@ namespace DataAccess
         public SqlCommand NewClient(Client c1)
         {
             string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) VALUES " +
-                               " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
+                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
@@ -76,8 +76,8 @@ namespace DataAccess
         }
         public SqlCommand NewEmployee(Employee e1)
         {
-            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
-                               " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+            string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
+                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
@@ -98,7 +98,7 @@ namespace DataAccess
         public SqlCommand NewLegalService(LegalService lS1)
         {
             string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, FixedPrice, Price, TimeEstimate) VALUES " +
-                               " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();

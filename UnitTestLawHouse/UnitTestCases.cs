@@ -85,6 +85,22 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
+        public void TestGetUnitPricesReturnDecimalArray()
+        {
+            Type expected = typeof(decimal[]);
+            var response = cases.GetUnitPrices().GetType();
+            Assert.AreEqual(expected, response);
+        }
+
+        [TestMethod]
+        public void TestGetUnitPricesReturn2EllementsInArray()
+        {
+            int expected = 2;
+            var response = cases.GetUnitPrices().Length;
+            Assert.AreEqual(expected, response);
+        }
+
+        [TestMethod]
         public void TestGetPriceReturn3250()
         {
             decimal expected = 3250;

@@ -1,6 +1,9 @@
 ﻿using LawHouseLibrary.Entities;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
+
 
 namespace BusinessLogic
 {
@@ -103,7 +106,7 @@ namespace BusinessLogic
                 km += item.Km;
             }
         }
-        private decimal [] GetUnitPrices()
+        internal decimal [] GetUnitPrices()
         {
             return _dbController.GetUnitPrices();
         }
