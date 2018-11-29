@@ -69,7 +69,7 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Address", c1.Address));
             _command.Parameters.Add(new SqlParameter("@PostNo", c1.PostNo));
             _command.Parameters.Add(new SqlParameter("@Email", c1.Email));
-            _command.Parameters.Add(new SqlParameter("@TlfNo", c1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", c1.TlfNo));
 
             return _command;
 
@@ -87,7 +87,28 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Address", e1.Address));
             _command.Parameters.Add(new SqlParameter("@PostNo", e1.PostNo));
             _command.Parameters.Add(new SqlParameter("@Email", e1.Email));
-            _command.Parameters.Add(new SqlParameter("@TlfNo", e1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", e1.TlfNo));
+            _command.Parameters.Add(new SqlParameter("@StartDate", e1.StartDate));
+            _command.Parameters.Add(new SqlParameter("@Position", e1.Position));
+            _command.Parameters.Add(new SqlParameter("@PayRatePrHour", e1.PayRatePrHour));
+
+            return _command;
+
+        }
+        public SqlCommand NewEmployee(Employee e1)
+        {
+            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
+                               " @CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+
+            _command.CommandText = sqlString;
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@CprNo", e1.CprNo));
+            _command.Parameters.Add(new SqlParameter("@FirstName", e1.FirstName));
+            _command.Parameters.Add(new SqlParameter("@LastName", e1.LastName));
+            _command.Parameters.Add(new SqlParameter("@Address", e1.Address));
+            _command.Parameters.Add(new SqlParameter("@PostNo", e1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@Email", e1.Email));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", e1.TlfNo));
             _command.Parameters.Add(new SqlParameter("@StartDate", e1.StartDate));
             _command.Parameters.Add(new SqlParameter("@Position", e1.Position));
             _command.Parameters.Add(new SqlParameter("@PayRatePrHour", e1.PayRatePrHour));
