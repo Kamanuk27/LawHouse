@@ -57,6 +57,17 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
+        internal int NewClient(Client client)
+        {
+            _command = _create.NewClient(client);
+            return ExecuteNonQuery();
+        }
+        internal int NewEmployee(Employee employee)
+        {
+            _command = _create.NewEmployee(employee);
+            return ExecuteNonQuery();
+        }
+
         internal int CloseCase(Case c1)
         {
             _command = _update.CloseCase(c1);

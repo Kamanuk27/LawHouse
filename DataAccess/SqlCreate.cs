@@ -69,7 +69,7 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Address", c1.Address));
             _command.Parameters.Add(new SqlParameter("@PostNo", c1.PostNo));
             _command.Parameters.Add(new SqlParameter("@Email", c1.Email));
-            _command.Parameters.Add(new SqlParameter("@TlfNo", c1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", c1.TlfNo));
 
             return _command;
 

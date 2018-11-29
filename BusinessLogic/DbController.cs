@@ -96,5 +96,14 @@ namespace BusinessLogic
         {
             return _persistence.GetUnitPrices();
         }
+
+        internal int NewClient(Client client)
+        {
+            return _persistence.NewClient(client);
+        }
+        internal int NewEmployee(Employee employee)
+        {
+            return _persistence.NewEmployee(employee);
+        }
     }
 }

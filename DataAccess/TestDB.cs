@@ -94,5 +94,20 @@ namespace DataAccess
             prices[1] = 5;
             return prices;
         }
+
+        public List<string> GetClientNames()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int NewClient(Client client)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int NewEmployee(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
