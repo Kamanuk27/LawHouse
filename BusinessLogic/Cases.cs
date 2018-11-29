@@ -102,28 +102,11 @@ namespace BusinessLogic
             return total;
         }
 
-        private decimal CalculatePrice()
+        internal decimal CalculatePrice()
         {
-            int hours = 0;
-            int km = 0;
-            CountServices(ref hours, ref km);
-            decimal[] prices = GetUnitPrices();
-
-            return hours * prices[0] + km * prices[1];
+            PriceCalculator calculater = new PriceCalculator();
+            return calculater.CalculatePrice(_dbController.GetUnitPrices(), _provServices);
         }
-        private void CountServices(ref int hours, ref int km)
-        {
-            foreach (var item in _provServices)
-            {
-                hours += item.Hours;
-                km += item.Km;
-            }
-        }
-        internal decimal [] GetUnitPrices()
-        {
-            return _dbController.GetUnitPrices();
-        }
-
 
         internal int DeleteCase(int id)
         {

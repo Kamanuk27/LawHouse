@@ -22,7 +22,7 @@ namespace LawHouseLibrary.Entities
         }
 
         // constractor for tests
-        public Service( int hours, int km)
+        public Service( int km, int hours)
         {
             Hours = hours;
             Km = km;

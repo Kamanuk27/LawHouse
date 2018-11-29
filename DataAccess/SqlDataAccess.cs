@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using LawHouseLibrary.Entities;
 
 namespace DataAccess
@@ -8,11 +10,13 @@ namespace DataAccess
     {
         private SqlNonQuery _nonQuery;
         private SqlRead _read;
+        private SqlConnection _connection;
 
         public SqlDataAccess()
         {
-            _nonQuery = new SqlNonQuery();
-            _read = new SqlRead();
+            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
+            _nonQuery = new SqlNonQuery(_connection);
+            _read = new SqlRead(_connection);
         }
 
         public int NewCase(Case c1)
@@ -99,7 +103,7 @@ namespace DataAccess
             return _read.GetClientNames();
         }
 
-        public decimal[] GetUnitPrices()
+        public List<decimal> GetUnitPrices()
         {
             return _read.GetUnitPrices();
         }

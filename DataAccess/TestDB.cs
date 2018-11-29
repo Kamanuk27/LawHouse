@@ -92,11 +92,11 @@ namespace DataAccess
             return names;
         }
 
-        public decimal[] GetUnitPrices()
+        public List<decimal> GetUnitPrices()
         {
-            decimal [] prices = new decimal[2];
-            prices[0] = 500;
-            prices[1] = 5;
+            List<decimal> prices = new List<decimal>();
+            prices.Add(10);
+            prices.Add(750);
             return prices;
         }
 

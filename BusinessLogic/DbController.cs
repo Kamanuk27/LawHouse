@@ -97,7 +97,7 @@ namespace BusinessLogic
             return _persistence.GetClientNames();
         }
 
-        internal  decimal[] GetUnitPrices()
+        internal List<decimal> GetUnitPrices()
         {
             return _persistence.GetUnitPrices();
         }

@@ -1,31 +1,28 @@
 ﻿using LawHouseLibrary.Entities;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
 
 namespace DataAccess
 {
     class SqlNonQuery
     {
-        private SqlConnection connection;
+        private SqlConnection _connection;
         private SqlCommand _command = new SqlCommand();
         private SqlCreate _create;
         private SqlUpdate _update;
         private SqlDelete _delete;
 
-        public SqlNonQuery()
+        public SqlNonQuery(SqlConnection connection)
         {
             _create = new SqlCreate();
             _update = new SqlUpdate();
             _delete = new SqlDelete();
+            _connection = connection;
         }
 
         private void PrepareSql()
         {
-            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-            connection.Open();
-            _command.Connection = connection;
+            _connection.Open();
+            _command.Connection = _connection;
         }
 
 
@@ -33,7 +30,7 @@ namespace DataAccess
         {
             PrepareSql();
             int rows = _command.ExecuteNonQuery();
-            connection.Close();
+            _connection.Close();
             return rows;
         }
 
@@ -50,29 +47,29 @@ namespace DataAccess
             return ExecuteNonQuery();
 
         }
+        internal int NewClient(Client client)
+        {
+            _command = _create.NewClient(client);
+            return ExecuteNonQuery();
+        }
+
+        internal int NewEmployee(Employee employee)
+        {
+            _command = _create.NewEmployee(employee);
+            return ExecuteNonQuery();
+        }
+
+        internal int NewLegalService(LegalService ls1)
+        {
+            _command = _create.NewLegalService(ls1);
+            return ExecuteNonQuery();
+        }
 
         internal int UpdateCase(Case c1)
         {
             _command = _update.UpdateCase(c1);
             return ExecuteNonQuery();
         }
-
-        internal int NewClient(Client client)
-        {
-            _command = _create.NewClient(client);
-            return ExecuteNonQuery();
-        }
-        internal int NewEmployee(Employee employee)
-        {
-            _command = _create.NewEmployee(employee);
-            return ExecuteNonQuery();
-        }
-        internal int NewLegalService(LegalService legal)
-        {
-            _command = _create.NewLegalService(legal);
-            return ExecuteNonQuery();
-        }
-        
 
         internal int CloseCase(Case c1)
         {

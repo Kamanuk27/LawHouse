@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using LawHouseLibrary.Entities;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 
 
 namespace DataAccess
 {
     class SqlRead
     {
-        private SqlConnection connection;
+        private SqlConnection _connection;
         private SqlCommand _command;
 
-        internal SqlRead()
+        internal SqlRead(SqlConnection connection)
         {
             _command = new SqlCommand();
+            _connection = connection;
         }
 
         private void PrepareSql()
         {
-            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-            connection.Open();
-            _command.Connection = connection;
+            _connection.Open();
+            _command.Connection = _connection;
         }
 
 
@@ -30,7 +29,7 @@ namespace DataAccess
         {
             PrepareSql();
             int rows = _command.ExecuteNonQuery();
-            connection.Close();
+            _connection.Close();
             return rows;
         }
 
@@ -66,7 +65,7 @@ namespace DataAccess
 
                 }
             }
-            connection.Close();
+            _connection.Close();
             return c1;
         }
 
@@ -96,7 +95,7 @@ namespace DataAccess
                 }
 
             }
-            connection.Close();
+            _connection.Close();
             return cases;
         }
 
@@ -128,7 +127,7 @@ namespace DataAccess
                 }
 
             }
-            connection.Close();
+            _connection.Close();
             return services;
         }
 
@@ -157,7 +156,7 @@ namespace DataAccess
                 }
 
             }
-            connection.Close();
+            _connection.Close();
             return legServices;
         }
 
@@ -178,7 +177,7 @@ namespace DataAccess
                 }
 
             }
-            connection.Close();
+            _connection.Close();
             return lawyers;
 
         }
@@ -199,7 +198,7 @@ namespace DataAccess
                 }
 
             }
-            connection.Close();
+            _connection.Close();
             return emplNames;
         }
 
@@ -215,21 +214,20 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    string e = $"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}";
-                    clientNames.Add(e);
+                    clientNames.Add($"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}");
                 }
 
             }
-            connection.Close();
+            _connection.Close();
             return clientNames;
         }
 
 
 
-        internal decimal [] GetUnitPrices()
+        internal List <decimal> GetUnitPrices()
         {
-            _command.CommandText = "SELECT UnitRate FROM UnitRate";
-            decimal[] prices = new decimal[2];
+            _command.CommandText = "SELECT Rate FROM UnitRate";
+            List <decimal> prices =new List<decimal>();
 
             PrepareSql();
             SqlDataReader reader = null;
@@ -238,17 +236,12 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    for (int i = 0; i < 2; i++)
-                    {
-                        decimal d = Convert.ToDecimal(reader["UnitRate"]);
-                        prices[i] = d;
-                    }
+                    prices.Add(Convert.ToDecimal(reader["Rate"]));
                 }
             }
-            connection.Close();
+            _connection.Close();
             return prices;
         }
-
-
+        
     }
 }

@@ -24,7 +24,7 @@ namespace DataAccess
         List<string> GetLawyers();
         List<string> GetEmplNames();
         List<string> GetClientNames();
-        decimal[] GetUnitPrices();
+        List<decimal> GetUnitPrices();
         
     }
 }

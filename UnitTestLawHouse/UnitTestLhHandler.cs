@@ -22,7 +22,7 @@ namespace UnitTestLawHouse
         public void TestNewCaseReturnOne()
         {
             int expected = 1;
-            int response = LhHandler.NewCase("test case");
+            int response = LhHandler.NewCase("name", "client", "service", DateTime.Now, "employee", 0);
             Assert.AreEqual(response, expected);
         }
 

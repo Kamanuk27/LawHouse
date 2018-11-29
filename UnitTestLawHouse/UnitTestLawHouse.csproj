@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestCalculator.cs" />
     <Compile Include="UnitTestDbController.cs" />
     <Compile Include="UnitTestHR.cs" />
     <Compile Include="UnitTestLhHandler.cs" />

@@ -45,6 +45,7 @@
     <Compile Include="DbController.cs" />
     <Compile Include="HR.cs" />
     <Compile Include="LhHandler.cs" />
+    <Compile Include="PriceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
