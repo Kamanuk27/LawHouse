@@ -67,7 +67,7 @@ namespace BusinessLogic
 
         public decimal GetPrice(int id)
         {
-            return _cases.CalculatePrice(id);
+            return _cases.GetPrice(id);
         }
 
         public int DeleteCase(int id)
@@ -88,6 +88,16 @@ namespace BusinessLogic
         public List<string> GetEmplNames()
         {
             return _cases.GetEmplNames();
+        }
+
+        public List <string> GetClientNames()
+        {
+            return _cases.GetClientNames();
+        }
+
+        public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
+        {
+            return _cases.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
     }
 }

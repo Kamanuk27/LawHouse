@@ -11,11 +11,11 @@ namespace BusinessLogic
     {
         private static DbController _instance;
         private IDataAccess _persistence;
-        public DbController()
+        internal DbController()
         {
             GetDataAccess();
         }
-        public static DbController Instance
+        internal  static DbController Instance
         {
             get
             {
@@ -29,65 +29,70 @@ namespace BusinessLogic
             _persistence = DatabaseFactory.Instance.GetDataAccess();
 
         }
-        public int NewCase(Case c1)
+        internal int NewCase(Case c1)
         {
             return _persistence.NewCase(c1);
         }
 
 
-        public int NewService(Service s1)
+        internal int NewService(Service s1)
         {
             return _persistence.NewService(s1);
         }
-        public Case GetCase(int id)
+        internal Case GetCase(int id)
         {
             return _persistence.GetCase(id);
         }
-        public List<Case> GetCases()
+        internal List<Case> GetCases()
         {
             return _persistence.GetCases();
         }
 
-        public List<Service> GetProvidedServices(int caseId)
+        internal List<Service> GetProvidedServices(int caseId)
         {
             return _persistence.GetProvidedServices(caseId);
         }
 
-        public int UpdateService(Service s1)
+        internal int UpdateService(Service s1)
         {
             return _persistence.UpdateService(s1);
         }
 
-        public int UpdateCase(Case c1)
+        internal int UpdateCase(Case c1)
         {
             return _persistence.UpdateCase(c1);
         }
-        public int CloseCase(Case c1)
+        internal int CloseCase(Case c1)
         {
             return _persistence.CloseCase(c1);
         }
 
-        public int DeleteCase(int id)
+        internal int DeleteCase(int id)
         {
             return _persistence.DeleteCase(id);
         }
 
-        public int DeleteService(int id)
+        internal int DeleteService(int id)
         {
             return _persistence.DeleteService(id);
         }
 
-        public List<string> GetLawyers()
+        internal List<string> GetLawyers()
         {
             return _persistence.GetLawyers();
         }
 
-        public List<string> GetEmplNames()
+        internal  List<string> GetEmplNames()
         {
             return _persistence.GetEmplNames();
         }
 
-        public decimal[] GetUnitPrices()
+        internal List<string> GetClientNames()
+        {
+            return _persistence.GetClientNames();
+        }
+
+        internal  decimal[] GetUnitPrices()
         {
             return _persistence.GetUnitPrices();
         }

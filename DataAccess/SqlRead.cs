@@ -174,6 +174,27 @@ namespace DataAccess
             return emplNames;
         }
 
+        internal List<string> GetClientNames()
+        {
+            List<string> clientNames = new List<string>();
+            _command.CommandText = "SELECT FirstName, LastName FROM Client";
+
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string e = $"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}";
+                    clientNames.Add(e);
+                }
+
+            }
+            connection.Close();
+            return clientNames;
+        }
+
         internal decimal [] GetUnitPrices()
         {
             _command.CommandText = "SELECT UnitRate FROM UnitRate";

@@ -88,7 +88,7 @@ namespace UnitTestLawHouse
         public void TestGetPriceReturn3250()
         {
             decimal expected = 3250;
-            decimal response = cases.CalculatePrice(1);
+            decimal response = cases.GetPrice(1);
             Assert.AreEqual(expected, response);
         }
 

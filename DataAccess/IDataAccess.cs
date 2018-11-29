@@ -19,6 +19,7 @@ namespace DataAccess
         int DeleteService(int id);
         List<string> GetLawyers();
         List<string> GetEmplNames();
+        List<string> GetClientNames();
         decimal[] GetUnitPrices();
     }
 }

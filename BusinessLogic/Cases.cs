@@ -8,6 +8,7 @@ namespace BusinessLogic
     {
         private DbController _dbController;
         private List<Service> _provServices;
+        private Case _case;
         public Cases()
         {
             _dbController = DbController.Instance;
@@ -17,17 +18,17 @@ namespace BusinessLogic
 
         internal int NewCase(string name) // her kommer mange variabler fra Form
         {
-            Case c1 = new Case();
-            c1.Name = name;
-            return _dbController.NewCase(c1);
+            _case = new Case();
+            _case.Name = name;
+            return _dbController.NewCase(_case);
         }
         internal int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
-            Case c1 = new Case();
-            c1.Id = id;
-            c1.TotalPrice = totalPrice;
-            c1.EndDate = endDate;
-            return _dbController.CloseCase(c1);
+            _case = new Case();
+            _case.Id = id;
+            _case.TotalPrice = totalPrice;
+            _case.EndDate = endDate;
+            return _dbController.CloseCase(_case);
         }
 
         internal int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
@@ -44,7 +45,8 @@ namespace BusinessLogic
 
         internal Case GetCase(int id)
         {
-            return _dbController.GetCase(id);
+            _case= _dbController.GetCase(id);
+            return _case;
         }
 
         internal List<Case> GetCases()
@@ -54,8 +56,8 @@ namespace BusinessLogic
 
         internal List<Service> GetProvidedServices(int caseId)
         {
-            return _dbController.GetProvidedServices(caseId);
-         
+            _provServices= _dbController.GetProvidedServices(caseId);
+            return _provServices;
         }
 
         internal int UpdateService(int id, int hours, int km, DateTime date, string comment)
@@ -71,24 +73,31 @@ namespace BusinessLogic
 
         internal int UpdateCase(int id, decimal negPrice, string respEmp)
         {
-            Case c1 = new Case();
-            c1.Id = id;
-            c1.NegPrice = negPrice;
-            c1.RespEmployee = respEmp;
-            return _dbController.UpdateCase(c1);
+            _case = new Case();
+            _case.Id = id;
+            _case.NegPrice = negPrice;
+            _case.RespEmployee = respEmp;
+            return _dbController.UpdateCase(_case);
         }
 
-        internal decimal CalculatePrice(int id)
+        internal decimal GetPrice(int id)
+        {
+            decimal total = _case.NegPrice > 0 ? _case.NegPrice : CalculatePrice();
+            return total;
+        }
+
+        private decimal CalculatePrice()
         {
             int hours = 0;
             int km = 0;
-            CountServices(id, ref hours, ref km);
+            CountServices(ref hours, ref km);
             decimal[] prices = GetUnitPrices();
+
             return hours * prices[0] + km * prices[1];
         }
-        private void CountServices(int id, ref int hours, ref int km)
+        private void CountServices(ref int hours, ref int km)
         {
-            foreach (var item in _dbController.GetProvidedServices(id))
+            foreach (var item in _provServices)
             {
                 hours += item.Hours;
                 km += item.Km;
@@ -118,6 +127,17 @@ namespace BusinessLogic
         internal List<string> GetEmplNames()
         {
             return _dbController.GetEmplNames();
+        }
+
+        internal List <string> GetClientNames()
+        {
+            return _dbController.GetClientNames();
+        }
+
+        internal int NewClient()
+        {
+            Client client = new Client();
+            return _dbController.NewClient(client);
         }
     }
 }

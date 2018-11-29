@@ -76,6 +76,11 @@ namespace DataAccess
            return  _read.GetEmplNames();
         }
 
+        public List<string> GetClientNames()
+        {
+            return _read.GetClientNames();
+        }
+
         public decimal[] GetUnitPrices()
         {
             return _read.GetUnitPrices();

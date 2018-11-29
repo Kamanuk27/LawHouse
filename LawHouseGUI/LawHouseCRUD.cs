@@ -317,25 +317,16 @@ namespace LawHouseGUI
           
         }
 
-        private void CompanyRadio_CheckedChanged(object sender, EventArgs e)
+        private void NewClient_Click(object sender, EventArgs e)
         {
-            labelCVR.Visible = true;
-            labelComp.Visible = true;
-            NewClientCvr.Visible = true;
-            NewCleienCompany.Visible = true;
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            labelCVR.Visible = false;
-            labelComp.Visible = false;
-            NewClientCvr.Visible = false;
-            NewCleienCompany.Visible = false;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Добавить на кнопку обновление клиентов в комбоКлиенты для создания кейсов
+            string cpr = NewClientCprNo.Text;
+            string fName = NewClientfName.Text;
+            string lName = NewClientLName.Text;
+            string address = NewClientAdress.Text;
+            int postNo = Convert.ToInt32(NewClientPost.Text);
+            string eMail = NewClientMail.Text;
+            string tlf = NewClientTelef.Text;
+            _handler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
         private void NewEmplButt_Click(object sender, EventArgs e)

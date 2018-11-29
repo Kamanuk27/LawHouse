@@ -45,7 +45,7 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.search_button = new System.Windows.Forms.Button();
@@ -97,13 +97,8 @@
             this.PrivatRadio = new System.Windows.Forms.TabPage();
             this.CrCaseClient = new System.Windows.Forms.ComboBox();
             this.NewClientButt = new System.Windows.Forms.Button();
-            this.CompanyRadio = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.labelComp = new System.Windows.Forms.Label();
-            this.NewCleienCompany = new System.Windows.Forms.TextBox();
-            this.NewClientCvr = new System.Windows.Forms.TextBox();
             this.NewClientTelef = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NewClientMail = new System.Windows.Forms.TextBox();
             this.NewClientPost = new System.Windows.Forms.TextBox();
             this.NewClientAdress = new System.Windows.Forms.TextBox();
             this.NewClientLName = new System.Windows.Forms.TextBox();
@@ -111,7 +106,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.NewClientCprNo = new System.Windows.Forms.TextBox();
-            this.labelCVR = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -371,7 +365,7 @@
             // 
             this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
             this.searchBox.Location = new System.Drawing.Point(344, 20);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(164, 23);
             this.searchBox.TabIndex = 61;
@@ -391,7 +385,7 @@
             // 
             this.search_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_button.Location = new System.Drawing.Point(524, 17);
-            this.search_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_button.Margin = new System.Windows.Forms.Padding(2);
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(89, 24);
             this.search_button.TabIndex = 59;
@@ -411,8 +405,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -423,7 +417,7 @@
             this.Resp_empl,
             this.Client});
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 52);
-            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -475,7 +469,7 @@
             this.Hours,
             this.Km});
             this.ServiceDataGrid.Location = new System.Drawing.Point(702, 52);
-            this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -537,7 +531,7 @@
             this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
             this.UpdateButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButt.Location = new System.Drawing.Point(498, 412);
-            this.UpdateButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateButt.Name = "UpdateButt";
             this.UpdateButt.Size = new System.Drawing.Size(114, 36);
             this.UpdateButt.TabIndex = 84;
@@ -549,7 +543,7 @@
             // 
             this.CaseIDtxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaseIDtxb.Location = new System.Drawing.Point(170, 346);
-            this.CaseIDtxb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CaseIDtxb.Margin = new System.Windows.Forms.Padding(2);
             this.CaseIDtxb.Name = "CaseIDtxb";
             this.CaseIDtxb.ReadOnly = true;
             this.CaseIDtxb.Size = new System.Drawing.Size(169, 23);
@@ -559,7 +553,7 @@
             // 
             this.CaseNametxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaseNametxb.Location = new System.Drawing.Point(170, 378);
-            this.CaseNametxb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CaseNametxb.Margin = new System.Windows.Forms.Padding(2);
             this.CaseNametxb.Name = "CaseNametxb";
             this.CaseNametxb.ReadOnly = true;
             this.CaseNametxb.Size = new System.Drawing.Size(169, 23);
@@ -569,7 +563,7 @@
             // 
             this.Clienttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clienttxt.Location = new System.Drawing.Point(170, 407);
-            this.Clienttxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Clienttxt.Margin = new System.Windows.Forms.Padding(2);
             this.Clienttxt.Name = "Clienttxt";
             this.Clienttxt.ReadOnly = true;
             this.Clienttxt.Size = new System.Drawing.Size(169, 23);
@@ -579,7 +573,7 @@
             // 
             this.Servicetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Servicetxt.Location = new System.Drawing.Point(170, 439);
-            this.Servicetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Servicetxt.Margin = new System.Windows.Forms.Padding(2);
             this.Servicetxt.Name = "Servicetxt";
             this.Servicetxt.ReadOnly = true;
             this.Servicetxt.Size = new System.Drawing.Size(169, 23);
@@ -589,7 +583,7 @@
             // 
             this.StartDatetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDatetxt.Location = new System.Drawing.Point(170, 470);
-            this.StartDatetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartDatetxt.Margin = new System.Windows.Forms.Padding(2);
             this.StartDatetxt.Name = "StartDatetxt";
             this.StartDatetxt.ReadOnly = true;
             this.StartDatetxt.Size = new System.Drawing.Size(169, 23);
@@ -599,7 +593,7 @@
             // 
             this.EndDatetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDatetxt.Location = new System.Drawing.Point(170, 500);
-            this.EndDatetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EndDatetxt.Margin = new System.Windows.Forms.Padding(2);
             this.EndDatetxt.Name = "EndDatetxt";
             this.EndDatetxt.ReadOnly = true;
             this.EndDatetxt.Size = new System.Drawing.Size(169, 23);
@@ -609,7 +603,7 @@
             // 
             this.NegPricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NegPricetxt.Location = new System.Drawing.Point(445, 377);
-            this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.NegPricetxt.Name = "NegPricetxt";
             this.NegPricetxt.Size = new System.Drawing.Size(168, 23);
             this.NegPricetxt.TabIndex = 101;
@@ -618,7 +612,7 @@
             // 
             this.TotalPricetxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPricetxt.Location = new System.Drawing.Point(444, 559);
-            this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalPricetxt.Name = "TotalPricetxt";
             this.TotalPricetxt.Size = new System.Drawing.Size(168, 23);
             this.TotalPricetxt.TabIndex = 102;
@@ -631,7 +625,7 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1370, 678);
@@ -686,9 +680,9 @@
             this.tabPage1.Controls.Add(label6);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1362, 648);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opdatere/Afslute";
@@ -698,7 +692,7 @@
             // 
             this.CalculatePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatePrice.Location = new System.Drawing.Point(497, 594);
-            this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
             this.CalculatePrice.Name = "CalculatePrice";
             this.CalculatePrice.Size = new System.Drawing.Size(114, 36);
             this.CalculatePrice.TabIndex = 125;
@@ -709,7 +703,7 @@
             // EndCaseTimePictxt
             // 
             this.EndCaseTimePictxt.Location = new System.Drawing.Point(446, 523);
-            this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
             this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
             this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 23);
             this.EndCaseTimePictxt.TabIndex = 124;
@@ -719,7 +713,7 @@
             this.ServiseDeleteBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ServiseDeleteBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ServiseDeleteBut.Location = new System.Drawing.Point(876, 500);
-            this.ServiseDeleteBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ServiseDeleteBut.Margin = new System.Windows.Forms.Padding(2);
             this.ServiseDeleteBut.Name = "ServiseDeleteBut";
             this.ServiseDeleteBut.Size = new System.Drawing.Size(121, 36);
             this.ServiseDeleteBut.TabIndex = 123;
@@ -732,7 +726,7 @@
             this.NyYdButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.NyYdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NyYdButton.Location = new System.Drawing.Point(1175, 500);
-            this.NyYdButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NyYdButton.Margin = new System.Windows.Forms.Padding(2);
             this.NyYdButton.Name = "NyYdButton";
             this.NyYdButton.Size = new System.Drawing.Size(121, 36);
             this.NyYdButton.TabIndex = 122;
@@ -744,7 +738,7 @@
             // 
             this.YUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YUpdate.Location = new System.Drawing.Point(1030, 500);
-            this.YUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.YUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.YUpdate.Name = "YUpdate";
             this.YUpdate.Size = new System.Drawing.Size(121, 36);
             this.YUpdate.TabIndex = 121;
@@ -755,7 +749,7 @@
             // YCommentTxt
             // 
             this.YCommentTxt.Location = new System.Drawing.Point(1138, 346);
-            this.YCommentTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.YCommentTxt.Margin = new System.Windows.Forms.Padding(2);
             this.YCommentTxt.Name = "YCommentTxt";
             this.YCommentTxt.Size = new System.Drawing.Size(158, 106);
             this.YCommentTxt.TabIndex = 120;
@@ -764,7 +758,7 @@
             // YKmTxt
             // 
             this.YKmTxt.Location = new System.Drawing.Point(806, 440);
-            this.YKmTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.YKmTxt.Margin = new System.Windows.Forms.Padding(2);
             this.YKmTxt.Name = "YKmTxt";
             this.YKmTxt.Size = new System.Drawing.Size(158, 23);
             this.YKmTxt.TabIndex = 119;
@@ -773,7 +767,7 @@
             // YHouresTxt
             // 
             this.YHouresTxt.Location = new System.Drawing.Point(806, 408);
-            this.YHouresTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.YHouresTxt.Margin = new System.Windows.Forms.Padding(2);
             this.YHouresTxt.Name = "YHouresTxt";
             this.YHouresTxt.Size = new System.Drawing.Size(158, 23);
             this.YHouresTxt.TabIndex = 118;
@@ -782,7 +776,7 @@
             // YDateTimePicker1
             // 
             this.YDateTimePicker1.Location = new System.Drawing.Point(806, 375);
-            this.YDateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.YDateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.YDateTimePicker1.Name = "YDateTimePicker1";
             this.YDateTimePicker1.Size = new System.Drawing.Size(158, 23);
             this.YDateTimePicker1.TabIndex = 116;
@@ -791,7 +785,7 @@
             // 
             this.YEmploeeCombox.FormattingEnabled = true;
             this.YEmploeeCombox.Location = new System.Drawing.Point(806, 342);
-            this.YEmploeeCombox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.YEmploeeCombox.Margin = new System.Windows.Forms.Padding(2);
             this.YEmploeeCombox.Name = "YEmploeeCombox";
             this.YEmploeeCombox.Size = new System.Drawing.Size(158, 25);
             this.YEmploeeCombox.TabIndex = 115;
@@ -852,7 +846,7 @@
             this.DeleteButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.DeleteButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteButt.Location = new System.Drawing.Point(363, 412);
-            this.DeleteButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteButt.Name = "DeleteButt";
             this.DeleteButt.Size = new System.Drawing.Size(114, 36);
             this.DeleteButt.TabIndex = 109;
@@ -864,7 +858,7 @@
             // 
             this.RespEmpCombo.FormattingEnabled = true;
             this.RespEmpCombo.Location = new System.Drawing.Point(445, 344);
-            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
             this.RespEmpCombo.Name = "RespEmpCombo";
             this.RespEmpCombo.Size = new System.Drawing.Size(168, 25);
             this.RespEmpCombo.TabIndex = 108;
@@ -875,7 +869,7 @@
             this.ClosedCaseBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClosedCaseBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClosedCaseBut.Location = new System.Drawing.Point(363, 594);
-            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
             this.ClosedCaseBut.Name = "ClosedCaseBut";
             this.ClosedCaseBut.Size = new System.Drawing.Size(114, 36);
             this.ClosedCaseBut.TabIndex = 107;
@@ -909,7 +903,7 @@
             // 
             this.HoursEsttxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoursEsttxt.Location = new System.Drawing.Point(170, 531);
-            this.HoursEsttxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HoursEsttxt.Margin = new System.Windows.Forms.Padding(2);
             this.HoursEsttxt.Name = "HoursEsttxt";
             this.HoursEsttxt.ReadOnly = true;
             this.HoursEsttxt.Size = new System.Drawing.Size(169, 23);
@@ -919,13 +913,8 @@
             // 
             this.PrivatRadio.Controls.Add(this.CrCaseClient);
             this.PrivatRadio.Controls.Add(this.NewClientButt);
-            this.PrivatRadio.Controls.Add(this.CompanyRadio);
-            this.PrivatRadio.Controls.Add(this.radioButton1);
-            this.PrivatRadio.Controls.Add(this.labelComp);
-            this.PrivatRadio.Controls.Add(this.NewCleienCompany);
-            this.PrivatRadio.Controls.Add(this.NewClientCvr);
             this.PrivatRadio.Controls.Add(this.NewClientTelef);
-            this.PrivatRadio.Controls.Add(this.textBox1);
+            this.PrivatRadio.Controls.Add(this.NewClientMail);
             this.PrivatRadio.Controls.Add(this.NewClientPost);
             this.PrivatRadio.Controls.Add(this.NewClientAdress);
             this.PrivatRadio.Controls.Add(this.NewClientLName);
@@ -933,7 +922,6 @@
             this.PrivatRadio.Controls.Add(this.label36);
             this.PrivatRadio.Controls.Add(this.label35);
             this.PrivatRadio.Controls.Add(this.NewClientCprNo);
-            this.PrivatRadio.Controls.Add(this.labelCVR);
             this.PrivatRadio.Controls.Add(this.label33);
             this.PrivatRadio.Controls.Add(this.label32);
             this.PrivatRadio.Controls.Add(this.label31);
@@ -958,10 +946,10 @@
             this.PrivatRadio.Controls.Add(label28);
             this.PrivatRadio.Controls.Add(label29);
             this.PrivatRadio.Location = new System.Drawing.Point(4, 26);
-            this.PrivatRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PrivatRadio.Margin = new System.Windows.Forms.Padding(2);
             this.PrivatRadio.Name = "PrivatRadio";
-            this.PrivatRadio.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.PrivatRadio.Size = new System.Drawing.Size(1020, 579);
+            this.PrivatRadio.Padding = new System.Windows.Forms.Padding(2);
+            this.PrivatRadio.Size = new System.Drawing.Size(1362, 648);
             this.PrivatRadio.TabIndex = 1;
             this.PrivatRadio.Text = "Tilføj sag/klient";
             this.PrivatRadio.UseVisualStyleBackColor = true;
@@ -970,7 +958,7 @@
             // 
             this.CrCaseClient.FormattingEnabled = true;
             this.CrCaseClient.Location = new System.Drawing.Point(558, 145);
-            this.CrCaseClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCaseClient.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseClient.Name = "CrCaseClient";
             this.CrCaseClient.Size = new System.Drawing.Size(195, 25);
             this.CrCaseClient.TabIndex = 177;
@@ -978,98 +966,42 @@
             // NewClientButt
             // 
             this.NewClientButt.Location = new System.Drawing.Point(140, 562);
-            this.NewClientButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientButt.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientButt.Name = "NewClientButt";
             this.NewClientButt.Size = new System.Drawing.Size(114, 36);
             this.NewClientButt.TabIndex = 176;
             this.NewClientButt.Text = "Ny Klient";
             this.NewClientButt.UseVisualStyleBackColor = true;
-            this.NewClientButt.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // CompanyRadio
-            // 
-            this.CompanyRadio.AutoSize = true;
-            this.CompanyRadio.Location = new System.Drawing.Point(140, 55);
-            this.CompanyRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.CompanyRadio.Name = "CompanyRadio";
-            this.CompanyRadio.Size = new System.Drawing.Size(75, 21);
-            this.CompanyRadio.TabIndex = 175;
-            this.CompanyRadio.TabStop = true;
-            this.CompanyRadio.Text = "Erhverv";
-            this.CompanyRadio.UseVisualStyleBackColor = true;
-            this.CompanyRadio.CheckedChanged += new System.EventHandler(this.CompanyRadio_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(55, 55);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 21);
-            this.radioButton1.TabIndex = 174;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Privat";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // labelComp
-            // 
-            this.labelComp.AutoSize = true;
-            this.labelComp.Location = new System.Drawing.Point(52, 498);
-            this.labelComp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelComp.Name = "labelComp";
-            this.labelComp.Size = new System.Drawing.Size(108, 17);
-            this.labelComp.TabIndex = 173;
-            this.labelComp.Text = "Company Name";
-            this.labelComp.Visible = false;
-            // 
-            // NewCleienCompany
-            // 
-            this.NewCleienCompany.Location = new System.Drawing.Point(55, 522);
-            this.NewCleienCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.NewCleienCompany.Name = "NewCleienCompany";
-            this.NewCleienCompany.Size = new System.Drawing.Size(198, 23);
-            this.NewCleienCompany.TabIndex = 172;
-            this.NewCleienCompany.Visible = false;
-            // 
-            // NewClientCvr
-            // 
-            this.NewClientCvr.Location = new System.Drawing.Point(55, 470);
-            this.NewClientCvr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.NewClientCvr.Name = "NewClientCvr";
-            this.NewClientCvr.Size = new System.Drawing.Size(198, 23);
-            this.NewClientCvr.TabIndex = 171;
-            this.NewClientCvr.Visible = false;
+            this.NewClientButt.Click += new System.EventHandler(this.NewClient_Click);
             // 
             // NewClientTelef
             // 
             this.NewClientTelef.Location = new System.Drawing.Point(55, 419);
-            this.NewClientTelef.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientTelef.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientTelef.Name = "NewClientTelef";
             this.NewClientTelef.Size = new System.Drawing.Size(198, 23);
             this.NewClientTelef.TabIndex = 170;
             // 
-            // textBox1
+            // NewClientMail
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 368);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 23);
-            this.textBox1.TabIndex = 169;
+            this.NewClientMail.Location = new System.Drawing.Point(55, 368);
+            this.NewClientMail.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientMail.Name = "NewClientMail";
+            this.NewClientMail.Size = new System.Drawing.Size(198, 23);
+            this.NewClientMail.TabIndex = 169;
             // 
             // NewClientPost
             // 
             this.NewClientPost.Location = new System.Drawing.Point(55, 317);
-            this.NewClientPost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientPost.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientPost.Name = "NewClientPost";
-            this.NewClientPost.ReadOnly = true;
             this.NewClientPost.Size = new System.Drawing.Size(198, 23);
             this.NewClientPost.TabIndex = 168;
             // 
             // NewClientAdress
             // 
             this.NewClientAdress.Location = new System.Drawing.Point(55, 266);
-            this.NewClientAdress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientAdress.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientAdress.Name = "NewClientAdress";
             this.NewClientAdress.Size = new System.Drawing.Size(198, 23);
             this.NewClientAdress.TabIndex = 167;
@@ -1077,7 +1009,7 @@
             // NewClientLName
             // 
             this.NewClientLName.Location = new System.Drawing.Point(55, 214);
-            this.NewClientLName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientLName.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientLName.Name = "NewClientLName";
             this.NewClientLName.Size = new System.Drawing.Size(198, 23);
             this.NewClientLName.TabIndex = 166;
@@ -1085,7 +1017,7 @@
             // NewClientfName
             // 
             this.NewClientfName.Location = new System.Drawing.Point(55, 163);
-            this.NewClientfName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientfName.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientfName.Name = "NewClientfName";
             this.NewClientfName.Size = new System.Drawing.Size(198, 23);
             this.NewClientfName.TabIndex = 165;
@@ -1115,21 +1047,10 @@
             // NewClientCprNo
             // 
             this.NewClientCprNo.Location = new System.Drawing.Point(55, 112);
-            this.NewClientCprNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewClientCprNo.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientCprNo.Name = "NewClientCprNo";
             this.NewClientCprNo.Size = new System.Drawing.Size(198, 23);
             this.NewClientCprNo.TabIndex = 162;
-            // 
-            // labelCVR
-            // 
-            this.labelCVR.AutoSize = true;
-            this.labelCVR.Location = new System.Drawing.Point(52, 447);
-            this.labelCVR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCVR.Name = "labelCVR";
-            this.labelCVR.Size = new System.Drawing.Size(40, 17);
-            this.labelCVR.TabIndex = 161;
-            this.labelCVR.Text = "CVR:";
-            this.labelCVR.Visible = false;
             // 
             // label33
             // 
@@ -1205,7 +1126,7 @@
             // 
             this.NewCaseButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewCaseButt.Location = new System.Drawing.Point(640, 562);
-            this.NewCaseButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewCaseButt.Margin = new System.Windows.Forms.Padding(2);
             this.NewCaseButt.Name = "NewCaseButt";
             this.NewCaseButt.Size = new System.Drawing.Size(114, 36);
             this.NewCaseButt.TabIndex = 153;
@@ -1215,7 +1136,7 @@
             // CrCasetimeP
             // 
             this.CrCasetimeP.Location = new System.Drawing.Point(558, 254);
-            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
             this.CrCasetimeP.Name = "CrCasetimeP";
             this.CrCasetimeP.Size = new System.Drawing.Size(198, 23);
             this.CrCasetimeP.TabIndex = 152;
@@ -1224,7 +1145,7 @@
             // 
             this.CrCaseAdvokat.FormattingEnabled = true;
             this.CrCaseAdvokat.Location = new System.Drawing.Point(558, 309);
-            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseAdvokat.Name = "CrCaseAdvokat";
             this.CrCaseAdvokat.Size = new System.Drawing.Size(198, 25);
             this.CrCaseAdvokat.TabIndex = 148;
@@ -1244,7 +1165,7 @@
             // 
             this.CrCaseTimeUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCaseTimeUsed.Location = new System.Drawing.Point(558, 473);
-            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
             this.CrCaseTimeUsed.ReadOnly = true;
             this.CrCaseTimeUsed.Size = new System.Drawing.Size(198, 23);
@@ -1254,7 +1175,7 @@
             // 
             this.CrCasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCasePrice.Location = new System.Drawing.Point(558, 364);
-            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.CrCasePrice.Name = "CrCasePrice";
             this.CrCasePrice.Size = new System.Drawing.Size(198, 23);
             this.CrCasePrice.TabIndex = 142;
@@ -1263,7 +1184,7 @@
             // 
             this.CrCaseEndDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCaseEndDato.Location = new System.Drawing.Point(558, 418);
-            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseEndDato.Name = "CrCaseEndDato";
             this.CrCaseEndDato.ReadOnly = true;
             this.CrCaseEndDato.Size = new System.Drawing.Size(198, 23);
@@ -1273,7 +1194,7 @@
             // 
             this.CrCaseService.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCaseService.Location = new System.Drawing.Point(558, 200);
-            this.CrCaseService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCaseService.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseService.Name = "CrCaseService";
             this.CrCaseService.Size = new System.Drawing.Size(198, 23);
             this.CrCaseService.TabIndex = 139;
@@ -1282,7 +1203,7 @@
             // 
             this.CrCaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCaseName.Location = new System.Drawing.Point(558, 90);
-            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseName.Name = "CrCaseName";
             this.CrCaseName.Size = new System.Drawing.Size(198, 23);
             this.CrCaseName.TabIndex = 137;
@@ -1342,9 +1263,9 @@
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.label43);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1330, 639);
+            this.tabPage3.Size = new System.Drawing.Size(1362, 648);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Advokat/Service/Field";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1353,7 +1274,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(798, 162);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 36);
             this.button1.TabIndex = 222;
@@ -1364,7 +1285,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(798, 120);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 25);
             this.comboBox2.TabIndex = 221;
@@ -1373,7 +1294,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(795, 65);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 25);
             this.comboBox1.TabIndex = 220;
@@ -1413,7 +1334,7 @@
             // 
             this.FieldButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FieldButt.Location = new System.Drawing.Point(637, 118);
-            this.FieldButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FieldButt.Margin = new System.Windows.Forms.Padding(2);
             this.FieldButt.Name = "FieldButt";
             this.FieldButt.Size = new System.Drawing.Size(114, 36);
             this.FieldButt.TabIndex = 216;
@@ -1424,7 +1345,7 @@
             // 
             this.UnitRateButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UnitRateButt.Location = new System.Drawing.Point(479, 162);
-            this.UnitRateButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UnitRateButt.Margin = new System.Windows.Forms.Padding(2);
             this.UnitRateButt.Name = "UnitRateButt";
             this.UnitRateButt.Size = new System.Drawing.Size(114, 36);
             this.UnitRateButt.TabIndex = 215;
@@ -1434,7 +1355,7 @@
             // FieldNameTxt
             // 
             this.FieldNameTxt.Location = new System.Drawing.Point(637, 67);
-            this.FieldNameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FieldNameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.FieldNameTxt.Name = "FieldNameTxt";
             this.FieldNameTxt.Size = new System.Drawing.Size(115, 23);
             this.FieldNameTxt.TabIndex = 214;
@@ -1464,7 +1385,7 @@
             // 
             this.UnitCombo.FormattingEnabled = true;
             this.UnitCombo.Location = new System.Drawing.Point(479, 65);
-            this.UnitCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UnitCombo.Margin = new System.Windows.Forms.Padding(2);
             this.UnitCombo.Name = "UnitCombo";
             this.UnitCombo.Size = new System.Drawing.Size(115, 25);
             this.UnitCombo.TabIndex = 211;
@@ -1472,7 +1393,7 @@
             // UnitRate
             // 
             this.UnitRate.Location = new System.Drawing.Point(479, 118);
-            this.UnitRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UnitRate.Margin = new System.Windows.Forms.Padding(2);
             this.UnitRate.Name = "UnitRate";
             this.UnitRate.Size = new System.Drawing.Size(115, 23);
             this.UnitRate.TabIndex = 210;
@@ -1512,7 +1433,7 @@
             // 
             this.MakeNewServBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MakeNewServBut.Location = new System.Drawing.Point(306, 374);
-            this.MakeNewServBut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MakeNewServBut.Margin = new System.Windows.Forms.Padding(2);
             this.MakeNewServBut.Name = "MakeNewServBut";
             this.MakeNewServBut.Size = new System.Drawing.Size(114, 36);
             this.MakeNewServBut.TabIndex = 206;
@@ -1522,7 +1443,7 @@
             // MkServiceFixPr
             // 
             this.MkServiceFixPr.Location = new System.Drawing.Point(260, 323);
-            this.MkServiceFixPr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MkServiceFixPr.Margin = new System.Windows.Forms.Padding(2);
             this.MkServiceFixPr.Name = "MkServiceFixPr";
             this.MkServiceFixPr.Size = new System.Drawing.Size(162, 23);
             this.MkServiceFixPr.TabIndex = 205;
@@ -1530,7 +1451,7 @@
             // MkServicePriec
             // 
             this.MkServicePriec.Location = new System.Drawing.Point(260, 271);
-            this.MkServicePriec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MkServicePriec.Margin = new System.Windows.Forms.Padding(2);
             this.MkServicePriec.Name = "MkServicePriec";
             this.MkServicePriec.Size = new System.Drawing.Size(162, 23);
             this.MkServicePriec.TabIndex = 204;
@@ -1538,7 +1459,7 @@
             // MkServiceField
             // 
             this.MkServiceField.Location = new System.Drawing.Point(260, 220);
-            this.MkServiceField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MkServiceField.Margin = new System.Windows.Forms.Padding(2);
             this.MkServiceField.Name = "MkServiceField";
             this.MkServiceField.Size = new System.Drawing.Size(162, 23);
             this.MkServiceField.TabIndex = 203;
@@ -1546,7 +1467,7 @@
             // MkServiceTime
             // 
             this.MkServiceTime.Location = new System.Drawing.Point(260, 169);
-            this.MkServiceTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MkServiceTime.Margin = new System.Windows.Forms.Padding(2);
             this.MkServiceTime.Name = "MkServiceTime";
             this.MkServiceTime.Size = new System.Drawing.Size(162, 23);
             this.MkServiceTime.TabIndex = 202;
@@ -1554,7 +1475,7 @@
             // MkServiceHours
             // 
             this.MkServiceHours.Location = new System.Drawing.Point(260, 118);
-            this.MkServiceHours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MkServiceHours.Margin = new System.Windows.Forms.Padding(2);
             this.MkServiceHours.Name = "MkServiceHours";
             this.MkServiceHours.Size = new System.Drawing.Size(162, 23);
             this.MkServiceHours.TabIndex = 201;
@@ -1562,7 +1483,7 @@
             // MkServiceName
             // 
             this.MkServiceName.Location = new System.Drawing.Point(260, 67);
-            this.MkServiceName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MkServiceName.Margin = new System.Windows.Forms.Padding(2);
             this.MkServiceName.Name = "MkServiceName";
             this.MkServiceName.Size = new System.Drawing.Size(162, 23);
             this.MkServiceName.TabIndex = 200;
@@ -1653,7 +1574,7 @@
             // 
             this.NewEmplButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewEmplButt.Location = new System.Drawing.Point(105, 575);
-            this.NewEmplButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewEmplButt.Margin = new System.Windows.Forms.Padding(2);
             this.NewEmplButt.Name = "NewEmplButt";
             this.NewEmplButt.Size = new System.Drawing.Size(114, 36);
             this.NewEmplButt.TabIndex = 191;
@@ -1674,7 +1595,7 @@
             // NEmplMoney
             // 
             this.NEmplMoney.Location = new System.Drawing.Point(22, 527);
-            this.NEmplMoney.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NEmplMoney.Margin = new System.Windows.Forms.Padding(2);
             this.NEmplMoney.Name = "NEmplMoney";
             this.NEmplMoney.Size = new System.Drawing.Size(198, 23);
             this.NEmplMoney.TabIndex = 189;
@@ -1682,7 +1603,7 @@
             // NEmplPosition
             // 
             this.NEmplPosition.Location = new System.Drawing.Point(22, 476);
-            this.NEmplPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NEmplPosition.Margin = new System.Windows.Forms.Padding(2);
             this.NEmplPosition.Name = "NEmplPosition";
             this.NEmplPosition.Size = new System.Drawing.Size(198, 23);
             this.NEmplPosition.TabIndex = 188;
@@ -1690,7 +1611,7 @@
             // NEmplStartDate
             // 
             this.NEmplStartDate.Location = new System.Drawing.Point(22, 425);
-            this.NEmplStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NEmplStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.NEmplStartDate.Name = "NEmplStartDate";
             this.NEmplStartDate.Size = new System.Drawing.Size(198, 23);
             this.NEmplStartDate.TabIndex = 187;
@@ -1708,7 +1629,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(22, 374);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(198, 23);
             this.textBox2.TabIndex = 185;
@@ -1716,7 +1637,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(22, 323);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(198, 23);
             this.textBox3.TabIndex = 184;
@@ -1724,7 +1645,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(22, 271);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(198, 23);
@@ -1733,7 +1654,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(22, 220);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(198, 23);
             this.textBox5.TabIndex = 182;
@@ -1741,7 +1662,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(22, 169);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(198, 23);
             this.textBox6.TabIndex = 181;
@@ -1749,7 +1670,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(22, 118);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(198, 23);
             this.textBox7.TabIndex = 180;
@@ -1757,7 +1678,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(22, 67);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(198, 23);
             this.textBox8.TabIndex = 179;
@@ -1849,7 +1770,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 678);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LawHouseCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Law House Advokater";
@@ -1928,12 +1849,8 @@
         private System.Windows.Forms.TextBox CrCaseEndDato;
         private System.Windows.Forms.TextBox CrCaseService;
         private System.Windows.Forms.TextBox CrCaseName;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label labelComp;
-        private System.Windows.Forms.TextBox NewCleienCompany;
-        private System.Windows.Forms.TextBox NewClientCvr;
         private System.Windows.Forms.TextBox NewClientTelef;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NewClientMail;
         private System.Windows.Forms.TextBox NewClientPost;
         private System.Windows.Forms.TextBox NewClientAdress;
         private System.Windows.Forms.TextBox NewClientLName;
@@ -1941,7 +1858,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox NewClientCprNo;
-        private System.Windows.Forms.Label labelCVR;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
@@ -1949,7 +1865,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.RadioButton CompanyRadio;
         private System.Windows.Forms.ComboBox CrCaseClient;
         private System.Windows.Forms.Button NewClientButt;
         private System.Windows.Forms.Button NewEmplButt;
