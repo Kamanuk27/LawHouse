@@ -64,13 +64,13 @@ namespace DataAccess
 
             _command.CommandText = sqlString;
 
-            string[] names = s1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] names = c1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
-            _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
-            _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
-            _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            _command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+            _command.Parameters.Add(new SqlParameter("@Case_ID", c1.CaseID));
+            _command.Parameters.Add(new SqlParameter("@Date", c1.Date));
+            _command.Parameters.Add(new SqlParameter("@Hours", c1.Hours));
+            _command.Parameters.Add(new SqlParameter("@Km", c1.Km));
+            _command.Parameters.Add(new SqlParameter("@Comment", c1.Comment));
             _command.Parameters.Add(new SqlParameter("@fName", names[0]));
             _command.Parameters.Add(new SqlParameter("@lName", names[1]));
 
