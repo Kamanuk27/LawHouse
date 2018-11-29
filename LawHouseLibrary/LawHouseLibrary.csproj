@@ -45,8 +45,8 @@
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\LegalService.cs" />
     <Compile Include="Entities\Service.cs" />
-    <Compile Include="Entities\Specialization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
