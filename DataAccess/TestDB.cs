@@ -18,6 +18,11 @@ namespace DataAccess
             return 1;
         }
 
+        public int NewLegalService(LegalService legal)
+        {
+            throw new NotImplementedException();
+        }
+
         public Case GetCase(int id)
         {
             Case c1 = new Case();

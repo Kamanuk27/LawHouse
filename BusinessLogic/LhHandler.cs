@@ -25,6 +25,7 @@ namespace BusinessLogic
         public LhHandler()
         {
             _cases = new Cases();
+            _hr = new HR();
         }
         public int NewCase(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice) 
         {
