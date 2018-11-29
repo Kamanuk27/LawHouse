@@ -110,5 +110,9 @@ namespace BusinessLogic
         {
             return _persistence.NewEmployee(employee);
         }
+        internal int NewLegalService(LegalService legal)
+        {
+            return _persistence.NewLegalService(legal);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace DataAccess
         int NewService(Service s1);
         int NewClient(Client client);
         int NewEmployee(Employee employee);
+        int NewLegalService(LegalService legal);
         Case GetCase(int Id);
         List< Case> GetCases();
         List<Service> GetProvidedServices(int caseId);

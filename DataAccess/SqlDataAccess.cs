@@ -34,6 +34,10 @@ namespace DataAccess
         {
             return _nonQuery.NewEmployee(employee);
         }
+        public int NewLegalService(LegalService legal)
+        {
+            return _nonQuery.NewLegalService(legal);
+        }
 
         public Case GetCase(int id)
         {

@@ -123,8 +123,8 @@
             this.CrCaseName = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.LServInsertCom = new System.Windows.Forms.ComboBox();
+            this.SpecInsertCom = new System.Windows.Forms.ComboBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
@@ -136,14 +136,10 @@
             this.label54 = new System.Windows.Forms.Label();
             this.MakeNewServBut = new System.Windows.Forms.Button();
             this.MkServiceFixPr = new System.Windows.Forms.TextBox();
-            this.MkServicePriec = new System.Windows.Forms.TextBox();
-            this.MkServiceField = new System.Windows.Forms.TextBox();
             this.MkServiceTime = new System.Windows.Forms.TextBox();
             this.MkServiceHours = new System.Windows.Forms.TextBox();
             this.MkServiceName = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
@@ -1203,8 +1199,8 @@
             // 
             this.tabPage3.Controls.Add(this.NEmplPosition);
             this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.LServInsertCom);
+            this.tabPage3.Controls.Add(this.SpecInsertCom);
             this.tabPage3.Controls.Add(this.label61);
             this.tabPage3.Controls.Add(this.label60);
             this.tabPage3.Controls.Add(this.label59);
@@ -1216,14 +1212,10 @@
             this.tabPage3.Controls.Add(this.label54);
             this.tabPage3.Controls.Add(this.MakeNewServBut);
             this.tabPage3.Controls.Add(this.MkServiceFixPr);
-            this.tabPage3.Controls.Add(this.MkServicePriec);
-            this.tabPage3.Controls.Add(this.MkServiceField);
             this.tabPage3.Controls.Add(this.MkServiceTime);
             this.tabPage3.Controls.Add(this.MkServiceHours);
             this.tabPage3.Controls.Add(this.MkServiceName);
             this.tabPage3.Controls.Add(this.label53);
-            this.tabPage3.Controls.Add(this.label52);
-            this.tabPage3.Controls.Add(this.label51);
             this.tabPage3.Controls.Add(this.label50);
             this.tabPage3.Controls.Add(this.label49);
             this.tabPage3.Controls.Add(this.label48);
@@ -1268,23 +1260,23 @@
             this.button1.Text = "Tilføj specialisering";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // LServInsertCom
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(859, 148);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(212, 28);
-            this.comboBox2.TabIndex = 221;
+            this.LServInsertCom.FormattingEnabled = true;
+            this.LServInsertCom.Location = new System.Drawing.Point(859, 148);
+            this.LServInsertCom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LServInsertCom.Name = "LServInsertCom";
+            this.LServInsertCom.Size = new System.Drawing.Size(212, 28);
+            this.LServInsertCom.TabIndex = 221;
             // 
-            // comboBox1
+            // SpecInsertCom
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(855, 80);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 28);
-            this.comboBox1.TabIndex = 220;
+            this.SpecInsertCom.FormattingEnabled = true;
+            this.SpecInsertCom.Location = new System.Drawing.Point(855, 80);
+            this.SpecInsertCom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SpecInsertCom.Name = "SpecInsertCom";
+            this.SpecInsertCom.Size = new System.Drawing.Size(216, 28);
+            this.SpecInsertCom.TabIndex = 220;
             // 
             // label61
             // 
@@ -1373,41 +1365,26 @@
             // MakeNewServBut
             // 
             this.MakeNewServBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeNewServBut.Location = new System.Drawing.Point(408, 460);
+            this.MakeNewServBut.Location = new System.Drawing.Point(406, 325);
             this.MakeNewServBut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MakeNewServBut.Name = "MakeNewServBut";
             this.MakeNewServBut.Size = new System.Drawing.Size(152, 44);
             this.MakeNewServBut.TabIndex = 206;
             this.MakeNewServBut.Text = "Ny Service";
             this.MakeNewServBut.UseVisualStyleBackColor = true;
+            this.MakeNewServBut.Click += new System.EventHandler(this.MakeNewServBut_Click);
             // 
             // MkServiceFixPr
             // 
-            this.MkServiceFixPr.Location = new System.Drawing.Point(347, 398);
+            this.MkServiceFixPr.Location = new System.Drawing.Point(343, 271);
             this.MkServiceFixPr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MkServiceFixPr.Name = "MkServiceFixPr";
             this.MkServiceFixPr.Size = new System.Drawing.Size(215, 27);
             this.MkServiceFixPr.TabIndex = 205;
             // 
-            // MkServicePriec
-            // 
-            this.MkServicePriec.Location = new System.Drawing.Point(347, 334);
-            this.MkServicePriec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MkServicePriec.Name = "MkServicePriec";
-            this.MkServicePriec.Size = new System.Drawing.Size(215, 27);
-            this.MkServicePriec.TabIndex = 204;
-            // 
-            // MkServiceField
-            // 
-            this.MkServiceField.Location = new System.Drawing.Point(347, 271);
-            this.MkServiceField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MkServiceField.Name = "MkServiceField";
-            this.MkServiceField.Size = new System.Drawing.Size(215, 27);
-            this.MkServiceField.TabIndex = 203;
-            // 
             // MkServiceTime
             // 
-            this.MkServiceTime.Location = new System.Drawing.Point(347, 208);
+            this.MkServiceTime.Location = new System.Drawing.Point(343, 208);
             this.MkServiceTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MkServiceTime.Name = "MkServiceTime";
             this.MkServiceTime.Size = new System.Drawing.Size(215, 27);
@@ -1415,7 +1392,7 @@
             // 
             // MkServiceHours
             // 
-            this.MkServiceHours.Location = new System.Drawing.Point(347, 145);
+            this.MkServiceHours.Location = new System.Drawing.Point(343, 145);
             this.MkServiceHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MkServiceHours.Name = "MkServiceHours";
             this.MkServiceHours.Size = new System.Drawing.Size(215, 27);
@@ -1423,7 +1400,7 @@
             // 
             // MkServiceName
             // 
-            this.MkServiceName.Location = new System.Drawing.Point(347, 82);
+            this.MkServiceName.Location = new System.Drawing.Point(343, 82);
             this.MkServiceName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MkServiceName.Name = "MkServiceName";
             this.MkServiceName.Size = new System.Drawing.Size(215, 27);
@@ -1432,34 +1409,16 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(347, 180);
+            this.label53.Location = new System.Drawing.Point(343, 180);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(117, 20);
             this.label53.TabIndex = 199;
             this.label53.Text = "TimeEstimate:";
             // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(347, 242);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(76, 20);
-            this.label52.TabIndex = 198;
-            this.label52.Text = "Field_ID:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(347, 306);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(53, 20);
-            this.label51.TabIndex = 197;
-            this.label51.Text = "Price:";
-            // 
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(347, 369);
+            this.label50.Location = new System.Drawing.Point(343, 243);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(98, 20);
             this.label50.TabIndex = 196;
@@ -1468,7 +1427,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(347, 54);
+            this.label49.Location = new System.Drawing.Point(343, 54);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(116, 20);
             this.label49.TabIndex = 195;
@@ -1487,7 +1446,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(347, 117);
+            this.label47.Location = new System.Drawing.Point(343, 117);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(131, 20);
             this.label47.TabIndex = 193;
@@ -1506,10 +1465,10 @@
             // NewEmplButt
             // 
             this.NewEmplButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewEmplButt.Location = new System.Drawing.Point(140, 708);
+            this.NewEmplButt.Location = new System.Drawing.Point(97, 708);
             this.NewEmplButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewEmplButt.Name = "NewEmplButt";
-            this.NewEmplButt.Size = new System.Drawing.Size(152, 44);
+            this.NewEmplButt.Size = new System.Drawing.Size(195, 44);
             this.NewEmplButt.TabIndex = 191;
             this.NewEmplButt.Text = "Ny medarbejder";
             this.NewEmplButt.UseVisualStyleBackColor = true;
@@ -1845,21 +1804,17 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Button MakeNewServBut;
         private System.Windows.Forms.TextBox MkServiceFixPr;
-        private System.Windows.Forms.TextBox MkServicePriec;
-        private System.Windows.Forms.TextBox MkServiceField;
         private System.Windows.Forms.TextBox MkServiceTime;
         private System.Windows.Forms.TextBox MkServiceHours;
         private System.Windows.Forms.TextBox MkServiceName;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox LServInsertCom;
+        private System.Windows.Forms.ComboBox SpecInsertCom;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox CrCaseServiceCom;
         private System.Windows.Forms.Label label57;
