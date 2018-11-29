@@ -9,6 +9,8 @@ namespace LawHouseLibrary.Entities
 {
     public class Specialization : Entity
     {
-        public string Name { get; set; }
+        public int LegalService_ID { get; set; }
+        public int Employee_ID { get; set; }
+
     }
 }
