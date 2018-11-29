@@ -25,6 +25,15 @@ namespace DataAccess
         {
            return _nonQuery.NewService(s1);
         }
+        public int NewClient(Client client)
+        {
+            return _nonQuery.NewClient(client);
+        }
+
+        public int NewEmployee(Employee employee)
+        {
+            return _nonQuery.NewEmployee(employee);
+        }
 
         public Case GetCase(int id)
         {
@@ -85,5 +94,7 @@ namespace DataAccess
         {
             return _read.GetUnitPrices();
         }
+
+        
     }
 }

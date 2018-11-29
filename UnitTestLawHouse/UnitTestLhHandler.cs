@@ -96,7 +96,7 @@ namespace UnitTestLawHouse
         {
             decimal expected = 3250;
             decimal response = LhHandler.GetPrice(1);
-            Assert.AreEqual(response, expected);
+            Assert.AreEqual (expected, response);
         }
 
         [TestMethod]

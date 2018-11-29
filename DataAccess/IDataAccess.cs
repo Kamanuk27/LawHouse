@@ -9,6 +9,8 @@ namespace DataAccess
     {
         int NewCase(Case c1);
         int NewService(Service s1);
+        int NewClient(Client client);
+        int NewEmployee(Employee employee);
         Case GetCase(int Id);
         List< Case> GetCases();
         List<Service> GetProvidedServices(int caseId);
@@ -21,5 +23,6 @@ namespace DataAccess
         List<string> GetEmplNames();
         List<string> GetClientNames();
         decimal[] GetUnitPrices();
+        
     }
 }

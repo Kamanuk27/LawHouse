@@ -134,9 +134,16 @@ namespace BusinessLogic
             return _dbController.GetClientNames();
         }
 
-        internal int NewClient()
+        internal int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
         {
             Client client = new Client();
+            client.CprNo = cpr;
+            client.FirstName = fName;
+            client.LastName = lName;
+            client.Address = address;
+            client.PostNo = postNo;
+            client.Email = eMail;
+            client.TlfNo = tlf;
             return _dbController.NewClient(client);
         }
     }
