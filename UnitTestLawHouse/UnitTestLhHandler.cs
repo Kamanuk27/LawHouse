@@ -34,20 +34,20 @@ namespace UnitTestLawHouse
             Assert.AreEqual(response, expected);
         }
 
-        [TestMethod]
-        public void TestGetCaseReturnCaseIdOne()
-        {
-            var c1 = LhHandler.GetCase(1);
-            Assert.AreEqual(c1.Id, 1);
-        }
+        //[TestMethod]
+        //public void TestGetCaseReturnCaseIdOne()
+        //{
+        //    var c1 = LhHandler.GetCase(1);
+        //    Assert.AreEqual(c1.Id, 1);
+        //}
 
-        [TestMethod]
-        public void TestGetCaseReturnCase()
-        {
-            CaseE c1 = LhHandler.GetCase(1);
-            Type expectedType = typeof(CaseE);
-            Assert.IsInstanceOfType(c1, expectedType);
-        }
+        //[TestMethod]
+        //public void TestGetCaseReturnCase()
+        //{
+        //    CaseE c1 = LhHandler.GetCase(1);
+        //    Type expectedType = typeof(CaseE);
+        //    Assert.IsInstanceOfType(c1, expectedType);
+        //}
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()

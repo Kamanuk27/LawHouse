@@ -17,17 +17,17 @@ namespace BusinessLogic
         {
             _dbController = dbController;
         }
-        internal void InitializeCase(CaseE cE)
+        internal void InitializeCase(int id, string name, string client, DateTime start,
+            string service, decimal negPrice, decimal total, string respEmp)
         {
-            Id = cE.Id;
-            Name = cE.Name;
-            StartDate = cE.StartDate;
-            EndDate = cE.EndDate;
-            NegPrice = cE.NegPrice;
-            TotalPrice = cE.TotalPrice;
-            Service = cE.Service;
-            RespEmployee = cE.RespEmployee;
-            Client = cE.Client;
+            Id = id;
+            Name = name;
+            StartDate = start;
+            NegPrice = negPrice;
+            TotalPrice = total;
+            Service = service;
+            RespEmployee = respEmp;
+            Client = client;
             _services = _dbController.GetProvidedServices(Id);
 
         }

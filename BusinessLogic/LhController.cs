@@ -42,9 +42,10 @@ namespace BusinessLogic
             return _caseHandler.NewService(caseID, date, hours, km, comment, respEmpl);
         }
 
-        public void InitializeCase(CaseE cE)
+        public void InitializeCase(int id, string name, string client, DateTime start,
+            string service, decimal negPrice, decimal total, string respEmp)
         {
-           _caseHandler.InitiateCaseFromCaseE(cE);
+           _caseHandler.InitiateCaseFromCaseE(id, name, client, start, service, negPrice, total, respEmp);
         }
        
         public List<CaseE> GetCases()

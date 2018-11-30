@@ -79,32 +79,46 @@ namespace LawHouseGUI
                 int n = CaseDataGrid.Rows.Add();
                 CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
                 CaseDataGrid.Rows[n].Cells[1].Value = c1.Name;
-                CaseDataGrid.Rows[n].Cells[2].Value = c1.RespEmployee;
-                CaseDataGrid.Rows[n].Cells[3].Value = c1.Client;
-
+                CaseDataGrid.Rows[n].Cells[2].Value = c1.Client;
+                CaseDataGrid.Rows[n].Cells[3].Value = c1.StartDate;
+                CaseDataGrid.Rows[n].Cells[4].Value = c1.EndDate;
+                CaseDataGrid.Rows[n].Cells[5].Value = c1.Service;
+                CaseDataGrid.Rows[n].Cells[6].Value = c1.HoursEstimate;
+                CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;
+                CaseDataGrid.Rows[n].Cells[8].Value = c1.TotalPrice;
+                CaseDataGrid.Rows[n].Cells[9].Value = c1.RespEmployee;
+                
             }
         }
 
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            _handler.InitializeCase();
-            int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            var output = _handler.GetCase(id);
-            CaseIDtxb.Text = output.Id.ToString();
-            EndDatetxt.Text = output.EndDate.ToShortDateString();
-            Servicetxt.Text = output.Service.ToString();
-            StartDatetxt.Text = output.StartDate.ToShortDateString();
-            CaseNametxb.Text = output.Name.ToString();
-            NegPricetxt.Text = output.NegPrice.ToString();
-            Clienttxt.Text = output.Client.ToString();
-            RespEmpCombo.Text = output.RespEmployee.ToString();
-            TotalPricetxt.Text = output.TotalPrice.ToString();
-            HoursEsttxt.Text = output.HoursEstimate.ToString();
+                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+            string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+            string client = CaseDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+            DateTime start = Convert.ToDateTime(CaseDataGrid.SelectedRows[0].Cells[3].Value).Date;
+            string service = CaseDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+            decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value); 
+            decimal total = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[8].Value);
+            string respEmp = CaseDataGrid.SelectedRows[0].Cells[7].Value.ToString();
+             
+            _handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+           
         }
 
         private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+            string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+            string client = CaseDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+            DateTime start = Convert.ToDateTime(CaseDataGrid.SelectedRows[0].Cells[3].Value).Date;
+            string service = CaseDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+            decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+            decimal total = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[8].Value);
+            string respEmp = CaseDataGrid.SelectedRows[0].Cells[7].Value.ToString();
+            _handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
             YGriderstart();
+
         }
 
         private void YGriderstart()
@@ -124,7 +138,7 @@ namespace LawHouseGUI
 
         }
 
-        private void ServiceDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             YEmploeeCombox.Text = ServiceDataGrid.SelectedRows[0].Cells[1].Value.ToString();
             YDateTimePicker1.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
@@ -398,6 +412,8 @@ namespace LawHouseGUI
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
             _handler.NewLegalService(name, hours, time, price);
         }
+
+      
     }
 }
 

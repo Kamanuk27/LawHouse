@@ -31,9 +31,10 @@ namespace BusinessLogic
             cE.NegPrice = negoPrice;
             return _dbController.NewCase(cE);
         }
-        internal void InitiateCaseFromCaseE(CaseE cE)
+        internal void InitiateCaseFromCaseE(int id, string name, string client, DateTime start, 
+                                             string service, decimal negPrice, decimal total, string respEmp)
         {
-            _case.InitializeCase(cE);
+            _case.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
         }
 
         internal int CloseCaseE(int id, decimal totalPrice, DateTime endDate)

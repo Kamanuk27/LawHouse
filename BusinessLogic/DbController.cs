@@ -39,10 +39,7 @@ namespace BusinessLogic
         {
             return _persistence.NewService(s1);
         }
-        internal CaseE GetCase(int id)
-        {
-            return _persistence.GetCase(id);
-        }
+       
         internal List<CaseE> GetCases()
         {
             return _persistence.GetCases();

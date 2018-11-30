@@ -97,6 +97,8 @@ namespace DataAccess
 
                     c1.RespEmployee = $"{(reader["EmployeefName"] != DBNull.Value ? reader["EmployeefName"].ToString() : string.Empty)} " +
                                       $"{(reader["EmployeelName"] != DBNull.Value ? reader["EmployeelName"].ToString() : string.Empty)}";
+
+                    cases.Add(c1);
                 }
 
             }
