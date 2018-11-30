@@ -15,7 +15,7 @@ namespace DataAccess
         {
             _command = new SqlCommand();
         }
-        internal SqlCommand NewCase(Case c1)
+        internal SqlCommand NewCase(CaseE c1)
         {
             string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
                                "RespEmp_ID, Client_ID) VALUES " +
@@ -44,7 +44,7 @@ namespace DataAccess
             return _command;
         }
 
-        public SqlCommand NewService(Service s1)
+        public SqlCommand NewService(ServiceE s1)
         {
             string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
                                                         "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
@@ -65,7 +65,7 @@ namespace DataAccess
             return _command;
 
         }
-        public SqlCommand NewClient(Client c1)
+        public SqlCommand NewClient(ClientE c1)
         {
             string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) " +
                                "VALUES (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
@@ -83,7 +83,7 @@ namespace DataAccess
             return _command;
 
         }
-        public SqlCommand NewEmployee(Employee e1)
+        public SqlCommand NewEmployee(EmployeeE e1)
         {
             string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
                                " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
@@ -104,7 +104,7 @@ namespace DataAccess
             return _command;
         
         }
-        public SqlCommand NewLegalService(LegalService lS1)
+        public SqlCommand NewLegalService(LegalServiceE lS1)
         {
             string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
                                " (@Name, @HoursEstimate, @Price, @TimeEstimate)";

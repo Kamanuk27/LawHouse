@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary.Entities
 {
-    public class Client : Entity
+    public class EmployeeE : Entity
     {
-
         public string CprNo { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,13 +15,16 @@ namespace LawHouseLibrary.Entities
         public int PostNo { get; set; }
         public string Email { get; set; }
         public string TlfNo { get; set; }
+        public DateTime StartDate { get; set; }
+        public string Position { get; set; }
+        public decimal PayRatePrHour { get; set; }
 
-        public Client()
+        public EmployeeE()
         {
             
         }
 
-        public Client(int id)
+        public EmployeeE(int id)
         {
             Id = id;
         }

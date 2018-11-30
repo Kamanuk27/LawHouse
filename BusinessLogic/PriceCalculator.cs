@@ -16,13 +16,13 @@ namespace BusinessLogic
         }
 
        
-        internal decimal CalculatePrice(List<decimal> prices, List<Service> servList)
+        internal decimal CalculatePrice(List<decimal> prices, List<ServiceE> servList)
         {
            int [] count = CountServices(servList);
            return prices[0] * count[0] + prices[1] * count[1];
         }
        
-        internal int [] CountServices(List <Service> servList)
+        internal int [] CountServices(List <ServiceE> servList)
         {
             int[] count = new int[2];
             foreach (var item in servList)

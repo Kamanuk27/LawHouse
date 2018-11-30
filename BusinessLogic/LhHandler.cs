@@ -42,21 +42,21 @@ namespace BusinessLogic
             return _cases.NewService(caseID, date, hours, km, comment, respEmpl);
         }
 
-        public Case GetCase(int id)
+        public CaseE GetCase(int id)
         {
             return _cases.GetCase(id);
         }
 
-        public List<Case> GetCases()
+        public List<CaseE> GetCases()
         {
             return _cases.GetCases();
         }
 
-        public List<Service> GetProvidedServices(int caseId)
+        public List<ServiceE> GetProvidedServices(int caseId)
         {
             return _cases.GetProvidedServices(caseId);
         }
-        public List<LegalService> GetLegalServices()
+        public List<LegalServiceE> GetLegalServices()
         {
             return _cases.GetLegalServices();
         }

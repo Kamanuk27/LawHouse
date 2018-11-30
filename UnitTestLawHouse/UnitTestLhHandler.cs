@@ -44,31 +44,31 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCaseReturnCase()
         {
-            Case c1 = LhHandler.GetCase(1);
-            Type expectedType = typeof(Case);
+            CaseE c1 = LhHandler.GetCase(1);
+            Type expectedType = typeof(CaseE);
             Assert.IsInstanceOfType(c1, expectedType);
         }
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List<Case> cases = LhHandler.GetCases();
+            List<CaseE> cases = LhHandler.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
         [TestMethod]
         public void TestGetCasesReturnListOfCases()
         {
-            List<Case> cases = LhHandler.GetCases();
+            List<CaseE> cases = LhHandler.GetCases();
             Type actual = cases[0].GetType();
-            Type expectedType = typeof(Case);
+            Type expectedType = typeof(CaseE);
             Assert.AreEqual(actual, expectedType);
         }
 
         [TestMethod]
         public void TestGetProvidedServicesReturnTwoServices()
         {
-            List<Service> services = LhHandler.GetProvidedServices(1);
+            List<ServiceE> services = LhHandler.GetProvidedServices(1);
             Assert.AreEqual(2, services.Count);
         }
 
@@ -77,7 +77,7 @@ namespace UnitTestLawHouse
         {
             var services = LhHandler.GetProvidedServices(1);
             Type actual = services[0].GetType();
-            Type expected = typeof(Service);
+            Type expected = typeof(ServiceE);
             Assert.AreEqual(actual, expected);
         }
 

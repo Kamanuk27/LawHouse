@@ -29,45 +29,45 @@ namespace BusinessLogic
             _persistence = DatabaseFactory.Instance.GetDataAccess();
 
         }
-        internal int NewCase(Case c1)
+        internal int NewCase(CaseE c1)
         {
             return _persistence.NewCase(c1);
         }
 
 
-        internal int NewService(Service s1)
+        internal int NewService(ServiceE s1)
         {
             return _persistence.NewService(s1);
         }
-        internal Case GetCase(int id)
+        internal CaseE GetCase(int id)
         {
             return _persistence.GetCase(id);
         }
-        internal List<Case> GetCases()
+        internal List<CaseE> GetCases()
         {
             return _persistence.GetCases();
         }
 
-        internal List<Service> GetProvidedServices(int caseId)
+        internal List<ServiceE> GetProvidedServices(int caseId)
         {
             return _persistence.GetProvidedServices(caseId);
         }
-        internal List<LegalService> GetLegalServices()
+        internal List<LegalServiceE> GetLegalServices()
         {
             return _persistence.GetLegalServices();
         }
 
         
-        internal int UpdateService(Service s1)
+        internal int UpdateService(ServiceE s1)
         {
             return _persistence.UpdateService(s1);
         }
 
-        internal int UpdateCase(Case c1)
+        internal int UpdateCase(CaseE c1)
         {
             return _persistence.UpdateCase(c1);
         }
-        internal int CloseCase(Case c1)
+        internal int CloseCase(CaseE c1)
         {
             return _persistence.CloseCase(c1);
         }
@@ -102,15 +102,15 @@ namespace BusinessLogic
             return _persistence.GetUnitPrices();
         }
 
-        internal int NewClient(Client client)
+        internal int NewClient(ClientE client)
         {
             return _persistence.NewClient(client);
         }
-        internal int NewEmployee(Employee employee)
+        internal int NewEmployee(EmployeeE employee)
         {
             return _persistence.NewEmployee(employee);
         }
-        internal int NewLegalService(LegalService legal)
+        internal int NewLegalService(LegalServiceE legal)
         {
             return _persistence.NewLegalService(legal);
         }

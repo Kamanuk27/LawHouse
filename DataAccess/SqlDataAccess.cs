@@ -19,61 +19,61 @@ namespace DataAccess
             _read = new SqlRead(_connection);
         }
 
-        public int NewCase(Case c1)
+        public int NewCase(CaseE c1)
         {
             return  _nonQuery.NewCase(c1);
         }
        
 
-        public int NewService(Service s1)
+        public int NewService(ServiceE s1)
         {
            return _nonQuery.NewService(s1);
         }
-        public int NewClient(Client client)
+        public int NewClient(ClientE client)
         {
             return _nonQuery.NewClient(client);
         }
 
-        public int NewEmployee(Employee employee)
+        public int NewEmployee(EmployeeE employee)
         {
             return _nonQuery.NewEmployee(employee);
         }
-        public int NewLegalService(LegalService legal)
+        public int NewLegalService(LegalServiceE legal)
         {
             return _nonQuery.NewLegalService(legal);
         }
 
-        public Case GetCase(int id)
+        public CaseE GetCase(int id)
         {
             return _read.GetCase(id);
         }
 
-        public List<Case> GetCases()
+        public List<CaseE> GetCases()
         {
             return _read.GetCases();                                              
         }
 
-        public List<Service> GetProvidedServices(int caseId)
+        public List<ServiceE> GetProvidedServices(int caseId)
         {
             return _read.GetProvidedServices(caseId);
         }
 
-        public List<LegalService> GetLegalServices()
+        public List<LegalServiceE> GetLegalServices()
         {
             return _read.GetLegalServices();
         }
 
 
-        public int UpdateCase(Case c1)
+        public int UpdateCase(CaseE c1)
         {
             return _nonQuery.UpdateCase(c1);
 
         }
-        public int CloseCase(Case c1)
+        public int CloseCase(CaseE c1)
         {
             return _nonQuery.CloseCase(c1);
         }
-        public int UpdateService(Service s1)
+        public int UpdateService(ServiceE s1)
         {
             return _nonQuery.UpdateService(s1);
         }

@@ -14,9 +14,9 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestCalculatePriceReturn3750()
         {
-            List <Service> _services = new List<Service>();
-            _services.Add(new Service(50, 2));
-            _services.Add(new Service(100, 1));
+            List <ServiceE> _services = new List<ServiceE>();
+            _services.Add(new ServiceE(50, 2));
+            _services.Add(new ServiceE(100, 1));
 
             List<decimal> prices = new List<decimal>();
             prices.Add(10);
@@ -30,9 +30,9 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestCountServicesReturn3AtFirstPlace()
         {
-            List<Service> services = new List<Service>();
-            services.Add(new Service(2, 50));
-            services.Add(new Service(1, 100));
+            List<ServiceE> services = new List<ServiceE>();
+            services.Add(new ServiceE(2, 50));
+            services.Add(new ServiceE(1, 100));
 
             int actual = calculator.CountServices(services)[0];
             int expected = 3;
@@ -42,9 +42,9 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestCountServicesReturn150AtSecondPlace()
         {
-            List<Service> services = new List<Service>();
-            services.Add(new Service(2, 50));
-            services.Add(new Service(1, 100));
+            List<ServiceE> services = new List<ServiceE>();
+            services.Add(new ServiceE(2, 50));
+            services.Add(new ServiceE(1, 100));
 
             int actual = calculator.CountServices(services)[1];
             int expected = 150;
@@ -54,9 +54,9 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestCountServicesReturnTwoEllementsInArray()
         {
-            List<Service> services = new List<Service>();
-            services.Add(new Service(2, 50));
-            services.Add(new Service(1, 100));
+            List<ServiceE> services = new List<ServiceE>();
+            services.Add(new ServiceE(2, 50));
+            services.Add(new ServiceE(1, 100));
 
             int actual = calculator.CountServices(services).Length;
             int expected = 2;

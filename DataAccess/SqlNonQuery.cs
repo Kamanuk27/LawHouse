@@ -34,50 +34,50 @@ namespace DataAccess
             return rows;
         }
 
-        internal int NewCase(Case c1)
+        internal int NewCase(CaseE c1)
         {
             _command = _create.NewCase(c1);
             return ExecuteNonQuery();
         }
 
 
-        internal int NewService(Service s1)
+        internal int NewService(ServiceE s1)
         {
             _command = _create.NewService(s1);
             return ExecuteNonQuery();
 
         }
-        internal int NewClient(Client client)
+        internal int NewClient(ClientE client)
         {
             _command = _create.NewClient(client);
             return ExecuteNonQuery();
         }
 
-        internal int NewEmployee(Employee employee)
+        internal int NewEmployee(EmployeeE employee)
         {
             _command = _create.NewEmployee(employee);
             return ExecuteNonQuery();
         }
 
-        internal int NewLegalService(LegalService ls1)
+        internal int NewLegalService(LegalServiceE ls1)
         {
             _command = _create.NewLegalService(ls1);
             return ExecuteNonQuery();
         }
 
-        internal int UpdateCase(Case c1)
+        internal int UpdateCase(CaseE c1)
         {
             _command = _update.UpdateCase(c1);
             return ExecuteNonQuery();
         }
 
-        internal int CloseCase(Case c1)
+        internal int CloseCase(CaseE c1)
         {
             _command = _update.CloseCase(c1);
             return ExecuteNonQuery();
         }
 
-        internal int UpdateService (Service s1)
+        internal int UpdateService (ServiceE s1)
         {
             _command = _update.UpdateService(s1);
             return ExecuteNonQuery();

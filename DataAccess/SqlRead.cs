@@ -33,14 +33,14 @@ namespace DataAccess
             return rows;
         }
 
-        internal Case GetCase(int id)
+        internal CaseE GetCase(int id)
         {
             _command.CommandText = "SELECT*FROM ViewCases WHERE ID = @id";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
             PrepareSql();
-            Case c1 = new Case();
+            CaseE c1 = new CaseE();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
 
@@ -69,9 +69,9 @@ namespace DataAccess
             return c1;
         }
 
-        internal List<Case> GetCases()
+        internal List<CaseE> GetCases()
         {
-            List<Case> cases = new List<Case>();
+            List<CaseE> cases = new List<CaseE>();
 
             _command.CommandText = "SELECT* FROM ViewCases";
             PrepareSql();
@@ -82,7 +82,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    Case c1 = new Case();
+                    CaseE c1 = new CaseE();
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
                     c1.Client = $"{(reader["ClientfName"] != DBNull.Value ? reader["ClientfName"].ToString() : string.Empty)} " +
@@ -99,9 +99,9 @@ namespace DataAccess
             return cases;
         }
 
-        internal List<Service> GetProvidedServices(int caseId)
+        internal List<ServiceE> GetProvidedServices(int caseId)
         {
-            List<Service> services = new List<Service>();
+            List<ServiceE> services = new List<ServiceE>();
             _command.CommandText = "SELECT * FROM ViewProvidedServices where Case_ID = @caseId";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@caseId", caseId));
@@ -112,7 +112,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    Service s1 = new Service();
+                    ServiceE s1 = new ServiceE();
 
                     s1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
@@ -131,9 +131,9 @@ namespace DataAccess
             return services;
         }
 
-        internal List<LegalService> GetLegalServices()
+        internal List<LegalServiceE> GetLegalServices()
         {
-            List<LegalService> legServices = new List<LegalService>();
+            List<LegalServiceE> legServices = new List<LegalServiceE>();
             _command.CommandText = "SELECT * FROM LegalServices";
             _command.Parameters.Clear();
             PrepareSql();
@@ -143,7 +143,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    LegalService ls1 = new LegalService();
+                    LegalServiceE ls1 = new LegalServiceE();
 
                     ls1.ID = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;

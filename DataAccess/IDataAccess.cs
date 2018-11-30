@@ -7,18 +7,18 @@ namespace DataAccess
 {
     public interface IDataAccess
     {
-        int NewCase(Case c1);
-        int NewService(Service s1);
-        int NewClient(Client client);
-        int NewEmployee(Employee employee);
-        int NewLegalService(LegalService legal);
-        Case GetCase(int Id);
-        List< Case> GetCases();
-        List<Service> GetProvidedServices(int caseId);
-        List<LegalService> GetLegalServices();
-        int UpdateService(Service s1);
-        int UpdateCase(Case c1);
-        int CloseCase(Case c1);
+        int NewCase(CaseE c1);
+        int NewService(ServiceE s1);
+        int NewClient(ClientE client);
+        int NewEmployee(EmployeeE employee);
+        int NewLegalService(LegalServiceE legal);
+        CaseE GetCase(int Id);
+        List< CaseE> GetCases();
+        List<ServiceE> GetProvidedServices(int caseId);
+        List<LegalServiceE> GetLegalServices();
+        int UpdateService(ServiceE s1);
+        int UpdateCase(CaseE c1);
+        int CloseCase(CaseE c1);
         int DeleteCase(int id);
         int DeleteService(int id);
         List<string> GetLawyers();

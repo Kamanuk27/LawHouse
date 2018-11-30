@@ -7,61 +7,61 @@ namespace DataAccess
 {
     internal class TestDB : IDataAccess
     {
-        public int NewCase(Case c1)
+        public int NewCase(CaseE c1)
         {
             return 1;
         }
 
        
-        public int NewService(Service s1)
+        public int NewService(ServiceE s1)
         {
             return 1;
         }
 
-        public int NewLegalService(LegalService legal)
+        public int NewLegalService(LegalServiceE legal)
         {
             throw new NotImplementedException();
         }
 
-        public Case GetCase(int id)
+        public CaseE GetCase(int id)
         {
-            Case c1 = new Case();
+            CaseE c1 = new CaseE();
             c1.Id = id;
             return c1;
         }
 
-        public List<Case> GetCases()
+        public List<CaseE> GetCases()
         {
-            List<Case> cases = new List<Case>();
-            cases.Add(new Case(1));
-            cases.Add(new Case(4));
+            List<CaseE> cases = new List<CaseE>();
+            cases.Add(new CaseE(1));
+            cases.Add(new CaseE(4));
             return cases;
         }
 
-        public List <Service> GetProvidedServices(int caseId)
+        public List <ServiceE> GetProvidedServices(int caseId)
         {
-            List<Service> services = new List<Service>();
-            services.Add(new Service(2, 50));
-            services.Add(new Service(3, 100));
+            List<ServiceE> services = new List<ServiceE>();
+            services.Add(new ServiceE(2, 50));
+            services.Add(new ServiceE(3, 100));
             return services;
         }
 
-        public List<LegalService> GetLegalServices()
+        public List<LegalServiceE> GetLegalServices()
         {
             throw new NotImplementedException();
         }
 
-        public int UpdateService (Service s1)
+        public int UpdateService (ServiceE s1)
         {
             return 1;
         }
 
-        public int UpdateCase(Case c1)
+        public int UpdateCase(CaseE c1)
         {
             return 1;
         }
 
-        public int CloseCase(Case c1)
+        public int CloseCase(CaseE c1)
         {
             return 1;
         }
@@ -105,12 +105,12 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public int NewClient(Client client)
+        public int NewClient(ClientE client)
         {
             throw new NotImplementedException();
         }
 
-        public int NewEmployee(Employee employee)
+        public int NewEmployee(EmployeeE employee)
         {
             throw new NotImplementedException();
         }

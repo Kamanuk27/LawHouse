@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary.Entities
 {
-    public class LegalService : Entity
+    public class LegalServiceE : Entity
     {
         public int ID { get; set; }
         public string Name { get; set; }

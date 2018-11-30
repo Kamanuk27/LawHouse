@@ -17,7 +17,7 @@ namespace DataAccess
             _command = new SqlCommand();
         }
 
-        internal SqlCommand UpdateCase(Case c1)
+        internal SqlCommand UpdateCase(CaseE c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
                                "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
@@ -34,7 +34,7 @@ namespace DataAccess
 
         }
 
-        internal SqlCommand UpdateService(Service s1)
+        internal SqlCommand UpdateService(ServiceE s1)
         {
             _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
 
@@ -48,7 +48,7 @@ namespace DataAccess
 
         }
 
-        internal SqlCommand CloseCase(Case c1)
+        internal SqlCommand CloseCase(CaseE c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
             _command.Parameters.Clear();

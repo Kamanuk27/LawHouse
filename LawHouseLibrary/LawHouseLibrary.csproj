@@ -41,12 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Case.cs" />
-    <Compile Include="Entities\Client.cs" />
-    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\CaseE.cs" />
+    <Compile Include="Entities\ClientE.cs" />
+    <Compile Include="Entities\EmployeeE.cs" />
     <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\LegalService.cs" />
-    <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\LegalServiceE.cs" />
+    <Compile Include="Entities\ServiceE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

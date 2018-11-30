@@ -37,15 +37,15 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCaseReturnCase()
         {
-            Case actual = cases.GetCase(1);
-            Type expected = typeof(Case);
+            CaseE actual = cases.GetCase(1);
+            Type expected = typeof(CaseE);
             Assert.IsInstanceOfType(actual, expected);
         }
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List <Case> actual =  cases.GetCases();
+            List <CaseE> actual =  cases.GetCases();
             Assert.AreEqual(2, actual.Count);
         }
 
@@ -54,14 +54,14 @@ namespace UnitTestLawHouse
         {
             var responce = cases.GetCases();
             Type actual = responce[0].GetType();
-            Type expected = typeof(Case);
+            Type expected = typeof(CaseE);
             Assert.AreEqual(actual, expected);
         }
 
         [TestMethod]
         public void TestGetProvidedServicesReturnTwoServices()
         {
-            List<Service> services = cases.GetProvidedServices(1);
+            List<ServiceE> services = cases.GetProvidedServices(1);
             Assert.AreEqual(2, services.Count);
         }
 
@@ -70,7 +70,7 @@ namespace UnitTestLawHouse
         {
             var services = cases.GetProvidedServices(1);
             Type actual = services[0].GetType();
-            Type expected = typeof(Service);
+            Type expected = typeof(ServiceE);
             Assert.AreEqual(actual, expected);
         }
 
@@ -92,13 +92,13 @@ namespace UnitTestLawHouse
         //    Assert.AreEqual(expected, response);
         //}
 
-        //[TestMethod]
-        //public void TestGetUnitPricesReturn2EllementsInArray()
-        //{
-        //    int expected = 2;
-        //    var response = cases.GetUnitPrices().Length;
-        //    Assert.AreEqual(expected, response);
-        //}
+        [TestMethod]
+        public void TestGetUnitPricesReturn2EllementsInArray()
+        {
+            int expected = 2;
+            var response = cases.GetUnitPrices().Length;
+            Assert.AreEqual(expected, response);
+        }
 
         //[TestMethod]
         //public void TestGetPriceReturn3250()

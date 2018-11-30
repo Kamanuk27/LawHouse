@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary.Entities
 {
-    public class Service : Entity
+    public class ServiceE : Entity
     {
         public int CaseID { get; set; }
         public int EmployeeID { get; set; }
@@ -16,13 +16,13 @@ namespace LawHouseLibrary.Entities
         public int Km { get; set; }
         public string Comment { get; set; }
 
-        public Service()
+        public ServiceE()
         {
 
         }
 
         // constractor for tests
-        public Service( int km, int hours)
+        public ServiceE( int km, int hours)
         {
             Hours = hours;
             Km = km;

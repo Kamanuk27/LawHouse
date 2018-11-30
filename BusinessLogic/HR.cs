@@ -17,7 +17,7 @@ namespace BusinessLogic
 
         internal int NewLegalService(string name, int hours, int time, decimal price)
         {
-            LegalService legalService = new LegalService();
+            LegalServiceE legalService = new LegalServiceE();
             legalService.Name = name;
             legalService.HoursEstimate = hours;
             legalService.TimeEstimate = time;

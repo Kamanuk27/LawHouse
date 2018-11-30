@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LawHouseLibrary.Entities
 {
-    public class Case : Entity
+    public class CaseE : Entity
     {
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
@@ -19,12 +19,12 @@ namespace LawHouseLibrary.Entities
         public string RespEmployee { get; set; }
         public string Client { get; set; }
 
-        public Case()
+        public CaseE()
         {
 
         }
         // constractor for tests
-        public Case(int id)
+        public CaseE(int id)
         {
             Id = id;
         }
