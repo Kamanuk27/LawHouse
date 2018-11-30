@@ -59,5 +59,55 @@ namespace DataAccess
 
             return _command;
         }
+        internal SqlCommand UpdateEmployee(EmployeeE e1)
+        {
+            _command.CommandText = "UPDATE Employee SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo," +
+                                   "Position = @Position, PayRatePrHour = @PayRatePrHour WHERE ID = @id";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", e1.Id));
+            _command.Parameters.Add(new SqlParameter("@Address", e1.Address));
+            _command.Parameters.Add(new SqlParameter("@PostNo", e1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@Email", e1.Email));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", e1.TlfNo));
+            _command.Parameters.Add(new SqlParameter("@Position", e1.Position));
+            _command.Parameters.Add(new SqlParameter("@PayRatePrHour", e1.PayRatePrHour));
+
+            return _command;
+        }
+        internal SqlCommand CloseEmployee(EmployeeE e1)
+        {
+            _command.CommandText = "UPDATE Employee SET Address = null, PostNo = null, Email = null,  TlfNo = null " +
+                                   "WHERE ID = @id";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", e1.Id));
+            
+            return _command;
+        }
+        internal SqlCommand UpdateClient(ClientE c1)
+        {
+            _command.CommandText = "UPDATE Client SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo " +
+                                   "WHERE ID = @id";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", c1.Id));
+            _command.Parameters.Add(new SqlParameter("@Address", c1.Address));
+            _command.Parameters.Add(new SqlParameter("@PostNo", c1.PostNo));
+            _command.Parameters.Add(new SqlParameter("@Email", c1.Email));
+            _command.Parameters.Add(new SqlParameter("@TlfNo", c1.TlfNo));
+            
+            return _command;
+        }
+        internal SqlCommand CloseClient(ClientE c1)
+        {
+            _command.CommandText = "UPDATE Client SET Address = null, PostNo = null, Email = null,  TlfNo = null " +
+                                   "WHERE ID = @id";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", c1.Id));
+
+            return _command;
+        }
     }
 }
