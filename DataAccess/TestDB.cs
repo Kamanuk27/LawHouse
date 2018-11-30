@@ -23,13 +23,6 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public CaseE GetCase(int id)
-        {
-            CaseE c1 = new CaseE();
-            c1.Id = id;
-            return c1;
-        }
-
         public List<CaseE> GetCases()
         {
             List<CaseE> cases = new List<CaseE>();

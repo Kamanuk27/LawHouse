@@ -9,12 +9,12 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestLhHandler
     {
-        LhHandler LhHandler = LhHandler.Instance;
+        LhController LhHandler = LhController.Instance;
 
         [TestMethod]
         public void TestLhHandlerReturnOneInstance()
         {
-            LhHandler actual = new LhHandler();
+            LhController actual = new LhController();
             object.ReferenceEquals(LhHandler, actual);
         }
 

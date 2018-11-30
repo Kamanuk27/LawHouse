@@ -43,11 +43,6 @@ namespace DataAccess
             return _nonQuery.NewLegalService(legal);
         }
 
-        public CaseE GetCase(int id)
-        {
-            return _read.GetCase(id);
-        }
-
         public List<CaseE> GetCases()
         {
             return _read.GetCases();                                              

@@ -10,13 +10,13 @@ namespace LawHouseGUI
 {
     public partial class LawHouseCRUD : Form
     {
-        private LhHandler _handler;
+        private LhController _handler;
         
 
         public LawHouseCRUD()
         {
             InitializeComponent();
-            _handler = LhHandler.Instance;
+            _handler = LhController.Instance;
             GriderStart();
             FillComboBoxes();
 
@@ -81,11 +81,13 @@ namespace LawHouseGUI
                 CaseDataGrid.Rows[n].Cells[1].Value = c1.Name;
                 CaseDataGrid.Rows[n].Cells[2].Value = c1.RespEmployee;
                 CaseDataGrid.Rows[n].Cells[3].Value = c1.Client;
+
             }
         }
 
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            _handler.InitializeCase();
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             var output = _handler.GetCase(id);
             CaseIDtxb.Text = output.Id.ToString();

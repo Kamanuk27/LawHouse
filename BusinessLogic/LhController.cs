@@ -7,108 +7,108 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class LhHandler
+    public class LhController
     {
-        public static LhHandler _instance;
-        private Cases _cases;
+        public static LhController _instance;
+        private CaseHandler _caseHandler;
         private HR _hr;
 
-        public static LhHandler Instance
+        public static LhController Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new LhHandler();
+                    _instance = new LhController();
                 return _instance;
             }
         }
-        public LhHandler()
+        public LhController()
         {
-            _cases = new Cases();
+            _caseHandler = new CaseHandler();
             _hr = new HR();
         }
         public int NewCase(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice) 
         {
-          return _cases.NewCase(caseName, client, service, startTime, respEmpl, negoPrice);
+          return _caseHandler.NewCaseE(caseName, client, service, startTime, respEmpl, negoPrice);
         }
         public int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
-            return _cases.CloseCase(id, totalPrice, endDate);
+            return _caseHandler.CloseCaseE(id, totalPrice, endDate);
         }
 
         public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
         {
             
-            return _cases.NewService(caseID, date, hours, km, comment, respEmpl);
+            return _caseHandler.NewService(caseID, date, hours, km, comment, respEmpl);
         }
 
-        public CaseE GetCase(int id)
+        public void InitializeCase(CaseE cE)
         {
-            return _cases.GetCase(id);
+           _caseHandler.InitiateCaseFromCaseE(cE);
         }
-
+       
         public List<CaseE> GetCases()
         {
-            return _cases.GetCases();
+            return _caseHandler.GetCases();
         }
 
         public List<ServiceE> GetProvidedServices(int caseId)
         {
-            return _cases.GetProvidedServices(caseId);
+            return _caseHandler.GetProvidedServices(caseId);
         }
         public List<LegalServiceE> GetLegalServices()
         {
-            return _cases.GetLegalServices();
+            return _hr.GetLegalServices();
         }
         
 
         public int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
-            return _cases.UpdateService(id, hours, km, date, comment);
+            return _caseHandler.UpdateService(id, hours, km, date, comment);
         }
 
         public int UpdateCase(int id, decimal negPrice, string respEmp)
         {
-            return _cases.UpdateCase(id, negPrice, respEmp);
+            return _caseHandler.UpdateCaseE(id, negPrice, respEmp);
         }
 
         public decimal GetPrice(int id)
         {
-            return _cases.GetPrice(id);
+            return _caseHandler.GetPrice(id);
         }
 
         public int DeleteCase(int id)
         {
-            return _cases.DeleteCase(id);
+            return _caseHandler.DeleteCaseE(id);
         }
 
         public int DeleteService(int id)
         {
-            return _cases.DeleteService(id);
+            return _caseHandler.DeleteService(id);
         }
 
         public List<string> GetLawyers()
         {
-            return _cases.GetLawyers();
+            return _caseHandler.GetLawyers();
         }
 
         public List<string> GetEmplNames()
         {
-            return _cases.GetEmplNames();
+            return _caseHandler.GetEmplNames();
         }
 
         public List <string> GetClientNames()
         {
-            return _cases.GetClientNames();
+            return _caseHandler.GetClientNames();
         }
 
         public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
         {
-            return _cases.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+            return _hr.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
         public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf, DateTime start, string position, decimal money)
         {
-            return _cases.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+            return _hr.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
 
         public int NewLegalService(string name, int hours, int time, decimal price)
