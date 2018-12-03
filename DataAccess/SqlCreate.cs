@@ -118,13 +118,13 @@ namespace DataAccess
             return _command;
 
         }
-        internal SqlCommand NewField(string name)
+        internal SqlCommand NewField(FieldE f)
         {
             string sqlString = "INSERT INTO Field (Name) VALUES (@name)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@name", name));
+            _command.Parameters.Add(new SqlParameter("@name", f.Name));
             return _command;
 
         }

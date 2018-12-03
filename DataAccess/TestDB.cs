@@ -7,6 +7,7 @@ namespace DataAccess
 {
     internal class TestDB : IDataAccess
     {
+        // Metoder for Create
         public int NewCase(CaseE c1)
         {
             return 1;
@@ -20,9 +21,31 @@ namespace DataAccess
 
         public int NewLegalService(LegalServiceE legal)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
+        public int NewClient(ClientE client)
+        {
+            return 1;
+        }
+
+        public int NewEmployee(EmployeeE employee)
+        {
+            return 1;
+        }
+
+        public int NewField(FieldE f)
+        {
+            return 1;
+        }
+        public int AddFieldToEmployee(int id, string name)
+        {
+            return 1;
+        }
+
+
+
+        // Metoder for Read/Get
         public List<CaseE> GetCases()
         {
             List<CaseE> cases = new List<CaseE>();
@@ -38,35 +61,35 @@ namespace DataAccess
             services.Add(new ServiceE(3, 100));
             return services;
         }
-
-        public List<LegalServiceE> GetLegalServices()
+        public List<FieldE> GetFields()
         {
-            throw new NotImplementedException();
+            List<FieldE> fields = new List<FieldE>();
+            fields.Add(new FieldE(1));
+            fields.Add(new FieldE(2));
+            return fields;
         }
 
-        public int UpdateService (ServiceE s1)
+        public List<FieldE> GetEmpFields(int id)
         {
-            return 1;
+            List<FieldE> fields = new List<FieldE>();
+            fields.Add(new FieldE(1));
+            fields.Add(new FieldE(2));
+            return fields;
         }
 
-        public int UpdateCase(CaseE c1)
+        public List<EmployeeE> GetEmployees()
         {
-            return 1;
+            List<EmployeeE> employees = new List<EmployeeE>();
+            employees.Add(new EmployeeE(23));
+            employees.Add(new EmployeeE(12));
+            return employees;
         }
 
-        public int CloseCase(CaseE c1)
+        public ClientE GetClient(string cpr)
         {
-            return 1;
-        }
-
-        public int DeleteCase(int id)
-        {
-            return 1;
-        }
-
-        public int DeleteService(int id)
-        {
-            return 1;
+            ClientE client = new ClientE();
+            client.CprNo = cpr;
+            return client;
         }
 
         public List<string> GetLawyers()
@@ -93,19 +116,78 @@ namespace DataAccess
             return prices;
         }
 
-        public List<string> GetClientNames()
+        public List<LegalServiceE> GetLegalServices()
         {
-            throw new NotImplementedException();
+            List <LegalServiceE> legalServices = new List<LegalServiceE>();
+            legalServices.Add(new LegalServiceE(1));
+            legalServices.Add(new LegalServiceE(2));
+            return legalServices;
         }
 
-        public int NewClient(ClientE client)
+
+        //Metoder for Update
+        public int UpdateService (ServiceE s1)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
-        public int NewEmployee(EmployeeE employee)
+        public int UpdateCase(CaseE c1)
         {
-            throw new NotImplementedException();
+            return 1;
+        }
+
+        public int CloseCase(CaseE c1)
+        {
+            return 1;
+        }
+       
+        public int UpdateLegalService(LegalServiceE ls)
+        {
+            return 1;
+        }
+
+        public int UpdateClient(ClientE client)
+        {
+            return 1;
+        }
+
+        public int UpdateEmployee(EmployeeE emp)
+        {
+            return 1;
+        }
+
+
+        public int CloseClient(string cpr)
+        {
+            return 1;
+        }
+
+        public int CloseEmployee(int id)
+        {
+            return 1;
+        }
+        
+
+
+
+        //Metoder for Delete
+        public int DeleteLegalService(int id)
+        {
+            return 1;
+        }
+
+        public int DeleteField(string name)
+        {
+            return 1;
+        }
+        public int DeleteCase(int id)
+        {
+            return 1;
+        }
+
+        public int DeleteService(int id)
+        {
+            return 1;
         }
     }
 }

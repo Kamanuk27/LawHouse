@@ -10,12 +10,12 @@ namespace LawHouseGUI
 {
     public partial class LawHouseCRUD : Form
     {
-        private LhController _handler;
+        private CaseHandler _handler;
 
         public LawHouseCRUD()
         {
             InitializeComponent();
-            _handler = LhController.Instance;
+            _handler = new CaseHandler();
             GriderStart();
             FillComboBoxes();
 
@@ -23,25 +23,25 @@ namespace LawHouseGUI
 
         public void FillComboBoxes()
         {
-            foreach (var l1 in _handler.GetLawyers())
-            {
-                RespEmpCombo.Items.Add(l1);
-                CrCaseAdvokat.Items.Add(l1);
-                SpecInsertCom.Items.Add(l1);
+            //foreach (var l1 in _handler.GetLawyers())
+            //{
+            //    RespEmpCombo.Items.Add(l1);
+            //    CrCaseAdvokat.Items.Add(l1);
+            //    SpecInsertCom.Items.Add(l1);
 
-            }
+            //}
 
-            foreach (var s1 in _handler.GetLegalServices())
-            {
-                string name = s1.Name;
-                CrCaseServiceCom.Items.Add(name);
-                LServInsertCom.Items.Add(name);
-            }
+            //foreach (var s1 in _handler.GetLegalServices())
+            //{
+            //    string name = s1.Name;
+            //    CrCaseServiceCom.Items.Add(name);
+            //    LServInsertCom.Items.Add(name);
+            //}
 
-            foreach (var m1 in _handler.GetEmplNames())
-            {
-                YEmploeeCombox.Items.Add(m1);
-            }
+            //foreach (var m1 in _handler.GetEmplNames())
+            //{
+            //    YEmploeeCombox.Items.Add(m1);
+            //}
         }
 
         private void ClearServiceTxtBox()
@@ -91,7 +91,7 @@ namespace LawHouseGUI
             decimal total = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[8].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             labelCaseName.Text = $"Nr.{id}, {name}";
-            _handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            //_handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
             tabControl1.SelectTab(ServiceTab);
 
 
@@ -110,7 +110,7 @@ namespace LawHouseGUI
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             RespEmpCombo.Text = respEmp;
             NegPricetxt.Text = negPrice.ToString();
-            _handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            //_handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
             YGriderstart();
 
         }
@@ -210,15 +210,15 @@ namespace LawHouseGUI
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
-                int i = _handler.UpdateCase(id, negPrice, respEmpl);
-                if (i == 1)
-                {
-                    MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
-                }
-                else
-                {
-                    MessageBox.Show("Sagen kunne ikke opdateres. Prøv igen");
-                }
+                //int i = _handler.UpdateCase(id, negPrice, respEmpl);
+                //if (i == 1)
+                //{
+                //    MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Sagen kunne ikke opdateres. Prøv igen");
+                //}
 
             }
         }
@@ -281,7 +281,7 @@ namespace LawHouseGUI
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _handler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+            //_handler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
 
         private void MakeNewServBut_Click(object sender, EventArgs e)
@@ -290,20 +290,20 @@ namespace LawHouseGUI
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _handler.NewLegalService(name, hours, time, price);
+            //_handler.NewLegalService(name, hours, time, price);
         }
 
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _handler.GetLegalServices())
-            {
-                if (s.Name == CrCaseServiceCom.Text)
-                {
-                    CrCasePrice.Text = s.Price.ToString();
-                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
-                }
-            }
+            //foreach (var s in _handler.GetLegalServices())
+            //{
+            //    if (s.Name == CrCaseServiceCom.Text)
+            //    {
+            //        CrCasePrice.Text = s.Price.ToString();
+            //        CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
+            //        CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
+            //    }
+            //}
         }
 
         private void NewCaseButt_Click(object sender, EventArgs e)

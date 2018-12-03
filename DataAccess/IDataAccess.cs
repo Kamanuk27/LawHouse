@@ -12,7 +12,7 @@ namespace DataAccess
         int NewClient(ClientE client);
         int NewEmployee(EmployeeE employee);
         int NewLegalService(LegalServiceE legal);
-        int NewField(string name);
+        int NewField(FieldE f);
 
 
         List< CaseE> GetCases();

@@ -49,11 +49,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestClientCatalog.cs" />
+    <Compile Include="UnitTestCaseCatalog.cs" />
     <Compile Include="UnitTestCalculator.cs" />
     <Compile Include="UnitTestDbController.cs" />
-    <Compile Include="UnitTestHR.cs" />
-    <Compile Include="UnitTestLhHandler.cs" />
-    <Compile Include="UnitTestCases.cs" />
+    <Compile Include="UnitTestHrHandler.cs" />
+    <Compile Include="UnitTestCaseHandler.cs" />
+    <Compile Include="UnitTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

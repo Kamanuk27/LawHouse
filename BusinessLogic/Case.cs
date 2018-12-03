@@ -10,7 +10,7 @@ namespace BusinessLogic
     class Case : CaseE
     {
         private DbController _dbController;
-        private List<ServiceE> _services;
+        internal List<ServiceE> Services;
 
 
         public Case()
@@ -28,8 +28,7 @@ namespace BusinessLogic
             Service = service;
             RespEmployee = respEmp;
             Client = client;
-            _services = _dbController.GetProvidedServices(Id);
-
+            Services = _dbController.GetProvidedServices(Id);
         }
 
         internal int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
@@ -45,7 +44,7 @@ namespace BusinessLogic
         }
         internal List <ServiceE> GetProvidedServices()
         {
-            return _services;
+            return Services;
         }
         internal int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
@@ -69,10 +68,10 @@ namespace BusinessLogic
 
         internal decimal CalculatePrice()
         {
-            if (_services.Count > 0)
+            if (Services.Count > 0)
             {
                 PriceCalculator calculator = new PriceCalculator();
-                return calculator.CalculatePrice(GetUnitPrices(), _services);
+                return calculator.CalculatePrice(GetUnitPrices(), Services);
             }
             else
                 return 0;

@@ -20,7 +20,7 @@ namespace BusinessLogic
             return _dbController.GetCases();
         }
 
-        internal int NewCaseE(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice)
+        internal int NewCase(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice)
         {
             CaseE cE = new CaseE();
             cE.Name = caseName;
@@ -32,7 +32,7 @@ namespace BusinessLogic
             return _dbController.NewCase(cE);
         }
 
-        internal int UpdateCaseE(int id, decimal negPrice, string respEmp)
+        internal int UpdateCase(int id, decimal negPrice, string respEmp)
         {
             CaseE cE = new CaseE();
             cE.Id = id;
@@ -42,7 +42,7 @@ namespace BusinessLogic
         }
 
 
-        internal int CloseCaseE(int id, decimal totalPrice, DateTime endDate)
+        internal int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
             CaseE cE = new CaseE();
             cE.Id = id;

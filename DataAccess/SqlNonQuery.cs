@@ -34,6 +34,7 @@ namespace DataAccess
             return rows;
         }
 
+        // To Create
         internal int NewCase(CaseE c1)
         {
             _command = _create.NewCase(c1);
@@ -65,9 +66,9 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int NewField(string name)
+        internal int NewField(FieldE f)
         {
-            _command = _create.NewField(name);
+            _command = _create.NewField(f);
             return ExecuteNonQuery();
         }
         internal int AddFieldToEmployee(int id, string name)
@@ -76,7 +77,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-
+        // To update
         internal int UpdateCase(CaseE c1)
         {
             _command = _update.UpdateCase(c1);
@@ -123,6 +124,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
+        // To delete
         internal int DeleteService(int id)
         {
             _command = _delete.DeleteService(id);

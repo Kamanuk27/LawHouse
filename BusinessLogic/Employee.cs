@@ -37,7 +37,9 @@ namespace BusinessLogic
 
         internal int NewField(string name)
         {
-            return _dbController.NewField(name);
+            FieldE f = new FieldE();
+            f.Name = name;
+            return _dbController.NewField(f);
         }
 
         internal int AddField(string name)
