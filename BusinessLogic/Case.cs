@@ -13,9 +13,9 @@ namespace BusinessLogic
         private List<ServiceE> _services;
 
 
-        public Case(DbController dbController)
+        public Case()
         {
-            _dbController = dbController;
+            _dbController = DbController.Instance;
         }
         internal void InitializeCase(int id, string name, string client, DateTime start,
             string service, decimal negPrice, decimal total, string respEmp)
@@ -39,7 +39,7 @@ namespace BusinessLogic
             s1.Date = date;
             s1.Hours = hours;
             s1.Km = km;
-            s1.Comment = comment;
+            s1.sType = comment;
             s1.EmployeeName = respEmpl;
             return _dbController.NewService(s1);
         }
@@ -54,7 +54,7 @@ namespace BusinessLogic
             s1.Hours = hours;
             s1.Km = km;
             s1.Date = date;
-            s1.Comment = comment;
+            s1.sType = comment;
             return _dbController.UpdateService(s1);
         }
         internal decimal GetPrice()
@@ -82,6 +82,5 @@ namespace BusinessLogic
         {
             return _dbController.DeleteService(id);
         }
-
     }
 }

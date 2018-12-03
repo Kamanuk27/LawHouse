@@ -130,7 +130,7 @@ namespace UnitTestLawHouse
         public void TestDeleteCaseReturnOne()
         {
             int expected = 1;
-            int response = cases.DeleteCaseE(4);
+            int response = cases.DeleteCase(4);
             Assert.AreEqual(response, expected);
         }
 

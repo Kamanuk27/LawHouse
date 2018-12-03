@@ -31,5 +31,22 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@id", id));
             return _command;
         }
+
+        internal SqlCommand DeleteLegalService(int id)
+        {
+            _command.CommandText = $"DELETE FROM [dbo].[LegalServices] WHERE ID = @id";
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", id));
+            return _command;
+        }
+
+        internal SqlCommand DeleteField(string name)
+        {
+            _command.CommandText = $"DELETE FROM [dbo].[Field] WHERE Name = @name";
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@name", name));
+            return _command;
+
+        }
     }
 }

@@ -75,13 +75,13 @@ namespace DataAccess
 
             return _command;
         }
-        internal SqlCommand CloseEmployee(EmployeeE e1)
+        internal SqlCommand CloseEmployee(int id)
         {
             _command.CommandText = "UPDATE Employee SET Address = null, PostNo = null, Email = null,  TlfNo = null " +
                                    "WHERE ID = @id";
 
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", e1.Id));
+            _command.Parameters.Add(new SqlParameter("@id", id));
             
             return _command;
         }
@@ -99,13 +99,28 @@ namespace DataAccess
             
             return _command;
         }
-        internal SqlCommand CloseClient(ClientE c1)
+        internal SqlCommand CloseClient(string cpr)
         {
             _command.CommandText = "UPDATE Client SET Address = null, PostNo = null, Email = null,  TlfNo = null " +
-                                   "WHERE ID = @id";
+                                   "WHERE CprNo = @cpr";
 
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", c1.Id));
+            _command.Parameters.Add(new SqlParameter("@cpr", cpr));
+
+            return _command;
+        }
+
+        internal SqlCommand UpdateLegalService(LegalServiceE ls)
+        {
+            _command.CommandText = "UPDATE LegalService SET Name = @name, HoursEstimale = @hours, TimeEstimate = @time," +
+                                   " Price = @price WHERE ID = @id";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", ls.Id));
+            _command.Parameters.Add(new SqlParameter("@name", ls.Name));
+            _command.Parameters.Add(new SqlParameter("@hours", ls.HoursEstimate));
+            _command.Parameters.Add(new SqlParameter("@time", ls.TimeEstimate));
+            _command.Parameters.Add(new SqlParameter("@price", ls.Price));
 
             return _command;
         }

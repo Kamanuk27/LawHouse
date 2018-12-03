@@ -89,11 +89,6 @@ namespace BusinessLogic
             return _persistence.GetEmplNames();
         }
 
-        internal List<string> GetClientNames()
-        {
-            return _persistence.GetClientNames();
-        }
-
         internal List<decimal> GetUnitPrices()
         {
             return _persistence.GetUnitPrices();
@@ -110,6 +105,67 @@ namespace BusinessLogic
         internal int NewLegalService(LegalServiceE legal)
         {
             return _persistence.NewLegalService(legal);
+        }
+
+        internal ClientE GetClient(string cpr)
+        {
+            return _persistence.GetClient(cpr);
+        }
+        internal int UpdateClient(ClientE client)
+        {
+            return _persistence.UpdateClient(client);
+        }
+        internal int CloseClient(string cpr)
+        {
+            return _persistence.CloseClient(cpr);
+        }
+        internal List <EmployeeE> GetEmployees()
+        {
+            return _persistence.GetEmployees();
+        }
+
+        internal int UpdateEmployee(EmployeeE emp)
+        {
+            return _persistence.UpdateEmployee(emp);
+        }
+
+        internal int CloseEmployee(int id)
+        {
+            return _persistence.CloseEmployee(id);
+        }
+
+        internal List <FieldE> GetEmployeeFields(int id)
+        {
+            return _persistence.GetEmpFields(id);
+        }
+
+        internal List<FieldE> GetFields()
+        {
+            return _persistence.GetFields();
+        }
+
+        internal int NewField(string name)
+        {
+            return _persistence.NewField(name);
+        }
+
+        internal int AddField(int id, string name)
+        {
+            return _persistence.AddFieldToEmployee(id, name);
+        }
+
+        internal int DeleteField(string name)
+        {
+            return _persistence.DeleteField(name);
+        }
+        internal int UpdateLegalService(LegalServiceE ls)
+        {
+            return _persistence.UpdateLegalService(ls);
+        }
+
+        internal int DeleteLegalService(int id)
+        {
+            return _persistence.DeleteLegalService(id);
         }
     }
 }

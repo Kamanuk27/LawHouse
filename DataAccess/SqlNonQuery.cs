@@ -65,15 +65,55 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
+        internal int NewField(string name)
+        {
+            _command = _create.NewField(name);
+            return ExecuteNonQuery();
+        }
+        internal int AddFieldToEmployee(int id, string name)
+        {
+            _command = _create.AddFieldToEmployee(id, name);
+            return ExecuteNonQuery();
+        }
+
+
         internal int UpdateCase(CaseE c1)
         {
             _command = _update.UpdateCase(c1);
+            return ExecuteNonQuery();
+        }
+        internal int UpdateLegalService(LegalServiceE ls)
+        {
+            _command = _update.UpdateLegalService(ls);
+            return ExecuteNonQuery();
+        }
+
+        internal int UpdateClient(ClientE client)
+        {
+            _command = _update.UpdateClient(client);
+            return ExecuteNonQuery();
+        }
+
+        internal int UpdateEmployee(EmployeeE emp)
+        {
+            _command = _update.UpdateEmployee(emp);
             return ExecuteNonQuery();
         }
 
         internal int CloseCase(CaseE c1)
         {
             _command = _update.CloseCase(c1);
+            return ExecuteNonQuery();
+        }
+        internal int CloseClient(string cpr)
+        {
+           _command = _update.CloseClient(cpr);
+            return ExecuteNonQuery();
+        }
+
+        internal int CloseEmployee(int id)
+        {
+            _command = _update.CloseEmployee(id);
             return ExecuteNonQuery();
         }
 
@@ -92,6 +132,17 @@ namespace DataAccess
         internal int DeleteCase(int id)
         {
             _command = _delete.DeleteCase(id);
+            return ExecuteNonQuery();
+        }
+        internal int DeleteLegalService(int id)
+        {
+            _command = _delete.DeleteLegalService(id);
+            return ExecuteNonQuery();
+        }
+
+        internal int DeleteField(string name)
+        {
+            _command = _delete.DeleteField(name);
             return ExecuteNonQuery();
         }
 

@@ -58,7 +58,7 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
             _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
             _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            _command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+            _command.Parameters.Add(new SqlParameter("@Comment", s1.sType));
             _command.Parameters.Add(new SqlParameter("@fName", names[0]));
             _command.Parameters.Add(new SqlParameter("@lName", names[1]));
 
@@ -118,6 +118,27 @@ namespace DataAccess
             return _command;
 
         }
-       
+        internal SqlCommand NewField(string name)
+        {
+            string sqlString = "INSERT INTO Field (Name) VALUES (@name)";
+
+            _command.CommandText = sqlString;
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@name", name));
+            return _command;
+
+        }
+        internal SqlCommand AddFieldToEmployee(int id, string name)
+        {
+            string sqlString = "INSERT INTO [dbo].[EmployeeFields] (Employee_ID, Field_ID) " +
+                               " VALUES (@id, (SELECT ID FROM Field WHERE Name = @name))";
+
+            _command.CommandText = sqlString;
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", id));
+            _command.Parameters.Add(new SqlParameter("@name", name));
+            return _command;
+        }
+
     }
 }

@@ -93,16 +93,74 @@ namespace DataAccess
            return  _read.GetEmplNames();
         }
 
-        public List<string> GetClientNames()
-        {
-            return _read.GetClientNames();
-        }
-
         public List<decimal> GetUnitPrices()
         {
             return _read.GetUnitPrices();
         }
 
-        
+        public int NewField(string name)
+        {
+            return _nonQuery.NewField(name);
+        }
+
+        public List<FieldE> GetFields()
+        {
+           return  _read.GetFields();
+        }
+
+        public List<FieldE> GetEmpFields(int id)
+        {
+           return  _read.GetEmpFields(id);
+        }
+
+        public List<EmployeeE> GetEmployees()
+        {
+          return  _read.GetEmployees();
+        }
+
+        public ClientE GetClient(string cpr)
+        {
+            return _read.GetClient(cpr);
+        }
+
+        public int UpdateLegalService(LegalServiceE ls)
+        {
+            return _nonQuery.UpdateLegalService(ls);
+        }
+
+        public int UpdateClient(ClientE client)
+        {
+            return _nonQuery.UpdateClient(client);
+        }
+
+        public int UpdateEmployee(EmployeeE emp)
+        {
+            return _nonQuery.UpdateEmployee(emp);
+        }
+
+        public int AddFieldToEmployee(int id, string name)
+        {
+            return _nonQuery.AddFieldToEmployee(id, name);
+        }
+
+        public int CloseClient(string cpr)
+        {
+            return _nonQuery.CloseClient(cpr);
+        }
+
+        public int CloseEmployee(int id)
+        {
+            return _nonQuery.CloseEmployee(id);
+        }
+
+        public int DeleteLegalService(int id)
+        {
+            return _nonQuery.DeleteLegalService(id);
+        }
+
+        public int DeleteField(string name)
+        {
+            return _nonQuery.DeleteField(name);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace LawHouseLibrary.Entities
         public DateTime Date { get; set; }
         public int Hours { get; set; }
         public int Km { get; set; }
-        public string Comment { get; set; }
+        public string sType { get; set; }
 
         public ServiceE()
         {

@@ -24,51 +24,6 @@ namespace DataAccess
             _command.Connection = _connection;
         }
 
-
-        private int ExecuteSql()
-        {
-            PrepareSql();
-            int rows = _command.ExecuteNonQuery();
-            _connection.Close();
-            return rows;
-        }
-
-        //internal CaseE GetCase(int id)
-        //{
-        //    _command.CommandText = "SELECT*FROM ViewCases WHERE ID = @id";
-
-        //    _command.Parameters.Clear();
-        //    _command.Parameters.Add(new SqlParameter("@id", id));
-        //    PrepareSql();
-        //    CaseE c1 = new CaseE();
-        //    SqlDataReader reader = null;
-        //    reader = _command.ExecuteReader();
-
-        //    if (reader.HasRows)
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-        //            c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
-        //            c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
-        //            c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
-        //            c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
-        //            c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
-        //            c1.Service = reader["ServiceName"] != DBNull.Value ? reader["ServiceName"].ToString() : string.Empty;
-
-        //            c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
-        //            c1.Client = $"{(reader["ClientfName"] != DBNull.Value ? reader["ClientfName"].ToString() : string.Empty)} " +
-        //                        $"{(reader["ClientlName"] != DBNull.Value ? reader["ClientlName"].ToString() : string.Empty)}";
-
-        //            c1.RespEmployee = $"{(reader["EmployeefName"] != DBNull.Value ? reader["EmployeefName"].ToString() : string.Empty)} " +
-        //                              $"{(reader["EmployeelName"] != DBNull.Value ? reader["EmployeelName"].ToString() : string.Empty)}";
-
-        //        }
-        //    }
-        //    _connection.Close();
-        //    return c1;
-        //}
-
         internal List<CaseE> GetCases()
         {
             List<CaseE> cases = new List<CaseE>();
@@ -129,7 +84,7 @@ namespace DataAccess
                     s1.Date = reader["Date"] != DBNull.Value ? Convert.ToDateTime(reader["Date"]) : DateTime.MinValue;
                     s1.Hours = reader["Hours"] != DBNull.Value ? Convert.ToInt32(reader["Hours"]) : default(int);
                     s1.Km = reader["Km"] != DBNull.Value ? Convert.ToInt32(reader["Km"]) : default(int);
-                    s1.Comment = reader["Comment"] != DBNull.Value ? reader["Comment"].ToString() : String.Empty;
+                    s1.sType = reader["Comment"] != DBNull.Value ? reader["Comment"].ToString() : String.Empty;
                     services.Add(s1);
                 }
 
@@ -209,10 +164,11 @@ namespace DataAccess
             return emplNames;
         }
 
-        internal List<string> GetClientNames()
+     
+        internal List<FieldE> GetFields()
         {
-            List<string> clientNames = new List<string>();
-            _command.CommandText = "SELECT FirstName, LastName FROM Client";
+            List<FieldE> fields = new List<FieldE>();
+            _command.CommandText = "SELECT*FROM Field";
 
             PrepareSql();
             SqlDataReader reader = null;
@@ -221,12 +177,102 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    clientNames.Add($"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}");
+                    FieldE f = new FieldE();
+                    f.Id = Convert.ToInt32(reader["ID"]);
+                    f.Name = reader["Name"].ToString();
+                    fields.Add(f);
                 }
 
             }
             _connection.Close();
-            return clientNames;
+            return fields;
+        }
+
+        public List<FieldE> GetEmpFields(int id)
+        {
+            List<FieldE> fields = new List<FieldE>();
+            _command.CommandText = "SELECT*FROM [dbo].[Field] WHERE [ID] IN " +
+                                   "(SELECT Field_ID FROM [dbo].[EmployeeFields] WHERE Employee_ID = @id)";
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", id));
+
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    FieldE f = new FieldE();
+                    f.Id = Convert.ToInt32(reader["ID"]);
+                    f.Name = reader["Name"].ToString();
+                    fields.Add(f);
+                }
+
+            }
+            _connection.Close();
+            return fields;
+        }
+
+        public List<EmployeeE> GetEmployees()
+        {
+            List<EmployeeE> employees = new List<EmployeeE>();
+            _command.CommandText = "SELECT * FROM Employee";
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    EmployeeE e = new EmployeeE();
+
+                    e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    e.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
+                    e.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
+                    e.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+                    e.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
+                    e.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
+                    e.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
+                    e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
+                    e.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                    e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
+                    e.PayRatePrHour = reader["ID"] != DBNull.Value ? Convert.ToDecimal(reader["ID"]) : default(decimal);
+
+                    employees.Add(e);
+                }
+            }
+            _connection.Close();
+            return employees; ;
+        }
+
+        public ClientE GetClient(string cpr)
+        {
+            ClientE c = new ClientE();
+            _command.CommandText = "SELECT * FROM Client WHERE CprNo = @cpr";
+            _command.Parameters.Clear();
+
+            _command.Parameters.Add(new SqlParameter("@cpr", cpr));
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                     c.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    c.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
+                    c.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
+                    c.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+                    c.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
+                    c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
+                    c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
+                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
+                  
+                }
+            }
+            _connection.Close();
+            return c;
         }
 
 

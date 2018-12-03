@@ -7,11 +7,47 @@ namespace BusinessLogic
     class Employee : EmployeeE
     {
         private DbController _dbController;
-        private List<LegalServiceE> _lServices;
-        public Employee(DbController dbController)
+        private List<FieldE> _fields;
+        public Employee()
         {
-            _dbController = dbController;
+            _dbController = DbController.Instance;
         }
 
+        internal void InitializeEmployee(int id, string cpr, string fName, string lName, string address, int postNo,
+                              string eMail, string tlf, DateTime start, string position, decimal money)
+        {
+            Id = id;
+            CprNo = cpr;
+            FirstName = fName;
+            LastName = lName;
+            Address = address;
+            PostNo = postNo;
+            Email = eMail;
+            TlfNo = tlf;
+            StartDate = start;
+            Position = position;
+            PayRatePrHour = money;
+            _fields = _dbController.GetEmployeeFields(Id);
+
+        }
+        internal List<FieldE> GetFields()
+        {
+            return _dbController.GetFields();
+        }
+
+        internal int NewField(string name)
+        {
+            return _dbController.NewField(name);
+        }
+
+        internal int AddField(string name)
+        {
+            return _dbController.AddField(Id, name);
+        }
+        internal int DeleteField(string name)
+        {
+            return _dbController.DeleteField(name);
+        }
     }
 }
+

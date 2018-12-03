@@ -45,6 +45,7 @@
     <Compile Include="Entities\ClientE.cs" />
     <Compile Include="Entities\EmployeeE.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\FieldE.cs" />
     <Compile Include="Entities\LegalServiceE.cs" />
     <Compile Include="Entities\ServiceE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
