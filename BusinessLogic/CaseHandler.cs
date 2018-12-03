@@ -92,7 +92,7 @@ namespace BusinessLogic
             return _case.DeleteService(id);
         }
 
-        // Hjælpemetoder, som returnere navne af aktør til dropdown menuer på IU;
+        // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
         internal List<string> GetLawyers()
         {
             return _dbController.GetLawyers();

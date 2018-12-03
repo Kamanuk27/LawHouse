@@ -44,6 +44,7 @@
     <Compile Include="Case.cs" />
     <Compile Include="CaseHandler.cs" />
     <Compile Include="DbController.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="HR.cs" />
     <Compile Include="LhController.cs" />
     <Compile Include="PriceCalculator.cs" />

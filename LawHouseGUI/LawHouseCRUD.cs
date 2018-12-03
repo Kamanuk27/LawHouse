@@ -80,8 +80,8 @@ namespace LawHouseGUI
                 CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
                 CaseDataGrid.Rows[n].Cells[1].Value = c1.Name;
                 CaseDataGrid.Rows[n].Cells[2].Value = c1.Client;
-                CaseDataGrid.Rows[n].Cells[3].Value = c1.StartDate;
-                CaseDataGrid.Rows[n].Cells[4].Value = c1.EndDate;
+                CaseDataGrid.Rows[n].Cells[3].Value = c1.StartDate.ToShortDateString();
+                CaseDataGrid.Rows[n].Cells[4].Value = c1.EndDate.ToShortDateString();
                 CaseDataGrid.Rows[n].Cells[5].Value = c1.Service;
                 CaseDataGrid.Rows[n].Cells[6].Value = c1.HoursEstimate;
                 CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;

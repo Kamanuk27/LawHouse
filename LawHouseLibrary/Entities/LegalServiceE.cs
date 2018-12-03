@@ -14,6 +14,14 @@ namespace LawHouseLibrary.Entities
         public decimal Price { get; set; }
         public int TimeEstimate { get; set; }
 
+        public LegalServiceE()
+        {
+
+        }
+        public LegalServiceE(int id)
+        {
+            ID = id;
+        }
 
     }
 }
