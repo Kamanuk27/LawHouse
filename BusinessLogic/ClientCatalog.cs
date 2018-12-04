@@ -10,11 +10,11 @@ namespace BusinessLogic
     class ClientCatalog
     {
 
-        private DbController _dbController;
+        private CaseDb _dbController;
 
         public ClientCatalog()
         {
-            _dbController = DbController.Instance;
+            _dbController = CaseDb.Instance;
         }
 
         internal ClientE GetClient(string cpr)

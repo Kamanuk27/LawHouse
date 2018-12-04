@@ -9,14 +9,12 @@ namespace BusinessLogic
 {
     internal class HrHandler
     {
-        private Employee _employee;
         private EmpCatalog _empCat;
         private ServiceCatalog _serviceCat;
         private static HrHandler _instance;
 
         public HrHandler()
         {
-            _employee = new Employee();
             _empCat = new EmpCatalog();
             _serviceCat = new ServiceCatalog();
         }
@@ -51,35 +49,31 @@ namespace BusinessLogic
             return _empCat.CloseEmployee(id);
         }
 
-
-        // Employee metoder:
-
-        public void InitializeEmployee(int id, string cpr, string fName, string lName, string address, int postNo,
-                        string eMail, string tlf, DateTime start, string position, decimal money)
+        public List<FieldE> GetEmployeeFields(int id)
         {
-           _employee.InitializeEmployee(id, cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+          return _empCat.GetEmployeeFields(id);
 
         }
         public List<FieldE> GetFields()
         {
-            return _employee.GetFields();
+            return _empCat.GetFields();
         }
 
         public int NewField(string name)
         {
-            return _employee.NewField(name);
+            return _empCat.NewField(name);
         }
 
-        public int AddField(string name)
+        public int AddField(int id, string name)
         {
-            return _employee.AddField(name);
+            return _empCat.AddField(id, name);
         }
         public int DeleteField(string name)
         {
-            return _employee.DeleteField(name);
+            return _empCat.DeleteField(name);
         }
 
-        // Legal Services metoder:
+        // LegalServices metoder:
 
         public int NewLegalService(string name, int hours, int time, decimal price)
         {

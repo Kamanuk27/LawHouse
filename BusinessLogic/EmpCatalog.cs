@@ -9,11 +9,13 @@ namespace BusinessLogic
 {
     class EmpCatalog
     {
-        DbController _dbController;
+        HrDb _dbController;
+        //private List<FieldE> _fields;
 
         public EmpCatalog()
         {
-            _dbController = DbController.Instance;
+            _dbController = HrDb.Instance;
+
         }
 
         internal List <EmployeeE> GetEmployees()
@@ -55,6 +57,31 @@ namespace BusinessLogic
         internal int CloseEmployee(int id)
         {
             return _dbController.CloseEmployee(id);
+        }
+
+        internal List<FieldE> GetEmployeeFields(int id)
+        {
+            return _dbController.GetEmployeeFields(id);
+        }
+        internal List<FieldE> GetFields()
+        {
+            return _dbController.GetFields();
+        }
+
+        internal int NewField(string name)
+        {
+            FieldE f = new FieldE();
+            f.Name = name;
+            return _dbController.NewField(f);
+        }
+
+        internal int AddField(int id, string name)
+        {
+            return _dbController.AddField(id, name);
+        }
+        internal int DeleteField(string name)
+        {
+            return _dbController.DeleteField(name);
         }
     }
 }

@@ -9,10 +9,10 @@ namespace BusinessLogic
 {
     internal class CaseCatalog
     {
-        private DbController _dbController;
+        private CaseDb _dbController;
         public CaseCatalog()
         {
-            _dbController = DbController.Instance;
+            _dbController = CaseDb.Instance;
         }
 
         internal List<CaseE> GetCases()

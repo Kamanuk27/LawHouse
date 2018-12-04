@@ -45,9 +45,9 @@
     <Compile Include="CaseCatalog.cs" />
     <Compile Include="CaseHandler.cs" />
     <Compile Include="ClientCatalog.cs" />
-    <Compile Include="DbController.cs" />
+    <Compile Include="CaseDb.cs" />
     <Compile Include="EmpCatalog.cs" />
-    <Compile Include="Employee.cs" />
+    <Compile Include="HrDb.cs" />
     <Compile Include="HrHandler.cs" />
     <Compile Include="PriceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

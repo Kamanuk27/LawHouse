@@ -9,10 +9,10 @@ namespace BusinessLogic
 {
     class ServiceCatalog
     {
-        private DbController _dbController;
+        private HrDb _dbController;
         public ServiceCatalog()
         {
-            _dbController = DbController.Instance;
+            _dbController = HrDb.Instance;
         }
         internal List<LegalServiceE> GetLegalServices()
         {

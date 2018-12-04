@@ -7,29 +7,24 @@ using LawHouseLibrary.Entities;
 
 namespace BusinessLogic
 {
-    internal class DbController
+    internal class CaseDb
     {
-        private static DbController _instance;
-        private IDataAccess _persistence;
-        internal DbController()
+        private static CaseDb _instance;
+        private ICaseDataAccess _persistence;
+        internal CaseDb()
         {
-            GetDataAccess();
+            _persistence = DatabaseFactory.Instance.GetCaseDataAccess();
         }
-        internal  static DbController Instance
+        internal  static CaseDb Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new DbController();
+                    _instance = new CaseDb();
                 return _instance;
             }
         }
-        internal void GetDataAccess()
-        {
-            _persistence = DatabaseFactory.Instance.GetDataAccess();
-
-        }
-
+       
         // Create metoder
         internal int NewCase(CaseE c1)
         {
@@ -46,25 +41,7 @@ namespace BusinessLogic
         {
             return _persistence.NewClient(client);
         }
-        internal int NewEmployee(EmployeeE employee)
-        {
-            return _persistence.NewEmployee(employee);
-        }
-        internal int NewLegalService(LegalServiceE legal)
-        {
-            return _persistence.NewLegalService(legal);
-        }
-
-        internal int NewField(FieldE f)
-        {
-            return _persistence.NewField(f);
-        }
-
-        internal int AddField(int id, string name)
-        {
-            return _persistence.AddFieldToEmployee(id, name);
-        }
-
+       
         // Get/read metoder
         internal List<CaseE> GetCases()
         {
@@ -75,25 +52,9 @@ namespace BusinessLogic
         {
             return _persistence.GetProvidedServices(caseId);
         }
-
-        internal List<EmployeeE> GetEmployees()
-        {
-            return _persistence.GetEmployees();
-        }
-
         internal List<LegalServiceE> GetLegalServices()
         {
             return _persistence.GetLegalServices();
-        }
-
-        internal List<FieldE> GetEmployeeFields(int id)
-        {
-            return _persistence.GetEmpFields(id);
-        }
-
-        internal List<FieldE> GetFields()
-        {
-            return _persistence.GetFields();
         }
         internal ClientE GetClient(string cpr)
         {
@@ -139,34 +100,8 @@ namespace BusinessLogic
         {
             return _persistence.CloseClient(cpr);
         }
-      
-        internal int UpdateEmployee(EmployeeE emp)
-        {
-            return _persistence.UpdateEmployee(emp);
-        }
-
-        internal int CloseEmployee(int id)
-        {
-            return _persistence.CloseEmployee(id);
-        }
-
-        internal int UpdateLegalService(LegalServiceE ls)
-        {
-            return _persistence.UpdateLegalService(ls);
-        }
-
 
         //Delete metoder
-        internal int DeleteField(string name)
-        {
-            return _persistence.DeleteField(name);
-        }
-
-        internal int DeleteLegalService(int id)
-        {
-            return _persistence.DeleteLegalService(id);
-        }
-      
         internal int DeleteCase(int id)
         {
             return _persistence.DeleteCase(id);
