@@ -52,6 +52,24 @@
     <Compile Include="Add_Employee.Designer.cs">
       <DependentUpon>Add_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="CaseCrud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CaseCrud.Designer.cs">
+      <DependentUpon>CaseCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CasesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CasesForm.Designer.cs">
+      <DependentUpon>CasesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCaseEmpl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateCaseEmpl.Designer.cs">
+      <DependentUpon>CreateCaseEmpl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeReg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +84,35 @@
     <Compile Include="LawHouseCRUD.Designer.cs">
       <DependentUpon>LawHouseCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabControl.Designer.cs">
+      <DependentUpon>TabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabForm.Designer.cs">
+      <DependentUpon>TabForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcCases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcCases.Designer.cs">
+      <DependentUpon>UcCases.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaseCrud.resx">
+      <DependentUpon>CaseCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CasesForm.resx">
+      <DependentUpon>CasesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateCaseEmpl.resx">
+      <DependentUpon>CreateCaseEmpl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeReg.resx">
       <DependentUpon>EmployeeReg.cs</DependentUpon>
@@ -83,6 +128,15 @@
     </Compile>
     <EmbeddedResource Include="LawHouseCRUD.resx">
       <DependentUpon>LawHouseCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabControl.resx">
+      <DependentUpon>TabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabForm.resx">
+      <DependentUpon>TabForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcCases.resx">
+      <DependentUpon>UcCases.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\BusinessLogic.Case.datasource" />
     <None Include="Properties\Settings.settings">

@@ -17,7 +17,7 @@ namespace LawHouseGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LawHouseCRUD());
+            Application.Run(new TabForm());
         }
     }
 }
