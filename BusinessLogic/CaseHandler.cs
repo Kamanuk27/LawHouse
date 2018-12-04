@@ -15,14 +15,24 @@ namespace BusinessLogic
         private Case _case;
         private CaseCatalog _cases;
         private ClientCatalog _clients;
+        private static CaseHandler _instance;
         public CaseHandler()
         {
             _case = new Case();
             _cases = new CaseCatalog();
             _clients = new ClientCatalog();
         }
-        
-     // Fra Case
+        internal static CaseHandler Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new CaseHandler();
+                return _instance;
+            }
+        }
+
+        // Fra Case
         public void InitiateCase(int id, string name, string client, DateTime start, 
                                              string service, decimal negPrice, decimal total, string respEmp)
         {

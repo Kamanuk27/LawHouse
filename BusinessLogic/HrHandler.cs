@@ -12,13 +12,22 @@ namespace BusinessLogic
         private Employee _employee;
         private EmpCatalog _empCat;
         private ServiceCatalog _serviceCat;
-       
-        
+        private static HrHandler _instance;
+
         public HrHandler()
         {
             _employee = new Employee();
             _empCat = new EmpCatalog();
             _serviceCat = new ServiceCatalog();
+        }
+        internal static HrHandler Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new HrHandler();
+                return _instance;
+            }
         }
 
         // Employee Catalog metoder:
