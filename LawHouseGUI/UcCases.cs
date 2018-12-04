@@ -19,7 +19,7 @@ namespace LawHouseGUI
         {
             InitializeComponent();
             caseHandler = CaseHandler.Instance;
-            UcCases_Load();
+          
         }
 
         public int SelectedCase
@@ -31,12 +31,12 @@ namespace LawHouseGUI
 
         }
 
-        private void UcCases_Load()
+        private void UcCases_Load(object sender, EventArgs e)
         {
             var cases = caseHandler.GetCases();
             CasesGrid.DataSource = cases;
             CasesGrid.AutoGenerateColumns = true;
-           
+
         }
     }
 }

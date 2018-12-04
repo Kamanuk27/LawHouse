@@ -38,7 +38,7 @@
             this.CasesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.CasesGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.CasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CasesGrid.Location = new System.Drawing.Point(54, 63);
+            this.CasesGrid.Location = new System.Drawing.Point(0, 43);
             this.CasesGrid.Name = "CasesGrid";
             this.CasesGrid.Size = new System.Drawing.Size(745, 159);
             this.CasesGrid.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 11);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 40);
             this.label1.TabIndex = 1;
@@ -60,7 +60,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CasesGrid);
             this.Name = "UcCases";
-            this.Size = new System.Drawing.Size(850, 256);
+            this.Size = new System.Drawing.Size(756, 212);
+            this.Load += new System.EventHandler(this.UcCases_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CasesGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
