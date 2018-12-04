@@ -14,7 +14,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestInitializeCaseInitializesListOfTwoProvidedservises()
         {
-            _case.InitializeCase(2, "testCase", "Simon", DateTime.Now, "Bolighandel", 3500, 0, "karina Olsen");
+            _case.InitializeCase(2, 3500, "karina Olsen");
             int expected = 2;
             int actual = _case.Services.Count;
             Assert.AreEqual(expected, actual);
@@ -31,7 +31,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetProvidedServicesReturnListOfServices()
         {
-            _case.InitializeCase(2, "testCase", "Simon", DateTime.Now, "Bolighandel", 3500, 0, "karina Olsen");
+            _case.InitializeCase(2, 3500,  "karina Olsen");
             Type actual = _case.Services[0].GetType();
             Type expected = typeof(ServiceE);
             Assert.AreEqual(expected, actual);
@@ -48,7 +48,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetPriceReturnNegotiatedPrice3500()
         {
-            _case.InitializeCase(2, "testCase", "Simon", DateTime.Now, "Bolighandel", 3500, 0, "karina Olsen");
+            _case.InitializeCase(2, 3500, "karina Olsen");
             decimal expected = 3500;
             decimal actual = _case.GetPrice();
             Assert.AreEqual(expected, actual);

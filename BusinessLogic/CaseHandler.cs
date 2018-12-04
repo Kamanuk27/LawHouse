@@ -33,10 +33,9 @@ namespace BusinessLogic
         }
 
         // Fra Case
-        public void InitiateCase(int id, string name, string client, DateTime start, 
-                                             string service, decimal negPrice, decimal total, string respEmp)
+        public void InitializeCase(int id, decimal negPrice, string respEmp)
         {
-            _case.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            _case.InitializeCase(id, negPrice, respEmp);
         }
 
        

@@ -110,7 +110,7 @@ namespace LawHouseGUI
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             RespEmpCombo.Text = respEmp;
             NegPricetxt.Text = negPrice.ToString();
-            //_handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            _handler.InitializeCase(id,  negPrice, respEmp);
             YGriderstart();
 
         }
