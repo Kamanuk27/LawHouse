@@ -22,7 +22,7 @@ namespace BusinessLogic
             _cases = new CaseCatalog();
             _clients = new ClientCatalog();
         }
-        internal static CaseHandler Instance
+        public static CaseHandler Instance
         {
             get
             {

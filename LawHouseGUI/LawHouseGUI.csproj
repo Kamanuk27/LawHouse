@@ -52,6 +52,12 @@
     <Compile Include="Add_Employee.Designer.cs">
       <DependentUpon>Add_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Designer.cs">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeReg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +72,17 @@
     <Compile Include="LawHouseCRUD.Designer.cs">
       <DependentUpon>LawHouseCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcCases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcCases.Designer.cs">
+      <DependentUpon>UcCases.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.resx">
+      <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeReg.resx">
       <DependentUpon>EmployeeReg.cs</DependentUpon>
@@ -84,7 +99,11 @@
     <EmbeddedResource Include="LawHouseCRUD.resx">
       <DependentUpon>LawHouseCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UcCases.resx">
+      <DependentUpon>UcCases.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\BusinessLogic.Case.datasource" />
+    <None Include="Properties\DataSources\BusinessLogic.CaseHandler.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
