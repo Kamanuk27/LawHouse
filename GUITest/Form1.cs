@@ -33,10 +33,10 @@ namespace GUITest
                 RespEmpCombo.Items.Add(l1);
                 CrCaseAdvokat.Items.Add(l1);
             }
-            //foreach (var s1 in _hrHandler.GetLegalServices())
-            //{
-            //    CrCaseServiceCom.Items.Add(s1.Name);
-            //}
+            foreach (var s1 in _hrHandler.GetLegalServices())
+            {
+                CrCaseServiceCom.Items.Add(s1.Name);
+            }
         }
         private void ClearTxtBoxs()
         {
@@ -75,6 +75,7 @@ namespace GUITest
             decimal total = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[8].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             RespEmpCombo.Text = respEmp;
+            textBox1.Text = id.ToString();
             NegPricetxt.Text = negPrice.ToString();
             _caseHandler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
 
@@ -92,8 +93,8 @@ namespace GUITest
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
            // labelCaseName.Text = $"Nr.{id}, {name}";
             _caseHandler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
-            Services sv = new Services();
-            sv.ID = id;
+            Services sv = new Services(id);
+            //sv.ID = id;
             sv.Show();
         }
 

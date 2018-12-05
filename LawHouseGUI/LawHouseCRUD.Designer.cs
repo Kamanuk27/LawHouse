@@ -849,7 +849,7 @@
             this.ServiceTab.Location = new System.Drawing.Point(4, 29);
             this.ServiceTab.Name = "ServiceTab";
             this.ServiceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ServiceTab.Size = new System.Drawing.Size(1819, 949);
+            this.ServiceTab.Size = new System.Drawing.Size(1819, 933);
             this.ServiceTab.TabIndex = 2;
             this.ServiceTab.Text = "Ydelser";
             this.ServiceTab.UseVisualStyleBackColor = true;
@@ -1118,7 +1118,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1819, 949);
+            this.tabPage3.Size = new System.Drawing.Size(1819, 933);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Advokat/Service/Field";
             this.tabPage3.UseVisualStyleBackColor = true;

@@ -16,17 +16,18 @@ namespace GUITest
         public int ID { get; set; }
         private CaseHandler _caseHandler;
 
-        public Services()
+        public Services(int id)
         {
             InitializeComponent();
             _caseHandler = CaseHandler.Instance;
+            ID = id;
             FillComboBoxes();
             YGriderstart();
         }
 
         private void YGriderstart()
         {
-           // ServiceDataGrid.Rows.Clear();
+            ServiceDataGrid.Rows.Clear();
 
             foreach (var service in _caseHandler.GetProvidedServices(ID))
             {

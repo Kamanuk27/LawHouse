@@ -30,10 +30,10 @@ namespace GUITest
                 SpecInsertCom.Items.Add(l1);
 
             }
-            //foreach (var s1 in _hrHandler.GetLegalServices())
-            //{
-            //    LServInsertCom.Items.Add(s1.Name);
-            //}
+            foreach (var s1 in _hrHandler.GetLegalServices())
+            {
+                LServInsertCom.Items.Add(s1.Name);
+            }
         }
 
         private void NewEmplButt_Click(object sender, EventArgs e)

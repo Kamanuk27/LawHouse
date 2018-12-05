@@ -48,8 +48,7 @@ namespace BusinessLogic
 
         public List<ServiceE> GetProvidedServices(int caseId)
         {
-            return _case.GetProvidedServices();
-           
+            return _case.GetProvidedServices(caseId);
         }
      
         public int UpdateService(int id, int hours, int km, DateTime date, string comment)

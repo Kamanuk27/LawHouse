@@ -42,9 +42,10 @@ namespace BusinessLogic
             s1.EmployeeName = respEmpl;
             return _dbController.NewService(s1);
         }
-        internal List <ServiceE> GetProvidedServices()
+        internal List <ServiceE> GetProvidedServices(int id)
         {
-            return Services;
+            return _dbController.GetProvidedServices(id);
+        
         }
         internal int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {

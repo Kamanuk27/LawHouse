@@ -37,7 +37,7 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.FormEmpl = new System.Windows.Forms.Button();
             this.Spec = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -518,8 +519,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -707,11 +708,19 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(62, 425);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 264;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2041, 999);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.Spec);
             this.Controls.Add(this.FormEmpl);
@@ -827,6 +836,7 @@
         private System.Windows.Forms.Button FormEmpl;
         private System.Windows.Forms.Button Spec;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
