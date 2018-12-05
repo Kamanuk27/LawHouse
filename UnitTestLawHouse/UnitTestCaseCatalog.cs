@@ -29,7 +29,7 @@ namespace UnitTestLawHouse
         public void TestNewCaseReturnOne()
         {
             int expected = 1;
-            int actual = caseCat.NewCase("name", "client", "service", DateTime.Now, "employee", 0);
+            int actual = caseCat.NewCase("testCase", 1, 2, DateTime.Now, 3, 3500);
             Assert.AreEqual(expected, actual);
         }
 
@@ -57,7 +57,7 @@ namespace UnitTestLawHouse
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestGetLawyersReturnsTwoStrings()
+        public void TestGetLawyersReturnsTwoEmployeeEs()
         {
             int expected = 2;
             int actual = caseCat.GetLawyers().Count;
@@ -65,16 +65,16 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetLawyersReturnsListOfStrings()
+        public void TestGetLawyersReturnsListOfEmployeeEs()
         {
             var lawyers = caseCat.GetLawyers();
             Type actual = lawyers[0].GetType();
-            Type expected = typeof(string);
+            Type expected = typeof(EmployeeE);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TestGetEmplNamesReturnsTwoStrings()
+        public void TestGetEmplNamesReturnsTwoEmployeeEs()
         {
             int expected = 2;
             int actual = caseCat.GetEmplNames().Count;
@@ -82,11 +82,11 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetEmplNamesReturnsListOfStrings()
+        public void TestGetEmplNamesReturnsListOfEmployeeEs()
         {
             var names = caseCat.GetEmplNames();
             Type actual = names[0].GetType();
-            Type expected = typeof(string);
+            Type expected = typeof(EmployeeE);
             Assert.AreEqual(expected, actual);
         }
     }

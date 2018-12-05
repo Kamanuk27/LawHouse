@@ -24,18 +24,35 @@ namespace DataAccess
                 return _instance;
             }
         }
-        public IDataAccess GetDataAccess()
+        public ILhouseDataAccess GetHrDataAccess()
         {
             string database = ConfigurationManager.AppSettings["database"];
-            IDataAccess percistance = null;
+            ILhouseDataAccess percistance = null;
 
             if (database == "sqlserver")
             {
-                percistance =new SqlDataAccess();
+                percistance =new SqlLhouseDataAccess();
             }
             else
             {
-                percistance = new TestDB();
+                percistance = new TestLhouseDB();
+            }
+
+            return percistance;
+        }
+
+        public ICaseDataAccess GetCaseDataAccess()
+        {
+            string database = ConfigurationManager.AppSettings["database"];
+            ICaseDataAccess percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new SqlCaseDataAccess();
+            }
+            else
+            {
+                percistance = new TestCaseDB();
             }
 
             return percistance;

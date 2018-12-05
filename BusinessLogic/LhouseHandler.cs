@@ -7,25 +7,23 @@ using LawHouseLibrary.Entities;
 
 namespace BusinessLogic
 {
-    internal class HrHandler
+    internal class LhouseHandler
     {
-        private Employee _employee;
         private EmpCatalog _empCat;
         private ServiceCatalog _serviceCat;
-        private static HrHandler _instance;
+        private static LhouseHandler _instance;
 
-        public HrHandler()
+        public LhouseHandler()
         {
-            _employee = new Employee();
             _empCat = new EmpCatalog();
             _serviceCat = new ServiceCatalog();
         }
-        internal static HrHandler Instance
+        internal static LhouseHandler Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new HrHandler();
+                    _instance = new LhouseHandler();
                 return _instance;
             }
         }
@@ -36,14 +34,14 @@ namespace BusinessLogic
             return _empCat.GetEmployees();
         }
 
-        public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, 
-                                 string eMail, string tlf, DateTime start, string position, decimal money)
+        public int NewEmployee(int cpr, string fName, string lName, string address, int postNo, 
+                                 string eMail, int tlf, DateTime start, string position, decimal money)
         {
             return _empCat.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
-        public int UpdateEmployee(string address, int postNo, string eMail, string tlf, string position, decimal money)
+        public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, int tlf, string position, decimal money)
         {
-            return _empCat.UpdateEmployee(address, postNo, eMail, tlf, position, money);
+            return _empCat.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
         }
 
         public int CloseEmployee(int id)
@@ -51,35 +49,31 @@ namespace BusinessLogic
             return _empCat.CloseEmployee(id);
         }
 
-
-        // Employee metoder:
-
-        public void InitializeEmployee(int id, string cpr, string fName, string lName, string address, int postNo,
-                        string eMail, string tlf, DateTime start, string position, decimal money)
+        public List<FieldE> GetEmployeeFields(int id)
         {
-           _employee.InitializeEmployee(id, cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+          return _empCat.GetEmployeeFields(id);
 
         }
         public List<FieldE> GetFields()
         {
-            return _employee.GetFields();
+            return _empCat.GetFields();
         }
 
         public int NewField(string name)
         {
-            return _employee.NewField(name);
+            return _empCat.NewField(name);
         }
 
-        public int AddField(string name)
+        public int AddField(int eId, int fId)
         {
-            return _employee.AddField(name);
+            return _empCat.AddField(eId, fId);
         }
-        public int DeleteField(string name)
+        public int DeleteField(int id)
         {
-            return _employee.DeleteField(name);
+            return _empCat.DeleteField(id);
         }
 
-        // Legal Services metoder:
+        // LegalServices metoder:
 
         public int NewLegalService(string name, int hours, int time, decimal price)
         {
@@ -91,9 +85,9 @@ namespace BusinessLogic
             return _serviceCat.GetLegalServices();
         }
 
-        public int UpdateLegalService(string name, int hours, int time, decimal price)
+        public int UpdateLegalService(int id, string name, int hours, int time, decimal price)
         {
-            return _serviceCat.UpdateLegalService(name, hours, time, price);
+            return _serviceCat.UpdateLegalService(id, name, hours, time, price);
         }
 
 
@@ -101,5 +95,7 @@ namespace BusinessLogic
         {
             return _serviceCat.DeleteLegalService(id);
         }
+
+        
     }
 }

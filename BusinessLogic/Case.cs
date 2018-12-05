@@ -9,13 +9,13 @@ namespace BusinessLogic
 {
     class Case : CaseE
     {
-        private DbController _dbController;
+        private CaseDb _dbController;
         internal List<ServiceE> Services;
 
 
         public Case()
         {
-            _dbController = DbController.Instance;
+            _dbController = CaseDb.Instance;
         }
         internal void InitializeCase(int id, decimal negPrice, string respEmp)
         {
