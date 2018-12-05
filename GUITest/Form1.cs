@@ -37,7 +37,7 @@ namespace GUITest
             }
             foreach (var s1 in _hrHandler.GetLegalServices())
             {
-                CrCaseServiceCom.Items.Add(s1.Name);
+                CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
         }
 
@@ -234,9 +234,11 @@ namespace GUITest
         private void NewCaseButt_Click(object sender, EventArgs e)
         {
             string caseName = CrCaseName.Text;
-            string service = CrCaseServiceCom.Text;
+            string[] getServoceId = CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int service = Convert.ToInt32(getServoceId[0]);
             DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
-            string respEmpl = CrCaseAdvokat.Text;
+            string[] getAdvoketId = CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int respEmpl = Convert.ToInt32(getAdvoketId[0]); 
             decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
             _caseHandler.NewCase(caseName, ClientId, service, startTime, respEmpl, negoPrice);
         }
