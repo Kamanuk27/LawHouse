@@ -7,40 +7,24 @@ using System.Configuration;
 
 namespace DataAccess
 {
-    public class DatabaseFactory
+    public class CaseFactory
     {
-        private static DatabaseFactory _instance;
+        private static CaseFactory _instance;
         
-        internal DatabaseFactory()
+        internal CaseFactory()
         {
 
         }
-        public static DatabaseFactory Instance
+        public static CaseFactory Instance
         {
             get
             {
                 if (_instance == null)
-                _instance = new DatabaseFactory();
+                _instance = new CaseFactory();
                 return _instance;
             }
         }
-        public ILhouseDataAccess GetHrDataAccess()
-        {
-            string database = ConfigurationManager.AppSettings["database"];
-            ILhouseDataAccess percistance = null;
-
-            if (database == "sqlserver")
-            {
-                percistance =new SqlLhouseDataAccess();
-            }
-            else
-            {
-                percistance = new TestLhouseDB();
-            }
-
-            return percistance;
-        }
-
+       
         public ICaseDataAccess GetCaseDataAccess()
         {
             string database = ConfigurationManager.AppSettings["database"];

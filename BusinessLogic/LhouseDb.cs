@@ -14,7 +14,7 @@ namespace BusinessLogic
         private ILhouseDataAccess _persistence;
         internal LhouseDb()
         {
-          _persistence = DatabaseFactory.Instance.GetHrDataAccess();
+          _persistence = LHouseFactory.Instance.GetHrDataAccess();
         }
         internal static LhouseDb Instance
         {

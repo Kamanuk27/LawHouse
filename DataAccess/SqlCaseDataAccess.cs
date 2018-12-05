@@ -18,13 +18,11 @@ namespace DataAccess
             _nonQuery = new CaseNquery(_connection);
             _read = new CaseRead(_connection);
         }
-
+        // To Create
         public int NewCase(CaseE c1)
         {
             return  _nonQuery.NewCase(c1);
         }
-       
-        // To Create
         public int NewService(ServiceE s1)
         {
            return _nonQuery.NewService(s1);

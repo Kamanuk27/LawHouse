@@ -13,7 +13,7 @@ namespace BusinessLogic
         private ICaseDataAccess _persistence;
         internal CaseDb()
         {
-            _persistence = DatabaseFactory.Instance.GetCaseDataAccess();
+            _persistence = CaseFactory.Instance.GetCaseDataAccess();
         }
         internal  static CaseDb Instance
         {
