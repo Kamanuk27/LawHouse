@@ -22,7 +22,7 @@ namespace BusinessLogic
             _cases = new CaseCatalog();
             _clients = new ClientCatalog();
         }
-        internal static CaseHandler Instance
+        public static CaseHandler Instance
         {
             get
             {
@@ -33,7 +33,7 @@ namespace BusinessLogic
         }
 
         // Fra Case
-        public void InitiateCase(int id, string name, string client, DateTime start, 
+        public void InitializeCase(int id, string name, string client, DateTime start, 
                                              string service, decimal negPrice, decimal total, string respEmp)
         {
             _case.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
@@ -81,7 +81,7 @@ namespace BusinessLogic
             return _cases.CloseCase(id, total, endDate);
         }
 
-        public int UpdateCaseE(int id, decimal negPrice, string respEmp)
+        public int UpdateCase(int id, decimal negPrice, string respEmp)
         {
             return _cases.UpdateCase(id, negPrice, respEmp);
         }

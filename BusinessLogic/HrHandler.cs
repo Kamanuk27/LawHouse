@@ -7,7 +7,7 @@ using LawHouseLibrary.Entities;
 
 namespace BusinessLogic
 {
-    internal class HrHandler
+    public class HrHandler
     {
         private Employee _employee;
         private EmpCatalog _empCat;
@@ -20,7 +20,7 @@ namespace BusinessLogic
             _empCat = new EmpCatalog();
             _serviceCat = new ServiceCatalog();
         }
-        internal static HrHandler Instance
+        public static HrHandler Instance
         {
             get
             {

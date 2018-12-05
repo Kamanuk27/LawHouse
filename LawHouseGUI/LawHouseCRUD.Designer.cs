@@ -38,16 +38,27 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.search_button = new System.Windows.Forms.Button();
             this.CaseDataGrid = new System.Windows.Forms.DataGridView();
+            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateButt = new System.Windows.Forms.Button();
             this.NegPricetxt = new System.Windows.Forms.TextBox();
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.NewCaseButt = new System.Windows.Forms.Button();
@@ -81,6 +92,7 @@
             this.ClosedCaseBut = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.ServiceTab = new System.Windows.Forms.TabPage();
+            this.labelCaseName = new System.Windows.Forms.Label();
             this.ServiseDeleteBut = new System.Windows.Forms.Button();
             this.NyYdButton = new System.Windows.Forms.Button();
             this.YUpdate = new System.Windows.Forms.Button();
@@ -95,6 +107,12 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
+            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.NEmplPosition = new System.Windows.Forms.ComboBox();
@@ -142,24 +160,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.caseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelCaseName = new System.Windows.Forms.Label();
-            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
@@ -310,8 +310,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -336,6 +336,78 @@
             this.CaseDataGrid.TabIndex = 82;
             this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
             this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
+            // 
+            // Case_ID
+            // 
+            this.Case_ID.FillWeight = 50F;
+            this.Case_ID.HeaderText = "ID";
+            this.Case_ID.Name = "Case_ID";
+            this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 50;
+            // 
+            // CaseName
+            // 
+            this.CaseName.FillWeight = 210F;
+            this.CaseName.HeaderText = "Sagsnavn";
+            this.CaseName.Name = "CaseName";
+            this.CaseName.ReadOnly = true;
+            this.CaseName.Width = 210;
+            // 
+            // Client
+            // 
+            this.Client.FillWeight = 150F;
+            this.Client.HeaderText = "Klient";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            this.Client.Width = 150;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Start Dato";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "End Dato";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 200F;
+            this.ServiceName.HeaderText = "Service Name";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Width = 200;
+            // 
+            // HoursEstimate
+            // 
+            this.HoursEstimate.HeaderText = "HoursEstimate";
+            this.HoursEstimate.Name = "HoursEstimate";
+            this.HoursEstimate.ReadOnly = true;
+            // 
+            // NegotiatedPrice
+            // 
+            this.NegotiatedPrice.HeaderText = "NegotiatedPrice";
+            this.NegotiatedPrice.Name = "NegotiatedPrice";
+            this.NegotiatedPrice.ReadOnly = true;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 98F;
+            this.TotalPrice.HeaderText = "Total Price";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 98;
+            // 
+            // Resp_empl
+            // 
+            this.Resp_empl.FillWeight = 150F;
+            this.Resp_empl.HeaderText = "Advokat";
+            this.Resp_empl.Name = "Resp_empl";
+            this.Resp_empl.ReadOnly = true;
+            this.Resp_empl.Width = 150;
             // 
             // UpdateButt
             // 
@@ -379,7 +451,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1827, 982);
+            this.tabControl1.Size = new System.Drawing.Size(1827, 966);
             this.tabControl1.TabIndex = 103;
             // 
             // tabPage1
@@ -438,10 +510,20 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1819, 949);
+            this.tabPage1.Size = new System.Drawing.Size(1819, 933);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Opdatere/Afslute";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1319, 684);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(152, 44);
+            this.button2.TabIndex = 211;
+            this.button2.Text = "Opdatere";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // CrCaseServiceCom
             // 
@@ -772,6 +854,16 @@
             this.ServiceTab.Text = "Ydelser";
             this.ServiceTab.UseVisualStyleBackColor = true;
             // 
+            // labelCaseName
+            // 
+            this.labelCaseName.AutoSize = true;
+            this.labelCaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCaseName.Location = new System.Drawing.Point(237, 27);
+            this.labelCaseName.Name = "labelCaseName";
+            this.labelCaseName.Size = new System.Drawing.Size(60, 24);
+            this.labelCaseName.TabIndex = 139;
+            this.labelCaseName.Text = "label3";
+            // 
             // ServiseDeleteBut
             // 
             this.ServiseDeleteBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -918,6 +1010,53 @@
             this.ServiceDataGrid.Size = new System.Drawing.Size(857, 322);
             this.ServiceDataGrid.TabIndex = 125;
             this.ServiceDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CellMouseDoubleClick);
+            // 
+            // Service_Id
+            // 
+            this.Service_Id.FillWeight = 50F;
+            this.Service_Id.HeaderText = "ID";
+            this.Service_Id.Name = "Service_Id";
+            this.Service_Id.ReadOnly = true;
+            this.Service_Id.Visible = false;
+            this.Service_Id.Width = 30;
+            // 
+            // Empl_id
+            // 
+            this.Empl_id.FillWeight = 170F;
+            this.Empl_id.HeaderText = "Advokat";
+            this.Empl_id.Name = "Empl_id";
+            this.Empl_id.ReadOnly = true;
+            this.Empl_id.Width = 150;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Dato";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Comments
+            // 
+            this.Comments.FillWeight = 225F;
+            this.Comments.HeaderText = "Ydelse";
+            this.Comments.Name = "Comments";
+            this.Comments.ReadOnly = true;
+            this.Comments.Width = 225;
+            // 
+            // Hours
+            // 
+            this.Hours.FillWeight = 60F;
+            this.Hours.HeaderText = "Timer";
+            this.Hours.Name = "Hours";
+            this.Hours.ReadOnly = true;
+            this.Hours.Width = 60;
+            // 
+            // Km
+            // 
+            this.Km.FillWeight = 65F;
+            this.Km.HeaderText = "Km";
+            this.Km.Name = "Km";
+            this.Km.ReadOnly = true;
+            this.Km.Width = 65;
             // 
             // label2
             // 
@@ -1380,150 +1519,11 @@
             this.label43.TabIndex = 171;
             this.label43.Text = "CprNo:";
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1319, 684);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 44);
-            this.button2.TabIndex = 211;
-            this.button2.Text = "Opdatere";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // Case_ID
-            // 
-            this.Case_ID.FillWeight = 50F;
-            this.Case_ID.HeaderText = "ID";
-            this.Case_ID.Name = "Case_ID";
-            this.Case_ID.ReadOnly = true;
-            this.Case_ID.Width = 50;
-            // 
-            // CaseName
-            // 
-            this.CaseName.FillWeight = 210F;
-            this.CaseName.HeaderText = "Sagsnavn";
-            this.CaseName.Name = "CaseName";
-            this.CaseName.ReadOnly = true;
-            this.CaseName.Width = 210;
-            // 
-            // Client
-            // 
-            this.Client.FillWeight = 150F;
-            this.Client.HeaderText = "Klient";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            this.Client.Width = 150;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Start Dato";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "End Dato";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.FillWeight = 200F;
-            this.ServiceName.HeaderText = "Service Name";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Width = 200;
-            // 
-            // HoursEstimate
-            // 
-            this.HoursEstimate.HeaderText = "HoursEstimate";
-            this.HoursEstimate.Name = "HoursEstimate";
-            this.HoursEstimate.ReadOnly = true;
-            // 
-            // NegotiatedPrice
-            // 
-            this.NegotiatedPrice.HeaderText = "NegotiatedPrice";
-            this.NegotiatedPrice.Name = "NegotiatedPrice";
-            this.NegotiatedPrice.ReadOnly = true;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 98F;
-            this.TotalPrice.HeaderText = "Total Price";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 98;
-            // 
-            // Resp_empl
-            // 
-            this.Resp_empl.FillWeight = 150F;
-            this.Resp_empl.HeaderText = "Advokat";
-            this.Resp_empl.Name = "Resp_empl";
-            this.Resp_empl.ReadOnly = true;
-            this.Resp_empl.Width = 150;
-            // 
-            // labelCaseName
-            // 
-            this.labelCaseName.AutoSize = true;
-            this.labelCaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCaseName.Location = new System.Drawing.Point(237, 27);
-            this.labelCaseName.Name = "labelCaseName";
-            this.labelCaseName.Size = new System.Drawing.Size(60, 24);
-            this.labelCaseName.TabIndex = 139;
-            this.labelCaseName.Text = "label3";
-            // 
-            // Service_Id
-            // 
-            this.Service_Id.FillWeight = 50F;
-            this.Service_Id.HeaderText = "ID";
-            this.Service_Id.Name = "Service_Id";
-            this.Service_Id.ReadOnly = true;
-            this.Service_Id.Visible = false;
-            this.Service_Id.Width = 30;
-            // 
-            // Empl_id
-            // 
-            this.Empl_id.FillWeight = 170F;
-            this.Empl_id.HeaderText = "Advokat";
-            this.Empl_id.Name = "Empl_id";
-            this.Empl_id.ReadOnly = true;
-            this.Empl_id.Width = 150;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Dato";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Comments
-            // 
-            this.Comments.FillWeight = 225F;
-            this.Comments.HeaderText = "Ydelse";
-            this.Comments.Name = "Comments";
-            this.Comments.ReadOnly = true;
-            this.Comments.Width = 225;
-            // 
-            // Hours
-            // 
-            this.Hours.FillWeight = 60F;
-            this.Hours.HeaderText = "Timer";
-            this.Hours.Name = "Hours";
-            this.Hours.ReadOnly = true;
-            this.Hours.Width = 60;
-            // 
-            // Km
-            // 
-            this.Km.FillWeight = 65F;
-            this.Km.HeaderText = "Km";
-            this.Km.Name = "Km";
-            this.Km.ReadOnly = true;
-            this.Km.Width = 65;
-            // 
             // LawHouseCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1827, 982);
+            this.ClientSize = new System.Drawing.Size(1827, 966);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "LawHouseCRUD";
