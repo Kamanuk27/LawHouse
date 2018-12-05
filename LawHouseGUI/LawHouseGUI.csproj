@@ -46,23 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Demo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Demo.Designer.cs">
-      <DependentUpon>Demo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UcCases.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UcCases.Designer.cs">
-      <DependentUpon>UcCases.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Demo.resx">
-      <DependentUpon>Demo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,9 +57,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UcCases.resx">
-      <DependentUpon>UcCases.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
