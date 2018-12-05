@@ -4,12 +4,12 @@ using System.Data.SqlClient;
 
 namespace DataAccess
 {
-    class CaseNonQuery
+    class CaseNquery
     {
         private SqlConnection _connection;
         private SqlCommand _command;
        
-        public CaseNonQuery(SqlConnection connection)
+        public CaseNquery(SqlConnection connection)
         {
             _connection = connection;
             _command = new SqlCommand();
@@ -35,10 +35,8 @@ namespace DataAccess
         {
             string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
                               "RespEmp_ID, Client_ID) VALUES " +
-                              "(@CaseName, @StartDate, @NegotiatedPrice, " +
-                              "(SELECT ID FROM LegalServices WHERE Name = @Service_ID), " +
-                              "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName), " +
-                              "(SELECT ID FROM Client WHERE FirstName = @fCName AND LastName = @lCName))";
+                              "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @Client_ID, @RespEmp_ID)"; 
+                            
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
@@ -47,15 +45,10 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
             _command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
 
-            _command.Parameters.Add(new SqlParameter("@Service_ID", c1.Service));
+            _command.Parameters.Add(new SqlParameter("@Service_ID", c1.ServiceId));
+            _command.Parameters.Add(new SqlParameter("@Client_ID", c1.ClientId));
+            _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmpId));
 
-            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
-            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
-
-            string[] clientNames = c1.Client.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            _command.Parameters.Add(new SqlParameter("@fCName", clientNames[0]));
-            _command.Parameters.Add(new SqlParameter("@lCName", clientNames[1]));
 
             return ExecuteNonQuery();
         }
@@ -138,13 +131,13 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@id", c1.Id));
             return ExecuteNonQuery();
         }
-        internal int CloseClient(string cpr)
+        internal int CloseClient(int id)
         {
-            _command.CommandText = "UPDATE Client SET Address = null, PostNo = null, Email = null,  TlfNo = null " +
-                                   "WHERE CprNo = @cpr";
+            _command.CommandText = "UPDATE Client SET CprNo = null, FirstName = null, LastName = null, " +
+                                   "Address = null, PostNo = null, Email = null WHERE ID = @id";
 
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@cpr", cpr));
+            _command.Parameters.Add(new SqlParameter("@id", id));
 
             return ExecuteNonQuery();
         }

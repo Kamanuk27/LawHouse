@@ -67,9 +67,9 @@ namespace BusinessLogic
 
         // Fra CaseCatalog
 
-        public int NewCase(string name, string client, string service, DateTime startTime, string respEmpl, decimal negPrice)
+        public int NewCase(string name, int clientId, int serviceId, DateTime startTime, int empId, decimal negPrice)
         {
-            return _cases.NewCase(name, client, service, startTime, respEmpl, negPrice);
+            return _cases.NewCase(name, clientId, serviceId, startTime, empId, negPrice);
         }
         public List<CaseE> GetCases()
         {
@@ -93,35 +93,35 @@ namespace BusinessLogic
       
 
         // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
-        public List<string> GetLawyers()
+        public List<EmployeeE> GetLawyers()
         {
             return _cases.GetLawyers();
         }
 
-        public List<string> GetEmplNames()
+        public List<EmployeeE> GetEmplNames()
         {
             return _cases.GetEmplNames();
         }
 
 
         // fra ClientCatalog
-        public ClientE GetClient(string cpr)
+        public ClientE GetClient(int tlf)
         {
-            return _clients.GetClient(cpr);
+            return _clients.GetClient(tlf);
         }
 
-        public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
+        public int NewClient(int cpr, string fName, string lName, string address, int postNo, string eMail, int tlf)
         {
             return _clients.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
-        public int UpdateClient(string cpr, string address, int postNo, string eMail, string tlf)
+        public int UpdateClient(string fName, string lName, int cpr, string address, int postNo, string eMail, int tlf)
         {
-            return _clients.UpdateClient(cpr, address, postNo, eMail, tlf);
+            return _clients.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
         }
-        public int CloseClient(string cpr)
+        public int CloseClient(int id)
         {
-            return _clients.CloseClient(cpr);
+            return _clients.CloseClient(id);
         }
 
     }

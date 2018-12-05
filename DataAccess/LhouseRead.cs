@@ -9,11 +9,11 @@ using System.Data.SqlClient;
 
 namespace DataAccess
 {
-    class HrRead
+    class LhouseRead
     {
         private SqlConnection _connection;
         private SqlCommand _command;
-        public HrRead(SqlConnection connection)
+        public LhouseRead(SqlConnection connection)
         {
             _command = new SqlCommand();
             _connection = connection;
@@ -38,7 +38,7 @@ namespace DataAccess
                 {
                     LegalServiceE ls1 = new LegalServiceE();
 
-                    ls1.ID = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
                     ls1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
                     ls1.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : default(decimal);
@@ -116,13 +116,13 @@ namespace DataAccess
                     EmployeeE e = new EmployeeE();
 
                     e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    e.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
+                    e.CprNo = reader["CprNo"] != DBNull.Value ? Convert.ToInt32(reader["CprNo"]) : default(int);
                     e.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
                     e.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
                     e.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
                     e.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
                     e.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
+                    e.TlfNo = reader["TlfNo"] != DBNull.Value ? Convert.ToInt32(reader["TlfNo"]) : default(int);
                     e.StartDate = Convert.ToDateTime(reader["StartDate"]);
                     e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
                     e.PayRatePrHour = reader["ID"] != DBNull.Value ? Convert.ToDecimal(reader["ID"]) : default(decimal);

@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    class SqlHrDataAccess : IHrDataAccess
+    class SqlLhouseDataAccess : ILhouseDataAccess
     {
-        private HrNonQuery _nonQuery;
-        private HrRead _read;
+        private LhouseNquery _nonQuery;
+        private LhouseRead _read;
         private SqlConnection _connection;
 
-        public SqlHrDataAccess()
+        public SqlLhouseDataAccess()
         {
             _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-            _nonQuery = new HrNonQuery(_connection);
-            _read = new HrRead(_connection);
+            _nonQuery = new LhouseNquery(_connection);
+            _read = new LhouseRead(_connection);
         }
 
         public int NewEmployee(EmployeeE employee)
@@ -34,9 +34,9 @@ namespace DataAccess
         {
             return _nonQuery.NewField(f);
         }
-        public int AddFieldToEmployee(int id, string name)
+        public int AddFieldToEmployee(int eId, int fId)
         {
-            return _nonQuery.AddFieldToEmployee(id, name);
+            return _nonQuery.AddFieldToEmployee(eId, fId);
         }
 
 
@@ -81,9 +81,9 @@ namespace DataAccess
             return _nonQuery.DeleteLegalService(id);
         }
 
-        public int DeleteField(string name)
+        public int DeleteField(int id)
         {
-            return _nonQuery.DeleteField(name);
+            return _nonQuery.DeleteField(id);
         }
 
 

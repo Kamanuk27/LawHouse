@@ -99,21 +99,21 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetClientReturnClientWithCprNo()
         {
-            ClientE client = _dbController.GetClient("22222");
-            Assert.AreEqual("22222", client.CprNo);
+            ClientE client = _dbController.GetClient(2);
+            Assert.AreEqual(2, client.TlfNo);
         }
 
         [TestMethod]
         public void TestGetClientReturnClient()
         {
-            var client = _dbController.GetClient("22222");
+            var client = _dbController.GetClient(2);
             Type actual = client.GetType();
             Type expected = typeof(ClientE);
             Assert.AreEqual(expected, actual);
         } 
 
         [TestMethod]
-        public void TestGetLawyersReturnsTwoStrings()
+        public void TestGetLawyersReturnsTwoEmployeeEs()
         {
             int expected = 2;
             int actual = _dbController.GetLawyers().Count;
@@ -121,16 +121,16 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetLawyersReturnsListOfStrings()
+        public void TestGetLawyersReturnsListOfEmployeeEs()
         {
             var lawyers = _dbController.GetLawyers();
             Type actual = lawyers[0].GetType();
-            Type expected = typeof(string);
+            Type expected = typeof(EmployeeE);
             Assert.AreEqual(expected, actual);
         }
  
         [TestMethod]
-        public void TestGetEmplNamesReturnsTwoStrings()
+        public void TestGetEmplNamesReturnsTwoEmployeeEs()
         {
             int expected = 2;
             int actual = _dbController.GetEmplNames().Count;
@@ -138,11 +138,11 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetEmplNamesReturnsListOfStrings()
+        public void TestGetEmplNamesReturnsListOfEmployeeEs()
         {
             var names = _dbController.GetEmplNames();
             Type actual = names[0].GetType();
-            Type expected = typeof(string);
+            Type expected = typeof(EmployeeE);
             Assert.AreEqual(expected, actual);
         }
 
@@ -205,7 +205,7 @@ namespace UnitTestLawHouse
         public void TestCloseClientReturnOne()
         {
             int expected = 1;
-            int actual = _dbController.CloseClient("22222");
+            int actual = _dbController.CloseClient(2);
             Assert.AreEqual(expected, actual);
         }
         //Delete metoder

@@ -107,7 +107,7 @@ namespace DataAccess
                 {
                     LegalServiceE ls1 = new LegalServiceE();
 
-                    ls1.ID = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
                     ls1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]): default(int);
                     ls1.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : default(decimal);
@@ -122,10 +122,10 @@ namespace DataAccess
             return legServices;
         }
 
-        internal List<string> GetLawyers()
+        internal List<EmployeeE> GetLawyers()
         {
-            List<string> lawyers = new List<string>();
-            _command.CommandText = "SELECT FirstName, LastName FROM Employee WHERE Position = 'Advokat'";
+            List<EmployeeE> lawyers = new List<EmployeeE>();
+            _command.CommandText = "SELECT ID, FirstName, LastName FROM Employee WHERE Position = 'Advokat'";
 
             PrepareSql();
             SqlDataReader reader = null;
@@ -134,7 +134,10 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    string e = $"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}";
+                    EmployeeE e = new EmployeeE();
+                    e.Id = Convert.ToInt32(reader["ID"]);
+                    e.FirstName = $"{reader["FirstName"].ToString()}";
+                    e.LastName =  $"{reader["LastName"].ToString()}";
                     lawyers.Add(e);
                 }
 
@@ -143,10 +146,10 @@ namespace DataAccess
             return lawyers;
 
         }
-        internal List<string> GetEmplNames()
+        internal List<EmployeeE> GetEmplNames()
         {
-            List<string> emplNames = new List<string>();
-            _command.CommandText = "SELECT FirstName, LastName FROM Employee";
+            List<EmployeeE> emplNames = new List<EmployeeE>();
+            _command.CommandText = "SELECT ID, FirstName, LastName FROM Employee";
 
             PrepareSql();
             SqlDataReader reader = null;
@@ -155,7 +158,10 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    string e = $"{reader["FirstName"].ToString()}  {reader["LastName"].ToString()}";
+                    EmployeeE e = new EmployeeE();
+                    e.Id = Convert.ToInt32(reader["ID"]);
+                    e.FirstName = $"{reader["FirstName"].ToString()}";
+                    e.LastName = $"{reader["LastName"].ToString()}";
                     emplNames.Add(e);
                 }
 
@@ -164,18 +170,13 @@ namespace DataAccess
             return emplNames;
         }
 
-     
-      
-
-       
-
-        public ClientE GetClient(string cpr)
+        public ClientE GetClient(int tlf)
         {
             ClientE c = new ClientE();
-            _command.CommandText = "SELECT * FROM Client WHERE CprNo = @cpr";
+            _command.CommandText = "SELECT * FROM Client WHERE TlfNo = @tlf";
             _command.Parameters.Clear();
 
-            _command.Parameters.Add(new SqlParameter("@cpr", cpr));
+            _command.Parameters.Add(new SqlParameter("@tlf", tlf));
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -184,14 +185,14 @@ namespace DataAccess
                 while (reader.Read())
                 {
                      c.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    c.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
+                    c.CprNo = reader["CprNo"] != DBNull.Value ? Convert.ToInt32(reader["CprNo"]) : default(int);
                     c.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
                     c.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
                     c.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
                     c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
                     c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
-                  
+                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? Convert.ToInt32(reader["TlfNo"]) : default(int);
+
                 }
             }
             _connection.Close();

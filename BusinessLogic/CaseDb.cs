@@ -56,17 +56,17 @@ namespace BusinessLogic
         {
             return _persistence.GetLegalServices();
         }
-        internal ClientE GetClient(string cpr)
+        internal ClientE GetClient(int tlf)
         {
-            return _persistence.GetClient(cpr);
+            return _persistence.GetClient(tlf);
         }
        
-        internal List<string> GetLawyers()
+        internal List<EmployeeE> GetLawyers()
         {
             return _persistence.GetLawyers();
         }
 
-        internal  List<string> GetEmplNames()
+        internal  List<EmployeeE> GetEmplNames()
         {
             return _persistence.GetEmplNames();
         }
@@ -96,9 +96,9 @@ namespace BusinessLogic
         {
             return _persistence.UpdateClient(client);
         }
-        internal int CloseClient(string cpr)
+        internal int CloseClient(int id)
         {
-            return _persistence.CloseClient(cpr);
+            return _persistence.CloseClient(id);
         }
 
         //Delete metoder

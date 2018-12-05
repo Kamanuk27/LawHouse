@@ -47,8 +47,8 @@
     <Compile Include="ClientCatalog.cs" />
     <Compile Include="CaseDb.cs" />
     <Compile Include="EmpCatalog.cs" />
-    <Compile Include="HrDb.cs" />
-    <Compile Include="HrHandler.cs" />
+    <Compile Include="LhouseDb.cs" />
+    <Compile Include="LhouseHandler.cs" />
     <Compile Include="PriceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceCatalog.cs" />

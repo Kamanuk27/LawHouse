@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public interface IHrDataAccess
+    public interface ILhouseDataAccess
     {
         int NewEmployee(EmployeeE employee);
         int NewLegalService(LegalServiceE legal);
@@ -22,12 +22,12 @@ namespace DataAccess
 
 
         int UpdateEmployee(EmployeeE emp);
-        int AddFieldToEmployee(int id, string name);
+        int AddFieldToEmployee(int eId, int fId);
         int UpdateLegalService(LegalServiceE ls);
         int CloseEmployee(int id);
 
         int DeleteLegalService(int id);
-        int DeleteField(string name);
+        int DeleteField(int id);
 
 
 

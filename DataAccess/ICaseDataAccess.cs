@@ -16,9 +16,11 @@ namespace DataAccess
         List< CaseE> GetCases();
         List<ServiceE> GetProvidedServices(int caseId);
         List<LegalServiceE> GetLegalServices();
-       
+        List<EmployeeE> GetLawyers();
+        List<EmployeeE> GetEmplNames();
+        List<decimal> GetUnitPrices();
 
-        ClientE GetClient(string cpr);
+        ClientE GetClient(int tlf);
 
 
         int UpdateService(ServiceE s1);
@@ -28,17 +30,10 @@ namespace DataAccess
 
 
         int CloseCase(CaseE c1);
-        int CloseClient(string cpr);
+        int CloseClient(int id);
        
 
         int DeleteCase(int id);
         int DeleteService(int id);
-       
-
-
-        List<string> GetLawyers();
-        List<string> GetEmplNames();
-        List<decimal> GetUnitPrices();
-        
     }
 }

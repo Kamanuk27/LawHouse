@@ -9,11 +9,11 @@ using System.Data.SqlClient;
 
 namespace DataAccess
 {
-    class HrNonQuery
+    class LhouseNquery
     {
         SqlConnection _connection;
         private SqlCommand _command;
-        public HrNonQuery(SqlConnection connection)
+        public LhouseNquery(SqlConnection connection)
         {
             _connection = connection;
             _command = new SqlCommand();
@@ -78,15 +78,15 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@name", f.Name));
             return ExecuteNonQuery();
         }
-        internal int AddFieldToEmployee(int id, string name)
+        internal int AddFieldToEmployee(int eId, int fId)
         {
             string sqlString = "INSERT INTO [dbo].[EmployeeFields] (Employee_ID, Field_ID) " +
-                              " VALUES (@id, (SELECT ID FROM Field WHERE Name = @name))";
+                              " VALUES (@eId, @fId)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", id));
-            _command.Parameters.Add(new SqlParameter("@name", name));
+            _command.Parameters.Add(new SqlParameter("@eId", eId));
+            _command.Parameters.Add(new SqlParameter("@fId", fId));
             return ExecuteNonQuery();
         }
 
@@ -107,10 +107,13 @@ namespace DataAccess
         }
         internal int UpdateEmployee(EmployeeE e)
         {
-            _command.CommandText = "UPDATE Employee SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo," +
+            _command.CommandText = "UPDATE Employee SET FirstName = @fName, LastName = @lName, " +
+                                   "Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo," +
                                    "Position = @Position, PayRatePrHour = @PayRatePrHour WHERE ID = @id";
 
             _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@fName", e.FirstName));
+            _command.Parameters.Add(new SqlParameter("@lName", e.LastName));
             _command.Parameters.Add(new SqlParameter("@id", e.Id));
             _command.Parameters.Add(new SqlParameter("@Address", e.Address));
             _command.Parameters.Add(new SqlParameter("@PostNo", e.PostNo));
@@ -122,8 +125,8 @@ namespace DataAccess
         }
         internal int CloseEmployee(int id)
         {
-            _command.CommandText = "UPDATE Employee SET Address = null, PostNo = null, Email = null,  TlfNo = null " +
-                                   "WHERE ID = @id";
+            _command.CommandText = "UPDATE Employee SET Address = null, PostNo = null, Email = null,  CprNo = null " +
+                                   "Position = null, PayRatePrHour = null  WHERE ID = @id";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
@@ -139,11 +142,11 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int DeleteField(string name)
+        internal int DeleteField(int id)
         {
-            _command.CommandText = $"DELETE FROM [dbo].[Field] WHERE Name = @name";
+            _command.CommandText = $"DELETE FROM [dbo].[Field] WHERE ID = @id";
             _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@name", name));
+            _command.Parameters.Add(new SqlParameter("@id", id));
             return ExecuteNonQuery();
         }
     }

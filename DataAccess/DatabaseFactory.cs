@@ -24,18 +24,18 @@ namespace DataAccess
                 return _instance;
             }
         }
-        public IHrDataAccess GetHrDataAccess()
+        public ILhouseDataAccess GetHrDataAccess()
         {
             string database = ConfigurationManager.AppSettings["database"];
-            IHrDataAccess percistance = null;
+            ILhouseDataAccess percistance = null;
 
             if (database == "sqlserver")
             {
-                percistance =new SqlHrDataAccess();
+                percistance =new SqlLhouseDataAccess();
             }
             else
             {
-                percistance = new TestHrDB();
+                percistance = new TestLhouseDB();
             }
 
             return percistance;

@@ -9,10 +9,10 @@ namespace BusinessLogic
 {
     class ServiceCatalog
     {
-        private HrDb _dbController;
+        private LhouseDb _dbController;
         public ServiceCatalog()
         {
-            _dbController = HrDb.Instance;
+            _dbController = LhouseDb.Instance;
         }
         internal List<LegalServiceE> GetLegalServices()
         {
@@ -32,9 +32,10 @@ namespace BusinessLogic
             return _dbController.NewLegalService(legalService);
         }
 
-        internal int UpdateLegalService(string name, int hours, int time, decimal price)
+        internal int UpdateLegalService(int id, string name, int hours, int time, decimal price)
         {
             LegalServiceE ls = new LegalServiceE();
+            ls.Id = id;
             ls.Name = name;
             ls.HoursEstimate = hours;
             ls.TimeEstimate = time;

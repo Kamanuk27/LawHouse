@@ -11,16 +11,16 @@ namespace UnitTestLawHouse
     {
         ClientCatalog clients = new ClientCatalog();
         [TestMethod]
-        public void TestGetClientReturnClientWithCpr()
+        public void TestGetClientReturnClientWithTlf()
         {
-            ClientE client = clients.GetClient("11111");
-            Assert.AreEqual("11111", client.CprNo);
+            ClientE client = clients.GetClient(12345);
+            Assert.AreEqual(12345, client.TlfNo);
         }
 
         [TestMethod]
         public void TestGetClientReturnClient()
         {
-            var client = clients.GetClient("22222");
+            var client = clients.GetClient(12345);
             Type actual = client.GetType();
             Type expected = typeof(ClientE);
             Assert.AreEqual(expected, actual);
@@ -29,7 +29,7 @@ namespace UnitTestLawHouse
         public void TestNewClientReturnOne()
         {
             int expected = 1;
-            int actual = clients.NewClient("444444", "Karina", "Sørensen", "Irisvej 2", 7100, "Karina@gmail.com", "12345678");
+            int actual = clients.NewClient(111111, "Klara", "Olsen", "Irisvej 1", 7100, "eMail", 12345678);
             Assert.AreEqual(expected, actual);
         }
 
@@ -37,7 +37,7 @@ namespace UnitTestLawHouse
         public void TestUpdateClientReturnOne()
         {
             int expected = 1;
-            int actual = clients.UpdateClient("444444", "Horsensvej3", 6000, "Karina23.dk", "12345678");
+            int actual = clients.UpdateClient("Klara", "Olsen", 1111111, "Irisvej 5", 7100, "eMail", 12345678);
             Assert.AreEqual(expected, actual);
         }
 
@@ -45,7 +45,7 @@ namespace UnitTestLawHouse
         public void TestCloseClientReturnOne()
         {
             int expected = 1;
-            int actual = clients.CloseClient("444444");
+            int actual = clients.CloseClient(1);
             Assert.AreEqual(expected, actual);
         }
     }

@@ -8,14 +8,14 @@ namespace DataAccess
 {
     internal class SqlCaseDataAccess : ICaseDataAccess
     {
-        private CaseNonQuery _nonQuery;
+        private CaseNquery _nonQuery;
         private CaseRead _read;
         private SqlConnection _connection;
 
         public SqlCaseDataAccess()
         {
             _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-            _nonQuery = new CaseNonQuery(_connection);
+            _nonQuery = new CaseNquery(_connection);
             _read = new CaseRead(_connection);
         }
 
@@ -51,18 +51,18 @@ namespace DataAccess
             return _read.GetLegalServices();
         }
 
-        public ClientE GetClient(string cpr)
+        public ClientE GetClient(int tlf)
         {
-            return _read.GetClient(cpr);
+            return _read.GetClient(tlf);
         }
 
 
-        public List<string> GetLawyers()
+        public List<EmployeeE> GetLawyers()
         {
             return _read.GetLawyers();
         }
 
-        public List<string> GetEmplNames()
+        public List<EmployeeE> GetEmplNames()
         {
             return _read.GetEmplNames();
         }
@@ -96,9 +96,9 @@ namespace DataAccess
         }
 
       
-        public int CloseClient(string cpr)
+        public int CloseClient(int id)
         {
-            return _nonQuery.CloseClient(cpr);
+            return _nonQuery.CloseClient(id);
         }
 
 

@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class HrDb
+    class LhouseDb
     {
-        private static HrDb _instance;
-        private IHrDataAccess _persistence;
-        internal HrDb()
+        private static LhouseDb _instance;
+        private ILhouseDataAccess _persistence;
+        internal LhouseDb()
         {
           _persistence = DatabaseFactory.Instance.GetHrDataAccess();
         }
-        internal static HrDb Instance
+        internal static LhouseDb Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new HrDb();
+                    _instance = new LhouseDb();
                 return _instance;
             }
         }
@@ -39,9 +39,9 @@ namespace BusinessLogic
         {
             return _persistence.NewField(f);
         }
-        internal int AddField(int id, string name)
+        internal int AddField(int eId, int fId)
         {
-            return _persistence.AddFieldToEmployee(id, name);
+            return _persistence.AddFieldToEmployee(eId, fId);
         }
 
         // Get/read metoder
@@ -80,9 +80,9 @@ namespace BusinessLogic
         }
 
         //Delete metoder
-        internal int DeleteField(string name)
+        internal int DeleteField(int id)
         {
-            return _persistence.DeleteField(name);
+            return _persistence.DeleteField(id);
         }
 
         internal int DeleteLegalService(int id)

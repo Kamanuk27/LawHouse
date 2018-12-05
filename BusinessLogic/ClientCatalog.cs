@@ -17,12 +17,12 @@ namespace BusinessLogic
             _dbController = CaseDb.Instance;
         }
 
-        internal ClientE GetClient(string cpr)
+        internal ClientE GetClient(int tlf)
         {
-            return _dbController.GetClient(cpr);
+            return _dbController.GetClient(tlf);
         }
 
-        internal int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
+        internal int NewClient(int cpr, string fName, string lName, string address, int postNo, string eMail, int tlf)
         {
             ClientE client = new ClientE();
             client.CprNo = cpr;
@@ -35,9 +35,11 @@ namespace BusinessLogic
             return _dbController.NewClient(client);
         }
 
-        internal int UpdateClient(string cpr, string address, int postNo, string eMail, string tlf)
+        internal int UpdateClient(string fName, string lName, int cpr, string address, int postNo, string eMail, int tlf)
         {
             ClientE client = new ClientE();
+            client.FirstName = fName;
+            client.LastName = lName;
             client.CprNo = cpr;
             client.Address = address;
             client.PostNo = postNo;
@@ -46,9 +48,9 @@ namespace BusinessLogic
             return _dbController.UpdateClient(client);
         }
 
-        internal int CloseClient(string cpr)
+        internal int CloseClient(int id)
         {
-            return _dbController.CloseClient(cpr);
+            return _dbController.CloseClient(id);
         }
     }
 }

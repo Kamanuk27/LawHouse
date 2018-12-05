@@ -51,26 +51,26 @@ namespace DataAccess
             return legalServices;
         }
 
-        public ClientE GetClient(string cpr)
+        public ClientE GetClient(int tlf)
         {
             ClientE client = new ClientE();
-            client.CprNo = cpr;
+            client.TlfNo = tlf;
             return client;
         }
 
-        public List<string> GetLawyers()
+        public List<EmployeeE> GetLawyers()
         {
-            List<string> names = new List<string>();
-            names.Add("Ole");
-            names.Add("Karina");
+            List<EmployeeE> names = new List<EmployeeE>();
+            names.Add(new EmployeeE(1));
+            names.Add(new EmployeeE(2));
             return names;
         }
 
-        public List<string> GetEmplNames()
+        public List<EmployeeE> GetEmplNames()
         {
-            List<string> names = new List<string>();
-            names.Add("Employee Ole");
-            names.Add("Employee Karina");
+            List<EmployeeE> names = new List<EmployeeE>();
+            names.Add(new EmployeeE(1));
+            names.Add(new EmployeeE(2));
             return names;
         }
 
@@ -104,7 +104,7 @@ namespace DataAccess
             return 1;
         }
 
-        public int CloseClient(string cpr)
+        public int CloseClient(int id)
         {
             return 1;
         }

@@ -8,7 +8,6 @@ namespace LawHouseLibrary.Entities
 {
     public class LegalServiceE : Entity
     {
-        public int ID { get; set; }
         public string Name { get; set; }
         public int HoursEstimate { get; set; }
         public decimal Price { get; set; }
@@ -20,7 +19,7 @@ namespace LawHouseLibrary.Entities
         }
         public LegalServiceE(int id)
         {
-            ID = id;
+            Id = id;
         }
 
     }

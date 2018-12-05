@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    class TestHrDB : IHrDataAccess
+    class TestLhouseDB : ILhouseDataAccess
     {
         // Metoder for Create
         public int NewLegalService(LegalServiceE legal)
@@ -23,7 +23,7 @@ namespace DataAccess
         {
             return 1;
         }
-        public int AddFieldToEmployee(int id, string name)
+        public int AddFieldToEmployee(int eId, int fId)
         {
             return 1;
         }
@@ -82,7 +82,7 @@ namespace DataAccess
             return 1;
         }
 
-        public int DeleteField(string name)
+        public int DeleteField(int id)
         {
             return 1;
         }

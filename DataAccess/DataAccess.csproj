@@ -43,21 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseFactory.cs" />
-    <Compile Include="HrNonQuery.cs" />
-    <Compile Include="HrRead.cs" />
+    <Compile Include="LhouseNquery.cs" />
+    <Compile Include="LhouseRead.cs" />
     <Compile Include="ICaseDataAccess.cs" />
-    <Compile Include="IHrDataAccess.cs" />
+    <Compile Include="ILhouseDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlCaseDataAccess.cs" />
-    <Compile Include="SqlHrDataAccess.cs" />
-    <Compile Include="CaseNonQuery.cs" />
+    <Compile Include="SqlLhouseDataAccess.cs" />
+    <Compile Include="CaseNquery.cs" />
     <Compile Include="CaseRead.cs" />
     <Compile Include="TestCaseDB.cs" />
-    <Compile Include="TestHrDB.cs" />
+    <Compile Include="TestLhouseDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

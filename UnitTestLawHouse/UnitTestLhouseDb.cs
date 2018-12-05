@@ -8,13 +8,13 @@ using System.Collections.Generic;
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestHrDb
+    public class UnitTestLhouseDb
     {
-        HrDb _dbController = HrDb.Instance; 
+        LhouseDb _dbController = LhouseDb.Instance; 
         [TestMethod]
         public void TestHrDbReturnSameInstance()
         {
-            HrDb actual = new HrDb();
+            LhouseDb actual = new LhouseDb();
             object.ReferenceEquals(_dbController, actual);
         }
         // Create metoder
@@ -48,7 +48,7 @@ namespace UnitTestLawHouse
         public void TestAddFieldReturnOne()
         {
             int expected = 1;
-            int response = _dbController.AddField(1, "New Field to Employee");
+            int response = _dbController.AddField(1, 2);
             Assert.AreEqual(response, expected);
         }
 
@@ -147,7 +147,7 @@ namespace UnitTestLawHouse
         public void TestDeleteFieldReturnOne()
         {
             int expected = 1;
-            int actual = _dbController.DeleteField("fieldName");
+            int actual = _dbController.DeleteField(2);
             Assert.AreEqual(expected, actual);
         }
 
@@ -158,10 +158,5 @@ namespace UnitTestLawHouse
             int actual = _dbController.DeleteLegalService(1);
             Assert.AreEqual(expected, actual);
         }
-
-
-
-
-
     }
 }
