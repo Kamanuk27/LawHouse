@@ -14,14 +14,16 @@ namespace GUITest
     public partial class Form1 : Form
     {
         private CaseHandler _caseHandler;
-        private HrHandler _hrHandler;
+        private LhouseHandler _hrHandler;
+        private int ClientId { get; set; }
+       
        
         Empl_Unit_Spes em = new Empl_Unit_Spes();
         public Form1()
         {
             InitializeComponent();
             _caseHandler = new CaseHandler();
-            _hrHandler = HrHandler.Instance;
+            _hrHandler = LhouseHandler.Instance;
             FillComboBoxes();
             GriderStart();
 
@@ -30,12 +32,20 @@ namespace GUITest
         {
             foreach (var l1 in _caseHandler.GetLawyers())
             {
-                RespEmpCombo.Items.Add(l1);
-                CrCaseAdvokat.Items.Add(l1);
+                RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
+                CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
             foreach (var s1 in _hrHandler.GetLegalServices())
             {
                 CrCaseServiceCom.Items.Add(s1.Name);
+            }
+        }
+
+        private void GetServiceId()
+        {
+            foreach (var s1 in _hrHandler.GetLegalServices())
+            {
+                CrCaseServiceCom.Items.Add(s1.Id);
             }
         }
         private void ClearTxtBoxs()
@@ -67,34 +77,22 @@ namespace GUITest
         private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-            string client = CaseDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-            DateTime start = Convert.ToDateTime(CaseDataGrid.SelectedRows[0].Cells[3].Value).Date;
-            string service = CaseDataGrid.SelectedRows[0].Cells[5].Value.ToString();
             decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-            decimal total = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[8].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             RespEmpCombo.Text = respEmp;
             textBox1.Text = id.ToString();
             NegPricetxt.Text = negPrice.ToString();
-            _caseHandler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            _caseHandler.InitializeCase(id, negPrice, respEmp);
 
         }
 
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-            string client = CaseDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-            DateTime start = Convert.ToDateTime(CaseDataGrid.SelectedRows[0].Cells[3].Value).Date;
-            string service = CaseDataGrid.SelectedRows[0].Cells[5].Value.ToString();
-            decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-            decimal total = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[8].Value);
+           decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-           // labelCaseName.Text = $"Nr.{id}, {name}";
-            _caseHandler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            _caseHandler.InitializeCase(id, negPrice, respEmp);
             Services sv = new Services(id);
-            //sv.ID = id;
             sv.Show();
         }
 
@@ -228,6 +226,7 @@ namespace GUITest
                     CrCasePrice.Text = s.Price.ToString();
                     CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
                     CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
+                   
                 }
             }
         }
@@ -235,23 +234,22 @@ namespace GUITest
         private void NewCaseButt_Click(object sender, EventArgs e)
         {
             string caseName = CrCaseName.Text;
-            string client = NewClientfName.Text;
             string service = CrCaseServiceCom.Text;
             DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
             string respEmpl = CrCaseAdvokat.Text;
             decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-            _caseHandler.NewCase(caseName, client, service, startTime, respEmpl, negoPrice);
+            _caseHandler.NewCase(caseName, ClientId, service, startTime, respEmpl, negoPrice);
         }
 
         private void NewClientButt_Click(object sender, EventArgs e)
         {
-            string cpr = NewClientCprNo.Text;
+            int cpr = Convert.ToInt32(NewClientCprNo.Text);
             string fName = NewClientfName.Text;
             string lName = NewClientLName.Text;
             string address = NewClientAdress.Text;
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
-            string tlf = NewClientTelef.Text;
+            int tlf = Convert.ToInt32(NewClientTelef.Text);
             _caseHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 

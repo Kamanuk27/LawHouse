@@ -31,24 +31,19 @@ namespace BusinessLogic
                 return _instance;
             }
         }
-
         // Fra Case
         public void InitializeCase(int id, decimal negPrice, string respEmp)
         {
             _case.InitializeCase (id, negPrice, respEmp);
         }
 
-       
         public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
         {
             return _case.NewService(caseID, date, hours, km, comment, respEmpl);
         }
-
-
         public List<ServiceE> GetProvidedServices(int caseId)
         {
-            return _case.GetProvidedServices();
-           
+            return _case.GetProvidedServices(caseId);
         }
      
         public int UpdateService(int id, int hours, int km, DateTime date, string comment)
@@ -80,7 +75,7 @@ namespace BusinessLogic
             return _cases.CloseCase(id, total, endDate);
         }
 
-        public int UpdateCaseE(int id, decimal negPrice, string respEmp)
+        public int UpdateCase(int id, decimal negPrice, string respEmp)
         {
             return _cases.UpdateCase(id, negPrice, respEmp);
         }
@@ -90,9 +85,7 @@ namespace BusinessLogic
             return _cases.DeleteCase(id);
         }
 
-      
-
-        // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
+      // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
         public List<EmployeeE> GetLawyers()
         {
             return _cases.GetLawyers();
@@ -102,8 +95,7 @@ namespace BusinessLogic
         {
             return _cases.GetEmplNames();
         }
-
-
+        
         // fra ClientCatalog
         public ClientE GetClient(int tlf)
         {

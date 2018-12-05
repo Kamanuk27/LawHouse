@@ -14,12 +14,12 @@ namespace GUITest
     public partial class Empl_Unit_Spes : Form
     {
         private CaseHandler _caseHandler;
-        private HrHandler _hrHandler;
+        private LhouseHandler _hrHandler;
         public Empl_Unit_Spes()
         {
             InitializeComponent();
             _caseHandler = CaseHandler.Instance;
-            _hrHandler = HrHandler.Instance;
+            _hrHandler = LhouseHandler.Instance;
             FillComboBoxes();
         }
         public void FillComboBoxes()
@@ -38,13 +38,13 @@ namespace GUITest
 
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
-            string cpr = NECprTxt.Text;
+            int cpr = Convert.ToInt32(NECprTxt.Text);
             string fName = NEFnameTxt.Text;
             string lName = NELnameTxt.Text;
             string address = NEAdressTxt.Text;
             int postNo = Convert.ToInt32(NEPostTxt.Text);
             string eMail = NEEmailTxt.Text;
-            string tlf = NETlfTxt.Text;
+            int tlf = Convert.ToInt32(NETlfTxt.Text);
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
