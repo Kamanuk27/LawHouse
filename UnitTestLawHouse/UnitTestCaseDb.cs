@@ -7,13 +7,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestDbController
+    public class UnitTestCaseDb
     {
-        DbController _dbController = DbController.Instance;
+        CaseDb _dbController = CaseDb.Instance;
         [TestMethod]
         public void TestDbControllerReturnSameInstance()
         {
-            DbController actual = new DbController();
+            CaseDb actual = new CaseDb();
             object.ReferenceEquals(_dbController, actual);
         }
         // Create metoder
@@ -44,41 +44,6 @@ namespace UnitTestLawHouse
             int response = _dbController.NewClient(client);
             Assert.AreEqual(response, expected);
         }
-
-        [TestMethod]
-        public void TestNewEmployeeReturnOne()
-        {
-            int expected = 1;
-            EmployeeE e = new EmployeeE();
-            int response = _dbController.NewEmployee(e);
-            Assert.AreEqual(response, expected);
-        }
-        [TestMethod]
-        public void TestNewLegalServiceReturnOne()
-        {
-            int expected = 1;
-            LegalServiceE ls = new LegalServiceE();
-            int response = _dbController.NewLegalService(ls);
-            Assert.AreEqual(response, expected);
-        }
-
-        [TestMethod]
-        public void TestNewFieldReturnOne()
-        {
-            int expected = 1;
-            FieldE f = new FieldE();
-            int response = _dbController.NewField(f);
-            Assert.AreEqual(response, expected);
-        }
-
-        [TestMethod]
-        public void TestAddFieldReturnOne()
-        {
-            int expected = 1;
-            int response = _dbController.AddField(1, "New Field to Employee");
-            Assert.AreEqual(response, expected);
-        }
-
 
         // Get/read metoder
 
@@ -114,22 +79,7 @@ namespace UnitTestLawHouse
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void TestGetEmployeeesReturnTwoEmployees()
-        {
-            List<EmployeeE> employees = _dbController.GetEmployees();
-            Assert.AreEqual(2, employees.Count);
-        }
-
-        [TestMethod]
-        public void TestGetEmployeeesReturnListOfEmployees()
-        {
-            var employees = _dbController.GetEmployees();
-            Type actual = employees[0].GetType();
-            Type expected = typeof(EmployeeE);
-            Assert.AreEqual(expected, actual);
-        }
-
+      
         [TestMethod]
         public void TestGetLegalServicesReturnTwoServices()
         {
@@ -147,55 +97,23 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetEmployeeFieldsReturnTwoFields()
-        {
-            List<FieldE> fields = _dbController.GetEmployeeFields(1);
-            Assert.AreEqual(2, fields.Count);
-        }
-
-        [TestMethod]
-        public void TestGetEmployeeFieldsReturnListOfFields()
-        {
-            var employees = _dbController.GetEmployeeFields(1);
-            Type actual = employees[0].GetType();
-            Type expected = typeof(FieldE);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestGetFieldsReturnTwoFields()
-        {
-            List<FieldE> fields = _dbController.GetFields();
-            Assert.AreEqual(2, fields.Count);
-        }
-
-        [TestMethod]
-        public void TestGetFieldsReturnListOfFields()
-        {
-            var fields = _dbController.GetFields();
-            Type actual = fields[0].GetType();
-            Type expected = typeof(FieldE);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
         public void TestGetClientReturnClientWithCprNo()
         {
-            ClientE client = _dbController.GetClient("22222");
-            Assert.AreEqual("22222", client.CprNo);
+            ClientE client = _dbController.GetClient(2);
+            Assert.AreEqual(2, client.TlfNo);
         }
 
         [TestMethod]
         public void TestGetClientReturnClient()
         {
-            var client = _dbController.GetClient("22222");
+            var client = _dbController.GetClient(2);
             Type actual = client.GetType();
             Type expected = typeof(ClientE);
             Assert.AreEqual(expected, actual);
         } 
 
         [TestMethod]
-        public void TestGetLawyersReturnsTwoStrings()
+        public void TestGetLawyersReturnsTwoEmployeeEs()
         {
             int expected = 2;
             int actual = _dbController.GetLawyers().Count;
@@ -203,16 +121,16 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetLawyersReturnsListOfStrings()
+        public void TestGetLawyersReturnsListOfEmployeeEs()
         {
             var lawyers = _dbController.GetLawyers();
             Type actual = lawyers[0].GetType();
-            Type expected = typeof(string);
+            Type expected = typeof(EmployeeE);
             Assert.AreEqual(expected, actual);
         }
  
         [TestMethod]
-        public void TestGetEmplNamesReturnsTwoStrings()
+        public void TestGetEmplNamesReturnsTwoEmployeeEs()
         {
             int expected = 2;
             int actual = _dbController.GetEmplNames().Count;
@@ -220,11 +138,11 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestGetEmplNamesReturnsListOfStrings()
+        public void TestGetEmplNamesReturnsListOfEmployeeEs()
         {
             var names = _dbController.GetEmplNames();
             Type actual = names[0].GetType();
-            Type expected = typeof(string);
+            Type expected = typeof(EmployeeE);
             Assert.AreEqual(expected, actual);
         }
 
@@ -287,36 +205,9 @@ namespace UnitTestLawHouse
         public void TestCloseClientReturnOne()
         {
             int expected = 1;
-            int actual = _dbController.CloseClient("22222");
+            int actual = _dbController.CloseClient(2);
             Assert.AreEqual(expected, actual);
         }
-
-        [TestMethod]
-        public void TestUpdateEmployeeReturnOne()
-        {
-            int expected = 1;
-            EmployeeE e = new EmployeeE();
-            int actual = _dbController.UpdateEmployee(e);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestCloseEmployeeReturnOne()
-        {
-            int expected = 1;
-            int actual = _dbController.CloseEmployee(1);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestUpdateLegalServiceReturnOne()
-        {
-            int expected = 1;
-            LegalServiceE ls = new LegalServiceE();
-            int actual = _dbController.UpdateLegalService(ls);
-            Assert.AreEqual(expected, actual);
-        }
-
         //Delete metoder
 
         [TestMethod]
@@ -332,22 +223,6 @@ namespace UnitTestLawHouse
         {
             int expected = 1;
             int actual = _dbController.DeleteService(1);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestDeleteFieldReturnOne()
-        {
-            int expected = 1;
-            int actual = _dbController.DeleteField("fieldName");
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestDeleteLegalServiceReturnOne()
-        {
-            int expected = 1;
-            int actual = _dbController.DeleteLegalService(1);
             Assert.AreEqual(expected, actual);
         }
     }

@@ -9,25 +9,19 @@ namespace BusinessLogic
 {
     class Case : CaseE
     {
-        private DbController _dbController;
+        private CaseDb _dbController;
         internal List<ServiceE> Services;
 
 
         public Case()
         {
-            _dbController = DbController.Instance;
+            _dbController = CaseDb.Instance;
         }
-        internal void InitializeCase(int id, string name, string client, DateTime start,
-            string service, decimal negPrice, decimal total, string respEmp)
+        internal void InitializeCase(int id, decimal negPrice, string respEmp)
         {
             Id = id;
-            Name = name;
-            StartDate = start;
             NegPrice = negPrice;
-            TotalPrice = total;
-            Service = service;
             RespEmployee = respEmp;
-            Client = client;
             Services = _dbController.GetProvidedServices(Id);
         }
 

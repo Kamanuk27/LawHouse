@@ -6,17 +6,17 @@ using LawHouseLibrary.Entities;
 
 namespace DataAccess
 {
-    internal class SqlDataAccess : IDataAccess
+    internal class SqlCaseDataAccess : ICaseDataAccess
     {
-        private SqlNonQuery _nonQuery;
-        private SqlRead _read;
+        private CaseNquery _nonQuery;
+        private CaseRead _read;
         private SqlConnection _connection;
 
-        public SqlDataAccess()
+        public SqlCaseDataAccess()
         {
             _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-            _nonQuery = new SqlNonQuery(_connection);
-            _read = new SqlRead(_connection);
+            _nonQuery = new CaseNquery(_connection);
+            _read = new CaseRead(_connection);
         }
 
         public int NewCase(CaseE c1)
@@ -34,25 +34,7 @@ namespace DataAccess
             return _nonQuery.NewClient(client);
         }
 
-        public int NewEmployee(EmployeeE employee)
-        {
-            return _nonQuery.NewEmployee(employee);
-        }
-        public int NewLegalService(LegalServiceE legal)
-        {
-            return _nonQuery.NewLegalService(legal);
-        }
-        public int NewField(FieldE f)
-        {
-            return _nonQuery.NewField(f);
-        }
-        public int AddFieldToEmployee(int id, string name)
-        {
-            return _nonQuery.AddFieldToEmployee(id, name);
-        }
-
-
-
+      
 
         // To read/get
         public List<CaseE> GetCases()
@@ -64,38 +46,23 @@ namespace DataAccess
         {
             return _read.GetProvidedServices(caseId);
         }
-
         public List<LegalServiceE> GetLegalServices()
         {
             return _read.GetLegalServices();
         }
-        public List<FieldE> GetFields()
-        {
-            return _read.GetFields();
-        }
 
-        public List<FieldE> GetEmpFields(int id)
+        public ClientE GetClient(int tlf)
         {
-            return _read.GetEmpFields(id);
-        }
-
-        public List<EmployeeE> GetEmployees()
-        {
-            return _read.GetEmployees();
-        }
-
-        public ClientE GetClient(string cpr)
-        {
-            return _read.GetClient(cpr);
+            return _read.GetClient(tlf);
         }
 
 
-        public List<string> GetLawyers()
+        public List<EmployeeE> GetLawyers()
         {
             return _read.GetLawyers();
         }
 
-        public List<string> GetEmplNames()
+        public List<EmployeeE> GetEmplNames()
         {
             return _read.GetEmplNames();
         }
@@ -122,42 +89,21 @@ namespace DataAccess
             return _nonQuery.UpdateService(s1);
         }
 
-        public int UpdateLegalService(LegalServiceE ls)
-        {
-            return _nonQuery.UpdateLegalService(ls);
-        }
-
+     
         public int UpdateClient(ClientE client)
         {
             return _nonQuery.UpdateClient(client);
         }
 
-        public int UpdateEmployee(EmployeeE emp)
+      
+        public int CloseClient(int id)
         {
-            return _nonQuery.UpdateEmployee(emp);
+            return _nonQuery.CloseClient(id);
         }
 
-        public int CloseClient(string cpr)
-        {
-            return _nonQuery.CloseClient(cpr);
-        }
-
-        public int CloseEmployee(int id)
-        {
-            return _nonQuery.CloseEmployee(id);
-        }
 
         // To delete
-        public int DeleteLegalService(int id)
-        {
-            return _nonQuery.DeleteLegalService(id);
-        }
-
-        public int DeleteField(string name)
-        {
-            return _nonQuery.DeleteField(name);
-        }
-
+       
         public int DeleteCase(int id)
         {
             return _nonQuery.DeleteCase(id);

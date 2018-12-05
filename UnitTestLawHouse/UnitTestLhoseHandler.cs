@@ -5,7 +5,7 @@ using BusinessLogic;
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestHrHandler
+    public class UnitTestLhoseHandler
     {
        
     }

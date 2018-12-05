@@ -9,10 +9,10 @@ namespace BusinessLogic
 {
     internal class CaseCatalog
     {
-        private DbController _dbController;
+        private CaseDb _dbController;
         public CaseCatalog()
         {
-            _dbController = DbController.Instance;
+            _dbController = CaseDb.Instance;
         }
 
         internal List<CaseE> GetCases()
@@ -20,16 +20,16 @@ namespace BusinessLogic
             return _dbController.GetCases();
         }
 
-        internal int NewCase(string caseName, string client, string service, DateTime startTime, string respEmpl, decimal negoPrice)
+        internal int NewCase(string caseName, int clientId, int serviceId, DateTime startTime, int empId, decimal negoPrice)
         {
-            CaseE cE = new CaseE();
-            cE.Name = caseName;
-            cE.Client = client;
-            cE.Service = service;
-            cE.StartDate = startTime;
-            cE.RespEmployee = respEmpl;
-            cE.NegPrice = negoPrice;
-            return _dbController.NewCase(cE);
+            CaseE c = new CaseE();
+            c.Name = caseName;
+            c.ClientId = clientId;
+            c.ServiceId = serviceId;
+            c.StartDate = startTime;
+            c.RespEmpId = empId;
+            c.NegPrice = negoPrice;
+            return _dbController.NewCase(c);
         }
 
         internal int UpdateCase(int id, decimal negPrice, string respEmp)
@@ -57,12 +57,12 @@ namespace BusinessLogic
         }
 
         // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
-        internal List<string> GetLawyers()
+        internal List<EmployeeE> GetLawyers()
         {
             return _dbController.GetLawyers();
         }
 
-        internal List<string> GetEmplNames()
+        internal List<EmployeeE> GetEmplNames()
         {
             return _dbController.GetEmplNames();
         }

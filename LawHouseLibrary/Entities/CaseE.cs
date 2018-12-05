@@ -16,8 +16,11 @@ namespace LawHouseLibrary.Entities
         public decimal NegPrice { get; set; }
         public decimal TotalPrice { get; set; }
         public string Service { get; set; }
+        public int ServiceId { get; set; }
         public string RespEmployee { get; set; }
         public string Client { get; set; }
+        public int RespEmpId { get; set; }
+        public int ClientId { get; set; }
 
         public CaseE()
         {

@@ -7,8 +7,8 @@ using System.Runtime.CompilerServices;
 
 namespace BusinessLogic
 {  
-    // Klass CaseHandler er en Controller  
-    // Har en instance af Case og CaseCatalog.
+    // Klass CaseHandler er en Controller, der står for at sende informationer mellem UI og BL
+   
     public class CaseHandler
     {
        
@@ -33,10 +33,9 @@ namespace BusinessLogic
         }
 
         // Fra Case
-        public void InitializeCase(int id, string name, string client, DateTime start, 
-                                             string service, decimal negPrice, decimal total, string respEmp)
+        public void InitializeCase(int id, decimal negPrice, string respEmp)
         {
-            _case.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
+            _case.InitializeCase (id, negPrice, respEmp);
         }
 
        
@@ -48,7 +47,8 @@ namespace BusinessLogic
 
         public List<ServiceE> GetProvidedServices(int caseId)
         {
-            return _case.GetProvidedServices(caseId);
+            return _case.GetProvidedServices();
+           
         }
      
         public int UpdateService(int id, int hours, int km, DateTime date, string comment)
@@ -67,9 +67,9 @@ namespace BusinessLogic
 
         // Fra CaseCatalog
 
-        public int NewCase(string name, string client, string service, DateTime startTime, string respEmpl, decimal negPrice)
+        public int NewCase(string name, int clientId, int serviceId, DateTime startTime, int empId, decimal negPrice)
         {
-            return _cases.NewCase(name, client, service, startTime, respEmpl, negPrice);
+            return _cases.NewCase(name, clientId, serviceId, startTime, empId, negPrice);
         }
         public List<CaseE> GetCases()
         {
@@ -80,7 +80,7 @@ namespace BusinessLogic
             return _cases.CloseCase(id, total, endDate);
         }
 
-        public int UpdateCase(int id, decimal negPrice, string respEmp)
+        public int UpdateCaseE(int id, decimal negPrice, string respEmp)
         {
             return _cases.UpdateCase(id, negPrice, respEmp);
         }
@@ -93,35 +93,35 @@ namespace BusinessLogic
       
 
         // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
-        public List<string> GetLawyers()
+        public List<EmployeeE> GetLawyers()
         {
             return _cases.GetLawyers();
         }
 
-        public List<string> GetEmplNames()
+        public List<EmployeeE> GetEmplNames()
         {
             return _cases.GetEmplNames();
         }
 
 
         // fra ClientCatalog
-        public ClientE GetClient(string cpr)
+        public ClientE GetClient(int tlf)
         {
-            return _clients.GetClient(cpr);
+            return _clients.GetClient(tlf);
         }
 
-        public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
+        public int NewClient(int cpr, string fName, string lName, string address, int postNo, string eMail, int tlf)
         {
             return _clients.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
-        public int UpdateClient(string cpr, string address, int postNo, string eMail, string tlf)
+        public int UpdateClient(string fName, string lName, int cpr, string address, int postNo, string eMail, int tlf)
         {
-            return _clients.UpdateClient(cpr, address, postNo, eMail, tlf);
+            return _clients.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
         }
-        public int CloseClient(string cpr)
+        public int CloseClient(int id)
         {
-            return _clients.CloseClient(cpr);
+            return _clients.CloseClient(id);
         }
 
     }
