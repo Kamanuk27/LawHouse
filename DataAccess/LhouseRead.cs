@@ -105,7 +105,7 @@ namespace DataAccess
         public List<EmployeeE> GetEmployees()
         {
             List<EmployeeE> employees = new List<EmployeeE>();
-            _command.CommandText = "SELECT * FROM Employee";
+            _command.CommandText = "SELECT * FROM Employee WHERE CprNo is not NULL";
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -116,16 +116,16 @@ namespace DataAccess
                     EmployeeE e = new EmployeeE();
 
                     e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    e.CprNo = reader["CprNo"] != DBNull.Value ? Convert.ToInt32(reader["CprNo"]) : default(int);
+                    e.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
                     e.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
-                    e.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+                    e.LastName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
                     e.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
                     e.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
                     e.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    e.TlfNo = reader["TlfNo"] != DBNull.Value ? Convert.ToInt32(reader["TlfNo"]) : default(int);
+                    e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
                     e.StartDate = Convert.ToDateTime(reader["StartDate"]);
                     e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
-                    e.PayRatePrHour = reader["ID"] != DBNull.Value ? Convert.ToDecimal(reader["ID"]) : default(decimal);
+                    e.PayRatePrHour = reader["PayRatePrHour"] != DBNull.Value ? Convert.ToDecimal(reader["PayRatePrHour"]) : default(decimal);
 
                     employees.Add(e);
                 }

@@ -19,6 +19,7 @@ namespace GUITest
        
        
         Empl_Unit_Spes em = new Empl_Unit_Spes();
+        Ydelser lf = new Ydelser();
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace GUITest
             _hrHandler = LhouseHandler.Instance;
             FillComboBoxes();
             GriderStart();
+
 
         }
         public void FillComboBoxes()
@@ -35,19 +37,19 @@ namespace GUITest
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
-            foreach (var s1 in _hrHandler.GetLegalServices())
+            foreach (var s1 in _caseHandler.GetLegalServices())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
         }
 
-        private void GetServiceId()
-        {
-            foreach (var s1 in _hrHandler.GetLegalServices())
-            {
-                CrCaseServiceCom.Items.Add(s1.Id);
-            }
-        }
+        //private void GetServiceId()
+        //{
+        //    foreach (var s1 in _caseHandler.GetLegalServices())
+        //    {
+        //        CrCaseServiceCom.Items.Add(s1.Id);
+        //    }
+        //}
         private void ClearTxtBoxs()
         {
             RespEmpCombo.Text = "";
@@ -70,7 +72,6 @@ namespace GUITest
                 CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;
                 CaseDataGrid.Rows[n].Cells[8].Value = c1.TotalPrice;
                 CaseDataGrid.Rows[n].Cells[9].Value = c1.RespEmployee;
-
             }
         }
 
@@ -245,19 +246,24 @@ namespace GUITest
 
         private void NewClientButt_Click(object sender, EventArgs e)
         {
-            int cpr = Convert.ToInt32(NewClientCprNo.Text);
+            string cpr = NewClientCprNo.Text;
             string fName = NewClientfName.Text;
             string lName = NewClientLName.Text;
             string address = NewClientAdress.Text;
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
-            int tlf = Convert.ToInt32(NewClientTelef.Text);
+            string tlf = NewClientTelef.Text;
             _caseHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
         private void FormEmpl_Click(object sender, EventArgs e)
         {
             em.Show();
+        }
+
+        private void YdelserButt_Click(object sender, EventArgs e)
+        {
+            lf.Show();
         }
     }
 

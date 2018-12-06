@@ -34,12 +34,12 @@ namespace BusinessLogic
             return _empCat.GetEmployees();
         }
 
-        public int NewEmployee(int cpr, string fName, string lName, string address, int postNo, 
-                                 string eMail, int tlf, DateTime start, string position, decimal money)
+        public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, 
+                                 string eMail, string tlf, DateTime start, string position, decimal money)
         {
             return _empCat.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
-        public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, int tlf, string position, decimal money)
+        public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
         {
             return _empCat.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
         }

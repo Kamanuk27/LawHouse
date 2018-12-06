@@ -67,5 +67,10 @@ namespace BusinessLogic
             return _dbController.GetEmplNames();
         }
 
+        internal List<LegalServiceE> GetLegalServices()
+        {
+            return _dbController.GetLegalServices();
+        }
+
     }
 }

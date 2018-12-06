@@ -56,7 +56,7 @@ namespace BusinessLogic
         {
             return _persistence.GetLegalServices();
         }
-        internal ClientE GetClient(int tlf)
+        internal ClientE GetClient(string tlf)
         {
             return _persistence.GetClient(tlf);
         }

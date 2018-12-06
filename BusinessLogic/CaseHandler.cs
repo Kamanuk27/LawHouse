@@ -37,7 +37,7 @@ namespace BusinessLogic
             _case.InitializeCase (id, negPrice, respEmp);
         }
 
-        public int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
+        public int NewService(int caseID, DateTime date, int hours, int km, string comment, int respEmpl)
         {
             return _case.NewService(caseID, date, hours, km, comment, respEmpl);
         }
@@ -95,19 +95,29 @@ namespace BusinessLogic
         {
             return _cases.GetEmplNames();
         }
-        
+
         // fra ClientCatalog
-        public ClientE GetClient(int tlf)
+
+
+        public List<LegalServiceE> GetLegalServices()
+        {
+            return _cases.GetLegalServices();
+        }
+
+
+
+
+        public ClientE GetClient(string tlf)
         {
             return _clients.GetClient(tlf);
         }
 
-        public int NewClient(int cpr, string fName, string lName, string address, int postNo, string eMail, int tlf)
+        public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
         {
             return _clients.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
-        public int UpdateClient(string fName, string lName, int cpr, string address, int postNo, string eMail, int tlf)
+        public int UpdateClient(string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
         {
             return _clients.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
         }

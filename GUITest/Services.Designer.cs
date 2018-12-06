@@ -50,6 +50,7 @@
             this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +145,7 @@
             this.YEmploeeCombox.Name = "YEmploeeCombox";
             this.YEmploeeCombox.Size = new System.Drawing.Size(209, 24);
             this.YEmploeeCombox.TabIndex = 147;
+            this.YEmploeeCombox.SelectedIndexChanged += new System.EventHandler(this.YEmploeeCombox_SelectedIndexChanged);
             this.YEmploeeCombox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.YEmploeeCombox_KeyPress);
             // 
             // label18
@@ -268,11 +270,19 @@
             this.label2.TabIndex = 140;
             this.label2.Text = "Ydelser på sagen:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(878, 461);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 22);
+            this.textBox1.TabIndex = 156;
+            // 
             // Services
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1788, 780);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelCaseName);
             this.Controls.Add(this.ServiseDeleteBut);
             this.Controls.Add(this.NyYdButton);
@@ -321,5 +331,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Hours;
         private System.Windows.Forms.DataGridViewTextBoxColumn Km;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -23,8 +23,8 @@ namespace BusinessLogic
             return _dbController.GetEmployees();
         }
 
-        internal int NewEmployee(int cpr, string fName, string lName, string address, int postNo, 
-                                 string eMail, int tlf, DateTime start, string position, decimal money)
+        internal int NewEmployee(string cpr, string fName, string lName, string address, int postNo, 
+                                 string eMail, string tlf, DateTime start, string position, decimal money)
         {
             EmployeeE employee = new EmployeeE();
             employee.CprNo = cpr;
@@ -41,7 +41,7 @@ namespace BusinessLogic
             return _dbController.NewEmployee(employee);
         }
 
-        internal int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, int tlf, string position, decimal money)
+        internal int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
         {
           EmployeeE emp = new EmployeeE();
             emp.Id = id;

@@ -37,7 +37,7 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.search_button = new System.Windows.Forms.Button();
             this.UpdateButt = new System.Windows.Forms.Button();
             this.FormEmpl = new System.Windows.Forms.Button();
-            this.Spec = new System.Windows.Forms.Button();
+            this.YdelserButt = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             label22 = new System.Windows.Forms.Label();
@@ -519,8 +519,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -682,22 +682,25 @@
             // 
             // FormEmpl
             // 
+            this.FormEmpl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormEmpl.Location = new System.Drawing.Point(1864, 137);
             this.FormEmpl.Name = "FormEmpl";
             this.FormEmpl.Size = new System.Drawing.Size(152, 44);
             this.FormEmpl.TabIndex = 261;
-            this.FormEmpl.Text = "Medarb/serv/unit";
+            this.FormEmpl.Text = "Medarb";
             this.FormEmpl.UseVisualStyleBackColor = true;
             this.FormEmpl.Click += new System.EventHandler(this.FormEmpl_Click);
             // 
-            // Spec
+            // YdelserButt
             // 
-            this.Spec.Location = new System.Drawing.Point(1864, 204);
-            this.Spec.Name = "Spec";
-            this.Spec.Size = new System.Drawing.Size(152, 44);
-            this.Spec.TabIndex = 262;
-            this.Spec.Text = "button3";
-            this.Spec.UseVisualStyleBackColor = true;
+            this.YdelserButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YdelserButt.Location = new System.Drawing.Point(1864, 204);
+            this.YdelserButt.Name = "YdelserButt";
+            this.YdelserButt.Size = new System.Drawing.Size(152, 44);
+            this.YdelserButt.TabIndex = 262;
+            this.YdelserButt.Text = "Ydelser";
+            this.YdelserButt.UseVisualStyleBackColor = true;
+            this.YdelserButt.Click += new System.EventHandler(this.YdelserButt_Click);
             // 
             // button4
             // 
@@ -722,7 +725,7 @@
             this.ClientSize = new System.Drawing.Size(2041, 999);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.Spec);
+            this.Controls.Add(this.YdelserButt);
             this.Controls.Add(this.FormEmpl);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.CrCaseServiceCom);
@@ -834,7 +837,7 @@
         private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.Button UpdateButt;
         private System.Windows.Forms.Button FormEmpl;
-        private System.Windows.Forms.Button Spec;
+        private System.Windows.Forms.Button YdelserButt;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox1;
     }

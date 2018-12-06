@@ -51,7 +51,7 @@ namespace DataAccess
             return _read.GetLegalServices();
         }
 
-        public ClientE GetClient(int tlf)
+        public ClientE GetClient(string tlf)
         {
             return _read.GetClient(tlf);
         }

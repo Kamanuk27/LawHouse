@@ -99,14 +99,14 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetClientReturnClientWithCprNo()
         {
-            ClientE client = _dbController.GetClient(2);
+            ClientE client = _dbController.GetClient("Alan");
             Assert.AreEqual(2, client.TlfNo);
         }
 
         [TestMethod]
         public void TestGetClientReturnClient()
         {
-            var client = _dbController.GetClient(2);
+            var client = _dbController.GetClient("Alan");
             Type actual = client.GetType();
             Type expected = typeof(ClientE);
             Assert.AreEqual(expected, actual);

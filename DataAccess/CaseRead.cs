@@ -170,7 +170,7 @@ namespace DataAccess
             return emplNames;
         }
 
-        public ClientE GetClient(int tlf)
+        public ClientE GetClient(string tlf)
         {
             ClientE c = new ClientE();
             _command.CommandText = "SELECT * FROM Client WHERE TlfNo = @tlf";
@@ -185,13 +185,13 @@ namespace DataAccess
                 while (reader.Read())
                 {
                      c.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    c.CprNo = reader["CprNo"] != DBNull.Value ? Convert.ToInt32(reader["CprNo"]) : default(int);
+                    c.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
                     c.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
                     c.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
                     c.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
                     c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
                     c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? Convert.ToInt32(reader["TlfNo"]) : default(int);
+                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
 
                 }
             }

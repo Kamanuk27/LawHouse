@@ -20,7 +20,7 @@ namespace DataAccess
         List<EmployeeE> GetEmplNames();
         List<decimal> GetUnitPrices();
 
-        ClientE GetClient(int tlf);
+        ClientE GetClient(string tlf);
 
 
         int UpdateService(ServiceE s1);

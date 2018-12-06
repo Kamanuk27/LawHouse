@@ -61,7 +61,7 @@ namespace GUITest
         {
             foreach (var m1 in _caseHandler.GetEmplNames())
             {
-                YEmploeeCombox.Items.Add(m1);
+                YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
         }
         private void ClearServiceTxtBox()
@@ -103,23 +103,25 @@ namespace GUITest
 
         private void NyYdButton_Click(object sender, EventArgs e)
         {
-            try
+           // try
             {
                 DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
                 int hours = YHouresTxt.Text != null ? Convert.ToInt32(YHouresTxt.Text) : 0;
                 int km = YKmTxt.Text != null ? Convert.ToInt32(YKmTxt.Text) : 0;
                 string comment = YCommentTxt.Text;
-                string respEmpl = YEmploeeCombox.Text;
+                string[] names = YEmploeeCombox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int respEmpl = Convert.ToInt32(names[0]);
+               // string respEmpl = YEmploeeCombox.Text;
                 int i = _caseHandler.NewService(ID, date, hours, km, comment, respEmpl);
                 MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Vælg sage først");
-            }
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Vælg sage først");
+            //}
         }
 
         private void YUpdate_Click(object sender, EventArgs e)
@@ -141,6 +143,13 @@ namespace GUITest
             {
                 MessageBox.Show("Vælg ydelse først");
             }
+        }
+
+        private void YEmploeeCombox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] names = YEmploeeCombox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int respEmpl = Convert.ToInt32(names[0]);
+            textBox1.Text = respEmpl.ToString();
         }
     }
 }
