@@ -59,7 +59,7 @@
       <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\LawHouseLibrary\LawHouseLibrary.csproj">
-      <Project>{D8E833FC-716B-4CC5-9E17-2FD32749162A}</Project>
+      <Project>{d8e833fc-716b-4cc5-9e17-2fd32749162a}</Project>
       <Name>LawHouseLibrary</Name>
     </ProjectReference>
   </ItemGroup>

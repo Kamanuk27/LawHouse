@@ -104,7 +104,7 @@ namespace DataAccess
         internal List<SubjectM> GetSubjects()
         {
             List<SubjectM> legServices = new List<SubjectM>();
-            _command.CommandText = "SELECT * FROM LegalServices";
+            _command.CommandText = "SELECT * FROM Subject";
             _command.Parameters.Clear();
             PrepareSql();
             SqlDataReader reader = null;
@@ -178,7 +178,7 @@ namespace DataAccess
             return emplNames;
         }
 
-        public ClientM GetClient(int tlf)
+        public ClientM GetClient(string tlf)
         {
             ClientM c = new ClientM();
             _command.CommandText = "SELECT * FROM Client WHERE TlfNo = @tlf";

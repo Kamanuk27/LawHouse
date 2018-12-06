@@ -41,7 +41,7 @@ namespace LawHouseTabForm
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
 
-            foreach (var s1 in _caseHandler.GetLegalServices())
+            foreach (var s1 in _hrHandler.GetSubject())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -58,7 +58,7 @@ namespace LawHouseTabForm
 
             }
 
-            foreach (var s1 in _caseHandler.GetLegalServices())
+            foreach (var s1 in _hrHandler.GetSubject())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -103,7 +103,7 @@ namespace LawHouseTabForm
                 CaseDataGrid.Rows[n].Cells[2].Value = c1.Client;
                 CaseDataGrid.Rows[n].Cells[3].Value = c1.StartDate.ToShortDateString();
                 CaseDataGrid.Rows[n].Cells[4].Value = c1.EndDate.ToShortDateString();
-                CaseDataGrid.Rows[n].Cells[5].Value = c1.Service;
+                CaseDataGrid.Rows[n].Cells[5].Value = c1.Subject;
                 CaseDataGrid.Rows[n].Cells[6].Value = c1.HoursEstimate;
                 CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;
                 CaseDataGrid.Rows[n].Cells[8].Value = c1.TotalPrice;
@@ -148,7 +148,7 @@ namespace LawHouseTabForm
 
         private void GetServices()
         {
-            foreach (var c1 in _hrHandler.GetLegalServices())
+            foreach (var c1 in _hrHandler.GetSubject())
             {
                 int n = ServiceGridView.Rows.Add();
                 ServiceGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -281,7 +281,7 @@ namespace LawHouseTabForm
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
-                int i = _caseHandler.UpdateCase(id, negPrice, respEmpl);
+                int i = _caseHandler.UpdateCaseE(id, negPrice, respEmpl);
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
@@ -346,7 +346,7 @@ namespace LawHouseTabForm
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
             string tlf = NewClientTelef.Text;
-            _caseHandler.UpdateClient(cpr, fName, lName, address, postNo, eMail, tlf);
+            _caseHandler.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
         }
 
         private void NewClientButt_Click(object sender, EventArgs e)
@@ -376,7 +376,7 @@ namespace LawHouseTabForm
 
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _hrHandler.GetLegalServices())
+            foreach (var s in _hrHandler.GetSubject())
             {
                 string[] getServoceId =
                     CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -569,7 +569,7 @@ namespace LawHouseTabForm
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.  NewLegalService(name, hours, time, price);
+            _hrHandler.NewSubject(name, hours, time, price);
         }
 
         private void UpdateServButt_Click(object sender, EventArgs e)
@@ -583,7 +583,7 @@ namespace LawHouseTabForm
 
         private void DeleteServButt_Click(object sender, EventArgs e)
         {
-            _hrHandler.DeleteLegalService(ServiceId);
+            _hrHandler.DeleteSubject(ServiceId);
         }
 
 

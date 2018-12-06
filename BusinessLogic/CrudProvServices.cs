@@ -25,7 +25,7 @@ namespace BusinessLogic
             Services = _dbController.GetProvidedServices(Id);
         }
 
-        internal int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
+        internal int NewService(int caseID, DateTime date, int hours, int km, string comment, int respEmpl)
         {
             ProvidedServiceM s1 = new ProvidedServiceM();
             s1.CaseID = caseID;
@@ -33,7 +33,7 @@ namespace BusinessLogic
             s1.Hours = hours;
             s1.Km = km;
             s1.Comment = comment;
-            s1.EmployeeName = respEmpl;
+            s1.EmployeeID = respEmpl;
             return _dbController.NewService(s1);
         }
         internal List <ProvidedServiceM> GetProvidedServices()
