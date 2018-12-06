@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -24,10 +24,10 @@ namespace DataAccess
             _command.Connection = _connection;
         }
 
-        internal List<LegalServiceE> GetLegalServices()
+        internal List<SubjectM> GetSubjects()
         {
-            List<LegalServiceE> legServices = new List<LegalServiceE>();
-            _command.CommandText = "SELECT * FROM LegalServices";
+            List<SubjectM> subjects = new List<SubjectM>();
+            _command.CommandText = "SELECT * FROM Subject";
             _command.Parameters.Clear();
             PrepareSql();
             SqlDataReader reader = null;
@@ -36,7 +36,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    LegalServiceE ls1 = new LegalServiceE();
+                    SubjectM ls1 = new SubjectM();
 
                     ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
@@ -45,42 +45,20 @@ namespace DataAccess
                     ls1.TimeEstimate = reader["TimeEstimate"] != DBNull.Value ? Convert.ToInt32(reader["TimeEstimate"]) : default(int);
 
 
-                    legServices.Add(ls1);
+                    subjects.Add(ls1);
                 }
 
             }
             _connection.Close();
-            return legServices;
+            return subjects;
         }
-
-        internal List<FieldE> GetFields()
+       
+        // her skal det læses fra Specializations
+        public List<SubjectM> GetEmpSpecializations(int id)
         {
-            List<FieldE> fields = new List<FieldE>();
-            _command.CommandText = "SELECT*FROM Field";
-
-            PrepareSql();
-            SqlDataReader reader = null;
-            reader = _command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    FieldE f = new FieldE();
-                    f.Id = Convert.ToInt32(reader["ID"]);
-                    f.Name = reader["Name"].ToString();
-                    fields.Add(f);
-                }
-
-            }
-            _connection.Close();
-            return fields;
-        }
-
-        public List<FieldE> GetEmpFields(int id)
-        {
-            List<FieldE> fields = new List<FieldE>();
-            _command.CommandText = "SELECT*FROM [dbo].[Field] WHERE [ID] IN " +
-                                   "(SELECT Field_ID FROM [dbo].[EmployeeFields] WHERE Employee_ID = @id)";
+            List<SubjectM> fields = new List<SubjectM>();
+            _command.CommandText = "SELECT*FROM Subject WHERE [ID] IN " +
+                                   "(SELECT Subject_ID FROM Specialization WHERE Employee_ID = @id)";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
 
@@ -91,7 +69,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    FieldE f = new FieldE();
+                    SubjectM f = new SubjectM();
                     f.Id = Convert.ToInt32(reader["ID"]);
                     f.Name = reader["Name"].ToString();
                     fields.Add(f);
@@ -102,9 +80,9 @@ namespace DataAccess
             return fields;
         }
 
-        public List<EmployeeE> GetEmployees()
+        public List<EmployeeM> GetEmployees()
         {
-            List<EmployeeE> employees = new List<EmployeeE>();
+            List<EmployeeM> employees = new List<EmployeeM>();
             _command.CommandText = "SELECT * FROM Employee";
             PrepareSql();
             SqlDataReader reader = null;
@@ -113,7 +91,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    EmployeeE e = new EmployeeE();
+                    EmployeeM e = new EmployeeM();
 
                     e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     e.CprNo = reader["CprNo"] != DBNull.Value ? Convert.ToInt32(reader["CprNo"]) : default(int);

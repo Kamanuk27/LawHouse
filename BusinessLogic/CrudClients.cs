@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,24 +7,24 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class ClientCatalog
+    class CrudClients
     {
 
         private CaseDb _dbController;
 
-        public ClientCatalog()
+        public CrudClients()
         {
             _dbController = CaseDb.Instance;
         }
 
-        internal ClientE GetClient(int tlf)
+        internal ClientM GetClient(int tlf)
         {
             return _dbController.GetClient(tlf);
         }
 
         internal int NewClient(int cpr, string fName, string lName, string address, int postNo, string eMail, int tlf)
         {
-            ClientE client = new ClientE();
+            ClientM client = new ClientM();
             client.CprNo = cpr;
             client.FirstName = fName;
             client.LastName = lName;
@@ -37,7 +37,7 @@ namespace BusinessLogic
 
         internal int UpdateClient(string fName, string lName, int cpr, string address, int postNo, string eMail, int tlf)
         {
-            ClientE client = new ClientE();
+            ClientM client = new ClientM();
             client.FirstName = fName;
             client.LastName = lName;
             client.CprNo = cpr;

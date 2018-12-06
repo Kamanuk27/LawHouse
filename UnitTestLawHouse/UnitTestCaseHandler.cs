@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BusinessLogic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse

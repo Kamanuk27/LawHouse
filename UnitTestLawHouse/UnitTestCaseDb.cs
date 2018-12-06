@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BusinessLogic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse
@@ -22,7 +22,7 @@ namespace UnitTestLawHouse
         public void TestNewCaseReturnOne()
         {
             int expected = 1;
-            CaseE c1 = new CaseE(1);
+            CaseM c1 = new CaseM(1);
             int response = _dbController.NewCase(c1);
             Assert.AreEqual(response, expected);
         }
@@ -31,7 +31,7 @@ namespace UnitTestLawHouse
         public void TestNewServiceReturnOne()
         {
             int expected = 1;
-            ServiceE s1 = new ServiceE();
+            ProvidedServiceM s1 = new ProvidedServiceM();
             int response = _dbController.NewService(s1);
             Assert.AreEqual(response, expected);
         }
@@ -40,7 +40,7 @@ namespace UnitTestLawHouse
         public void TestNewClientReturnOne()
         {
             int expected = 1;
-            ClientE client = new ClientE();
+            ClientM client = new ClientM();
             int response = _dbController.NewClient(client);
             Assert.AreEqual(response, expected);
         }
@@ -50,7 +50,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List<CaseE> cases = _dbController.GetCases();
+            List<CaseM> cases = _dbController.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
@@ -59,14 +59,14 @@ namespace UnitTestLawHouse
         {
             var cases = _dbController.GetCases();
             Type actual = cases[0].GetType();
-            Type expected = typeof(CaseE);
+            Type expected = typeof(CaseM);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestGetProvidedServicesReturnTwoServices()
         {
-            List<ServiceE> services = _dbController.GetProvidedServices(1);
+            List<ProvidedServiceM> services = _dbController.GetProvidedServices(1);
             Assert.AreEqual(2, services.Count);
         }
 
@@ -75,7 +75,7 @@ namespace UnitTestLawHouse
         {
             var services = _dbController.GetProvidedServices(1);
             Type actual = services[0].GetType();
-            Type expected = typeof(ServiceE);
+            Type expected = typeof(ProvidedServiceM);
             Assert.AreEqual(expected, actual);
         }
 
@@ -83,7 +83,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetLegalServicesReturnTwoServices()
         {
-            List<LegalServiceE> legalServices = _dbController.GetLegalServices();
+            List<SubjectM> legalServices = _dbController.GetLegalServices();
             Assert.AreEqual(2, legalServices.Count);
         }
 
@@ -92,14 +92,14 @@ namespace UnitTestLawHouse
         {
             var legalServices = _dbController.GetLegalServices();
             Type actual = legalServices[0].GetType();
-            Type expected = typeof(LegalServiceE);
+            Type expected = typeof(SubjectM);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestGetClientReturnClientWithCprNo()
         {
-            ClientE client = _dbController.GetClient(2);
+            ClientM client = _dbController.GetClient(2);
             Assert.AreEqual(2, client.TlfNo);
         }
 
@@ -108,7 +108,7 @@ namespace UnitTestLawHouse
         {
             var client = _dbController.GetClient(2);
             Type actual = client.GetType();
-            Type expected = typeof(ClientE);
+            Type expected = typeof(ClientM);
             Assert.AreEqual(expected, actual);
         } 
 
@@ -125,7 +125,7 @@ namespace UnitTestLawHouse
         {
             var lawyers = _dbController.GetLawyers();
             Type actual = lawyers[0].GetType();
-            Type expected = typeof(EmployeeE);
+            Type expected = typeof(EmployeeM);
             Assert.AreEqual(expected, actual);
         }
  
@@ -142,7 +142,7 @@ namespace UnitTestLawHouse
         {
             var names = _dbController.GetEmplNames();
             Type actual = names[0].GetType();
-            Type expected = typeof(EmployeeE);
+            Type expected = typeof(EmployeeM);
             Assert.AreEqual(expected, actual);
         }
 
@@ -169,7 +169,7 @@ namespace UnitTestLawHouse
         public void TestUpdateCaseReturnOne()
         {
             int expected = 1;
-            CaseE c1 = new CaseE();
+            CaseM c1 = new CaseM();
             int actual = _dbController.UpdateCase(c1);
             Assert.AreEqual(expected, actual);
         }
@@ -178,7 +178,7 @@ namespace UnitTestLawHouse
         public void TestUpdateServiceReturnOne()
         {
             int expected = 1;
-            ServiceE s1 = new ServiceE();
+            ProvidedServiceM s1 = new ProvidedServiceM();
             int actual = _dbController.UpdateService(s1);
             Assert.AreEqual(expected, actual);
         }
@@ -187,7 +187,7 @@ namespace UnitTestLawHouse
         public void TestCloseCaseReturnOne()
         {
             int expected = 1;
-            CaseE c1 = new CaseE();
+            CaseM c1 = new CaseM();
             int actual = _dbController.CloseCase(c1);
             Assert.AreEqual(expected, actual);
         }
@@ -196,7 +196,7 @@ namespace UnitTestLawHouse
         public void TestUpdateClientReturnOne()
         {
             int expected = 1;
-            ClientE client = new ClientE();
+            ClientM client = new ClientM();
             int actual = _dbController.UpdateClient(client);
             Assert.AreEqual(expected, actual);
         }

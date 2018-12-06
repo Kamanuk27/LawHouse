@@ -41,17 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Case.cs" />
-    <Compile Include="CaseCatalog.cs" />
+    <Compile Include="CrudProvServices.cs" />
+    <Compile Include="CrudCases.cs" />
     <Compile Include="CaseHandler.cs" />
-    <Compile Include="ClientCatalog.cs" />
+    <Compile Include="CrudClients.cs" />
     <Compile Include="CaseDb.cs" />
-    <Compile Include="EmpCatalog.cs" />
+    <Compile Include="CrudEmployees.cs" />
     <Compile Include="LhouseDb.cs" />
     <Compile Include="LhouseHandler.cs" />
     <Compile Include="PriceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceCatalog.cs" />
+    <Compile Include="CrudSubjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">

@@ -1,5 +1,5 @@
 ﻿using DataAccess;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,45 +26,38 @@ namespace BusinessLogic
             }
         }
         // Create
-        internal int NewEmployee(EmployeeE employee)
+        internal int NewEmployee(EmployeeM employee)
         {
             return _persistence.NewEmployee(employee);
         }
-        internal int NewLegalService(LegalServiceE legal)
+        internal int NewSubject(SubjectM legal)
         {
-            return _persistence.NewLegalService(legal);
+            return _persistence.NewSubject(legal);
         }
 
-        internal int NewField(FieldE f)
-        {
-            return _persistence.NewField(f);
-        }
         internal int AddField(int eId, int fId)
         {
-            return _persistence.AddFieldToEmployee(eId, fId);
+            return _persistence.AddSpecializationToEmployee(eId, fId);
         }
 
         // Get/read metoder
-        internal List<EmployeeE> GetEmployees()
+        internal List<EmployeeM> GetEmployees()
         {
             return _persistence.GetEmployees();
         }
-        internal List<FieldE> GetEmployeeFields(int id)
+        internal List<SubjectM> GetEmpSpecializations(int id)
         {
-            return _persistence.GetEmpFields(id);
+            return _persistence.GetEmpSpecializations(id);
         }
 
-        internal List<FieldE> GetFields()
+     
+        internal List<SubjectM> Getsubjects()
         {
-            return _persistence.GetFields();
-        }
-        internal List<LegalServiceE> GetLegalServices()
-        {
-            return _persistence.GetLegalServices();
+            return _persistence.GetSubjects();
         }
 
         // Update
-        internal int UpdateEmployee(EmployeeE emp)
+        internal int UpdateEmployee(EmployeeM emp)
         {
             return _persistence.UpdateEmployee(emp);
         }
@@ -74,20 +67,15 @@ namespace BusinessLogic
             return _persistence.CloseEmployee(id);
         }
 
-        internal int UpdateLegalService(LegalServiceE ls)
+        internal int UpdateSubjects(SubjectM ls)
         {
-            return _persistence.UpdateLegalService(ls);
+            return _persistence.UpdateSubject(ls);
         }
 
         //Delete metoder
-        internal int DeleteField(int id)
-        {
-            return _persistence.DeleteField(id);
-        }
-
         internal int DeleteLegalService(int id)
         {
-            return _persistence.DeleteLegalService(id);
+            return _persistence.DeleteSubject(id);
         }
     }
 }

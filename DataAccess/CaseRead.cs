@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -24,11 +24,15 @@ namespace DataAccess
             _command.Connection = _connection;
         }
 
-        internal List<CaseE> GetCases()
+        internal List<CaseM> GetCases()
         {
-            List<CaseE> cases = new List<CaseE>();
+            List<CaseM> cases = new List<CaseM>();
 
-            _command.CommandText = "SELECT* FROM ViewCases";
+            _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, cl.FirstName AS cFName, " +
+                                   "cl.LastName AS cLName, sb.[Name] AS subjectName FROM [Case] c "+
+                                   "JOIN Employee e ON  c.RespEmp_ID = e.ID " +
+                                   "JOIN Client cl ON c.Client_ID = cl.ID " +
+                                   "JOIN[Subject] sb ON c.Subject_ID = sb.ID ";
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -37,21 +41,21 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    CaseE c1 = new CaseE();
+                    CaseM c1 = new CaseM();
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
                     c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
                     c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
                     c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
                     c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
-                    c1.Service = reader["ServiceName"] != DBNull.Value ? reader["ServiceName"].ToString() : string.Empty;
+                    c1.Subject = reader["SubjectName"] != DBNull.Value ? reader["SubjectName"].ToString() : string.Empty;
 
                     c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
-                    c1.Client = $"{(reader["ClientfName"] != DBNull.Value ? reader["ClientfName"].ToString() : string.Empty)} " +
-                                $"{(reader["ClientlName"] != DBNull.Value ? reader["ClientlName"].ToString() : string.Empty)}";
+                    c1.Client = $"{(reader["cFName"] != DBNull.Value ? reader["cFName"].ToString() : string.Empty)} " +
+                                $"{(reader["cLName"] != DBNull.Value ? reader["cLName"].ToString() : string.Empty)}";
 
-                    c1.RespEmployee = $"{(reader["EmployeefName"] != DBNull.Value ? reader["EmployeefName"].ToString() : string.Empty)} " +
-                                      $"{(reader["EmployeelName"] != DBNull.Value ? reader["EmployeelName"].ToString() : string.Empty)}";
+                    c1.RespEmployee = $"{(reader["eFName"] != DBNull.Value ? reader["eFName"].ToString() : string.Empty)} " +
+                                      $"{(reader["eLName"] != DBNull.Value ? reader["eLName"].ToString() : string.Empty)}";
 
                     cases.Add(c1);
                 }
@@ -61,9 +65,9 @@ namespace DataAccess
             return cases;
         }
 
-        internal List<ServiceE> GetProvidedServices(int caseId)
+        internal List<ProvidedServiceM> GetProvidedServices(int caseId)
         {
-            List<ServiceE> services = new List<ServiceE>();
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
             _command.CommandText = "SELECT * FROM ViewProvidedServices where Case_ID = @caseId";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@caseId", caseId));
@@ -74,7 +78,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    ServiceE s1 = new ServiceE();
+                    ProvidedServiceM s1 = new ProvidedServiceM();
 
                     s1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
@@ -84,7 +88,7 @@ namespace DataAccess
                     s1.Date = reader["Date"] != DBNull.Value ? Convert.ToDateTime(reader["Date"]) : DateTime.MinValue;
                     s1.Hours = reader["Hours"] != DBNull.Value ? Convert.ToInt32(reader["Hours"]) : default(int);
                     s1.Km = reader["Km"] != DBNull.Value ? Convert.ToInt32(reader["Km"]) : default(int);
-                    s1.sType = reader["Comment"] != DBNull.Value ? reader["Comment"].ToString() : String.Empty;
+                    s1.Comment = reader["Comment"] != DBNull.Value ? reader["Comment"].ToString() : String.Empty;
                     services.Add(s1);
                 }
 
@@ -93,9 +97,9 @@ namespace DataAccess
             return services;
         }
 
-        internal List<LegalServiceE> GetLegalServices()
+        internal List<SubjectM> GetSubjects()
         {
-            List<LegalServiceE> legServices = new List<LegalServiceE>();
+            List<SubjectM> legServices = new List<SubjectM>();
             _command.CommandText = "SELECT * FROM LegalServices";
             _command.Parameters.Clear();
             PrepareSql();
@@ -105,7 +109,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    LegalServiceE ls1 = new LegalServiceE();
+                    SubjectM ls1 = new SubjectM();
 
                     ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
@@ -122,9 +126,9 @@ namespace DataAccess
             return legServices;
         }
 
-        internal List<EmployeeE> GetLawyers()
+        internal List<EmployeeM> GetLawyers()
         {
-            List<EmployeeE> lawyers = new List<EmployeeE>();
+            List<EmployeeM> lawyers = new List<EmployeeM>();
             _command.CommandText = "SELECT ID, FirstName, LastName FROM Employee WHERE Position = 'Advokat'";
 
             PrepareSql();
@@ -134,7 +138,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    EmployeeE e = new EmployeeE();
+                    EmployeeM e = new EmployeeM();
                     e.Id = Convert.ToInt32(reader["ID"]);
                     e.FirstName = $"{reader["FirstName"].ToString()}";
                     e.LastName =  $"{reader["LastName"].ToString()}";
@@ -146,9 +150,9 @@ namespace DataAccess
             return lawyers;
 
         }
-        internal List<EmployeeE> GetEmplNames()
+        internal List<EmployeeM> GetEmplNames()
         {
-            List<EmployeeE> emplNames = new List<EmployeeE>();
+            List<EmployeeM> emplNames = new List<EmployeeM>();
             _command.CommandText = "SELECT ID, FirstName, LastName FROM Employee";
 
             PrepareSql();
@@ -158,7 +162,7 @@ namespace DataAccess
             {
                 while (reader.Read())
                 {
-                    EmployeeE e = new EmployeeE();
+                    EmployeeM e = new EmployeeM();
                     e.Id = Convert.ToInt32(reader["ID"]);
                     e.FirstName = $"{reader["FirstName"].ToString()}";
                     e.LastName = $"{reader["LastName"].ToString()}";
@@ -170,9 +174,9 @@ namespace DataAccess
             return emplNames;
         }
 
-        public ClientE GetClient(int tlf)
+        public ClientM GetClient(int tlf)
         {
-            ClientE c = new ClientE();
+            ClientM c = new ClientM();
             _command.CommandText = "SELECT * FROM Client WHERE TlfNo = @tlf";
             _command.Parameters.Clear();
 

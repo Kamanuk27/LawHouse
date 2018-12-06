@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Data.SqlClient;
 
@@ -31,7 +31,7 @@ namespace DataAccess
         }
 
         // To Create
-        internal int NewCase(CaseE c1)
+        internal int NewCase(CaseM c1)
         {
             string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
                               "RespEmp_ID, Client_ID) VALUES " +
@@ -45,7 +45,7 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
             _command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
 
-            _command.Parameters.Add(new SqlParameter("@Service_ID", c1.ServiceId));
+            _command.Parameters.Add(new SqlParameter("@Service_ID", c1.SubjectId));
             _command.Parameters.Add(new SqlParameter("@Client_ID", c1.ClientId));
             _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmpId));
 
@@ -54,7 +54,7 @@ namespace DataAccess
         }
 
 
-        internal int NewService(ServiceE s1)
+        internal int NewProvidedService(ProvidedServiceM s1)
         {
             string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
                                                         "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
@@ -68,13 +68,13 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
             _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
             _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            _command.Parameters.Add(new SqlParameter("@Comment", s1.sType));
+            _command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
             _command.Parameters.Add(new SqlParameter("@fName", names[0]));
             _command.Parameters.Add(new SqlParameter("@lName", names[1]));
             return ExecuteNonQuery();
 
         }
-        internal int NewClient(ClientE client)
+        internal int NewClient(ClientM client)
         {
             string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) " +
                                  "VALUES (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
@@ -92,7 +92,7 @@ namespace DataAccess
         }
 
         // To update
-        internal int UpdateCase(CaseE c1)
+        internal int UpdateCase(CaseM c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
                               "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
@@ -107,7 +107,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
        
-        internal int UpdateClient(ClientE client)
+        internal int UpdateClient(ClientM client)
         {
             _command.CommandText = "UPDATE Client SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo " +
                                   "WHERE ID = @id";
@@ -121,7 +121,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int CloseCase(CaseE c1)
+        internal int CloseCase(CaseM c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
             _command.Parameters.Clear();
@@ -142,7 +142,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int UpdateService (ServiceE s1)
+        internal int UpdateProvidedService (ProvidedServiceM s1)
         {
             _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
 
@@ -156,7 +156,7 @@ namespace DataAccess
         }
 
         // To delete
-        internal int DeleteService(int id)
+        internal int DeleteProvidedService(int id)
         {
             _command.CommandText = $"DELETE FROM ProvidedService WHERE ID = @Id";
             _command.Parameters.Clear();

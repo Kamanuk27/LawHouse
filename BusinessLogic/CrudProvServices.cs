@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class Case : CaseE
+    class CrudProvServices : CaseM
     {
         private CaseDb _dbController;
-        internal List<ServiceE> Services;
+        internal List<ProvidedServiceM> Services;
 
 
-        public Case()
+        public CrudProvServices()
         {
             _dbController = CaseDb.Instance;
         }
@@ -27,27 +27,27 @@ namespace BusinessLogic
 
         internal int NewService(int caseID, DateTime date, int hours, int km, string comment, string respEmpl)
         {
-            ServiceE s1 = new ServiceE();
+            ProvidedServiceM s1 = new ProvidedServiceM();
             s1.CaseID = caseID;
             s1.Date = date;
             s1.Hours = hours;
             s1.Km = km;
-            s1.sType = comment;
+            s1.Comment = comment;
             s1.EmployeeName = respEmpl;
             return _dbController.NewService(s1);
         }
-        internal List <ServiceE> GetProvidedServices()
+        internal List <ProvidedServiceM> GetProvidedServices()
         {
             return Services;
         }
         internal int UpdateService(int id, int hours, int km, DateTime date, string comment)
         {
-            ServiceE s1 = new ServiceE();
+            ProvidedServiceM s1 = new ProvidedServiceM();
             s1.Id = id;
             s1.Hours = hours;
             s1.Km = km;
             s1.Date = date;
-            s1.sType = comment;
+            s1.Comment = comment;
             return _dbController.UpdateService(s1);
         }
         internal decimal GetPrice()

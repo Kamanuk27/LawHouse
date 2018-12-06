@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -35,7 +35,7 @@ namespace DataAccess
         }
 
         // To Create
-        internal int NewEmployee(EmployeeE e)
+        internal int NewEmployee(EmployeeM e)
         {
             string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
                                " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
@@ -55,7 +55,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int NewLegalService(LegalServiceE ls1)
+        internal int NewSubject(SubjectM ls1)
         {
             string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
                                 " (@Name, @HoursEstimate, @Price, @TimeEstimate)";
@@ -69,16 +69,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int NewField(FieldE f)
-        {
-            string sqlString = "INSERT INTO Field (Name) VALUES (@name)";
-
-            _command.CommandText = sqlString;
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@name", f.Name));
-            return ExecuteNonQuery();
-        }
-        internal int AddFieldToEmployee(int eId, int fId)
+        internal int AddSpecializationToEmployee(int eId, int sId)
         {
             string sqlString = "INSERT INTO [dbo].[EmployeeFields] (Employee_ID, Field_ID) " +
                               " VALUES (@eId, @fId)";
@@ -86,15 +77,15 @@ namespace DataAccess
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@eId", eId));
-            _command.Parameters.Add(new SqlParameter("@fId", fId));
+            _command.Parameters.Add(new SqlParameter("@fId", sId));
             return ExecuteNonQuery();
         }
 
         // To update
 
-        internal int UpdateLegalService(LegalServiceE ls)
+        internal int UpdateSubject(SubjectM ls)
         {
-            _command.CommandText = "UPDATE LegalService SET Name = @name, HoursEstimale = @hours, TimeEstimate = @time," +
+            _command.CommandText = "UPDATE Subject SET Name = @name, HoursEstimale = @hours, TimeEstimate = @time," +
                                    " Price = @price WHERE ID = @id";
 
             _command.Parameters.Clear();
@@ -105,7 +96,7 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@price", ls.Price));
             return ExecuteNonQuery();
         }
-        internal int UpdateEmployee(EmployeeE e)
+        internal int UpdateEmployee(EmployeeM e)
         {
             _command.CommandText = "UPDATE Employee SET FirstName = @fName, LastName = @lName, " +
                                    "Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo," +
@@ -134,17 +125,9 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
         // To delete
-        internal int DeleteLegalService(int id)
+        internal int DeleteSubject(int id)
         {
-            _command.CommandText = $"DELETE FROM [dbo].[LegalServices] WHERE ID = @id";
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", id));
-            return ExecuteNonQuery();
-        }
-
-        internal int DeleteField(int id)
-        {
-            _command.CommandText = $"DELETE FROM [dbo].[Field] WHERE ID = @id";
+            _command.CommandText = $"DELETE FROM Subject WHERE ID = @id";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
             return ExecuteNonQuery();

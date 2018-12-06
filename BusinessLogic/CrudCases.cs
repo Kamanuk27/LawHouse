@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    internal class CaseCatalog
+    internal class CrudCases
     {
         private CaseDb _dbController;
-        public CaseCatalog()
+        public CrudCases()
         {
             _dbController = CaseDb.Instance;
         }
 
-        internal List<CaseE> GetCases()
+        internal List<CaseM> GetCases()
         {
             return _dbController.GetCases();
         }
 
         internal int NewCase(string caseName, int clientId, int serviceId, DateTime startTime, int empId, decimal negoPrice)
         {
-            CaseE c = new CaseE();
+            CaseM c = new CaseM();
             c.Name = caseName;
             c.ClientId = clientId;
-            c.ServiceId = serviceId;
+            c.SubjectId = serviceId;
             c.StartDate = startTime;
             c.RespEmpId = empId;
             c.NegPrice = negoPrice;
@@ -34,7 +34,7 @@ namespace BusinessLogic
 
         internal int UpdateCase(int id, decimal negPrice, string respEmp)
         {
-            CaseE cE = new CaseE();
+            CaseM cE = new CaseM();
             cE.Id = id;
             cE.NegPrice = negPrice;
             cE.RespEmployee = respEmp;
@@ -44,7 +44,7 @@ namespace BusinessLogic
 
         internal int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
-            CaseE cE = new CaseE();
+            CaseM cE = new CaseM();
             cE.Id = id;
             cE.TotalPrice = totalPrice;
             cE.EndDate = endDate;
@@ -57,12 +57,12 @@ namespace BusinessLogic
         }
 
         // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
-        internal List<EmployeeE> GetLawyers()
+        internal List<EmployeeM> GetLawyers()
         {
             return _dbController.GetLawyers();
         }
 
-        internal List<EmployeeE> GetEmplNames()
+        internal List<EmployeeM> GetEmplNames()
         {
             return _dbController.GetEmplNames();
         }

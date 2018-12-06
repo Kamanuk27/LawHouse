@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
@@ -19,17 +19,17 @@ namespace DataAccess
             _read = new CaseRead(_connection);
         }
 
-        public int NewCase(CaseE c1)
+        public int NewCase(CaseM c1)
         {
             return  _nonQuery.NewCase(c1);
         }
        
         // To Create
-        public int NewService(ServiceE s1)
+        public int NewProvidedService(ProvidedServiceM s1)
         {
-           return _nonQuery.NewService(s1);
+           return _nonQuery.NewProvidedService(s1);
         }
-        public int NewClient(ClientE client)
+        public int NewClient(ClientM client)
         {
             return _nonQuery.NewClient(client);
         }
@@ -37,32 +37,32 @@ namespace DataAccess
       
 
         // To read/get
-        public List<CaseE> GetCases()
+        public List<CaseM> GetCases()
         {
             return _read.GetCases();                                              
         }
 
-        public List<ServiceE> GetProvidedServices(int caseId)
+        public List<ProvidedServiceM> GetProvidedServices(int caseId)
         {
             return _read.GetProvidedServices(caseId);
         }
-        public List<LegalServiceE> GetLegalServices()
+        public List<SubjectM> GetSubjects()
         {
-            return _read.GetLegalServices();
+            return _read.GetSubjects();
         }
 
-        public ClientE GetClient(int tlf)
+        public ClientM GetClient(int tlf)
         {
             return _read.GetClient(tlf);
         }
 
 
-        public List<EmployeeE> GetLawyers()
+        public List<EmployeeM> GetLawyers()
         {
             return _read.GetLawyers();
         }
 
-        public List<EmployeeE> GetEmplNames()
+        public List<EmployeeM> GetEmplNames()
         {
             return _read.GetEmplNames();
         }
@@ -75,22 +75,22 @@ namespace DataAccess
 
 
         // To update
-        public int UpdateCase(CaseE c1)
+        public int UpdateCase(CaseM c1)
         {
             return _nonQuery.UpdateCase(c1);
 
         }
-        public int CloseCase(CaseE c1)
+        public int CloseCase(CaseM c1)
         {
             return _nonQuery.CloseCase(c1);
         }
-        public int UpdateService(ServiceE s1)
+        public int UpdateProvidedService(ProvidedServiceM s1)
         {
-            return _nonQuery.UpdateService(s1);
+            return _nonQuery.UpdateProvidedService(s1);
         }
 
      
-        public int UpdateClient(ClientE client)
+        public int UpdateClient(ClientM client)
         {
             return _nonQuery.UpdateClient(client);
         }
@@ -109,9 +109,9 @@ namespace DataAccess
             return _nonQuery.DeleteCase(id);
         }
 
-        public int DeleteService(int id)
+        public int DeleteProvidedService(int id)
         {
-            return _nonQuery.DeleteService(id);
+            return _nonQuery.DeleteProvidedService(id);
         }
     }
 }

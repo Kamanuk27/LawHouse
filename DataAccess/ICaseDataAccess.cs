@@ -1,5 +1,5 @@
 ﻿
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 
@@ -7,33 +7,33 @@ namespace DataAccess
 {
     public interface ICaseDataAccess
     {
-        int NewCase(CaseE c1);
-        int NewService(ServiceE s1);
-        int NewClient(ClientE client);
+        int NewCase(CaseM c1);
+        int NewProvidedService(ProvidedServiceM s1);
+        int NewClient(ClientM client);
       
 
 
-        List< CaseE> GetCases();
-        List<ServiceE> GetProvidedServices(int caseId);
-        List<LegalServiceE> GetLegalServices();
-        List<EmployeeE> GetLawyers();
-        List<EmployeeE> GetEmplNames();
+        List< CaseM> GetCases();
+        List<ProvidedServiceM> GetProvidedServices(int caseId);
+        List<SubjectM> GetSubjects();
+        List<EmployeeM> GetLawyers();
+        List<EmployeeM> GetEmplNames();
         List<decimal> GetUnitPrices();
 
-        ClientE GetClient(int tlf);
+        ClientM GetClient(int tlf);
 
 
-        int UpdateService(ServiceE s1);
-        int UpdateCase(CaseE c1);
-        int UpdateClient(ClientE client);
+        int UpdateProvidedService(ProvidedServiceM s1);
+        int UpdateCase(CaseM c1);
+        int UpdateClient(ClientM client);
        
 
 
-        int CloseCase(CaseE c1);
+        int CloseCase(CaseM c1);
         int CloseClient(int id);
        
 
         int DeleteCase(int id);
-        int DeleteService(int id);
+        int DeleteProvidedService(int id);
     }
 }

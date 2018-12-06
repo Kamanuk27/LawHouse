@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +16,13 @@ namespace BusinessLogic
         }
 
        
-        internal decimal CalculatePrice(List<decimal> prices, List<ServiceE> servList)
+        internal decimal CalculatePrice(List<decimal> prices, List<ProvidedServiceM> servList)
         {
            int [] count = CountServices(servList);
            return prices[0] * count[0] + prices[1] * count[1];
         }
        
-        internal int [] CountServices(List <ServiceE> servList)
+        internal int [] CountServices(List <ProvidedServiceM> servList)
         {
             int[] count = new int[2];
             foreach (var item in servList)

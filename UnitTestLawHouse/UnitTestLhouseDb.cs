@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLogic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
@@ -23,7 +23,7 @@ namespace UnitTestLawHouse
         public void TestNewEmployeeReturnOne()
         {
             int expected = 1;
-            EmployeeE e = new EmployeeE();
+            EmployeeM e = new EmployeeM();
             int response = _dbController.NewEmployee(e);
             Assert.AreEqual(response, expected);
         }
@@ -31,8 +31,8 @@ namespace UnitTestLawHouse
         public void TestNewLegalServiceReturnOne()
         {
             int expected = 1;
-            LegalServiceE ls = new LegalServiceE();
-            int response = _dbController.NewLegalService(ls);
+            SubjectM ls = new SubjectM();
+            int response = _dbController.NewSubject(ls);
             Assert.AreEqual(response, expected);
         }
         [TestMethod]
@@ -56,7 +56,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetEmployeeesReturnTwoEmployees()
         {
-            List<EmployeeE> employees = _dbController.GetEmployees();
+            List<EmployeeM> employees = _dbController.GetEmployees();
             Assert.AreEqual(2, employees.Count);
         }
 
@@ -65,22 +65,22 @@ namespace UnitTestLawHouse
         {
             var employees = _dbController.GetEmployees();
             Type actual = employees[0].GetType();
-            Type expected = typeof(EmployeeE);
+            Type expected = typeof(EmployeeM);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void TestGetLegalServicesReturnTwoServices()
         {
-            List<LegalServiceE> legalServices = _dbController.GetLegalServices();
+            List<SubjectM> legalServices = _dbController.Getsubjects();
             Assert.AreEqual(2, legalServices.Count);
         }
 
         [TestMethod]
         public void TestGetLegalServicesReturnListOfServices()
         {
-            var legalServices = _dbController.GetLegalServices();
+            var legalServices = _dbController.Getsubjects();
             Type actual = legalServices[0].GetType();
-            Type expected = typeof(LegalServiceE);
+            Type expected = typeof(SubjectM);
             Assert.AreEqual(expected, actual);
         }
 
@@ -121,7 +121,7 @@ namespace UnitTestLawHouse
         public void TestUpdateEmployeeReturnOne()
         {
             int expected = 1;
-            EmployeeE e = new EmployeeE();
+            EmployeeM e = new EmployeeM();
             int actual = _dbController.UpdateEmployee(e);
             Assert.AreEqual(expected, actual);
         }
@@ -137,8 +137,8 @@ namespace UnitTestLawHouse
         public void TestUpdateLegalServiceReturnOne()
         {
             int expected = 1;
-            LegalServiceE ls = new LegalServiceE();
-            int actual = _dbController.UpdateLegalService(ls);
+            SubjectM ls = new SubjectM();
+            int actual = _dbController.UpdateSubjects(ls);
             Assert.AreEqual(expected, actual);
         }
         // Delete metoder

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary.Entities
+namespace LawHouseLibrary.Models
 {
-    public class EmployeeE : Entity
+    public class EmployeeM 
     {
+        public int Id { get; set; }
         public int CprNo { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -19,12 +20,12 @@ namespace LawHouseLibrary.Entities
         public string Position { get; set; }
         public decimal PayRatePrHour { get; set; }
 
-        public EmployeeE()
+        public EmployeeM()
         {
             
         }
 
-        public EmployeeE(int id)
+        public EmployeeM(int id)
         {
             Id = id;
         }

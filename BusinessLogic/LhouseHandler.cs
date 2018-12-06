@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 
 namespace BusinessLogic
 {
     internal class LhouseHandler
     {
-        private EmpCatalog _empCat;
-        private ServiceCatalog _serviceCat;
+        private CrudEmployees _crudEmployee;
+        private CrudSubjects _crudSubject;
         private static LhouseHandler _instance;
 
         public LhouseHandler()
         {
-            _empCat = new EmpCatalog();
-            _serviceCat = new ServiceCatalog();
+            _crudEmployee = new CrudEmployees();
+            _crudSubject = new CrudSubjects();
         }
         internal static LhouseHandler Instance
         {
@@ -29,73 +29,58 @@ namespace BusinessLogic
         }
 
         // Employee Catalog metoder:
-        public List <EmployeeE> GetEmployees()
+        public List <EmployeeM> GetEmployees()
         {
-            return _empCat.GetEmployees();
+            return _crudEmployee.GetEmployees();
         }
 
         public int NewEmployee(int cpr, string fName, string lName, string address, int postNo, 
                                  string eMail, int tlf, DateTime start, string position, decimal money)
         {
-            return _empCat.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+            return _crudEmployee.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
         public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, int tlf, string position, decimal money)
         {
-            return _empCat.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
+            return _crudEmployee.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
         }
 
         public int CloseEmployee(int id)
         {
-            return _empCat.CloseEmployee(id);
+            return _crudEmployee.CloseEmployee(id);
         }
 
-        public List<FieldE> GetEmployeeFields(int id)
+        public List<SubjectM> GetEmpSpecializations(int id)
         {
-          return _empCat.GetEmployeeFields(id);
+          return _crudEmployee.GetEmpSpecializations(id);
 
         }
-        public List<FieldE> GetFields()
-        {
-            return _empCat.GetFields();
-        }
-
-        public int NewField(string name)
-        {
-            return _empCat.NewField(name);
-        }
-
+     
         public int AddField(int eId, int fId)
         {
-            return _empCat.AddField(eId, fId);
+            return _crudEmployee.AddField(eId, fId);
         }
-        public int DeleteField(int id)
-        {
-            return _empCat.DeleteField(id);
-        }
+      
+        // CrudSubject metoder:
 
-        // LegalServices metoder:
-
-        public int NewLegalService(string name, int hours, int time, decimal price)
+        public int NewSubject(string name, int hours, int time, decimal price)
         {
-            return _serviceCat.NewLegalService(name, hours, time, price);
+            return _crudSubject.NewSubject(name, hours, time, price);
         }
 
-        public List<LegalServiceE> GetLegalServices()
+        public List<SubjectM> GetSubject()
         {
-            return _serviceCat.GetLegalServices();
+            return _crudSubject.GetSubject();
         }
 
         public int UpdateLegalService(int id, string name, int hours, int time, decimal price)
         {
-            return _serviceCat.UpdateLegalService(id, name, hours, time, price);
+            return _crudSubject.UpdateSubject(id, name, hours, time, price);
         }
 
 
-        public int DeleteLegalService(int id)
+        public int DeleteSubject(int id)
         {
-            return _serviceCat.DeleteLegalService(id);
+            return _crudSubject.DeleteSubject(id);
         }
-
-        
     }
 }

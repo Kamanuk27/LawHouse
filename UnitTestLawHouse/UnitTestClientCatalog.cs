@@ -2,18 +2,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using BusinessLogic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 
 namespace UnitTestLawHouse
 {
     [TestClass]
     public class UnitTestClientCatalog
     {
-        ClientCatalog clients = new ClientCatalog();
+        CrudClients clients = new CrudClients();
         [TestMethod]
         public void TestGetClientReturnClientWithTlf()
         {
-            ClientE client = clients.GetClient(12345);
+            ClientM client = clients.GetClient(12345);
             Assert.AreEqual(12345, client.TlfNo);
         }
 
@@ -22,7 +22,7 @@ namespace UnitTestLawHouse
         {
             var client = clients.GetClient(12345);
             Type actual = client.GetType();
-            Type expected = typeof(ClientE);
+            Type expected = typeof(ClientM);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]

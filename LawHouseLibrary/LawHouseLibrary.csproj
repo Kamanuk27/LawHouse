@@ -41,13 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\CaseE.cs" />
-    <Compile Include="Entities\ClientE.cs" />
-    <Compile Include="Entities\EmployeeE.cs" />
-    <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\FieldE.cs" />
-    <Compile Include="Entities\LegalServiceE.cs" />
-    <Compile Include="Entities\ServiceE.cs" />
+    <Compile Include="Models\CaseM.cs" />
+    <Compile Include="Models\ClientM.cs" />
+    <Compile Include="Models\EmployeeM.cs" />
+    <Compile Include="Models\SubjectM.cs" />
+    <Compile Include="Models\ProvidedServiceM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

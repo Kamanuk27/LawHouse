@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +9,23 @@ namespace DataAccess
 {
     public interface ILhouseDataAccess
     {
-        int NewEmployee(EmployeeE employee);
-        int NewLegalService(LegalServiceE legal);
-        int NewField(FieldE f);
+        int NewEmployee(EmployeeM employee);
+        int NewSubject(SubjectM subject);
 
-        List<LegalServiceE> GetLegalServices();
-        List<FieldE> GetFields();
-        List<FieldE> GetEmpFields(int id);
-        List<EmployeeE> GetEmployees();
+        List<SubjectM> GetSubjects();
+        List<SubjectM> GetEmpSpecializations(int id);
+        List<EmployeeM> GetEmployees();
+        //List<ProvidedServiceM> GetEmployeesProvServices(int id, DateTime from, DateTime to);
 
       
 
 
-        int UpdateEmployee(EmployeeE emp);
-        int AddFieldToEmployee(int eId, int fId);
-        int UpdateLegalService(LegalServiceE ls);
+        int UpdateEmployee(EmployeeM emp);
+        int AddSpecializationToEmployee(int eId, int sId);
+        int UpdateSubject(SubjectM ls);
         int CloseEmployee(int id);
 
-        int DeleteLegalService(int id);
-        int DeleteField(int id);
-
-
-
+        int DeleteSubject(int id);
+       
     }
 }

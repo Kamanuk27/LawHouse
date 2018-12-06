@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,50 +22,43 @@ namespace DataAccess
             _read = new LhouseRead(_connection);
         }
 
-        public int NewEmployee(EmployeeE employee)
+        public int NewEmployee(EmployeeM employee)
         {
             return _nonQuery.NewEmployee(employee);
         }
-        public int NewLegalService(LegalServiceE legal)
+        public int NewSubject(SubjectM subject)
         {
-            return _nonQuery.NewLegalService(legal);
+            return _nonQuery.NewSubject(subject);
         }
-        public int NewField(FieldE f)
+     
+        public int AddSpecializationToEmployee(int eId, int sId)
         {
-            return _nonQuery.NewField(f);
-        }
-        public int AddFieldToEmployee(int eId, int fId)
-        {
-            return _nonQuery.AddFieldToEmployee(eId, fId);
+            return _nonQuery.AddSpecializationToEmployee(eId, sId);
         }
 
 
-        public List<LegalServiceE> GetLegalServices()
+        public List<SubjectM> GetSubjects()
         {
-            return _read.GetLegalServices();
+            return _read.GetSubjects();
         }
-        public List<FieldE> GetFields()
+      
+        public List<SubjectM> GetEmpSpecializations(int id)
         {
-            return _read.GetFields();
-        }
-
-        public List<FieldE> GetEmpFields(int id)
-        {
-            return _read.GetEmpFields(id);
+            return _read.GetEmpSpecializations(id);
         }
 
-        public List<EmployeeE> GetEmployees()
+        public List<EmployeeM> GetEmployees()
         {
             return _read.GetEmployees();
         }
 
 
-        public int UpdateLegalService(LegalServiceE ls)
+        public int UpdateSubject(SubjectM ls)
         {
-            return _nonQuery.UpdateLegalService(ls);
+            return _nonQuery.UpdateSubject(ls);
         }
 
-        public int UpdateEmployee(EmployeeE emp)
+        public int UpdateEmployee(EmployeeM emp)
         {
             return _nonQuery.UpdateEmployee(emp);
         }
@@ -76,16 +69,9 @@ namespace DataAccess
         }
 
         // To delete
-        public int DeleteLegalService(int id)
+        public int DeleteSubject(int id)
         {
-            return _nonQuery.DeleteLegalService(id);
+            return _nonQuery.DeleteSubject(id);
         }
-
-        public int DeleteField(int id)
-        {
-            return _nonQuery.DeleteField(id);
-        }
-
-
     }
 }

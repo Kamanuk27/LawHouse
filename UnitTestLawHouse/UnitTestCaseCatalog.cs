@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BusinessLogic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse
@@ -9,11 +9,11 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCaseCatalog
     {
-        CaseCatalog caseCat = new CaseCatalog();
+        CrudCases caseCat = new CrudCases();
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            List<CaseE> cases = caseCat.GetCases();
+            List<CaseM> cases = caseCat.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
@@ -22,7 +22,7 @@ namespace UnitTestLawHouse
         {
             var cases = caseCat.GetCases();
             Type actual = cases[0].GetType();
-            Type expected = typeof(CaseE);
+            Type expected = typeof(CaseM);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -69,7 +69,7 @@ namespace UnitTestLawHouse
         {
             var lawyers = caseCat.GetLawyers();
             Type actual = lawyers[0].GetType();
-            Type expected = typeof(EmployeeE);
+            Type expected = typeof(EmployeeM);
             Assert.AreEqual(expected, actual);
         }
 
@@ -86,7 +86,7 @@ namespace UnitTestLawHouse
         {
             var names = caseCat.GetEmplNames();
             Type actual = names[0].GetType();
-            Type expected = typeof(EmployeeE);
+            Type expected = typeof(EmployeeM);
             Assert.AreEqual(expected, actual);
         }
     }

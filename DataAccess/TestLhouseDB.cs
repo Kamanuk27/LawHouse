@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +10,11 @@ namespace DataAccess
     class TestLhouseDB : ILhouseDataAccess
     {
         // Metoder for Create
-        public int NewLegalService(LegalServiceE legal)
+        public int NewSubject(SubjectM legal)
         {
             return 1;
         }
-        public int NewEmployee(EmployeeE employee)
+        public int NewEmployee(EmployeeM employee)
         {
             return 1;
         }
@@ -23,7 +23,7 @@ namespace DataAccess
         {
             return 1;
         }
-        public int AddFieldToEmployee(int eId, int fId)
+        public int AddSpecializationToEmployee(int eId, int fId)
         {
             return 1;
         }
@@ -45,28 +45,28 @@ namespace DataAccess
             return fields;
         }
 
-        public List<EmployeeE> GetEmployees()
+        public List<EmployeeM> GetEmployees()
         {
-            List<EmployeeE> employees = new List<EmployeeE>();
-            employees.Add(new EmployeeE(23));
-            employees.Add(new EmployeeE(12));
+            List<EmployeeM> employees = new List<EmployeeM>();
+            employees.Add(new EmployeeM(23));
+            employees.Add(new EmployeeM(12));
             return employees;
         }
 
-        public List<LegalServiceE> GetLegalServices()
+        public List<SubjectM> GetSubjects()
         {
-            List<LegalServiceE> legalServices = new List<LegalServiceE>();
-            legalServices.Add(new LegalServiceE(1));
-            legalServices.Add(new LegalServiceE(2));
+            List<SubjectM> legalServices = new List<SubjectM>();
+            legalServices.Add(new SubjectM(1));
+            legalServices.Add(new SubjectM(2));
             return legalServices;
         }
 
         //Metoder for Update
-        public int UpdateLegalService(LegalServiceE ls)
+        public int UpdateSubject(SubjectM ls)
         {
             return 1;
         }
-        public int UpdateEmployee(EmployeeE emp)
+        public int UpdateEmployee(EmployeeM emp)
         {
             return 1;
         }
@@ -77,7 +77,7 @@ namespace DataAccess
         }
 
         //Metoder for Delete
-        public int DeleteLegalService(int id)
+        public int DeleteSubject(int id)
         {
             return 1;
         }

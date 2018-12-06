@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -12,15 +12,15 @@ namespace BusinessLogic
     public class CaseHandler
     {
        
-        private Case _case;
-        private CaseCatalog _cases;
-        private ClientCatalog _clients;
+        private CrudProvServices _case;
+        private CrudCases _cases;
+        private CrudClients _clients;
         private static CaseHandler _instance;
         public CaseHandler()
         {
-            _case = new Case();
-            _cases = new CaseCatalog();
-            _clients = new ClientCatalog();
+            _case = new CrudProvServices();
+            _cases = new CrudCases();
+            _clients = new CrudClients();
         }
         public static CaseHandler Instance
         {
@@ -45,7 +45,7 @@ namespace BusinessLogic
         }
 
 
-        public List<ServiceE> GetProvidedServices(int caseId)
+        public List<ProvidedServiceM> GetProvidedServices(int caseId)
         {
             return _case.GetProvidedServices();
            
@@ -71,7 +71,7 @@ namespace BusinessLogic
         {
             return _cases.NewCase(name, clientId, serviceId, startTime, empId, negPrice);
         }
-        public List<CaseE> GetCases()
+        public List<CaseM> GetCases()
         {
             return _cases.GetCases();
         }
@@ -93,19 +93,19 @@ namespace BusinessLogic
       
 
         // Hjælpemetoder, som returner navne af aktør til dropdown menuer på UI;
-        public List<EmployeeE> GetLawyers()
+        public List<EmployeeM> GetLawyers()
         {
             return _cases.GetLawyers();
         }
 
-        public List<EmployeeE> GetEmplNames()
+        public List<EmployeeM> GetEmplNames()
         {
             return _cases.GetEmplNames();
         }
 
 
         // fra ClientCatalog
-        public ClientE GetClient(int tlf)
+        public ClientM GetClient(int tlf)
         {
             return _clients.GetClient(tlf);
         }

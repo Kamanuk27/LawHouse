@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 
@@ -8,19 +8,19 @@ namespace DataAccess
     internal class TestCaseDB : ICaseDataAccess
     {
         // Metoder for Create
-        public int NewCase(CaseE c1)
+        public int NewCase(CaseM c1)
         {
             return 1;
         }
 
        
-        public int NewService(ServiceE s1)
+        public int NewProvidedService(ProvidedServiceM s1)
         {
             return 1;
         }
 
      
-        public int NewClient(ClientE client)
+        public int NewClient(ClientM client)
         {
             return 1;
         }
@@ -28,49 +28,49 @@ namespace DataAccess
 
 
         // Metoder for Read/Get
-        public List<CaseE> GetCases()
+        public List<CaseM> GetCases()
         {
-            List<CaseE> cases = new List<CaseE>();
-            cases.Add(new CaseE(1));
-            cases.Add(new CaseE(4));
+            List<CaseM> cases = new List<CaseM>();
+            cases.Add(new CaseM(1));
+            cases.Add(new CaseM(4));
             return cases;
         }
 
-        public List <ServiceE> GetProvidedServices(int caseId)
+        public List <ProvidedServiceM> GetProvidedServices(int caseId)
         {
-            List<ServiceE> services = new List<ServiceE>();
-            services.Add(new ServiceE(2, 50));
-            services.Add(new ServiceE(3, 100));
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
+            services.Add(new ProvidedServiceM(2, 50));
+            services.Add(new ProvidedServiceM(3, 100));
             return services;
         }
-        public List<LegalServiceE> GetLegalServices()
+        public List<SubjectM> GetSubjects()
         {
-            List<LegalServiceE> legalServices = new List<LegalServiceE>();
-            legalServices.Add(new LegalServiceE(1));
-            legalServices.Add(new LegalServiceE(2));
+            List<SubjectM> legalServices = new List<SubjectM>();
+            legalServices.Add(new SubjectM(1));
+            legalServices.Add(new SubjectM(2));
             return legalServices;
         }
 
-        public ClientE GetClient(int tlf)
+        public ClientM GetClient(int tlf)
         {
-            ClientE client = new ClientE();
+            ClientM client = new ClientM();
             client.TlfNo = tlf;
             return client;
         }
 
-        public List<EmployeeE> GetLawyers()
+        public List<EmployeeM> GetLawyers()
         {
-            List<EmployeeE> names = new List<EmployeeE>();
-            names.Add(new EmployeeE(1));
-            names.Add(new EmployeeE(2));
+            List<EmployeeM> names = new List<EmployeeM>();
+            names.Add(new EmployeeM(1));
+            names.Add(new EmployeeM(2));
             return names;
         }
 
-        public List<EmployeeE> GetEmplNames()
+        public List<EmployeeM> GetEmplNames()
         {
-            List<EmployeeE> names = new List<EmployeeE>();
-            names.Add(new EmployeeE(1));
-            names.Add(new EmployeeE(2));
+            List<EmployeeM> names = new List<EmployeeM>();
+            names.Add(new EmployeeM(1));
+            names.Add(new EmployeeM(2));
             return names;
         }
 
@@ -83,23 +83,23 @@ namespace DataAccess
         }
 
         //Metoder for Update
-        public int UpdateService (ServiceE s1)
+        public int UpdateProvidedService (ProvidedServiceM s1)
         {
             return 1;
         }
 
-        public int UpdateCase(CaseE c1)
+        public int UpdateCase(CaseM c1)
         {
             return 1;
         }
 
-        public int CloseCase(CaseE c1)
+        public int CloseCase(CaseM c1)
         {
             return 1;
         }
        
     
-        public int UpdateClient(ClientE client)
+        public int UpdateClient(ClientM client)
         {
             return 1;
         }
@@ -117,7 +117,7 @@ namespace DataAccess
             return 1;
         }
 
-        public int DeleteService(int id)
+        public int DeleteProvidedService(int id)
         {
             return 1;
         }

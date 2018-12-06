@@ -2,14 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLogic;
 using System.Collections.Generic;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 
 namespace UnitTestLawHouse
 {
     [TestClass]
     public class UnitTestCase
     {
-       private Case _case = new Case();
+       private CrudProvServices _case = new CrudProvServices();
 
         [TestMethod]
         public void TestInitializeCaseInitializesListOfTwoProvidedservises()
@@ -33,7 +33,7 @@ namespace UnitTestLawHouse
         {
             _case.InitializeCase(2, 3500, "karina Olsen");
             Type actual = _case.Services[0].GetType();
-            Type expected = typeof(ServiceE);
+            Type expected = typeof(ProvidedServiceM);
             Assert.AreEqual(expected, actual);
         }
 
@@ -57,10 +57,10 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetPriceReturnCalculatedPrice4750()
         {
-            Case case2 = new Case();
-            case2.Services = new List<ServiceE>();
-            case2.Services.Add(new ServiceE(50, 2));
-            case2.Services.Add(new ServiceE(200, 1));
+            CrudProvServices case2 = new CrudProvServices();
+            case2.Services = new List<ProvidedServiceM>();
+            case2.Services.Add(new ProvidedServiceM(50, 2));
+            case2.Services.Add(new ProvidedServiceM(200, 1));
             decimal expected = 4750;
             decimal actual = case2.GetPrice();
             Assert.AreEqual(expected, actual);
@@ -85,10 +85,10 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestCalculatePriceReturnCalculatedPrice4750()
         {
-            Case case2 = new Case();
-            case2.Services = new List<ServiceE>();
-            case2.Services.Add(new ServiceE(50, 2));
-            case2.Services.Add(new ServiceE(200, 1));
+            CrudProvServices case2 = new CrudProvServices();
+            case2.Services = new List<ProvidedServiceM>();
+            case2.Services.Add(new ProvidedServiceM(50, 2));
+            case2.Services.Add(new ProvidedServiceM(200, 1));
             decimal expected = 4750;
             decimal actual = case2.CalculatePrice();
             Assert.AreEqual(expected, actual);

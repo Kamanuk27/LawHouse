@@ -5,29 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary.Entities
+namespace LawHouseLibrary.Models
 {
-    public class CaseE : Entity
+    public class CaseM
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int HoursEstimate { get; set; }
         public decimal NegPrice { get; set; }
         public decimal TotalPrice { get; set; }
-        public string Service { get; set; }
-        public int ServiceId { get; set; }
+        public string Subject { get; set; }
+        public int SubjectId { get; set; }
         public string RespEmployee { get; set; }
         public string Client { get; set; }
         public int RespEmpId { get; set; }
         public int ClientId { get; set; }
 
-        public CaseE()
+        public CaseM()
         {
 
         }
         // constractor for tests
-        public CaseE(int id)
+        public CaseM(int id)
         {
             Id = id;
         }

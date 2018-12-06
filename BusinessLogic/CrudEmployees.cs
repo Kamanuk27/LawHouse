@@ -1,4 +1,4 @@
-﻿using LawHouseLibrary.Entities;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class EmpCatalog
+    class CrudEmployees
     {
         LhouseDb _dbController;
         //private List<FieldE> _fields;
 
-        public EmpCatalog()
+        public CrudEmployees()
         {
             _dbController = LhouseDb.Instance;
 
         }
 
-        internal List <EmployeeE> GetEmployees()
+        internal List <EmployeeM> GetEmployees()
         {
             return _dbController.GetEmployees();
         }
@@ -26,7 +26,7 @@ namespace BusinessLogic
         internal int NewEmployee(int cpr, string fName, string lName, string address, int postNo, 
                                  string eMail, int tlf, DateTime start, string position, decimal money)
         {
-            EmployeeE employee = new EmployeeE();
+            EmployeeM employee = new EmployeeM();
             employee.CprNo = cpr;
             employee.FirstName = fName;
             employee.LastName = lName;
@@ -43,7 +43,7 @@ namespace BusinessLogic
 
         internal int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, int tlf, string position, decimal money)
         {
-          EmployeeE emp = new EmployeeE();
+          EmployeeM emp = new EmployeeM();
             emp.Id = id;
             emp.FirstName = fName;
             emp.LastName = lName;
@@ -62,29 +62,15 @@ namespace BusinessLogic
             return _dbController.CloseEmployee(id);
         }
 
-        internal List<FieldE> GetEmployeeFields(int id)
+        internal List<SubjectM> GetEmpSpecializations(int id)
         {
-            return _dbController.GetEmployeeFields(id);
+            return _dbController.GetEmpSpecializations(id);
         }
-        internal List<FieldE> GetFields()
-        {
-            return _dbController.GetFields();
-        }
-
-        internal int NewField(string name)
-        {
-            FieldE f = new FieldE();
-            f.Name = name;
-            return _dbController.NewField(f);
-        }
-
+      
+      
         internal int AddField(int eId, int fId)
         {
             return _dbController.AddField(eId, fId);
-        }
-        internal int DeleteField(int id)
-        {
-            return _dbController.DeleteField(id);
         }
     }
 }

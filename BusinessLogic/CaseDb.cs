@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DataAccess;
-using LawHouseLibrary.Entities;
+using LawHouseLibrary.Models;
 
 namespace BusinessLogic
 {
@@ -26,47 +26,47 @@ namespace BusinessLogic
         }
        
         // Create metoder
-        internal int NewCase(CaseE c1)
+        internal int NewCase(CaseM c1)
         {
             return _persistence.NewCase(c1);
         }
 
 
-        internal int NewService(ServiceE s1)
+        internal int NewService(ProvidedServiceM s1)
         {
-            return _persistence.NewService(s1);
+            return _persistence.NewProvidedService(s1);
         }
 
-        internal int NewClient(ClientE client)
+        internal int NewClient(ClientM client)
         {
             return _persistence.NewClient(client);
         }
        
         // Get/read metoder
-        internal List<CaseE> GetCases()
+        internal List<CaseM> GetCases()
         {
             return _persistence.GetCases();
         }
 
-        internal List<ServiceE> GetProvidedServices(int caseId)
+        internal List<ProvidedServiceM> GetProvidedServices(int caseId)
         {
             return _persistence.GetProvidedServices(caseId);
         }
-        internal List<LegalServiceE> GetLegalServices()
+        internal List<SubjectM> GetLegalServices()
         {
-            return _persistence.GetLegalServices();
+            return _persistence.GetSubjects();
         }
-        internal ClientE GetClient(int tlf)
+        internal ClientM GetClient(int tlf)
         {
             return _persistence.GetClient(tlf);
         }
        
-        internal List<EmployeeE> GetLawyers()
+        internal List<EmployeeM> GetLawyers()
         {
             return _persistence.GetLawyers();
         }
 
-        internal  List<EmployeeE> GetEmplNames()
+        internal  List<EmployeeM> GetEmplNames()
         {
             return _persistence.GetEmplNames();
         }
@@ -78,21 +78,21 @@ namespace BusinessLogic
 
         // Update/Close metoder
 
-        internal int UpdateService(ServiceE s1)
+        internal int UpdateService(ProvidedServiceM s1)
         {
-            return _persistence.UpdateService(s1);
+            return _persistence.UpdateProvidedService(s1);
         }
 
-        internal int UpdateCase(CaseE c1)
+        internal int UpdateCase(CaseM c1)
         {
             return _persistence.UpdateCase(c1);
         }
-        internal int CloseCase(CaseE c1)
+        internal int CloseCase(CaseM c1)
         {
             return _persistence.CloseCase(c1);
         }
 
-        internal int UpdateClient(ClientE client)
+        internal int UpdateClient(ClientM client)
         {
             return _persistence.UpdateClient(client);
         }
@@ -109,7 +109,7 @@ namespace BusinessLogic
 
         internal int DeleteService(int id)
         {
-            return _persistence.DeleteService(id);
+            return _persistence.DeleteProvidedService(id);
         }
     }
 }

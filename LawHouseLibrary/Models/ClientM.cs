@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary.Entities
+namespace LawHouseLibrary.Models
 {
-    public class ClientE : Entity
+    public class ClientM
     {
-
+        public int Id { get; set; }
         public int CprNo { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,12 +18,12 @@ namespace LawHouseLibrary.Entities
         public string Email { get; set; }
         public int TlfNo { get; set; }
 
-        public ClientE()
+        public ClientM()
         {
             
         }
 
-        public ClientE(int id)
+        public ClientM(int id)
         {
             Id = id;
         }

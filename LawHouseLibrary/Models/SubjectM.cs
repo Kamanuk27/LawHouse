@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LawHouseLibrary.Entities
+namespace LawHouseLibrary.Models
 {
-    public class LegalServiceE : Entity
+    public class SubjectM
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int HoursEstimate { get; set; }
         public decimal Price { get; set; }
         public int TimeEstimate { get; set; }
 
-        public LegalServiceE()
+        public SubjectM()
         {
 
         }
-        public LegalServiceE(int id)
+        public SubjectM(int id)
         {
             Id = id;
         }
