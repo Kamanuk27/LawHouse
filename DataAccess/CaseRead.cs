@@ -96,7 +96,7 @@ namespace DataAccess
         internal List<LegalServiceE> GetLegalServices()
         {
             List<LegalServiceE> legServices = new List<LegalServiceE>();
-            _command.CommandText = "SELECT * FROM LegalServices";
+            _command.CommandText = "SELECT * FROM Subject";
             _command.Parameters.Clear();
             PrepareSql();
             SqlDataReader reader = null;

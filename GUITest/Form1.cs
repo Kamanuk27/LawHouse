@@ -43,13 +43,6 @@ namespace GUITest
             }
         }
 
-        //private void GetServiceId()
-        //{
-        //    foreach (var s1 in _caseHandler.GetLegalServices())
-        //    {
-        //        CrCaseServiceCom.Items.Add(s1.Id);
-        //    }
-        //}
         private void ClearTxtBoxs()
         {
             RespEmpCombo.Text = "";
@@ -222,7 +215,10 @@ namespace GUITest
         {
             foreach (var s in _hrHandler.GetLegalServices())
             {
-                if (s.Name == CrCaseServiceCom.Text)
+                string[] getServoceId = CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string serviceId = getServoceId[0];
+
+                if (s.Id.ToString() == serviceId)
                 {
                     CrCasePrice.Text = s.Price.ToString();
                     CrCaseTimeUsed.Text = s.HoursEstimate.ToString();

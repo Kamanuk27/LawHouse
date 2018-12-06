@@ -164,7 +164,7 @@ namespace GUITest
             int id = Convert.ToInt32(getAdvokatId[0]);
             string[] getServiceId = LServInsertCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int sId = Convert.ToInt32(getServiceId[0]);
-            
+            _hrHandler.GetEmployeeFields(id);
 
         }
     }
