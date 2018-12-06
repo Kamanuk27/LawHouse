@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouseLibrary", "LawHouseLibrary\LawHouseLibrary.csproj", "{D8E833FC-716B-4CC5-9E17-2FD32749162A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUITest", "GUITest\GUITest.csproj", "{D5824537-69F9-4EEA-8E78-13172A31213F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouseTabForm", "LawHouseTabForm\LawHouseTabForm.csproj", "{AB8B28AE-59B9-4C20-A2B2-52444A8F7979}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{D8E833FC-716B-4CC5-9E17-2FD32749162A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8E833FC-716B-4CC5-9E17-2FD32749162A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8E833FC-716B-4CC5-9E17-2FD32749162A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5824537-69F9-4EEA-8E78-13172A31213F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5824537-69F9-4EEA-8E78-13172A31213F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5824537-69F9-4EEA-8E78-13172A31213F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5824537-69F9-4EEA-8E78-13172A31213F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8B28AE-59B9-4C20-A2B2-52444A8F7979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8B28AE-59B9-4C20-A2B2-52444A8F7979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8B28AE-59B9-4C20-A2B2-52444A8F7979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8B28AE-59B9-4C20-A2B2-52444A8F7979}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,27 +4,23 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 
-
-
 namespace LawHouseGUI
 {
     public partial class LawHouseCRUD : Form
     {
         private CaseHandler _handler;
-
         public LawHouseCRUD()
         {
             InitializeComponent();
             _handler = new CaseHandler();
             GriderStart();
             FillComboBoxes();
-
         }
-
         public void FillComboBoxes()
         {
             //foreach (var l1 in _handler.GetLawyers())
             //{
+            
             //    RespEmpCombo.Items.Add(l1);
             //    CrCaseAdvokat.Items.Add(l1);
             //    SpecInsertCom.Items.Add(l1);
@@ -43,7 +39,6 @@ namespace LawHouseGUI
             //    YEmploeeCombox.Items.Add(m1);
             //}
         }
-
         private void ClearServiceTxtBox()
         {
             YEmploeeCombox.Text = "";
@@ -51,7 +46,6 @@ namespace LawHouseGUI
             YKmTxt.Clear();
             YCommentTxt.Clear();
         }
-
         private void ClearTxtBoxs()
         {
 
@@ -60,7 +54,6 @@ namespace LawHouseGUI
             TotalPricetxt.Clear();
 
         }
-
         private void GriderStart()
         {
             foreach (var c1 in _handler.GetCases())
@@ -76,10 +69,8 @@ namespace LawHouseGUI
                 CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;
                 CaseDataGrid.Rows[n].Cells[8].Value = c1.TotalPrice;
                 CaseDataGrid.Rows[n].Cells[9].Value = c1.RespEmployee;
-
             }
         }
-
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
@@ -96,8 +87,6 @@ namespace LawHouseGUI
 
 
         }
-
-
         private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
@@ -114,7 +103,6 @@ namespace LawHouseGUI
             YGriderstart();
 
         }
-
         private void YGriderstart()
         {
             ServiceDataGrid.Rows.Clear();
@@ -129,7 +117,6 @@ namespace LawHouseGUI
                 ServiceDataGrid.Rows[n].Cells[4].Value = service.Hours;
                 ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
             }
-
         }
 
         private void CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -140,20 +127,16 @@ namespace LawHouseGUI
             YHouresTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
             YKmTxt.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
         }
-
-
         private void YEmploeeCombox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
             return;
         }
-
         private void RespEmpCombo_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
             return;
         }
-
         private void search_button_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < CaseDataGrid.RowCount; i++)
@@ -169,8 +152,6 @@ namespace LawHouseGUI
 
             }
         }
-
-
         private void DeleteCaseButton_Click(object sender, EventArgs e)
         {
 
@@ -198,7 +179,6 @@ namespace LawHouseGUI
 
 
         }
-
         private void UpdateCaseButton_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
@@ -222,7 +202,6 @@ namespace LawHouseGUI
 
             }
         }
-
         private void CloseCaseBut_Click(object sender, EventArgs e)
         {
             try
@@ -252,7 +231,6 @@ namespace LawHouseGUI
 
             }
         }
-
         private void GetPrice_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
@@ -268,7 +246,6 @@ namespace LawHouseGUI
             }
 
         }
-
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
             string cpr = NECprTxt.Text;
@@ -283,7 +260,6 @@ namespace LawHouseGUI
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
             //_handler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
-
         private void MakeNewServBut_Click(object sender, EventArgs e)
         {
             string name = MkServiceName.Text;
@@ -292,7 +268,6 @@ namespace LawHouseGUI
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
             //_handler.NewLegalService(name, hours, time, price);
         }
-
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
             //foreach (var s in _handler.GetLegalServices())
@@ -305,7 +280,6 @@ namespace LawHouseGUI
             //    }
             //}
         }
-
         private void NewCaseButt_Click(object sender, EventArgs e)
         {
             string caseName = CrCaseName.Text;
@@ -316,7 +290,6 @@ namespace LawHouseGUI
             decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
             _handler.NewCase(caseName, client, service, startTime, respEmpl, negoPrice);
         }
-
         private void ServiseDeleteBut_Click(object sender, EventArgs e)
         {
 
@@ -345,7 +318,6 @@ namespace LawHouseGUI
 
             }
         }
-
         private void NewClientButt_Click(object sender, EventArgs e)
         {
             string cpr = NewClientCprNo.Text;
@@ -357,7 +329,6 @@ namespace LawHouseGUI
             string tlf = NewClientTelef.Text;
             _handler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
-
         private void NyYdButton_Click(object sender, EventArgs e)
         {
             try
@@ -379,7 +350,6 @@ namespace LawHouseGUI
                 MessageBox.Show("Vælg sage først");
             }
         }
-
         private void YUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -400,8 +370,6 @@ namespace LawHouseGUI
                 MessageBox.Show("Vælg ydelse først");
             }
         }
-
-       
     }
 }
 

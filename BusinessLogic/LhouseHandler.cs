@@ -7,7 +7,7 @@ using LawHouseLibrary.Models;
 
 namespace BusinessLogic
 {
-    internal class LhouseHandler
+    public class LhouseHandler
     {
         private CrudEmployees _crudEmployee;
         private CrudSubjects _crudSubject;
@@ -18,7 +18,7 @@ namespace BusinessLogic
             _crudEmployee = new CrudEmployees();
             _crudSubject = new CrudSubjects();
         }
-        internal static LhouseHandler Instance
+        public static LhouseHandler Instance
         {
             get
             {
@@ -34,12 +34,12 @@ namespace BusinessLogic
             return _crudEmployee.GetEmployees();
         }
 
-        public int NewEmployee(int cpr, string fName, string lName, string address, int postNo, 
-                                 string eMail, int tlf, DateTime start, string position, decimal money)
+        public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, 
+                                 string eMail, string tlf, DateTime start, string position, decimal money)
         {
             return _crudEmployee.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
         }
-        public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, int tlf, string position, decimal money)
+        public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
         {
             return _crudEmployee.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
         }
