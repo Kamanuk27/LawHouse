@@ -22,7 +22,7 @@ namespace BusinessLogic
             return _dbController.GetClient(tlf);
         }
 
-        internal int NewClient(int cpr, string fName, string lName, string address, int postNo, string eMail, int tlf)
+        internal int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
         {
             ClientM client = new ClientM();
             client.CprNo = cpr;
@@ -35,7 +35,7 @@ namespace BusinessLogic
             return _dbController.NewClient(client);
         }
 
-        internal int UpdateClient(string fName, string lName, int cpr, string address, int postNo, string eMail, int tlf)
+        internal int UpdateClient(string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
         {
             ClientM client = new ClientM();
             client.FirstName = fName;

@@ -121,7 +121,7 @@ namespace LawHouseTabForm
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.Id;
                 ServiceDataGrid.Rows[n].Cells[1].Value = service.EmployeeName;
                 ServiceDataGrid.Rows[n].Cells[2].Value = service.Date.ToShortDateString();
-                ServiceDataGrid.Rows[n].Cells[3].Value = service.sType;
+                ServiceDataGrid.Rows[n].Cells[3].Value = service.Comment;
                 ServiceDataGrid.Rows[n].Cells[4].Value = service.Hours;
                 ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
             }
@@ -569,7 +569,7 @@ namespace LawHouseTabForm
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.NewLegalService(name, hours, time, price);
+            _hrHandler.  NewLegalService(name, hours, time, price);
         }
 
         private void UpdateServButt_Click(object sender, EventArgs e)
