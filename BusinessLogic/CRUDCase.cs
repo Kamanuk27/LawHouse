@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    internal class CaseCatalog
+    internal class CRUDCase
     {
         private CaseDb _dbController;
-        public CaseCatalog()
+        public CRUDCase()
         {
             _dbController = CaseDb.Instance;
         }

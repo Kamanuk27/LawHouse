@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class Case : CaseE
+    class CRUDServices : CaseE
     {
         private CaseDb _dbController;
         internal List<ServiceE> Services;
 
 
-        internal Case()
+        internal CRUDServices()
         {
             _dbController = CaseDb.Instance;
         }

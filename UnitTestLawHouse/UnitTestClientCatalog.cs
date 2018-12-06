@@ -9,7 +9,7 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestClientCatalog
     {
-        ClientCatalog clients = new ClientCatalog();
+        CRUDClient clients = new CRUDClient();
         [TestMethod]
         public void TestGetClientReturnClientWithTlf()
         {

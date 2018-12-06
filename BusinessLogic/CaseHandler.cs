@@ -12,15 +12,15 @@ namespace BusinessLogic
     public class CaseHandler
     {
        
-        private Case _case;
-        private CaseCatalog _cases;
-        private ClientCatalog _clients;
+        private CRUDServices _case;
+        private CRUDCase _cases;
+        private CRUDClient _clients;
         private static CaseHandler _instance;
         public CaseHandler()
         {
-            _case = new Case();
-            _cases = new CaseCatalog();
-            _clients = new ClientCatalog();
+            _case = new CRUDServices();
+            _cases = new CRUDCase();
+            _clients = new CRUDClient();
         }
         public static CaseHandler Instance
         {

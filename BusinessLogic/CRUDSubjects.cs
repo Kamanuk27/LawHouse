@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class ServiceCatalog
+    class CRUDSubjects
     {
         private LhouseDb _dbController;
-        public ServiceCatalog()
+        public CRUDSubjects()
         {
             _dbController = LhouseDb.Instance;
         }

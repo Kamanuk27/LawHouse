@@ -9,14 +9,14 @@ namespace BusinessLogic
 {
     public class LhouseHandler
     {
-        private EmpCatalog _empCat;
-        private ServiceCatalog _serviceCat;
+        private CRUDEmployee _empCat;
+        private CRUDSubjects _serviceCat;
         private static LhouseHandler _instance;
 
         public LhouseHandler()
         {
-            _empCat = new EmpCatalog();
-            _serviceCat = new ServiceCatalog();
+            _empCat = new CRUDEmployee();
+            _serviceCat = new CRUDSubjects();
         }
         public static LhouseHandler Instance
         {

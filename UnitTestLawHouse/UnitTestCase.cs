@@ -9,7 +9,7 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCase
     {
-       private Case _case = new Case();
+       private CRUDServices _case = new CRUDServices();
 
         [TestMethod]
         public void TestInitializeCaseInitializesListOfTwoProvidedservises()
@@ -57,7 +57,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestGetPriceReturnCalculatedPrice4750()
         {
-            Case case2 = new Case();
+            CRUDServices case2 = new CRUDServices();
             case2.Services = new List<ServiceE>();
             case2.Services.Add(new ServiceE(50, 2));
             case2.Services.Add(new ServiceE(200, 1));
@@ -85,7 +85,7 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestCalculatePriceReturnCalculatedPrice4750()
         {
-            Case case2 = new Case();
+            CRUDServices case2 = new CRUDServices();
             case2.Services = new List<ServiceE>();
             case2.Services.Add(new ServiceE(50, 2));
             case2.Services.Add(new ServiceE(200, 1));

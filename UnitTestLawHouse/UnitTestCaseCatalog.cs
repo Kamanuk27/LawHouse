@@ -9,7 +9,7 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCaseCatalog
     {
-        CaseCatalog caseCat = new CaseCatalog();
+        CRUDCase caseCat = new CRUDCase();
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {

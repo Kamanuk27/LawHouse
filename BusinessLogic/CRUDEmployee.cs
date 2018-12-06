@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class EmpCatalog
+    class CRUDEmployee
     {
         LhouseDb _dbController;
         //private List<FieldE> _fields;
 
-        public EmpCatalog()
+        public CRUDEmployee()
         {
             _dbController = LhouseDb.Instance;
 

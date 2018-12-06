@@ -1,73 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BusinessLogic.Case" Collapsed="true">
-    <Position X="7.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAABAAAEAAAAAgAABCAAAIACAAAEAAABAA=</HashCode>
-      <FileName>Case.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BusinessLogic.CaseCatalog" Collapsed="true">
-    <Position X="5.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AEEAQACAAAAQAAAAAAAAAAgAoAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CaseCatalog.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="BusinessLogic.CaseDb" Collapsed="true">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEEUQACEAAAQBAAAAACAAAAAoBCAAAAAQAAAEABABAQ=</HashCode>
       <FileName>CaseDb.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BusinessLogic.CaseHandler" Collapsed="true">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+    <Position X="7" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEEUQACAAAAQAAAAEACAAAAAoBCAAIAASAAAEQBABAQ=</HashCode>
       <FileName>CaseHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BusinessLogic.ClientCatalog">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="BusinessLogic.CRUDCase" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAACAAAgAAAAAAAAAAAAAAABAAAQ=</HashCode>
-      <FileName>ClientCatalog.cs</FileName>
+      <HashCode>AEEAQACAAAAQAAAAAAAAAAgAoAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRUDCase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BusinessLogic.EmpCatalog" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+  <Class Name="BusinessLogic.CRUDClient" Collapsed="true">
+    <Position X="2.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAACAAAgAAAAAAAAAAAAAAABAAAQ=</HashCode>
+      <FileName>CRUDClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CRUDEmployee" Collapsed="true">
+    <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAEgAAAgAAAAAEAAAgAAAAACEAIAAAAAAAAAEA=</HashCode>
-      <FileName>EmpCatalog.cs</FileName>
+      <FileName>CRUDEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CRUDSubjects" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>CRUDSubjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessLogic.CRUDServices" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAABAAAEAAAAAgAABCAAAIACAAAEAAABAA=</HashCode>
+      <FileName>CRUDServices.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BusinessLogic.LhouseDb" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEkgAAEgEAAgAAAAAEAAAAAAAAACEAIQAAAAAAACEA=</HashCode>
       <FileName>LhouseDb.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BusinessLogic.LhouseHandler" Collapsed="true">
-    <Position X="3.75" Y="1.25" Width="1.5" />
+    <Position X="6.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEkgAIEgEAAgAgAAAEAAAAAAAAACEAIQAAAAAAACEA=</HashCode>
       <FileName>LhouseHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BusinessLogic.PriceCalculator" Collapsed="true">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAQAAAA=</HashCode>
       <FileName>PriceCalculator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="BusinessLogic.ServiceCatalog" Collapsed="true">
-    <Position X="2.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAgAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>ServiceCatalog.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
