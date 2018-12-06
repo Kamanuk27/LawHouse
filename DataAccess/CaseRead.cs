@@ -68,7 +68,11 @@ namespace DataAccess
         internal List<ProvidedServiceM> GetProvidedServices(int caseId)
         {
             List<ProvidedServiceM> services = new List<ProvidedServiceM>();
-            _command.CommandText = "SELECT * FROM ViewProvidedServices where Case_ID = @caseId";
+            _command.CommandText = "SELECT p.*, e.FirstName AS eFName, e.LastName AS eLName " +	  
+                                   "FROM ProvidedService p "+
+                                   "JOIN Employee e ON p.Employee_ID = e.ID " +
+                                   "JOIN[Case] c ON p.Case_ID = c.ID";
+
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@caseId", caseId));
             PrepareSql();
