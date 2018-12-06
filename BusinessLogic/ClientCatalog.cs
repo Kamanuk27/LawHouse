@@ -12,7 +12,7 @@ namespace BusinessLogic
 
         private CaseDb _dbController;
 
-        public ClientCatalog()
+        internal ClientCatalog()
         {
             _dbController = CaseDb.Instance;
         }

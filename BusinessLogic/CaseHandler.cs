@@ -80,7 +80,7 @@ namespace BusinessLogic
             return _cases.CloseCase(id, total, endDate);
         }
 
-        public int UpdateCaseE(int id, decimal negPrice, string respEmp)
+        public int UpdateCase(int id, decimal negPrice, string respEmp)
         {
             return _cases.UpdateCase(id, negPrice, respEmp);
         }
@@ -101,6 +101,10 @@ namespace BusinessLogic
         public List<EmployeeE> GetEmplNames()
         {
             return _cases.GetEmplNames();
+        }
+        public List<LegalServiceE> GetLegalServices()
+        {
+            return _cases.GetLegalServices();
         }
 
 

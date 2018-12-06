@@ -13,7 +13,7 @@ namespace BusinessLogic
         internal List<ServiceE> Services;
 
 
-        public Case()
+        internal Case()
         {
             _dbController = CaseDb.Instance;
         }
