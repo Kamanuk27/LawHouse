@@ -103,7 +103,7 @@ namespace GUITest
 
         private void NyYdButton_Click(object sender, EventArgs e)
         {
-           // try
+            try
             {
                 DateTime date = Convert.ToDateTime(YDateTimePicker1.Value.ToShortDateString());
                 int hours = YHouresTxt.Text != null ? Convert.ToInt32(YHouresTxt.Text) : 0;
@@ -118,10 +118,10 @@ namespace GUITest
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
             }
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Vælg sage først");
-            //}
+            catch (Exception)
+            {
+                MessageBox.Show("Vælg sage først");
+            }
         }
 
         private void YUpdate_Click(object sender, EventArgs e)
@@ -145,11 +145,6 @@ namespace GUITest
             }
         }
 
-        private void YEmploeeCombox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string[] names = YEmploeeCombox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            int respEmpl = Convert.ToInt32(names[0]);
-            textBox1.Text = respEmpl.ToString();
-        }
+       
     }
 }

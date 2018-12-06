@@ -26,7 +26,7 @@ namespace GUITest
             EmplGridStart();
         }
 
-        private void ClearTxtBoxs()
+        private void ClearTxt()
         {
             NECprTxt.Clear();
             NEFnameTxt.Clear();
@@ -102,7 +102,7 @@ namespace GUITest
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
             _hrHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
-            ClearTxtBoxs();
+            ClearTxt();
             EmlGridView.Rows.Clear();
             EmplGridStart();
         }
@@ -120,7 +120,7 @@ namespace GUITest
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
             _hrHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
-            ClearTxtBoxs();
+            ClearTxt();
             EmlGridView.Rows.Clear();
             EmplGridStart();
         }
@@ -140,7 +140,7 @@ namespace GUITest
 
                     int i = _hrHandler.CloseEmployee(id);
                     MessageBox.Show(i.ToString());
-                    ClearTxtBoxs();
+                    ClearTxt();
                     EmlGridView.Rows.Clear();
                     EmplGridStart();
                 }
@@ -164,7 +164,7 @@ namespace GUITest
             int id = Convert.ToInt32(getAdvokatId[0]);
             string[] getServiceId = LServInsertCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int sId = Convert.ToInt32(getServiceId[0]);
-            _hrHandler.GetEmployeeFields(id);
+           // _hrHandler.GetEmployeeFields(id);
 
         }
     }
