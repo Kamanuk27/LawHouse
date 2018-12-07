@@ -41,18 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaseCrud.cs" />
-    <Compile Include="CaseHandler.cs" />
-    <Compile Include="ClientCrud.cs" />
-    <Compile Include="ClientHandler.cs" />
-    <Compile Include="EmployeeCrud.cs" />
-    <Compile Include="EmployeeHandler.cs" />
-    <Compile Include="PriceCalculator.cs" />
+    <Compile Include="CRUD\CaseCrud.cs" />
+    <Compile Include="Controllers\CaseHandler.cs" />
+    <Compile Include="CRUD\ClientCrud.cs" />
+    <Compile Include="Controllers\ClientHandler.cs" />
+    <Compile Include="CRUD\EmployeeCrud.cs" />
+    <Compile Include="Controllers\EmployeeHandler.cs" />
+    <Compile Include="CRUD\PriceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubjectCrud.cs" />
-    <Compile Include="SubjectHandler.cs" />
-    <Compile Include="ProvidedServiceCrud.cs" />
-    <Compile Include="ProvidedServiceHandler.cs" />
+    <Compile Include="CRUD\SubjectCrud.cs" />
+    <Compile Include="Controllers\SubjectHandler.cs" />
+    <Compile Include="CRUD\ProvidedServiceCrud.cs" />
+    <Compile Include="Controllers\ProvidedServiceHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
