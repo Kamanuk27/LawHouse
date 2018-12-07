@@ -332,8 +332,10 @@ namespace LawHouseTabForm
             else
             {
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal price = _caseHandler.GetPrice(id);
-                TotalPricetxt.Text = price.ToString();
+                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[9].Value);
+               
+                decimal price = _caseHandler.GetPrice(id, negPrice);
+                
             }
         }
 

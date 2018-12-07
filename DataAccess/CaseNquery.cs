@@ -54,26 +54,26 @@ namespace DataAccess
         //}
 
 
-        internal int NewProvidedService(ProvidedServiceM s1)
-        {
-            string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
-                                                        "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
-                               " @Case_ID, @Date, @Hours, @Km, @Comment)";
+        //internal int NewProvidedService(ProvidedServiceM s1)
+        //{
+        //    string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
+        //                                                "((SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)," +
+        //                       " @Case_ID, @Date, @Hours, @Km, @Comment)";
 
-            _command.CommandText = sqlString;
+        //    _command.CommandText = sqlString;
 
-            string[] names = s1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
-            _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
-            _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
-            _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            _command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
-            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
-            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
-            return ExecuteNonQuery();
+        //    string[] names = s1.EmployeeName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@Case_ID", s1.CaseID));
+        //    _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
+        //    _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
+        //    _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+        //    _command.Parameters.Add(new SqlParameter("@Comment", s1.Comment));
+        //    _command.Parameters.Add(new SqlParameter("@fName", names[0]));
+        //    _command.Parameters.Add(new SqlParameter("@lName", names[1]));
+        //    return ExecuteNonQuery();
 
-        }
+        //}
         //internal int NewClient(ClientM client)
         //{
         //    string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) " +
@@ -142,27 +142,27 @@ namespace DataAccess
         //    return ExecuteNonQuery();
         //}
 
-        internal int UpdateProvidedService (ProvidedServiceM s1)
-        {
-            _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
+        //internal int UpdateProvidedService (ProvidedServiceM s1)
+        //{
+        //    _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
 
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
-            _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
-            _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
-            _command.Parameters.Add(new SqlParameter("@id", s1.Id));
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
+        //    _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
+        //    _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+        //    _command.Parameters.Add(new SqlParameter("@id", s1.Id));
 
-            return ExecuteNonQuery();
-        }
+        //    return ExecuteNonQuery();
+        //}
 
-        // To delete
-        internal int DeleteProvidedService(int id)
-        {
-            _command.CommandText = $"DELETE FROM ProvidedService WHERE ID = @Id";
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("Id", id));
-            return ExecuteNonQuery();
-        }
+        //// To delete
+        //internal int DeleteProvidedService(int id)
+        //{
+        //    _command.CommandText = $"DELETE FROM ProvidedService WHERE ID = @Id";
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("Id", id));
+        //    return ExecuteNonQuery();
+        //}
 
         //internal int DeleteCase(int id)
         //{
