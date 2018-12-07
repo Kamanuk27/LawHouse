@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="CaseCrud.cs" />
     <Compile Include="CaseHandler.cs" />
+    <Compile Include="ClientCrud.cs" />
+    <Compile Include="ClientHandler.cs" />
     <Compile Include="CrudProvServices.cs" />
     <Compile Include="CrudCases.cs" />
     <Compile Include="OldCaseHandler.cs" />

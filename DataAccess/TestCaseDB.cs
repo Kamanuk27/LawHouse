@@ -20,10 +20,10 @@ namespace DataAccess
         }
 
      
-        public int NewClient(ClientM client)
-        {
-            return 1;
-        }
+        //public int NewClient(ClientM client)
+        //{
+        //    return 1;
+        //}
 
 
 
@@ -51,12 +51,12 @@ namespace DataAccess
             return legalServices;
         }
 
-        public ClientM GetClient(string tlf)
-        {
-            ClientM client = new ClientM();
-            client.TlfNo = tlf;
-            return client;
-        }
+        //public ClientM GetClient(string tlf)
+        //{
+        //    ClientM client = new ClientM();
+        //    client.TlfNo = tlf;
+        //    return client;
+        //}
 
         public List<EmployeeM> GetLawyers()
         {
@@ -99,15 +99,15 @@ namespace DataAccess
         //}
        
     
-        public int UpdateClient(ClientM client)
-        {
-            return 1;
-        }
+        //public int UpdateClient(ClientM client)
+        //{
+        //    return 1;
+        //}
 
-        public int CloseClient(int id)
-        {
-            return 1;
-        }
+        //public int CloseClient(int id)
+        //{
+        //    return 1;
+        //}
 
      
         //Metoder for Delete

@@ -105,24 +105,24 @@ namespace BusinessLogic
 
 
         // fra ClientCatalog
-        public ClientM GetClient(string tlf)
-        {
-            return _clients.GetClient(tlf);
-        }
+        //public ClientM GetClient(string tlf)
+        //{
+        //    return _clients.GetClient(tlf);
+        //}
 
-        public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
-        {
-            return _clients.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
-        }
+        //public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
+        //{
+        //    return _clients.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+        //}
 
-        public int UpdateClient(string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
-        {
-            return _clients.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
-        }
-        public int CloseClient(int id)
-        {
-            return _clients.CloseClient(id);
-        }
+        //public int UpdateClient(string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
+        //{
+        //    return _clients.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
+        //}
+        //public int CloseClient(int id)
+        //{
+        //    return _clients.CloseClient(id);
+        //}
 
     }
 }

@@ -178,34 +178,34 @@ namespace DataAccess
             return emplNames;
         }
 
-        public ClientM GetClient(string tlf)
-        {
-            ClientM c = new ClientM();
-            _command.CommandText = "SELECT * FROM Client WHERE TlfNo = @tlf";
-            _command.Parameters.Clear();
+        //public ClientM GetClient(string tlf)
+        //{
+        //    ClientM c = new ClientM();
+        //    _command.CommandText = "SELECT * FROM Client WHERE TlfNo = @tlf";
+        //    _command.Parameters.Clear();
 
-            _command.Parameters.Add(new SqlParameter("@tlf", tlf));
-            PrepareSql();
-            SqlDataReader reader = null;
-            reader = _command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                     c.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    c.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty; //Skal denne være string empty?
-                    c.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
-                    c.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
-                    c.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
-                    c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
-                    c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty; //samme her
+        //    _command.Parameters.Add(new SqlParameter("@tlf", tlf));
+        //    PrepareSql();
+        //    SqlDataReader reader = null;
+        //    reader = _command.ExecuteReader();
+        //    if (reader.HasRows)
+        //    {
+        //        while (reader.Read())
+        //        {
+        //             c.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+        //            c.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty; //Skal denne være string empty?
+        //            c.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
+        //            c.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+        //            c.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
+        //            c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
+        //            c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
+        //            c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty; //samme her
 
-                }
-            }
-            _connection.Close();
-            return c;
-        }
+        //        }
+        //    }
+        //    _connection.Close();
+        //    return c;
+        //}
 
 
 

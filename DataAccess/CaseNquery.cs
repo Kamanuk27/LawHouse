@@ -74,22 +74,22 @@ namespace DataAccess
             return ExecuteNonQuery();
 
         }
-        internal int NewClient(ClientM client)
-        {
-            string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) " +
-                                 "VALUES (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
+        //internal int NewClient(ClientM client)
+        //{
+        //    string sqlString = "INSERT INTO Client (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo) " +
+        //                         "VALUES (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo)";
 
-            _command.CommandText = sqlString;
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@CprNo", client.CprNo));
-            _command.Parameters.Add(new SqlParameter("@FirstName", client.FirstName));
-            _command.Parameters.Add(new SqlParameter("@LastName", client.LastName));
-            _command.Parameters.Add(new SqlParameter("@Address", client.Address));
-            _command.Parameters.Add(new SqlParameter("@PostNo", client.PostNo));
-            _command.Parameters.Add(new SqlParameter("@Email", client.Email));
-            _command.Parameters.Add(new SqlParameter("@TlfNo", client.TlfNo));
-            return ExecuteNonQuery();
-        }
+        //    _command.CommandText = sqlString;
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@CprNo", client.CprNo));
+        //    _command.Parameters.Add(new SqlParameter("@FirstName", client.FirstName));
+        //    _command.Parameters.Add(new SqlParameter("@LastName", client.LastName));
+        //    _command.Parameters.Add(new SqlParameter("@Address", client.Address));
+        //    _command.Parameters.Add(new SqlParameter("@PostNo", client.PostNo));
+        //    _command.Parameters.Add(new SqlParameter("@Email", client.Email));
+        //    _command.Parameters.Add(new SqlParameter("@TlfNo", client.TlfNo));
+        //    return ExecuteNonQuery();
+        //}
 
         // To update
         //internal int UpdateCase(CaseM c1)
@@ -107,19 +107,19 @@ namespace DataAccess
         //    return ExecuteNonQuery();
         //}
        
-        internal int UpdateClient(ClientM client)
-        {
-            _command.CommandText = "UPDATE Client SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo " +
-                                  "WHERE ID = @id";
+        //internal int UpdateClient(ClientM client)
+        //{
+        //    _command.CommandText = "UPDATE Client SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo " +
+        //                          "WHERE ID = @id";
 
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", client.Id));
-            _command.Parameters.Add(new SqlParameter("@Address", client.Address));
-            _command.Parameters.Add(new SqlParameter("@PostNo", client.PostNo));
-            _command.Parameters.Add(new SqlParameter("@Email", client.Email));
-            _command.Parameters.Add(new SqlParameter("@TlfNo", client.TlfNo));
-            return ExecuteNonQuery();
-        }
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@id", client.Id));
+        //    _command.Parameters.Add(new SqlParameter("@Address", client.Address));
+        //    _command.Parameters.Add(new SqlParameter("@PostNo", client.PostNo));
+        //    _command.Parameters.Add(new SqlParameter("@Email", client.Email));
+        //    _command.Parameters.Add(new SqlParameter("@TlfNo", client.TlfNo));
+        //    return ExecuteNonQuery();
+        //}
 
         //internal int CloseCase(CaseM c1)
         //{
@@ -131,16 +131,16 @@ namespace DataAccess
         //    _command.Parameters.Add(new SqlParameter("@id", c1.Id));
         //    return ExecuteNonQuery();
         //}
-        internal int CloseClient(int id)
-        {
-            _command.CommandText = "UPDATE Client SET CprNo = null, FirstName = null, LastName = null, " +
-                                   "Address = null, PostNo = null, Email = null WHERE ID = @id";
+        //internal int CloseClient(int id)
+        //{
+        //    _command.CommandText = "UPDATE Client SET CprNo = null, FirstName = null, LastName = null, " +
+        //                           "Address = null, PostNo = null, Email = null WHERE ID = @id";
 
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", id));
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@id", id));
 
-            return ExecuteNonQuery();
-        }
+        //    return ExecuteNonQuery();
+        //}
 
         internal int UpdateProvidedService (ProvidedServiceM s1)
         {
