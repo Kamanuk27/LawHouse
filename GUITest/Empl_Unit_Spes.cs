@@ -13,14 +13,14 @@ namespace GUITest
 {
     public partial class Empl_Unit_Spes : Form
     {
-        private CaseHandler _caseHandler;
+        private OldCaseHandler _caseHandler;
         private LhouseHandler _hrHandler;
         public int EmpiId { get; set; }
 
         public Empl_Unit_Spes()
         {
             InitializeComponent();
-            _caseHandler = CaseHandler.Instance;
+            _caseHandler = OldCaseHandler.Instance;
             _hrHandler = LhouseHandler.Instance;
             FillComboBoxes();
             EmplGridStart();

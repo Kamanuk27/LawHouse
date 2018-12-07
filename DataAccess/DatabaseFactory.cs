@@ -41,18 +41,18 @@ namespace DataAccess
             return percistance;
         }
 
-        public ICaseDataAccess GetCaseDataAccess()
+        public ICase GetCaseDataAccess()
         {
             string database = ConfigurationManager.AppSettings["database"];
-            ICaseDataAccess percistance = null;
+            ICase percistance = null;
 
             if (database == "sqlserver")
             {
-                percistance = new SqlCaseDataAccess();
+                percistance = new SqlCase();
             }
             else
             {
-                percistance = new TestCaseDB();
+                percistance = new TestCase();
             }
 
             return percistance;

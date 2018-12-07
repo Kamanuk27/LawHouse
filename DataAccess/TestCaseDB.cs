@@ -8,10 +8,10 @@ namespace DataAccess
     internal class TestCaseDB : ICaseDataAccess
     {
         // Metoder for Create
-        public int NewCase(CaseM c1)
-        {
-            return 1;
-        }
+        //public int NewCase(CaseM c1)
+        //{
+        //    return 1;
+        //}
 
        
         public int NewProvidedService(ProvidedServiceM s1)
@@ -28,13 +28,13 @@ namespace DataAccess
 
 
         // Metoder for Read/Get
-        public List<CaseM> GetCases()
-        {
-            List<CaseM> cases = new List<CaseM>();
-            cases.Add(new CaseM(1));
-            cases.Add(new CaseM(4));
-            return cases;
-        }
+        //public List<CaseM> GetCases()
+        //{
+        //    List<CaseM> cases = new List<CaseM>();
+        //    cases.Add(new CaseM(1));
+        //    cases.Add(new CaseM(4));
+        //    return cases;
+        //}
 
         public List <ProvidedServiceM> GetProvidedServices(int caseId)
         {
@@ -88,15 +88,15 @@ namespace DataAccess
             return 1;
         }
 
-        public int UpdateCase(CaseM c1)
-        {
-            return 1;
-        }
+        //public int UpdateCase(CaseM c1)
+        //{
+        //    return 1;
+        //}
 
-        public int CloseCase(CaseM c1)
-        {
-            return 1;
-        }
+        //public int CloseCase(CaseM c1)
+        //{
+        //    return 1;
+        //}
        
     
         public int UpdateClient(ClientM client)
@@ -112,10 +112,10 @@ namespace DataAccess
      
         //Metoder for Delete
       
-        public int DeleteCase(int id)
-        {
-            return 1;
-        }
+        //public int DeleteCase(int id)
+        //{
+        //    return 1;
+        //}
 
         public int DeleteProvidedService(int id)
         {

@@ -31,27 +31,27 @@ namespace DataAccess
         }
 
         // To Create
-        internal int NewCase(CaseM c1)
-        {
-            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
-                              "RespEmp_ID, Client_ID) VALUES " +
-                              "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @Client_ID, @RespEmp_ID)"; 
+        //internal int NewCase(CaseM c1)
+        //{
+        //    string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
+        //                      "RespEmp_ID, Client_ID) VALUES " +
+        //                      "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @Client_ID, @RespEmp_ID)"; 
                             
 
-            _command.CommandText = sqlString;
-            _command.Parameters.Clear();
+        //    _command.CommandText = sqlString;
+        //    _command.Parameters.Clear();
 
-            _command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
-            _command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
-            _command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
+        //    _command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
+        //    _command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));
+        //    _command.Parameters.Add(new SqlParameter("@NegotiatedPrice", c1.NegPrice));
 
-            _command.Parameters.Add(new SqlParameter("@Service_ID", c1.SubjectId));
-            _command.Parameters.Add(new SqlParameter("@Client_ID", c1.ClientId));
-            _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmpId));
+        //    _command.Parameters.Add(new SqlParameter("@Service_ID", c1.SubjectId));
+        //    _command.Parameters.Add(new SqlParameter("@Client_ID", c1.ClientId));
+        //    _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmpId));
 
 
-            return ExecuteNonQuery();
-        }
+        //    return ExecuteNonQuery();
+        //}
 
 
         internal int NewProvidedService(ProvidedServiceM s1)
@@ -92,20 +92,20 @@ namespace DataAccess
         }
 
         // To update
-        internal int UpdateCase(CaseM c1)
-        {
-            _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
-                              "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
-                              "WHERE ID = @id";
-            _command.Parameters.Clear();
+        //internal int UpdateCase(CaseM c1)
+        //{
+        //    _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
+        //                      "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
+        //                      "WHERE ID = @id";
+        //    _command.Parameters.Clear();
 
-            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            _command.Parameters.Add(new SqlParameter("@negPrice", c1.NegPrice));
-            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
-            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
-            _command.Parameters.Add(new SqlParameter("@id", c1.Id));
-            return ExecuteNonQuery();
-        }
+        //    string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        //    _command.Parameters.Add(new SqlParameter("@negPrice", c1.NegPrice));
+        //    _command.Parameters.Add(new SqlParameter("@fName", names[0]));
+        //    _command.Parameters.Add(new SqlParameter("@lName", names[1]));
+        //    _command.Parameters.Add(new SqlParameter("@id", c1.Id));
+        //    return ExecuteNonQuery();
+        //}
        
         internal int UpdateClient(ClientM client)
         {
@@ -121,16 +121,16 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int CloseCase(CaseM c1)
-        {
-            _command.CommandText = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
-            _command.Parameters.Clear();
+        //internal int CloseCase(CaseM c1)
+        //{
+        //    _command.CommandText = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
+        //    _command.Parameters.Clear();
 
-            _command.Parameters.Add(new SqlParameter("@totalPrice", c1.TotalPrice));
-            _command.Parameters.Add(new SqlParameter("@endDate", c1.EndDate));
-            _command.Parameters.Add(new SqlParameter("@id", c1.Id));
-            return ExecuteNonQuery();
-        }
+        //    _command.Parameters.Add(new SqlParameter("@totalPrice", c1.TotalPrice));
+        //    _command.Parameters.Add(new SqlParameter("@endDate", c1.EndDate));
+        //    _command.Parameters.Add(new SqlParameter("@id", c1.Id));
+        //    return ExecuteNonQuery();
+        //}
         internal int CloseClient(int id)
         {
             _command.CommandText = "UPDATE Client SET CprNo = null, FirstName = null, LastName = null, " +
@@ -164,12 +164,12 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        internal int DeleteCase(int id)
-        {
-            _command.CommandText = $"DELETE FROM [dbo].[Case] WHERE ID = @id";
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", id));
-            return ExecuteNonQuery();
-        }
+        //internal int DeleteCase(int id)
+        //{
+        //    _command.CommandText = $"DELETE FROM [dbo].[Case] WHERE ID = @id";
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@id", id));
+        //    return ExecuteNonQuery();
+        //}
     }
 }

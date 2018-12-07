@@ -14,13 +14,13 @@ namespace GUITest
     public partial class Ydelser : Form
     {
 
-        private CaseHandler _caseHandler;
+        private OldCaseHandler _caseHandler;
         private LhouseHandler _hrHandler;
         public int ServiceId { get; set; }
         public Ydelser()
         {
             InitializeComponent();
-            _caseHandler = CaseHandler.Instance;
+            _caseHandler = OldCaseHandler.Instance;
             _hrHandler = LhouseHandler.Instance;
             GetServices();
         }

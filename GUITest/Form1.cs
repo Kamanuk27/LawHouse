@@ -13,7 +13,7 @@ namespace GUITest
 {
     public partial class Form1 : Form
     {
-        private CaseHandler _caseHandler;
+        private OldCaseHandler _caseHandler;
         private LhouseHandler _hrHandler;
         private int ClientId { get; set; }
        
@@ -23,7 +23,7 @@ namespace GUITest
         public Form1()
         {
             InitializeComponent();
-            _caseHandler = new CaseHandler();
+            _caseHandler = new OldCaseHandler();
             _hrHandler = LhouseHandler.Instance;
             FillComboBoxes();
             GriderStart();

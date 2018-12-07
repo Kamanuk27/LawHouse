@@ -9,7 +9,7 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCaseHandler
     {
-        CaseHandler handler = new CaseHandler();
+        OldCaseHandler handler = new OldCaseHandler();
 
        
 

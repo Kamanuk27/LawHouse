@@ -13,7 +13,7 @@ namespace LawHouseTabForm
 {
     public partial class MainForm : Form
     {
-        private CaseHandler _caseHandler;
+        private OldCaseHandler _caseHandler;
         private LhouseHandler _hrHandler;
         private int CaseId { get; set; }
         public int EmpiId { get; set; }
@@ -23,7 +23,7 @@ namespace LawHouseTabForm
         public MainForm()
         {
             InitializeComponent();
-            _caseHandler = new CaseHandler();
+            _caseHandler = new OldCaseHandler();
             _hrHandler = LhouseHandler.Instance;
             FillComboBoxes();
             GriderStart();

@@ -14,12 +14,12 @@ namespace GUITest
     public partial class Services : Form
     {
         public int ID { get; set; }
-        private CaseHandler _caseHandler;
+        private OldCaseHandler _caseHandler;
 
         public Services(int id)
         {
             InitializeComponent();
-            _caseHandler = CaseHandler.Instance;
+            _caseHandler = OldCaseHandler.Instance;
             ID = id;
             FillComboBoxes();
             YGriderstart();
