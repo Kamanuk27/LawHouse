@@ -13,8 +13,15 @@ namespace LawHouseTabForm
 {
     public partial class MainForm : Form
     {
-        private OldCaseHandler _caseHandler;
-        private LhouseHandler _hrHandler;
+        //private OldCaseHandler _caseHandler;
+        //private LhouseHandler _hrHandler;
+
+        private CaseHandler _caseHandler;
+        private ClientHandler _clientHandler;
+        private EmployeeHandler _employeeHandler;
+        private SubjectHandler _subjectHandler;
+        private ProvidedServiceHandler _pServiceHandler;
+
         private int CaseId { get; set; }
         public int EmpiId { get; set; }
         public int ServiceId { get; set; }
@@ -23,10 +30,18 @@ namespace LawHouseTabForm
         public MainForm()
         {
             InitializeComponent();
-            _caseHandler = new OldCaseHandler();
-            _hrHandler = LhouseHandler.Instance;
+
+            _caseHandler = new CaseHandler();
+            _clientHandler = new ClientHandler();
+            _employeeHandler = new EmployeeHandler();
+            _pServiceHandler = new ProvidedServiceHandler();
+            _subjectHandler = new SubjectHandler();
+
+            //_caseHandler = new OldCaseHandler();
+            //_hrHandler = LhouseHandler.Instance;
+
             FillComboBoxes();
-            GriderStart();
+            ActivateGetCasesGrid();
             EmplGridStart();
             GetServices();
         }
@@ -93,7 +108,7 @@ namespace LawHouseTabForm
             NEmplMoney.Clear();
         }
 
-        private void GriderStart()
+        private void ActivateGetCasesGrid()
         {
             foreach (var c1 in _caseHandler.GetCases())
             {
@@ -111,7 +126,7 @@ namespace LawHouseTabForm
             }
         }
 
-        private void YGriderstart()
+        private void ShowProvidedServicesOnGrid()
         {
             ServiceDataGrid.Rows.Clear();
 
@@ -207,7 +222,7 @@ namespace LawHouseTabForm
             CaseId = id;
             labelCaseName.Text = $"Nr.{id}, {name}";
             //_handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
-            YGriderstart();
+            ShowProvidedServicesOnGrid();
             tabControl1.SelectTab(tabPage2);
 
         }
@@ -261,7 +276,7 @@ namespace LawHouseTabForm
                     MessageBox.Show(i.ToString());
                     ClearTxtBoxs();
                     CaseDataGrid.Rows.Clear();
-                    GriderStart();
+                    ActivateGetCasesGrid();
                 }
                 else
                 {
@@ -309,7 +324,7 @@ namespace LawHouseTabForm
                     MessageBox.Show(i.ToString());
                     ClearTxtBoxs();
                     CaseDataGrid.Rows.Clear();
-                    GriderStart();
+                    ActivateGetCasesGrid();
                 }
                 else
                 {
@@ -413,7 +428,7 @@ namespace LawHouseTabForm
                     MessageBox.Show(i.ToString());
                     ClearServiceTxtBox();
                     ServiceDataGrid.Rows.Clear();
-                    YGriderstart();
+                    ShowProvidedServicesOnGrid();
 
                 }
                 else
@@ -441,7 +456,7 @@ namespace LawHouseTabForm
                 MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
-                YGriderstart();
+                ShowProvidedServicesOnGrid();
             }
             catch (Exception)
             {
@@ -464,7 +479,7 @@ namespace LawHouseTabForm
                 MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
-                YGriderstart();
+                ShowProvidedServicesOnGrid();
             }
             catch (Exception)
             {

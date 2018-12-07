@@ -7,7 +7,7 @@ using LawHouseLibrary.Models;
 
 namespace BusinessLogic
 {
-    class ProvidedServiceHandler
+    public class ProvidedServiceHandler
     {
         private static ProvidedServiceHandler _instance;
         private ProvidedServiceCrud _providedServiceCrud ;
