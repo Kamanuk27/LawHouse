@@ -37,7 +37,7 @@ namespace GUITest
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
-            foreach (var s1 in _caseHandler.GetLegalServices())
+            foreach (var s1 in _hrHandler.GetSubject())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -60,7 +60,7 @@ namespace GUITest
                 CaseDataGrid.Rows[n].Cells[2].Value = c1.Client;
                 CaseDataGrid.Rows[n].Cells[3].Value = c1.StartDate.ToShortDateString();
                 CaseDataGrid.Rows[n].Cells[4].Value = c1.EndDate.ToShortDateString();
-                CaseDataGrid.Rows[n].Cells[5].Value = c1.Service;
+                CaseDataGrid.Rows[n].Cells[5].Value = c1.Subject;
                 CaseDataGrid.Rows[n].Cells[6].Value = c1.HoursEstimate;
                 CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;
                 CaseDataGrid.Rows[n].Cells[8].Value = c1.TotalPrice;
@@ -153,7 +153,7 @@ namespace GUITest
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
-                int i = _caseHandler.UpdateCase(id, negPrice, respEmpl);
+                int i = _caseHandler.UpdateCaseE(id, negPrice, respEmpl);
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
@@ -213,7 +213,7 @@ namespace GUITest
         //Delete???
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _hrHandler.GetLegalServices())
+            foreach (var s in _hrHandler.GetSubject())
             {
                 string[] getServoceId = CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 string serviceId = getServoceId[0];

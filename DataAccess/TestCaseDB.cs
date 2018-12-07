@@ -51,7 +51,7 @@ namespace DataAccess
             return legalServices;
         }
 
-        public ClientM GetClient(int tlf)
+        public ClientM GetClient(string tlf)
         {
             ClientM client = new ClientM();
             client.TlfNo = tlf;

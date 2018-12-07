@@ -17,7 +17,7 @@ namespace BusinessLogic
             _dbController = CaseDb.Instance;
         }
 
-        internal ClientM GetClient(int tlf)
+        internal ClientM GetClient(string tlf)
         {
             return _dbController.GetClient(tlf);
         }

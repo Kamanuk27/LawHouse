@@ -67,9 +67,9 @@ namespace BusinessLogic
             return _dbController.GetEmplNames();
         }
 
-        internal List<ProvidedServiceM> GetProvidedServices()
+        internal List<ProvidedServiceM> GetProvidedServices(int id)
         {
-            return _dbController.GetProvidedServices();
+            return _dbController.GetProvidedServices(id);
         }
 
     }

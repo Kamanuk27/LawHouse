@@ -49,7 +49,7 @@ namespace GUITest
 
             }
 
-            foreach (var s1 in _caseHandler.GetLegalServices())
+            foreach (var s1 in _hrHandler.GetSubject())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }

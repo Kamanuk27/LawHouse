@@ -51,7 +51,7 @@ namespace DataAccess
             return _read.GetSubjects();
         }
 
-        public ClientM GetClient(int tlf)
+        public ClientM GetClient(string tlf)
         {
             return _read.GetClient(tlf);
         }

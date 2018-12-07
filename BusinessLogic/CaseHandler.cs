@@ -105,7 +105,7 @@ namespace BusinessLogic
 
 
         // fra ClientCatalog
-        public ClientM GetClient(int tlf)
+        public ClientM GetClient(string tlf)
         {
             return _clients.GetClient(tlf);
         }

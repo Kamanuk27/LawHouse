@@ -27,7 +27,7 @@ namespace GUITest
 
         private void GetServices()
         {
-            foreach (var c1 in _hrHandler.GetLegalServices())
+            foreach (var c1 in _hrHandler.GetSubject())
             {
                 int n = ServiceGridView.Rows.Add();
                 ServiceGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -43,7 +43,7 @@ namespace GUITest
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.NewLegalService(name, hours, time, price);
+            _hrHandler.NewSubject(name, hours, time, price);
         }
 
         private void UpdateServButt_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace GUITest
 
         private void DeleteServButt_Click(object sender, EventArgs e)
         {
-            _hrHandler.DeleteLegalService(ServiceId);
+            _hrHandler.DeleteSubject(ServiceId);
         }
     }
 }

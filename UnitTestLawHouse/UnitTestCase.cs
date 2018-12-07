@@ -24,7 +24,7 @@ namespace UnitTestLawHouse
         public void TestNewServiceReturnOne()
         { 
             int expected = 1;
-            int actual = _case.NewService(1, DateTime.Now, 2, 50, "Møde", "Karina Olsen");
+            int actual = _case.NewService(1, DateTime.Now, 2, 50, "Møde", 2);
             Assert.AreEqual(expected, actual);
         }
 

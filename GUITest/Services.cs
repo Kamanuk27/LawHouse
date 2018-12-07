@@ -35,7 +35,7 @@ namespace GUITest
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.Id;
                 ServiceDataGrid.Rows[n].Cells[1].Value = service.EmployeeName;
                 ServiceDataGrid.Rows[n].Cells[2].Value = service.Date.ToShortDateString();
-                ServiceDataGrid.Rows[n].Cells[3].Value = service.sType;
+                ServiceDataGrid.Rows[n].Cells[3].Value = service.Comment;
                 ServiceDataGrid.Rows[n].Cells[4].Value = service.Hours;
                 ServiceDataGrid.Rows[n].Cells[5].Value = service.Km;
             }

@@ -19,30 +19,35 @@ namespace DataAccess
             return 1;
         }
 
-        public int NewField(FieldE f)
-        {
-            return 1;
-        }
+        //public int NewField(FieldE f)
+        //{
+        //    return 1;
+        //}
         public int AddSpecializationToEmployee(int eId, int fId)
         {
             return 1;
         }
 
         // Metoder for Read/Get
-        public List<FieldE> GetFields()
-        {
-            List<FieldE> fields = new List<FieldE>();
-            fields.Add(new FieldE(1));
-            fields.Add(new FieldE(2));
-            return fields;
-        }
+        //public List<FieldE> GetFields()
+        //{
+        //    List<FieldE> fields = new List<FieldE>();
+        //    fields.Add(new FieldE(1));
+        //    fields.Add(new FieldE(2));
+        //    return fields;
+        //}
 
-        public List<FieldE> GetEmpFields(int id)
+        //public List<FieldE> GetEmpFields(int id)
+        //{
+        //    List<FieldE> fields = new List<FieldE>();
+        //    fields.Add(new FieldE(1));
+        //    fields.Add(new FieldE(2));
+        //    return fields;
+        //}
+
+        public List<SubjectM> GetEmpSpecializations(int id)
         {
-            List<FieldE> fields = new List<FieldE>();
-            fields.Add(new FieldE(1));
-            fields.Add(new FieldE(2));
-            return fields;
+            throw new NotImplementedException();
         }
 
         public List<EmployeeM> GetEmployees()
