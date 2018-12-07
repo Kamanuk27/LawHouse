@@ -24,22 +24,22 @@ namespace DataAccess
                 return _instance;
             }
         }
-        public ILhouseDataAccess GetHrDataAccess()
-        {
-            string database = ConfigurationManager.AppSettings["database"];
-            ILhouseDataAccess percistance = null;
+        //public ILhouseDataAccess GetHrDataAccess()
+        //{
+        //    string database = ConfigurationManager.AppSettings["database"];
+        //    ILhouseDataAccess percistance = null;
 
-            if (database == "sqlserver")
-            {
-                percistance =new SqlLhouseDataAccess();
-            }
-            else
-            {
-                percistance = new TestLhouseDB();
-            }
+        //    if (database == "sqlserver")
+        //    {
+        //        percistance =new SqlLhouseDataAccess();
+        //    }
+        //    else
+        //    {
+        //        percistance = new TestLhouseDB();
+        //    }
 
-            return percistance;
-        }
+        //    return percistance;
+        //}
 
         public ICase GetCaseDataAccess()
         {
