@@ -46,6 +46,7 @@
     <Compile Include="ICase.cs" />
     <Compile Include="IEmployee.cs" />
     <Compile Include="IClient.cs" />
+    <Compile Include="ISubject.cs" />
     <Compile Include="LhouseNquery.cs" />
     <Compile Include="LhouseRead.cs" />
     <Compile Include="ICaseDataAccess.cs" />
@@ -58,11 +59,13 @@
     <Compile Include="SqlLhouseDataAccess.cs" />
     <Compile Include="CaseNquery.cs" />
     <Compile Include="CaseRead.cs" />
+    <Compile Include="SqlSubject.cs" />
     <Compile Include="TestCase.cs" />
     <Compile Include="TestCaseDB.cs" />
     <Compile Include="TestClient.cs" />
     <Compile Include="TestEmployee.cs" />
     <Compile Include="TestLhouseDB.cs" />
+    <Compile Include="TestSubject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

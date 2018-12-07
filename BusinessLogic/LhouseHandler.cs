@@ -55,32 +55,29 @@ namespace BusinessLogic
 
         //}
      
-        public int AddField(int eId, int fId)
-        {
-            return _crudEmployee.AddField(eId, fId);
-        }
+
       
         // CrudSubject metoder:
 
-        public int NewSubject(string name, int hours, int time, decimal price)
-        {
-            return _crudSubject.NewSubject(name, hours, time, price);
-        }
+        //public int NewSubject(string name, int hours, int time, decimal price)
+        //{
+        //    return _crudSubject.NewSubject(name, hours, time, price);
+        //}
 
-        public List<SubjectM> GetSubject()
-        {
-            return _crudSubject.GetSubject();
-        }
+        //public List<SubjectM> GetSubject()
+        //{
+        //    return _crudSubject.GetSubject();
+        //}
 
-        public int UpdateLegalService(int id, string name, int hours, int time, decimal price)
-        {
-            return _crudSubject.UpdateSubject(id, name, hours, time, price);
-        }
+        //public int UpdateSubjects(int id, string name, int hours, int time, decimal price)
+        //{
+        //    return _crudSubject.UpdateSubject(id, name, hours, time, price);
+        //}
 
 
-        public int DeleteSubject(int id)
-        {
-            return _crudSubject.DeleteSubject(id);
-        }
+        //public int DeleteSubject(int id)
+        //{
+        //    return _crudSubject.DeleteSubject(id);
+        //}
     }
 }

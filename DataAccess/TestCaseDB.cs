@@ -43,13 +43,13 @@ namespace DataAccess
             services.Add(new ProvidedServiceM(3, 100));
             return services;
         }
-        public List<SubjectM> GetSubjects()
-        {
-            List<SubjectM> legalServices = new List<SubjectM>();
-            legalServices.Add(new SubjectM(1));
-            legalServices.Add(new SubjectM(2));
-            return legalServices;
-        }
+        //public List<SubjectM> GetSubjects()
+        //{
+        //    List<SubjectM> legalServices = new List<SubjectM>();
+        //    legalServices.Add(new SubjectM(1));
+        //    legalServices.Add(new SubjectM(2));
+        //    return legalServices;
+        //}
 
         //public ClientM GetClient(string tlf)
         //{

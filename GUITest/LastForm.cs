@@ -52,7 +52,7 @@ namespace GUITest
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.UpdateLegalService(ServiceId, name, hours, time, price);
+            _hrHandler.UpdateSubjects(ServiceId, name, hours, time, price);
         }
 
         private void ServiceGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

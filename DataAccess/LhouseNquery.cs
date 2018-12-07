@@ -55,19 +55,19 @@ namespace DataAccess
             //return ExecuteNonQuery();
         //}
 
-        internal int NewSubject(SubjectM ls1)
-        {
-            string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
-                                " (@Name, @HoursEstimate, @Price, @TimeEstimate)";
+        //internal int NewSubject(SubjectM ls1)
+        //{
+        //    string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
+        //                        " (@Name, @HoursEstimate, @Price, @TimeEstimate)";
 
-            _command.CommandText = sqlString;
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@Name", ls1.Name));
-            _command.Parameters.Add(new SqlParameter("@HoursEstimate", ls1.HoursEstimate));
-            _command.Parameters.Add(new SqlParameter("@Price", ls1.Price));
-            _command.Parameters.Add(new SqlParameter("@TimeEstimate", ls1.TimeEstimate));
-            return ExecuteNonQuery();
-        }
+        //    _command.CommandText = sqlString;
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@Name", ls1.Name));
+        //    _command.Parameters.Add(new SqlParameter("@HoursEstimate", ls1.HoursEstimate));
+        //    _command.Parameters.Add(new SqlParameter("@Price", ls1.Price));
+        //    _command.Parameters.Add(new SqlParameter("@TimeEstimate", ls1.TimeEstimate));
+        //    return ExecuteNonQuery();
+        //}
 
         internal int AddSpecializationToEmployee(int eId, int sId)
         {
@@ -83,19 +83,19 @@ namespace DataAccess
 
         // To update
 
-        internal int UpdateSubject(SubjectM ls)
-        {
-            _command.CommandText = "UPDATE Subject SET Name = @name, HoursEstimale = @hours, TimeEstimate = @time," +
-                                   " Price = @price WHERE ID = @id";
+        //internal int UpdateSubject(SubjectM ls)
+        //{
+        //    _command.CommandText = "UPDATE Subject SET Name = @name, HoursEstimale = @hours, TimeEstimate = @time," +
+        //                           " Price = @price WHERE ID = @id";
 
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", ls.Id));
-            _command.Parameters.Add(new SqlParameter("@name", ls.Name));
-            _command.Parameters.Add(new SqlParameter("@hours", ls.HoursEstimate));
-            _command.Parameters.Add(new SqlParameter("@time", ls.TimeEstimate));
-            _command.Parameters.Add(new SqlParameter("@price", ls.Price));
-            return ExecuteNonQuery();
-        }
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@id", ls.Id));
+        //    _command.Parameters.Add(new SqlParameter("@name", ls.Name));
+        //    _command.Parameters.Add(new SqlParameter("@hours", ls.HoursEstimate));
+        //    _command.Parameters.Add(new SqlParameter("@time", ls.TimeEstimate));
+        //    _command.Parameters.Add(new SqlParameter("@price", ls.Price));
+        //    return ExecuteNonQuery();
+        //}
         internal int UpdateEmployee(EmployeeM e)
         {
             _command.CommandText = "UPDATE Employee SET FirstName = @fName, LastName = @lName, " +
@@ -125,12 +125,12 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
         // To delete
-        internal int DeleteSubject(int id)
-        {
-            _command.CommandText = $"DELETE FROM Subject WHERE ID = @id";
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", id));
-            return ExecuteNonQuery();
-        }
+        //internal int DeleteSubject(int id)
+        //{
+        //    _command.CommandText = $"DELETE FROM Subject WHERE ID = @id";
+        //    _command.Parameters.Clear();
+        //    _command.Parameters.Add(new SqlParameter("@id", id));
+        //    return ExecuteNonQuery();
+        //}
     }
 }

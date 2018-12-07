@@ -24,61 +24,61 @@ namespace DataAccess
             _command.Connection = _connection;
         }
 
-        internal List<SubjectM> GetSubjects()
-        {
-            List<SubjectM> subjects = new List<SubjectM>();
-            _command.CommandText = "SELECT * FROM Subject";
-            _command.Parameters.Clear();
-            PrepareSql();
-            SqlDataReader reader = null;
-            reader = _command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    SubjectM ls1 = new SubjectM();
+        //internal List<SubjectM> GetSubjects()
+        //{
+            //List<SubjectM> subjects = new List<SubjectM>();
+            //_command.CommandText = "SELECT * FROM Subject";
+            //_command.Parameters.Clear();
+            //PrepareSql();
+            //SqlDataReader reader = null;
+            //reader = _command.ExecuteReader();
+            //if (reader.HasRows)
+            //{
+            //    while (reader.Read())
+            //    {
+            //        SubjectM ls1 = new SubjectM();
 
-                    ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
-                    ls1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
-                    ls1.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : default(decimal);
-                    ls1.TimeEstimate = reader["TimeEstimate"] != DBNull.Value ? Convert.ToInt32(reader["TimeEstimate"]) : default(int);
+            //        ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+            //        ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
+            //        ls1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
+            //        ls1.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : default(decimal);
+            //        ls1.TimeEstimate = reader["TimeEstimate"] != DBNull.Value ? Convert.ToInt32(reader["TimeEstimate"]) : default(int);
 
 
-                    subjects.Add(ls1);
-                }
+            //        subjects.Add(ls1);
+            //    }
 
-            }
-            _connection.Close();
-            return subjects;
-        }
+            //}
+            //_connection.Close();
+            //return subjects;
+        //}
        
         // her skal det læses fra Specializations
-        public List<SubjectM> GetEmpSpecializations(int id)
-        {
-            List<SubjectM> fields = new List<SubjectM>();
-            _command.CommandText = "SELECT*FROM Subject WHERE [ID] IN " +
-                                   "(SELECT Subject_ID FROM Specialization WHERE Employee_ID = @id)";
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@id", id));
+        //public List<SubjectM> GetEmpSpecializations(int id)
+        //{
+            //List<SubjectM> fields = new List<SubjectM>();
+            //_command.CommandText = "SELECT*FROM Subject WHERE [ID] IN " +
+            //                       "(SELECT Subject_ID FROM Specialization WHERE Employee_ID = @id)";
+            //_command.Parameters.Clear();
+            //_command.Parameters.Add(new SqlParameter("@id", id));
 
-            PrepareSql();
-            SqlDataReader reader = null;
-            reader = _command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    SubjectM f = new SubjectM();
-                    f.Id = Convert.ToInt32(reader["ID"]);
-                    f.Name = reader["Name"].ToString();
-                    fields.Add(f);
-                }
+            //PrepareSql();
+            //SqlDataReader reader = null;
+            //reader = _command.ExecuteReader();
+            //if (reader.HasRows)
+            //{
+            //    while (reader.Read())
+            //    {
+            //        SubjectM f = new SubjectM();
+            //        f.Id = Convert.ToInt32(reader["ID"]);
+            //        f.Name = reader["Name"].ToString();
+            //        fields.Add(f);
+            //    }
 
-            }
-            _connection.Close();
-            return fields;
-        }
+            //}
+            //_connection.Close();
+            //return fields;
+        //}
 
         //public List<EmployeeM> GetEmployees()
         //{

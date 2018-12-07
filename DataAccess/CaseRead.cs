@@ -101,34 +101,34 @@ namespace DataAccess
             return services;
         }
 
-        internal List<SubjectM> GetSubjects()
-        {
-            List<SubjectM> legServices = new List<SubjectM>();
-            _command.CommandText = "SELECT * FROM Subject";
-            _command.Parameters.Clear();
-            PrepareSql();
-            SqlDataReader reader = null;
-            reader = _command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    SubjectM ls1 = new SubjectM();
+        //internal List<SubjectM> GetSubjects()
+        //{
+        //    List<SubjectM> legServices = new List<SubjectM>();
+        //    _command.CommandText = "SELECT * FROM Subject";
+        //    _command.Parameters.Clear();
+        //    PrepareSql();
+        //    SqlDataReader reader = null;
+        //    reader = _command.ExecuteReader();
+        //    if (reader.HasRows)
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            SubjectM ls1 = new SubjectM();
 
-                    ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
-                    ls1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]): default(int);
-                    ls1.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : default(decimal);
-                    ls1.TimeEstimate = reader["TimeEstimate"] != DBNull.Value ? Convert.ToInt32(reader["TimeEstimate"]) : default(int);
+        //            ls1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+        //            ls1.Name = reader["Name"] != DBNull.Value ? reader["Name"].ToString() : string.Empty;
+        //            ls1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]): default(int);
+        //            ls1.Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : default(decimal);
+        //            ls1.TimeEstimate = reader["TimeEstimate"] != DBNull.Value ? Convert.ToInt32(reader["TimeEstimate"]) : default(int);
 
                     
-                    legServices.Add(ls1);
-                }
+        //            legServices.Add(ls1);
+        //        }
 
-            }
-            _connection.Close();
-            return legServices;
-        }
+        //    }
+        //    _connection.Close();
+        //    return legServices;
+        //}
 
         internal List<EmployeeM> GetLawyers()
         {

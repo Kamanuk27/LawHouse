@@ -90,6 +90,23 @@ namespace DataAccess
 
             return percistance;
         }
+
+        public ISubject GetSubjectDataAccess()
+        {
+            string database = ConfigurationManager.AppSettings["database"];
+            ISubject percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new SqlSubject();
+            }
+            else
+            {
+                percistance = new TestSubject();
+            }
+
+            return percistance;
+        }
     }
 }
 

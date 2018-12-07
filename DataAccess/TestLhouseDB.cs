@@ -10,10 +10,10 @@ namespace DataAccess
     class TestLhouseDB : ILhouseDataAccess
     {
         // Metoder for Create
-        public int NewSubject(SubjectM legal)
-        {
-            return 1;
-        }
+        //public int NewSubject(SubjectM legal)
+        //{
+        //    return 1;
+        //}
         public int NewEmployee(EmployeeM employee)
         {
             return 1;
@@ -58,19 +58,19 @@ namespace DataAccess
             return employees;
         }
 
-        public List<SubjectM> GetSubjects()
-        {
-            List<SubjectM> legalServices = new List<SubjectM>();
-            legalServices.Add(new SubjectM(1));
-            legalServices.Add(new SubjectM(2));
-            return legalServices;
-        }
+        //public List<SubjectM> GetSubjects()
+        //{
+        //    List<SubjectM> legalServices = new List<SubjectM>();
+        //    legalServices.Add(new SubjectM(1));
+        //    legalServices.Add(new SubjectM(2));
+        //    return legalServices;
+        //}
 
         //Metoder for Update
-        public int UpdateSubject(SubjectM ls)
-        {
-            return 1;
-        }
+        //public int UpdateSubject(SubjectM ls)
+        //{
+        //    return 1;
+        //}
         public int UpdateEmployee(EmployeeM emp)
         {
             return 1;
@@ -82,14 +82,10 @@ namespace DataAccess
         }
 
         //Metoder for Delete
-        public int DeleteSubject(int id)
-        {
-            return 1;
-        }
+        //public int DeleteSubject(int id)
+        //{
+        //    return 1;
+        //}
 
-        public int DeleteField(int id)
-        {
-            return 1;
-        }
     }
 }
