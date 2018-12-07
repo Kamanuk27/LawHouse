@@ -43,32 +43,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseFactory.cs" />
-    <Compile Include="ICase.cs" />
-    <Compile Include="IEmployee.cs" />
-    <Compile Include="IClient.cs" />
-    <Compile Include="ISubject.cs" />
-    <Compile Include="IProvidedService.cs" />
-    <Compile Include="LhouseNquery.cs" />
-    <Compile Include="LhouseRead.cs" />
-    <Compile Include="ICaseDataAccess.cs" />
-    <Compile Include="ILhouseDataAccess.cs" />
+    <Compile Include="Interfaces\ICase.cs" />
+    <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Interfaces\ISubject.cs" />
+    <Compile Include="Interfaces\IProvidedService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlCase.cs" />
-    <Compile Include="SqlCaseDataAccess.cs" />
-    <Compile Include="SqlEmployee.cs" />
-    <Compile Include="SqlClient.cs" />
-    <Compile Include="SqlEProvidedService.cs" />
-    <Compile Include="SqlLhouseDataAccess.cs" />
-    <Compile Include="CaseNquery.cs" />
-    <Compile Include="CaseRead.cs" />
-    <Compile Include="SqlSubject.cs" />
-    <Compile Include="TestCase.cs" />
-    <Compile Include="TestCaseDB.cs" />
-    <Compile Include="TestClient.cs" />
-    <Compile Include="TestEmployee.cs" />
-    <Compile Include="TestProvidedService.cs" />
-    <Compile Include="TestLhouseDB.cs" />
-    <Compile Include="TestSubject.cs" />
+    <Compile Include="Sql\SqlCase.cs" />
+    <Compile Include="Sql\SqlEmployee.cs" />
+    <Compile Include="Sql\SqlClient.cs" />
+    <Compile Include="Sql\SqlEProvidedService.cs" />
+    <Compile Include="Sql\SqlSubject.cs" />
+    <Compile Include="TestClasses\TestCase.cs" />
+    <Compile Include="TestClasses\TestClient.cs" />
+    <Compile Include="TestClasses\TestEmployee.cs" />
+    <Compile Include="TestClasses\TestProvidedService.cs" />
+    <Compile Include="TestClasses\TestSubject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
