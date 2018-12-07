@@ -9,7 +9,7 @@ namespace DataAccess
     {
         //int NewCase(CaseM c1);
         int NewProvidedService(ProvidedServiceM s1);
-        int NewClient(ClientM client);
+        //int NewClient(ClientM client);
       
 
 
@@ -20,17 +20,17 @@ namespace DataAccess
         List<EmployeeM> GetEmplNames();
         List<decimal> GetUnitPrices();
 
-        ClientM GetClient(string tlf);
+        //ClientM GetClient(string tlf);
 
 
         int UpdateProvidedService(ProvidedServiceM s1);
         //int UpdateCase(CaseM c1);
-        int UpdateClient(ClientM client);
+        //int UpdateClient(ClientM client);
        
 
 
         //int CloseCase(CaseM c1);
-        int CloseClient(int id);
+        //int CloseClient(int id);
        
 
         //int DeleteCase(int id);

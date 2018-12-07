@@ -57,6 +57,23 @@ namespace DataAccess
 
             return percistance;
         }
+
+        public IClient GetClientDataAccess()
+        {
+            string database = ConfigurationManager.AppSettings["database"];
+            IClient percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new SqlClient();
+            }
+            else
+            {
+                percistance = new TestClient();
+            }
+
+            return percistance;
+        }
         public IEmployee GetEmployeeDataAccess()
         {
             string database = ConfigurationManager.AppSettings["database"];
