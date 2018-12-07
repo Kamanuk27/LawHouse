@@ -107,6 +107,22 @@ namespace DataAccess
 
             return percistance;
         }
+        public IProvidedService GetProvidedServiceDataAccess()
+        {
+            string database = ConfigurationManager.AppSettings["database"];
+            IProvidedService percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new SqlEProvidedService();
+            }
+            else
+            {
+                percistance = new TestProvidedService();
+            }
+
+            return percistance;
+        }
     }
 }
 

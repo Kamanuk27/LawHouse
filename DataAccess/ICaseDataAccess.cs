@@ -6,15 +6,15 @@ using System.Collections.Generic;
 namespace DataAccess
 {
     public interface ICaseDataAccess
-    {
+    {  //int NewClient(ClientM client);
+        //List< CaseM> GetCases();
         //int NewCase(CaseM c1);
-        int NewProvidedService(ProvidedServiceM s1);
-        //int NewClient(ClientM client);
+       // int NewProvidedService(ProvidedServiceM s1);
       
 
 
-        //List< CaseM> GetCases();
-        List<ProvidedServiceM> GetProvidedServices(int caseId);
+      
+      //  List<ProvidedServiceM> GetProvidedServices(int caseId);
         List<SubjectM> GetSubjects();
         List<EmployeeM> GetLawyers();
         List<EmployeeM> GetEmplNames();
@@ -23,7 +23,7 @@ namespace DataAccess
         //ClientM GetClient(string tlf);
 
 
-        int UpdateProvidedService(ProvidedServiceM s1);
+      //  int UpdateProvidedService(ProvidedServiceM s1);
         //int UpdateCase(CaseM c1);
         //int UpdateClient(ClientM client);
        
@@ -34,6 +34,6 @@ namespace DataAccess
        
 
         //int DeleteCase(int id);
-        int DeleteProvidedService(int id);
+     //   int DeleteProvidedService(int id);
     }
 }

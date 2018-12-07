@@ -60,6 +60,8 @@
     <Compile Include="CrudSubjects.cs" />
     <Compile Include="SubjectCrud.cs" />
     <Compile Include="SubjectHandler.cs" />
+    <Compile Include="ProvidedServiceCrud.cs" />
+    <Compile Include="ProvidedServiceHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
