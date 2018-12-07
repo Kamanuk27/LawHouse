@@ -57,6 +57,22 @@ namespace DataAccess
 
             return percistance;
         }
+        public IEmployee GetEmployeeDataAccess()
+        {
+            string database = ConfigurationManager.AppSettings["database"];
+            IEmployee percistance = null;
+
+            if (database == "sqlserver")
+            {
+                percistance = new SqlEmployee();
+            }
+            else
+            {
+                percistance = new TestEmployee();
+            }
+
+            return percistance;
+        }
     }
 }
 

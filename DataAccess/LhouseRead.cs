@@ -80,37 +80,37 @@ namespace DataAccess
             return fields;
         }
 
-        public List<EmployeeM> GetEmployees()
-        {
-            List<EmployeeM> employees = new List<EmployeeM>();
-            _command.CommandText = "SELECT * FROM Employee";
-            PrepareSql();
-            SqlDataReader reader = null;
-            reader = _command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    EmployeeM e = new EmployeeM();
+        //public List<EmployeeM> GetEmployees()
+        //{
+        //    List<EmployeeM> employees = new List<EmployeeM>();
+        //    _command.CommandText = "SELECT * FROM Employee";
+        //    PrepareSql();
+        //    SqlDataReader reader = null;
+        //    reader = _command.ExecuteReader();
+        //    if (reader.HasRows)
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            EmployeeM e = new EmployeeM();
 
-                    e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
-                    e.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
-                    e.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
-                    e.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
-                    e.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
-                    e.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
-                    e.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                    e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
-                    e.StartDate = Convert.ToDateTime(reader["StartDate"]);
-                    e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
-                    e.PayRatePrHour = reader["ID"] != DBNull.Value ? Convert.ToDecimal(reader["ID"]) : default(decimal);
+        //            e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+        //            e.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
+        //            e.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
+        //            e.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+        //            e.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
+        //            e.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
+        //            e.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
+        //            e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
+        //            e.StartDate = Convert.ToDateTime(reader["StartDate"]);
+        //            e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
+        //            e.PayRatePrHour = reader["ID"] != DBNull.Value ? Convert.ToDecimal(reader["ID"]) : default(decimal);
 
-                    employees.Add(e);
-                }
-            }
-            _connection.Close();
-            return employees; ;
-        }
+        //            employees.Add(e);
+        //        }
+        //    }
+        //    _connection.Close();
+        //    return employees; ;
+        //}
 
     }
 }

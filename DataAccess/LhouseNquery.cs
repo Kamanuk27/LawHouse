@@ -35,25 +35,25 @@ namespace DataAccess
         }
 
         // To Create
-        internal int NewEmployee(EmployeeM e)
-        {
-            string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
-                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+        //internal int NewEmployee(EmployeeM e)
+        //{
+            //string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
+            //                   " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
 
-            _command.CommandText = sqlString;
-            _command.Parameters.Clear();
-            _command.Parameters.Add(new SqlParameter("@CprNo", e.CprNo));
-            _command.Parameters.Add(new SqlParameter("@FirstName", e.FirstName));
-            _command.Parameters.Add(new SqlParameter("@LastName", e.LastName));
-            _command.Parameters.Add(new SqlParameter("@Address", e.Address));
-            _command.Parameters.Add(new SqlParameter("@PostNo", e.PostNo));
-            _command.Parameters.Add(new SqlParameter("@Email", e.Email));
-            _command.Parameters.Add(new SqlParameter("@TlfNo", e.TlfNo));
-            _command.Parameters.Add(new SqlParameter("@StartDate", e.StartDate));
-            _command.Parameters.Add(new SqlParameter("@Position", e.Position));
-            _command.Parameters.Add(new SqlParameter("@PayRatePrHour", e.PayRatePrHour));
-            return ExecuteNonQuery();
-        }
+            //_command.CommandText = sqlString;
+            //_command.Parameters.Clear();
+            //_command.Parameters.Add(new SqlParameter("@CprNo", e.CprNo));
+            //_command.Parameters.Add(new SqlParameter("@FirstName", e.FirstName));
+            //_command.Parameters.Add(new SqlParameter("@LastName", e.LastName));
+            //_command.Parameters.Add(new SqlParameter("@Address", e.Address));
+            //_command.Parameters.Add(new SqlParameter("@PostNo", e.PostNo));
+            //_command.Parameters.Add(new SqlParameter("@Email", e.Email));
+            //_command.Parameters.Add(new SqlParameter("@TlfNo", e.TlfNo));
+            //_command.Parameters.Add(new SqlParameter("@StartDate", e.StartDate));
+            //_command.Parameters.Add(new SqlParameter("@Position", e.Position));
+            //_command.Parameters.Add(new SqlParameter("@PayRatePrHour", e.PayRatePrHour));
+            //return ExecuteNonQuery();
+        //}
 
         internal int NewSubject(SubjectM ls1)
         {

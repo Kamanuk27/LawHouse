@@ -29,31 +29,31 @@ namespace BusinessLogic
         }
 
         // Employee Catalog metoder:
-        public List <EmployeeM> GetEmployees()
-        {
-            return _crudEmployee.GetEmployees();
-        }
+        //public List <EmployeeM> GetEmployees()
+        //{
+        //    return _crudEmployee.GetEmployees();
+        //}
 
-        public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, 
-                                 string eMail, string tlf, DateTime start, string position, decimal money)
-        {
-            return _crudEmployee.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
-        }
-        public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
-        {
-            return _crudEmployee.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
-        }
+        //public int NewEmployee(string cpr, string fName, string lName, string address, int postNo, 
+        //                         string eMail, string tlf, DateTime start, string position, decimal money)
+        //{
+        //    return _crudEmployee.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+        //}
+        //public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
+        //{
+        //    return _crudEmployee.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);
+        //}
 
-        public int CloseEmployee(int id)
-        {
-            return _crudEmployee.CloseEmployee(id);
-        }
+        //public int CloseEmployee(int id)
+        //{
+        //    return _crudEmployee.CloseEmployee(id);
+        //}
 
-        public List<SubjectM> GetEmpSpecializations(int id)
-        {
-          return _crudEmployee.GetEmpSpecializations(id);
+        //public List<SubjectM> GetEmpSpecializations(int id)
+        //{
+        //  return _crudEmployee.GetEmpSpecializations(id);
 
-        }
+        //}
      
         public int AddField(int eId, int fId)
         {
