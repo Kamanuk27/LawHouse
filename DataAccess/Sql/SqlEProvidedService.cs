@@ -1,36 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using DataAccess.Sql;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-    internal class SqlEProvidedService : IProvidedService
+    internal class SqlEProvidedService : SqlBase, IProvidedService
     {
-
-        private SqlConnection _connection;
-        private SqlCommand _command;
-        public SqlEProvidedService()
-        {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-
-        }
-        private void PrepareSql()
-        {
-            _connection.Open();
-            _command.Connection = _connection;
-        }
-        private int ExecuteNonQuery()
-        {
-            PrepareSql();
-            int rows = _command.ExecuteNonQuery();
-            _connection.Close();
-            return rows;
-        }
+       
         public int NewProvidedService(ProvidedServiceM s1)
         {
             string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +

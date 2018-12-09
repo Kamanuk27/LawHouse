@@ -5,33 +5,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Sql;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-    class SqlCase : ICase
+    class SqlCase : SqlBase, ICase
     {
-      
-        private SqlConnection _connection;
-        private SqlCommand _command;
-        public SqlCase()
-        {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-          
-        }
-        private void PrepareSql()
-        {
-            _connection.Open();
-            _command.Connection = _connection;
-        }
-        private int ExecuteNonQuery()
-        {
-            PrepareSql();
-            int rows = _command.ExecuteNonQuery();
-            _connection.Close();
-            return rows;
-        }
-
+              
         public int NewCase(CaseM c1)
         {
             string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
@@ -59,9 +40,9 @@ namespace DataAccess
 
             _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, cl.FirstName AS cFName, " +
                                    "cl.LastName AS cLName, sb.[Name] AS subjectName FROM [Case] c " +
-                                   "JOIN Employee e ON  c.RespEmp_ID = e.ID " +
+                                   "JOIN Employee e ON c.RespEmp_ID = e.ID " +
                                    "JOIN Client cl ON c.Client_ID = cl.ID " +
-                                   "JOIN[Subject] sb ON c.Subject_ID = sb.ID ";
+                                   "JOIN [Subject] sb ON c.Subject_ID = sb.ID ";
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -74,12 +55,12 @@ namespace DataAccess
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
                     c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
-                    c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
+                    //c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
                     c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
                     c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
                     c1.Subject = reader["SubjectName"] != DBNull.Value ? reader["SubjectName"].ToString() : string.Empty;
 
-                    c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
+                    //c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
                     c1.Client = $"{(reader["cFName"] != DBNull.Value ? reader["cFName"].ToString() : string.Empty)} " +
                                 $"{(reader["cLName"] != DBNull.Value ? reader["cLName"].ToString() : string.Empty)}";
 

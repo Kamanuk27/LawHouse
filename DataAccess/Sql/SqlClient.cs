@@ -5,32 +5,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Sql;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-    class SqlClient : IClient
+    class SqlClient : SqlBase, IClient
     {
-        private SqlConnection _connection;
-        private SqlCommand _command;
-        public SqlClient()
-        {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Sql"].ToString());
-
-        }
-        private void PrepareSql()
-        {
-            _connection.Open();
-            _command.Connection = _connection;
-        }
-        private int ExecuteNonQuery()
-        {
-            PrepareSql();
-            int rows = _command.ExecuteNonQuery();
-            _connection.Close();
-            return rows;
-        }
-
 
         public int CloseClient(int id)
         {

@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\ISubject.cs" />
     <Compile Include="Interfaces\IProvidedService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sql\SqlBase.cs" />
     <Compile Include="Sql\SqlCase.cs" />
     <Compile Include="Sql\SqlEmployee.cs" />
     <Compile Include="Sql\SqlClient.cs" />
