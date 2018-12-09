@@ -38,15 +38,13 @@ namespace BusinessLogic
             return _clientCrud.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
-        public int UpdateClient(string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
+        public int UpdateClient(int id, string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
         {
-            return _clientCrud.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
+            return _clientCrud.UpdateClient(id, fName, lName, cpr, address, postNo, eMail, tlf);
         }
         public int CloseClient(int id)
         {
             return _clientCrud.CloseClient(id);
         }
-
     }
-
 }

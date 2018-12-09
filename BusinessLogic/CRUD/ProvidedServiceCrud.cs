@@ -10,7 +10,7 @@ namespace BusinessLogic
 {
    internal class ProvidedServiceCrud
     {
-        private IProvidedService _dbProvidedService;
+        internal IProvidedService _dbProvidedService;
       
 
         public ProvidedServiceCrud()
@@ -50,8 +50,7 @@ namespace BusinessLogic
         }
         internal decimal GetPrice(int caseId, decimal negPrice)
         {
-            decimal total = negPrice > 0 ? negPrice : CalculatePrice(caseId);
-            return total;
+            return negPrice > 0 ? negPrice : CalculatePrice(caseId);
         }
         internal List<decimal> GetUnitPrices()
         {
@@ -60,8 +59,7 @@ namespace BusinessLogic
 
         internal decimal CalculatePrice(int caseId)
         {
-            List< ProvidedServiceM> Services = new List<ProvidedServiceM>();
-            Services = _dbProvidedService.GetProvidedServices(caseId);
+            List< ProvidedServiceM> Services = _dbProvidedService.GetProvidedServices(caseId);
             if (Services.Count > 0)
             {
                 PriceCalculator calculator = new PriceCalculator();

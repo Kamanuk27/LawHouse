@@ -296,7 +296,7 @@ namespace LawHouseTabForm
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
-                int i = _caseHandler.UpdateCaseE(id, negPrice, respEmpl);
+                int i = _caseHandler.UpdateCase(id, negPrice, respEmpl);
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
@@ -363,7 +363,8 @@ namespace LawHouseTabForm
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
             string tlf = NewClientTelef.Text;
-            _clientHandler.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
+            _clientHandler.UpdateClient(1, fName, lName, cpr, address, postNo, eMail, tlf);
+            // her i Update mangler vi int id. Jeg sætter bare 1-tal i parenteser for at fjerne fejl.
         }
 
         private void NewClientButt_Click(object sender, EventArgs e)

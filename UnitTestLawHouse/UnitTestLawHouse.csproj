@@ -49,15 +49,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestsControllers\ClientHandlerUnitTest.cs" />
+    <Compile Include="UnitTestsControllers\CaseHandlerUnitTest.cs" />
+    <Compile Include="UnitTestsControllers\ProvidedServicesHandlerUnitTest.cs" />
+    <Compile Include="UnitTestsCrudClasses\ClientCrudUnitTest.cs" />
+    <Compile Include="UnitTestsCrudClasses\CaseCrudUnitTest.cs" />
     <Compile Include="UnitTestLhouseDb.cs" />
-    <Compile Include="UnitTestClientCatalog.cs" />
     <Compile Include="UnitTestCaseCatalog.cs" />
-    <Compile Include="UnitTestCalculator.cs" />
+    <Compile Include="UnitTestsCrudClasses\PriceCalculatorUnitTest.cs" />
     <Compile Include="UnitTestCaseDb.cs" />
-    <Compile Include="UnitTestLhoseHandler.cs" />
     <Compile Include="UnitTestCaseHandler.cs" />
-    <Compile Include="UnitTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestsCrudClasses\ProvidedServicesCrudUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -76,6 +79,7 @@
       <Name>LawHouseLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

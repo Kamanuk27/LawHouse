@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestLawHouse
 {
     [TestClass]
-    public class UnitTestCalculator
+    public class PriceCalculatorUnitTest
     {
         PriceCalculator calculator = new PriceCalculator();
 
@@ -52,7 +52,7 @@ namespace UnitTestLawHouse
         }
 
         [TestMethod]
-        public void TestCountServicesReturnTwoEllementsInArray()
+        public void TestCountServicesReturnTwoEllementsInList()
         {
             List<ProvidedServiceM> services = new List<ProvidedServiceM>();
             services.Add(new ProvidedServiceM(2, 50));

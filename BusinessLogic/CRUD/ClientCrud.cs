@@ -11,9 +11,7 @@ namespace BusinessLogic
 {
     internal class ClientCrud
     {
-
-
-        private IClient _dbClient;
+        internal IClient _dbClient;
         public ClientCrud()
         {
             _dbClient = DatabaseFactory.Instance.GetClientDataAccess();
@@ -36,9 +34,10 @@ namespace BusinessLogic
             return _dbClient.NewClient(client);
         }
 
-        internal int UpdateClient(string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
+        internal int UpdateClient(int id, string fName, string lName, string cpr, string address, int postNo, string eMail, string tlf)
         {
             ClientM client = new ClientM();
+            client.Id = id;
             client.FirstName = fName;
             client.LastName = lName;
             client.CprNo = cpr;
