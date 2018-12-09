@@ -26,9 +26,9 @@ namespace BusinessLogic
             }
         }
 
-        public int NewService(int caseID, DateTime date, int hours, int km, string comment, int respEmpl)
+        public int NewProvidedService(int caseID, DateTime date, int hours, int km, string comment, int respEmpl)
         {
-            return _providedServiceCrud.NewService(caseID, date, hours, km, comment, respEmpl);
+            return _providedServiceCrud.NewProvidedService(caseID, date, hours, km, comment, respEmpl);
         }
 
 
@@ -38,18 +38,18 @@ namespace BusinessLogic
 
         }
 
-        public int UpdateService(int id, int hours, int km, DateTime date, string comment)
+        public int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {
-            return _providedServiceCrud.UpdateService(id, hours, km, date, comment);
+            return _providedServiceCrud.UpdateProvidedService(id, hours, km, date, comment);
         }
 
         public decimal GetPrice(int id, decimal negPrice)
         {
             return _providedServiceCrud.GetPrice(id, negPrice);
         }
-        public int DeleteService(int id)
+        public int DeleteProvidedService(int id)
         {
-            return _providedServiceCrud.DeleteService(id);
+            return _providedServiceCrud.DeleteProvidedService(id);
         }
     }
 }

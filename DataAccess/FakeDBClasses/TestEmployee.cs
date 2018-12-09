@@ -34,5 +34,15 @@ namespace DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public List<EmployeeM> GetLawyers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<EmployeeM> GetEmplNames()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

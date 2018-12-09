@@ -29,6 +29,15 @@ namespace BusinessLogic
         {
             return _employeeCrud.GetEmployees();
         }
+        public List<EmployeeM> GetLawyers()
+        {
+            return _employeeCrud.GetLawyers();
+        }
+
+        public List<EmployeeM> GetEmplNames()
+        {
+            return _employeeCrud.GetEmplNames();
+        }
 
         public int NewEmployee(string cpr, string fName, string lName, string address, int postNo,
             string eMail, string tlf, DateTime start, string position, decimal money)

@@ -14,20 +14,27 @@ namespace GUITest
     public partial class Ydelser : Form
     {
 
-        private OldCaseHandler _caseHandler;
-        private LhouseHandler _hrHandler;
+        private CaseHandler _caseHandler;
+        private ClientHandler _clientHandler;
+        private EmployeeHandler _employeeHandler;
+        private SubjectHandler _subjectHandler;
+        private ProvidedServiceHandler _pServiceHandler;
+
         public int ServiceId { get; set; }
         public Ydelser()
         {
             InitializeComponent();
-            _caseHandler = OldCaseHandler.Instance;
-            _hrHandler = LhouseHandler.Instance;
+            _caseHandler = new CaseHandler();
+            _clientHandler = new ClientHandler();
+            _employeeHandler = new EmployeeHandler();
+            _pServiceHandler = new ProvidedServiceHandler();
+            _subjectHandler = new SubjectHandler();
             GetServices();
         }
 
         private void GetServices()
         {
-            foreach (var c1 in _hrHandler.GetSubject())
+            foreach (var c1 in _subjectHandler.GetSubject())
             {
                 int n = ServiceGridView.Rows.Add();
                 ServiceGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -43,7 +50,7 @@ namespace GUITest
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.NewSubject(name, hours, time, price);
+            _subjectHandler.NewSubject(name, hours, time, price);
         }
 
         private void UpdateServButt_Click(object sender, EventArgs e)
@@ -52,7 +59,7 @@ namespace GUITest
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.UpdateSubjects(ServiceId, name, hours, time, price);
+            _subjectHandler.UpdateSubjects(ServiceId, name, hours, time, price);
         }
 
         private void ServiceGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -66,7 +73,7 @@ namespace GUITest
 
         private void DeleteServButt_Click(object sender, EventArgs e)
         {
-            _hrHandler.DeleteSubject(ServiceId);
+            _subjectHandler.DeleteSubject(ServiceId);
         }
     }
 }

@@ -13,8 +13,11 @@ namespace GUITest
 {
     public partial class Form1 : Form
     {
-        private OldCaseHandler _caseHandler;
-        private LhouseHandler _hrHandler;
+        private CaseHandler _caseHandler;
+        private ClientHandler _clientHandler;
+        private EmployeeHandler _employeeHandler;
+        private SubjectHandler _subjectHandler;
+        private ProvidedServiceHandler _pServiceHandler;
         private int ClientId { get; set; }
        
        
@@ -23,8 +26,11 @@ namespace GUITest
         public Form1()
         {
             InitializeComponent();
-            _caseHandler = new OldCaseHandler();
-            _hrHandler = LhouseHandler.Instance;
+            _caseHandler = new CaseHandler();
+            _clientHandler = new ClientHandler();
+            _employeeHandler = new EmployeeHandler();
+            _pServiceHandler = new ProvidedServiceHandler();
+            _subjectHandler = new SubjectHandler();
             FillComboBoxes();
             GriderStart();
 
@@ -32,12 +38,12 @@ namespace GUITest
         }
         public void FillComboBoxes()
         {
-            foreach (var l1 in _caseHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetEmplNames())
             {
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
-            foreach (var s1 in _hrHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubject())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -76,7 +82,7 @@ namespace GUITest
             RespEmpCombo.Text = respEmp;
             textBox1.Text = id.ToString();
             NegPricetxt.Text = negPrice.ToString();
-            _caseHandler.InitializeCase(id, negPrice, respEmp);
+            //_caseHandler.InitializeCase(id, negPrice, respEmp);
 
         }
 
@@ -85,7 +91,7 @@ namespace GUITest
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
            decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-            _caseHandler.InitializeCase(id, negPrice, respEmp);
+          //  _caseHandler.InitializeCase(id, negPrice, respEmp);
             Services sv = new Services(id);
             sv.Show();
         }
@@ -205,15 +211,15 @@ namespace GUITest
             else
             {
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal price = _caseHandler.GetPrice(id);
-                TotalPricetxt.Text = price.ToString();
+               // decimal price = _pServiceHandler.GetPrice(id);
+             //   TotalPricetxt.Text = price.ToString();
 
             }
         }
         //Delete???
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _hrHandler.GetSubject())
+            foreach (var s in _subjectHandler.GetSubject())
             {
                 string[] getServoceId = CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 string serviceId = getServoceId[0];
@@ -249,7 +255,7 @@ namespace GUITest
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
             string tlf = NewClientTelef.Text;
-            _caseHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+            _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
         private void FormEmpl_Click(object sender, EventArgs e)

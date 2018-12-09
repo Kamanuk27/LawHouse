@@ -32,7 +32,7 @@ namespace UnitTestLawHouse
         //{
         //    int expected = 1;
         //    ProvidedServiceM s1 = new ProvidedServiceM();
-        //    int response = _dbController.NewService(s1);
+        //    int response = _dbController.NewProvidedService(s1);
         //    Assert.AreEqual(response, expected);
         //}
 
@@ -179,7 +179,7 @@ namespace UnitTestLawHouse
         //{
         //    int expected = 1;
         //    ProvidedServiceM s1 = new ProvidedServiceM();
-        //    int actual = _dbController.UpdateService(s1);
+        //    int actual = _dbController.UpdateProvidedService(s1);
         //    Assert.AreEqual(expected, actual);
         //}
 
@@ -222,7 +222,7 @@ namespace UnitTestLawHouse
         //public void TestDeleteServiceReturnOne()
         //{
         //    int expected = 1;
-        //    int actual = _dbController.DeleteService(1);
+        //    int actual = _dbController.DeleteProvidedService(1);
         //    Assert.AreEqual(expected, actual);
         //}
     }

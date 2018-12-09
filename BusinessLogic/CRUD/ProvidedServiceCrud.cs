@@ -18,7 +18,7 @@ namespace BusinessLogic
             _dbProvidedService = DatabaseFactory.Instance.GetProvidedServiceDataAccess();
         }
 
-        internal int NewService(int caseID, DateTime date, int hours, int km, string comment, int respEmpl)
+        internal int NewProvidedService(int caseID, DateTime date, int hours, int km, string comment, int respEmpl)
         {
             ProvidedServiceM s1 = new ProvidedServiceM
             {
@@ -36,7 +36,7 @@ namespace BusinessLogic
             return _dbProvidedService.GetProvidedServices(id);
            
         }
-        internal int UpdateService(int id, int hours, int km, DateTime date, string comment)
+        internal int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {
             ProvidedServiceM s1 = new ProvidedServiceM
             {
@@ -71,7 +71,7 @@ namespace BusinessLogic
                 return 0;
         }
 
-        internal int DeleteService(int id)
+        internal int DeleteProvidedService(int id)
         {
             return _dbProvidedService.DeleteProvidedService(id);
         }

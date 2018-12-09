@@ -21,6 +21,17 @@ namespace BusinessLogic
         {
             return _dbEmployee.GetEmployees();
         }
+
+        internal List<EmployeeM> GetEmplNames()
+        {
+            return _dbEmployee.GetEmplNames();
+        }
+
+        internal List<EmployeeM> GetLawyers()
+        {
+            return _dbEmployee.GetLawyers();
+        }
+
         internal int NewEmployee(string cpr, string fName, string lName, string address, int postNo,
             string eMail, string tlf, DateTime start, string position, decimal money)
         {

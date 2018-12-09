@@ -13,15 +13,21 @@ namespace GUITest
 {
     public partial class Empl_Unit_Spes : Form
     {
-        private OldCaseHandler _caseHandler;
-        private LhouseHandler _hrHandler;
+        private CaseHandler _caseHandler;
+        private ClientHandler _clientHandler;
+        private EmployeeHandler _employeeHandler;
+        private SubjectHandler _subjectHandler;
+        private ProvidedServiceHandler _pServiceHandler;
         public int EmpiId { get; set; }
 
         public Empl_Unit_Spes()
         {
             InitializeComponent();
-            _caseHandler = OldCaseHandler.Instance;
-            _hrHandler = LhouseHandler.Instance;
+            _caseHandler = new CaseHandler();
+            _clientHandler = new ClientHandler();
+            _employeeHandler = new EmployeeHandler();
+            _pServiceHandler = new ProvidedServiceHandler();
+            _subjectHandler = new SubjectHandler();
             FillComboBoxes();
             EmplGridStart();
         }
@@ -42,14 +48,14 @@ namespace GUITest
 
         public void FillComboBoxes()
         {
-            foreach (var l1 in _caseHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetLawyers())
             {
 
                 SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
 
             }
 
-            foreach (var s1 in _hrHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubject())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -57,7 +63,7 @@ namespace GUITest
 
         private void EmplGridStart()
         {
-            foreach (var c1 in _hrHandler.GetEmployees())
+            foreach (var c1 in _employeeHandler.GetEmployees())
             {
                 int n = EmlGridView.Rows.Add();
                 EmlGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -101,7 +107,7 @@ namespace GUITest
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _hrHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+            _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
             ClearTxt();
             EmlGridView.Rows.Clear();
             EmplGridStart();
@@ -119,7 +125,7 @@ namespace GUITest
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _hrHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
+            _employeeHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
             ClearTxt();
             EmlGridView.Rows.Clear();
             EmplGridStart();
@@ -138,7 +144,7 @@ namespace GUITest
                 if (dialogResult == DialogResult.Yes)
                 {
 
-                    int i = _hrHandler.CloseEmployee(id);
+                    int i = _employeeHandler.CloseEmployee(id);
                     MessageBox.Show(i.ToString());
                     ClearTxt();
                     EmlGridView.Rows.Clear();

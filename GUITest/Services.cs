@@ -14,13 +14,20 @@ namespace GUITest
     public partial class Services : Form
     {
         public int ID { get; set; }
-        private OldCaseHandler _caseHandler;
+        private CaseHandler _caseHandler;
+        private ClientHandler _clientHandler;
+        private EmployeeHandler _employeeHandler;
+        private SubjectHandler _subjectHandler;
+        private ProvidedServiceHandler _pServiceHandler;
 
         public Services(int id)
         {
             InitializeComponent();
-            _caseHandler = OldCaseHandler.Instance;
-            ID = id;
+            _caseHandler = new CaseHandler();
+            _clientHandler = new ClientHandler();
+            _employeeHandler = new EmployeeHandler();
+            _pServiceHandler = new ProvidedServiceHandler();
+            _subjectHandler = new SubjectHandler(); ID = id;
             FillComboBoxes();
             YGriderstart();
         }
@@ -29,7 +36,7 @@ namespace GUITest
         {
             ServiceDataGrid.Rows.Clear();
 
-            foreach (var service in _caseHandler.GetProvidedServices(ID))
+            foreach (var service in _pServiceHandler.GetProvidedServices(ID))
             {
                 int n = ServiceDataGrid.Rows.Add();
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.Id;
@@ -59,7 +66,7 @@ namespace GUITest
 
         public void FillComboBoxes()
         {
-            foreach (var m1 in _caseHandler.GetEmplNames())
+            foreach (var m1 in _employeeHandler.GetEmplNames())
             {
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
@@ -82,8 +89,8 @@ namespace GUITest
                     MessageBox.Show("Er du sikker? ", "Sletter ydelsen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int i = _caseHandler.DeleteService(id);
-                    MessageBox.Show(i.ToString());
+                   // int i = _subjectHandler.DeleteService(id);
+                   // MessageBox.Show(i.ToString());
                     ClearServiceTxtBox();
                     ServiceDataGrid.Rows.Clear();
                     YGriderstart();
@@ -112,8 +119,8 @@ namespace GUITest
                 string[] names = YEmploeeCombox.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 int respEmpl = Convert.ToInt32(names[0]);
                // string respEmpl = YEmploeeCombox.Text;
-                int i = _caseHandler.NewService(ID, date, hours, km, comment, respEmpl);
-                MessageBox.Show(i.ToString());
+             //   int i = _pServiceHandler.NewService(ID, date, hours, km, comment, respEmpl);
+             //   MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();
@@ -133,8 +140,8 @@ namespace GUITest
                 int houres = Convert.ToInt32(YHouresTxt.Text);
                 int km = Convert.ToInt32(YKmTxt.Text);
                 string comment = YCommentTxt.Text;
-                int i = _caseHandler.UpdateService(id, houres, km, date, comment);
-                MessageBox.Show(i.ToString());
+            //    int i = _caseHandler.UpdateService(id, houres, km, date, comment);
+             //   MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
                 YGriderstart();

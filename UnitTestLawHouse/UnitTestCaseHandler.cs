@@ -9,7 +9,7 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCaseHandler
     {
-        OldCaseHandler handler = new OldCaseHandler();
+        //OldCaseHandler handler = new OldCaseHandler();
 
        
 
@@ -32,7 +32,7 @@ namespace UnitTestLawHouse
         //public void TestNewServiceReturnOne()
         //{
         //    int expected = 1;
-        //    int response = LhHandler.NewService(2, DateTime.Now, 2, 100, "Møde i retten", "Karina Olsen");
+        //    int response = LhHandler.NewProvidedService(2, DateTime.Now, 2, 100, "Møde i retten", "Karina Olsen");
         //    Assert.AreEqual(response, expected);
         //}
 
@@ -114,7 +114,7 @@ namespace UnitTestLawHouse
         //public void TestUpdateServiceReturnOne()
         //{
         //    int expected = 1;
-        //    int response = LhHandler.UpdateService(2, 2, 100, DateTime.Now, "comment");
+        //    int response = LhHandler.UpdateProvidedService(2, 2, 100, DateTime.Now, "comment");
         //    Assert.AreEqual(response, expected);
         //}
 
@@ -130,7 +130,7 @@ namespace UnitTestLawHouse
         //public void TestDeleteServiceReturnOne()
         //{
         //    int expected = 1;
-        //    int response = LhHandler.DeleteService(2);
+        //    int response = LhHandler.DeleteProvidedService(2);
         //    Assert.AreEqual(response, expected);
         //}
 

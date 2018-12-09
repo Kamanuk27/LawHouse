@@ -50,30 +50,30 @@ namespace LawHouseTabForm
 
         public void FillComboBoxes()
         {
-            foreach (var l1 in _caseHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetLawyers())
             {
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
 
-            foreach (var s1 in _hrHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubject())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
 
-            foreach (var m1 in _caseHandler.GetEmplNames())
+            foreach (var m1 in _employeeHandler.GetEmplNames())
             {
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
 
-            foreach (var l1 in _caseHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetLawyers())
             {
 
                 SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
 
             }
 
-            foreach (var s1 in _hrHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubject())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -130,7 +130,7 @@ namespace LawHouseTabForm
         {
             ServiceDataGrid.Rows.Clear();
 
-            foreach (var service in _caseHandler.GetProvidedServices(CaseId))
+            foreach (var service in _pServiceHandler.GetProvidedServices(CaseId))
             {
                 int n = ServiceDataGrid.Rows.Add();
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.Id;
@@ -144,7 +144,7 @@ namespace LawHouseTabForm
 
         private void EmplGridStart()
         {
-            foreach (var c1 in _hrHandler.GetEmployees())
+            foreach (var c1 in _employeeHandler.GetEmployees())
             {
                 int n = EmlGridView.Rows.Add();
                 EmlGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -163,7 +163,7 @@ namespace LawHouseTabForm
 
         private void GetServices()
         {
-            foreach (var c1 in _hrHandler.GetSubject())
+            foreach (var c1 in _subjectHandler.GetSubject())
             {
                 int n = ServiceGridView.Rows.Add();
                 ServiceGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -209,7 +209,7 @@ namespace LawHouseTabForm
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             RespEmpCombo.Text = respEmp;
             NegPricetxt.Text = negPrice.ToString();
-            _caseHandler.InitializeCase(id, negPrice, respEmp);
+         //   _caseHandler.InitializeCase(id, negPrice, respEmp);
         }
 
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -217,7 +217,7 @@ namespace LawHouseTabForm
             int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-            _caseHandler.InitializeCase(id, negPrice, respEmp);
+           // _caseHandler.InitializeCase(id, negPrice, respEmp);
             string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
             CaseId = id;
             labelCaseName.Text = $"Nr.{id}, {name}";
@@ -349,7 +349,7 @@ namespace LawHouseTabForm
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[9].Value);
                
-                decimal price = _caseHandler.GetPrice(id, negPrice);
+                decimal price = _pServiceHandler.GetPrice(id, negPrice);
                 
             }
         }
@@ -363,7 +363,7 @@ namespace LawHouseTabForm
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
             string tlf = NewClientTelef.Text;
-            _caseHandler.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
+            _clientHandler.UpdateClient(fName, lName, cpr, address, postNo, eMail, tlf);
         }
 
         private void NewClientButt_Click(object sender, EventArgs e)
@@ -375,7 +375,7 @@ namespace LawHouseTabForm
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
             string tlf = NewClientTelef.Text;
-            _caseHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+            _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
         }
 
         private void NewCaseButt_Click(object sender, EventArgs e)
@@ -393,7 +393,7 @@ namespace LawHouseTabForm
 
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _hrHandler.GetSubject())
+            foreach (var s in _subjectHandler.GetSubject())
             {
                 string[] getServoceId =
                     CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -424,7 +424,7 @@ namespace LawHouseTabForm
                     MessageBox.Show("Er du sikker? ", "Sletter ydelsen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int i = _caseHandler.DeleteService(id);
+                    int i = _pServiceHandler.DeleteProvidedService(id);
                     MessageBox.Show(i.ToString());
                     ClearServiceTxtBox();
                     ServiceDataGrid.Rows.Clear();
@@ -452,7 +452,7 @@ namespace LawHouseTabForm
                 int houres = Convert.ToInt32(YHouresTxt.Text);
                 int km = Convert.ToInt32(YKmTxt.Text);
                 string comment = YCommentTxt.Text;
-                int i = _caseHandler.UpdateService(id, houres, km, date, comment);
+                int i = _pServiceHandler.UpdateProvidedService(id, houres, km, date, comment);
                 MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
@@ -475,7 +475,7 @@ namespace LawHouseTabForm
                 string[] names = YEmploeeCombox.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int respEmpl = Convert.ToInt32(names[0]);
                 // string respEmpl = YEmploeeCombox.Text;
-                int i = _caseHandler.NewService(CaseId, date, hours, km, comment, respEmpl);
+                int i = _pServiceHandler.NewProvidedService(CaseId, date, hours, km, comment, respEmpl);
                 MessageBox.Show(i.ToString());
                 ClearServiceTxtBox();
                 ServiceDataGrid.Rows.Clear();
@@ -522,7 +522,7 @@ namespace LawHouseTabForm
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _hrHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+            _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
             ClearTxt();
             EmlGridView.Rows.Clear();
             EmplGridStart();
@@ -539,7 +539,7 @@ namespace LawHouseTabForm
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _hrHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
+            _employeeHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
             ClearTxt();
             EmlGridView.Rows.Clear();
             EmplGridStart();
@@ -552,7 +552,7 @@ namespace LawHouseTabForm
                 MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmpiId}", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                int i = _hrHandler.CloseEmployee(EmpiId);
+                int i = _employeeHandler.CloseEmployee(EmpiId);
                 MessageBox.Show(i.ToString());
                 ClearTxt();
                 EmlGridView.Rows.Clear();
@@ -586,7 +586,7 @@ namespace LawHouseTabForm
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.NewSubject(name, hours, time, price);
+            _subjectHandler.NewSubject(name, hours, time, price);
         }
 
         private void UpdateServButt_Click(object sender, EventArgs e)
@@ -595,12 +595,12 @@ namespace LawHouseTabForm
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _hrHandler.UpdateSubjects(ServiceId, name, hours, time, price);
+            _subjectHandler.UpdateSubjects(ServiceId, name, hours, time, price);
         }
 
         private void DeleteServButt_Click(object sender, EventArgs e)
         {
-            _hrHandler.DeleteSubject(ServiceId);
+            _subjectHandler.DeleteSubject(ServiceId);
         }
 
 
