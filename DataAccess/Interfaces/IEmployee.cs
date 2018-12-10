@@ -14,8 +14,6 @@ namespace DataAccess
         int UpdateEmployee(EmployeeM emp);
         int AddSubjectToEmployee(int eId, int sId);
         int CloseEmployee(int id);
-        List<EmployeeM> GetLawyers();
-        List<EmployeeM> GetEmplNames();
-
+       
     }
 }

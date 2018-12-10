@@ -101,53 +101,5 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@sId", sId));
             return ExecuteNonQuery();
         }
-       public List<EmployeeM> GetLawyers()
-       {
-           List<EmployeeM> lawyers = new List<EmployeeM>();
-           this._command.CommandText = "SELECT ID, FirstName, LastName FROM Employee WHERE Position = 'Advokat'";
-
-           PrepareSql();
-           SqlDataReader reader = null;
-           reader = _command.ExecuteReader();
-           if (reader.HasRows)
-           {
-               while (reader.Read())
-               {
-                   EmployeeM e = new EmployeeM();
-                   e.Id = Convert.ToInt32(reader["ID"]);
-                   e.FirstName = $"{reader["FirstName"].ToString()}";
-                   e.LastName = $"{reader["LastName"].ToString()}";
-                   lawyers.Add(e);
-               }
-
-           }
-           _connection.Close();
-           return lawyers;
-
-       }
-       public List<EmployeeM> GetEmplNames()
-       {
-           List<EmployeeM> emplNames = new List<EmployeeM>();
-           _command.CommandText = "SELECT ID, FirstName, LastName FROM Employee";
-
-           PrepareSql();
-           SqlDataReader reader = null;
-           reader = _command.ExecuteReader();
-           if (reader.HasRows)
-           {
-               while (reader.Read())
-               {
-                   EmployeeM e = new EmployeeM();
-                   e.Id = Convert.ToInt32(reader["ID"]);
-                   e.FirstName = $"{reader["FirstName"].ToString()}";
-                   e.LastName = $"{reader["LastName"].ToString()}";
-                   emplNames.Add(e);
-               }
-
-           }
-           _connection.Close();
-           return emplNames;
-       }
-
     }
 }
