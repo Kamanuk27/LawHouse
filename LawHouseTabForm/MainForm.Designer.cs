@@ -37,14 +37,14 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.CalculatePrice = new System.Windows.Forms.Button();
@@ -113,6 +113,8 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.tabLawyer = new System.Windows.Forms.TabPage();
+            this.btnEditEmpCancel = new System.Windows.Forms.Button();
+            this.lblUpdateEmpInfo = new System.Windows.Forms.Label();
             this.btnActivateUpdEmpFields = new System.Windows.Forms.Button();
             this.btnActivateAddEmpFields = new System.Windows.Forms.Button();
             this.pnlAddUpdateEmplFields = new System.Windows.Forms.Panel();
@@ -138,10 +140,10 @@
             this.label43 = new System.Windows.Forms.Label();
             this.NewEmplButt = new System.Windows.Forms.Button();
             this.lblAddNewEmp = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAnsatte = new System.Windows.Forms.Label();
             this.DeleteEmpl = new System.Windows.Forms.Button();
             this.UpdateEmpl = new System.Windows.Forms.Button();
-            this.EmlGridView = new System.Windows.Forms.DataGridView();
+            this.EmplGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CprNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,12 +155,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SpecialButt = new System.Windows.Forms.Button();
-            this.LServInsertCom = new System.Windows.Forms.ComboBox();
-            this.SpecInsertCom = new System.Windows.Forms.ComboBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.UdateClienButt = new System.Windows.Forms.Button();
             this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
@@ -187,7 +183,15 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.lblUpdateEmpInfo = new System.Windows.Forms.Label();
+            this.pnlAddSubjectToEmp = new System.Windows.Forms.Panel();
+            this.SpecialButt = new System.Windows.Forms.Button();
+            this.LServInsertCom = new System.Windows.Forms.ComboBox();
+            this.SpecInsertCom = new System.Windows.Forms.ComboBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtShowEmpSpecialization = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -206,8 +210,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             this.tabLawyer.SuspendLayout();
             this.pnlAddUpdateEmplFields.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmlGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.pnlAddSubjectToEmp.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -415,8 +420,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -755,16 +760,16 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle45;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -773,14 +778,14 @@
             this.Comments,
             this.Hours,
             this.Km});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ServiceDataGrid.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ServiceDataGrid.DefaultCellStyle = dataGridViewCellStyle46;
             this.ServiceDataGrid.Location = new System.Drawing.Point(7, 46);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
@@ -873,14 +878,14 @@
             // 
             // ServiceGridView
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ServiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.ServiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -888,14 +893,14 @@
             this.dataGridViewTextBoxColumn4,
             this.Time,
             this.Price});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ServiceGridView.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ServiceGridView.DefaultCellStyle = dataGridViewCellStyle48;
             this.ServiceGridView.Location = new System.Drawing.Point(214, 26);
             this.ServiceGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceGridView.Name = "ServiceGridView";
@@ -1064,22 +1069,18 @@
             // 
             // tabLawyer
             // 
+            this.tabLawyer.Controls.Add(this.pnlAddSubjectToEmp);
+            this.tabLawyer.Controls.Add(this.btnEditEmpCancel);
             this.tabLawyer.Controls.Add(this.lblUpdateEmpInfo);
             this.tabLawyer.Controls.Add(this.btnActivateUpdEmpFields);
             this.tabLawyer.Controls.Add(this.btnActivateAddEmpFields);
             this.tabLawyer.Controls.Add(this.pnlAddUpdateEmplFields);
             this.tabLawyer.Controls.Add(this.NewEmplButt);
             this.tabLawyer.Controls.Add(this.lblAddNewEmp);
-            this.tabLawyer.Controls.Add(this.label3);
+            this.tabLawyer.Controls.Add(this.lblAnsatte);
             this.tabLawyer.Controls.Add(this.DeleteEmpl);
             this.tabLawyer.Controls.Add(this.UpdateEmpl);
-            this.tabLawyer.Controls.Add(this.EmlGridView);
-            this.tabLawyer.Controls.Add(this.SpecialButt);
-            this.tabLawyer.Controls.Add(this.LServInsertCom);
-            this.tabLawyer.Controls.Add(this.SpecInsertCom);
-            this.tabLawyer.Controls.Add(this.label61);
-            this.tabLawyer.Controls.Add(this.label60);
-            this.tabLawyer.Controls.Add(this.label59);
+            this.tabLawyer.Controls.Add(this.EmplGridView);
             this.tabLawyer.Location = new System.Drawing.Point(4, 22);
             this.tabLawyer.Margin = new System.Windows.Forms.Padding(2);
             this.tabLawyer.Name = "tabLawyer";
@@ -1089,10 +1090,35 @@
             this.tabLawyer.Text = "Ansatte";
             this.tabLawyer.UseVisualStyleBackColor = true;
             // 
+            // btnEditEmpCancel
+            // 
+            this.btnEditEmpCancel.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnEditEmpCancel.Location = new System.Drawing.Point(247, 331);
+            this.btnEditEmpCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditEmpCancel.Name = "btnEditEmpCancel";
+            this.btnEditEmpCancel.Size = new System.Drawing.Size(68, 45);
+            this.btnEditEmpCancel.TabIndex = 327;
+            this.btnEditEmpCancel.Text = "Fortryd";
+            this.btnEditEmpCancel.UseVisualStyleBackColor = true;
+            this.btnEditEmpCancel.Visible = false;
+            this.btnEditEmpCancel.Click += new System.EventHandler(this.btnEditEmpCancel_Click);
+            // 
+            // lblUpdateEmpInfo
+            // 
+            this.lblUpdateEmpInfo.AutoSize = true;
+            this.lblUpdateEmpInfo.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateEmpInfo.Location = new System.Drawing.Point(7, 17);
+            this.lblUpdateEmpInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateEmpInfo.Name = "lblUpdateEmpInfo";
+            this.lblUpdateEmpInfo.Size = new System.Drawing.Size(221, 18);
+            this.lblUpdateEmpInfo.TabIndex = 326;
+            this.lblUpdateEmpInfo.Text = "Opdater medarbejder info";
+            this.lblUpdateEmpInfo.Visible = false;
+            // 
             // btnActivateUpdEmpFields
             // 
             this.btnActivateUpdEmpFields.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnActivateUpdEmpFields.Location = new System.Drawing.Point(142, 380);
+            this.btnActivateUpdEmpFields.Location = new System.Drawing.Point(139, 380);
             this.btnActivateUpdEmpFields.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivateUpdEmpFields.Name = "btnActivateUpdEmpFields";
             this.btnActivateUpdEmpFields.Size = new System.Drawing.Size(128, 45);
@@ -1135,9 +1161,9 @@
             this.pnlAddUpdateEmplFields.Controls.Add(this.label41);
             this.pnlAddUpdateEmplFields.Controls.Add(this.label42);
             this.pnlAddUpdateEmplFields.Controls.Add(this.label43);
-            this.pnlAddUpdateEmplFields.Location = new System.Drawing.Point(648, 47);
+            this.pnlAddUpdateEmplFields.Location = new System.Drawing.Point(8, 47);
             this.pnlAddUpdateEmplFields.Name = "pnlAddUpdateEmplFields";
-            this.pnlAddUpdateEmplFields.Size = new System.Drawing.Size(397, 282);
+            this.pnlAddUpdateEmplFields.Size = new System.Drawing.Size(332, 282);
             this.pnlAddUpdateEmplFields.TabIndex = 304;
             this.pnlAddUpdateEmplFields.Visible = false;
             // 
@@ -1345,41 +1371,42 @@
             // NewEmplButt
             // 
             this.NewEmplButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewEmplButt.Location = new System.Drawing.Point(755, 345);
+            this.NewEmplButt.Location = new System.Drawing.Point(115, 331);
             this.NewEmplButt.Margin = new System.Windows.Forms.Padding(2);
             this.NewEmplButt.Name = "NewEmplButt";
             this.NewEmplButt.Size = new System.Drawing.Size(128, 45);
             this.NewEmplButt.TabIndex = 322;
-            this.NewEmplButt.Text = "Gem ny medarbejder";
+            this.NewEmplButt.Text = "Gem";
             this.NewEmplButt.UseVisualStyleBackColor = true;
             this.NewEmplButt.Visible = false;
+            this.NewEmplButt.Click += new System.EventHandler(this.NewEmplButt_Click);
             // 
             // lblAddNewEmp
             // 
             this.lblAddNewEmp.AutoSize = true;
             this.lblAddNewEmp.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewEmp.Location = new System.Drawing.Point(666, 17);
+            this.lblAddNewEmp.Location = new System.Drawing.Point(7, 17);
             this.lblAddNewEmp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddNewEmp.Name = "lblAddNewEmp";
             this.lblAddNewEmp.Size = new System.Drawing.Size(184, 18);
             this.lblAddNewEmp.TabIndex = 323;
             this.lblAddNewEmp.Text = "Tilføj ny medarbejder";
             // 
-            // label3
+            // lblAnsatte
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 17);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 18);
-            this.label3.TabIndex = 303;
-            this.label3.Text = "Ansatte";
+            this.lblAnsatte.AutoSize = true;
+            this.lblAnsatte.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnsatte.Location = new System.Drawing.Point(7, 17);
+            this.lblAnsatte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAnsatte.Name = "lblAnsatte";
+            this.lblAnsatte.Size = new System.Drawing.Size(73, 18);
+            this.lblAnsatte.TabIndex = 303;
+            this.lblAnsatte.Text = "Ansatte";
             // 
             // DeleteEmpl
             // 
             this.DeleteEmpl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.DeleteEmpl.Location = new System.Drawing.Point(142, 506);
+            this.DeleteEmpl.Location = new System.Drawing.Point(8, 432);
             this.DeleteEmpl.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteEmpl.Name = "DeleteEmpl";
             this.DeleteEmpl.Size = new System.Drawing.Size(128, 45);
@@ -1392,28 +1419,28 @@
             // UpdateEmpl
             // 
             this.UpdateEmpl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateEmpl.Location = new System.Drawing.Point(757, 345);
+            this.UpdateEmpl.Location = new System.Drawing.Point(115, 331);
             this.UpdateEmpl.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateEmpl.Name = "UpdateEmpl";
             this.UpdateEmpl.Size = new System.Drawing.Size(128, 45);
             this.UpdateEmpl.TabIndex = 300;
-            this.UpdateEmpl.Text = "Opdater medarbejderinfo";
+            this.UpdateEmpl.Text = "Opdater ";
             this.UpdateEmpl.UseVisualStyleBackColor = true;
             this.UpdateEmpl.Visible = false;
             this.UpdateEmpl.Click += new System.EventHandler(this.UpdateEmpl_Click);
             // 
-            // EmlGridView
+            // EmplGridView
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmlGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.EmlGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmlGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmplGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.CprNo,
             this.FName,
@@ -1425,23 +1452,23 @@
             this.dataGridViewTextBoxColumn1,
             this.Position,
             this.Money});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmlGridView.DefaultCellStyle = dataGridViewCellStyle10;
-            this.EmlGridView.Location = new System.Drawing.Point(7, 47);
-            this.EmlGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.EmlGridView.Name = "EmlGridView";
-            this.EmlGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmlGridView.RowTemplate.Height = 24;
-            this.EmlGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmlGridView.Size = new System.Drawing.Size(553, 315);
-            this.EmlGridView.TabIndex = 299;
-            this.EmlGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EmlGridView_CellMouseDoubleClick);
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmplGridView.DefaultCellStyle = dataGridViewCellStyle42;
+            this.EmplGridView.Location = new System.Drawing.Point(7, 47);
+            this.EmplGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.EmplGridView.Name = "EmplGridView";
+            this.EmplGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmplGridView.RowTemplate.Height = 24;
+            this.EmplGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.EmplGridView.Size = new System.Drawing.Size(1072, 315);
+            this.EmplGridView.TabIndex = 299;
+            this.EmplGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EmlGridView_CellMouseDoubleClick);
             // 
             // Id
             // 
@@ -1510,71 +1537,6 @@
             this.Money.HeaderText = "Pay rate ";
             this.Money.Name = "Money";
             this.Money.ReadOnly = true;
-            // 
-            // SpecialButt
-            // 
-            this.SpecialButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.SpecialButt.Location = new System.Drawing.Point(650, 538);
-            this.SpecialButt.Margin = new System.Windows.Forms.Padding(2);
-            this.SpecialButt.Name = "SpecialButt";
-            this.SpecialButt.Size = new System.Drawing.Size(128, 45);
-            this.SpecialButt.TabIndex = 298;
-            this.SpecialButt.Text = "Tilføj";
-            this.SpecialButt.UseVisualStyleBackColor = true;
-            this.SpecialButt.Click += new System.EventHandler(this.SpecialButt_Click);
-            // 
-            // LServInsertCom
-            // 
-            this.LServInsertCom.Font = new System.Drawing.Font("Verdana", 9F);
-            this.LServInsertCom.FormattingEnabled = true;
-            this.LServInsertCom.Location = new System.Drawing.Point(650, 503);
-            this.LServInsertCom.Margin = new System.Windows.Forms.Padding(2);
-            this.LServInsertCom.Name = "LServInsertCom";
-            this.LServInsertCom.Size = new System.Drawing.Size(208, 22);
-            this.LServInsertCom.TabIndex = 297;
-            // 
-            // SpecInsertCom
-            // 
-            this.SpecInsertCom.Font = new System.Drawing.Font("Verdana", 9F);
-            this.SpecInsertCom.FormattingEnabled = true;
-            this.SpecInsertCom.Location = new System.Drawing.Point(650, 477);
-            this.SpecInsertCom.Margin = new System.Windows.Forms.Padding(2);
-            this.SpecInsertCom.Name = "SpecInsertCom";
-            this.SpecInsertCom.Size = new System.Drawing.Size(208, 22);
-            this.SpecInsertCom.TabIndex = 296;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label61.Location = new System.Drawing.Point(545, 506);
-            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(98, 14);
-            this.label61.TabIndex = 295;
-            this.label61.Text = "Specialisering:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label60.Location = new System.Drawing.Point(545, 480);
-            this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(63, 14);
-            this.label60.TabIndex = 294;
-            this.label60.Text = "Advokat:";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label59.Location = new System.Drawing.Point(545, 441);
-            this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(162, 18);
-            this.label59.TabIndex = 293;
-            this.label59.Text = "Tilføj specialisering";
             // 
             // tabPage1
             // 
@@ -1893,17 +1855,104 @@
             this.label19.TabIndex = 314;
             this.label19.Text = "CprNo: *";
             // 
-            // lblUpdateEmpInfo
+            // pnlAddSubjectToEmp
             // 
-            this.lblUpdateEmpInfo.AutoSize = true;
-            this.lblUpdateEmpInfo.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateEmpInfo.Location = new System.Drawing.Point(664, 17);
-            this.lblUpdateEmpInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUpdateEmpInfo.Name = "lblUpdateEmpInfo";
-            this.lblUpdateEmpInfo.Size = new System.Drawing.Size(221, 18);
-            this.lblUpdateEmpInfo.TabIndex = 326;
-            this.lblUpdateEmpInfo.Text = "Opdater medarbejder info";
-            this.lblUpdateEmpInfo.Visible = false;
+            this.pnlAddSubjectToEmp.Controls.Add(this.label3);
+            this.pnlAddSubjectToEmp.Controls.Add(this.txtShowEmpSpecialization);
+            this.pnlAddSubjectToEmp.Controls.Add(this.SpecialButt);
+            this.pnlAddSubjectToEmp.Controls.Add(this.LServInsertCom);
+            this.pnlAddSubjectToEmp.Controls.Add(this.SpecInsertCom);
+            this.pnlAddSubjectToEmp.Controls.Add(this.label61);
+            this.pnlAddSubjectToEmp.Controls.Add(this.label60);
+            this.pnlAddSubjectToEmp.Controls.Add(this.label59);
+            this.pnlAddSubjectToEmp.Location = new System.Drawing.Point(346, 47);
+            this.pnlAddSubjectToEmp.Name = "pnlAddSubjectToEmp";
+            this.pnlAddSubjectToEmp.Size = new System.Drawing.Size(340, 282);
+            this.pnlAddSubjectToEmp.TabIndex = 328;
+            this.pnlAddSubjectToEmp.Visible = false;
+            // 
+            // SpecialButt
+            // 
+            this.SpecialButt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.SpecialButt.Location = new System.Drawing.Point(117, 169);
+            this.SpecialButt.Margin = new System.Windows.Forms.Padding(2);
+            this.SpecialButt.Name = "SpecialButt";
+            this.SpecialButt.Size = new System.Drawing.Size(128, 45);
+            this.SpecialButt.TabIndex = 304;
+            this.SpecialButt.Text = "Tilføj";
+            this.SpecialButt.UseVisualStyleBackColor = true;
+            // 
+            // LServInsertCom
+            // 
+            this.LServInsertCom.Font = new System.Drawing.Font("Verdana", 9F);
+            this.LServInsertCom.FormattingEnabled = true;
+            this.LServInsertCom.Location = new System.Drawing.Point(117, 134);
+            this.LServInsertCom.Margin = new System.Windows.Forms.Padding(2);
+            this.LServInsertCom.Name = "LServInsertCom";
+            this.LServInsertCom.Size = new System.Drawing.Size(208, 22);
+            this.LServInsertCom.TabIndex = 303;
+            // 
+            // SpecInsertCom
+            // 
+            this.SpecInsertCom.Font = new System.Drawing.Font("Verdana", 9F);
+            this.SpecInsertCom.FormattingEnabled = true;
+            this.SpecInsertCom.Location = new System.Drawing.Point(129, 238);
+            this.SpecInsertCom.Margin = new System.Windows.Forms.Padding(2);
+            this.SpecInsertCom.Name = "SpecInsertCom";
+            this.SpecInsertCom.Size = new System.Drawing.Size(208, 22);
+            this.SpecInsertCom.TabIndex = 302;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label61.Location = new System.Drawing.Point(12, 137);
+            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(98, 14);
+            this.label61.TabIndex = 301;
+            this.label61.Text = "Specialisering:";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label60.Location = new System.Drawing.Point(12, 16);
+            this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(99, 14);
+            this.label60.TabIndex = 300;
+            this.label60.Text = "Specialiseret i:";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label59.Location = new System.Drawing.Point(12, 104);
+            this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(162, 18);
+            this.label59.TabIndex = 299;
+            this.label59.Text = "Tilføj specialisering";
+            // 
+            // txtShowEmpSpecialization
+            // 
+            this.txtShowEmpSpecialization.Location = new System.Drawing.Point(117, 16);
+            this.txtShowEmpSpecialization.Multiline = true;
+            this.txtShowEmpSpecialization.Name = "txtShowEmpSpecialization";
+            this.txtShowEmpSpecialization.Size = new System.Drawing.Size(208, 74);
+            this.txtShowEmpSpecialization.TabIndex = 305;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(41, 236);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(274, 18);
+            this.label3.TabIndex = 306;
+            this.label3.Text = "Compobox der viste advkatnavn";
             // 
             // MainForm
             // 
@@ -1928,9 +1977,11 @@
             this.tabLawyer.PerformLayout();
             this.pnlAddUpdateEmplFields.ResumeLayout(false);
             this.pnlAddUpdateEmplFields.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmlGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.pnlAddSubjectToEmp.ResumeLayout(false);
+            this.pnlAddSubjectToEmp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1979,13 +2030,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button DeleteEmpl;
         private System.Windows.Forms.Button UpdateEmpl;
-        private System.Windows.Forms.DataGridView EmlGridView;
-        private System.Windows.Forms.Button SpecialButt;
-        private System.Windows.Forms.ComboBox LServInsertCom;
-        private System.Windows.Forms.ComboBox SpecInsertCom;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.DataGridView EmplGridView;
         private System.Windows.Forms.DataGridView ServiceGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -2042,7 +2087,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NegotiatedPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAnsatte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CprNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FName;
@@ -2080,6 +2125,16 @@
         private System.Windows.Forms.Label lblAddNewEmp;
         private System.Windows.Forms.Button btnActivateUpdEmpFields;
         private System.Windows.Forms.Label lblUpdateEmpInfo;
+        private System.Windows.Forms.Button btnEditEmpCancel;
+        private System.Windows.Forms.Panel pnlAddSubjectToEmp;
+        private System.Windows.Forms.Button SpecialButt;
+        private System.Windows.Forms.ComboBox LServInsertCom;
+        private System.Windows.Forms.ComboBox SpecInsertCom;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtShowEmpSpecialization;
     }
 }
 

@@ -50,7 +50,7 @@ namespace LawHouseTabForm
 
         public void FillComboBoxes()
         {
-            foreach (var l1 in _employeeHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetEmployees())
             {
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
@@ -61,16 +61,17 @@ namespace LawHouseTabForm
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
 
-            foreach (var m1 in _employeeHandler.GetEmplNames())
+            foreach (var m1 in _employeeHandler.GetEmployees())
             {
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
 
-            foreach (var l1 in _employeeHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetEmployees())
             {
-
-                SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
-
+                if (l1.Position == "Advokat" )
+                {
+                    SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
+                }
             }
 
             foreach (var s1 in _subjectHandler.GetSubjects())
@@ -146,18 +147,18 @@ namespace LawHouseTabForm
         {
             foreach (var c1 in _employeeHandler.GetEmployees())
             {
-                int n = EmlGridView.Rows.Add();
-                EmlGridView.Rows[n].Cells[0].Value = c1.Id;
-                EmlGridView.Rows[n].Cells[1].Value = c1.CprNo;
-                EmlGridView.Rows[n].Cells[2].Value = c1.FirstName;
-                EmlGridView.Rows[n].Cells[3].Value = c1.LastName;
-                EmlGridView.Rows[n].Cells[4].Value = c1.Address;
-                EmlGridView.Rows[n].Cells[5].Value = c1.PostNo;
-                EmlGridView.Rows[n].Cells[6].Value = c1.Email;
-                EmlGridView.Rows[n].Cells[7].Value = c1.TlfNo;
-                EmlGridView.Rows[n].Cells[8].Value = c1.StartDate.ToShortDateString();
-                EmlGridView.Rows[n].Cells[9].Value = c1.Position;
-                EmlGridView.Rows[n].Cells[10].Value = c1.PayRatePrHour;
+                int n = EmplGridView.Rows.Add();
+                EmplGridView.Rows[n].Cells[0].Value = c1.Id;
+                EmplGridView.Rows[n].Cells[1].Value = c1.CprNo;
+                EmplGridView.Rows[n].Cells[2].Value = c1.FirstName;
+                EmplGridView.Rows[n].Cells[3].Value = c1.LastName;
+                EmplGridView.Rows[n].Cells[4].Value = c1.Address;
+                EmplGridView.Rows[n].Cells[5].Value = c1.PostNo;
+                EmplGridView.Rows[n].Cells[6].Value = c1.Email;
+                EmplGridView.Rows[n].Cells[7].Value = c1.TlfNo;
+                EmplGridView.Rows[n].Cells[8].Value = c1.StartDate.ToShortDateString();
+                EmplGridView.Rows[n].Cells[9].Value = c1.Position;
+                EmplGridView.Rows[n].Cells[10].Value = c1.PayRatePrHour;
             }
         }
 
@@ -501,21 +502,35 @@ namespace LawHouseTabForm
 
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            EmpiId = Convert.ToInt32(EmlGridView.SelectedRows[0].Cells[0].Value);
-            NECprTxt.Text = EmlGridView.SelectedRows[0].Cells[1].Value.ToString();
-            NEFnameTxt.Text = EmlGridView.SelectedRows[0].Cells[2].Value.ToString();
-            NELnameTxt.Text = EmlGridView.SelectedRows[0].Cells[3].Value.ToString();
-            NEAdressTxt.Text = EmlGridView.SelectedRows[0].Cells[4].Value.ToString();
-            NEPostTxt.Text = EmlGridView.SelectedRows[0].Cells[5].Value.ToString();
-            NEEmailTxt.Text = EmlGridView.SelectedRows[0].Cells[6].Value.ToString();
-            NETlfTxt.Text = EmlGridView.SelectedRows[0].Cells[7].Value.ToString();
-            NEmplStartDate.Value = Convert.ToDateTime(EmlGridView.SelectedRows[0].Cells[8].Value.ToString());
-            NEmplPosition.Text = EmlGridView.SelectedRows[0].Cells[9].Value.ToString();
-            NEmplMoney.Text = EmlGridView.SelectedRows[0].Cells[10].Value.ToString();
+            EmpiId = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
+            NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
+            NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
+            NELnameTxt.Text = EmplGridView.SelectedRows[0].Cells[3].Value.ToString();
+            NEAdressTxt.Text = EmplGridView.SelectedRows[0].Cells[4].Value.ToString();
+            NEPostTxt.Text = EmplGridView.SelectedRows[0].Cells[5].Value.ToString();
+            NEEmailTxt.Text = EmplGridView.SelectedRows[0].Cells[6].Value.ToString();
+            NETlfTxt.Text = EmplGridView.SelectedRows[0].Cells[7].Value.ToString();
+            NEmplStartDate.Value = Convert.ToDateTime(EmplGridView.SelectedRows[0].Cells[8].Value.ToString());
+            NEmplPosition.Text = EmplGridView.SelectedRows[0].Cells[9].Value.ToString();
+            NEmplMoney.Text = EmplGridView.SelectedRows[0].Cells[10].Value.ToString();
         }
 
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
+
+            EmplGridView.Visible = true;
+            lblAnsatte.Visible = true;
+
+            btnActivateUpdEmpFields.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            btnEditEmpCancel.Visible = false;
+            NewEmplButt.Visible = false;
+
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+
             string cpr = NECprTxt.Text;
             string fName = NEFnameTxt.Text;
             string lName = NELnameTxt.Text;
@@ -528,13 +543,19 @@ namespace LawHouseTabForm
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
             _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
             ClearTxt();
-            EmlGridView.Rows.Clear();
+            EmplGridView.Rows.Clear();
             EmplGridStart();
         }
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
         {
             NewEmplButt.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            btnActivateUpdEmpFields.Visible = true;
+            pnlAddSubjectToEmp.Visible = false;
+            btnEditEmpCancel.Visible = false;
+            lblAnsatte.Visible = true;
+            EmplGridView.Visible = true;
             string fName = NEFnameTxt.Text;
             string lName = NELnameTxt.Text;
             string address = NEAdressTxt.Text;
@@ -546,7 +567,7 @@ namespace LawHouseTabForm
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
             _employeeHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
             ClearTxt();
-            EmlGridView.Rows.Clear();
+            EmplGridView.Rows.Clear();
             EmplGridStart();
         }
 
@@ -560,7 +581,7 @@ namespace LawHouseTabForm
                 int i = _employeeHandler.CloseEmployee(EmpiId);
                 MessageBox.Show(i.ToString());
                 ClearTxt();
-                EmlGridView.Rows.Clear();
+                EmplGridView.Rows.Clear();
                 EmplGridStart();
             }
             else
@@ -613,20 +634,54 @@ namespace LawHouseTabForm
         #endregion
 
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
-        {
-            pnlAddUpdateEmplFields.Visible = true;
+        {           
             NewEmplButt.Visible = true;
             lblAddNewEmp.Visible = true;
-            
-            
-            
+            EmplGridView.Visible = false;
+            lblAnsatte.Visible = false;
+
+            btnActivateUpdEmpFields.Visible = false;
+            btnActivateAddEmpFields.Visible = false;
+            btnEditEmpCancel.Visible = true;
+            pnlAddSubjectToEmp.Visible = true;
+            pnlAddUpdateEmplFields.Visible = true;
+
+
         }
 
         private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
-        {
-            pnlAddUpdateEmplFields.Visible = true;
+        {            
             UpdateEmpl.Visible = true;
             lblUpdateEmpInfo.Visible = true;
+            EmplGridView.Visible = false;
+            lblAnsatte.Visible = false;
+
+            btnActivateUpdEmpFields.Visible = false;
+            btnActivateAddEmpFields.Visible = false;
+            btnEditEmpCancel.Visible = true;
+            pnlAddSubjectToEmp.Visible = true;
+            pnlAddUpdateEmplFields.Visible = true;
+
+        }
+
+        private void btnEditEmpCancel_Click(object sender, EventArgs e)
+        {
+            EmplGridView.Visible = true;
+            lblAnsatte.Visible = true;
+
+            lblUpdateEmpInfo.Visible = false;
+            lblAddNewEmp.Visible = false;
+            btnActivateUpdEmpFields.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            NewEmplButt.Visible = false;
+
+            btnEditEmpCancel.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            
+
         }
     }
 }
