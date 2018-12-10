@@ -78,15 +78,11 @@ namespace DataAccess
 
         public int UpdateCase(CaseM c1)
         {
-            _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = " +
-                               "(SELECT ID FROM Employee WHERE FirstName = @fName AND LastName = @lName)" +
+            _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = @respEmpId" +
                                "WHERE ID = @id";
             _command.Parameters.Clear();
-
-            string[] names = c1.RespEmployee.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             _command.Parameters.Add(new SqlParameter("@negPrice", c1.NegPrice));
-            _command.Parameters.Add(new SqlParameter("@fName", names[0]));
-            _command.Parameters.Add(new SqlParameter("@lName", names[1]));
+            _command.Parameters.Add(new SqlParameter("@respEmpId", c1.RespEmpId));
             _command.Parameters.Add(new SqlParameter("@id", c1.Id));
             return ExecuteNonQuery();
         }

@@ -223,7 +223,7 @@ namespace LawHouseTabForm
             labelCaseName.Text = $"Nr.{id}, {name}";
             //_handler.InitializeCase(id, name, client, start, service, negPrice, total, respEmp);
             ShowProvidedServicesOnGrid();
-            tabControl1.SelectTab(tabPage2);
+            TabControl.SelectTab(tabCaseSpecifics);
 
         }
 
@@ -295,8 +295,11 @@ namespace LawHouseTabForm
             {
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
-                string respEmpl = RespEmpCombo.Text;
-                int i = _caseHandler.UpdateCase(id, negPrice, respEmpl);
+                //string respEmpl = RespEmpCombo.Text;
+                string[] getRespEmpId =
+                   RespEmpCombo.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int respEmpId = Convert.ToInt32(getRespEmpId[0]);
+                int i = _caseHandler.UpdateCase(id, negPrice, respEmpId);
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");

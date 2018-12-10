@@ -38,9 +38,9 @@ namespace BusinessLogic
             return _caseCrud.CloseCase(id, total, endDate);
         }
 
-        public int UpdateCase(int id, decimal negPrice, string respEmp)
+        public int UpdateCase(int id, decimal negPrice, int respEmpId)
         {
-            return _caseCrud.UpdateCase(id, negPrice, respEmp);
+            return _caseCrud.UpdateCase(id, negPrice, respEmpId);
         }
 
         public int DeleteCase(int id)

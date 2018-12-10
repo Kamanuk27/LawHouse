@@ -34,23 +34,23 @@ namespace BusinessLogic
             return _dbCase.NewCase(c);
         }
 
-        internal int UpdateCase(int id, decimal negPrice, string respEmp)
+        internal int UpdateCase(int id, decimal negPrice, int respEmpId)
         {
-            CaseM cE = new CaseM();
-            cE.Id = id;
-            cE.NegPrice = negPrice;
-            cE.RespEmployee = respEmp;
-            return _dbCase.UpdateCase(cE);
+            CaseM c = new CaseM();
+            c.Id = id;
+            c.NegPrice = negPrice;
+            c.RespEmpId = respEmpId;
+            return _dbCase.UpdateCase(c);
         }
 
 
         internal int CloseCase(int id, decimal totalPrice, DateTime endDate)
         {
-            CaseM cE = new CaseM();
-            cE.Id = id;
-            cE.TotalPrice = totalPrice;
-            cE.EndDate = endDate;
-            return _dbCase.CloseCase(cE);
+            CaseM c = new CaseM();
+            c.Id = id;
+            c.TotalPrice = totalPrice;
+            c.EndDate = endDate;
+            return _dbCase.CloseCase(c);
         }
 
         internal int DeleteCase(int id)
