@@ -71,9 +71,9 @@ namespace BusinessLogic
             return _dbEmployee.CloseEmployee(id);
         }
 
-        internal int AddSpecializationToEmployee(int eId, int sId)
+        internal int AddSubjectToEmployee(int eId, int sId)
         {
-            return _dbEmployee.AddSpecializationToEmployee(eId, sId);
+            return _dbEmployee.AddSubjectToEmployee(eId, sId);
         }
 
 

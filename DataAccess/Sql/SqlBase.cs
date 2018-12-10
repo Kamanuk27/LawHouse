@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Sql
 {
@@ -31,7 +27,7 @@ namespace DataAccess.Sql
             return rows;
         }
 
-        public int ExecuteNonQuerySqlReturnId()
+       internal int ExecuteNonQuerySqlReturnId()
         {
             //Bruges i create new client. 
             PrepareSql();

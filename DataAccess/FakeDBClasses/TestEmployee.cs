@@ -25,7 +25,7 @@ namespace DataAccess
             throw new NotImplementedException();
         }
 
-        public int AddSpecializationToEmployee(int eId, int sId)
+        public int AddSubjectToEmployee(int eId, int sId)
         {
             throw new NotImplementedException();
         }

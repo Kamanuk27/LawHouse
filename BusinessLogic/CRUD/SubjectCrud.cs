@@ -20,9 +20,9 @@ namespace BusinessLogic
             return _dbSubject.GetSubjects();
 
         }
-        internal List<SubjectM> GetEmployeeSubjectById(int id)
+        internal List<SubjectM> GetEmployeeSubjectsById(int id)
         {
-            return _dbSubject.GetEmployeeSubjectById(id);
+            return _dbSubject.GetEmployeeSubjectsById(id);
         }
 
         internal int NewSubject(string name, int hours, int time, decimal price)

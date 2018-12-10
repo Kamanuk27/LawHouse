@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess.Sql;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-   internal class SqlEmployee : SqlBase, IEmployee
+    internal class SqlEmployee : SqlBase, IEmployee
    {
         
         public int NewEmployee(EmployeeM e)
@@ -94,7 +90,7 @@ namespace DataAccess
 
             return ExecuteNonQuery();
         }
-        public int AddSpecializationToEmployee(int eId, int sId)
+        public int AddSubjectToEmployee(int eId, int sId)
         {
             string sqlString = "INSERT INTO [dbo].[Specialization] (Employee_ID, Subject_ID) " +
                                " VALUES (@eId, @sId)";

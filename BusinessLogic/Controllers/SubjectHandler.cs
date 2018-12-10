@@ -39,7 +39,7 @@ namespace BusinessLogic
         }
         public List<SubjectM> GetEmployeeSubjectById(int id)
         {
-            return _subjectCrud.GetEmployeeSubjectById(id);
+            return _subjectCrud.GetEmployeeSubjectsById(id);
         }
 
         public int UpdateSubject(int id, string name, int hours, int time, decimal price)

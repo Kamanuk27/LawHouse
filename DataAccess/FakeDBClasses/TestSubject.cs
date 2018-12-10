@@ -14,7 +14,7 @@ namespace DataAccess
             return 1;
         }
 
-        public List<SubjectM> GetEmployeeSubjectById(int id)
+        public List<SubjectM> GetEmployeeSubjectsById(int id)
         {
             List<SubjectM> legalServices = new List<SubjectM>();
             legalServices.Add(new SubjectM(1));
