@@ -56,7 +56,7 @@ namespace DataAccess
                     e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
                     e.StartDate = Convert.ToDateTime(reader["StartDate"]);
                     e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
-                    e.PayRatePrHour = reader["ID"] != DBNull.Value ? Convert.ToDecimal(reader["ID"]) : default(decimal);
+                    e.PayRatePrHour = reader["PayRatePrHour"] != DBNull.Value ? Convert.ToDecimal(reader["PayRatePrHour"]) : default(decimal);
 
                     employees.Add(e);
                 }
