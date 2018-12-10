@@ -31,8 +31,8 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label label22;
             System.Windows.Forms.Label label24;
             System.Windows.Forms.Label label25;
@@ -345,8 +345,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.CaseDataGrid.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -674,8 +674,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -1425,7 +1425,7 @@
             // 
             this.CrCaseServiceCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCaseServiceCom.FormattingEnabled = true;
-            this.CrCaseServiceCom.Location = new System.Drawing.Point(462, 143);
+            this.CrCaseServiceCom.Location = new System.Drawing.Point(462, 131);
             this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCaseServiceCom.Name = "CrCaseServiceCom";
             this.CrCaseServiceCom.Size = new System.Drawing.Size(264, 24);
@@ -1444,7 +1444,7 @@
             // NewCaseButt
             // 
             this.NewCaseButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewCaseButt.Location = new System.Drawing.Point(463, 529);
+            this.NewCaseButt.Location = new System.Drawing.Point(459, 488);
             this.NewCaseButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewCaseButt.Name = "NewCaseButt";
             this.NewCaseButt.Size = new System.Drawing.Size(152, 44);
@@ -1455,7 +1455,7 @@
             // CrCasetimeP
             // 
             this.CrCasetimeP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrCasetimeP.Location = new System.Drawing.Point(462, 212);
+            this.CrCasetimeP.Location = new System.Drawing.Point(462, 194);
             this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCasetimeP.Name = "CrCasetimeP";
             this.CrCasetimeP.Size = new System.Drawing.Size(232, 22);
@@ -1465,7 +1465,7 @@
             // 
             this.CrCaseAdvokat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrCaseAdvokat.FormattingEnabled = true;
-            this.CrCaseAdvokat.Location = new System.Drawing.Point(462, 279);
+            this.CrCaseAdvokat.Location = new System.Drawing.Point(462, 255);
             this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCaseAdvokat.Name = "CrCaseAdvokat";
             this.CrCaseAdvokat.Size = new System.Drawing.Size(255, 24);
@@ -1475,7 +1475,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(462, 384);
+            this.label20.Location = new System.Drawing.Point(462, 351);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(148, 17);
             this.label20.TabIndex = 340;
@@ -1484,7 +1484,7 @@
             // CrCaseTimeUsed
             // 
             this.CrCaseTimeUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrCaseTimeUsed.Location = new System.Drawing.Point(462, 415);
+            this.CrCaseTimeUsed.Location = new System.Drawing.Point(462, 379);
             this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
             this.CrCaseTimeUsed.ReadOnly = true;
@@ -1494,7 +1494,7 @@
             // CrCasePrice
             // 
             this.CrCasePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrCasePrice.Location = new System.Drawing.Point(462, 348);
+            this.CrCasePrice.Location = new System.Drawing.Point(462, 318);
             this.CrCasePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCasePrice.Name = "CrCasePrice";
             this.CrCasePrice.Size = new System.Drawing.Size(188, 22);
@@ -1503,7 +1503,7 @@
             // CrCaseEndDato
             // 
             this.CrCaseEndDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrCaseEndDato.Location = new System.Drawing.Point(462, 482);
+            this.CrCaseEndDato.Location = new System.Drawing.Point(462, 440);
             this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCaseEndDato.Name = "CrCaseEndDato";
             this.CrCaseEndDato.ReadOnly = true;
@@ -1513,7 +1513,7 @@
             // CrCaseName
             // 
             this.CrCaseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrCaseName.Location = new System.Drawing.Point(462, 76);
+            this.CrCaseName.Location = new System.Drawing.Point(462, 70);
             this.CrCaseName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CrCaseName.Name = "CrCaseName";
             this.CrCaseName.Size = new System.Drawing.Size(255, 22);
@@ -1523,7 +1523,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label22.Location = new System.Drawing.Point(462, 181);
+            label22.Location = new System.Drawing.Point(462, 166);
             label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label22.Name = "label22";
             label22.Size = new System.Drawing.Size(76, 17);
@@ -1534,7 +1534,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label24.Location = new System.Drawing.Point(462, 112);
+            label24.Location = new System.Drawing.Point(462, 103);
             label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label24.Name = "label24";
             label24.Size = new System.Drawing.Size(59, 17);
@@ -1545,7 +1545,7 @@
             // 
             label25.AutoSize = true;
             label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label25.Location = new System.Drawing.Point(462, 451);
+            label25.Location = new System.Drawing.Point(462, 412);
             label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label25.Name = "label25";
             label25.Size = new System.Drawing.Size(137, 17);
@@ -1556,7 +1556,7 @@
             // 
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label26.Location = new System.Drawing.Point(462, 248);
+            label26.Location = new System.Drawing.Point(462, 227);
             label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label26.Name = "label26";
             label26.Size = new System.Drawing.Size(63, 17);
@@ -1567,7 +1567,7 @@
             // 
             label28.AutoSize = true;
             label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label28.Location = new System.Drawing.Point(462, 317);
+            label28.Location = new System.Drawing.Point(462, 290);
             label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label28.Name = "label28";
             label28.Size = new System.Drawing.Size(98, 17);
@@ -1578,7 +1578,7 @@
             // 
             label29.AutoSize = true;
             label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label29.Location = new System.Drawing.Point(462, 45);
+            label29.Location = new System.Drawing.Point(462, 42);
             label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label29.Name = "label29";
             label29.Size = new System.Drawing.Size(75, 17);
