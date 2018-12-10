@@ -34,11 +34,9 @@ namespace DataAccess
         {
             List<CaseM> cases = new List<CaseM>();
 
-            _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, cl.FirstName AS cFName, " +
-                                   "cl.LastName AS cLName, sb.[Name] AS subjectName FROM [Case] c " +
-                                   "JOIN Employee e ON c.RespEmp_ID = e.ID " +
-                                   "JOIN Client cl ON c.Client_ID = cl.ID " +
-                                   "JOIN [Subject] sb ON c.Subject_ID = sb.ID ";
+            _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, cl.FirstName AS cFName, cl.LastName AS cLName, " +
+                                   "sb.[Name] AS subjectName, sb.TimeEstimate, sb.HoursEstimate FROM[Case] c JOIN Employee e ON c.RespEmp_ID = e.ID" +
+                                   " JOIN Client cl ON c.Client_ID = cl.ID JOIN[Subject] sb ON c.Subject_ID = sb.ID WHERE c.TotalPrice IS NULL";
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -51,12 +49,12 @@ namespace DataAccess
                     c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
                     c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
-                    //c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
+                    c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
                     c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
                     c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
                     c1.Subject = reader["SubjectName"] != DBNull.Value ? reader["SubjectName"].ToString() : string.Empty;
 
-                    //c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
+                    c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
                     c1.Client = $"{(reader["cFName"] != DBNull.Value ? reader["cFName"].ToString() : string.Empty)} " +
                                 $"{(reader["cLName"] != DBNull.Value ? reader["cLName"].ToString() : string.Empty)}";
 
