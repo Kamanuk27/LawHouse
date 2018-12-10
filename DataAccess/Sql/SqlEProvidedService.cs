@@ -36,7 +36,7 @@ namespace DataAccess
             _command.CommandText = "SELECT p.*, e.FirstName AS eFName, e.LastName AS eLName " +
                                    "FROM ProvidedService p " +
                                    "JOIN Employee e ON p.Employee_ID = e.ID " +
-                                   "JOIN[Case] c ON p.Case_ID = c.ID";
+                                   "JOIN [Case] c ON p.Case_ID = c.ID";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@caseId", caseId));
@@ -52,8 +52,8 @@ namespace DataAccess
                     s1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
 
-                    s1.EmployeeName = $"{(reader["EmployeefName"] != DBNull.Value ? reader["EmployeefName"].ToString() : string.Empty)} " +
-                                      $"{(reader["EmployeelName"] != DBNull.Value ? reader["EmployeelName"].ToString() : string.Empty)}";
+                    s1.EmployeeName = $"{(reader["eFName"] != DBNull.Value ? reader["eFName"].ToString() : string.Empty)} " +
+                                      $"{(reader["eLName"] != DBNull.Value ? reader["eLName"].ToString() : string.Empty)}";
                     s1.Date = reader["Date"] != DBNull.Value ? Convert.ToDateTime(reader["Date"]) : DateTime.MinValue;
                     s1.Hours = reader["Hours"] != DBNull.Value ? Convert.ToInt32(reader["Hours"]) : default(int);
                     s1.Km = reader["Km"] != DBNull.Value ? Convert.ToInt32(reader["Km"]) : default(int);
