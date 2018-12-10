@@ -534,6 +534,7 @@ namespace LawHouseTabForm
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
         {
+            NewEmplButt.Visible = true;
             string fName = NEFnameTxt.Text;
             string lName = NELnameTxt.Text;
             string address = NEAdressTxt.Text;
@@ -608,8 +609,24 @@ namespace LawHouseTabForm
         }
 
 
+
         #endregion
 
-       
+        private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
+        {
+            pnlAddUpdateEmplFields.Visible = true;
+            NewEmplButt.Visible = true;
+            lblAddNewEmp.Visible = true;
+            
+            
+            
+        }
+
+        private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
+        {
+            pnlAddUpdateEmplFields.Visible = true;
+            UpdateEmpl.Visible = true;
+            lblUpdateEmpInfo.Visible = true;
+        }
     }
 }
