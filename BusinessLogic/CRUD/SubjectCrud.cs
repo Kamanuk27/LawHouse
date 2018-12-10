@@ -10,16 +10,19 @@ namespace BusinessLogic
 {
     internal class SubjectCrud
     {
-
-        private ISubject _dbSubject;
-        public SubjectCrud()
+        internal ISubject _dbSubject;
+        internal SubjectCrud()
         {
             _dbSubject = DatabaseFactory.Instance.GetSubjectDataAccess();
         }
-        internal List<SubjectM> GetSubject()
+        internal List<SubjectM> GetSubjects()
         {
             return _dbSubject.GetSubjects();
 
+        }
+        internal List<SubjectM> GetEmployeeSubjectsById(int id)
+        {
+            return _dbSubject.GetEmployeeSubjectsById(id);
         }
 
         internal int NewSubject(string name, int hours, int time, decimal price)
@@ -44,6 +47,7 @@ namespace BusinessLogic
             subject.Price = price;
             return _dbSubject.UpdateSubject(subject);
         }
+        
 
 
         internal int DeleteSubject(int id)

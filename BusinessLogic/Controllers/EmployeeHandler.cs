@@ -53,9 +53,9 @@ namespace BusinessLogic
         {
             return _employeeCrud.CloseEmployee(id);
         }
-        internal int AddSpecializationToEmployee(int eId, int sId)
+        public int AddSpecializationToEmployee(int eId, int sId)
         {
-            return _employeeCrud.AddSpecializationToEmployee(eId, sId);
+            return _employeeCrud.AddSubjectToEmployee(eId, sId);
         }
    }
 }

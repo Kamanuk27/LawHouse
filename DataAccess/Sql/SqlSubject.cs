@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess.Sql;
 using LawHouseLibrary.Models;
 
@@ -21,7 +17,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        public List<SubjectM> GetEmployeeSubjectById(int id)
+        public List<SubjectM> GetEmployeeSubjectsById(int id)
         {
             List<SubjectM> fields = new List<SubjectM>();
             _command.CommandText = "SELECT*FROM Subject WHERE [ID] IN " +

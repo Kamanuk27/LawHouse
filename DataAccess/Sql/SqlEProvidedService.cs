@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-
 using DataAccess.Sql;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-    internal class SqlEProvidedService : SqlBase, IProvidedService
+    internal class SqlProvidedService : SqlBase, IProvidedService
     {
        
         public int NewProvidedService(ProvidedServiceM s1)

@@ -12,7 +12,7 @@ namespace DataAccess
         int NewSubject(SubjectM subject);
 
         List<SubjectM> GetSubjects();
-        List<SubjectM> GetEmployeeSubjectById(int id);
+        List<SubjectM> GetEmployeeSubjectsById(int id);
         int UpdateSubject(SubjectM ls);
         int DeleteSubject(int id);
         

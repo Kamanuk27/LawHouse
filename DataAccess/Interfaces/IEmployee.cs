@@ -12,7 +12,7 @@ namespace DataAccess
         int NewEmployee(EmployeeM employee);
         List<EmployeeM> GetEmployees();
         int UpdateEmployee(EmployeeM emp);
-        int AddSpecializationToEmployee(int eId, int sId);
+        int AddSubjectToEmployee(int eId, int sId);
         int CloseEmployee(int id);
         List<EmployeeM> GetLawyers();
         List<EmployeeM> GetEmplNames();

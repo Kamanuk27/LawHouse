@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class PriceCalculator
+    internal class PriceCalculator
     {
-     
-        public PriceCalculator()
-        {
-
-        }
-
-       
         internal decimal CalculatePrice(List<decimal> prices, List<ProvidedServiceM> servList)
         {
            int [] count = CountServices(servList);

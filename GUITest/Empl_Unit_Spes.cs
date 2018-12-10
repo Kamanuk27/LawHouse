@@ -55,7 +55,7 @@ namespace GUITest
 
             }
 
-            foreach (var s1 in _subjectHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubjects())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }

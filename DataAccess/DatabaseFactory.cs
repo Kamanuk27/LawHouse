@@ -99,7 +99,7 @@ namespace DataAccess
 
             if (database == "sqlserver")
             {
-                percistance = new SqlEProvidedService();
+                percistance = new SqlProvidedService();
             }
             else
             {

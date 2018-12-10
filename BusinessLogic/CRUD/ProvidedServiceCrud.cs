@@ -11,9 +11,7 @@ namespace BusinessLogic
    internal class ProvidedServiceCrud
     {
         internal IProvidedService _dbProvidedService;
-      
-
-        public ProvidedServiceCrud()
+        internal ProvidedServiceCrud()
         {
             _dbProvidedService = DatabaseFactory.Instance.GetProvidedServiceDataAccess();
         }
