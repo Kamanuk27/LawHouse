@@ -44,7 +44,7 @@ namespace UnitTestLawHouse.UnitTestsControllers
         public void TestUpdateCaseReturnOne()
         {
             int expected = 1;
-            int actual = _caseHandler.UpdateCase(1, 4000, "employee");
+            int actual = _caseHandler.UpdateCase(1, 4000, 1);
             Assert.AreEqual(expected, actual);
         }
 

@@ -159,7 +159,9 @@ namespace GUITest
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 string respEmpl = RespEmpCombo.Text;
-                int i = _caseHandler.UpdateCase(id, negPrice, respEmpl);
+                // respEmp er ændret til int nu
+
+                int i = _caseHandler.UpdateCase(id, negPrice, 1);
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
