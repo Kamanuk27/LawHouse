@@ -11,7 +11,7 @@ namespace UnitTestLawHouse.UnitTestsControllers
         ClientHandler _clientHandler = ClientHandler.Instance;
 
         [TestMethod]
-        public void TestHrDbReturnSameInstance()
+        public void TestClientHandlerReturnSameInstance()
         {
             ClientHandler actual = new ClientHandler();
             object.ReferenceEquals(_clientHandler, actual);

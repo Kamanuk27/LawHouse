@@ -17,23 +17,8 @@ namespace BusinessLogic
             _dbEmployee = DatabaseFactory.Instance.GetEmployeeDataAccess();
         }
 
-        internal  List<EmployeeM> GetEmployees()
-        {
-            return _dbEmployee.GetEmployees();
-        }
-
-        internal List<EmployeeM> GetEmplNames()
-        {
-            return _dbEmployee.GetEmplNames();
-        }
-
-        internal List<EmployeeM> GetLawyers()
-        {
-            return _dbEmployee.GetLawyers();
-        }
-
         internal int NewEmployee(string cpr, string fName, string lName, string address, int postNo,
-            string eMail, string tlf, DateTime start, string position, decimal money)
+          string eMail, string tlf, DateTime start, string position, decimal money)
         {
             EmployeeM employee = new EmployeeM();
             employee.CprNo = cpr;
@@ -50,6 +35,11 @@ namespace BusinessLogic
             return _dbEmployee.NewEmployee(employee);
         }
 
+        internal  List<EmployeeM> GetEmployees()
+        {
+            return _dbEmployee.GetEmployees();
+        }
+
         internal int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
         {
             EmployeeM emp = new EmployeeM();
@@ -64,18 +54,14 @@ namespace BusinessLogic
             emp.PayRatePrHour = money;
             return _dbEmployee.UpdateEmployee(emp);
         }
-
-
-        internal int CloseEmployee(int id)
-        {
-            return _dbEmployee.CloseEmployee(id);
-        }
-
         internal int AddSubjectToEmployee(int eId, int sId)
         {
             return _dbEmployee.AddSubjectToEmployee(eId, sId);
         }
 
-
+        internal int CloseEmployee(int id)
+        {
+            return _dbEmployee.CloseEmployee(id);
+        }
     }
 }

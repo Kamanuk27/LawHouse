@@ -48,7 +48,7 @@ namespace GUITest
 
         public void FillComboBoxes()
         {
-            foreach (var l1 in _employeeHandler.GetLawyers())
+            foreach (var l1 in _employeeHandler.GetEmployees())
             {
 
                 SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");

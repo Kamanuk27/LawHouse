@@ -66,7 +66,7 @@ namespace GUITest
 
         public void FillComboBoxes()
         {
-            foreach (var m1 in _employeeHandler.GetEmplNames())
+            foreach (var m1 in _employeeHandler.GetEmployees())
             {
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }

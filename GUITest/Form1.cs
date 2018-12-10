@@ -38,7 +38,7 @@ namespace GUITest
         }
         public void FillComboBoxes()
         {
-            foreach (var l1 in _employeeHandler.GetEmplNames())
+            foreach (var l1 in _employeeHandler.GetEmployees())
             {
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");

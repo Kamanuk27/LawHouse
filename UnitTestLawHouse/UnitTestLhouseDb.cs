@@ -18,14 +18,7 @@ namespace UnitTestLawHouse
         //}
         //// Create metoder
 
-        //[TestMethod]
-        //public void TestNewEmployeeReturnOne()
-        //{
-        //    int expected = 1;
-        //    EmployeeM e = new EmployeeM();
-        //    int response = _dbController.NewEmployee(e);
-        //    Assert.AreEqual(response, expected);
-        //}
+      
         //[TestMethod]
         //public void TestNewLegalServiceReturnOne()
         //{
@@ -43,30 +36,10 @@ namespace UnitTestLawHouse
         //    //Assert.AreEqual(response, expected);
         //}
 
-        //[TestMethod]
-        //public void TestAddFieldReturnOne()
-        //{
-        //    int expected = 1;
-        //    int response = _dbController.AddField(1, 2);
-        //    Assert.AreEqual(response, expected);
-        //}
-
+      
         //// Get/Read metoder
         //[TestMethod]
-        //public void TestGetEmployeeesReturnTwoEmployees()
-        //{
-        //    List<EmployeeM> employees = _dbController.GetEmployees();
-        //    Assert.AreEqual(2, employees.Count);
-        //}
-
-        //[TestMethod]
-        //public void TestGetEmployeeesReturnListOfEmployees()
-        //{
-        //    var employees = _dbController.GetEmployees();
-        //    Type actual = employees[0].GetType();
-        //    Type expected = typeof(EmployeeM);
-        //    Assert.AreEqual(expected, actual);
-        //}
+       
         //[TestMethod]
         //public void TestGetLegalServicesReturnTwoServices()
         //{
@@ -116,22 +89,8 @@ namespace UnitTestLawHouse
         //}
 
         //// Update metoder
-        //[TestMethod]
-        //public void TestUpdateEmployeeReturnOne()
-        //{
-        //    int expected = 1;
-        //    EmployeeM e = new EmployeeM();
-        //    int actual = _dbController.UpdateEmployee(e);
-        //    Assert.AreEqual(expected, actual);
-        //}
-
-        //[TestMethod]
-        //public void TestCloseEmployeeReturnOne()
-        //{
-        //    int expected = 1;
-        //    int actual = _dbController.CloseEmployee(1);
-        //    Assert.AreEqual(expected, actual);
-        //}
+       
+       
         //[TestMethod]
         //public void TestUpdateLegalServiceReturnOne()
         //{
