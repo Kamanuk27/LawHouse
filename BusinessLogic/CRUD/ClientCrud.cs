@@ -12,7 +12,7 @@ namespace BusinessLogic
     internal class ClientCrud
     {
         internal IClient _dbClient;
-        public ClientCrud()
+        internal ClientCrud()
         {
             _dbClient = DatabaseFactory.Instance.GetClientDataAccess();
         }

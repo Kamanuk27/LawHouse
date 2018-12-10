@@ -12,7 +12,7 @@ namespace BusinessLogic
     internal class CaseCrud
     {
         internal ICase _dbCase;
-        public CaseCrud()
+        internal CaseCrud()
         {
             _dbCase = DatabaseFactory.Instance.GetCaseDataAccess();
         }

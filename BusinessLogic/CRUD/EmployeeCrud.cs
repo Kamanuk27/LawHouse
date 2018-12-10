@@ -11,7 +11,7 @@ namespace BusinessLogic
     internal class EmployeeCrud
     {
 
-        private IEmployee _dbEmployee;
+        internal IEmployee _dbEmployee;
         internal EmployeeCrud()
         {
             _dbEmployee = DatabaseFactory.Instance.GetEmployeeDataAccess();

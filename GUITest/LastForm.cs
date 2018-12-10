@@ -34,7 +34,7 @@ namespace GUITest
 
         private void GetServices()
         {
-            foreach (var c1 in _subjectHandler.GetSubject())
+            foreach (var c1 in _subjectHandler.GetSubjects())
             {
                 int n = ServiceGridView.Rows.Add();
                 ServiceGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -59,7 +59,7 @@ namespace GUITest
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _subjectHandler.UpdateSubjects(ServiceId, name, hours, time, price);
+            _subjectHandler.UpdateSubject(ServiceId, name, hours, time, price);
         }
 
         private void ServiceGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

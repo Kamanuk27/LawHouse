@@ -56,7 +56,7 @@ namespace LawHouseTabForm
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
 
-            foreach (var s1 in _subjectHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubjects())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -73,7 +73,7 @@ namespace LawHouseTabForm
 
             }
 
-            foreach (var s1 in _subjectHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubjects())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -163,7 +163,7 @@ namespace LawHouseTabForm
 
         private void GetServices()
         {
-            foreach (var c1 in _subjectHandler.GetSubject())
+            foreach (var c1 in _subjectHandler.GetSubjects())
             {
                 int n = ServiceGridView.Rows.Add();
                 ServiceGridView.Rows[n].Cells[0].Value = c1.Id;
@@ -397,7 +397,7 @@ namespace LawHouseTabForm
 
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _subjectHandler.GetSubject())
+            foreach (var s in _subjectHandler.GetSubjects())
             {
                 string[] getServoceId =
                     CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -599,7 +599,7 @@ namespace LawHouseTabForm
             int hours = Convert.ToInt32(MkServiceHours.Text);
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _subjectHandler.UpdateSubjects(ServiceId, name, hours, time, price);
+            _subjectHandler.UpdateSubject(ServiceId, name, hours, time, price);
         }
 
         private void DeleteServButt_Click(object sender, EventArgs e)

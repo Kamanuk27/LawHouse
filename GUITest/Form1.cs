@@ -43,7 +43,7 @@ namespace GUITest
                 RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
             }
-            foreach (var s1 in _subjectHandler.GetSubject())
+            foreach (var s1 in _subjectHandler.GetSubjects())
             {
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
@@ -221,7 +221,7 @@ namespace GUITest
         //Delete???
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _subjectHandler.GetSubject())
+            foreach (var s in _subjectHandler.GetSubjects())
             {
                 string[] getServoceId = CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 string serviceId = getServoceId[0];

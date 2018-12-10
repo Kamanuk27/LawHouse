@@ -33,12 +33,16 @@ namespace BusinessLogic
             return _subjectCrud.NewSubject(name, hours, time, price);
         }
 
-        public List<SubjectM> GetSubject()
+        public List<SubjectM> GetSubjects()
         {
-            return _subjectCrud.GetSubject();
+            return _subjectCrud.GetSubjects();
+        }
+        public List<SubjectM> GetEmployeeSubjectById(int id)
+        {
+            return _subjectCrud.GetEmployeeSubjectById(id);
         }
 
-        public int UpdateSubjects(int id, string name, int hours, int time, decimal price)
+        public int UpdateSubject(int id, string name, int hours, int time, decimal price)
         {
             return _subjectCrud.UpdateSubject(id, name, hours, time, price);
         }
