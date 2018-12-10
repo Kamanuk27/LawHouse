@@ -49,7 +49,7 @@ namespace DataAccess
                     e.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
                     e.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
                     e.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
-                    e.FirstName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+                    e.LastName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
                     e.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
                     e.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
                     e.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
