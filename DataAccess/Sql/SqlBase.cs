@@ -30,5 +30,24 @@ namespace DataAccess.Sql
             _connection.Close();
             return rows;
         }
+
+        public int ExecuteNonQuerySqlReturnId()
+        {
+            //Bruges i create new client. 
+            PrepareSql();
+            int affectedRows = _command.ExecuteNonQuery(); 
+
+            if (affectedRows == 1)
+            {         
+                //Rettes - returnerer ikke ID endnu.
+                _command.CommandText = "SELECT @@IDENTITY as ID";
+                SqlDataReader reader = _command.ExecuteReader(); 
+                reader.Read();
+
+                return ((int)reader.GetDecimal(0)); 
+            }
+            _connection.Close();
+            return -1;
+        }
     }
 }

@@ -67,7 +67,8 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@PostNo", client.PostNo));
             _command.Parameters.Add(new SqlParameter("@Email", client.Email));
             _command.Parameters.Add(new SqlParameter("@TlfNo", client.TlfNo));
-            return ExecuteNonQuery();
+
+            return ExecuteNonQuerySqlReturnId();
         }
 
         public int UpdateClient(ClientM client)
