@@ -49,7 +49,7 @@
             this.CrCasePrice = new System.Windows.Forms.TextBox();
             this.CrCaseEndDato = new System.Windows.Forms.TextBox();
             this.CrCaseName = new System.Windows.Forms.TextBox();
-            this.NewClientButt = new System.Windows.Forms.Button();
+            this.NewClientBtn = new System.Windows.Forms.Button();
             this.NewClientTelef = new System.Windows.Forms.TextBox();
             this.NewClientMail = new System.Windows.Forms.TextBox();
             this.NewClientPost = new System.Windows.Forms.TextBox();
@@ -311,17 +311,17 @@
             this.CrCaseName.Size = new System.Drawing.Size(255, 27);
             this.CrCaseName.TabIndex = 250;
             // 
-            // NewClientButt
+            // NewClientBtn
             // 
-            this.NewClientButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewClientButt.Location = new System.Drawing.Point(1512, 687);
-            this.NewClientButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NewClientButt.Name = "NewClientButt";
-            this.NewClientButt.Size = new System.Drawing.Size(152, 44);
-            this.NewClientButt.TabIndex = 243;
-            this.NewClientButt.Text = "Ny Klient";
-            this.NewClientButt.UseVisualStyleBackColor = true;
-            this.NewClientButt.Click += new System.EventHandler(this.NewClientButt_Click);
+            this.NewClientBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewClientBtn.Location = new System.Drawing.Point(1512, 687);
+            this.NewClientBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NewClientBtn.Name = "NewClientBtn";
+            this.NewClientBtn.Size = new System.Drawing.Size(152, 44);
+            this.NewClientBtn.TabIndex = 243;
+            this.NewClientBtn.Text = "Ny Klient";
+            this.NewClientBtn.UseVisualStyleBackColor = true;
+            this.NewClientBtn.Click += new System.EventHandler(this.NewClientBtn_Click);
             // 
             // NewClientTelef
             // 
@@ -744,7 +744,7 @@
             this.Controls.Add(label26);
             this.Controls.Add(label28);
             this.Controls.Add(label29);
-            this.Controls.Add(this.NewClientButt);
+            this.Controls.Add(this.NewClientBtn);
             this.Controls.Add(this.NewClientTelef);
             this.Controls.Add(this.NewClientMail);
             this.Controls.Add(this.NewClientPost);
@@ -797,7 +797,7 @@
         private System.Windows.Forms.TextBox CrCasePrice;
         private System.Windows.Forms.TextBox CrCaseEndDato;
         private System.Windows.Forms.TextBox CrCaseName;
-        private System.Windows.Forms.Button NewClientButt;
+        private System.Windows.Forms.Button NewClientBtn;
         private System.Windows.Forms.TextBox NewClientTelef;
         private System.Windows.Forms.TextBox NewClientMail;
         private System.Windows.Forms.TextBox NewClientPost;

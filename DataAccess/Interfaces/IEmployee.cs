@@ -7,12 +7,13 @@ using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-    public interface IEmployee
+   public interface IEmployee
     {
         int NewEmployee(EmployeeM employee);
         List<EmployeeM> GetEmployees();
         int UpdateEmployee(EmployeeM emp);
         int AddSubjectToEmployee(int eId, int sId);
         int CloseEmployee(int id);
+       
     }
 }

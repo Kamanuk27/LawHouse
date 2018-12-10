@@ -248,7 +248,7 @@ namespace GUITest
             _caseHandler.NewCase(caseName, ClientId, service, startTime, respEmpl, negoPrice);
         }
 
-        private void NewClientButt_Click(object sender, EventArgs e)
+        private void NewClientBtn_Click(object sender, EventArgs e)
         {
             string cpr = NewClientCprNo.Text;
             string fName = NewClientfName.Text;

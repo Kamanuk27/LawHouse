@@ -25,6 +25,7 @@ namespace LawHouseTabForm
         private int CaseId { get; set; }
         public int EmpiId { get; set; }
         public int ServiceId { get; set; }
+        public int ClientId { get; set; }
 
 
         public MainForm()
@@ -36,9 +37,6 @@ namespace LawHouseTabForm
             _employeeHandler = new EmployeeHandler();
             _pServiceHandler = new ProvidedServiceHandler();
             _subjectHandler = new SubjectHandler();
-
-            //_caseHandler = new OldCaseHandler();
-            //_hrHandler = LhouseHandler.Instance;
 
             FillComboBoxes();
             ActivateGetCasesGrid();
@@ -358,7 +356,7 @@ namespace LawHouseTabForm
             }
         }
 
-        private void UdateClienButt_Click(object sender, EventArgs e)
+        private void UpdateClientBtn_Click(object sender, EventArgs e)
         {
             string cpr = NewClientCprNo.Text;
             string fName = NewClientfName.Text;
@@ -371,7 +369,7 @@ namespace LawHouseTabForm
             // her i Update mangler vi int id. Jeg sætter bare 1-tal i parenteser for at fjerne fejl.
         }
 
-        private void NewClientButt_Click(object sender, EventArgs e)
+        private void NewClientBtn_Click(object sender, EventArgs e)
         {
             string cpr = NewClientCprNo.Text;
             string fName = NewClientfName.Text;
@@ -380,7 +378,17 @@ namespace LawHouseTabForm
             int postNo = Convert.ToInt32(NewClientPost.Text);
             string eMail = NewClientMail.Text;
             string tlf = NewClientTelef.Text;
-            _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+            this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+            MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
+
+            NewClientCprNo.Clear();
+            NewClientfName.Clear();
+            NewClientLName.Clear();
+            NewClientAdress.Clear();
+            NewClientPost.Clear();
+            NewClientMail.Clear();
+            NewClientTelef.Clear();
+
         }
 
         private void NewCaseButt_Click(object sender, EventArgs e)
@@ -502,6 +510,8 @@ namespace LawHouseTabForm
 
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            
+
             EmpiId = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
             NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
             NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
@@ -549,13 +559,8 @@ namespace LawHouseTabForm
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
         {
-            NewEmplButt.Visible = true;
-            btnActivateAddEmpFields.Visible = true;
-            btnActivateUpdEmpFields.Visible = true;
-            pnlAddSubjectToEmp.Visible = false;
-            btnEditEmpCancel.Visible = false;
-            lblAnsatte.Visible = true;
-            EmplGridView.Visible = true;
+            updtEmployeeVisible();
+
             string fName = NEFnameTxt.Text;
             string lName = NELnameTxt.Text;
             string address = NEAdressTxt.Text;
@@ -569,6 +574,17 @@ namespace LawHouseTabForm
             ClearTxt();
             EmplGridView.Rows.Clear();
             EmplGridStart();
+        }
+        private void updtEmployeeVisible()
+        {
+            NewEmplButt.Visible = false;
+            UpdateEmpl.Visible = false;
+            btnActivateAddEmpFields.Visible = true;
+            btnActivateUpdEmpFields.Visible = true;
+            pnlAddSubjectToEmp.Visible = false;
+            btnEditEmpCancel.Visible = false;
+            lblAnsatte.Visible = true;
+            EmplGridView.Visible = false;
         }
 
         private void DeleteEmpl_Click(object sender, EventArgs e)
@@ -650,7 +666,8 @@ namespace LawHouseTabForm
         }
 
         private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
-        {            
+        {
+            // lave metode der viser lstBoxShowEmpSpecialization i en liste
             UpdateEmpl.Visible = true;
             lblUpdateEmpInfo.Visible = true;
             EmplGridView.Visible = false;
@@ -674,6 +691,7 @@ namespace LawHouseTabForm
             btnActivateUpdEmpFields.Visible = true;
             btnActivateAddEmpFields.Visible = true;
             NewEmplButt.Visible = false;
+            UpdateEmpl.Visible = false;
 
             btnEditEmpCancel.Visible = false;
             pnlAddUpdateEmplFields.Visible = false;
@@ -683,5 +701,6 @@ namespace LawHouseTabForm
             
 
         }
+
     }
 }
