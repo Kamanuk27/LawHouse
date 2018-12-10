@@ -53,14 +53,14 @@
     <Compile Include="UnitTestsControllers\CaseHandlerUnitTest.cs" />
     <Compile Include="UnitTestsControllers\ProvidedServicesHandlerUnitTest.cs" />
     <Compile Include="UnitTestsControllers\EmployeeHandlerUnitTest.cs" />
+    <Compile Include="UnitTestsControllers\SubjectHandlerUnitTest.cs" />
     <Compile Include="UnitTestsCrudClasses\ClientCrudUnitTest.cs" />
     <Compile Include="UnitTestsCrudClasses\CaseCrudUnitTest.cs" />
-    <Compile Include="UnitTestLhouseDb.cs" />
     <Compile Include="UnitTestsCrudClasses\PriceCalculatorUnitTest.cs" />
-    <Compile Include="UnitTestCaseDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestsCrudClasses\ProvidedServicesCrudUnitTest.cs" />
     <Compile Include="UnitTestsCrudClasses\EmployeeCrudUnitTest.cs" />
+    <Compile Include="UnitTestsCrudClasses\SubjectCrudUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
