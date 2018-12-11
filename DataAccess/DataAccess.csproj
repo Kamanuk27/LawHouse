@@ -53,7 +53,7 @@
     <Compile Include="Sql\SqlCase.cs" />
     <Compile Include="Sql\SqlEmployee.cs" />
     <Compile Include="Sql\SqlClient.cs" />
-    <Compile Include="Sql\SqlEProvidedService.cs" />
+    <Compile Include="Sql\SqlProvidedService.cs" />
     <Compile Include="Sql\SqlSubject.cs" />
     <Compile Include="FakeDBClasses\TestCase.cs" />
     <Compile Include="FakeDBClasses\TestClient.cs" />
@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
