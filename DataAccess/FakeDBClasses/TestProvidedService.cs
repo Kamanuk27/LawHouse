@@ -50,7 +50,10 @@ namespace DataAccess
 
         public List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
         {
-            throw new NotImplementedException();
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
+            services.Add(new ProvidedServiceM(50, 2));
+            services.Add(new ProvidedServiceM(200, 1));
+            return services;
         }
     }
 }

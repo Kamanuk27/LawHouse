@@ -772,7 +772,7 @@ namespace LawHouseTabForm
             else
             {
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[9].Value);
+                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
 
                 decimal price = _pServiceHandler.GetPrice(id, negPrice);
                 ClosedCaseBut.Visible = true;

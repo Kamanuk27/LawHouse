@@ -43,6 +43,21 @@ namespace UnitTestLawHouse.UnitTestsControllers
         }
 
         [TestMethod]
+        public void TestGetProvidedServicesByEmplIdReturnTwoServices()
+        {
+            var services = _provServicesHandler.GetProvidedServicesByEmplId(1, DateTime.Now, DateTime.Now);
+            Assert.AreEqual(2, services.Count);
+        }
+
+        [TestMethod]
+        public void TestGetProvidedServicesByEmplIdReturnListOfServices()
+        {
+            var services = _provServicesHandler.GetProvidedServicesByEmplId(1, DateTime.Now, DateTime.Now);
+            Type actual = services[0].GetType();
+            Type expected = typeof(ProvidedServiceM);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void TestUpdateProvidedServiceReturnOne()
         {
             int expected = 1;
