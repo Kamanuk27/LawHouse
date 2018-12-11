@@ -65,6 +65,40 @@ namespace DataAccess
             return services;
 
         }
+        public List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
+        {
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
+            _command.CommandText =
+                "Select * FROM  ProvidedService where[Date] between @fromTime and @toTime and Employee_ID = @emplId";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@emplId", emplId));
+            _command.Parameters.Add(new SqlParameter("@fromTime", fromTime));
+            _command.Parameters.Add(new SqlParameter("@toTime", toTime));
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    ProvidedServiceM s1 = new ProvidedServiceM();
+
+                    s1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                   // s1.CaseID = reader["Case_ID"] != DBNull.Value ? Convert.ToInt32(reader["Case_ID"]) : default(int);
+                    s1.Date = reader["Date"] != DBNull.Value ? Convert.ToDateTime(reader["Date"]) : DateTime.MinValue;
+                    s1.Hours = reader["Hours"] != DBNull.Value ? Convert.ToInt32(reader["Hours"]) : default(int);
+                    s1.Km = reader["Km"] != DBNull.Value ? Convert.ToInt32(reader["Km"]) : default(int);
+                    s1.Comment = reader["Comment"] != DBNull.Value ? reader["Comment"].ToString() : String.Empty;
+                    services.Add(s1);
+                }
+
+            }
+            _connection.Close();
+            return services;
+
+        }
+
 
         public int UpdateProvidedService(ProvidedServiceM s1)
         {
