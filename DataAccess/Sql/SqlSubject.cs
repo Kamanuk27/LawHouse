@@ -20,8 +20,9 @@ namespace DataAccess
         public List<SubjectM> GetEmployeeSubjectsById(int id)
         {
             List<SubjectM> fields = new List<SubjectM>();
-            _command.CommandText = "SELECT*FROM Subject WHERE [ID] IN " +
+            _command.CommandText = "SELECT * FROM Subject WHERE [ID] IN " +
                                    "(SELECT Subject_ID FROM Specialization WHERE Employee_ID = @id)";
+
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
 

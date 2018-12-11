@@ -26,7 +26,7 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@StartDate", e.StartDate));
             _command.Parameters.Add(new SqlParameter("@Position", e.Position));
             _command.Parameters.Add(new SqlParameter("@PayRatePrHour", e.PayRatePrHour));
-            return ExecuteNonQuery();
+            return ExecuteNonQuerySqlReturnId();
         }
 
         public List<EmployeeM> GetEmployees()

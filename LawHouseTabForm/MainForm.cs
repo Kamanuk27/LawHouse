@@ -23,7 +23,7 @@ namespace LawHouseTabForm
         private ProvidedServiceHandler _pServiceHandler;
 
         private int CaseId { get; set; }
-        public int EmpiId { get; set; }
+        public int EmployeeID { get; set; }
         public int ServiceId { get; set; }
         public int ClientId { get; set; }
 
@@ -105,6 +105,17 @@ namespace LawHouseTabForm
             NEmplStartDate.Text = DateTime.Now.ToShortDateString();
             NEmplPosition.Clear();
             NEmplMoney.Clear();
+        }
+
+        private void ClearNewClientTXT()
+        {
+            NewClientCprNo.Clear();
+            NewClientfName.Clear();
+            NewClientLName.Clear();
+            NewClientAdress.Clear();
+            NewClientPost.Clear();
+            NewClientMail.Clear();
+            NewClientTelef.Clear();
         }
 
         private void ActivateGetCasesGrid()
@@ -381,13 +392,7 @@ namespace LawHouseTabForm
             this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
             MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
 
-            NewClientCprNo.Clear();
-            NewClientfName.Clear();
-            NewClientLName.Clear();
-            NewClientAdress.Clear();
-            NewClientPost.Clear();
-            NewClientMail.Clear();
-            NewClientTelef.Clear();
+            ClearNewClientTXT();
 
         }
 
@@ -510,9 +515,8 @@ namespace LawHouseTabForm
 
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
 
-            EmpiId = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
+            this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
             NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
             NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
             NELnameTxt.Text = EmplGridView.SelectedRows[0].Cells[3].Value.ToString();
@@ -523,6 +527,10 @@ namespace LawHouseTabForm
             NEmplStartDate.Value = Convert.ToDateTime(EmplGridView.SelectedRows[0].Cells[8].Value.ToString());
             NEmplPosition.Text = EmplGridView.SelectedRows[0].Cells[9].Value.ToString();
             NEmplMoney.Text = EmplGridView.SelectedRows[0].Cells[10].Value.ToString();
+
+            showSpecializationInListbox();
+
+            AddEmpFields();
         }
 
         private void NewEmplButt_Click(object sender, EventArgs e)
@@ -551,7 +559,7 @@ namespace LawHouseTabForm
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
+            this.EmployeeID = _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
             ClearTxt();
             EmplGridView.Rows.Clear();
             EmplGridStart();
@@ -559,8 +567,6 @@ namespace LawHouseTabForm
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
         {
-            updtEmployeeVisible();
-
             string fName = NEFnameTxt.Text;
             string lName = NELnameTxt.Text;
             string address = NEAdressTxt.Text;
@@ -570,12 +576,15 @@ namespace LawHouseTabForm
             DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
             string position = NEmplPosition.Text;
             decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _employeeHandler.UpdateEmployee(EmpiId, fName, lName, address, postNo, eMail, tlf, position, money);
+            _employeeHandler.UpdateEmployee(EmployeeID, fName, lName, address, postNo, eMail, tlf, position, money);
             ClearTxt();
             EmplGridView.Rows.Clear();
             EmplGridStart();
+
+            showUpdtEmployeeFields();
+            
         }
-        private void updtEmployeeVisible()
+        private void showUpdtEmployeeFields()
         {
             NewEmplButt.Visible = false;
             UpdateEmpl.Visible = false;
@@ -591,10 +600,10 @@ namespace LawHouseTabForm
         {
             //int id = Convert.ToInt32(EmlGridView.SelectedRows[0].Cells[0].Value);
             DialogResult dialogResult =
-                MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmpiId}", MessageBoxButtons.YesNo);
+                MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmployeeID}", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                int i = _employeeHandler.CloseEmployee(EmpiId);
+                int i = _employeeHandler.CloseEmployee(EmployeeID);
                 MessageBox.Show(i.ToString());
                 ClearTxt();
                 EmplGridView.Rows.Clear();
@@ -608,6 +617,7 @@ namespace LawHouseTabForm
 
         private void SpecialButt_Click(object sender, EventArgs e)
         {
+
             string[] getAdvokatId = SpecInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
             int id = Convert.ToInt32(getAdvokatId[0]);
             string[] getServiceId = LServInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -650,7 +660,14 @@ namespace LawHouseTabForm
         #endregion
 
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
-        {           
+        {
+            AddEmpFields();
+
+            //Tilføj on highlighted grid field - activate addEmpFields
+        }
+
+        private void AddEmpFields()
+        {
             NewEmplButt.Visible = true;
             lblAddNewEmp.Visible = true;
             EmplGridView.Visible = false;
@@ -661,9 +678,9 @@ namespace LawHouseTabForm
             btnEditEmpCancel.Visible = true;
             pnlAddSubjectToEmp.Visible = true;
             pnlAddUpdateEmplFields.Visible = true;
-
-
         }
+
+
 
         private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
         {
@@ -702,5 +719,17 @@ namespace LawHouseTabForm
 
         }
 
+        private void showSpecializationInListbox()
+        {          
+            foreach (var subject in _subjectHandler.GetEmployeeSubjectById(this.EmployeeID))
+            {
+                lstBoxShowEmpSpecialization.Items.Add(subject.Name).ToString();
+            }
+        }
+
+        private void SpecialButt_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
