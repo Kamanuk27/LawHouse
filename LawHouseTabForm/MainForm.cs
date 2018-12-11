@@ -62,6 +62,7 @@ namespace LawHouseTabForm
             foreach (var m1 in _employeeHandler.GetEmployees())
             {
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
+                cmbBoxFindEmplID.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
 
 
@@ -361,18 +362,6 @@ namespace LawHouseTabForm
             }
         }
 
-        private void UpdateClientBtn_Click(object sender, EventArgs e)
-        {
-            string cpr = NewClientCprNo.Text;
-            string fName = NewClientfName.Text;
-            string lName = NewClientLName.Text;
-            string address = NewClientAdress.Text;
-            int postNo = Convert.ToInt32(NewClientPost.Text);
-            string eMail = NewClientMail.Text;
-            string tlf = NewClientTelef.Text;
-            _clientHandler.UpdateClient(1, fName, lName, cpr, address, postNo, eMail, tlf);
-            // her i Update mangler vi int id. Jeg sætter bare 1-tal i parenteser for at fjerne fejl.
-        }
 
         private void NewClientBtn_Click(object sender, EventArgs e)
         {
@@ -390,35 +379,6 @@ namespace LawHouseTabForm
 
         }
 
-        private void NewCaseButt_Click(object sender, EventArgs e)
-        {
-            string caseName = CrCaseName.Text;
-            string[] getServoceId =
-                CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int service = Convert.ToInt32(getServoceId[0]);
-            DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
-            string[] getAdvoketId = CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int respEmpl = Convert.ToInt32(getAdvoketId[0]);
-            decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-            _caseHandler.NewCase(caseName, CaseId, service, startTime, respEmpl, negoPrice);
-        }
-
-        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (var s in _subjectHandler.GetSubjects())
-            {
-                string[] getServoceId =
-                    CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                string serviceId = getServoceId[0];
-
-                if (s.Id.ToString() == serviceId)
-                {
-                    CrCasePrice.Text = s.Price.ToString();
-                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
-                }
-            }
-        }
 
 
 
@@ -796,7 +756,72 @@ namespace LawHouseTabForm
 
         private void cmbBoxFindEmplID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var s in _pServiceHandler.)
+            foreach (var s in _employeeHandler.GetEmployees())
+            {
+                string[] getEmployeeId = 
+                    cmbBoxFindEmplID.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                this.EmployeeID = Convert.ToInt32(getEmployeeId[0]);
+            }
+        }
+
+        private void btnShowPrServices_Click(object sender, EventArgs e)
+        {
+            getPrServicesByEmployee();
+        }
+
+        private void getPrServicesByEmployee()
+        {
+            GridEmployeeServicesP.Rows.Clear();
+
+            DateTime startDate = Convert.ToDateTime(dateTimeFrom.Value.ToShortDateString());
+            DateTime endDate = Convert.ToDateTime(dateTimeTo.Value.ToShortDateString());
+
+            foreach (var ps in _pServiceHandler.GetProvidedServicesByEmplId(this.EmployeeID, startDate, endDate))
+            {
+                int n = GridEmployeeServicesP.Rows.Add();
+                GridEmployeeServicesP.Rows[n].Cells[0].Value = ps.CaseID;
+                GridEmployeeServicesP.Rows[n].Cells[1].Value = ps.Date.ToShortDateString();
+                GridEmployeeServicesP.Rows[n].Cells[2].Value = ps.Hours;
+                GridEmployeeServicesP.Rows[n].Cells[3].Value = ps.Km;
+                GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
+            }
+        }
+
+        private void UpdateClientBtn_Click(object sender, EventArgs e)
+        {
+            string cpr = NewClientCprNo.Text;
+            string fName = NewClientfName.Text;
+            string lName = NewClientLName.Text;
+            string address = NewClientAdress.Text;
+            int postNo = Convert.ToInt32(NewClientPost.Text);
+            string eMail = NewClientMail.Text;
+            string tlf = NewClientTelef.Text;
+            _clientHandler.UpdateClient(1, fName, lName, cpr, address, postNo, eMail, tlf);
+            // her i Update mangler vi int id. Jeg sætter bare 1-tal i parenteser for at fjerne fejl.
+
+            // skal lave en metode der henter id via tlf nummer.. Andrey kigger på det. 
+
+            //TRY CATCH FOR SIKKERHEDS SKYLD
+        }
+
+        private void NewCaseButt_Click(object sender, EventArgs e)
+        {
+
+            string caseName = CrCaseName.Text;
+            string[] getServoceId =
+                CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int service = Convert.ToInt32(getServoceId[0]);
+            DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
+            string[] getAdvoketId = CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int respEmpl = Convert.ToInt32(getAdvoketId[0]);
+            decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
+            _caseHandler.NewCase(caseName, CaseId, service, startTime, respEmpl, negoPrice);
+
+        }
+
+        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in _subjectHandler.GetSubjects())
             {
                 string[] getServoceId =
                     CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -809,7 +834,6 @@ namespace LawHouseTabForm
                     CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
                 }
             }
-
         }
     }
 }
