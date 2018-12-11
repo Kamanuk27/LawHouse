@@ -101,5 +101,15 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@sId", sId));
             return ExecuteNonQuery();
         }
+
+
+        public int DeleteSubjectFromEmployee(int eId, int sId)
+        {
+            _command.CommandText = "Delete from [dbo].[Specialization] where Subject_ID = @sId and Employee_ID = @eId";
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@eId", eId));
+            _command.Parameters.Add(new SqlParameter("@sId", sId));
+            return ExecuteNonQuery();
+        }
     }
 }

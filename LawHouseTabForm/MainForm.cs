@@ -64,13 +64,6 @@ namespace LawHouseTabForm
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
 
-            //foreach (var l1 in _employeeHandler.GetEmployees())
-            //{
-            //    if (l1.Position == "Advokat" )
-            //    {
-            //        SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
-            //    }
-            //}
 
             foreach (var s1 in _subjectHandler.GetSubjects())
             {
@@ -511,8 +504,9 @@ namespace LawHouseTabForm
 
         #endregion Tab2
 
-        #region Tab3
+        #region TabAnsatte
 
+        //ansatte
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             SendUpdateEmployeeFieldsInfo();
@@ -521,10 +515,15 @@ namespace LawHouseTabForm
             UpdateEmpl.Visible = true;
         }
 
+        /// <summary>
+        /// ansatte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
 
-            showNewEmployeeBoxes();
+            showAllEmployeeGrid();
 
             string cpr = NECprTxt.Text;
             string fName = NEFnameTxt.Text;
@@ -542,7 +541,10 @@ namespace LawHouseTabForm
             EmplGridStart();
         }
 
-        private void showNewEmployeeBoxes()
+        /// <summary>
+        /// Ansatte
+        /// </summary>
+        private void showAllEmployeeGrid()
         {
             EmplGridView.Visible = true;
             lblAnsatte.Visible = true;
@@ -550,7 +552,7 @@ namespace LawHouseTabForm
             btnActivateUpdEmpFields.Visible = true;
             btnActivateAddEmpFields.Visible = true;
             btnEditEmpCancel.Visible = false;
-            NewEmplButt.Visible = true;
+            NewEmplButt.Visible = false;
             UpdateEmpl.Visible = false;
 
             pnlAddUpdateEmplFields.Visible = false;
@@ -560,6 +562,11 @@ namespace LawHouseTabForm
             btnDelSubjFromEmp.Visible = true;
         }
 
+        /// <summary>
+        /// Ansatte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateEmpl_Click(object sender, EventArgs e)
         {
             string fName = NEFnameTxt.Text;
@@ -577,10 +584,11 @@ namespace LawHouseTabForm
             EmplGridStart();
 
             showUpdtEmployeeBoxes();
-            
-            
-            
+            btnEditEmpCancel_Click(sender, e);
         }
+        /// <summary>
+        /// ANSATTE
+        /// </summary>
         private void showUpdtEmployeeBoxes()
         {
 
@@ -595,6 +603,11 @@ namespace LawHouseTabForm
             btnDelSubjFromEmp.Visible = true;
         }
 
+        /// <summary>
+        /// ANSATTE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteEmpl_Click(object sender, EventArgs e)
         {
             //int id = Convert.ToInt32(EmlGridView.SelectedRows[0].Cells[0].Value);
@@ -646,15 +659,19 @@ namespace LawHouseTabForm
             _subjectHandler.DeleteSubject(ServiceId);
         }
 
-
-
         #endregion
+
+
+        /// ANSATTE
 
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
         {
+            ClearTxt();
             AddEmpFields();
             NewEmplButt.Visible = true;
         }
+
+        //ANSATTE
 
         private void AddEmpFields()
         {
@@ -672,6 +689,11 @@ namespace LawHouseTabForm
         }
 
         
+        /// <summary>
+        /// ANSATTE    
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         //User test - skal vi beholde knappen eller ej??? 
         private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
         {
@@ -682,6 +704,9 @@ namespace LawHouseTabForm
             UpdateEmpl.Visible = true;
         }
 
+        /// <summary>
+        /// Ansatte
+        /// </summary>
         private void SendUpdateEmployeeFieldsInfo()
         {
             this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
@@ -699,6 +724,11 @@ namespace LawHouseTabForm
             showSpecializationInListbox(EmployeeID);          
         }
 
+        /// <summary>
+        /// Ansatte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditEmpCancel_Click(object sender, EventArgs e)
         {
             EmplGridView.Visible = true;
@@ -714,13 +744,14 @@ namespace LawHouseTabForm
             btnEditEmpCancel.Visible = false;
             pnlAddUpdateEmplFields.Visible = false;
             pnlAddSubjectToEmp.Visible = false;
-            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false; btnDelSubjFromEmpbtnDelSubjFromEmp
             pnlAddSubjectToEmp.Visible = false;
             DeleteEmpl.Visible = false;
             lstBoxShowEmpSpecialization.Items.Clear();
 
         }
 
+        //Ansatte
         private void showSpecializationInListbox(int EmployeeID)
         {          
             foreach (var subject in _subjectHandler.GetEmployeeSubjectsById(EmployeeID))
@@ -729,18 +760,30 @@ namespace LawHouseTabForm
             }
         }
 
-        //private void btnDelSubjFromEmp_Click(object sender, EventArgs e)
-        //{
-        //    string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
+        /// <summary>
+        /// Ansatte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelSubjFromEmp_Click(object sender, EventArgs e)
+        {
+            //TRY CATCH mangler
+            string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
 
-        //    string[] getSubjectId = getItem.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] getSubjectId = getItem.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-        //    int id = Convert.ToInt32(getSubjectId[0]);
-        //    _employeeHandler.
-        //}
+            int id = Convert.ToInt32(getSubjectId[0]);
+            _employeeHandler.DeleteSubjectFromEmployee(EmployeeID, id);
+            lstBoxShowEmpSpecialization.Items.Clear();
+            showSpecializationInListbox(EmployeeID);
+        }
 
-
-        private void SpecialBtn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Ansatte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddSubjectToEmplBtn_Click(object sender, EventArgs e)
         {
             string[] getServiceId = LServInsertCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int subjectId = Convert.ToInt32(getServiceId[0]);
