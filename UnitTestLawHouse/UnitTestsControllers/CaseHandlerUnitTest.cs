@@ -12,7 +12,7 @@ namespace UnitTestLawHouse.UnitTestsControllers
         CaseHandler _caseHandler = CaseHandler.Instance;
 
         [TestMethod]
-        public void TestHrDbReturnSameInstance()
+        public void TestCaseHandlerReturnSameInstance()
         {
             CaseHandler actual = new CaseHandler();
             object.ReferenceEquals(_caseHandler, actual);

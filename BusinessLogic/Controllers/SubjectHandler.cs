@@ -37,7 +37,7 @@ namespace BusinessLogic
         {
             return _subjectCrud.GetSubjects();
         }
-        public List<SubjectM> GetEmployeeSubjectById(int id)
+        public List<SubjectM> GetEmployeeSubjectsById(int id)
         {
             return _subjectCrud.GetEmployeeSubjectsById(id);
         }

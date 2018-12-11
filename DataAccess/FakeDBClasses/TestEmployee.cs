@@ -12,29 +12,30 @@ namespace DataAccess
     {
         public int NewEmployee(EmployeeM employee)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public List<EmployeeM> GetEmployees()
         {
-            throw new NotImplementedException();
+            List<EmployeeM> employees = new List<EmployeeM>();
+            employees.Add(new EmployeeM(1));
+            employees.Add(new EmployeeM(2));
+            return employees;
         }
 
         public int UpdateEmployee(EmployeeM emp)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public int AddSubjectToEmployee(int eId, int sId)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public int CloseEmployee(int id)
         {
-            throw new NotImplementedException();
+            return 1;
         }
-
-       
     }
 }

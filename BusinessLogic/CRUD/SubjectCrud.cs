@@ -15,16 +15,6 @@ namespace BusinessLogic
         {
             _dbSubject = DatabaseFactory.Instance.GetSubjectDataAccess();
         }
-        internal List<SubjectM> GetSubjects()
-        {
-            return _dbSubject.GetSubjects();
-
-        }
-        internal List<SubjectM> GetEmployeeSubjectsById(int id)
-        {
-            return _dbSubject.GetEmployeeSubjectsById(id);
-        }
-
         internal int NewSubject(string name, int hours, int time, decimal price)
         {
             SubjectM subject = new SubjectM();
@@ -35,6 +25,15 @@ namespace BusinessLogic
 
 
             return _dbSubject.NewSubject(subject);
+        }
+        internal List<SubjectM> GetSubjects()
+        {
+            return _dbSubject.GetSubjects();
+
+        }
+        internal List<SubjectM> GetEmployeeSubjectsById(int id)
+        {
+            return _dbSubject.GetEmployeeSubjectsById(id);
         }
 
         internal int UpdateSubject(int id, string name, int hours, int time, decimal price)
@@ -47,8 +46,6 @@ namespace BusinessLogic
             subject.Price = price;
             return _dbSubject.UpdateSubject(subject);
         }
-        
-
 
         internal int DeleteSubject(int id)
         {
