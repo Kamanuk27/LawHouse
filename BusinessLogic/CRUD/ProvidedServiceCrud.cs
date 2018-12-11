@@ -32,7 +32,11 @@ namespace BusinessLogic
         internal List<ProvidedServiceM> GetProvidedServices(int id)
         {
             return _dbProvidedService.GetProvidedServices(id);
-           
+        }
+
+        internal List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
+        {
+            return _dbProvidedService.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
         }
         internal int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {

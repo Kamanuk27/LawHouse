@@ -47,5 +47,10 @@ namespace DataAccess
             prices.Add(750);
             return prices;
         }
+
+        public List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace DataAccess
         int UpdateProvidedService(ProvidedServiceM s1);
         int DeleteProvidedService(int id);
          List<decimal> GetUnitPrices();
+        List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime);
 
 
     }

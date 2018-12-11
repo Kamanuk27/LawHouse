@@ -35,7 +35,11 @@ namespace BusinessLogic
         public List<ProvidedServiceM> GetProvidedServices(int caseId)
         {
             return _providedServiceCrud.GetProvidedServices(caseId);
+        }
 
+        public List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
+        {
+            return _providedServiceCrud.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
         }
 
         public int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
