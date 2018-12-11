@@ -356,6 +356,7 @@ namespace LawHouseTabForm
                 decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[9].Value);
                
                 decimal price = _pServiceHandler.GetPrice(id, negPrice);
+                ClosedCaseBut.Visible = true;
                 
             }
         }
@@ -744,7 +745,7 @@ namespace LawHouseTabForm
             btnEditEmpCancel.Visible = false;
             pnlAddUpdateEmplFields.Visible = false;
             pnlAddSubjectToEmp.Visible = false;
-            pnlAddUpdateEmplFields.Visible = false; btnDelSubjFromEmpbtnDelSubjFromEmp
+            pnlAddUpdateEmplFields.Visible = false; 
             pnlAddSubjectToEmp.Visible = false;
             DeleteEmpl.Visible = false;
             lstBoxShowEmpSpecialization.Items.Clear();
@@ -793,6 +794,22 @@ namespace LawHouseTabForm
             showSpecializationInListbox(EmployeeID);
         }
 
+        private void cmbBoxFindEmplID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in _pServiceHandler.)
+            {
+                string[] getServoceId =
+                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string serviceId = getServoceId[0];
 
+                if (s.Id.ToString() == serviceId)
+                {
+                    CrCasePrice.Text = s.Price.ToString();
+                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
+                    CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
+                }
+            }
+
+        }
     }
 }
