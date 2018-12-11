@@ -69,5 +69,11 @@ namespace UnitTestLawHouse.UnitTestsControllers
             int actual = _employeeHandler.CloseEmployee(1);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void DeleteSubjectFromEmployee()
+        {
+
+        }
     }
 }

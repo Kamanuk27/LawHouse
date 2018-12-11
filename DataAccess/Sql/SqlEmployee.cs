@@ -7,12 +7,13 @@ using LawHouseLibrary.Models;
 namespace DataAccess
 {
     internal class SqlEmployee : SqlBase, IEmployee
-   {
-        
+    {
+
         public int NewEmployee(EmployeeM e)
         {
-            string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
-                               " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
+            string sqlString =
+                "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
+                " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
 
             _command.CommandText = sqlString;
             _command.Parameters.Clear();
@@ -32,7 +33,7 @@ namespace DataAccess
         public List<EmployeeM> GetEmployees()
         {
             List<EmployeeM> employees = new List<EmployeeM>();
-            _command.CommandText = "SELECT * FROM Employee";
+            _command.CommandText = "SELECT * FROM Employee where CprNo not NULL";
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -52,13 +53,17 @@ namespace DataAccess
                     e.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
                     e.StartDate = Convert.ToDateTime(reader["StartDate"]);
                     e.Position = reader["Position"] != DBNull.Value ? reader["Position"].ToString() : string.Empty;
-                    e.PayRatePrHour = reader["PayRatePrHour"] != DBNull.Value ? Convert.ToDecimal(reader["PayRatePrHour"]) : default(decimal);
+                    e.PayRatePrHour = reader["PayRatePrHour"] != DBNull.Value
+                        ? Convert.ToDecimal(reader["PayRatePrHour"])
+                        : default(decimal);
 
                     employees.Add(e);
                 }
             }
+
             _connection.Close();
-            return employees; ;
+            return employees;
+            ;
         }
 
         public int UpdateEmployee(EmployeeM e)
@@ -90,12 +95,22 @@ namespace DataAccess
 
             return ExecuteNonQuery();
         }
+
         public int AddSubjectToEmployee(int eId, int sId)
         {
             _command.CommandText = "INSERT INTO [dbo].[Specialization] (Employee_ID, Subject_ID) " +
-                               " VALUES (@eId, @sId)";
+                                   " VALUES (@eId, @sId)";
 
-             
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@eId", eId));
+            _command.Parameters.Add(new SqlParameter("@sId", sId));
+            return ExecuteNonQuery();
+        }
+
+        public int DeleteSubjectFromEmployee(int eId, int sId)
+        {
+            _command.CommandText = "Delete from [dbo].[Specialization] where Subject_ID = @sId and Employee_ID = @eId";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@eId", eId));
             _command.Parameters.Add(new SqlParameter("@sId", sId));
@@ -103,3 +118,4 @@ namespace DataAccess
         }
     }
 }
+

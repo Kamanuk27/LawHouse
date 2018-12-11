@@ -38,7 +38,12 @@ namespace BusinessLogic
         {
             return _employeeCrud.AddSubjectToEmployee(eId, sId);
         }
-       
+
+        public int DeleteSubjectFromEmployee(int eId, int sId)
+        {
+            return _employeeCrud.DeleteSubjectFromEmployee(eId, sId);
+        }
+
         public int UpdateEmployee(int id, string fName, string lName, string address, int postNo, string eMail, string tlf, string position, decimal money)
         {
             return _employeeCrud.UpdateEmployee(id, fName, lName, address, postNo, eMail, tlf, position, money);

@@ -37,5 +37,10 @@ namespace DataAccess
         {
             return 1;
         }
+
+        public int DeleteSubjectFromEmployee(int eId, int sId)
+        {
+            return 1;
+        }
     }
 }
