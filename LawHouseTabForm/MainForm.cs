@@ -64,13 +64,13 @@ namespace LawHouseTabForm
                 YEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
 
-            foreach (var l1 in _employeeHandler.GetEmployees())
-            {
-                if (l1.Position == "Advokat" )
-                {
-                    SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
-                }
-            }
+            //foreach (var l1 in _employeeHandler.GetEmployees())
+            //{
+            //    if (l1.Position == "Advokat" )
+            //    {
+            //        SpecInsertCom.Items.Add($"{l1.Id}  {l1.FirstName} {l1.LastName}");
+            //    }
+            //}
 
             foreach (var s1 in _subjectHandler.GetSubjects())
             {
@@ -515,39 +515,13 @@ namespace LawHouseTabForm
 
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-            this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
-            NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
-            NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
-            NELnameTxt.Text = EmplGridView.SelectedRows[0].Cells[3].Value.ToString();
-            NEAdressTxt.Text = EmplGridView.SelectedRows[0].Cells[4].Value.ToString();
-            NEPostTxt.Text = EmplGridView.SelectedRows[0].Cells[5].Value.ToString();
-            NEEmailTxt.Text = EmplGridView.SelectedRows[0].Cells[6].Value.ToString();
-            NETlfTxt.Text = EmplGridView.SelectedRows[0].Cells[7].Value.ToString();
-            NEmplStartDate.Value = Convert.ToDateTime(EmplGridView.SelectedRows[0].Cells[8].Value.ToString());
-            NEmplPosition.Text = EmplGridView.SelectedRows[0].Cells[9].Value.ToString();
-            NEmplMoney.Text = EmplGridView.SelectedRows[0].Cells[10].Value.ToString();
-
-            showSpecializationInListbox();
-
-            AddEmpFields();
+            SendUpdateEmployeeFieldsInfo();
         }
 
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
 
-            EmplGridView.Visible = true;
-            lblAnsatte.Visible = true;
-
-            btnActivateUpdEmpFields.Visible = true;
-            btnActivateAddEmpFields.Visible = true;
-            btnEditEmpCancel.Visible = false;
-            NewEmplButt.Visible = false;
-
-            pnlAddUpdateEmplFields.Visible = false;
-            pnlAddSubjectToEmp.Visible = false;
-            pnlAddUpdateEmplFields.Visible = false;
-            pnlAddSubjectToEmp.Visible = false;
+            showNewEmployeeBoxes();
 
             string cpr = NECprTxt.Text;
             string fName = NEFnameTxt.Text;
@@ -563,6 +537,23 @@ namespace LawHouseTabForm
             ClearTxt();
             EmplGridView.Rows.Clear();
             EmplGridStart();
+        }
+
+        private void showNewEmployeeBoxes()
+        {
+            EmplGridView.Visible = true;
+            lblAnsatte.Visible = true;
+
+            btnActivateUpdEmpFields.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            btnEditEmpCancel.Visible = false;
+            NewEmplButt.Visible = true;
+            UpdateEmpl.Visible = false;
+
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
         }
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
@@ -583,11 +574,14 @@ namespace LawHouseTabForm
 
             showUpdtEmployeeFields();
             
+            
+            
         }
         private void showUpdtEmployeeFields()
         {
+
             NewEmplButt.Visible = false;
-            UpdateEmpl.Visible = false;
+            UpdateEmpl.Visible = true;
             btnActivateAddEmpFields.Visible = true;
             btnActivateUpdEmpFields.Visible = true;
             pnlAddSubjectToEmp.Visible = false;
@@ -615,15 +609,6 @@ namespace LawHouseTabForm
             }
         }
 
-        private void SpecialButt_Click(object sender, EventArgs e)
-        {
-
-            string[] getAdvokatId = SpecInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int id = Convert.ToInt32(getAdvokatId[0]);
-            string[] getServiceId = LServInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int sId = Convert.ToInt32(getServiceId[0]);
-
-        }
 
 
 
@@ -662,13 +647,11 @@ namespace LawHouseTabForm
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
         {
             AddEmpFields();
-
-            //Tilføj on highlighted grid field - activate addEmpFields
         }
 
         private void AddEmpFields()
         {
-            NewEmplButt.Visible = true;
+                       
             lblAddNewEmp.Visible = true;
             EmplGridView.Visible = false;
             lblAnsatte.Visible = false;
@@ -678,24 +661,34 @@ namespace LawHouseTabForm
             btnEditEmpCancel.Visible = true;
             pnlAddSubjectToEmp.Visible = true;
             pnlAddUpdateEmplFields.Visible = true;
+            DeleteEmpl.Visible = true;
+            UpdateEmpl.Visible = true;
+            
         }
 
-
-
+        
+        //User test - skal vi beholde knappen eller ej??? 
         private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
         {
-            // lave metode der viser lstBoxShowEmpSpecialization i en liste
-            UpdateEmpl.Visible = true;
-            lblUpdateEmpInfo.Visible = true;
-            EmplGridView.Visible = false;
-            lblAnsatte.Visible = false;
+            SendUpdateEmployeeFieldsInfo();
+            AddEmpFields();
+        }
 
-            btnActivateUpdEmpFields.Visible = false;
-            btnActivateAddEmpFields.Visible = false;
-            btnEditEmpCancel.Visible = true;
-            pnlAddSubjectToEmp.Visible = true;
-            pnlAddUpdateEmplFields.Visible = true;
+        private void SendUpdateEmployeeFieldsInfo()
+        {
+            this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
+            NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
+            NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
+            NELnameTxt.Text = EmplGridView.SelectedRows[0].Cells[3].Value.ToString();
+            NEAdressTxt.Text = EmplGridView.SelectedRows[0].Cells[4].Value.ToString();
+            NEPostTxt.Text = EmplGridView.SelectedRows[0].Cells[5].Value.ToString();
+            NEEmailTxt.Text = EmplGridView.SelectedRows[0].Cells[6].Value.ToString();
+            NETlfTxt.Text = EmplGridView.SelectedRows[0].Cells[7].Value.ToString();
+            NEmplStartDate.Value = Convert.ToDateTime(EmplGridView.SelectedRows[0].Cells[8].Value.ToString());
+            NEmplPosition.Text = EmplGridView.SelectedRows[0].Cells[9].Value.ToString();
+            NEmplMoney.Text = EmplGridView.SelectedRows[0].Cells[10].Value.ToString();
 
+            showSpecializationInListbox(EmployeeID);          
         }
 
         private void btnEditEmpCancel_Click(object sender, EventArgs e)
@@ -715,21 +708,27 @@ namespace LawHouseTabForm
             pnlAddSubjectToEmp.Visible = false;
             pnlAddUpdateEmplFields.Visible = false;
             pnlAddSubjectToEmp.Visible = false;
-            
+            DeleteEmpl.Visible = false;
+            lstBoxShowEmpSpecialization.Items.Clear();
 
         }
 
-        private void showSpecializationInListbox()
+        private void showSpecializationInListbox(int EmployeeID)
         {          
-            foreach (var subject in _subjectHandler.GetEmployeeSubjectById(this.EmployeeID))
+            foreach (var subject in _subjectHandler.GetEmployeeSubjectsById(EmployeeID))
             {
                 lstBoxShowEmpSpecialization.Items.Add(subject.Name).ToString();
             }
         }
 
-        private void SpecialButt_Click_1(object sender, EventArgs e)
+        private void SpecialBtn_Click(object sender, EventArgs e)
         {
+            string[] getServiceId = LServInsertCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int subjectId = Convert.ToInt32(getServiceId[0]);
 
+            _employeeHandler.AddSubjectToEmployee(EmployeeID, subjectId);
+            lstBoxShowEmpSpecialization.Items.Clear();
+            showSpecializationInListbox(EmployeeID);
         }
     }
 }

@@ -92,10 +92,10 @@ namespace DataAccess
         }
         public int AddSubjectToEmployee(int eId, int sId)
         {
-            string sqlString = "INSERT INTO [dbo].[Specialization] (Employee_ID, Subject_ID) " +
+            _command.CommandText = "INSERT INTO [dbo].[Specialization] (Employee_ID, Subject_ID) " +
                                " VALUES (@eId, @sId)";
 
-            _command.CommandText = sqlString;
+             
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@eId", eId));
             _command.Parameters.Add(new SqlParameter("@sId", sId));

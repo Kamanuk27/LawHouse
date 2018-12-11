@@ -40,7 +40,11 @@ namespace DataAccess.Sql
                 SqlDataReader reader = _command.ExecuteReader(); 
                 reader.Read();
 
-                return ((int)reader.GetDecimal(0)); 
+                int id = ((int)reader.GetDecimal(0));
+
+                _connection.Close();
+                return id;
+               
             }
             _connection.Close();
             return -1;
