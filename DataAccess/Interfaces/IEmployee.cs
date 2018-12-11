@@ -14,6 +14,7 @@ namespace DataAccess
         int UpdateEmployee(EmployeeM emp);
         int AddSubjectToEmployee(int eId, int sId);
         int CloseEmployee(int id);
-       
+        int DeleteSubjectFromEmployee (int eId, int sId);
+
     }
 }

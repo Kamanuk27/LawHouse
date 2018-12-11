@@ -66,6 +66,11 @@ namespace BusinessLogic
             return _dbEmployee.AddSubjectToEmployee(eId, sId);
         }
 
+        internal int DeleteSubjectFromEmployee(int eId, int sId)
+        {
+            return _dbEmployee.DeleteSubjectFromEmployee(eId, sId);
+        }
+
 
     }
 }
