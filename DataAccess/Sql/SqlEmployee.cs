@@ -32,7 +32,7 @@ namespace DataAccess
         public List<EmployeeM> GetEmployees()
         {
             List<EmployeeM> employees = new List<EmployeeM>();
-            _command.CommandText = "SELECT * FROM Employee";
+            _command.CommandText = "SELECT * FROM Employee WHERE CprNO IS NOT NULL";
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -83,7 +83,7 @@ namespace DataAccess
         public int CloseEmployee(int id)
         {
             _command.CommandText = "UPDATE Employee SET Address = null, PostNo = null, Email = null,  CprNo = null " +
-                                   "Position = null, PayRatePrHour = null  WHERE ID = @id";
+                                   "WHERE ID = @id";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));

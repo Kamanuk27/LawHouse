@@ -516,6 +516,9 @@ namespace LawHouseTabForm
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             SendUpdateEmployeeFieldsInfo();
+            AddEmpFields();
+            DeleteEmpl.Visible = true;
+            UpdateEmpl.Visible = true;
         }
 
         private void NewEmplButt_Click(object sender, EventArgs e)
@@ -554,6 +557,7 @@ namespace LawHouseTabForm
             pnlAddSubjectToEmp.Visible = false;
             pnlAddUpdateEmplFields.Visible = false;
             pnlAddSubjectToEmp.Visible = false;
+            btnDelSubjFromEmp.Visible = true;
         }
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
@@ -572,12 +576,12 @@ namespace LawHouseTabForm
             EmplGridView.Rows.Clear();
             EmplGridStart();
 
-            showUpdtEmployeeFields();
+            showUpdtEmployeeBoxes();
             
             
             
         }
-        private void showUpdtEmployeeFields()
+        private void showUpdtEmployeeBoxes()
         {
 
             NewEmplButt.Visible = false;
@@ -588,6 +592,7 @@ namespace LawHouseTabForm
             btnEditEmpCancel.Visible = false;
             lblAnsatte.Visible = true;
             EmplGridView.Visible = false;
+            btnDelSubjFromEmp.Visible = true;
         }
 
         private void DeleteEmpl_Click(object sender, EventArgs e)
@@ -602,6 +607,7 @@ namespace LawHouseTabForm
                 ClearTxt();
                 EmplGridView.Rows.Clear();
                 EmplGridStart();
+                btnEditEmpCancel_Click(sender, e);
             }
             else
             {
@@ -647,6 +653,7 @@ namespace LawHouseTabForm
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
         {
             AddEmpFields();
+            NewEmplButt.Visible = true;
         }
 
         private void AddEmpFields()
@@ -661,8 +668,6 @@ namespace LawHouseTabForm
             btnEditEmpCancel.Visible = true;
             pnlAddSubjectToEmp.Visible = true;
             pnlAddUpdateEmplFields.Visible = true;
-            DeleteEmpl.Visible = true;
-            UpdateEmpl.Visible = true;
             
         }
 
@@ -672,6 +677,9 @@ namespace LawHouseTabForm
         {
             SendUpdateEmployeeFieldsInfo();
             AddEmpFields();
+
+            DeleteEmpl.Visible = true;
+            UpdateEmpl.Visible = true;
         }
 
         private void SendUpdateEmployeeFieldsInfo()
@@ -717,9 +725,20 @@ namespace LawHouseTabForm
         {          
             foreach (var subject in _subjectHandler.GetEmployeeSubjectsById(EmployeeID))
             {
-                lstBoxShowEmpSpecialization.Items.Add(subject.Name).ToString();
+                lstBoxShowEmpSpecialization.Items.Add($"{subject.Id} {subject.Name}").ToString();
             }
         }
+
+        //private void btnDelSubjFromEmp_Click(object sender, EventArgs e)
+        //{
+        //    string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
+
+        //    string[] getSubjectId = getItem.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        //    int id = Convert.ToInt32(getSubjectId[0]);
+        //    _employeeHandler.
+        //}
+
 
         private void SpecialBtn_Click(object sender, EventArgs e)
         {
@@ -730,5 +749,7 @@ namespace LawHouseTabForm
             lstBoxShowEmpSpecialization.Items.Clear();
             showSpecializationInListbox(EmployeeID);
         }
+
+
     }
 }
