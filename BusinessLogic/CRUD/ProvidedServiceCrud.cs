@@ -11,6 +11,7 @@ namespace BusinessLogic
    internal class ProvidedServiceCrud
     {
         internal IProvidedService _dbProvidedService;
+        private List<ProvidedServiceM> _services;
         internal ProvidedServiceCrud()
         {
             _dbProvidedService = DatabaseFactory.Instance.GetProvidedServiceDataAccess();
@@ -31,13 +32,26 @@ namespace BusinessLogic
         }
         internal List<ProvidedServiceM> GetProvidedServices(int id)
         {
-            return _dbProvidedService.GetProvidedServices(id);
+            _services = _dbProvidedService.GetProvidedServices(id);
+            return _services;
         }
 
         internal List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
         {
             return _dbProvidedService.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
         }
+        internal List <int> GetworkDone()
+        {
+            List<int > workDone = new List<int>();
+            foreach (var s1 in _services)
+            {
+                workDone[0] += s1.Km;
+                workDone[1] += s1.Hours;
+
+            }
+            return workDone;
+        }
+
         internal int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {
             ProvidedServiceM s1 = new ProvidedServiceM

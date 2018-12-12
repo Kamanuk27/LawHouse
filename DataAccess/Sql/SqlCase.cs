@@ -7,8 +7,7 @@ using LawHouseLibrary.Models;
 namespace DataAccess
 {
     class SqlCase : SqlBase, ICase
-    {
-              
+    {         
         public int NewCase(CaseM c1)
         {
             _command.CommandText = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Subject_ID, " +
@@ -21,24 +20,24 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Subject_ID", c1.SubjectId));
             _command.Parameters.Add(new SqlParameter("@Client_ID", c1.ClientId));
             _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmpId));
-
             return ExecuteNonQuery();
         }
         public List<CaseM> GetCases(bool active)
         {
             List<CaseM> cases = new List<CaseM>();
-            if (active)
+            if (active == true)
             {
                 _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, e.ID as eID, cl.FirstName AS cFName, cl.LastName AS cLName, " +
                                    "sb.[Name] AS subjectName, sb.TimeEstimate, sb.HoursEstimate FROM[Case] c JOIN Employee e ON c.RespEmp_ID = e.ID" +
                                    " JOIN Client cl ON c.Client_ID = cl.ID JOIN[Subject] sb ON c.Subject_ID = sb.ID WHERE c.TotalPrice IS NULL";
-
             }
             else
             {
-                //
+                _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, e.ID as eID, cl.FirstName AS cFName, cl.LastName AS cLName, " +
+                                       "sb.[Name] AS subjectName, sb.TimeEstimate, sb.HoursEstimate FROM[Case] c JOIN Employee e ON c.RespEmp_ID = e.ID" +
+                                       " JOIN Client cl ON c.Client_ID = cl.ID JOIN[Subject] sb ON c.Subject_ID = sb.ID WHERE c.TotalPrice IS NOT NULL";
             }
-           
+
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();
@@ -66,12 +65,10 @@ namespace DataAccess
 
                     cases.Add(c1);
                 }
-
             }
             _connection.Close();
             return cases;
         }
-
 
         public int UpdateCase(CaseM c1)
         {

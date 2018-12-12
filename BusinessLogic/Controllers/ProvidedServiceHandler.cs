@@ -56,5 +56,10 @@ namespace BusinessLogic
         {
             return _providedServiceCrud.DeleteProvidedService(id);
         }
+
+        public List<int> GetworkDone()
+        {
+            return _providedServiceCrud.GetworkDone();
+        }
     }
 }
