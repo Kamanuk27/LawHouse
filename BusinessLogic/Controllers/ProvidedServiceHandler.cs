@@ -53,20 +53,16 @@ namespace BusinessLogic
         {
             return _providedServiceCrud.GetPrice(id, negPrice);
         }
+        public int[] GetworkDone()
+        {
+            return _providedServiceCrud.GetworkDone();
+        }
 
         public int DeleteProvidedService(int id)
         {
             return _providedServiceCrud.DeleteProvidedService(id);
         }
 
-        //public List<int> GetworkDone()
-        //{
-        //    return _providedServiceCrud.GetworkDone();
-        //}
-
-        public int[] GetworkDone()
-        {
-            return _providedServiceCrud.GetworkDone();
-        }
+       
     }
 }
