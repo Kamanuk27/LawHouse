@@ -134,7 +134,46 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
             decimal actual = _sut.CalculatePrice(2);
             Assert.AreEqual(expected, actual);
         }
+
         
+        [TestMethod]
+        public void TestCountWorkReturnTwoEllementsInArray()
+        {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
+            services.Add(new ProvidedServiceM(2, 50));
+            services.Add(new ProvidedServiceM(5, 200));
+
+            int actual = _sut.CountWorkDone(services).Length;
+            int expected = 2;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestCountWorkDoneReturn7AtFirstPlace()
+        {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
+            services.Add(new ProvidedServiceM(2, 50));
+            services.Add(new ProvidedServiceM(5, 200));
+
+            int actual = _sut.CountWorkDone(services)[0];
+            int expected = 7;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCountWorkDoneReturn250AtSecondPlace()
+        {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            List<ProvidedServiceM> services = new List<ProvidedServiceM>();
+            services.Add(new ProvidedServiceM(2, 50));
+            services.Add(new ProvidedServiceM(5, 200));
+
+            int actual = _sut.CountWorkDone(services)[1];
+            int expected = 250;
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void TestDeleteProvidedServiceReturnOne()
         {
