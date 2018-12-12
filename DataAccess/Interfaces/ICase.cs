@@ -10,7 +10,7 @@ namespace DataAccess
     public interface ICase
     {
         int NewCase(CaseM c1);
-        List<CaseM> GetCases();
+        List<CaseM> GetCases(bool active);
         int UpdateCase(CaseM c1);
         int CloseCase(CaseM c1);
         int DeleteCase(int id);

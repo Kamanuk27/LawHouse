@@ -30,9 +30,9 @@ namespace BusinessLogic
         {
             return _caseCrud.NewCase(name, clientId, serviceId, startTime, empId, negPrice);
         }
-        public List<CaseM> GetCases()
+        public List<CaseM> GetCases(bool active)
         {
-            return _caseCrud.GetCases();
+            return _caseCrud.GetCases(active);
         }
 
         public int CloseCase(int id, decimal total, DateTime endDate)

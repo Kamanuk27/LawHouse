@@ -17,9 +17,9 @@ namespace BusinessLogic
             _dbCase = DatabaseFactory.Instance.GetCaseDataAccess();
         }
 
-        internal List<CaseM> GetCases()
+        internal List<CaseM> GetCases(bool active)
         {
-            return _dbCase.GetCases();
+            return _dbCase.GetCases(active);
         }
 
         internal int NewCase(string caseName, int clientId, int serviceId, DateTime startTime, int empId, decimal negoPrice)

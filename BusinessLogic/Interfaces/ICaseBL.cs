@@ -11,7 +11,7 @@ namespace BusinessLogic.Interfaces
     public interface ICaseBL
     {
         int NewCase(string name, int clientId, int serviceId, DateTime startTime, int empId, decimal negPrice);
-        List<CaseM> GetCases();
+        List<CaseM> GetCases(bool active);
         int CloseCase(int id, decimal total, DateTime endDate);
         int UpdateCase(int id, decimal negPrice, int respEmpId);
         int DeleteCase(int id);
