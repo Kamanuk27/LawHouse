@@ -174,7 +174,7 @@ namespace LawHouseTabForm
         {
             ServiceDataGrid.Rows.Clear();
 
-            foreach (var service in _pServiceHandler.GetProvidedServices(this.CaseId))
+            foreach (var service in _pServiceHandler.GetProvidedServices(CaseId))
             {
                 int n = ServiceDataGrid.Rows.Add();
                 ServiceDataGrid.Rows[n].Cells[0].Value = service.Id;
@@ -336,13 +336,19 @@ namespace LawHouseTabForm
 
         private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.CaseId = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+            try
+            {
+            CaseId = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
             decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
             string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
             string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
             lblCaseName.Text = $"Nr.{CaseId}, {name}";
             ShowProvidedServicesOnGrid();
             pnlUpdateEditServices.Visible = true;
+            }
+            catch (Exception exception)
+            {
+            }
         }
 
         private void DeleteButt_Click(object sender, EventArgs e)
@@ -353,6 +359,7 @@ namespace LawHouseTabForm
             }
             else
             {
+                
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sagen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -399,7 +406,9 @@ namespace LawHouseTabForm
 
         private void CalculatePrice_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
+            try
+            {
+                if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
             {
                 MessageBox.Show("Vælg en sag for prisberegningen");
             }
@@ -410,8 +419,16 @@ namespace LawHouseTabForm
 
                 decimal price = _pServiceHandler.GetPrice(id, negPrice);
                 ClosedCaseBut.Visible = true;
+                TotalPricetxt.Text = price.ToString();
+            }
 
             }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("Vælg en sag først");
+            }
+           
         }
 
         private void ClosedCaseBut_Click(object sender, EventArgs e)
@@ -445,12 +462,17 @@ namespace LawHouseTabForm
 
         private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-            string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-            RespEmpCombo.Text = respEmp;
-            NegPricetxt.Text = negPrice.ToString();
-            //   _caseHandler.InitializeCase(id, negPrice, respEmp);
+            try
+            {
+                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+                string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
+                RespEmpCombo.Text = respEmp;
+                NegPricetxt.Text = negPrice.ToString();
+            }
+            catch (Exception exception)
+            {
+            }
         }
 
         private void btnReturnToCasesPnl_Click(object sender, EventArgs e)
@@ -467,35 +489,44 @@ namespace LawHouseTabForm
 
         private void ServiceDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ClearAddUpdateServiceBox();
-            ServiceEmploeeCombox.Text = ServiceDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-            ServiceDateTimePicker.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-            txtServiceComment.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
-            txtHoursService.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-            txtServiceKm.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
-            pnlActivateServiceBoxes.Visible = true;
-            BtnDeleteExsService.Visible = true;
-            BtnUpdateExsService.Visible = true;
+            try
+            {
+                ClearAddUpdateServiceBox();
+                ServiceEmploeeCombox.Text = ServiceDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+                ServiceDateTimePicker.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+                txtServiceComment.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+                txtHoursService.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
+                txtServiceKm.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+                pnlActivateServiceBoxes.Visible = true;
+                BtnDeleteExsService.Visible = true;
+                BtnUpdateExsService.Visible = true;
+            }
+            catch (Exception exception)
+            {
+            }
         }
 
 
         private void SubjectGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            SubjectId = Convert.ToInt32(ServiceGridView.SelectedRows[0].Cells[0].Value);
-            txtAddViewSubjectName.Text = ServiceGridView.SelectedRows[0].Cells[1].Value.ToString();
-            txtAddViewSubjectHoursEst.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
-            TxtAddViewSubjectTimeEst.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
-            txtAddViewSubjectFixPrc.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
+            try
+            {
+                SubjectId = Convert.ToInt32(ServiceGridView.SelectedRows[0].Cells[0].Value);
+                txtAddViewSubjectName.Text = ServiceGridView.SelectedRows[0].Cells[1].Value.ToString();
+                txtAddViewSubjectHoursEst.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
+                TxtAddViewSubjectTimeEst.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
+                txtAddViewSubjectFixPrc.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
 
-            pnlAddViewSubjects.Visible = true;
-            btnUpdateSubj.Visible = true;
-            btnDeleteSubj.Visible = true;
-            btnMakeNewSubj.Visible = false;
-            btnActivatAddSubjects.Visible = false;
-            btnCnclSubjectEdit.Visible = true;
-            
-
-
+                pnlAddViewSubjects.Visible = true;
+                btnUpdateSubj.Visible = true;
+                btnDeleteSubj.Visible = true;
+                btnMakeNewSubj.Visible = false;
+                btnActivatAddSubjects.Visible = false;
+                btnCnclSubjectEdit.Visible = true;
+            }
+            catch (Exception exception)
+            {
+            }
         }
 
         #endregion
@@ -505,33 +536,45 @@ namespace LawHouseTabForm
         //ansatte
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            SendUpdateEmployeeFieldsInfo();
-            AddEmpBoxes(false);
-            DeleteEmpl.Visible = true;
-            UpdateEmpl.Visible = true;
+            try
+            {
+                SendUpdateEmployeeFieldsInfo();
+                AddEmpBoxes(false);
+                DeleteEmpl.Visible = true;
+                UpdateEmpl.Visible = true;
+            }
+            catch (Exception exception)
+            {
+            }
         }
 
-
+        //ID 
         private void NewEmplButt_Click(object sender, EventArgs e)
         {
-
             showAllEmployeeGrid();
-
-            string cpr = NECprTxt.Text;
-            string fName = NEFnameTxt.Text;
-            string lName = NELnameTxt.Text;
-            string address = NEAdressTxt.Text;
-            int postNo = Convert.ToInt32(NEPostTxt.Text);
-            string eMail = NEEmailTxt.Text;
-            string tlf = NETlfTxt.Text;
-            DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
-            string position = NEmplPosition.Text;
-            decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            this.EmployeeID =
-                _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position, money);
-            ClearTxt();
-            EmplGridView.Rows.Clear();
-            EmplGridStart();
+            try
+            {
+                string cpr = NECprTxt.Text;
+                string fName = NEFnameTxt.Text;
+                string lName = NELnameTxt.Text;
+                string address = NEAdressTxt.Text;
+                int postNo = Convert.ToInt32(NEPostTxt.Text);
+                string eMail = NEEmailTxt.Text;
+                string tlf = NETlfTxt.Text;
+                DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
+                string position = NEmplPosition.Text;
+                decimal money = Convert.ToDecimal(NEmplMoney.Text);
+                this.EmployeeID =
+                    _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position,
+                        money);
+                ClearTxt();
+                EmplGridView.Rows.Clear();
+                EmplGridStart();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("");
+            }
         }
 
         private void showAllEmployeeGrid()
@@ -552,22 +595,30 @@ namespace LawHouseTabForm
 
         private void UpdateEmpl_Click(object sender, EventArgs e)
         {
-            string fName = NEFnameTxt.Text;
-            string lName = NELnameTxt.Text;
-            string address = NEAdressTxt.Text;
-            int postNo = Convert.ToInt32(NEPostTxt.Text);
-            string eMail = NEEmailTxt.Text;
-            string tlf = NETlfTxt.Text;
-            DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
-            string position = NEmplPosition.Text;
-            decimal money = Convert.ToDecimal(NEmplMoney.Text);
-            _employeeHandler.UpdateEmployee(EmployeeID, fName, lName, address, postNo, eMail, tlf, position, money);
-            ClearTxt();
-            EmplGridView.Rows.Clear();
-            EmplGridStart();
+            try
+            {
+                string fName = NEFnameTxt.Text;
+                string lName = NELnameTxt.Text;
+                string address = NEAdressTxt.Text;
+                int postNo = Convert.ToInt32(NEPostTxt.Text);
+                string eMail = NEEmailTxt.Text;
+                string tlf = NETlfTxt.Text;
+                DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
+                string position = NEmplPosition.Text;
+                decimal money = Convert.ToDecimal(NEmplMoney.Text);
+                _employeeHandler.UpdateEmployee(EmployeeID, fName, lName, address, postNo, eMail, tlf, position, money);
+                ClearTxt();
+                EmplGridView.Rows.Clear();
+                EmplGridStart();
 
-            showUpdtEmployeeBoxes();
-            btnEditEmpCancel_Click(sender, e);
+                showUpdtEmployeeBoxes();
+                btnEditEmpCancel_Click(sender, e);
+            }
+            //exception
+            catch (Exception exception)
+            {
+                MessageBox.Show("");
+            }
         }
 
         private void showUpdtEmployeeBoxes()
@@ -589,21 +640,29 @@ namespace LawHouseTabForm
         private void DeleteEmpl_Click(object sender, EventArgs e)
         {
             //int id = Convert.ToInt32(EmlGridView.SelectedRows[0].Cells[0].Value);
-            DialogResult dialogResult =
-                MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmployeeID}", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                int i = _employeeHandler.CloseEmployee(EmployeeID);
-                MessageBox.Show(i.ToString());
-                ClearTxt();
-                EmplGridView.Rows.Clear();
-                EmplGridStart();
-                btnEditEmpCancel_Click(sender, e);
+                DialogResult dialogResult =
+                    MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmployeeID}", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int i = _employeeHandler.CloseEmployee(EmployeeID);
+                    MessageBox.Show(i.ToString());
+                    ClearTxt();
+                    EmplGridView.Rows.Clear();
+                    EmplGridStart();
+                    btnEditEmpCancel_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
             }
-            else
+            catch (Exception exception)
             {
-                MessageBox.Show("Annulleret");
+                MessageBox.Show("Vælg en sag først");
             }
+
         }
 
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
@@ -644,7 +703,7 @@ namespace LawHouseTabForm
         }
 
         private void SendUpdateEmployeeFieldsInfo()
-        {
+        {//try
             this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
             NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
             NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
@@ -685,22 +744,39 @@ namespace LawHouseTabForm
 
         private void btnDelSubjFromEmp_Click(object sender, EventArgs e)
         {
-            //TRY CATCH mangler
+            try
+            {
             string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
             string[] getSubjectId = getItem.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
             int id = Convert.ToInt32(getSubjectId[0]);
             _employeeHandler.DeleteSubjectFromEmployee(EmployeeID, id);
             lstBoxShowEmpSpecialization.Items.Clear();
             showSpecializationInListbox(EmployeeID);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg en ydelse først");
+            }
+           
         }
 
         private void AddSubjectToEmplBtn_Click(object sender, EventArgs e)
         {
-            string[] getServiceId = LServInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int subjectId = Convert.ToInt32(getServiceId[0]);
-            _employeeHandler.AddSubjectToEmployee(EmployeeID, subjectId);
-            lstBoxShowEmpSpecialization.Items.Clear();
-            showSpecializationInListbox(EmployeeID);
+            try
+            {
+                string[] getServiceId =
+                    LServInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int subjectId = Convert.ToInt32(getServiceId[0]);
+                _employeeHandler.AddSubjectToEmployee(EmployeeID, subjectId);
+                lstBoxShowEmpSpecialization.Items.Clear();
+                showSpecializationInListbox(EmployeeID);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg en ydelse/ansatte først");
+
+            }
+
         }
 
 
@@ -710,47 +786,73 @@ namespace LawHouseTabForm
 
         private void NewClientBtn_Click(object sender, EventArgs e)
         {
-            string cpr = NewClientCprNo.Text;
-            string fName = NewClientfName.Text;
-            string lName = NewClientLName.Text;
-            string address = NewClientAdress.Text;
-            int postNo = Convert.ToInt32(NewClientPost.Text);
-            string eMail = NewClientMail.Text;
-            string tlf = NewClientTelef.Text;
-            this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
-            MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
-            ClearNewClientTXT();
+            try
+            {
+                string cpr = NewClientCprNo.Text;
+                string fName = NewClientfName.Text;
+                string lName = NewClientLName.Text;
+                string address = NewClientAdress.Text;
+                int postNo = Convert.ToInt32(NewClientPost.Text);
+                string eMail = NewClientMail.Text;
+                string tlf = NewClientTelef.Text;
+                this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+                MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
+                ClearNewClientTXT();
+
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+
+            }
+
         }
 
         private void UpdateClientBtn_Click(object sender, EventArgs e)
         {
-            string cpr = NewClientCprNo.Text;
-            string fName = NewClientfName.Text;
-            string lName = NewClientLName.Text;
-            string address = NewClientAdress.Text;
-            int postNo = Convert.ToInt32(NewClientPost.Text);
-            string eMail = NewClientMail.Text;
-            string tlf = NewClientTelef.Text;
-            _clientHandler.UpdateClient(1, fName, lName, cpr, address, postNo, eMail, tlf);
+            try
+            {
+                string cpr = NewClientCprNo.Text;
+                string fName = NewClientfName.Text;
+                string lName = NewClientLName.Text;
+                string address = NewClientAdress.Text;
+                int postNo = Convert.ToInt32(NewClientPost.Text);
+                string eMail = NewClientMail.Text;
+                string tlf = NewClientTelef.Text;
+                _clientHandler.UpdateClient(1, fName, lName, cpr, address, postNo, eMail, tlf);
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
+
             // her i Update mangler vi int id. Jeg sætter bare 1-tal i parenteser for at fjerne fejl.
-
             // skal lave en metode der henter id via tlf nummer.. Andrey kigger på det. 
-
             //TRY CATCH FOR SIKKERHEDS SKYLD
         }
 
         private void NewCaseButt_Click(object sender, EventArgs e)
         {
-
-            string caseName = CrCaseName.Text;
-            string[] getServoceId =
-                CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int service = Convert.ToInt32(getServoceId[0]);
-            DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
-            string[] getAdvoketId = CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int respEmpl = Convert.ToInt32(getAdvoketId[0]);
-            decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-            _caseHandler.NewCase(caseName, CaseId, service, startTime, respEmpl, negoPrice);
+            try
+            {
+                string caseName = CrCaseName.Text;
+                string[] getServoceId =
+                    CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int service = Convert.ToInt32(getServoceId[0]);
+                DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
+                string[] getAdvoketId =
+                    CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int respEmpl = Convert.ToInt32(getAdvoketId[0]);
+                decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
+                _caseHandler.NewCase(caseName, CaseId, service, startTime, respEmpl, negoPrice);
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
         }
 
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
@@ -778,34 +880,42 @@ namespace LawHouseTabForm
         {
             getPrServicesByEmployee();
             showTotalKmAndHours();
-            
         }
 
         private void showTotalKmAndHours()
         {
             int[] total = _pServiceHandler.GetworkDone();
-
             totalHoursUseForPeriod.Text = total[1].ToString();
             totalKmDrivenInPeriod.Text = total[0].ToString();
         }
 
         private void getPrServicesByEmployee()
         {
-            GridEmployeeServicesP.Rows.Clear();
-            DateTime startDate = Convert.ToDateTime(dateTimeFrom.Value.ToShortDateString());
-            DateTime endDate = Convert.ToDateTime(dateTimeTo.Value.ToShortDateString());
-            foreach (var ps in _pServiceHandler.GetProvidedServicesByEmplId(this.EmployeeID, startDate, endDate))
+            try
             {
-                int n = GridEmployeeServicesP.Rows.Add();
-                GridEmployeeServicesP.Rows[n].Cells[0].Value = ps.CaseID;
-                GridEmployeeServicesP.Rows[n].Cells[1].Value = ps.Date.ToShortDateString();
-                GridEmployeeServicesP.Rows[n].Cells[2].Value = ps.Hours;
-                GridEmployeeServicesP.Rows[n].Cells[3].Value = ps.Km;
-                GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
+                GridEmployeeServicesP.Rows.Clear();
+                DateTime startDate = Convert.ToDateTime(dateTimeFrom.Value.ToShortDateString());
+                DateTime endDate = Convert.ToDateTime(dateTimeTo.Value.ToShortDateString());
+                foreach (var ps in _pServiceHandler.GetProvidedServicesByEmplId(this.EmployeeID, startDate, endDate))
+                {
+                    int n = GridEmployeeServicesP.Rows.Add();
+                    GridEmployeeServicesP.Rows[n].Cells[0].Value = ps.CaseID;
+                    GridEmployeeServicesP.Rows[n].Cells[1].Value = ps.Date.ToShortDateString();
+                    GridEmployeeServicesP.Rows[n].Cells[2].Value = ps.Hours;
+                    GridEmployeeServicesP.Rows[n].Cells[3].Value = ps.Km;
+                    GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
+                }
+
+                int[] jobCount = _pServiceHandler.GetworkDone();
+                totalHoursUseForPeriod.Text = jobCount[1].ToString();
+                totalKmDrivenInPeriod.Text = jobCount[0].ToString();
             }
-            int[] jobCount = _pServiceHandler.GetworkDone();
-            totalHoursUseForPeriod.Text = jobCount[1].ToString();
-            totalKmDrivenInPeriod.Text = jobCount[0].ToString();
+            catch (Exception e)
+            {
+                //exception
+                MessageBox.Show("");
+            }
+
         }
 
         #endregion
@@ -820,28 +930,54 @@ namespace LawHouseTabForm
 
         private void btnMakeNewSubj_Click(object sender, EventArgs e)
         {
-            string name = txtAddViewSubjectName.Text;
-            int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
-            int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
-            decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
-            _subjectHandler.NewSubject(name, hours, time, price);
+            try
+            {
+                string name = txtAddViewSubjectName.Text;
+                int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
+                int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+                decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
+                _subjectHandler.NewSubject(name, hours, time, price);
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
+
         }
 
         private void btnUpdateSubj_Click(object sender, EventArgs e)
         {
-            string name = txtAddViewSubjectName.Text;
-            int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
-            int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
-            decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
-            _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
-            ServiceGridView.Rows.Clear();
-            GetServices();
+            try
+            {
+                string name = txtAddViewSubjectName.Text;
+                int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
+                int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+                decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
+                _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
+                ServiceGridView.Rows.Clear();
+                GetServices();
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
 
         }
 
         private void btnDeleteSubj_Click(object sender, EventArgs e)
         {
-            _subjectHandler.DeleteSubject(SubjectId);
+            //try
+            //{
+             _subjectHandler.DeleteSubject(SubjectId);
+            //}
+            //catch (Exception exception)
+            //{
+            //    //exception
+            //    MessageBox.Show("");
+            //}
+            
         }
 
         private void btnCnclSubjectEdit_Click(object sender, EventArgs e)
@@ -926,11 +1062,8 @@ namespace LawHouseTabForm
                     {
                         (ctrl as DataGridView).Rows.Clear();// =  string.Empty;
                     }
-
-
                 }
             }
-
         }
     }
 }
