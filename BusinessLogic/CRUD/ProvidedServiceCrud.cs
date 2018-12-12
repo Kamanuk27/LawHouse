@@ -40,16 +40,6 @@ namespace BusinessLogic
             _services = _dbProvidedService.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
             return _services;
         }
-        internal int[] GetworkDone()
-        {
-            int[] count = new int[2];
-            foreach (var item in _services)
-            {
-                count[0] += item.Km;
-                count[1] += item.Hours;
-            }
-            return count;
-        }
         
         internal int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {
@@ -82,6 +72,22 @@ namespace BusinessLogic
             }
             else
                 return 0;
+        }
+
+        internal int[] GetworkDone()
+        {
+            return CountWorkDone(_services);
+        }
+        internal int[] CountWorkDone(List <ProvidedServiceM> services)
+        {
+            int[] count = new int[2];
+            foreach (var item in services)
+            {
+                count[0] += item.Km;
+                count[1] += item.Hours;
+            }
+            return count;
+
         }
 
         internal int DeleteProvidedService(int id)
