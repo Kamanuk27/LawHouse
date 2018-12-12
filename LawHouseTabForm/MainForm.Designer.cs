@@ -37,9 +37,9 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
@@ -208,6 +208,10 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalHoursUsed = new System.Windows.Forms.Label();
+            this.lblTotalKmDriven = new System.Windows.Forms.Label();
+            this.totalHoursUseForPeriod = new System.Windows.Forms.Label();
+            this.totalKmDrivenInPeriod = new System.Windows.Forms.Label();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -444,8 +448,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -803,8 +807,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -2027,6 +2031,10 @@
             // 
             // tabShowAllProServ
             // 
+            this.tabShowAllProServ.Controls.Add(this.totalKmDrivenInPeriod);
+            this.tabShowAllProServ.Controls.Add(this.totalHoursUseForPeriod);
+            this.tabShowAllProServ.Controls.Add(this.lblTotalKmDriven);
+            this.tabShowAllProServ.Controls.Add(this.lblTotalHoursUsed);
             this.tabShowAllProServ.Controls.Add(this.btnShowPrServices);
             this.tabShowAllProServ.Controls.Add(this.dateTimeTo);
             this.tabShowAllProServ.Controls.Add(this.dateTimeFrom);
@@ -2043,7 +2051,7 @@
             // btnShowPrServices
             // 
             this.btnShowPrServices.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPrServices.Location = new System.Drawing.Point(494, 386);
+            this.btnShowPrServices.Location = new System.Drawing.Point(493, 405);
             this.btnShowPrServices.Name = "btnShowPrServices";
             this.btnShowPrServices.Size = new System.Drawing.Size(75, 23);
             this.btnShowPrServices.TabIndex = 4;
@@ -2054,7 +2062,7 @@
             // dateTimeTo
             // 
             this.dateTimeTo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeTo.Location = new System.Drawing.Point(414, 359);
+            this.dateTimeTo.Location = new System.Drawing.Point(413, 378);
             this.dateTimeTo.Name = "dateTimeTo";
             this.dateTimeTo.Size = new System.Drawing.Size(155, 21);
             this.dateTimeTo.TabIndex = 3;
@@ -2062,7 +2070,7 @@
             // dateTimeFrom
             // 
             this.dateTimeFrom.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeFrom.Location = new System.Drawing.Point(253, 359);
+            this.dateTimeFrom.Location = new System.Drawing.Point(252, 378);
             this.dateTimeFrom.Name = "dateTimeFrom";
             this.dateTimeFrom.Size = new System.Drawing.Size(155, 21);
             this.dateTimeFrom.TabIndex = 2;
@@ -2071,7 +2079,7 @@
             // 
             this.cmbBoxFindEmplID.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBoxFindEmplID.FormattingEnabled = true;
-            this.cmbBoxFindEmplID.Location = new System.Drawing.Point(24, 359);
+            this.cmbBoxFindEmplID.Location = new System.Drawing.Point(23, 378);
             this.cmbBoxFindEmplID.Name = "cmbBoxFindEmplID";
             this.cmbBoxFindEmplID.Size = new System.Drawing.Size(182, 21);
             this.cmbBoxFindEmplID.TabIndex = 1;
@@ -2079,8 +2087,8 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2178,6 +2186,42 @@
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
             // 
+            // lblTotalHoursUsed
+            // 
+            this.lblTotalHoursUsed.AutoSize = true;
+            this.lblTotalHoursUsed.Location = new System.Drawing.Point(599, 365);
+            this.lblTotalHoursUsed.Name = "lblTotalHoursUsed";
+            this.lblTotalHoursUsed.Size = new System.Drawing.Size(110, 13);
+            this.lblTotalHoursUsed.TabIndex = 5;
+            this.lblTotalHoursUsed.Text = "Total timeforbrug:";
+            // 
+            // lblTotalKmDriven
+            // 
+            this.lblTotalKmDriven.AutoSize = true;
+            this.lblTotalKmDriven.Location = new System.Drawing.Point(728, 365);
+            this.lblTotalKmDriven.Name = "lblTotalKmDriven";
+            this.lblTotalKmDriven.Size = new System.Drawing.Size(88, 13);
+            this.lblTotalKmDriven.TabIndex = 6;
+            this.lblTotalKmDriven.Text = "Total km kørt:";
+            // 
+            // totalHoursUseForPeriod
+            // 
+            this.totalHoursUseForPeriod.AutoSize = true;
+            this.totalHoursUseForPeriod.Location = new System.Drawing.Point(618, 384);
+            this.totalHoursUseForPeriod.Name = "totalHoursUseForPeriod";
+            this.totalHoursUseForPeriod.Size = new System.Drawing.Size(91, 26);
+            this.totalHoursUseForPeriod.TabIndex = 7;
+            this.totalHoursUseForPeriod.Text = "Vis sum timer \r\npå denne label";
+            // 
+            // totalKmDrivenInPeriod
+            // 
+            this.totalKmDrivenInPeriod.AutoSize = true;
+            this.totalKmDrivenInPeriod.Location = new System.Drawing.Point(728, 384);
+            this.totalKmDrivenInPeriod.Name = "totalKmDrivenInPeriod";
+            this.totalKmDrivenInPeriod.Size = new System.Drawing.Size(105, 26);
+            this.totalKmDrivenInPeriod.TabIndex = 8;
+            this.totalKmDrivenInPeriod.Text = "Vis sum km kørt \r\npå denne label";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2212,6 +2256,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabShowAllProServ.ResumeLayout(false);
+            this.tabShowAllProServ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).EndInit();
             this.ResumeLayout(false);
 
@@ -2387,6 +2432,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Label lblTotalKmDriven;
+        private System.Windows.Forms.Label lblTotalHoursUsed;
+        private System.Windows.Forms.Label totalKmDrivenInPeriod;
+        private System.Windows.Forms.Label totalHoursUseForPeriod;
     }
 }
 
