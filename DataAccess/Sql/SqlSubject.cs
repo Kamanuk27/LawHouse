@@ -89,7 +89,7 @@ namespace DataAccess
 
         public int UpdateSubject(SubjectM subject)
         {
-            _command.CommandText = "UPDATE Subject SET Name = @name, HoursEstimale = @hours, TimeEstimate = @time," +
+            _command.CommandText = "UPDATE Subject SET Name = @name, HoursEstimate = @hours, TimeEstimate = @time," +
                                   " Price = @price WHERE ID = @id";
 
             _command.Parameters.Clear();

@@ -11,12 +11,9 @@ namespace DataAccess
               
         public int NewCase(CaseM c1)
         {
-            string sqlString = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
-                              "RespEmp_ID, Client_ID) VALUES " +
-                              "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @Client_ID, @RespEmp_ID)";
-
-
-            _command.CommandText = sqlString;
+            _command.CommandText = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Service_ID, " +
+                                   "RespEmp_ID, Client_ID) VALUES " +
+                                   "(@CaseName, @StartDate, @NegotiatedPrice, @Service_ID, @Client_ID, @RespEmp_ID)";
             _command.Parameters.Clear();
 
             _command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
@@ -27,14 +24,13 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@Client_ID", c1.ClientId));
             _command.Parameters.Add(new SqlParameter("@RespEmp_ID", c1.RespEmpId));
 
-
             return ExecuteNonQuery();
         }
         public List<CaseM> GetCases()
         {
             List<CaseM> cases = new List<CaseM>();
-
-            _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, cl.FirstName AS cFName, cl.LastName AS cLName, " +
+            
+            _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, e.ID as eID, cl.FirstName AS cFName, cl.LastName AS cLName, " +
                                    "sb.[Name] AS subjectName, sb.TimeEstimate, sb.HoursEstimate FROM[Case] c JOIN Employee e ON c.RespEmp_ID = e.ID" +
                                    " JOIN Client cl ON c.Client_ID = cl.ID JOIN[Subject] sb ON c.Subject_ID = sb.ID WHERE c.TotalPrice IS NULL";
             PrepareSql();
@@ -58,7 +54,8 @@ namespace DataAccess
                     c1.Client = $"{(reader["cFName"] != DBNull.Value ? reader["cFName"].ToString() : string.Empty)} " +
                                 $"{(reader["cLName"] != DBNull.Value ? reader["cLName"].ToString() : string.Empty)}";
 
-                    c1.RespEmployee = $"{(reader["eFName"] != DBNull.Value ? reader["eFName"].ToString() : string.Empty)} " +
+                    c1.RespEmployee = $"{(reader["eID"] != DBNull.Value ? reader["eID"] : default(int))}" +
+                                      $" {(reader["eFName"] != DBNull.Value ? reader["eFName"].ToString() : string.Empty)} " +
                                       $"{(reader["eLName"] != DBNull.Value ? reader["eLName"].ToString() : string.Empty)}";
 
                     cases.Add(c1);
@@ -73,7 +70,7 @@ namespace DataAccess
         public int UpdateCase(CaseM c1)
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET NegotiatedPrice = @negPrice, RespEmp_ID = @respEmpId" +
-                               "WHERE ID = @id";
+                                   " WHERE ID = @id";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@negPrice", c1.NegPrice));
             _command.Parameters.Add(new SqlParameter("@respEmpId", c1.RespEmpId));
@@ -85,7 +82,6 @@ namespace DataAccess
         {
             _command.CommandText = "UPDATE [dbo].[Case] SET TotalPrice = @totalPrice, EndDate = @endDate WHERE ID = @id";
             _command.Parameters.Clear();
-
             _command.Parameters.Add(new SqlParameter("@totalPrice", c1.TotalPrice));
             _command.Parameters.Add(new SqlParameter("@endDate", c1.EndDate));
             _command.Parameters.Add(new SqlParameter("@id", c1.Id));
