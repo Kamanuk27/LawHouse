@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace LawHouseTabForm
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form , IUserInterface
     {
 
         private CaseHandler _caseHandler;
