@@ -54,7 +54,7 @@ namespace BusinessLogic
         }
         public int[] GetworkDone()
         {
-            return _providedServiceCrud.GetworkDone();
+            return _providedServiceCrud.GetWorkDone();
         }
 
         public int DeleteProvidedService(int id)

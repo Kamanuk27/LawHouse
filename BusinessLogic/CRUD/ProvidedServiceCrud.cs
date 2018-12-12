@@ -74,7 +74,7 @@ namespace BusinessLogic
                 return 0;
         }
 
-        internal int[] GetworkDone()
+        internal int[] GetWorkDone()
         {
             return CountWorkDone(_services);
         }
