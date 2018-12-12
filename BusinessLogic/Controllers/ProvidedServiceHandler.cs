@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLogic.Interfaces;
 using LawHouseLibrary.Models;
 
 namespace BusinessLogic
 {
-    public class ProvidedServiceHandler
+    public class ProvidedServiceHandler :IProvidedServiceBL
     {
         private static ProvidedServiceHandler _instance;
         private ProvidedServiceCrud _providedServiceCrud ;

@@ -1,4 +1,5 @@
-﻿using LawHouseLibrary.Models;
+﻿using BusinessLogic.Interfaces;
+using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-   public class EmployeeHandler
+   public class EmployeeHandler : IEmployeeBL
     {
         private static EmployeeHandler _instance;
         private EmployeeCrud _employeeCrud;
