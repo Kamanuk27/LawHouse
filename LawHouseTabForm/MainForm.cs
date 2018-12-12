@@ -165,7 +165,7 @@ namespace LawHouseTabForm
 
         private void ActivateGetCasesGrid()
         {
-            foreach (var c1 in _caseHandler.GetCases(IsActive == true))
+            foreach (var c1 in _caseHandler.GetCases(this.IsActive = true))
             {
                 int n = CaseDataGrid.Rows.Add();
                 CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
