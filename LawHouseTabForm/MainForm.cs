@@ -50,8 +50,11 @@ namespace LawHouseTabForm
         {
             foreach (var l1 in _employeeHandler.GetEmployees())
             {
-                RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
-                CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
+                if (l1.Position == "Advokat")
+                {
+                    RespEmpCombo.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
+                    CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
+                }
             }
 
             foreach (var s1 in _subjectHandler.GetSubjects())
@@ -384,8 +387,7 @@ namespace LawHouseTabForm
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 //string respEmpl = RespEmpCombo.Text;
-                string[] getRespEmpId =
-                    RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                string[] getRespEmpId = RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int respEmpId = Convert.ToInt32(getRespEmpId[0]);
                 int i = _caseHandler.UpdateCase(id, negPrice, respEmpId);
                 if (i == 1)
@@ -812,6 +814,9 @@ namespace LawHouseTabForm
             int time = Convert.ToInt32(MkServiceTime.Text);
             decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
             _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
+            ServiceGridView.Rows.Clear();
+            GetServices();
+
         }
 
         private void btnDeleteSubj_Click(object sender, EventArgs e)
