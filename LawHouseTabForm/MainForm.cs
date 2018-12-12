@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace LawHouseTabForm
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form , IUserInterface
     {
         internal ICaseBL _caseHandler;
         internal IClientBL _clientHandler;
