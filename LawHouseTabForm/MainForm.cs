@@ -30,6 +30,7 @@ namespace LawHouseTabForm
         public int EmployeeID { get; set; }
         public int SubjectId { get; set; }
         public int ClientId { get; set; }
+        private bool IsActive { get; set; }
 
         public MainForm()
         {
@@ -164,7 +165,7 @@ namespace LawHouseTabForm
 
         private void ActivateGetCasesGrid()
         {
-            foreach (var c1 in _caseHandler.GetCases())
+            foreach (var c1 in _caseHandler.GetCases(this.IsActive = true))
             {
                 int n = CaseDataGrid.Rows.Add();
                 CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
