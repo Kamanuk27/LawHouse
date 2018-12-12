@@ -44,6 +44,7 @@ namespace UnitTestLawHouse
             Assert.AreEqual(response, expected);
         }
 
+        [TestMethod]
         public void TestUpdateCaseReturnOne()
         {
             CaseCrud _sut = new CaseCrud();

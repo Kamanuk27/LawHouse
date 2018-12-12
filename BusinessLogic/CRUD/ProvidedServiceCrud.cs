@@ -32,23 +32,27 @@ namespace BusinessLogic
         }
         internal List<ProvidedServiceM> GetProvidedServices(int id)
         {
-            _services = _dbProvidedService.GetProvidedServices(id);
-            return _services;
+             return _dbProvidedService.GetProvidedServices(id);
         }
 
         internal List<ProvidedServiceM> GetProvidedServicesByEmplId(int emplId, DateTime fromTime, DateTime toTime)
         {
-            return _dbProvidedService.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
+            _services = _dbProvidedService.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
+            return _services;
         }
         internal List <int> GetworkDone()
         {
             List<int > workDone = new List<int>();
+            int km = 0;
+            int hours = 0;
             foreach (var s1 in _services)
             {
-                workDone[0] += s1.Km;
-                workDone[1] += s1.Hours;
+                km += s1.Km;
+                hours += s1.Hours;
 
             }
+            workDone.Add(km);
+            workDone.Add(hours);
             return workDone;
         }
 
