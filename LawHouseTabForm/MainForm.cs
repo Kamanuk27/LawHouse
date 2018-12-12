@@ -1,30 +1,18 @@
 ﻿using BusinessLogic;
-using BusinessLogic.Interfaces;
 using DataAccess;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LawHouseTabForm
 {
     public partial class MainForm : Form , IUserInterface
     {
-        internal ICaseBL _caseHandler;
-        internal IClientBL _clientHandler;
-        internal IEmployeeBL _employeeHandler;
-        internal IProvidedServiceBL _pServiceHandler;
-        internal ISubjectBL _subjectHandler;
-        //private CaseHandler _caseHandler;
-        //private ClientHandler _clientHandler;
-        //private EmployeeHandler _employeeHandler;
-        //private SubjectHandler _subjectHandler;
-        //private ProvidedServiceHandler _pServiceHandler;
+
+        private CaseHandler _caseHandler;
+        private ClientHandler _clientHandler;
+        private EmployeeHandler _employeeHandler;
+        private SubjectHandler _subjectHandler;
+        private ProvidedServiceHandler _pServiceHandler;
 
         private int CaseId { get; set; }
         public int EmployeeID { get; set; }
@@ -35,6 +23,7 @@ namespace LawHouseTabForm
         public MainForm()
         {
             InitializeComponent();
+
             _caseHandler = new CaseHandler();
             _clientHandler = new ClientHandler();
             _employeeHandler = new EmployeeHandler();
@@ -817,9 +806,6 @@ namespace LawHouseTabForm
             int[] jobCount = _pServiceHandler.GetworkDone();
             totalHoursUseForPeriod.Text = jobCount[1].ToString();
             totalKmDrivenInPeriod.Text = jobCount[0].ToString();
-
-
-
         }
 
         #endregion

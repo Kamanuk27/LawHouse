@@ -1,5 +1,4 @@
-﻿using BusinessLogic.Interfaces;
-using LawHouseLibrary.Models;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class SubjectHandler : ISubjectBL
+    public class SubjectHandler
     {
 
         private static SubjectHandler _instance;
