@@ -1,4 +1,4 @@
-﻿using BusinessLogic.testInterfaces;
+﻿using BusinessLogic.Interfaces;
 using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;

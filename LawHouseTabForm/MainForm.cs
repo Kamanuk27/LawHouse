@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
-using BusinessLogic.testInterfaces;
+using BusinessLogic.Interfaces;
+using DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,16 @@ namespace LawHouseTabForm
     public partial class MainForm : Form
     {
         internal ICaseBL _caseHandler;
+        internal IClientBL _clientHandler;
+        internal IEmployeeBL _employeeHandler;
+        internal IProvidedServiceBL _pServiceHandler;
+        internal ISubjectBL _subjectHandler;
         // private CaseHandler _caseHandler;
 
-        private ClientHandler _clientHandler;
-        private EmployeeHandler _employeeHandler;
-        private SubjectHandler _subjectHandler;
-        private ProvidedServiceHandler _pServiceHandler;
+        //private ClientHandler _clientHandler;
+        //private EmployeeHandler _employeeHandler;
+        //private SubjectHandler _subjectHandler;
+        //private ProvidedServiceHandler _pServiceHandler;
 
         private int CaseId { get; set; }
         public int EmployeeID { get; set; }
