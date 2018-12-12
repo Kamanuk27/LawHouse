@@ -37,9 +37,9 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
@@ -72,8 +72,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.search_button = new System.Windows.Forms.Button();
-            this.searchBox = new System.Windows.Forms.TextBox();
             this.CalculatePrice = new System.Windows.Forms.Button();
             this.EndCaseTimePictxt = new System.Windows.Forms.DateTimePicker();
             this.DeleteButt = new System.Windows.Forms.Button();
@@ -218,6 +216,8 @@
             this.lLblHelpSubjectsTab = new System.Windows.Forms.LinkLabel();
             this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
             this.lLblHelpViewAllCasesTab = new System.Windows.Forms.LinkLabel();
+            this.search_button = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -368,6 +368,10 @@
             // pnlAllOpenCases
             // 
             this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.pnlUpdateEditServices);
+            this.pnlAllOpenCases.Controls.Add(this.search_button);
+            this.pnlAllOpenCases.Controls.Add(this.searchBox);
+            this.pnlAllOpenCases.Controls.Add(this.lLblHelpViewAllCasesTab);
             this.pnlAllOpenCases.Controls.Add(this.CalculatePrice);
             this.pnlAllOpenCases.Controls.Add(this.EndCaseTimePictxt);
             this.pnlAllOpenCases.Controls.Add(this.DeleteButt);
@@ -382,7 +386,6 @@
             this.pnlAllOpenCases.Controls.Add(label11);
             this.pnlAllOpenCases.Controls.Add(label8);
             this.pnlAllOpenCases.Controls.Add(label7);
-            this.pnlAllOpenCases.Controls.Add(this.pnlUpdateEditServices);
             this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
             this.pnlAllOpenCases.Name = "pnlAllOpenCases";
@@ -391,7 +394,6 @@
             // 
             // pnlUpdateEditServices
             // 
-            this.pnlUpdateEditServices.Controls.Add(this.lLblHelpViewAllCasesTab);
             this.pnlUpdateEditServices.Controls.Add(this.lLblHelpCaseServices2Tab);
             this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
             this.pnlUpdateEditServices.Controls.Add(this.btnActivateAddServiceBoxes);
@@ -402,8 +404,6 @@
             this.pnlUpdateEditServices.Controls.Add(this.BtnAddNewService);
             this.pnlUpdateEditServices.Controls.Add(this.BtnUpdateExsService);
             this.pnlUpdateEditServices.Controls.Add(this.pnlActivateServiceBoxes);
-            this.pnlUpdateEditServices.Controls.Add(this.search_button);
-            this.pnlUpdateEditServices.Controls.Add(this.searchBox);
             this.pnlUpdateEditServices.Location = new System.Drawing.Point(1, 0);
             this.pnlUpdateEditServices.Name = "pnlUpdateEditServices";
             this.pnlUpdateEditServices.Size = new System.Drawing.Size(1186, 605);
@@ -456,8 +456,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -721,28 +721,6 @@
             this.label14.TabIndex = 169;
             this.label14.Text = "Medarbejder:";
             // 
-            // search_button
-            // 
-            this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
-            this.search_button.Location = new System.Drawing.Point(914, 43);
-            this.search_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.search_button.Name = "search_button";
-            this.search_button.Size = new System.Drawing.Size(89, 24);
-            this.search_button.TabIndex = 281;
-            this.search_button.Text = "Søg";
-            this.search_button.UseVisualStyleBackColor = true;
-            this.search_button.Click += new System.EventHandler(this.search_button_Click);
-            // 
-            // searchBox
-            // 
-            this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
-            this.searchBox.Location = new System.Drawing.Point(708, 45);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(202, 22);
-            this.searchBox.TabIndex = 283;
-            // 
             // CalculatePrice
             // 
             this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
@@ -815,8 +793,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -2099,8 +2077,8 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2287,12 +2265,33 @@
             // lLblHelpViewAllCasesTab
             // 
             this.lLblHelpViewAllCasesTab.AutoSize = true;
-            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(112, 562);
+            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(14, 551);
             this.lLblHelpViewAllCasesTab.Name = "lLblHelpViewAllCasesTab";
             this.lLblHelpViewAllCasesTab.Size = new System.Drawing.Size(147, 17);
-            this.lLblHelpViewAllCasesTab.TabIndex = 330;
+            this.lLblHelpViewAllCasesTab.TabIndex = 331;
             this.lLblHelpViewAllCasesTab.TabStop = true;
             this.lLblHelpViewAllCasesTab.Text = "Hjælp (View all cases)";
+            // 
+            // search_button
+            // 
+            this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
+            this.search_button.Location = new System.Drawing.Point(914, 12);
+            this.search_button.Margin = new System.Windows.Forms.Padding(2);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(89, 24);
+            this.search_button.TabIndex = 334;
+            this.search_button.Text = "Søg";
+            this.search_button.UseVisualStyleBackColor = true;
+            // 
+            // searchBox
+            // 
+            this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
+            this.searchBox.Location = new System.Drawing.Point(708, 14);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(202, 22);
+            this.searchBox.TabIndex = 335;
             // 
             // MainForm
             // 
@@ -2481,8 +2480,6 @@
         private System.Windows.Forms.TextBox TotalPricetxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NegPricetxt;
-        private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.Button UpdateButt;
         private System.Windows.Forms.Button btnReturnToCasesPnl;
         private System.Windows.Forms.Label label2;
@@ -2514,6 +2511,8 @@
         private System.Windows.Forms.LinkLabel lLblHelpAddClientCaseTab;
         private System.Windows.Forms.LinkLabel lLblHelpEmployeeServicesTab;
         private System.Windows.Forms.LinkLabel lLblHelpViewAllCasesTab;
+        private System.Windows.Forms.Button search_button;
+        private System.Windows.Forms.TextBox searchBox;
     }
 }
 
