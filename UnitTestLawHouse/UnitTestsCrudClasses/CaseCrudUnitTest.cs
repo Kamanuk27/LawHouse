@@ -8,26 +8,28 @@ namespace UnitTestLawHouse
     [TestClass]
     public class UnitTestCaseCrud
     {
-       private CaseCrud _caseCrud = new CaseCrud();
-
+        // Navnet _sut  står for System Under Test
         [TestMethod]
         public void TestCaseCrudVedInitializationDbCaseIsNotNull()
         {
-            var o = _caseCrud._dbCase;
+            CaseCrud _sut = new CaseCrud();
+            var o = _sut._dbCase;
             Assert.IsNotNull(o);
         }
 
         [TestMethod]
         public void TestGetCasesReturnTwoCases()
         {
-            var cases = _caseCrud.GetCases();
+            CaseCrud _sut = new CaseCrud();
+            var cases = _sut.GetCases();
             Assert.AreEqual(2, cases.Count);
         }
 
         [TestMethod]
         public void TestGetCasesReturnListOfCases()
         {
-            var cases = _caseCrud.GetCases();
+            CaseCrud _sut = new CaseCrud();
+            var cases = _sut.GetCases();
             Type actual = cases[0].GetType();
             Type expected = typeof(CaseM);
             Assert.AreEqual(expected, actual);
@@ -36,31 +38,35 @@ namespace UnitTestLawHouse
         [TestMethod]
         public void TestNewCaseReturnOne()
         {
+            CaseCrud _sut = new CaseCrud();
             int expected = 1;
-            int response = _caseCrud.NewCase("testCase", 2, 3, DateTime.Now, 4, 3500);
+            int response = _sut.NewCase("testCase", 2, 3, DateTime.Now, 4, 3500);
             Assert.AreEqual(response, expected);
         }
 
         public void TestUpdateCaseReturnOne()
         {
+            CaseCrud _sut = new CaseCrud();
             int expected = 1;
-            int actual = _caseCrud.UpdateCase(1, 4000, 1);
+            int actual = _sut.UpdateCase(1, 4000, 1);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestCloseCaseReturnOne()
         {
+            CaseCrud _sut = new CaseCrud();
             int expected = 1;
-            int actual = _caseCrud.CloseCase(2, 5000, DateTime.Now);
+            int actual = _sut.CloseCase(2, 5000, DateTime.Now);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestDeleteCaseReturnOne()
         {
+            CaseCrud _sut = new CaseCrud();
             int expected = 1;
-            int actual = _caseCrud.DeleteCase(1);
+            int actual = _sut.DeleteCase(1);
             Assert.AreEqual(expected, actual);
         }
     }
