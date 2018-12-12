@@ -517,7 +517,7 @@ namespace LawHouseTabForm
         private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             SendUpdateEmployeeFieldsInfo();
-            AddEmpFields();
+            AddEmpBoxes(false);
             DeleteEmpl.Visible = true;
             UpdateEmpl.Visible = true;
         }
@@ -590,7 +590,8 @@ namespace LawHouseTabForm
             btnActivateUpdEmpFields.Visible = true;
             pnlAddSubjectToEmp.Visible = false;
             btnEditEmpCancel.Visible = false;
-            lblAnsatte.Visible = true;
+           // lblAnsatte.Visible = true;
+            lblOpdaterMedInfo.Visible = true;
             EmplGridView.Visible = false;
             btnDelSubjFromEmp.Visible = true;
         }
@@ -619,31 +620,38 @@ namespace LawHouseTabForm
         private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
         {
             ClearTxt();
-            AddEmpFields();
-            NewEmplButt.Visible = true;
+            AddEmpBoxes(true);
         }
 
-        private void AddEmpFields()
+        private void AddEmpBoxes(bool IsNewEmployee)
         {
-
-            lblAddNewEmp.Visible = true;
             EmplGridView.Visible = false;
             lblAnsatte.Visible = false;
-
+            btnEditEmpCancel.Visible = true;            
+            btnActivateAddEmpFields.Visible = false;            
             btnActivateUpdEmpFields.Visible = false;
-            btnActivateAddEmpFields.Visible = false;
-            btnEditEmpCancel.Visible = true;
-            pnlAddSubjectToEmp.Visible = true;
             pnlAddUpdateEmplFields.Visible = true;
+            pnlAddSubjectToEmp.Visible = true;
 
+            if (IsNewEmployee)
+            {
+                lblTilfNyMeda.Visible = true;  
+                lblOpdaterMedInfo.Visible = false;
+                NewEmplButt.Visible = true;
+            }
+            else
+            {
+                lblTilfNyMeda.Visible = false;                
+                lblOpdaterMedInfo.Visible = true;
+                UpdateEmpl.Visible = true;
+                DeleteEmpl.Visible = true;
+            }
         }
 
         private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
         {
             SendUpdateEmployeeFieldsInfo();
-            AddEmpFields();
-            DeleteEmpl.Visible = true;
-            UpdateEmpl.Visible = true;
+            AddEmpBoxes(false);
         }
 
         private void SendUpdateEmployeeFieldsInfo()
@@ -668,8 +676,9 @@ namespace LawHouseTabForm
             EmplGridView.Visible = true;
             lblAnsatte.Visible = true;
 
-            lblUpdateEmpInfo.Visible = false;
-            lblAddNewEmp.Visible = false;
+            lblOpdaterMedInfo.Visible = false;
+            lblTilfNyMeda.Visible = false;
+            
             btnActivateUpdEmpFields.Visible = true;
             btnActivateAddEmpFields.Visible = true;
             NewEmplButt.Visible = false;
@@ -779,6 +788,16 @@ namespace LawHouseTabForm
         private void btnShowPrServices_Click(object sender, EventArgs e)
         {
             getPrServicesByEmployee();
+            showTotalKmAndHours();
+            
+        }
+
+        private void showTotalKmAndHours()
+        {
+            int[] total = _pServiceHandler.GetworkDone();
+
+            totalHoursUseForPeriod.Text = total[1].ToString();
+            totalKmDrivenInPeriod.Text = total[0].ToString();
         }
 
         private void getPrServicesByEmployee()
@@ -871,6 +890,61 @@ namespace LawHouseTabForm
             ActivateGetCasesGrid(true);
             btnShowClosedCases.Visible = true;
             btnReturnToShowOpenCases.Visible = false;
+        }
+
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedTab = TabControl.SelectedTab;
+
+            foreach (Control ctrl in selectedTab.Controls)
+            {
+                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name 
+                                                             || selectedTab.Name == tabEmployees.Name)
+                {
+                    if (ctrl is TextBox)
+                    {
+                        (ctrl as TextBox).Text = string.Empty;
+                    }
+
+                    if (ctrl is ComboBox)
+                    {
+                        (ctrl as ComboBox).Text = string.Empty;
+                    }
+                    if (ctrl is DateTimePicker)
+                    {
+                        (ctrl as DateTimePicker).Value = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    if (ctrl is TextBox)
+                    {
+                        (ctrl as TextBox).Text = string.Empty;
+                    }
+
+                    if (ctrl is Label)
+                    {
+                        totalHoursUseForPeriod.Text = string.Empty;
+                        totalKmDrivenInPeriod.Text = string.Empty;
+                    }
+
+                    if (ctrl is ComboBox)
+                    {
+                        (ctrl as ComboBox).Text = string.Empty;
+                    }
+                    if (ctrl is DateTimePicker)
+                    {
+                        (ctrl as DateTimePicker).Value = DateTime.Now;
+                    }
+                    if (ctrl is DataGridView)
+                    {
+                        (ctrl as DataGridView).Rows.Clear();// =  string.Empty;
+                    }
+
+
+                }
+            }
+
         }
     }
 }
