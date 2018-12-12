@@ -29,7 +29,7 @@ namespace UnitTestLawHouse.UnitTestsControllers
         public void TestGetCasesReturnTwoCases()
         {
             CaseHandler _sut = CaseHandler.Instance;
-            var cases = _sut.GetCases();
+            var cases = _sut.GetCases(true);
             Assert.AreEqual(2, cases.Count);
         }
 
@@ -37,7 +37,7 @@ namespace UnitTestLawHouse.UnitTestsControllers
         public void TestGetCasesReturnListOfCases()
         {
             CaseHandler _sut = CaseHandler.Instance;
-            var cases = _sut.GetCases();
+            var cases = _sut.GetCases(true);
             Type actual = cases[0].GetType();
             Type expected = typeof(CaseM);
             Assert.AreEqual(expected, actual);

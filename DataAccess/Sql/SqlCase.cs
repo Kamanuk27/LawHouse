@@ -26,13 +26,21 @@ namespace DataAccess
 
             return ExecuteNonQuery();
         }
-        public List<CaseM> GetCases()
+        public List<CaseM> GetCases(bool active)
         {
             List<CaseM> cases = new List<CaseM>();
-            
-            _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, e.ID as eID, cl.FirstName AS cFName, cl.LastName AS cLName, " +
+            if (active)
+            {
+                _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, e.ID as eID, cl.FirstName AS cFName, cl.LastName AS cLName, " +
                                    "sb.[Name] AS subjectName, sb.TimeEstimate, sb.HoursEstimate FROM[Case] c JOIN Employee e ON c.RespEmp_ID = e.ID" +
                                    " JOIN Client cl ON c.Client_ID = cl.ID JOIN[Subject] sb ON c.Subject_ID = sb.ID WHERE c.TotalPrice IS NULL";
+
+            }
+            else
+            {
+                //
+            }
+           
             PrepareSql();
             SqlDataReader reader = null;
             reader = _command.ExecuteReader();

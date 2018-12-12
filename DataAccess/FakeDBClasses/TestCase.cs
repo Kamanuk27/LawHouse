@@ -19,7 +19,7 @@ namespace DataAccess
             return 1;
         }
 
-        public List<CaseM> GetCases()
+        public List<CaseM> GetCases(bool active)
         {
             List<CaseM> cases = new List<CaseM>();
             cases.Add(new CaseM(1));
