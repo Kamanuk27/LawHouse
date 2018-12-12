@@ -479,28 +479,6 @@ namespace LawHouseTabForm
             BtnUpdateExsService.Visible = true;
         }
 
-        private void MakeNewServBut_Click(object sender, EventArgs e)
-        {
-            string name = MkServiceName.Text;
-            int hours = Convert.ToInt32(MkServiceHours.Text);
-            int time = Convert.ToInt32(MkServiceTime.Text);
-            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _subjectHandler.NewSubject(name, hours, time, price);
-        }
-
-        private void UpdateServButt_Click(object sender, EventArgs e)
-        {
-            string name = MkServiceName.Text;
-            int hours = Convert.ToInt32(MkServiceHours.Text);
-            int time = Convert.ToInt32(MkServiceTime.Text);
-            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
-            _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
-        }
-
-        private void DeleteServButt_Click(object sender, EventArgs e)
-        {
-            _subjectHandler.DeleteSubject(SubjectId);
-        }
 
         private void SubjectGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -509,6 +487,13 @@ namespace LawHouseTabForm
             MkServiceHours.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
             MkServiceTime.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
             MkServiceFixPr.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
+
+            pnlAddViewSubjects.Visible = true;
+            btnUpdateSubj.Visible = true;
+            btnDeleteSubj.Visible = true;
+            btnMakeNewSubj.Visible = false;
+            btnActivatAddSubjects.Visible = false;
+            
         }
 
         #endregion
@@ -800,5 +785,35 @@ namespace LawHouseTabForm
         }
 
         #endregion
+
+
+        private void btnActivatAddSubjects_Click(object sender, EventArgs e)
+        {
+            btnMakeNewSubj.Visible = true;
+            pnlAddViewSubjects.Visible = true;
+        }
+
+        private void btnMakeNewSubj_Click(object sender, EventArgs e)
+        {
+            string name = MkServiceName.Text;
+            int hours = Convert.ToInt32(MkServiceHours.Text);
+            int time = Convert.ToInt32(MkServiceTime.Text);
+            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
+            _subjectHandler.NewSubject(name, hours, time, price);
+        }
+
+        private void btnUpdateSubj_Click(object sender, EventArgs e)
+        {
+            string name = MkServiceName.Text;
+            int hours = Convert.ToInt32(MkServiceHours.Text);
+            int time = Convert.ToInt32(MkServiceTime.Text);
+            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
+            _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
+        }
+
+        private void btnDeleteSubj_Click(object sender, EventArgs e)
+        {
+            _subjectHandler.DeleteSubject(SubjectId);
+        }
     }
 }
