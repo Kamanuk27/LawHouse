@@ -9,19 +9,20 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
     [TestClass]
     public class ProvidedServicesCrudUnitTest
     {
-        private ProvidedServiceCrud _provServices = new ProvidedServiceCrud();
-
+        // Navnet _sut  står for System Under Test
         [TestMethod]
         public void TestProvidedServicesCrudVedInitializationDbProvidedServicesIsNotNull()
         {
-            var o = _provServices._dbProvidedService;
-            Assert.IsNotNull(o);
+           ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+           var o = _sut._dbProvidedService;
+           Assert.IsNotNull(o);
         }
         [TestMethod]
         public void TestNewProvidedServiceReturnOne()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             int expected = 1;
-            int actual = _provServices.NewProvidedService(1, DateTime.Now, 2, 200, "Møde", 1);
+            int actual = _sut.NewProvidedService(1, DateTime.Now, 2, 200, "Møde", 1);
             Assert.AreEqual(expected, actual);
         }
 
@@ -29,14 +30,33 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
         [TestMethod]
         public void TestGetProvidedServicesReturnTwoServices()
         {
-            var services = _provServices.GetProvidedServices(2);
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            var services = _sut.GetProvidedServices(2);
             Assert.AreEqual(2, services.Count);
         }
 
         [TestMethod]
         public void TestGetProvidedServicesReturnListOfServices()
         {
-            var services = _provServices.GetProvidedServices(2);
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            var services = _sut.GetProvidedServices(2);
+            Type actual = services[0].GetType();
+            Type expected = typeof(ProvidedServiceM);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestGetProvidedServicesByEmplIdReturnTwoServices()
+        {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            var services = _sut.GetProvidedServicesByEmplId(1, DateTime.Now, DateTime.Now);
+            Assert.AreEqual(2, services.Count);
+        }
+
+        [TestMethod]
+        public void TestGetProvidedServicesByEmplIdReturnListOfServices()
+        {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            var services = _sut.GetProvidedServicesByEmplId(1, DateTime.Now, DateTime.Now);
             Type actual = services[0].GetType();
             Type expected = typeof(ProvidedServiceM);
             Assert.AreEqual(expected, actual);
@@ -45,46 +65,52 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
         [TestMethod]
         public void TestUpdateProvidedServiceReturnOne()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             int expected = 1;
-            int actual = _provServices.UpdateProvidedService(1, 2, 150, DateTime.Now, "Møde med kunden og kørsel");
+            int actual = _sut.UpdateProvidedService(1, 2, 150, DateTime.Now, "Møde med kunden og kørsel");
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestGetPriceReturnNegotiatedPrice4500()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             decimal expected = 4500;
-            decimal actual = _provServices.GetPrice(1, 4500);
+            decimal actual = _sut.GetPrice(1, 4500);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestGetPriceReturn0IfThereIsNoNegPriceAndNoServicesOnCase()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             decimal expected = 0;
-            decimal actual = _provServices.GetPrice(1, 0);
+            decimal actual = _sut.GetPrice(1, 0);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void TestGetPriceReturnCalculatedPrice4750()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             decimal expected = 4750;
-            decimal actual = _provServices.GetPrice(2, 0);
+            decimal actual = _sut.GetPrice(2, 0);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestGetUnitPricesReturnTwoDecimal()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             int expected = 2;
-            int actual = _provServices.GetUnitPrices().Count;
+            int actual = _sut.GetUnitPrices().Count;
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestGetUnitPricesReturnListOfDecimal()
         {
-            var prices = _provServices.GetUnitPrices();
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
+            var prices = _sut.GetUnitPrices();
             Type actual = prices[0].GetType();
             Type expected = typeof(decimal);
             Assert.AreEqual(expected, actual);
@@ -93,26 +119,28 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
         [TestMethod]
         public void TestCalculatePriceReturn0IfListOfServicesIsEmpty()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             // CaseId 1 returnerer en tom liste
             decimal expected = 0;
-            decimal actual = _provServices.CalculatePrice(1);
+            decimal actual = _sut.CalculatePrice(1);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestCalculatePriceReturn4750IfListOfServicesIsNotEmpty()
         {
-            
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             decimal expected = 4750;
-            decimal actual = _provServices.CalculatePrice(2);
+            decimal actual = _sut.CalculatePrice(2);
             Assert.AreEqual(expected, actual);
         }
         
         [TestMethod]
         public void TestDeleteProvidedServiceReturnOne()
         {
+            ProvidedServiceCrud _sut = new ProvidedServiceCrud();
             int expected = 1;
-            int actual = _provServices.DeleteProvidedService(1);
+            int actual = _sut.DeleteProvidedService(1);
             Assert.AreEqual(expected, actual);
         }
     }

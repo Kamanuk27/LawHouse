@@ -8,25 +8,29 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
     [TestClass]
     public class ClientCrudUnitTest
     {
-        private ClientCrud _clientCrud = new ClientCrud();
+        // Navnet _sut  står for System Under Test
+        
         [TestMethod]
         public void TestClientCrudVedInitializationDbClientIsNotNull()
         {
-            var o = _clientCrud._dbClient;
+            ClientCrud _sut = new ClientCrud();
+            var o = _sut._dbClient;
             Assert.IsNotNull(o);
         }
 
         [TestMethod]
         public void TestGetClientReturnClientWithTlfNo2222()
         {
-            var client = _clientCrud.GetClient("2222");
+            ClientCrud _sut = new ClientCrud();
+            var client = _sut.GetClient("2222");
             Assert.AreEqual("2222", client.TlfNo);
         }
 
         [TestMethod]
         public void TestGetClientReturnClientM()
         {
-            var client = _clientCrud.GetClient("2222");
+            ClientCrud _sut = new ClientCrud();
+            var client = _sut.GetClient("2222");
             Type actual = client.GetType();
             Type expected = typeof(ClientM);
             Assert.AreEqual(expected, actual);
@@ -35,9 +39,10 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
         [TestMethod]
         public void TestNewClientReturnOne()
         {
+            ClientCrud _sut = new ClientCrud();
             int expected = 1;
             ClientM client = new ClientM();
-            int actual = _clientCrud.NewClient("123456", "Peter", "Nielsen", "Solvej 4", 8600, "Peters@email.com", "22222");
+            int actual = _sut.NewClient("123456", "Peter", "Nielsen", "Solvej 4", 8600, "Peters@email.com", "22222");
             Assert.AreEqual(expected, actual);
         }
 
@@ -45,16 +50,18 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
         [TestMethod]
         public void TestUpdateClientReturnOne()
         {
+            ClientCrud _sut = new ClientCrud();
             int expected = 1;
-            int actual = _clientCrud.UpdateClient(1, "123456", "Peter", "Nielsen", "Solvej 4", 8600, "Peters@email.com", "22222");
+            int actual = _sut.UpdateClient(1, "123456", "Peter", "Nielsen", "Solvej 4", 8600, "Peters@email.com", "22222");
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TestCloseClientReturnOne()
         {
+            ClientCrud _sut = new ClientCrud();
             int expected = 1;
-            int actual = _clientCrud.CloseClient(2);
+            int actual = _sut.CloseClient(2);
             Assert.AreEqual(expected, actual);
         }
     }

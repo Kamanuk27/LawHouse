@@ -20,8 +20,7 @@ namespace LawHouseTabForm
         internal IEmployeeBL _employeeHandler;
         internal IProvidedServiceBL _pServiceHandler;
         internal ISubjectBL _subjectHandler;
-        // private CaseHandler _caseHandler;
-
+        //private CaseHandler _caseHandler;
         //private ClientHandler _clientHandler;
         //private EmployeeHandler _employeeHandler;
         //private SubjectHandler _subjectHandler;
@@ -493,17 +492,20 @@ namespace LawHouseTabForm
         private void SubjectGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             SubjectId = Convert.ToInt32(ServiceGridView.SelectedRows[0].Cells[0].Value);
-            MkServiceName.Text = ServiceGridView.SelectedRows[0].Cells[1].Value.ToString();
-            MkServiceHours.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
-            MkServiceTime.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
-            MkServiceFixPr.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
+            txtAddViewSubjectName.Text = ServiceGridView.SelectedRows[0].Cells[1].Value.ToString();
+            txtAddViewSubjectHoursEst.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
+            TxtAddViewSubjectTimeEst.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
+            txtAddViewSubjectFixPrc.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
 
             pnlAddViewSubjects.Visible = true;
             btnUpdateSubj.Visible = true;
             btnDeleteSubj.Visible = true;
             btnMakeNewSubj.Visible = false;
             btnActivatAddSubjects.Visible = false;
+            btnCnclSubjectEdit.Visible = true;
             
+
+
         }
 
         #endregion
@@ -801,23 +803,24 @@ namespace LawHouseTabForm
         {
             btnMakeNewSubj.Visible = true;
             pnlAddViewSubjects.Visible = true;
+            btnCnclSubjectEdit.Visible = true;
         }
 
         private void btnMakeNewSubj_Click(object sender, EventArgs e)
         {
-            string name = MkServiceName.Text;
-            int hours = Convert.ToInt32(MkServiceHours.Text);
-            int time = Convert.ToInt32(MkServiceTime.Text);
-            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
+            string name = txtAddViewSubjectName.Text;
+            int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
+            int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+            decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
             _subjectHandler.NewSubject(name, hours, time, price);
         }
 
         private void btnUpdateSubj_Click(object sender, EventArgs e)
         {
-            string name = MkServiceName.Text;
-            int hours = Convert.ToInt32(MkServiceHours.Text);
-            int time = Convert.ToInt32(MkServiceTime.Text);
-            decimal price = Convert.ToDecimal(MkServiceFixPr.Text);
+            string name = txtAddViewSubjectName.Text;
+            int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
+            int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+            decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
             _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
             ServiceGridView.Rows.Clear();
             GetServices();
@@ -827,6 +830,21 @@ namespace LawHouseTabForm
         private void btnDeleteSubj_Click(object sender, EventArgs e)
         {
             _subjectHandler.DeleteSubject(SubjectId);
+        }
+
+        private void btnCnclSubjectEdit_Click(object sender, EventArgs e)
+        {
+            pnlAddViewSubjects.Visible = false;
+            btnDeleteSubj.Visible = false;
+            btnActivatAddSubjects.Visible = true;
+            btnMakeNewSubj.Visible = false;
+            btnUpdateSubj.Visible = false;
+            txtAddViewSubjectFixPrc.Clear();
+            txtAddViewSubjectHoursEst.Clear();
+            txtAddViewSubjectName.Clear();
+            TxtAddViewSubjectTimeEst.Clear();
+
+            
         }
     }
 }
