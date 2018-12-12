@@ -12,7 +12,8 @@ namespace BusinessLogic
         internal decimal CalculatePrice(List<decimal> prices, List<ProvidedServiceM> servList)
         {
            int [] count = CountServices(servList);
-           return prices[0] * count[0] + prices[1] * count[1];
+            decimal total = prices[0] * count[0] + prices[1] * count[1];
+           return total;
         }
        
         internal int [] CountServices(List <ProvidedServiceM> servList)

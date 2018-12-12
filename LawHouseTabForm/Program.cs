@@ -16,7 +16,6 @@ namespace LawHouseTabForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             IUserInterface newForm = GuiFactory.Instance.GetUserInterface();
             Application.Run(newForm as Form);
         }
