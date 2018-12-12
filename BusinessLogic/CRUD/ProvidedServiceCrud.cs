@@ -50,22 +50,7 @@ namespace BusinessLogic
             }
             return count;
         }
-        //internal List <int> GetworkDone()
-        //{
-        //    List<int > workDone = new List<int>();
-        //    int km = 0;
-        //    int hours = 0;
-        //    foreach (var s1 in _services)
-        //    {
-        //        km += s1.Km;
-        //        hours += s1.Hours;
-
-        //    }
-        //    workDone.Add(km);
-        //    workDone.Add(hours);
-        //    return workDone;
-        //}
-
+        
         internal int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {
             ProvidedServiceM s1 = new ProvidedServiceM

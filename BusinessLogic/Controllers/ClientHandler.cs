@@ -1,5 +1,4 @@
-﻿using BusinessLogic.Interfaces;
-using LawHouseLibrary.Models;
+﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 namespace BusinessLogic
 {
 
-    public class ClientHandler : IClientBL
+    public class ClientHandler
     {
         private static ClientHandler _instance;
         private ClientCrud _clientCrud;

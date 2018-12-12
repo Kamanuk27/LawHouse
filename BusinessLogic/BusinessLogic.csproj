@@ -48,16 +48,11 @@
     <Compile Include="CRUD\EmployeeCrud.cs" />
     <Compile Include="Controllers\EmployeeHandler.cs" />
     <Compile Include="CRUD\PriceCalculator.cs" />
-    <Compile Include="Interfaces\IClientBL.cs" />
-    <Compile Include="Interfaces\IEmployeeBL.cs" />
-    <Compile Include="Interfaces\IProvidedServiceBL.cs" />
-    <Compile Include="Interfaces\ISubjectBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CRUD\SubjectCrud.cs" />
     <Compile Include="Controllers\SubjectHandler.cs" />
     <Compile Include="CRUD\ProvidedServiceCrud.cs" />
     <Compile Include="Controllers\ProvidedServiceHandler.cs" />
-    <Compile Include="Interfaces\ICaseBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
