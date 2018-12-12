@@ -163,9 +163,9 @@ namespace LawHouseTabForm
 
         #region FillDataGrid
 
-        private void ActivateGetCasesGrid()
+        private void ActivateGetCasesGrid(bool IsActive = true)
         {
-            foreach (var c1 in _caseHandler.GetCases(this.IsActive = true))
+            foreach (var c1 in _caseHandler.GetCases(IsActive))
             {
                 int n = CaseDataGrid.Rows.Add();
                 CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
@@ -846,6 +846,25 @@ namespace LawHouseTabForm
             TxtAddViewSubjectTimeEst.Clear();
 
             
+        }
+
+        private void btnShowClosedCases_Click(object sender, EventArgs e)
+        {
+            
+            CaseDataGrid.Rows.Clear();
+            ActivateGetCasesGrid(false);
+            btnShowClosedCases.Visible = false;
+            btnReturnToShowOpenCases.Visible = true;
+            
+        }
+
+        private void btnReturnToShowOpenCases_Click(object sender, EventArgs e)
+        {
+            
+            CaseDataGrid.Rows.Clear();
+            ActivateGetCasesGrid(true);
+            btnShowClosedCases.Visible = true;
+            btnReturnToShowOpenCases.Visible = false;
         }
     }
 }
