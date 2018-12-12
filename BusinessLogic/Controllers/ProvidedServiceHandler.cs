@@ -8,15 +8,16 @@ using LawHouseLibrary.Models;
 
 namespace BusinessLogic
 {
-    public class ProvidedServiceHandler :IProvidedServiceBL
+    public class ProvidedServiceHandler : IProvidedServiceBL
     {
         private static ProvidedServiceHandler _instance;
-        private ProvidedServiceCrud _providedServiceCrud ;
+        private ProvidedServiceCrud _providedServiceCrud;
 
         public ProvidedServiceHandler()
         {
             _providedServiceCrud = new ProvidedServiceCrud();
         }
+
         public static ProvidedServiceHandler Instance
         {
             get
@@ -52,12 +53,18 @@ namespace BusinessLogic
         {
             return _providedServiceCrud.GetPrice(id, negPrice);
         }
+
         public int DeleteProvidedService(int id)
         {
             return _providedServiceCrud.DeleteProvidedService(id);
         }
 
-        public List<int> GetworkDone()
+        //public List<int> GetworkDone()
+        //{
+        //    return _providedServiceCrud.GetworkDone();
+        //}
+
+        public int[] GetworkDone()
         {
             return _providedServiceCrud.GetworkDone();
         }

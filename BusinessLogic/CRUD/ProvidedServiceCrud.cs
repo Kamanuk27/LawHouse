@@ -40,21 +40,31 @@ namespace BusinessLogic
             _services = _dbProvidedService.GetProvidedServicesByEmplId(emplId, fromTime, toTime);
             return _services;
         }
-        internal List <int> GetworkDone()
+        internal int[] GetworkDone()
         {
-            List<int > workDone = new List<int>();
-            int km = 0;
-            int hours = 0;
-            foreach (var s1 in _services)
+            int[] count = new int[2];
+            foreach (var item in _services)
             {
-                km += s1.Km;
-                hours += s1.Hours;
-
+                count[0] += item.Km;
+                count[1] += item.Hours;
             }
-            workDone.Add(km);
-            workDone.Add(hours);
-            return workDone;
+            return count;
         }
+        //internal List <int> GetworkDone()
+        //{
+        //    List<int > workDone = new List<int>();
+        //    int km = 0;
+        //    int hours = 0;
+        //    foreach (var s1 in _services)
+        //    {
+        //        km += s1.Km;
+        //        hours += s1.Hours;
+
+        //    }
+        //    workDone.Add(km);
+        //    workDone.Add(hours);
+        //    return workDone;
+        //}
 
         internal int UpdateProvidedService(int id, int hours, int km, DateTime date, string comment)
         {

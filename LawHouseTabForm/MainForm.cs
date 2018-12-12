@@ -795,6 +795,12 @@ namespace LawHouseTabForm
                 GridEmployeeServicesP.Rows[n].Cells[3].Value = ps.Km;
                 GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
             }
+            int[] jobCount = _pServiceHandler.GetworkDone();
+            totalHoursUseForPeriod.Text = jobCount[1].ToString();
+            totalKmDrivenInPeriod.Text = jobCount[0].ToString();
+
+
+
         }
 
         #endregion
