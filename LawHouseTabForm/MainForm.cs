@@ -1,4 +1,5 @@
 ﻿using BusinessLogic;
+using BusinessLogic.testInterfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,9 @@ namespace LawHouseTabForm
 {
     public partial class MainForm : Form
     {
-        private CaseHandler _caseHandler;
+        internal ICaseBL _caseHandler;
+        // private CaseHandler _caseHandler;
+
         private ClientHandler _clientHandler;
         private EmployeeHandler _employeeHandler;
         private SubjectHandler _subjectHandler;

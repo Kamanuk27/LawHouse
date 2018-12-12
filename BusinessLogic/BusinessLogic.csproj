@@ -53,6 +53,7 @@
     <Compile Include="Controllers\SubjectHandler.cs" />
     <Compile Include="CRUD\ProvidedServiceCrud.cs" />
     <Compile Include="Controllers\ProvidedServiceHandler.cs" />
+    <Compile Include="testInterfaces\ICaseBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
