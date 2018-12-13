@@ -19,6 +19,14 @@ namespace DataAccess
             return 1;
         }
 
+        public List<CaseM> GetCasesByClientId(int id)
+        {
+            List<CaseM> cases = new List<CaseM>();
+            cases.Add(new CaseM(1));
+            cases.Add(new CaseM(4));
+            return cases;
+        }
+
         public List<CaseM> GetCases(bool active)
         {
             List<CaseM> cases = new List<CaseM>();

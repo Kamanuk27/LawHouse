@@ -99,5 +99,49 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@id", id));
             return ExecuteNonQuery();
         }
+
+        public List<CaseM> GetCasesByClientId(int id)
+        {
+            List<CaseM> cases = new List<CaseM>();
+           
+            
+                _command.CommandText = "SELECT c.*, e.FirstName AS eFName, e.LastName AS eLName, e.ID as eID, cl.FirstName AS cFName, cl.LastName AS cLName, " +
+                                   "sb.[Name] AS subjectName, sb.TimeEstimate, sb.HoursEstimate FROM[Case] c JOIN Employee e ON c.RespEmp_ID = e.ID" +
+                                   " JOIN Client cl ON c.Client_ID = cl.ID JOIN[Subject] sb ON c.Subject_ID = sb.ID WHERE Client_ID = @ID";
+
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@ID", id));
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    CaseM c1 = new CaseM();
+                    c1.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    c1.Name = reader["CaseName"] != DBNull.Value ? reader["CaseName"].ToString() : String.Empty;
+                    c1.StartDate = reader["StartDate"] != DBNull.Value ? Convert.ToDateTime(reader["StartDate"]) : DateTime.Now;
+                    c1.EndDate = c1.StartDate + TimeSpan.FromDays(Convert.ToInt32(reader["TimeEstimate"]));
+                    c1.NegPrice = reader["NegotiatedPrice"] != DBNull.Value ? Convert.ToDecimal(reader["NegotiatedPrice"]) : default(decimal);
+                    c1.TotalPrice = reader["TotalPrice"] != DBNull.Value ? Convert.ToDecimal(reader["TotalPrice"]) : default(decimal);
+                    c1.Subject = reader["SubjectName"] != DBNull.Value ? reader["SubjectName"].ToString() : string.Empty;
+                    c1.HoursEstimate = reader["HoursEstimate"] != DBNull.Value ? Convert.ToInt32(reader["HoursEstimate"]) : default(int);
+
+                    c1.Client = $"{(reader["cFName"] != DBNull.Value ? reader["cFName"].ToString() : string.Empty)} " +
+                                $"{(reader["cLName"] != DBNull.Value ? reader["cLName"].ToString() : string.Empty)}";
+
+                    c1.RespEmployee = $"{(reader["eID"] != DBNull.Value ? reader["eID"] : default(int))}" +
+                                      $" {(reader["eFName"] != DBNull.Value ? reader["eFName"].ToString() : string.Empty)} " +
+                                      $"{(reader["eLName"] != DBNull.Value ? reader["eLName"].ToString() : string.Empty)}";
+
+                    cases.Add(c1);
+                }
+            }
+            _connection.Close();
+            return cases;
+
+        }
     }
 }

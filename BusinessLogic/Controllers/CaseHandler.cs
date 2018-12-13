@@ -34,6 +34,12 @@ namespace BusinessLogic
             return _caseCrud.GetCases(active);
         }
 
+        public List<CaseM> GetCasesByClientId(int id)
+        {
+            return _caseCrud.GetCasesByClientId(id);
+        }
+
+
         public int CloseCase(int id, decimal total, DateTime endDate)
         {
             return _caseCrud.CloseCase(id, total, endDate);

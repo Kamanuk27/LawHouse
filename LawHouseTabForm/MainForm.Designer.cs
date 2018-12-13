@@ -240,6 +240,8 @@
             this.btnUpdateSubj = new System.Windows.Forms.Button();
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
+            this.tlfTxtForCases = new System.Windows.Forms.TextBox();
+            this.btnGetCasesbyClient = new System.Windows.Forms.Button();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -409,6 +411,8 @@
             // pnlAllOpenCases
             // 
             this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.btnGetCasesbyClient);
+            this.pnlAllOpenCases.Controls.Add(this.tlfTxtForCases);
             this.pnlAllOpenCases.Controls.Add(this.lblAllCLosedCases);
             this.pnlAllOpenCases.Controls.Add(this.label6);
             this.pnlAllOpenCases.Controls.Add(this.UpdateButt);
@@ -2575,6 +2579,23 @@
             this.label48.TabIndex = 281;
             this.label48.Text = "Tjenesteydelser og efteruddannelser";
             // 
+            // tlfTxtForCases
+            // 
+            this.tlfTxtForCases.Location = new System.Drawing.Point(19, 494);
+            this.tlfTxtForCases.Name = "tlfTxtForCases";
+            this.tlfTxtForCases.Size = new System.Drawing.Size(100, 23);
+            this.tlfTxtForCases.TabIndex = 341;
+            // 
+            // btnGetCasesbyClient
+            // 
+            this.btnGetCasesbyClient.Location = new System.Drawing.Point(19, 538);
+            this.btnGetCasesbyClient.Name = "btnGetCasesbyClient";
+            this.btnGetCasesbyClient.Size = new System.Drawing.Size(114, 45);
+            this.btnGetCasesbyClient.TabIndex = 342;
+            this.btnGetCasesbyClient.Text = "Klient";
+            this.btnGetCasesbyClient.UseVisualStyleBackColor = true;
+            this.btnGetCasesbyClient.Click += new System.EventHandler(this.btnGetCasesbyClient_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2819,6 +2840,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblAllCLosedCases;
+        private System.Windows.Forms.Button btnGetCasesbyClient;
+        private System.Windows.Forms.TextBox tlfTxtForCases;
     }
 }
 

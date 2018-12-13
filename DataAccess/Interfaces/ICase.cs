@@ -14,5 +14,6 @@ namespace DataAccess
         int UpdateCase(CaseM c1);
         int CloseCase(CaseM c1);
         int DeleteCase(int id);
+        List<CaseM> GetCasesByClientId(int id);
     }
 }

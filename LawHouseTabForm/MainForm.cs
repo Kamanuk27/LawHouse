@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace LawHouseTabForm
 {
-    public partial class MainForm : Form , IUserInterface
+    public partial class MainForm : Form, IUserInterface
     {
 
         private CaseHandler _caseHandler;
@@ -47,6 +47,7 @@ namespace LawHouseTabForm
             FillEmployeeComBox();
             FillLServInsertCom();
         }
+
         private void FillAdvokatEmployeeComBox()
         {
             RespEmpCombo.Items.Clear();
@@ -60,6 +61,7 @@ namespace LawHouseTabForm
                 }
             }
         }
+
         private void FillEmployeeComBox()
         {
             ServiceEmploeeCombox.Items.Clear();
@@ -70,6 +72,7 @@ namespace LawHouseTabForm
                 cmbBoxFindEmplID.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
         }
+
         private void FillCrCaseServiceCom()
         {
             CrCaseServiceCom.Items.Clear();
@@ -78,7 +81,7 @@ namespace LawHouseTabForm
                 CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
             }
         }
-       
+
         public void FillLServInsertCom()
         {
             LServInsertCom.Items.Clear();
@@ -87,6 +90,7 @@ namespace LawHouseTabForm
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }
         }
+
         private void showSpecializationInListbox(int EmployeeID)
         {
             foreach (var subject in _subjectHandler.GetEmployeeSubjectsById(EmployeeID))
@@ -94,18 +98,20 @@ namespace LawHouseTabForm
                 lstBoxShowEmpSpecialization.Items.Add($"{subject.Id} {subject.Name}").ToString();
             }
         }
+
         #endregion
 
         #region TxtBoks Check
+
         private void NegPricetxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char) Keys.Oemcomma)
                 e.Handled = true;
         }
 
         private void TotalPricetxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char) Keys.Oemcomma)
                 e.Handled = true;
         }
 
@@ -135,7 +141,7 @@ namespace LawHouseTabForm
 
         private void txtAddViewSubjectFixPrc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char) Keys.Oemcomma)
                 e.Handled = true;
         }
 
@@ -183,7 +189,7 @@ namespace LawHouseTabForm
 
         private void CrCasePrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char) Keys.Oemcomma)
                 e.Handled = true;
         }
 
@@ -209,6 +215,7 @@ namespace LawHouseTabForm
             e.Handled = true;
             return;
         }
+
         private void txtShowNewClientIdHere_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -265,7 +272,7 @@ namespace LawHouseTabForm
 
 
         #endregion
-        
+
         #region FillDataGrid
 
         private void ActivateGetCasesGrid(bool IsActive = true)
@@ -335,6 +342,7 @@ namespace LawHouseTabForm
         }
 
         #endregion
+
         private void search_button_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < CaseDataGrid.RowCount; i++)
@@ -353,6 +361,7 @@ namespace LawHouseTabForm
                 }
             }
         }
+
         //Ansatte
         private void cmbBoxFindEmplID_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -453,13 +462,13 @@ namespace LawHouseTabForm
         {
             try
             {
-            CaseId = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-            decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-            string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-            string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-            lblCaseName.Text = $"Nr.{CaseId}, {name}";
-            ShowProvidedServicesOnGrid();
-            pnlUpdateEditServices.Visible = true;
+                CaseId = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+                string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
+                string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+                lblCaseName.Text = $"Nr.{CaseId}, {name}";
+                ShowProvidedServicesOnGrid();
+                pnlUpdateEditServices.Visible = true;
             }
             catch (Exception exception)
             {
@@ -474,7 +483,7 @@ namespace LawHouseTabForm
             }
             else
             {
-                
+
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sagen", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -503,7 +512,8 @@ namespace LawHouseTabForm
                 int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
                 decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
                 //string respEmpl = RespEmpCombo.Text;
-                string[] getRespEmpId = RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                string[] getRespEmpId =
+                    RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int respEmpId = Convert.ToInt32(getRespEmpId[0]);
                 int i = _caseHandler.UpdateCase(id, negPrice, respEmpId);
                 if (i == 1)
@@ -524,18 +534,18 @@ namespace LawHouseTabForm
             try
             {
                 if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
-            {
-                MessageBox.Show("Vælg en sag for prisberegningen");
-            }
-            else
-            {
-                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+                {
+                    MessageBox.Show("Vælg en sag for prisberegningen");
+                }
+                else
+                {
+                    int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                    decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
 
-                decimal price = _pServiceHandler.GetPrice(id, negPrice);
-                ClosedCaseBut.Visible = true;
-                TotalPricetxt.Text = price.ToString();
-            }
+                    decimal price = _pServiceHandler.GetPrice(id, negPrice);
+                    ClosedCaseBut.Visible = true;
+                    TotalPricetxt.Text = price.ToString();
+                }
 
             }
             catch (Exception exception)
@@ -543,7 +553,7 @@ namespace LawHouseTabForm
                 //exception
                 MessageBox.Show("Vælg en sag først");
             }
-           
+
         }
 
         private void ClosedCaseBut_Click(object sender, EventArgs e)
@@ -748,7 +758,7 @@ namespace LawHouseTabForm
             btnActivateUpdEmpFields.Visible = true;
             pnlAddSubjectToEmp.Visible = false;
             btnEditEmpCancel.Visible = false;
-           // lblAnsatte.Visible = true;
+            // lblAnsatte.Visible = true;
             lblOpdaterMedInfo.Visible = true;
             EmplGridView.Visible = false;
             btnDelSubjFromEmp.Visible = true;
@@ -794,21 +804,21 @@ namespace LawHouseTabForm
         {
             EmplGridView.Visible = false;
             lblAnsatte.Visible = false;
-            btnEditEmpCancel.Visible = true;            
-            btnActivateAddEmpFields.Visible = false;            
+            btnEditEmpCancel.Visible = true;
+            btnActivateAddEmpFields.Visible = false;
             btnActivateUpdEmpFields.Visible = false;
             pnlAddUpdateEmplFields.Visible = true;
             pnlAddSubjectToEmp.Visible = true;
 
             if (IsNewEmployee)
             {
-                lblTilfNyMeda.Visible = true;  
+                lblTilfNyMeda.Visible = true;
                 lblOpdaterMedInfo.Visible = false;
                 NewEmplButt.Visible = true;
             }
             else
             {
-                lblTilfNyMeda.Visible = false;                
+                lblTilfNyMeda.Visible = false;
                 lblOpdaterMedInfo.Visible = true;
                 UpdateEmpl.Visible = true;
                 DeleteEmpl.Visible = true;
@@ -822,7 +832,8 @@ namespace LawHouseTabForm
         }
 
         private void SendUpdateEmployeeFieldsInfo()
-        {//try
+        {
+            //try
             this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
             NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
             NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
@@ -845,7 +856,7 @@ namespace LawHouseTabForm
 
             lblOpdaterMedInfo.Visible = false;
             lblTilfNyMeda.Visible = false;
-            
+
             btnActivateUpdEmpFields.Visible = true;
             btnActivateAddEmpFields.Visible = true;
             NewEmplButt.Visible = false;
@@ -865,18 +876,18 @@ namespace LawHouseTabForm
         {
             try
             {
-            string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
-            string[] getSubjectId = getItem.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-            int id = Convert.ToInt32(getSubjectId[0]);
-            _employeeHandler.DeleteSubjectFromEmployee(EmployeeID, id);
-            lstBoxShowEmpSpecialization.Items.Clear();
-            showSpecializationInListbox(EmployeeID);
+                string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
+                string[] getSubjectId = getItem.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int id = Convert.ToInt32(getSubjectId[0]);
+                _employeeHandler.DeleteSubjectFromEmployee(EmployeeID, id);
+                lstBoxShowEmpSpecialization.Items.Clear();
+                showSpecializationInListbox(EmployeeID);
             }
             catch (Exception exception)
             {
                 MessageBox.Show("Vælg en ydelse først");
             }
-           
+
         }
 
         private void AddSubjectToEmplBtn_Click(object sender, EventArgs e)
@@ -991,10 +1002,10 @@ namespace LawHouseTabForm
             }
         }
 
-            private void NewCaseButt_Click(object sender, EventArgs e)
+        private void NewCaseButt_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
                 string caseName = CrCaseName.Text;
                 string[] getServoceId =
                     CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -1097,6 +1108,7 @@ namespace LawHouseTabForm
                 {
                     txtAddViewSubjectFixPrc.Text = 0.ToString();
                 }
+
                 decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
                 _subjectHandler.NewSubject(name, hours, time, price);
                 GetServices();
@@ -1160,24 +1172,24 @@ namespace LawHouseTabForm
             txtAddViewSubjectName.Clear();
             TxtAddViewSubjectTimeEst.Clear();
 
-            
+
         }
 
         private void btnShowClosedCases_Click(object sender, EventArgs e)
         {
-            
+
             CaseDataGrid.Rows.Clear();
             ActivateGetCasesGrid(false);
             btnShowClosedCases.Visible = false;
             btnReturnToShowOpenCases.Visible = true;
             lblAllActiveCases.Visible = false;
             lblAllCLosedCases.Visible = true;
-            
+
         }
 
         private void btnReturnToShowOpenCases_Click(object sender, EventArgs e)
         {
-            
+
             CaseDataGrid.Rows.Clear();
             ActivateGetCasesGrid(true);
             btnShowClosedCases.Visible = true;
@@ -1186,7 +1198,7 @@ namespace LawHouseTabForm
             lblAllCLosedCases.Visible = false;
         }
 
-       
+
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1206,6 +1218,7 @@ namespace LawHouseTabForm
                     {
                         (ctrl as ComboBox).Text = string.Empty;
                     }
+
                     if (ctrl is DateTimePicker)
                     {
                         (ctrl as DateTimePicker).Value = DateTime.Now;
@@ -1234,10 +1247,12 @@ namespace LawHouseTabForm
                     {
                         (ctrl as ComboBox).Text = string.Empty;
                     }
+
                     if (ctrl is DateTimePicker)
                     {
                         (ctrl as DateTimePicker).Value = DateTime.Now;
                     }
+
                     if (ctrl is DataGridView)
                     {
                         (ctrl as DataGridView).Rows.Clear();
@@ -1251,6 +1266,41 @@ namespace LawHouseTabForm
             //Slet felter
         }
 
-      
+        private void btnGetCasesbyClient_Click(object sender, EventArgs e)
+        {
+            string phoneNbr = tlfTxtForCases.Text;
+            var client = _clientHandler.GetClient(phoneNbr);
+            int id = client.Id;
+            if (client.Id == 0)
+            {
+                MessageBox.Show("Klienten eksisterer ikke i vores database");
+                tlfTxtForCases.Text = string.Empty;
+            }
+            else
+            {
+                try
+                {
+                    CaseDataGrid.Rows.Clear();
+                    foreach (var c1 in _caseHandler.GetCasesByClientId(id))
+                    {
+                        int n = CaseDataGrid.Rows.Add();
+                        CaseDataGrid.Rows[n].Cells[0].Value = c1.Id;
+                        CaseDataGrid.Rows[n].Cells[1].Value = c1.Name;
+                        CaseDataGrid.Rows[n].Cells[2].Value = c1.Client;
+                        CaseDataGrid.Rows[n].Cells[3].Value = c1.StartDate.ToShortDateString();
+                        CaseDataGrid.Rows[n].Cells[4].Value = c1.EndDate.ToShortDateString();
+                        CaseDataGrid.Rows[n].Cells[5].Value = c1.Subject;
+                        CaseDataGrid.Rows[n].Cells[6].Value = c1.HoursEstimate;
+                        CaseDataGrid.Rows[n].Cells[7].Value = c1.NegPrice;
+                        CaseDataGrid.Rows[n].Cells[8].Value = c1.TotalPrice;
+                        CaseDataGrid.Rows[n].Cells[9].Value = c1.RespEmployee;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("");
+                }
+            }
+        }
     }
 }

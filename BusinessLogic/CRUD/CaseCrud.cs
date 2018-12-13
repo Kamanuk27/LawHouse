@@ -22,6 +22,12 @@ namespace BusinessLogic
             return _dbCase.GetCases(active);
         }
 
+        internal List<CaseM> GetCasesByClientId(int id)
+        {
+            return _dbCase.GetCasesByClientId(id);
+        }
+
+
         internal int NewCase(string caseName, int clientId, int serviceId, DateTime startTime, int empId, decimal negoPrice)
         {
             CaseM c = new CaseM();
