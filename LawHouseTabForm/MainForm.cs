@@ -265,7 +265,7 @@ namespace LawHouseTabForm
 
 
         #endregion
-
+        
         #region FillDataGrid
 
         private void ActivateGetCasesGrid(bool IsActive = true)
@@ -335,7 +335,6 @@ namespace LawHouseTabForm
         }
 
         #endregion
-
         private void search_button_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < CaseDataGrid.RowCount; i++)
@@ -1252,6 +1251,6 @@ namespace LawHouseTabForm
             //Slet felter
         }
 
-       
+      
     }
 }

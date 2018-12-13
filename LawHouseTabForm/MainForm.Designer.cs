@@ -38,14 +38,44 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label5;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle115 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle116 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle117 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle118 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle119 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
+            this.pnlAllOpenCases = new System.Windows.Forms.Panel();
+            this.lblAllCLosedCases = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.UpdateButt = new System.Windows.Forms.Button();
+            this.CalculatePrice = new System.Windows.Forms.Button();
+            this.EndCaseTimePictxt = new System.Windows.Forms.DateTimePicker();
+            this.RespEmpCombo = new System.Windows.Forms.ComboBox();
+            this.ClosedCaseBut = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.NegPricetxt = new System.Windows.Forms.TextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnReturnToShowOpenCases = new System.Windows.Forms.Button();
+            this.btnShowClosedCases = new System.Windows.Forms.Button();
+            this.search_button = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.lLblHelpViewAllCasesTab = new System.Windows.Forms.LinkLabel();
+            this.DeleteButt = new System.Windows.Forms.Button();
+            this.CaseDataGrid = new System.Windows.Forms.DataGridView();
+            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAllActiveCases = new System.Windows.Forms.Label();
+            this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
@@ -77,60 +107,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.pnlAllOpenCases = new System.Windows.Forms.Panel();
-            this.lblAllCLosedCases = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.UpdateButt = new System.Windows.Forms.Button();
-            this.CalculatePrice = new System.Windows.Forms.Button();
-            this.EndCaseTimePictxt = new System.Windows.Forms.DateTimePicker();
-            this.RespEmpCombo = new System.Windows.Forms.ComboBox();
-            this.ClosedCaseBut = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TotalPricetxt = new System.Windows.Forms.TextBox();
-            this.NegPricetxt = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnReturnToShowOpenCases = new System.Windows.Forms.Button();
-            this.btnShowClosedCases = new System.Windows.Forms.Button();
-            this.search_button = new System.Windows.Forms.Button();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.lLblHelpViewAllCasesTab = new System.Windows.Forms.LinkLabel();
-            this.DeleteButt = new System.Windows.Forms.Button();
-            this.CaseDataGrid = new System.Windows.Forms.DataGridView();
-            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblAllActiveCases = new System.Windows.Forms.Label();
-            this.tabProvServices = new System.Windows.Forms.TabPage();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.lLblHelpSubjectsTab = new System.Windows.Forms.LinkLabel();
-            this.btnCnclSubjectEdit = new System.Windows.Forms.Button();
-            this.pnlAddViewSubjects = new System.Windows.Forms.Panel();
-            this.txtAddViewSubjectFixPrc = new System.Windows.Forms.TextBox();
-            this.TxtAddViewSubjectTimeEst = new System.Windows.Forms.TextBox();
-            this.txtAddViewSubjectHoursEst = new System.Windows.Forms.TextBox();
-            this.txtAddViewSubjectName = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.btnActivatAddSubjects = new System.Windows.Forms.Button();
-            this.ServiceGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDeleteSubj = new System.Windows.Forms.Button();
-            this.btnUpdateSubj = new System.Windows.Forms.Button();
-            this.btnMakeNewSubj = new System.Windows.Forms.Button();
-            this.label48 = new System.Windows.Forms.Label();
             this.tabEmployees = new System.Windows.Forms.TabPage();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lLblHelpEmployeesTab = new System.Windows.Forms.LinkLabel();
@@ -240,6 +216,30 @@
             this.PServiceHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabProvServices = new System.Windows.Forms.TabPage();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lLblHelpSubjectsTab = new System.Windows.Forms.LinkLabel();
+            this.btnCnclSubjectEdit = new System.Windows.Forms.Button();
+            this.pnlAddViewSubjects = new System.Windows.Forms.Panel();
+            this.txtAddViewSubjectFixPrc = new System.Windows.Forms.TextBox();
+            this.TxtAddViewSubjectTimeEst = new System.Windows.Forms.TextBox();
+            this.txtAddViewSubjectHoursEst = new System.Windows.Forms.TextBox();
+            this.txtAddViewSubjectName = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.btnActivatAddSubjects = new System.Windows.Forms.Button();
+            this.ServiceGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteSubj = new System.Windows.Forms.Button();
+            this.btnUpdateSubj = new System.Windows.Forms.Button();
+            this.btnMakeNewSubj = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -252,17 +252,13 @@
             label5 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabCases.SuspendLayout();
+            this.pnlAllOpenCases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
             this.pnlUpdateEditServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).BeginInit();
             this.pnlActivateServiceBoxes.SuspendLayout();
-            this.pnlAllOpenCases.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
-            this.tabProvServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.pnlAddViewSubjects.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             this.tabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlAddSubjectToEmp.SuspendLayout();
@@ -273,6 +269,10 @@
             this.tabShowAllProServ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).BeginInit();
+            this.tabProvServices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.pnlAddViewSubjects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label22
@@ -394,8 +394,8 @@
             // 
             // tabCases
             // 
-            this.tabCases.Controls.Add(this.pnlUpdateEditServices);
             this.tabCases.Controls.Add(this.pnlAllOpenCases);
+            this.tabCases.Controls.Add(this.pnlUpdateEditServices);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCases.Location = new System.Drawing.Point(4, 27);
             this.tabCases.Margin = new System.Windows.Forms.Padding(2);
@@ -405,6 +405,345 @@
             this.tabCases.TabIndex = 0;
             this.tabCases.Text = "Åbne sager";
             this.tabCases.UseVisualStyleBackColor = true;
+            // 
+            // pnlAllOpenCases
+            // 
+            this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.lblAllCLosedCases);
+            this.pnlAllOpenCases.Controls.Add(this.label6);
+            this.pnlAllOpenCases.Controls.Add(this.UpdateButt);
+            this.pnlAllOpenCases.Controls.Add(this.CalculatePrice);
+            this.pnlAllOpenCases.Controls.Add(this.EndCaseTimePictxt);
+            this.pnlAllOpenCases.Controls.Add(this.RespEmpCombo);
+            this.pnlAllOpenCases.Controls.Add(this.ClosedCaseBut);
+            this.pnlAllOpenCases.Controls.Add(this.label13);
+            this.pnlAllOpenCases.Controls.Add(this.NegPricetxt);
+            this.pnlAllOpenCases.Controls.Add(label11);
+            this.pnlAllOpenCases.Controls.Add(label8);
+            this.pnlAllOpenCases.Controls.Add(label7);
+            this.pnlAllOpenCases.Controls.Add(this.pictureBox4);
+            this.pnlAllOpenCases.Controls.Add(this.btnReturnToShowOpenCases);
+            this.pnlAllOpenCases.Controls.Add(this.btnShowClosedCases);
+            this.pnlAllOpenCases.Controls.Add(this.search_button);
+            this.pnlAllOpenCases.Controls.Add(this.searchBox);
+            this.pnlAllOpenCases.Controls.Add(this.lLblHelpViewAllCasesTab);
+            this.pnlAllOpenCases.Controls.Add(this.DeleteButt);
+            this.pnlAllOpenCases.Controls.Add(this.CaseDataGrid);
+            this.pnlAllOpenCases.Controls.Add(this.lblAllActiveCases);
+            this.pnlAllOpenCases.Controls.Add(this.TotalPricetxt);
+            this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
+            this.pnlAllOpenCases.Name = "pnlAllOpenCases";
+            this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
+            this.pnlAllOpenCases.TabIndex = 282;
+            // 
+            // lblAllCLosedCases
+            // 
+            this.lblAllCLosedCases.AutoSize = true;
+            this.lblAllCLosedCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAllCLosedCases.Location = new System.Drawing.Point(16, 60);
+            this.lblAllCLosedCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAllCLosedCases.Name = "lblAllCLosedCases";
+            this.lblAllCLosedCases.Size = new System.Drawing.Size(188, 18);
+            this.lblAllCLosedCases.TabIndex = 340;
+            this.lblAllCLosedCases.Text = "Alle afsluttede sager";
+            this.lblAllCLosedCases.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(339, 426);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 18);
+            this.label6.TabIndex = 339;
+            this.label6.Text = "Opdater/Afslut sag";
+            // 
+            // UpdateButt
+            // 
+            this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
+            this.UpdateButt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.UpdateButt.Location = new System.Drawing.Point(445, 517);
+            this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
+            this.UpdateButt.Name = "UpdateButt";
+            this.UpdateButt.Size = new System.Drawing.Size(114, 45);
+            this.UpdateButt.TabIndex = 285;
+            this.UpdateButt.Text = "Opdater";
+            this.UpdateButt.UseVisualStyleBackColor = false;
+            this.UpdateButt.Click += new System.EventHandler(this.UpdateButt_Click);
+            // 
+            // CalculatePrice
+            // 
+            this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CalculatePrice.Location = new System.Drawing.Point(727, 517);
+            this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.CalculatePrice.Name = "CalculatePrice";
+            this.CalculatePrice.Size = new System.Drawing.Size(99, 45);
+            this.CalculatePrice.TabIndex = 296;
+            this.CalculatePrice.Text = "Beregn pris";
+            this.CalculatePrice.UseVisualStyleBackColor = true;
+            this.CalculatePrice.Click += new System.EventHandler(this.CalculatePrice_Click);
+            // 
+            // EndCaseTimePictxt
+            // 
+            this.EndCaseTimePictxt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.EndCaseTimePictxt.Location = new System.Drawing.Point(729, 455);
+            this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
+            this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
+            this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 22);
+            this.EndCaseTimePictxt.TabIndex = 295;
+            // 
+            // RespEmpCombo
+            // 
+            this.RespEmpCombo.Font = new System.Drawing.Font("Verdana", 9F);
+            this.RespEmpCombo.FormattingEnabled = true;
+            this.RespEmpCombo.Location = new System.Drawing.Point(445, 458);
+            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
+            this.RespEmpCombo.Name = "RespEmpCombo";
+            this.RespEmpCombo.Size = new System.Drawing.Size(168, 22);
+            this.RespEmpCombo.TabIndex = 293;
+            this.RespEmpCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RespEmpCombo_KeyPress);
+            // 
+            // ClosedCaseBut
+            // 
+            this.ClosedCaseBut.BackColor = System.Drawing.Color.Transparent;
+            this.ClosedCaseBut.Font = new System.Drawing.Font("Verdana", 9F);
+            this.ClosedCaseBut.Location = new System.Drawing.Point(830, 517);
+            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
+            this.ClosedCaseBut.Name = "ClosedCaseBut";
+            this.ClosedCaseBut.Size = new System.Drawing.Size(66, 45);
+            this.ClosedCaseBut.TabIndex = 292;
+            this.ClosedCaseBut.Text = "Luk sag";
+            this.ClosedCaseBut.UseVisualStyleBackColor = false;
+            this.ClosedCaseBut.Visible = false;
+            this.ClosedCaseBut.Click += new System.EventHandler(this.ClosedCaseBut_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label13.Location = new System.Drawing.Point(652, 461);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 14);
+            this.label13.TabIndex = 291;
+            this.label13.Text = "Slut Dato:";
+            // 
+            // NegPricetxt
+            // 
+            this.NegPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NegPricetxt.Location = new System.Drawing.Point(445, 491);
+            this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
+            this.NegPricetxt.Name = "NegPricetxt";
+            this.NegPricetxt.Size = new System.Drawing.Size(168, 22);
+            this.NegPricetxt.TabIndex = 289;
+            this.NegPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NegPricetxt_KeyPress);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox4.Location = new System.Drawing.Point(877, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(141, 100);
+            this.pictureBox4.TabIndex = 338;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnReturnToShowOpenCases
+            // 
+            this.btnReturnToShowOpenCases.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnReturnToShowOpenCases.Location = new System.Drawing.Point(19, 390);
+            this.btnReturnToShowOpenCases.Name = "btnReturnToShowOpenCases";
+            this.btnReturnToShowOpenCases.Size = new System.Drawing.Size(114, 45);
+            this.btnReturnToShowOpenCases.TabIndex = 337;
+            this.btnReturnToShowOpenCases.Text = "Vis åbne sager";
+            this.btnReturnToShowOpenCases.UseVisualStyleBackColor = true;
+            this.btnReturnToShowOpenCases.Visible = false;
+            this.btnReturnToShowOpenCases.Click += new System.EventHandler(this.btnReturnToShowOpenCases_Click);
+            // 
+            // btnShowClosedCases
+            // 
+            this.btnShowClosedCases.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnShowClosedCases.Location = new System.Drawing.Point(19, 390);
+            this.btnShowClosedCases.Name = "btnShowClosedCases";
+            this.btnShowClosedCases.Size = new System.Drawing.Size(114, 45);
+            this.btnShowClosedCases.TabIndex = 336;
+            this.btnShowClosedCases.Text = "Vis lukkede sager";
+            this.btnShowClosedCases.UseVisualStyleBackColor = true;
+            this.btnShowClosedCases.Click += new System.EventHandler(this.btnShowClosedCases_Click);
+            // 
+            // search_button
+            // 
+            this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
+            this.search_button.Location = new System.Drawing.Point(737, 15);
+            this.search_button.Margin = new System.Windows.Forms.Padding(2);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(89, 24);
+            this.search_button.TabIndex = 334;
+            this.search_button.Text = "Søg";
+            this.search_button.UseVisualStyleBackColor = true;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
+            // 
+            // searchBox
+            // 
+            this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
+            this.searchBox.Location = new System.Drawing.Point(531, 17);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(202, 22);
+            this.searchBox.TabIndex = 335;
+            // 
+            // lLblHelpViewAllCasesTab
+            // 
+            this.lLblHelpViewAllCasesTab.AutoSize = true;
+            this.lLblHelpViewAllCasesTab.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(1076, 572);
+            this.lLblHelpViewAllCasesTab.Name = "lLblHelpViewAllCasesTab";
+            this.lLblHelpViewAllCasesTab.Size = new System.Drawing.Size(171, 18);
+            this.lLblHelpViewAllCasesTab.TabIndex = 331;
+            this.lLblHelpViewAllCasesTab.TabStop = true;
+            this.lLblHelpViewAllCasesTab.Text = "Hjælp (View all cases)";
+            // 
+            // DeleteButt
+            // 
+            this.DeleteButt.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteButt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.DeleteButt.Location = new System.Drawing.Point(138, 390);
+            this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
+            this.DeleteButt.Name = "DeleteButt";
+            this.DeleteButt.Size = new System.Drawing.Size(114, 45);
+            this.DeleteButt.TabIndex = 294;
+            this.DeleteButt.Text = "Slet sag";
+            this.DeleteButt.UseVisualStyleBackColor = false;
+            this.DeleteButt.Click += new System.EventHandler(this.DeleteButt_Click);
+            // 
+            // CaseDataGrid
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.CaseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Case_ID,
+            this.CaseName,
+            this.Client,
+            this.StartDate,
+            this.EndDate,
+            this.ServiceName,
+            this.HoursEstimate,
+            this.NegotiatedPrice,
+            this.TotalPrice,
+            this.Resp_empl});
+            this.CaseDataGrid.Location = new System.Drawing.Point(19, 123);
+            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.CaseDataGrid.Name = "CaseDataGrid";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.CaseDataGrid.RowTemplate.Height = 30;
+            this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
+            this.CaseDataGrid.TabIndex = 284;
+            this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
+            this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
+            // 
+            // Case_ID
+            // 
+            this.Case_ID.FillWeight = 30F;
+            this.Case_ID.HeaderText = "ID";
+            this.Case_ID.Name = "Case_ID";
+            this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 30;
+            // 
+            // CaseName
+            // 
+            this.CaseName.FillWeight = 170F;
+            this.CaseName.HeaderText = "Sagsnavn";
+            this.CaseName.Name = "CaseName";
+            this.CaseName.ReadOnly = true;
+            this.CaseName.Width = 170;
+            // 
+            // Client
+            // 
+            this.Client.FillWeight = 170F;
+            this.Client.HeaderText = "Klient";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            this.Client.Width = 170;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Startdato";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "Slutdato";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 150F;
+            this.ServiceName.HeaderText = "Servicetype";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Width = 150;
+            // 
+            // HoursEstimate
+            // 
+            this.HoursEstimate.FillWeight = 70F;
+            this.HoursEstimate.HeaderText = "Timer";
+            this.HoursEstimate.Name = "HoursEstimate";
+            this.HoursEstimate.ReadOnly = true;
+            this.HoursEstimate.Width = 70;
+            // 
+            // NegotiatedPrice
+            // 
+            this.NegotiatedPrice.FillWeight = 90F;
+            this.NegotiatedPrice.HeaderText = "Aftalt pris";
+            this.NegotiatedPrice.Name = "NegotiatedPrice";
+            this.NegotiatedPrice.ReadOnly = true;
+            this.NegotiatedPrice.Width = 90;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 90F;
+            this.TotalPrice.HeaderText = "Total pris";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 90;
+            // 
+            // Resp_empl
+            // 
+            this.Resp_empl.FillWeight = 150F;
+            this.Resp_empl.HeaderText = "Advokat";
+            this.Resp_empl.Name = "Resp_empl";
+            this.Resp_empl.ReadOnly = true;
+            this.Resp_empl.Width = 150;
+            // 
+            // lblAllActiveCases
+            // 
+            this.lblAllActiveCases.AutoSize = true;
+            this.lblAllActiveCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAllActiveCases.Location = new System.Drawing.Point(16, 60);
+            this.lblAllActiveCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAllActiveCases.Name = "lblAllActiveCases";
+            this.lblAllActiveCases.Size = new System.Drawing.Size(152, 18);
+            this.lblAllActiveCases.TabIndex = 282;
+            this.lblAllActiveCases.Text = "Alle aktive sager";
+            // 
+            // TotalPricetxt
+            // 
+            this.TotalPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.TotalPricetxt.Location = new System.Drawing.Point(727, 491);
+            this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
+            this.TotalPricetxt.Name = "TotalPricetxt";
+            this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
+            this.TotalPricetxt.TabIndex = 290;
+            this.TotalPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalPricetxt_KeyPress);
             // 
             // pnlUpdateEditServices
             // 
@@ -491,8 +830,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle115.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle115;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -504,8 +843,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle116.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle116;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -759,609 +1098,6 @@
             this.label14.Size = new System.Drawing.Size(92, 14);
             this.label14.TabIndex = 169;
             this.label14.Text = "Medarbejder:";
-            // 
-            // pnlAllOpenCases
-            // 
-            this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlAllOpenCases.Controls.Add(this.lblAllCLosedCases);
-            this.pnlAllOpenCases.Controls.Add(this.label6);
-            this.pnlAllOpenCases.Controls.Add(this.UpdateButt);
-            this.pnlAllOpenCases.Controls.Add(this.CalculatePrice);
-            this.pnlAllOpenCases.Controls.Add(this.EndCaseTimePictxt);
-            this.pnlAllOpenCases.Controls.Add(this.RespEmpCombo);
-            this.pnlAllOpenCases.Controls.Add(this.ClosedCaseBut);
-            this.pnlAllOpenCases.Controls.Add(this.label13);
-            this.pnlAllOpenCases.Controls.Add(this.NegPricetxt);
-            this.pnlAllOpenCases.Controls.Add(label11);
-            this.pnlAllOpenCases.Controls.Add(label8);
-            this.pnlAllOpenCases.Controls.Add(label7);
-            this.pnlAllOpenCases.Controls.Add(this.pictureBox4);
-            this.pnlAllOpenCases.Controls.Add(this.btnReturnToShowOpenCases);
-            this.pnlAllOpenCases.Controls.Add(this.btnShowClosedCases);
-            this.pnlAllOpenCases.Controls.Add(this.search_button);
-            this.pnlAllOpenCases.Controls.Add(this.searchBox);
-            this.pnlAllOpenCases.Controls.Add(this.lLblHelpViewAllCasesTab);
-            this.pnlAllOpenCases.Controls.Add(this.DeleteButt);
-            this.pnlAllOpenCases.Controls.Add(this.CaseDataGrid);
-            this.pnlAllOpenCases.Controls.Add(this.lblAllActiveCases);
-            this.pnlAllOpenCases.Controls.Add(this.TotalPricetxt);
-            this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
-            this.pnlAllOpenCases.Name = "pnlAllOpenCases";
-            this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
-            this.pnlAllOpenCases.TabIndex = 282;
-            // 
-            // lblAllCLosedCases
-            // 
-            this.lblAllCLosedCases.AutoSize = true;
-            this.lblAllCLosedCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAllCLosedCases.Location = new System.Drawing.Point(16, 60);
-            this.lblAllCLosedCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAllCLosedCases.Name = "lblAllCLosedCases";
-            this.lblAllCLosedCases.Size = new System.Drawing.Size(188, 18);
-            this.lblAllCLosedCases.TabIndex = 340;
-            this.lblAllCLosedCases.Text = "Alle afsluttede sager";
-            this.lblAllCLosedCases.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(339, 426);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 18);
-            this.label6.TabIndex = 339;
-            this.label6.Text = "Opdater/Afslut sag";
-            // 
-            // UpdateButt
-            // 
-            this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
-            this.UpdateButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateButt.Location = new System.Drawing.Point(445, 517);
-            this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
-            this.UpdateButt.Name = "UpdateButt";
-            this.UpdateButt.Size = new System.Drawing.Size(114, 45);
-            this.UpdateButt.TabIndex = 285;
-            this.UpdateButt.Text = "Opdater";
-            this.UpdateButt.UseVisualStyleBackColor = false;
-            this.UpdateButt.Click += new System.EventHandler(this.UpdateButt_Click);
-            // 
-            // CalculatePrice
-            // 
-            this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CalculatePrice.Location = new System.Drawing.Point(727, 517);
-            this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.CalculatePrice.Name = "CalculatePrice";
-            this.CalculatePrice.Size = new System.Drawing.Size(99, 45);
-            this.CalculatePrice.TabIndex = 296;
-            this.CalculatePrice.Text = "Beregn pris";
-            this.CalculatePrice.UseVisualStyleBackColor = true;
-            this.CalculatePrice.Click += new System.EventHandler(this.CalculatePrice_Click);
-            // 
-            // EndCaseTimePictxt
-            // 
-            this.EndCaseTimePictxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.EndCaseTimePictxt.Location = new System.Drawing.Point(729, 455);
-            this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
-            this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
-            this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 22);
-            this.EndCaseTimePictxt.TabIndex = 295;
-            // 
-            // RespEmpCombo
-            // 
-            this.RespEmpCombo.Font = new System.Drawing.Font("Verdana", 9F);
-            this.RespEmpCombo.FormattingEnabled = true;
-            this.RespEmpCombo.Location = new System.Drawing.Point(445, 458);
-            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
-            this.RespEmpCombo.Name = "RespEmpCombo";
-            this.RespEmpCombo.Size = new System.Drawing.Size(168, 22);
-            this.RespEmpCombo.TabIndex = 293;
-            this.RespEmpCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RespEmpCombo_KeyPress);
-            // 
-            // ClosedCaseBut
-            // 
-            this.ClosedCaseBut.BackColor = System.Drawing.Color.Transparent;
-            this.ClosedCaseBut.Font = new System.Drawing.Font("Verdana", 9F);
-            this.ClosedCaseBut.Location = new System.Drawing.Point(830, 517);
-            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
-            this.ClosedCaseBut.Name = "ClosedCaseBut";
-            this.ClosedCaseBut.Size = new System.Drawing.Size(66, 45);
-            this.ClosedCaseBut.TabIndex = 292;
-            this.ClosedCaseBut.Text = "Luk sag";
-            this.ClosedCaseBut.UseVisualStyleBackColor = false;
-            this.ClosedCaseBut.Visible = false;
-            this.ClosedCaseBut.Click += new System.EventHandler(this.ClosedCaseBut_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label13.Location = new System.Drawing.Point(652, 461);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 14);
-            this.label13.TabIndex = 291;
-            this.label13.Text = "Slut Dato:";
-            // 
-            // TotalPricetxt
-            // 
-            this.TotalPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.TotalPricetxt.Location = new System.Drawing.Point(727, 491);
-            this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
-            this.TotalPricetxt.Name = "TotalPricetxt";
-            this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
-            this.TotalPricetxt.TabIndex = 290;
-            this.TotalPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalPricetxt_KeyPress);
-            // 
-            // NegPricetxt
-            // 
-            this.NegPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NegPricetxt.Location = new System.Drawing.Point(445, 491);
-            this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
-            this.NegPricetxt.Name = "NegPricetxt";
-            this.NegPricetxt.Size = new System.Drawing.Size(168, 22);
-            this.NegPricetxt.TabIndex = 289;
-            this.NegPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NegPricetxt_KeyPress);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox4.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox4.TabIndex = 338;
-            this.pictureBox4.TabStop = false;
-            // 
-            // btnReturnToShowOpenCases
-            // 
-            this.btnReturnToShowOpenCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnReturnToShowOpenCases.Location = new System.Drawing.Point(19, 390);
-            this.btnReturnToShowOpenCases.Name = "btnReturnToShowOpenCases";
-            this.btnReturnToShowOpenCases.Size = new System.Drawing.Size(114, 45);
-            this.btnReturnToShowOpenCases.TabIndex = 337;
-            this.btnReturnToShowOpenCases.Text = "Vis åbne sager";
-            this.btnReturnToShowOpenCases.UseVisualStyleBackColor = true;
-            this.btnReturnToShowOpenCases.Visible = false;
-            this.btnReturnToShowOpenCases.Click += new System.EventHandler(this.btnReturnToShowOpenCases_Click);
-            // 
-            // btnShowClosedCases
-            // 
-            this.btnShowClosedCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnShowClosedCases.Location = new System.Drawing.Point(19, 390);
-            this.btnShowClosedCases.Name = "btnShowClosedCases";
-            this.btnShowClosedCases.Size = new System.Drawing.Size(114, 45);
-            this.btnShowClosedCases.TabIndex = 336;
-            this.btnShowClosedCases.Text = "Vis lukkede sager";
-            this.btnShowClosedCases.UseVisualStyleBackColor = true;
-            this.btnShowClosedCases.Click += new System.EventHandler(this.btnShowClosedCases_Click);
-            // 
-            // search_button
-            // 
-            this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
-            this.search_button.Location = new System.Drawing.Point(737, 15);
-            this.search_button.Margin = new System.Windows.Forms.Padding(2);
-            this.search_button.Name = "search_button";
-            this.search_button.Size = new System.Drawing.Size(89, 24);
-            this.search_button.TabIndex = 334;
-            this.search_button.Text = "Søg";
-            this.search_button.UseVisualStyleBackColor = true;
-            // 
-            // searchBox
-            // 
-            this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
-            this.searchBox.Location = new System.Drawing.Point(531, 17);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(202, 22);
-            this.searchBox.TabIndex = 335;
-            // 
-            // lLblHelpViewAllCasesTab
-            // 
-            this.lLblHelpViewAllCasesTab.AutoSize = true;
-            this.lLblHelpViewAllCasesTab.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(1076, 572);
-            this.lLblHelpViewAllCasesTab.Name = "lLblHelpViewAllCasesTab";
-            this.lLblHelpViewAllCasesTab.Size = new System.Drawing.Size(171, 18);
-            this.lLblHelpViewAllCasesTab.TabIndex = 331;
-            this.lLblHelpViewAllCasesTab.TabStop = true;
-            this.lLblHelpViewAllCasesTab.Text = "Hjælp (View all cases)";
-            // 
-            // DeleteButt
-            // 
-            this.DeleteButt.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.DeleteButt.Location = new System.Drawing.Point(138, 390);
-            this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
-            this.DeleteButt.Name = "DeleteButt";
-            this.DeleteButt.Size = new System.Drawing.Size(114, 45);
-            this.DeleteButt.TabIndex = 294;
-            this.DeleteButt.Text = "Slet sag";
-            this.DeleteButt.UseVisualStyleBackColor = false;
-            this.DeleteButt.Click += new System.EventHandler(this.DeleteButt_Click);
-            // 
-            // CaseDataGrid
-            // 
-            dataGridViewCellStyle117.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle117;
-            this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.CaseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Case_ID,
-            this.CaseName,
-            this.Client,
-            this.StartDate,
-            this.EndDate,
-            this.ServiceName,
-            this.HoursEstimate,
-            this.NegotiatedPrice,
-            this.TotalPrice,
-            this.Resp_empl});
-            this.CaseDataGrid.Location = new System.Drawing.Point(19, 123);
-            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle118.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle118;
-            this.CaseDataGrid.RowTemplate.Height = 30;
-            this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
-            this.CaseDataGrid.TabIndex = 284;
-            this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
-            this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
-            // 
-            // Case_ID
-            // 
-            this.Case_ID.FillWeight = 30F;
-            this.Case_ID.HeaderText = "ID";
-            this.Case_ID.Name = "Case_ID";
-            this.Case_ID.ReadOnly = true;
-            this.Case_ID.Width = 30;
-            // 
-            // CaseName
-            // 
-            this.CaseName.FillWeight = 170F;
-            this.CaseName.HeaderText = "Sagsnavn";
-            this.CaseName.Name = "CaseName";
-            this.CaseName.ReadOnly = true;
-            this.CaseName.Width = 170;
-            // 
-            // Client
-            // 
-            this.Client.FillWeight = 170F;
-            this.Client.HeaderText = "Klient";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            this.Client.Width = 170;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Startdato";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "Slutdato";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.FillWeight = 150F;
-            this.ServiceName.HeaderText = "Servicetype";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Width = 150;
-            // 
-            // HoursEstimate
-            // 
-            this.HoursEstimate.FillWeight = 70F;
-            this.HoursEstimate.HeaderText = "Timer";
-            this.HoursEstimate.Name = "HoursEstimate";
-            this.HoursEstimate.ReadOnly = true;
-            this.HoursEstimate.Width = 70;
-            // 
-            // NegotiatedPrice
-            // 
-            this.NegotiatedPrice.FillWeight = 90F;
-            this.NegotiatedPrice.HeaderText = "Aftalt pris";
-            this.NegotiatedPrice.Name = "NegotiatedPrice";
-            this.NegotiatedPrice.ReadOnly = true;
-            this.NegotiatedPrice.Width = 90;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 90F;
-            this.TotalPrice.HeaderText = "Total pris";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 90;
-            // 
-            // Resp_empl
-            // 
-            this.Resp_empl.FillWeight = 150F;
-            this.Resp_empl.HeaderText = "Advokat";
-            this.Resp_empl.Name = "Resp_empl";
-            this.Resp_empl.ReadOnly = true;
-            this.Resp_empl.Width = 150;
-            // 
-            // lblAllActiveCases
-            // 
-            this.lblAllActiveCases.AutoSize = true;
-            this.lblAllActiveCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAllActiveCases.Location = new System.Drawing.Point(16, 60);
-            this.lblAllActiveCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAllActiveCases.Name = "lblAllActiveCases";
-            this.lblAllActiveCases.Size = new System.Drawing.Size(152, 18);
-            this.lblAllActiveCases.TabIndex = 282;
-            this.lblAllActiveCases.Text = "Alle aktive sager";
-            // 
-            // tabProvServices
-            // 
-            this.tabProvServices.Controls.Add(this.pictureBox6);
-            this.tabProvServices.Controls.Add(this.lLblHelpSubjectsTab);
-            this.tabProvServices.Controls.Add(this.btnCnclSubjectEdit);
-            this.tabProvServices.Controls.Add(this.pnlAddViewSubjects);
-            this.tabProvServices.Controls.Add(this.btnActivatAddSubjects);
-            this.tabProvServices.Controls.Add(this.ServiceGridView);
-            this.tabProvServices.Controls.Add(this.btnDeleteSubj);
-            this.tabProvServices.Controls.Add(this.btnUpdateSubj);
-            this.tabProvServices.Controls.Add(this.btnMakeNewSubj);
-            this.tabProvServices.Controls.Add(this.label48);
-            this.tabProvServices.Location = new System.Drawing.Point(4, 27);
-            this.tabProvServices.Margin = new System.Windows.Forms.Padding(2);
-            this.tabProvServices.Name = "tabProvServices";
-            this.tabProvServices.Padding = new System.Windows.Forms.Padding(2);
-            this.tabProvServices.Size = new System.Drawing.Size(1198, 639);
-            this.tabProvServices.TabIndex = 3;
-            this.tabProvServices.Text = "Tjenesteydelser og efteruddannelse";
-            this.tabProvServices.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox6.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox6.TabIndex = 303;
-            this.pictureBox6.TabStop = false;
-            // 
-            // lLblHelpSubjectsTab
-            // 
-            this.lLblHelpSubjectsTab.AutoSize = true;
-            this.lLblHelpSubjectsTab.Location = new System.Drawing.Point(1076, 572);
-            this.lLblHelpSubjectsTab.Name = "lLblHelpSubjectsTab";
-            this.lLblHelpSubjectsTab.Size = new System.Drawing.Size(50, 18);
-            this.lLblHelpSubjectsTab.TabIndex = 302;
-            this.lLblHelpSubjectsTab.TabStop = true;
-            this.lLblHelpSubjectsTab.Text = "Hjælp";
-            // 
-            // btnCnclSubjectEdit
-            // 
-            this.btnCnclSubjectEdit.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnCnclSubjectEdit.Location = new System.Drawing.Point(551, 450);
-            this.btnCnclSubjectEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCnclSubjectEdit.Name = "btnCnclSubjectEdit";
-            this.btnCnclSubjectEdit.Size = new System.Drawing.Size(71, 45);
-            this.btnCnclSubjectEdit.TabIndex = 301;
-            this.btnCnclSubjectEdit.Text = "Fortryd";
-            this.btnCnclSubjectEdit.UseVisualStyleBackColor = true;
-            this.btnCnclSubjectEdit.Visible = false;
-            this.btnCnclSubjectEdit.Click += new System.EventHandler(this.btnCnclSubjectEdit_Click);
-            // 
-            // pnlAddViewSubjects
-            // 
-            this.pnlAddViewSubjects.Controls.Add(this.txtAddViewSubjectFixPrc);
-            this.pnlAddViewSubjects.Controls.Add(this.TxtAddViewSubjectTimeEst);
-            this.pnlAddViewSubjects.Controls.Add(this.txtAddViewSubjectHoursEst);
-            this.pnlAddViewSubjects.Controls.Add(this.txtAddViewSubjectName);
-            this.pnlAddViewSubjects.Controls.Add(this.label53);
-            this.pnlAddViewSubjects.Controls.Add(this.label50);
-            this.pnlAddViewSubjects.Controls.Add(this.label49);
-            this.pnlAddViewSubjects.Controls.Add(this.label47);
-            this.pnlAddViewSubjects.Location = new System.Drawing.Point(651, 245);
-            this.pnlAddViewSubjects.Name = "pnlAddViewSubjects";
-            this.pnlAddViewSubjects.Size = new System.Drawing.Size(280, 146);
-            this.pnlAddViewSubjects.TabIndex = 300;
-            this.pnlAddViewSubjects.Visible = false;
-            // 
-            // txtAddViewSubjectFixPrc
-            // 
-            this.txtAddViewSubjectFixPrc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddViewSubjectFixPrc.Location = new System.Drawing.Point(102, 103);
-            this.txtAddViewSubjectFixPrc.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddViewSubjectFixPrc.Name = "txtAddViewSubjectFixPrc";
-            this.txtAddViewSubjectFixPrc.Size = new System.Drawing.Size(162, 21);
-            this.txtAddViewSubjectFixPrc.TabIndex = 296;
-            this.txtAddViewSubjectFixPrc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddViewSubjectFixPrc_KeyPress);
-            // 
-            // TxtAddViewSubjectTimeEst
-            // 
-            this.TxtAddViewSubjectTimeEst.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAddViewSubjectTimeEst.Location = new System.Drawing.Point(102, 71);
-            this.TxtAddViewSubjectTimeEst.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtAddViewSubjectTimeEst.Name = "TxtAddViewSubjectTimeEst";
-            this.TxtAddViewSubjectTimeEst.Size = new System.Drawing.Size(162, 21);
-            this.TxtAddViewSubjectTimeEst.TabIndex = 295;
-            this.TxtAddViewSubjectTimeEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAddViewSubjectTimeEst_KeyPress);
-            // 
-            // txtAddViewSubjectHoursEst
-            // 
-            this.txtAddViewSubjectHoursEst.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddViewSubjectHoursEst.Location = new System.Drawing.Point(102, 39);
-            this.txtAddViewSubjectHoursEst.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddViewSubjectHoursEst.Name = "txtAddViewSubjectHoursEst";
-            this.txtAddViewSubjectHoursEst.Size = new System.Drawing.Size(162, 21);
-            this.txtAddViewSubjectHoursEst.TabIndex = 294;
-            this.txtAddViewSubjectHoursEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddViewSubjectHoursEst_KeyPress);
-            // 
-            // txtAddViewSubjectName
-            // 
-            this.txtAddViewSubjectName.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddViewSubjectName.Location = new System.Drawing.Point(102, 7);
-            this.txtAddViewSubjectName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddViewSubjectName.Name = "txtAddViewSubjectName";
-            this.txtAddViewSubjectName.Size = new System.Drawing.Size(162, 21);
-            this.txtAddViewSubjectName.TabIndex = 293;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(11, 74);
-            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(82, 13);
-            this.label53.TabIndex = 292;
-            this.label53.Text = "Tids-estimat:";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(11, 106);
-            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(59, 13);
-            this.label50.TabIndex = 291;
-            this.label50.Text = "Fast pris:";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(11, 10);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 13);
-            this.label49.TabIndex = 290;
-            this.label49.Text = "Type:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(11, 42);
-            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(87, 13);
-            this.label47.TabIndex = 289;
-            this.label47.Text = "Time-estimat:";
-            // 
-            // btnActivatAddSubjects
-            // 
-            this.btnActivatAddSubjects.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnActivatAddSubjects.Location = new System.Drawing.Point(77, 450);
-            this.btnActivatAddSubjects.Name = "btnActivatAddSubjects";
-            this.btnActivatAddSubjects.Size = new System.Drawing.Size(120, 45);
-            this.btnActivatAddSubjects.TabIndex = 299;
-            this.btnActivatAddSubjects.Text = "Tilføj efteruddannelse";
-            this.btnActivatAddSubjects.UseVisualStyleBackColor = true;
-            this.btnActivatAddSubjects.Click += new System.EventHandler(this.btnActivatAddSubjects_Click);
-            // 
-            // ServiceGridView
-            // 
-            this.ServiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.Time,
-            this.Price});
-            this.ServiceGridView.Location = new System.Drawing.Point(77, 109);
-            this.ServiceGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.ServiceGridView.Name = "ServiceGridView";
-            this.ServiceGridView.RowTemplate.Height = 24;
-            this.ServiceGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ServiceGridView.Size = new System.Drawing.Size(545, 322);
-            this.ServiceGridView.TabIndex = 298;
-            this.ServiceGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SubjectGridView_CellMouseDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 150F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Service name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Hours Estimate";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time Estimate";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Fixed Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // btnDeleteSubj
-            // 
-            this.btnDeleteSubj.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnDeleteSubj.Location = new System.Drawing.Point(844, 394);
-            this.btnDeleteSubj.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteSubj.Name = "btnDeleteSubj";
-            this.btnDeleteSubj.Size = new System.Drawing.Size(71, 45);
-            this.btnDeleteSubj.TabIndex = 297;
-            this.btnDeleteSubj.Text = "Slet";
-            this.btnDeleteSubj.UseVisualStyleBackColor = true;
-            this.btnDeleteSubj.Visible = false;
-            this.btnDeleteSubj.Click += new System.EventHandler(this.btnDeleteSubj_Click);
-            // 
-            // btnUpdateSubj
-            // 
-            this.btnUpdateSubj.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnUpdateSubj.Location = new System.Drawing.Point(766, 394);
-            this.btnUpdateSubj.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateSubj.Name = "btnUpdateSubj";
-            this.btnUpdateSubj.Size = new System.Drawing.Size(71, 45);
-            this.btnUpdateSubj.TabIndex = 296;
-            this.btnUpdateSubj.Text = "Opdater";
-            this.btnUpdateSubj.UseVisualStyleBackColor = true;
-            this.btnUpdateSubj.Visible = false;
-            this.btnUpdateSubj.Click += new System.EventHandler(this.btnUpdateSubj_Click);
-            // 
-            // btnMakeNewSubj
-            // 
-            this.btnMakeNewSubj.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnMakeNewSubj.Location = new System.Drawing.Point(766, 394);
-            this.btnMakeNewSubj.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMakeNewSubj.Name = "btnMakeNewSubj";
-            this.btnMakeNewSubj.Size = new System.Drawing.Size(71, 45);
-            this.btnMakeNewSubj.TabIndex = 289;
-            this.btnMakeNewSubj.Text = "Tilføj";
-            this.btnMakeNewSubj.UseVisualStyleBackColor = true;
-            this.btnMakeNewSubj.Visible = false;
-            this.btnMakeNewSubj.Click += new System.EventHandler(this.btnMakeNewSubj_Click);
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label48.Location = new System.Drawing.Point(74, 71);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(335, 18);
-            this.label48.TabIndex = 281;
-            this.label48.Text = "Tjenesteydelser og efteruddannelser";
             // 
             // tabEmployees
             // 
@@ -1840,8 +1576,8 @@
             // 
             // EmplGridView
             // 
-            dataGridViewCellStyle119.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle119;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -2522,8 +2258,8 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle120.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle120;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2574,6 +2310,271 @@
             this.PServiceComment.ReadOnly = true;
             this.PServiceComment.Width = 400;
             // 
+            // tabProvServices
+            // 
+            this.tabProvServices.Controls.Add(this.pictureBox6);
+            this.tabProvServices.Controls.Add(this.lLblHelpSubjectsTab);
+            this.tabProvServices.Controls.Add(this.btnCnclSubjectEdit);
+            this.tabProvServices.Controls.Add(this.pnlAddViewSubjects);
+            this.tabProvServices.Controls.Add(this.btnActivatAddSubjects);
+            this.tabProvServices.Controls.Add(this.ServiceGridView);
+            this.tabProvServices.Controls.Add(this.btnDeleteSubj);
+            this.tabProvServices.Controls.Add(this.btnUpdateSubj);
+            this.tabProvServices.Controls.Add(this.btnMakeNewSubj);
+            this.tabProvServices.Controls.Add(this.label48);
+            this.tabProvServices.Location = new System.Drawing.Point(4, 27);
+            this.tabProvServices.Margin = new System.Windows.Forms.Padding(2);
+            this.tabProvServices.Name = "tabProvServices";
+            this.tabProvServices.Padding = new System.Windows.Forms.Padding(2);
+            this.tabProvServices.Size = new System.Drawing.Size(1198, 639);
+            this.tabProvServices.TabIndex = 3;
+            this.tabProvServices.Text = "Tjenesteydelser og efteruddannelse";
+            this.tabProvServices.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox6.Location = new System.Drawing.Point(877, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(141, 100);
+            this.pictureBox6.TabIndex = 303;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lLblHelpSubjectsTab
+            // 
+            this.lLblHelpSubjectsTab.AutoSize = true;
+            this.lLblHelpSubjectsTab.Location = new System.Drawing.Point(1076, 572);
+            this.lLblHelpSubjectsTab.Name = "lLblHelpSubjectsTab";
+            this.lLblHelpSubjectsTab.Size = new System.Drawing.Size(50, 18);
+            this.lLblHelpSubjectsTab.TabIndex = 302;
+            this.lLblHelpSubjectsTab.TabStop = true;
+            this.lLblHelpSubjectsTab.Text = "Hjælp";
+            // 
+            // btnCnclSubjectEdit
+            // 
+            this.btnCnclSubjectEdit.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnCnclSubjectEdit.Location = new System.Drawing.Point(551, 450);
+            this.btnCnclSubjectEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCnclSubjectEdit.Name = "btnCnclSubjectEdit";
+            this.btnCnclSubjectEdit.Size = new System.Drawing.Size(71, 45);
+            this.btnCnclSubjectEdit.TabIndex = 301;
+            this.btnCnclSubjectEdit.Text = "Fortryd";
+            this.btnCnclSubjectEdit.UseVisualStyleBackColor = true;
+            this.btnCnclSubjectEdit.Visible = false;
+            this.btnCnclSubjectEdit.Click += new System.EventHandler(this.btnCnclSubjectEdit_Click);
+            // 
+            // pnlAddViewSubjects
+            // 
+            this.pnlAddViewSubjects.Controls.Add(this.txtAddViewSubjectFixPrc);
+            this.pnlAddViewSubjects.Controls.Add(this.TxtAddViewSubjectTimeEst);
+            this.pnlAddViewSubjects.Controls.Add(this.txtAddViewSubjectHoursEst);
+            this.pnlAddViewSubjects.Controls.Add(this.txtAddViewSubjectName);
+            this.pnlAddViewSubjects.Controls.Add(this.label53);
+            this.pnlAddViewSubjects.Controls.Add(this.label50);
+            this.pnlAddViewSubjects.Controls.Add(this.label49);
+            this.pnlAddViewSubjects.Controls.Add(this.label47);
+            this.pnlAddViewSubjects.Location = new System.Drawing.Point(651, 245);
+            this.pnlAddViewSubjects.Name = "pnlAddViewSubjects";
+            this.pnlAddViewSubjects.Size = new System.Drawing.Size(280, 146);
+            this.pnlAddViewSubjects.TabIndex = 300;
+            this.pnlAddViewSubjects.Visible = false;
+            // 
+            // txtAddViewSubjectFixPrc
+            // 
+            this.txtAddViewSubjectFixPrc.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddViewSubjectFixPrc.Location = new System.Drawing.Point(102, 103);
+            this.txtAddViewSubjectFixPrc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddViewSubjectFixPrc.Name = "txtAddViewSubjectFixPrc";
+            this.txtAddViewSubjectFixPrc.Size = new System.Drawing.Size(162, 21);
+            this.txtAddViewSubjectFixPrc.TabIndex = 296;
+            this.txtAddViewSubjectFixPrc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddViewSubjectFixPrc_KeyPress);
+            // 
+            // TxtAddViewSubjectTimeEst
+            // 
+            this.TxtAddViewSubjectTimeEst.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtAddViewSubjectTimeEst.Location = new System.Drawing.Point(102, 71);
+            this.TxtAddViewSubjectTimeEst.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtAddViewSubjectTimeEst.Name = "TxtAddViewSubjectTimeEst";
+            this.TxtAddViewSubjectTimeEst.Size = new System.Drawing.Size(162, 21);
+            this.TxtAddViewSubjectTimeEst.TabIndex = 295;
+            this.TxtAddViewSubjectTimeEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAddViewSubjectTimeEst_KeyPress);
+            // 
+            // txtAddViewSubjectHoursEst
+            // 
+            this.txtAddViewSubjectHoursEst.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddViewSubjectHoursEst.Location = new System.Drawing.Point(102, 39);
+            this.txtAddViewSubjectHoursEst.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddViewSubjectHoursEst.Name = "txtAddViewSubjectHoursEst";
+            this.txtAddViewSubjectHoursEst.Size = new System.Drawing.Size(162, 21);
+            this.txtAddViewSubjectHoursEst.TabIndex = 294;
+            this.txtAddViewSubjectHoursEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddViewSubjectHoursEst_KeyPress);
+            // 
+            // txtAddViewSubjectName
+            // 
+            this.txtAddViewSubjectName.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddViewSubjectName.Location = new System.Drawing.Point(102, 7);
+            this.txtAddViewSubjectName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddViewSubjectName.Name = "txtAddViewSubjectName";
+            this.txtAddViewSubjectName.Size = new System.Drawing.Size(162, 21);
+            this.txtAddViewSubjectName.TabIndex = 293;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(11, 74);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(82, 13);
+            this.label53.TabIndex = 292;
+            this.label53.Text = "Tids-estimat:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(11, 106);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(59, 13);
+            this.label50.TabIndex = 291;
+            this.label50.Text = "Fast pris:";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(11, 10);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(39, 13);
+            this.label49.TabIndex = 290;
+            this.label49.Text = "Type:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(11, 42);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(87, 13);
+            this.label47.TabIndex = 289;
+            this.label47.Text = "Time-estimat:";
+            // 
+            // btnActivatAddSubjects
+            // 
+            this.btnActivatAddSubjects.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnActivatAddSubjects.Location = new System.Drawing.Point(77, 450);
+            this.btnActivatAddSubjects.Name = "btnActivatAddSubjects";
+            this.btnActivatAddSubjects.Size = new System.Drawing.Size(120, 45);
+            this.btnActivatAddSubjects.TabIndex = 299;
+            this.btnActivatAddSubjects.Text = "Tilføj efteruddannelse";
+            this.btnActivatAddSubjects.UseVisualStyleBackColor = true;
+            this.btnActivatAddSubjects.Click += new System.EventHandler(this.btnActivatAddSubjects_Click);
+            // 
+            // ServiceGridView
+            // 
+            this.ServiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.Time,
+            this.Price});
+            this.ServiceGridView.Location = new System.Drawing.Point(77, 109);
+            this.ServiceGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.ServiceGridView.Name = "ServiceGridView";
+            this.ServiceGridView.RowTemplate.Height = 24;
+            this.ServiceGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServiceGridView.Size = new System.Drawing.Size(545, 322);
+            this.ServiceGridView.TabIndex = 298;
+            this.ServiceGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SubjectGridView_CellMouseDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 150F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Service name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Hours Estimate";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Time Estimate";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Fixed Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // btnDeleteSubj
+            // 
+            this.btnDeleteSubj.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnDeleteSubj.Location = new System.Drawing.Point(844, 394);
+            this.btnDeleteSubj.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteSubj.Name = "btnDeleteSubj";
+            this.btnDeleteSubj.Size = new System.Drawing.Size(71, 45);
+            this.btnDeleteSubj.TabIndex = 297;
+            this.btnDeleteSubj.Text = "Slet";
+            this.btnDeleteSubj.UseVisualStyleBackColor = true;
+            this.btnDeleteSubj.Visible = false;
+            this.btnDeleteSubj.Click += new System.EventHandler(this.btnDeleteSubj_Click);
+            // 
+            // btnUpdateSubj
+            // 
+            this.btnUpdateSubj.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnUpdateSubj.Location = new System.Drawing.Point(766, 394);
+            this.btnUpdateSubj.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateSubj.Name = "btnUpdateSubj";
+            this.btnUpdateSubj.Size = new System.Drawing.Size(71, 45);
+            this.btnUpdateSubj.TabIndex = 296;
+            this.btnUpdateSubj.Text = "Opdater";
+            this.btnUpdateSubj.UseVisualStyleBackColor = true;
+            this.btnUpdateSubj.Visible = false;
+            this.btnUpdateSubj.Click += new System.EventHandler(this.btnUpdateSubj_Click);
+            // 
+            // btnMakeNewSubj
+            // 
+            this.btnMakeNewSubj.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnMakeNewSubj.Location = new System.Drawing.Point(766, 394);
+            this.btnMakeNewSubj.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMakeNewSubj.Name = "btnMakeNewSubj";
+            this.btnMakeNewSubj.Size = new System.Drawing.Size(71, 45);
+            this.btnMakeNewSubj.TabIndex = 289;
+            this.btnMakeNewSubj.Text = "Tilføj";
+            this.btnMakeNewSubj.UseVisualStyleBackColor = true;
+            this.btnMakeNewSubj.Visible = false;
+            this.btnMakeNewSubj.Click += new System.EventHandler(this.btnMakeNewSubj_Click);
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label48.Location = new System.Drawing.Point(74, 71);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(335, 18);
+            this.label48.TabIndex = 281;
+            this.label48.Text = "Tjenesteydelser og efteruddannelser";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2585,22 +2586,16 @@
             this.Text = "LawHouse";
             this.TabControl.ResumeLayout(false);
             this.tabCases.ResumeLayout(false);
+            this.pnlAllOpenCases.ResumeLayout(false);
+            this.pnlAllOpenCases.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
             this.pnlUpdateEditServices.ResumeLayout(false);
             this.pnlUpdateEditServices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).EndInit();
             this.pnlActivateServiceBoxes.ResumeLayout(false);
             this.pnlActivateServiceBoxes.PerformLayout();
-            this.pnlAllOpenCases.ResumeLayout(false);
-            this.pnlAllOpenCases.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
-            this.tabProvServices.ResumeLayout(false);
-            this.tabProvServices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.pnlAddViewSubjects.ResumeLayout(false);
-            this.pnlAddViewSubjects.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).EndInit();
             this.tabEmployees.ResumeLayout(false);
             this.tabEmployees.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -2616,6 +2611,12 @@
             this.tabShowAllProServ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).EndInit();
+            this.tabProvServices.ResumeLayout(false);
+            this.tabProvServices.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.pnlAddViewSubjects.ResumeLayout(false);
+            this.pnlAddViewSubjects.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
