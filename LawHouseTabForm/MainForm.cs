@@ -970,6 +970,10 @@ namespace LawHouseTabForm
                 string name = txtAddViewSubjectName.Text;
                 int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
                 int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+                if (txtAddViewSubjectFixPrc.Text == string.Empty)
+                {
+                    txtAddViewSubjectFixPrc.Text = 0.ToString();
+                }
                 decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
                 _subjectHandler.NewSubject(name, hours, time, price);
             }

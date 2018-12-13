@@ -38,12 +38,12 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label5;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
@@ -183,6 +183,7 @@
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnFindExistingClient = new System.Windows.Forms.Button();
             this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
             this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -236,7 +237,6 @@
             this.PServiceHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFindExistingClient = new System.Windows.Forms.Button();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -516,8 +516,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -529,8 +529,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -861,8 +861,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -881,8 +881,8 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 123);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -1292,7 +1292,7 @@
             // btnUpdateSubj
             // 
             this.btnUpdateSubj.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateSubj.Location = new System.Drawing.Point(766, 394);
+            this.btnUpdateSubj.Location = new System.Drawing.Point(766, 435);
             this.btnUpdateSubj.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSubj.Name = "btnUpdateSubj";
             this.btnUpdateSubj.Size = new System.Drawing.Size(71, 45);
@@ -1799,8 +1799,8 @@
             // 
             // EmplGridView
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -1954,6 +1954,18 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Tilføj klient og sag";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnFindExistingClient
+            // 
+            this.btnFindExistingClient.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnFindExistingClient.Location = new System.Drawing.Point(163, 441);
+            this.btnFindExistingClient.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFindExistingClient.Name = "btnFindExistingClient";
+            this.btnFindExistingClient.Size = new System.Drawing.Size(90, 45);
+            this.btnFindExistingClient.TabIndex = 353;
+            this.btnFindExistingClient.Text = "Søg efter klient";
+            this.btnFindExistingClient.UseVisualStyleBackColor = true;
+            this.btnFindExistingClient.Click += new System.EventHandler(this.btnFindExistingClient_Click);
             // 
             // btnCancelCreateNewCase
             // 
@@ -2449,8 +2461,8 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2500,18 +2512,6 @@
             this.PServiceComment.Name = "PServiceComment";
             this.PServiceComment.ReadOnly = true;
             this.PServiceComment.Width = 400;
-            // 
-            // btnFindExistingClient
-            // 
-            this.btnFindExistingClient.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnFindExistingClient.Location = new System.Drawing.Point(163, 441);
-            this.btnFindExistingClient.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFindExistingClient.Name = "btnFindExistingClient";
-            this.btnFindExistingClient.Size = new System.Drawing.Size(90, 45);
-            this.btnFindExistingClient.TabIndex = 353;
-            this.btnFindExistingClient.Text = "Søg efter klient";
-            this.btnFindExistingClient.UseVisualStyleBackColor = true;
-            this.btnFindExistingClient.Click += new System.EventHandler(this.btnFindExistingClient_Click);
             // 
             // MainForm
             // 
