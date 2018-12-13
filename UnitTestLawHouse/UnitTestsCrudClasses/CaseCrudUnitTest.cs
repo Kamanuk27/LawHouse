@@ -24,17 +24,34 @@ namespace UnitTestLawHouse
             var cases = _sut.GetCases(true);
             Assert.AreEqual(2, cases.Count);
         }
-
         [TestMethod]
         public void TestGetCasesReturnListOfCases()
         {
             CaseCrud _sut = new CaseCrud();
-            var cases = _sut.GetCases(true);
+            var cases = _sut.GetCasesByClientId(1);
             Type actual = cases[0].GetType();
             Type expected = typeof(CaseM);
             Assert.AreEqual(expected, actual);
         }
 
+
+        [TestMethod]
+        public void TestGetCasesByClientIdReturnTwoCases()
+        {
+            CaseCrud _sut = new CaseCrud();
+            var cases = _sut.GetCasesByClientId(1);
+            Assert.AreEqual(2, cases.Count);
+        }
+       
+        [TestMethod]
+        public void TestGetCasesByClientIdReturnListOfCases()
+        {
+            CaseCrud _sut = new CaseCrud();
+            var cases = _sut.GetCasesByClientId(1);
+            Type actual = cases[0].GetType();
+            Type expected = typeof(CaseM);
+            Assert.AreEqual(expected, actual);
+        }
         [TestMethod]
         public void TestNewCaseReturnOne()
         {

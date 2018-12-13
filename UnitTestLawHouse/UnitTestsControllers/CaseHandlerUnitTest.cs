@@ -42,6 +42,23 @@ namespace UnitTestLawHouse.UnitTestsControllers
             Type expected = typeof(CaseM);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void TestGetCasesByClientIdReturnTwoCases()
+        {
+            CaseHandler _sut = new CaseHandler();
+            var cases = _sut.GetCasesByClientId(1);
+            Assert.AreEqual(2, cases.Count);
+        }
+
+        [TestMethod]
+        public void TestGetCasesByClientIdReturnListOfCases()
+        {
+            CaseHandler _sut = new CaseHandler();
+            var cases = _sut.GetCasesByClientId(1);
+            Type actual = cases[0].GetType();
+            Type expected = typeof(CaseM);
+            Assert.AreEqual(expected, actual);
+        }
 
         public void TestUpdateCaseReturnOne()
         {

@@ -11,9 +11,10 @@ namespace DataAccess
     {
         int NewCase(CaseM c1);
         List<CaseM> GetCases(bool active);
+        List<CaseM> GetCasesByClientId(int id);
         int UpdateCase(CaseM c1);
         int CloseCase(CaseM c1);
         int DeleteCase(int id);
-        List<CaseM> GetCasesByClientId(int id);
+        
     }
 }
