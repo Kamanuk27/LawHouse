@@ -38,15 +38,18 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label5;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGetCasesbyClient = new System.Windows.Forms.Button();
+            this.tlfTxtForCases = new System.Windows.Forms.TextBox();
             this.lblAllCLosedCases = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.UpdateButt = new System.Windows.Forms.Button();
@@ -240,8 +243,7 @@
             this.btnUpdateSubj = new System.Windows.Forms.Button();
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.tlfTxtForCases = new System.Windows.Forms.TextBox();
-            this.btnGetCasesbyClient = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -281,7 +283,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new System.Drawing.Font("Verdana", 9F);
-            label22.Location = new System.Drawing.Point(537, 272);
+            label22.Location = new System.Drawing.Point(543, 233);
             label22.Name = "label22";
             label22.Size = new System.Drawing.Size(89, 14);
             label22.TabIndex = 335;
@@ -291,7 +293,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new System.Drawing.Font("Verdana", 9F);
-            label24.Location = new System.Drawing.Point(537, 243);
+            label24.Location = new System.Drawing.Point(543, 204);
             label24.Name = "label24";
             label24.Size = new System.Drawing.Size(130, 14);
             label24.TabIndex = 334;
@@ -301,7 +303,7 @@
             // 
             label25.AutoSize = true;
             label25.Font = new System.Drawing.Font("Verdana", 9F);
-            label25.Location = new System.Drawing.Point(537, 388);
+            label25.Location = new System.Drawing.Point(543, 349);
             label25.Name = "label25";
             label25.Size = new System.Drawing.Size(129, 14);
             label25.TabIndex = 330;
@@ -311,7 +313,7 @@
             // 
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Verdana", 9F);
-            label26.Location = new System.Drawing.Point(537, 301);
+            label26.Location = new System.Drawing.Point(543, 262);
             label26.Name = "label26";
             label26.Size = new System.Drawing.Size(124, 14);
             label26.TabIndex = 333;
@@ -321,7 +323,7 @@
             // 
             label28.AutoSize = true;
             label28.Font = new System.Drawing.Font("Verdana", 9F);
-            label28.Location = new System.Drawing.Point(537, 330);
+            label28.Location = new System.Drawing.Point(543, 291);
             label28.Name = "label28";
             label28.Size = new System.Drawing.Size(101, 14);
             label28.TabIndex = 332;
@@ -331,7 +333,7 @@
             // 
             label29.AutoSize = true;
             label29.Font = new System.Drawing.Font("Verdana", 9F);
-            label29.Location = new System.Drawing.Point(537, 214);
+            label29.Location = new System.Drawing.Point(543, 175);
             label29.Name = "label29";
             label29.Size = new System.Drawing.Size(136, 14);
             label29.TabIndex = 331;
@@ -341,7 +343,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Verdana", 9F);
-            label11.Location = new System.Drawing.Point(654, 494);
+            label11.Location = new System.Drawing.Point(654, 518);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(58, 14);
             label11.TabIndex = 288;
@@ -351,7 +353,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Verdana", 9F);
-            label8.Location = new System.Drawing.Point(339, 461);
+            label8.Location = new System.Drawing.Point(339, 485);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(63, 14);
             label8.TabIndex = 287;
@@ -361,7 +363,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Verdana", 9F);
-            label7.Location = new System.Drawing.Point(339, 494);
+            label7.Location = new System.Drawing.Point(339, 518);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(101, 14);
             label7.TabIndex = 286;
@@ -371,7 +373,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Verdana", 9F);
-            label5.Location = new System.Drawing.Point(537, 187);
+            label5.Location = new System.Drawing.Point(543, 148);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(86, 14);
             label5.TabIndex = 351;
@@ -396,8 +398,8 @@
             // 
             // tabCases
             // 
-            this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Controls.Add(this.pnlUpdateEditServices);
+            this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCases.Location = new System.Drawing.Point(4, 27);
             this.tabCases.Margin = new System.Windows.Forms.Padding(2);
@@ -405,12 +407,14 @@
             this.tabCases.Padding = new System.Windows.Forms.Padding(2);
             this.tabCases.Size = new System.Drawing.Size(1198, 639);
             this.tabCases.TabIndex = 0;
-            this.tabCases.Text = "Åbne sager";
+            this.tabCases.Text = "Sager";
             this.tabCases.UseVisualStyleBackColor = true;
             // 
             // pnlAllOpenCases
             // 
             this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.label10);
+            this.pnlAllOpenCases.Controls.Add(this.label1);
             this.pnlAllOpenCases.Controls.Add(this.btnGetCasesbyClient);
             this.pnlAllOpenCases.Controls.Add(this.tlfTxtForCases);
             this.pnlAllOpenCases.Controls.Add(this.lblAllCLosedCases);
@@ -441,6 +445,35 @@
             this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
             this.pnlAllOpenCases.TabIndex = 282;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(399, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 14);
+            this.label1.TabIndex = 343;
+            this.label1.Text = "Find alle sager for klient:";
+            // 
+            // btnGetCasesbyClient
+            // 
+            this.btnGetCasesbyClient.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnGetCasesbyClient.Location = new System.Drawing.Point(651, 118);
+            this.btnGetCasesbyClient.Name = "btnGetCasesbyClient";
+            this.btnGetCasesbyClient.Size = new System.Drawing.Size(71, 24);
+            this.btnGetCasesbyClient.TabIndex = 342;
+            this.btnGetCasesbyClient.Text = "Vis";
+            this.btnGetCasesbyClient.UseVisualStyleBackColor = true;
+            this.btnGetCasesbyClient.Click += new System.EventHandler(this.btnGetCasesbyClient_Click);
+            // 
+            // tlfTxtForCases
+            // 
+            this.tlfTxtForCases.Font = new System.Drawing.Font("Verdana", 9F);
+            this.tlfTxtForCases.Location = new System.Drawing.Point(496, 118);
+            this.tlfTxtForCases.Name = "tlfTxtForCases";
+            this.tlfTxtForCases.Size = new System.Drawing.Size(149, 22);
+            this.tlfTxtForCases.TabIndex = 341;
+            // 
             // lblAllCLosedCases
             // 
             this.lblAllCLosedCases.AutoSize = true;
@@ -457,7 +490,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(339, 426);
+            this.label6.Location = new System.Drawing.Point(339, 450);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 18);
             this.label6.TabIndex = 339;
@@ -467,7 +500,7 @@
             // 
             this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
             this.UpdateButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateButt.Location = new System.Drawing.Point(445, 517);
+            this.UpdateButt.Location = new System.Drawing.Point(445, 541);
             this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateButt.Name = "UpdateButt";
             this.UpdateButt.Size = new System.Drawing.Size(114, 45);
@@ -479,7 +512,7 @@
             // CalculatePrice
             // 
             this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CalculatePrice.Location = new System.Drawing.Point(727, 517);
+            this.CalculatePrice.Location = new System.Drawing.Point(727, 541);
             this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
             this.CalculatePrice.Name = "CalculatePrice";
             this.CalculatePrice.Size = new System.Drawing.Size(99, 45);
@@ -491,7 +524,7 @@
             // EndCaseTimePictxt
             // 
             this.EndCaseTimePictxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.EndCaseTimePictxt.Location = new System.Drawing.Point(729, 455);
+            this.EndCaseTimePictxt.Location = new System.Drawing.Point(729, 479);
             this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
             this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
             this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 22);
@@ -501,7 +534,7 @@
             // 
             this.RespEmpCombo.Font = new System.Drawing.Font("Verdana", 9F);
             this.RespEmpCombo.FormattingEnabled = true;
-            this.RespEmpCombo.Location = new System.Drawing.Point(445, 458);
+            this.RespEmpCombo.Location = new System.Drawing.Point(445, 482);
             this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
             this.RespEmpCombo.Name = "RespEmpCombo";
             this.RespEmpCombo.Size = new System.Drawing.Size(168, 22);
@@ -512,7 +545,7 @@
             // 
             this.ClosedCaseBut.BackColor = System.Drawing.Color.Transparent;
             this.ClosedCaseBut.Font = new System.Drawing.Font("Verdana", 9F);
-            this.ClosedCaseBut.Location = new System.Drawing.Point(830, 517);
+            this.ClosedCaseBut.Location = new System.Drawing.Point(830, 541);
             this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
             this.ClosedCaseBut.Name = "ClosedCaseBut";
             this.ClosedCaseBut.Size = new System.Drawing.Size(66, 45);
@@ -526,7 +559,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label13.Location = new System.Drawing.Point(652, 461);
+            this.label13.Location = new System.Drawing.Point(652, 485);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 14);
@@ -536,7 +569,7 @@
             // NegPricetxt
             // 
             this.NegPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NegPricetxt.Location = new System.Drawing.Point(445, 491);
+            this.NegPricetxt.Location = new System.Drawing.Point(445, 515);
             this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.NegPricetxt.Name = "NegPricetxt";
             this.NegPricetxt.Size = new System.Drawing.Size(168, 22);
@@ -555,7 +588,7 @@
             // btnReturnToShowOpenCases
             // 
             this.btnReturnToShowOpenCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnReturnToShowOpenCases.Location = new System.Drawing.Point(19, 390);
+            this.btnReturnToShowOpenCases.Location = new System.Drawing.Point(19, 414);
             this.btnReturnToShowOpenCases.Name = "btnReturnToShowOpenCases";
             this.btnReturnToShowOpenCases.Size = new System.Drawing.Size(114, 45);
             this.btnReturnToShowOpenCases.TabIndex = 337;
@@ -567,7 +600,7 @@
             // btnShowClosedCases
             // 
             this.btnShowClosedCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnShowClosedCases.Location = new System.Drawing.Point(19, 390);
+            this.btnShowClosedCases.Location = new System.Drawing.Point(19, 414);
             this.btnShowClosedCases.Name = "btnShowClosedCases";
             this.btnShowClosedCases.Size = new System.Drawing.Size(114, 45);
             this.btnShowClosedCases.TabIndex = 336;
@@ -578,7 +611,7 @@
             // search_button
             // 
             this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
-            this.search_button.Location = new System.Drawing.Point(737, 15);
+            this.search_button.Location = new System.Drawing.Point(1092, 119);
             this.search_button.Margin = new System.Windows.Forms.Padding(2);
             this.search_button.Name = "search_button";
             this.search_button.Size = new System.Drawing.Size(89, 24);
@@ -591,7 +624,7 @@
             // 
             this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
             this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
-            this.searchBox.Location = new System.Drawing.Point(531, 17);
+            this.searchBox.Location = new System.Drawing.Point(886, 121);
             this.searchBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(202, 22);
@@ -612,7 +645,7 @@
             // 
             this.DeleteButt.BackColor = System.Drawing.Color.Transparent;
             this.DeleteButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.DeleteButt.Location = new System.Drawing.Point(138, 390);
+            this.DeleteButt.Location = new System.Drawing.Point(138, 414);
             this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteButt.Name = "DeleteButt";
             this.DeleteButt.Size = new System.Drawing.Size(114, 45);
@@ -623,8 +656,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle55;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -640,11 +673,11 @@
             this.NegotiatedPrice,
             this.TotalPrice,
             this.Resp_empl});
-            this.CaseDataGrid.Location = new System.Drawing.Point(19, 123);
+            this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle56;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -742,7 +775,7 @@
             // TotalPricetxt
             // 
             this.TotalPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.TotalPricetxt.Location = new System.Drawing.Point(727, 491);
+            this.TotalPricetxt.Location = new System.Drawing.Point(727, 515);
             this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalPricetxt.Name = "TotalPricetxt";
             this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
@@ -796,7 +829,7 @@
             this.btnReturnToCasesPnl.Name = "btnReturnToCasesPnl";
             this.btnReturnToCasesPnl.Size = new System.Drawing.Size(97, 45);
             this.btnReturnToCasesPnl.TabIndex = 328;
-            this.btnReturnToCasesPnl.Text = "Afslut";
+            this.btnReturnToCasesPnl.Text = "Retur";
             this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
             this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
             // 
@@ -834,8 +867,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -847,8 +880,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle58;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -1580,8 +1613,8 @@
             // 
             // EmplGridView
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle59;
             this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -1733,20 +1766,20 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1198, 639);
             this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Tilføj klient og sag";
+            this.tabPage1.Text = "Opret klient og sag";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(537, 116);
+            this.label3.Location = new System.Drawing.Point(682, 117);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 26);
+            this.label3.Size = new System.Drawing.Size(248, 26);
             this.label3.TabIndex = 354;
-            this.label3.Text = "**Du kan ikke oprette sag uden Klient ID,\r\n   søg på telefonnummer for eks. klien" +
-    "t ";
+            this.label3.Text = "**Du kan ikke oprette sag uden klient ID,\r\n   søg på tlf nr eller opret ny klient" +
+    "";
             // 
             // btnFindExistingClient
             // 
@@ -1763,7 +1796,7 @@
             // btnCancelCreateNewCase
             // 
             this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(786, 422);
+            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(792, 383);
             this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
             this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
@@ -1776,7 +1809,7 @@
             // txtShowNewClientIdHere
             // 
             this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(692, 184);
+            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(698, 145);
             this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
             this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
             this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
@@ -1820,7 +1853,7 @@
             // 
             this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
             this.CrCaseServiceCom.FormattingEnabled = true;
-            this.CrCaseServiceCom.Location = new System.Drawing.Point(692, 238);
+            this.CrCaseServiceCom.Location = new System.Drawing.Point(698, 199);
             this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseServiceCom.Name = "CrCaseServiceCom";
             this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
@@ -1842,7 +1875,7 @@
             // btnNewCase
             // 
             this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnNewCase.Location = new System.Drawing.Point(692, 422);
+            this.btnNewCase.Location = new System.Drawing.Point(698, 383);
             this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewCase.Name = "btnNewCase";
             this.btnNewCase.Size = new System.Drawing.Size(90, 45);
@@ -1855,7 +1888,7 @@
             // CrCasetimeP
             // 
             this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasetimeP.Location = new System.Drawing.Point(692, 268);
+            this.CrCasetimeP.Location = new System.Drawing.Point(698, 229);
             this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
             this.CrCasetimeP.Name = "CrCasetimeP";
             this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
@@ -1865,7 +1898,7 @@
             // 
             this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
             this.CrCaseAdvokat.FormattingEnabled = true;
-            this.CrCaseAdvokat.Location = new System.Drawing.Point(692, 298);
+            this.CrCaseAdvokat.Location = new System.Drawing.Point(698, 259);
             this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseAdvokat.Name = "CrCaseAdvokat";
             this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
@@ -1876,7 +1909,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label20.Location = new System.Drawing.Point(537, 359);
+            this.label20.Location = new System.Drawing.Point(543, 320);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(146, 14);
@@ -1886,7 +1919,7 @@
             // CrCaseTimeUsed
             // 
             this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseTimeUsed.Location = new System.Drawing.Point(692, 356);
+            this.CrCaseTimeUsed.Location = new System.Drawing.Point(698, 317);
             this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
             this.CrCaseTimeUsed.ReadOnly = true;
@@ -1896,7 +1929,7 @@
             // CrCasePrice
             // 
             this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasePrice.Location = new System.Drawing.Point(692, 328);
+            this.CrCasePrice.Location = new System.Drawing.Point(698, 289);
             this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.CrCasePrice.Name = "CrCasePrice";
             this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
@@ -1906,7 +1939,7 @@
             // CrCaseEndDato
             // 
             this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseEndDato.Location = new System.Drawing.Point(692, 384);
+            this.CrCaseEndDato.Location = new System.Drawing.Point(698, 345);
             this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseEndDato.Name = "CrCaseEndDato";
             this.CrCaseEndDato.ReadOnly = true;
@@ -1916,7 +1949,7 @@
             // CrCaseName
             // 
             this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseName.Location = new System.Drawing.Point(692, 210);
+            this.CrCaseName.Location = new System.Drawing.Point(698, 171);
             this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseName.Name = "CrCaseName";
             this.CrCaseName.Size = new System.Drawing.Size(192, 22);
@@ -2262,8 +2295,8 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle60;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2579,22 +2612,15 @@
             this.label48.TabIndex = 281;
             this.label48.Text = "Tjenesteydelser og efteruddannelser";
             // 
-            // tlfTxtForCases
+            // label10
             // 
-            this.tlfTxtForCases.Location = new System.Drawing.Point(19, 494);
-            this.tlfTxtForCases.Name = "tlfTxtForCases";
-            this.tlfTxtForCases.Size = new System.Drawing.Size(100, 23);
-            this.tlfTxtForCases.TabIndex = 341;
-            // 
-            // btnGetCasesbyClient
-            // 
-            this.btnGetCasesbyClient.Location = new System.Drawing.Point(19, 538);
-            this.btnGetCasesbyClient.Name = "btnGetCasesbyClient";
-            this.btnGetCasesbyClient.Size = new System.Drawing.Size(114, 45);
-            this.btnGetCasesbyClient.TabIndex = 342;
-            this.btnGetCasesbyClient.Text = "Klient";
-            this.btnGetCasesbyClient.UseVisualStyleBackColor = true;
-            this.btnGetCasesbyClient.Click += new System.EventHandler(this.btnGetCasesbyClient_Click);
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(399, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 14);
+            this.label10.TabIndex = 344;
+            this.label10.Text = "Indtast tlf nr.:";
             // 
             // MainForm
             // 
@@ -2842,6 +2868,8 @@
         private System.Windows.Forms.Label lblAllCLosedCases;
         private System.Windows.Forms.Button btnGetCasesbyClient;
         private System.Windows.Forms.TextBox tlfTxtForCases;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
     }
 }
 
