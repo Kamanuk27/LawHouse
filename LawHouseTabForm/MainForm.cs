@@ -799,6 +799,9 @@ namespace LawHouseTabForm
                 MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
                 ClearNewClientTXT();
 
+                txtShowNewClientIdHere.Text = ClientId.ToString();
+                btnNewCase.Visible = true;
+
             }
             catch (Exception exception)
             {
@@ -809,7 +812,7 @@ namespace LawHouseTabForm
 
         }
 
-        private void UpdateClientBtn_Click(object sender, EventArgs e)
+        private void btnUpdateClient_Click(object sender, EventArgs e)
         {
             try
             {
@@ -820,7 +823,11 @@ namespace LawHouseTabForm
                 int postNo = Convert.ToInt32(NewClientPost.Text);
                 string eMail = NewClientMail.Text;
                 string tlf = NewClientTelef.Text;
-                _clientHandler.UpdateClient(1, fName, lName, cpr, address, postNo, eMail, tlf);
+
+                //HUSK SØGEFUNKTION DER SENDER CLIENTID TIL THIS.ClientId 
+                _clientHandler.UpdateClient(this.ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
+                txtShowNewClientIdHere.Text = ClientId.ToString();
+                btnNewCase.Visible = true;
             }
             catch (Exception exception)
             {
@@ -833,20 +840,51 @@ namespace LawHouseTabForm
             //TRY CATCH FOR SIKKERHEDS SKYLD
         }
 
-        private void NewCaseButt_Click(object sender, EventArgs e)
+        private void btnFindExistingClient_Click(object sender, EventArgs e)
+        {
+            string phoneNbr = NewClientTelef.Text;
+            var client = _clientHandler.GetClient(phoneNbr);
+
+            if (client.TlfNo == string.Empty)
+            {
+                MessageBox.Show("Klienten eksisterer ikke i vores database - opret ny klient");
+
+
+            }
+            else
+            {
+                NewClientCprNo.Text = client.CprNo;
+                NewClientfName.Text = client.FirstName;
+                NewClientLName.Text = client.LastName;
+                NewClientAdress.Text = client.Address;
+                NewClientPost.Text = client.PostNo.ToString();
+                NewClientMail.Text = client.Email;
+                NewClientTelef.Text = client.TlfNo;
+                this.ClientId = client.Id;
+
+                txtShowNewClientIdHere.Text = ClientId.ToString();
+                btnNewCase.Visible = true;
+
+
+                btnFindExistingClient.Visible = false;
+                btnUpdateClient.Visible = true;
+            }
+        }
+
+            private void NewCaseButt_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
                 string caseName = CrCaseName.Text;
                 string[] getServoceId =
                     CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int service = Convert.ToInt32(getServoceId[0]);
+                int serviceId = Convert.ToInt32(getServoceId[0]);
                 DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
                 string[] getAdvoketId =
                     CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int respEmpl = Convert.ToInt32(getAdvoketId[0]);
+                int respEmplId = Convert.ToInt32(getAdvoketId[0]);
                 decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-                _caseHandler.NewCase(caseName, CaseId, service, startTime, respEmpl, negoPrice);
+                _caseHandler.NewCase(caseName, this.ClientId, serviceId, startTime, respEmplId, negoPrice);
             }
             catch (Exception exception)
             {
@@ -906,9 +944,6 @@ namespace LawHouseTabForm
                     GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
                 }
 
-                int[] jobCount = _pServiceHandler.GetworkDone();
-                totalHoursUseForPeriod.Text = jobCount[1].ToString();
-                totalKmDrivenInPeriod.Text = jobCount[0].ToString();
             }
             catch (Exception e)
             {
@@ -1014,13 +1049,24 @@ namespace LawHouseTabForm
             btnReturnToShowOpenCases.Visible = false;
         }
 
+        ///// <summary>
+        ///// Tjekker tekstbokse for indtastningsfejl
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void myTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+        //        e.Handled = true;
+        //}
+
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedTab = TabControl.SelectedTab;
 
             foreach (Control ctrl in selectedTab.Controls)
             {
-                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name 
+                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name
                                                              || selectedTab.Name == tabEmployees.Name)
                 {
                     if (ctrl is TextBox)
@@ -1048,6 +1094,7 @@ namespace LawHouseTabForm
                     {
                         totalHoursUseForPeriod.Text = string.Empty;
                         totalKmDrivenInPeriod.Text = string.Empty;
+                        lblCaseName.Text = string.Empty;
                     }
 
                     if (ctrl is ComboBox)
@@ -1060,10 +1107,11 @@ namespace LawHouseTabForm
                     }
                     if (ctrl is DataGridView)
                     {
-                        (ctrl as DataGridView).Rows.Clear();// =  string.Empty;
+                        (ctrl as DataGridView).Rows.Clear();
                     }
                 }
             }
         }
+
     }
 }

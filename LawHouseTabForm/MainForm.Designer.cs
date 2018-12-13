@@ -37,11 +37,13 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
@@ -181,13 +183,15 @@
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
+            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lLblHelpAddClientCaseTab = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.UpdateClientBtn = new System.Windows.Forms.Button();
+            this.btnUpdateClient = new System.Windows.Forms.Button();
             this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.NewCaseButt = new System.Windows.Forms.Button();
+            this.btnNewCase = new System.Windows.Forms.Button();
             this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
             this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -232,6 +236,7 @@
             this.PServiceHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFindExistingClient = new System.Windows.Forms.Button();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -241,6 +246,7 @@
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabCases.SuspendLayout();
             this.pnlAllOpenCases.SuspendLayout();
@@ -270,7 +276,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new System.Drawing.Font("Verdana", 9F);
-            label22.Location = new System.Drawing.Point(486, 237);
+            label22.Location = new System.Drawing.Point(538, 242);
             label22.Name = "label22";
             label22.Size = new System.Drawing.Size(89, 14);
             label22.TabIndex = 335;
@@ -280,7 +286,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new System.Drawing.Font("Verdana", 9F);
-            label24.Location = new System.Drawing.Point(486, 208);
+            label24.Location = new System.Drawing.Point(538, 213);
             label24.Name = "label24";
             label24.Size = new System.Drawing.Size(130, 14);
             label24.TabIndex = 334;
@@ -290,7 +296,7 @@
             // 
             label25.AutoSize = true;
             label25.Font = new System.Drawing.Font("Verdana", 9F);
-            label25.Location = new System.Drawing.Point(486, 353);
+            label25.Location = new System.Drawing.Point(538, 358);
             label25.Name = "label25";
             label25.Size = new System.Drawing.Size(129, 14);
             label25.TabIndex = 330;
@@ -300,7 +306,7 @@
             // 
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Verdana", 9F);
-            label26.Location = new System.Drawing.Point(486, 266);
+            label26.Location = new System.Drawing.Point(538, 271);
             label26.Name = "label26";
             label26.Size = new System.Drawing.Size(124, 14);
             label26.TabIndex = 333;
@@ -310,7 +316,7 @@
             // 
             label28.AutoSize = true;
             label28.Font = new System.Drawing.Font("Verdana", 9F);
-            label28.Location = new System.Drawing.Point(486, 295);
+            label28.Location = new System.Drawing.Point(538, 300);
             label28.Name = "label28";
             label28.Size = new System.Drawing.Size(101, 14);
             label28.TabIndex = 332;
@@ -320,7 +326,7 @@
             // 
             label29.AutoSize = true;
             label29.Font = new System.Drawing.Font("Verdana", 9F);
-            label29.Location = new System.Drawing.Point(486, 179);
+            label29.Location = new System.Drawing.Point(538, 184);
             label29.Name = "label29";
             label29.Size = new System.Drawing.Size(136, 14);
             label29.TabIndex = 331;
@@ -356,6 +362,16 @@
             label7.TabIndex = 286;
             label7.Text = "Aftalt/fast pris:";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Verdana", 9F);
+            label5.Location = new System.Drawing.Point(538, 136);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(66, 14);
+            label5.TabIndex = 351;
+            label5.Text = "Client ID:";
+            // 
             // TabControl
             // 
             this.TabControl.Controls.Add(this.tabCases);
@@ -364,7 +380,7 @@
             this.TabControl.Controls.Add(this.tabPage1);
             this.TabControl.Controls.Add(this.tabShowAllProServ);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControl.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabControl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Margin = new System.Windows.Forms.Padding(2);
             this.TabControl.Name = "TabControl";
@@ -377,11 +393,11 @@
             // 
             this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabCases.Location = new System.Drawing.Point(4, 22);
+            this.tabCases.Location = new System.Drawing.Point(4, 27);
             this.tabCases.Margin = new System.Windows.Forms.Padding(2);
             this.tabCases.Name = "tabCases";
             this.tabCases.Padding = new System.Windows.Forms.Padding(2);
-            this.tabCases.Size = new System.Drawing.Size(1198, 644);
+            this.tabCases.Size = new System.Drawing.Size(1198, 639);
             this.tabCases.TabIndex = 0;
             this.tabCases.Text = "Åbne sager";
             this.tabCases.UseVisualStyleBackColor = true;
@@ -413,7 +429,7 @@
             this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
             this.pnlAllOpenCases.Name = "pnlAllOpenCases";
-            this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 640);
+            this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
             this.pnlAllOpenCases.TabIndex = 282;
             // 
             // pnlUpdateEditServices
@@ -447,7 +463,7 @@
             // lLblHelpCaseServices2Tab
             // 
             this.lLblHelpCaseServices2Tab.AutoSize = true;
-            this.lLblHelpCaseServices2Tab.Location = new System.Drawing.Point(21, 607);
+            this.lLblHelpCaseServices2Tab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpCaseServices2Tab.Name = "lLblHelpCaseServices2Tab";
             this.lLblHelpCaseServices2Tab.Size = new System.Drawing.Size(45, 17);
             this.lLblHelpCaseServices2Tab.TabIndex = 329;
@@ -500,8 +516,8 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -513,8 +529,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -823,7 +839,7 @@
             // lLblHelpViewAllCasesTab
             // 
             this.lLblHelpViewAllCasesTab.AutoSize = true;
-            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(770, 589);
+            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpViewAllCasesTab.Name = "lLblHelpViewAllCasesTab";
             this.lLblHelpViewAllCasesTab.Size = new System.Drawing.Size(147, 17);
             this.lLblHelpViewAllCasesTab.TabIndex = 331;
@@ -845,8 +861,8 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -865,8 +881,8 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 123);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -1061,11 +1077,11 @@
             this.tabProvServices.Controls.Add(this.btnUpdateSubj);
             this.tabProvServices.Controls.Add(this.btnMakeNewSubj);
             this.tabProvServices.Controls.Add(this.label48);
-            this.tabProvServices.Location = new System.Drawing.Point(4, 22);
+            this.tabProvServices.Location = new System.Drawing.Point(4, 27);
             this.tabProvServices.Margin = new System.Windows.Forms.Padding(2);
             this.tabProvServices.Name = "tabProvServices";
             this.tabProvServices.Padding = new System.Windows.Forms.Padding(2);
-            this.tabProvServices.Size = new System.Drawing.Size(1198, 644);
+            this.tabProvServices.Size = new System.Drawing.Size(1198, 639);
             this.tabProvServices.TabIndex = 3;
             this.tabProvServices.Text = "Tjenesteydelser og efteruddannelse";
             this.tabProvServices.UseVisualStyleBackColor = true;
@@ -1082,9 +1098,9 @@
             // lLblHelpSubjectsTab
             // 
             this.lLblHelpSubjectsTab.AutoSize = true;
-            this.lLblHelpSubjectsTab.Location = new System.Drawing.Point(20, 562);
+            this.lLblHelpSubjectsTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpSubjectsTab.Name = "lLblHelpSubjectsTab";
-            this.lLblHelpSubjectsTab.Size = new System.Drawing.Size(40, 13);
+            this.lLblHelpSubjectsTab.Size = new System.Drawing.Size(50, 18);
             this.lLblHelpSubjectsTab.TabIndex = 302;
             this.lLblHelpSubjectsTab.TabStop = true;
             this.lLblHelpSubjectsTab.Text = "Hjælp";
@@ -1326,11 +1342,11 @@
             this.tabEmployees.Controls.Add(this.DeleteEmpl);
             this.tabEmployees.Controls.Add(this.UpdateEmpl);
             this.tabEmployees.Controls.Add(this.EmplGridView);
-            this.tabEmployees.Location = new System.Drawing.Point(4, 22);
+            this.tabEmployees.Location = new System.Drawing.Point(4, 27);
             this.tabEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.tabEmployees.Name = "tabEmployees";
             this.tabEmployees.Padding = new System.Windows.Forms.Padding(2);
-            this.tabEmployees.Size = new System.Drawing.Size(1198, 644);
+            this.tabEmployees.Size = new System.Drawing.Size(1198, 639);
             this.tabEmployees.TabIndex = 2;
             this.tabEmployees.Text = "Ansatte";
             this.tabEmployees.UseVisualStyleBackColor = true;
@@ -1347,9 +1363,9 @@
             // lLblHelpEmployeesTab
             // 
             this.lLblHelpEmployeesTab.AutoSize = true;
-            this.lLblHelpEmployeesTab.Location = new System.Drawing.Point(497, 597);
+            this.lLblHelpEmployeesTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpEmployeesTab.Name = "lLblHelpEmployeesTab";
-            this.lLblHelpEmployeesTab.Size = new System.Drawing.Size(40, 13);
+            this.lLblHelpEmployeesTab.Size = new System.Drawing.Size(50, 18);
             this.lLblHelpEmployeesTab.TabIndex = 329;
             this.lLblHelpEmployeesTab.TabStop = true;
             this.lLblHelpEmployeesTab.Text = "Hjælp";
@@ -1783,6 +1799,8 @@
             // 
             // EmplGridView
             // 
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -1802,7 +1820,7 @@
             this.EmplGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmplGridView.RowTemplate.Height = 24;
             this.EmplGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmplGridView.Size = new System.Drawing.Size(1098, 365);
+            this.EmplGridView.Size = new System.Drawing.Size(1113, 365);
             this.EmplGridView.TabIndex = 299;
             this.EmplGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EmlGridView_CellMouseDoubleClick);
             // 
@@ -1888,13 +1906,17 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnFindExistingClient);
+            this.tabPage1.Controls.Add(this.btnCancelCreateNewCase);
+            this.tabPage1.Controls.Add(label5);
+            this.tabPage1.Controls.Add(this.txtShowNewClientIdHere);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.lLblHelpAddClientCaseTab);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.UpdateClientBtn);
+            this.tabPage1.Controls.Add(this.btnUpdateClient);
             this.tabPage1.Controls.Add(this.CrCaseServiceCom);
             this.tabPage1.Controls.Add(this.label35);
-            this.tabPage1.Controls.Add(this.NewCaseButt);
+            this.tabPage1.Controls.Add(this.btnNewCase);
             this.tabPage1.Controls.Add(this.CrCasetimeP);
             this.tabPage1.Controls.Add(this.CrCaseAdvokat);
             this.tabPage1.Controls.Add(this.label20);
@@ -1924,14 +1946,35 @@
             this.tabPage1.Controls.Add(this.label27);
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(1198, 644);
+            this.tabPage1.Size = new System.Drawing.Size(1198, 639);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Tilføj klient og sag";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelCreateNewCase
+            // 
+            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(787, 392);
+            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
+            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnCancelCreateNewCase.TabIndex = 352;
+            this.btnCancelCreateNewCase.Text = "Fortryd";
+            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
+            this.btnCancelCreateNewCase.Visible = false;
+            // 
+            // txtShowNewClientIdHere
+            // 
+            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(693, 133);
+            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
+            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
+            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
+            this.txtShowNewClientIdHere.TabIndex = 350;
             // 
             // pictureBox2
             // 
@@ -1945,9 +1988,9 @@
             // lLblHelpAddClientCaseTab
             // 
             this.lLblHelpAddClientCaseTab.AutoSize = true;
-            this.lLblHelpAddClientCaseTab.Location = new System.Drawing.Point(8, 565);
+            this.lLblHelpAddClientCaseTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpAddClientCaseTab.Name = "lLblHelpAddClientCaseTab";
-            this.lLblHelpAddClientCaseTab.Size = new System.Drawing.Size(40, 13);
+            this.lLblHelpAddClientCaseTab.Size = new System.Drawing.Size(50, 18);
             this.lLblHelpAddClientCaseTab.TabIndex = 348;
             this.lLblHelpAddClientCaseTab.TabStop = true;
             this.lLblHelpAddClientCaseTab.Text = "Hjælp";
@@ -1957,28 +2000,29 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(211, 498);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(574, 13);
+            this.label3.Size = new System.Drawing.Size(729, 18);
             this.label3.TabIndex = 347;
             this.label3.Text = "MANGLER EN BUTTON TIL VALG AF EKSISTERENDE KLIEN + Klien ID, Tilføj butt skal ver" +
     "e unvisible";
             // 
-            // UpdateClientBtn
+            // btnUpdateClient
             // 
-            this.UpdateClientBtn.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateClientBtn.Location = new System.Drawing.Point(180, 391);
-            this.UpdateClientBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.UpdateClientBtn.Name = "UpdateClientBtn";
-            this.UpdateClientBtn.Size = new System.Drawing.Size(90, 36);
-            this.UpdateClientBtn.TabIndex = 346;
-            this.UpdateClientBtn.Text = "Opdater klient";
-            this.UpdateClientBtn.UseVisualStyleBackColor = true;
-            this.UpdateClientBtn.Click += new System.EventHandler(this.UpdateClientBtn_Click);
+            this.btnUpdateClient.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnUpdateClient.Location = new System.Drawing.Point(163, 392);
+            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateClient.Name = "btnUpdateClient";
+            this.btnUpdateClient.Size = new System.Drawing.Size(90, 45);
+            this.btnUpdateClient.TabIndex = 346;
+            this.btnUpdateClient.Text = "Opdater klient";
+            this.btnUpdateClient.UseVisualStyleBackColor = true;
+            this.btnUpdateClient.Visible = false;
+            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
             // CrCaseServiceCom
             // 
             this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
             this.CrCaseServiceCom.FormattingEnabled = true;
-            this.CrCaseServiceCom.Location = new System.Drawing.Point(641, 207);
+            this.CrCaseServiceCom.Location = new System.Drawing.Point(693, 208);
             this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseServiceCom.Name = "CrCaseServiceCom";
             this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
@@ -1989,30 +2033,31 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(525, 123);
+            this.label35.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(538, 82);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(97, 16);
+            this.label35.Size = new System.Drawing.Size(109, 18);
             this.label35.TabIndex = 344;
             this.label35.Text = "Åben ny sag";
             // 
-            // NewCaseButt
+            // btnNewCase
             // 
-            this.NewCaseButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewCaseButt.Location = new System.Drawing.Point(641, 391);
-            this.NewCaseButt.Margin = new System.Windows.Forms.Padding(2);
-            this.NewCaseButt.Name = "NewCaseButt";
-            this.NewCaseButt.Size = new System.Drawing.Size(90, 36);
-            this.NewCaseButt.TabIndex = 343;
-            this.NewCaseButt.Text = "Tilføj sag";
-            this.NewCaseButt.UseVisualStyleBackColor = true;
-            this.NewCaseButt.Click += new System.EventHandler(this.NewCaseButt_Click);
+            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnNewCase.Location = new System.Drawing.Point(693, 392);
+            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCase.Name = "btnNewCase";
+            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnNewCase.TabIndex = 343;
+            this.btnNewCase.Text = "Tilføj sag";
+            this.btnNewCase.UseVisualStyleBackColor = true;
+            this.btnNewCase.Visible = false;
+            this.btnNewCase.Click += new System.EventHandler(this.NewCaseButt_Click);
             // 
             // CrCasetimeP
             // 
             this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasetimeP.Location = new System.Drawing.Point(641, 237);
+            this.CrCasetimeP.Location = new System.Drawing.Point(693, 238);
             this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
             this.CrCasetimeP.Name = "CrCasetimeP";
             this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
@@ -2022,7 +2067,7 @@
             // 
             this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
             this.CrCaseAdvokat.FormattingEnabled = true;
-            this.CrCaseAdvokat.Location = new System.Drawing.Point(641, 267);
+            this.CrCaseAdvokat.Location = new System.Drawing.Point(693, 268);
             this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseAdvokat.Name = "CrCaseAdvokat";
             this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
@@ -2033,7 +2078,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label20.Location = new System.Drawing.Point(486, 324);
+            this.label20.Location = new System.Drawing.Point(538, 329);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(146, 14);
@@ -2043,7 +2088,7 @@
             // CrCaseTimeUsed
             // 
             this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseTimeUsed.Location = new System.Drawing.Point(641, 325);
+            this.CrCaseTimeUsed.Location = new System.Drawing.Point(693, 326);
             this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
             this.CrCaseTimeUsed.ReadOnly = true;
@@ -2053,7 +2098,7 @@
             // CrCasePrice
             // 
             this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasePrice.Location = new System.Drawing.Point(641, 297);
+            this.CrCasePrice.Location = new System.Drawing.Point(693, 298);
             this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
             this.CrCasePrice.Name = "CrCasePrice";
             this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
@@ -2062,7 +2107,7 @@
             // CrCaseEndDato
             // 
             this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseEndDato.Location = new System.Drawing.Point(641, 353);
+            this.CrCaseEndDato.Location = new System.Drawing.Point(693, 354);
             this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseEndDato.Name = "CrCaseEndDato";
             this.CrCaseEndDato.ReadOnly = true;
@@ -2072,7 +2117,7 @@
             // CrCaseName
             // 
             this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseName.Location = new System.Drawing.Point(641, 179);
+            this.CrCaseName.Location = new System.Drawing.Point(693, 180);
             this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
             this.CrCaseName.Name = "CrCaseName";
             this.CrCaseName.Size = new System.Drawing.Size(192, 22);
@@ -2081,10 +2126,10 @@
             // NewClientBtn
             // 
             this.NewClientBtn.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientBtn.Location = new System.Drawing.Point(274, 391);
+            this.NewClientBtn.Location = new System.Drawing.Point(257, 392);
             this.NewClientBtn.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientBtn.Name = "NewClientBtn";
-            this.NewClientBtn.Size = new System.Drawing.Size(90, 36);
+            this.NewClientBtn.Size = new System.Drawing.Size(90, 45);
             this.NewClientBtn.TabIndex = 329;
             this.NewClientBtn.Text = "Tilføj ny klient";
             this.NewClientBtn.UseVisualStyleBackColor = true;
@@ -2093,7 +2138,7 @@
             // NewClientTelef
             // 
             this.NewClientTelef.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientTelef.Location = new System.Drawing.Point(180, 353);
+            this.NewClientTelef.Location = new System.Drawing.Point(163, 354);
             this.NewClientTelef.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientTelef.Name = "NewClientTelef";
             this.NewClientTelef.Size = new System.Drawing.Size(146, 22);
@@ -2102,7 +2147,7 @@
             // NewClientMail
             // 
             this.NewClientMail.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientMail.Location = new System.Drawing.Point(180, 324);
+            this.NewClientMail.Location = new System.Drawing.Point(163, 325);
             this.NewClientMail.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientMail.Name = "NewClientMail";
             this.NewClientMail.Size = new System.Drawing.Size(198, 22);
@@ -2111,7 +2156,7 @@
             // NewClientPost
             // 
             this.NewClientPost.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientPost.Location = new System.Drawing.Point(180, 295);
+            this.NewClientPost.Location = new System.Drawing.Point(163, 296);
             this.NewClientPost.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientPost.Name = "NewClientPost";
             this.NewClientPost.Size = new System.Drawing.Size(124, 22);
@@ -2120,7 +2165,7 @@
             // NewClientAdress
             // 
             this.NewClientAdress.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientAdress.Location = new System.Drawing.Point(180, 266);
+            this.NewClientAdress.Location = new System.Drawing.Point(163, 267);
             this.NewClientAdress.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientAdress.Name = "NewClientAdress";
             this.NewClientAdress.Size = new System.Drawing.Size(200, 22);
@@ -2129,7 +2174,7 @@
             // NewClientLName
             // 
             this.NewClientLName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientLName.Location = new System.Drawing.Point(180, 237);
+            this.NewClientLName.Location = new System.Drawing.Point(163, 238);
             this.NewClientLName.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientLName.Name = "NewClientLName";
             this.NewClientLName.Size = new System.Drawing.Size(183, 22);
@@ -2138,7 +2183,7 @@
             // NewClientfName
             // 
             this.NewClientfName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientfName.Location = new System.Drawing.Point(180, 208);
+            this.NewClientfName.Location = new System.Drawing.Point(163, 209);
             this.NewClientfName.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientfName.Name = "NewClientfName";
             this.NewClientfName.Size = new System.Drawing.Size(177, 22);
@@ -2147,18 +2192,18 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(110, 123);
+            this.label36.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(67, 82);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(88, 16);
+            this.label36.Size = new System.Drawing.Size(123, 18);
             this.label36.TabIndex = 322;
-            this.label36.Text = "Tilføj Klient";
+            this.label36.Text = "Tilføj ny klient";
             // 
             // NewClientCprNo
             // 
             this.NewClientCprNo.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientCprNo.Location = new System.Drawing.Point(180, 179);
+            this.NewClientCprNo.Location = new System.Drawing.Point(163, 180);
             this.NewClientCprNo.Margin = new System.Windows.Forms.Padding(2);
             this.NewClientCprNo.Name = "NewClientCprNo";
             this.NewClientCprNo.Size = new System.Drawing.Size(133, 22);
@@ -2168,7 +2213,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label33.Location = new System.Drawing.Point(110, 359);
+            this.label33.Location = new System.Drawing.Point(67, 361);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(55, 14);
@@ -2179,7 +2224,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label32.Location = new System.Drawing.Point(110, 329);
+            this.label32.Location = new System.Drawing.Point(67, 331);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(57, 14);
@@ -2190,7 +2235,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label31.Location = new System.Drawing.Point(110, 299);
+            this.label31.Location = new System.Drawing.Point(67, 301);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(69, 14);
@@ -2201,7 +2246,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label30.Location = new System.Drawing.Point(110, 269);
+            this.label30.Location = new System.Drawing.Point(67, 271);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(75, 14);
@@ -2212,7 +2257,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label27.Location = new System.Drawing.Point(110, 239);
+            this.label27.Location = new System.Drawing.Point(67, 241);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(87, 14);
@@ -2223,7 +2268,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label21.Location = new System.Drawing.Point(110, 209);
+            this.label21.Location = new System.Drawing.Point(67, 211);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(87, 14);
@@ -2234,7 +2279,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label19.Location = new System.Drawing.Point(110, 179);
+            this.label19.Location = new System.Drawing.Point(67, 181);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 14);
@@ -2258,10 +2303,10 @@
             this.tabShowAllProServ.Controls.Add(this.dateTimeFrom);
             this.tabShowAllProServ.Controls.Add(this.cmbBoxFindEmplID);
             this.tabShowAllProServ.Controls.Add(this.GridEmployeeServicesP);
-            this.tabShowAllProServ.Location = new System.Drawing.Point(4, 22);
+            this.tabShowAllProServ.Location = new System.Drawing.Point(4, 27);
             this.tabShowAllProServ.Name = "tabShowAllProServ";
             this.tabShowAllProServ.Padding = new System.Windows.Forms.Padding(3);
-            this.tabShowAllProServ.Size = new System.Drawing.Size(1198, 644);
+            this.tabShowAllProServ.Size = new System.Drawing.Size(1198, 639);
             this.tabShowAllProServ.TabIndex = 5;
             this.tabShowAllProServ.Text = "Ydelser udført";
             this.tabShowAllProServ.UseVisualStyleBackColor = true;
@@ -2279,7 +2324,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 110);
+            this.label4.Location = new System.Drawing.Point(55, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 16);
             this.label4.TabIndex = 13;
@@ -2289,7 +2334,7 @@
             // 
             this.lblDateToo.AutoSize = true;
             this.lblDateToo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateToo.Location = new System.Drawing.Point(185, 137);
+            this.lblDateToo.Location = new System.Drawing.Point(218, 137);
             this.lblDateToo.Name = "lblDateToo";
             this.lblDateToo.Size = new System.Drawing.Size(62, 16);
             this.lblDateToo.TabIndex = 12;
@@ -2299,7 +2344,7 @@
             // 
             this.lblDateFrom.AutoSize = true;
             this.lblDateFrom.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFrom.Location = new System.Drawing.Point(24, 137);
+            this.lblDateFrom.Location = new System.Drawing.Point(57, 137);
             this.lblDateFrom.Name = "lblDateFrom";
             this.lblDateFrom.Size = new System.Drawing.Size(68, 16);
             this.lblDateFrom.TabIndex = 11;
@@ -2309,7 +2354,7 @@
             // 
             this.lblChooseEmployee.AutoSize = true;
             this.lblChooseEmployee.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChooseEmployee.Location = new System.Drawing.Point(19, 50);
+            this.lblChooseEmployee.Location = new System.Drawing.Point(52, 50);
             this.lblChooseEmployee.Name = "lblChooseEmployee";
             this.lblChooseEmployee.Size = new System.Drawing.Size(143, 16);
             this.lblChooseEmployee.TabIndex = 10;
@@ -2318,9 +2363,9 @@
             // lLblHelpEmployeeServicesTab
             // 
             this.lLblHelpEmployeeServicesTab.AutoSize = true;
-            this.lLblHelpEmployeeServicesTab.Location = new System.Drawing.Point(19, 556);
+            this.lLblHelpEmployeeServicesTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpEmployeeServicesTab.Name = "lLblHelpEmployeeServicesTab";
-            this.lLblHelpEmployeeServicesTab.Size = new System.Drawing.Size(40, 13);
+            this.lLblHelpEmployeeServicesTab.Size = new System.Drawing.Size(50, 18);
             this.lLblHelpEmployeeServicesTab.TabIndex = 9;
             this.lLblHelpEmployeeServicesTab.TabStop = true;
             this.lLblHelpEmployeeServicesTab.Text = "Hjælp";
@@ -2329,7 +2374,7 @@
             // 
             this.totalKmDrivenInPeriod.AutoSize = true;
             this.totalKmDrivenInPeriod.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalKmDrivenInPeriod.Location = new System.Drawing.Point(813, 163);
+            this.totalKmDrivenInPeriod.Location = new System.Drawing.Point(846, 163);
             this.totalKmDrivenInPeriod.Name = "totalKmDrivenInPeriod";
             this.totalKmDrivenInPeriod.Size = new System.Drawing.Size(17, 16);
             this.totalKmDrivenInPeriod.TabIndex = 8;
@@ -2339,7 +2384,7 @@
             // 
             this.totalHoursUseForPeriod.AutoSize = true;
             this.totalHoursUseForPeriod.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalHoursUseForPeriod.Location = new System.Drawing.Point(651, 163);
+            this.totalHoursUseForPeriod.Location = new System.Drawing.Point(684, 163);
             this.totalHoursUseForPeriod.Name = "totalHoursUseForPeriod";
             this.totalHoursUseForPeriod.Size = new System.Drawing.Size(17, 16);
             this.totalHoursUseForPeriod.TabIndex = 7;
@@ -2349,7 +2394,7 @@
             // 
             this.lblTotalKmDriven.AutoSize = true;
             this.lblTotalKmDriven.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalKmDriven.Location = new System.Drawing.Point(702, 163);
+            this.lblTotalKmDriven.Location = new System.Drawing.Point(735, 163);
             this.lblTotalKmDriven.Name = "lblTotalKmDriven";
             this.lblTotalKmDriven.Size = new System.Drawing.Size(108, 16);
             this.lblTotalKmDriven.TabIndex = 6;
@@ -2359,7 +2404,7 @@
             // 
             this.lblTotalHoursUsed.AutoSize = true;
             this.lblTotalHoursUsed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalHoursUsed.Location = new System.Drawing.Point(509, 163);
+            this.lblTotalHoursUsed.Location = new System.Drawing.Point(542, 163);
             this.lblTotalHoursUsed.Name = "lblTotalHoursUsed";
             this.lblTotalHoursUsed.Size = new System.Drawing.Size(139, 16);
             this.lblTotalHoursUsed.TabIndex = 5;
@@ -2368,7 +2413,7 @@
             // btnShowPrServices
             // 
             this.btnShowPrServices.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPrServices.Location = new System.Drawing.Point(349, 156);
+            this.btnShowPrServices.Location = new System.Drawing.Point(382, 156);
             this.btnShowPrServices.Name = "btnShowPrServices";
             this.btnShowPrServices.Size = new System.Drawing.Size(101, 23);
             this.btnShowPrServices.TabIndex = 4;
@@ -2379,7 +2424,7 @@
             // dateTimeTo
             // 
             this.dateTimeTo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeTo.Location = new System.Drawing.Point(188, 156);
+            this.dateTimeTo.Location = new System.Drawing.Point(221, 156);
             this.dateTimeTo.Name = "dateTimeTo";
             this.dateTimeTo.Size = new System.Drawing.Size(155, 23);
             this.dateTimeTo.TabIndex = 3;
@@ -2387,7 +2432,7 @@
             // dateTimeFrom
             // 
             this.dateTimeFrom.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeFrom.Location = new System.Drawing.Point(27, 156);
+            this.dateTimeFrom.Location = new System.Drawing.Point(60, 156);
             this.dateTimeFrom.Name = "dateTimeFrom";
             this.dateTimeFrom.Size = new System.Drawing.Size(155, 23);
             this.dateTimeFrom.TabIndex = 2;
@@ -2396,7 +2441,7 @@
             // 
             this.cmbBoxFindEmplID.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBoxFindEmplID.FormattingEnabled = true;
-            this.cmbBoxFindEmplID.Location = new System.Drawing.Point(22, 69);
+            this.cmbBoxFindEmplID.Location = new System.Drawing.Point(55, 69);
             this.cmbBoxFindEmplID.Name = "cmbBoxFindEmplID";
             this.cmbBoxFindEmplID.Size = new System.Drawing.Size(182, 24);
             this.cmbBoxFindEmplID.TabIndex = 1;
@@ -2404,8 +2449,8 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2413,7 +2458,7 @@
             this.PServiceHours,
             this.PServiceKm,
             this.PServiceComment});
-            this.GridEmployeeServicesP.Location = new System.Drawing.Point(22, 197);
+            this.GridEmployeeServicesP.Location = new System.Drawing.Point(55, 197);
             this.GridEmployeeServicesP.Name = "GridEmployeeServicesP";
             this.GridEmployeeServicesP.Size = new System.Drawing.Size(814, 330);
             this.GridEmployeeServicesP.TabIndex = 0;
@@ -2429,14 +2474,14 @@
             // PServiceDate
             // 
             this.PServiceDate.FillWeight = 110F;
-            this.PServiceDate.HeaderText = "Dato for ydelse";
+            this.PServiceDate.HeaderText = "Dato";
             this.PServiceDate.Name = "PServiceDate";
             this.PServiceDate.ReadOnly = true;
             this.PServiceDate.Width = 110;
             // 
             // PServiceHours
             // 
-            this.PServiceHours.HeaderText = "Timeforbrug";
+            this.PServiceHours.HeaderText = "Timer brugt";
             this.PServiceHours.Name = "PServiceHours";
             this.PServiceHours.ReadOnly = true;
             // 
@@ -2455,6 +2500,18 @@
             this.PServiceComment.Name = "PServiceComment";
             this.PServiceComment.ReadOnly = true;
             this.PServiceComment.Width = 400;
+            // 
+            // btnFindExistingClient
+            // 
+            this.btnFindExistingClient.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnFindExistingClient.Location = new System.Drawing.Point(163, 441);
+            this.btnFindExistingClient.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFindExistingClient.Name = "btnFindExistingClient";
+            this.btnFindExistingClient.Size = new System.Drawing.Size(90, 45);
+            this.btnFindExistingClient.TabIndex = 353;
+            this.btnFindExistingClient.Text = "Søg efter klient";
+            this.btnFindExistingClient.UseVisualStyleBackColor = true;
+            this.btnFindExistingClient.Click += new System.EventHandler(this.btnFindExistingClient_Click);
             // 
             // MainForm
             // 
@@ -2517,10 +2574,10 @@
         private System.Windows.Forms.Button btnMakeNewSubj;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button UpdateClientBtn;
+        private System.Windows.Forms.Button btnUpdateClient;
         private System.Windows.Forms.ComboBox CrCaseServiceCom;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Button NewCaseButt;
+        private System.Windows.Forms.Button btnNewCase;
         private System.Windows.Forms.DateTimePicker CrCasetimeP;
         private System.Windows.Forms.ComboBox CrCaseAdvokat;
         private System.Windows.Forms.Label label20;
@@ -2582,11 +2639,6 @@
         private System.Windows.Forms.Button btnDelSubjFromEmp;
         private System.Windows.Forms.TabPage tabShowAllProServ;
         private System.Windows.Forms.DataGridView GridEmployeeServicesP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CaseProvidedServiceId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceHours;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceKm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceComment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnShowPrServices;
         private System.Windows.Forms.DateTimePicker dateTimeTo;
@@ -2694,6 +2746,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Position;
         private System.Windows.Forms.DataGridViewTextBoxColumn Money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaseProvidedServiceId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceHours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceKm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PServiceComment;
+        private System.Windows.Forms.TextBox txtShowNewClientIdHere;
+        private System.Windows.Forms.Button btnCancelCreateNewCase;
+        private System.Windows.Forms.Button btnFindExistingClient;
     }
 }
 
