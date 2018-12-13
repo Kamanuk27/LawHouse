@@ -37,11 +37,20 @@ namespace LawHouseTabForm
         }
 
         #region Show All in Form
-        
+
         #region FillComboTxt
 
-        public void FillComboBoxes()
+        private void FillComboBoxes()
         {
+            FillAdvokatEmployeeComBox();
+            FillCrCaseServiceCom();
+            FillEmployeeComBox();
+            FillLServInsertCom();
+        }
+        private void FillAdvokatEmployeeComBox()
+        {
+            RespEmpCombo.Items.Clear();
+            CrCaseAdvokat.Items.Clear();
             foreach (var l1 in _employeeHandler.GetEmployees())
             {
                 if (l1.Position == "Advokat")
@@ -50,25 +59,34 @@ namespace LawHouseTabForm
                     CrCaseAdvokat.Items.Add($"{l1.Id} {l1.FirstName} {l1.LastName}");
                 }
             }
-
-            foreach (var s1 in _subjectHandler.GetSubjects())
-            {
-                CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
-            }
-
+        }
+        private void FillEmployeeComBox()
+        {
+            ServiceEmploeeCombox.Items.Clear();
+            cmbBoxFindEmplID.Items.Clear();
             foreach (var m1 in _employeeHandler.GetEmployees())
             {
                 ServiceEmploeeCombox.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
                 cmbBoxFindEmplID.Items.Add($"{m1.Id} {m1.FirstName} {m1.LastName}");
             }
-
-
+        }
+        private void FillCrCaseServiceCom()
+        {
+            CrCaseServiceCom.Items.Clear();
+            foreach (var s1 in _subjectHandler.GetSubjects())
+            {
+                CrCaseServiceCom.Items.Add($"{s1.Id} {s1.Name}");
+            }
+        }
+       
+        public void FillLServInsertCom()
+        {
+            LServInsertCom.Items.Clear();
             foreach (var s1 in _subjectHandler.GetSubjects())
             {
                 LServInsertCom.Items.Add($"{s1.Id} {s1.Name}");
             }
         }
-
         private void showSpecializationInListbox(int EmployeeID)
         {
             foreach (var subject in _subjectHandler.GetEmployeeSubjectsById(EmployeeID))
@@ -76,6 +94,99 @@ namespace LawHouseTabForm
                 lstBoxShowEmpSpecialization.Items.Add($"{subject.Id} {subject.Name}").ToString();
             }
         }
+        #endregion
+
+        #region TxtBoks Check
+        private void NegPricetxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+                e.Handled = true;
+        }
+
+        private void TotalPricetxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+                e.Handled = true;
+        }
+
+        private void txtHoursService_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void txtServiceKm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void txtAddViewSubjectHoursEst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void TxtAddViewSubjectTimeEst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void txtAddViewSubjectFixPrc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+                e.Handled = true;
+        }
+
+        private void NECprTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void NEPostTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void NETlfTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void NEmplMoney_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void NewClientCprNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void NewClientPost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void NewClientTelef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
+        }
+
+        private void CrCasePrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char)Keys.Oemcomma)
+                e.Handled = true;
+        }
+
 
         #endregion
 
@@ -94,6 +205,11 @@ namespace LawHouseTabForm
         }
 
         private void CrCaseAdvokat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
+        private void txtShowNewClientIdHere_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
             return;
@@ -570,6 +686,8 @@ namespace LawHouseTabForm
                 ClearTxt();
                 EmplGridView.Rows.Clear();
                 EmplGridStart();
+                FillEmployeeComBox();
+                FillAdvokatEmployeeComBox();
             }
             catch (Exception exception)
             {
@@ -610,9 +728,10 @@ namespace LawHouseTabForm
                 ClearTxt();
                 EmplGridView.Rows.Clear();
                 EmplGridStart();
-
                 showUpdtEmployeeBoxes();
                 btnEditEmpCancel_Click(sender, e);
+                FillEmployeeComBox();
+                FillAdvokatEmployeeComBox();
             }
             //exception
             catch (Exception exception)
@@ -639,7 +758,6 @@ namespace LawHouseTabForm
 
         private void DeleteEmpl_Click(object sender, EventArgs e)
         {
-            //int id = Convert.ToInt32(EmlGridView.SelectedRows[0].Cells[0].Value);
             try
             {
                 DialogResult dialogResult =
@@ -652,6 +770,8 @@ namespace LawHouseTabForm
                     EmplGridView.Rows.Clear();
                     EmplGridStart();
                     btnEditEmpCancel_Click(sender, e);
+                    FillEmployeeComBox();
+                    FillAdvokatEmployeeComBox();
                 }
                 else
                 {
@@ -886,6 +1006,7 @@ namespace LawHouseTabForm
                 int respEmplId = Convert.ToInt32(getAdvoketId[0]);
                 decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
                 _caseHandler.NewCase(caseName, this.ClientId, serviceId, startTime, respEmplId, negoPrice);
+                ActivateGetCasesGrid();
             }
             catch (Exception exception)
             {
@@ -979,6 +1100,9 @@ namespace LawHouseTabForm
                 }
                 decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
                 _subjectHandler.NewSubject(name, hours, time, price);
+                GetServices();
+                FillLServInsertCom();
+                FillCrCaseServiceCom();
             }
             catch (Exception exception)
             {
@@ -998,6 +1122,9 @@ namespace LawHouseTabForm
                 _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
                 ServiceGridView.Rows.Clear();
                 GetServices();
+                FillLServInsertCom();
+                FillCrCaseServiceCom();
+
             }
             catch (Exception exception)
             {
@@ -1011,6 +1138,9 @@ namespace LawHouseTabForm
             try
             {
                 _subjectHandler.DeleteSubject(SubjectId);
+                GetServices();
+                FillLServInsertCom();
+                FillCrCaseServiceCom();
             }
             catch (Exception exception)
             {
@@ -1057,16 +1187,7 @@ namespace LawHouseTabForm
             lblAllCLosedCases.Visible = false;
         }
 
-        ///// <summary>
-        ///// Tjekker tekstbokse for indtastningsfejl
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void myTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
-        //        e.Handled = true;
-        //}
+       
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1130,5 +1251,7 @@ namespace LawHouseTabForm
         {
             //Slet felter
         }
+
+       
     }
 }
