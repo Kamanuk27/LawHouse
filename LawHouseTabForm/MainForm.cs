@@ -807,6 +807,7 @@ namespace LawHouseTabForm
             {
                 //exception
                 MessageBox.Show("");
+                btnNewCase.Visible = false;
 
             }
 
@@ -824,10 +825,9 @@ namespace LawHouseTabForm
                 string eMail = NewClientMail.Text;
                 string tlf = NewClientTelef.Text;
 
-                //HUSK SØGEFUNKTION DER SENDER CLIENTID TIL THIS.ClientId 
                 _clientHandler.UpdateClient(this.ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
                 txtShowNewClientIdHere.Text = ClientId.ToString();
-                btnNewCase.Visible = true;
+                btnNewCase.Visible = false;
             }
             catch (Exception exception)
             {
@@ -835,8 +835,6 @@ namespace LawHouseTabForm
                 MessageBox.Show("");
             }
 
-            // her i Update mangler vi int id. Jeg sætter bare 1-tal i parenteser for at fjerne fejl.
-            // skal lave en metode der henter id via tlf nummer.. Andrey kigger på det. 
             //TRY CATCH FOR SIKKERHEDS SKYLD
         }
 
@@ -845,11 +843,14 @@ namespace LawHouseTabForm
             string phoneNbr = NewClientTelef.Text;
             var client = _clientHandler.GetClient(phoneNbr);
 
-            if (client.TlfNo == string.Empty)
+            if (client.Id == 0)
             {
                 MessageBox.Show("Klienten eksisterer ikke i vores database - opret ny klient");
-
-
+                txtShowNewClientIdHere.Text = string.Empty;
+                NewClientPost.Text = string.Empty;
+                //btnUpdateClient.Visible = false;
+                btnNewCase.Visible = false;
+                NewClientTelef.Text = string.Empty;
             }
             else
             {
@@ -901,11 +902,13 @@ namespace LawHouseTabForm
                     CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 string serviceId = getServoceId[0];
 
+                string startDate = CrCasetimeP.Value.ToLongDateString();
+
                 if (s.Id.ToString() == serviceId)
                 {
                     CrCasePrice.Text = s.Price.ToString();
                     CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = TimeSpan.FromDays((s.TimeEstimate)).ToString();
+                    CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
                 }
             }
         }
@@ -1038,6 +1041,8 @@ namespace LawHouseTabForm
             ActivateGetCasesGrid(false);
             btnShowClosedCases.Visible = false;
             btnReturnToShowOpenCases.Visible = true;
+            lblAllActiveCases.Visible = false;
+            lblAllCLosedCases.Visible = true;
             
         }
 
@@ -1048,6 +1053,8 @@ namespace LawHouseTabForm
             ActivateGetCasesGrid(true);
             btnShowClosedCases.Visible = true;
             btnReturnToShowOpenCases.Visible = false;
+            lblAllActiveCases.Visible = true;
+            lblAllCLosedCases.Visible = false;
         }
 
         ///// <summary>
@@ -1083,6 +1090,11 @@ namespace LawHouseTabForm
                     {
                         (ctrl as DateTimePicker).Value = DateTime.Now;
                     }
+
+                    pnlUpdateEditServices.Visible = false;
+                    ServiceDataGrid.Rows.Clear();
+                    ClearAddUpdateServiceBox();
+                    pnlActivateServiceBoxes.Visible = false;
                 }
                 else
                 {
@@ -1114,5 +1126,9 @@ namespace LawHouseTabForm
             }
         }
 
+        private void btnCancelCreateNewCase_Click(object sender, EventArgs e)
+        {
+            //Slet felter
+        }
     }
 }
