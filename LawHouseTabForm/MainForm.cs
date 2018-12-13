@@ -982,7 +982,6 @@ namespace LawHouseTabForm
                 //exception
                 MessageBox.Show("");
             }
-
         }
 
         private void btnUpdateSubj_Click(object sender, EventArgs e)
@@ -1002,21 +1001,19 @@ namespace LawHouseTabForm
                 //exception
                 MessageBox.Show("");
             }
-
         }
 
         private void btnDeleteSubj_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-             _subjectHandler.DeleteSubject(SubjectId);
-            //}
-            //catch (Exception exception)
-            //{
-            //    //exception
-            //    MessageBox.Show("");
-            //}
-            
+            try
+            {
+                _subjectHandler.DeleteSubject(SubjectId);
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
         }
 
         private void btnCnclSubjectEdit_Click(object sender, EventArgs e)
