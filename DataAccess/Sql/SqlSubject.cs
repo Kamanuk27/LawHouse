@@ -11,12 +11,21 @@ namespace DataAccess
 
         public int DeleteSubject(int id)
         {
+            DeleteSubjectFromEmployee(id);
             _command.CommandText = $"DELETE FROM Subject WHERE ID = @id";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", id));
             return ExecuteNonQuery();
         }
 
+        private void DeleteSubjectFromEmployee(int id)
+        {
+            _command.CommandText = @"DELETE FROM [dbo].[Specialization] WHERE Subject_ID= @id";
+            _command.Parameters.Clear();
+            _command.Parameters.Add(new SqlParameter("@id", id));
+            ExecuteNonQuery();
+
+        }
         public List<SubjectM> GetEmployeeSubjectsById(int id)
         {
             List<SubjectM> fields = new List<SubjectM>();
@@ -75,7 +84,7 @@ namespace DataAccess
 
         public int NewSubject(SubjectM subject)
         {
-            string sqlString = "INSERT INTO LegalServices (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
+            string sqlString = "INSERT INTO Subject (Name, HoursEstimate, Price, TimeEstimate) VALUES " +
                     " (@Name, @HoursEstimate, @Price, @TimeEstimate)";
 
             _command.CommandText = sqlString;
