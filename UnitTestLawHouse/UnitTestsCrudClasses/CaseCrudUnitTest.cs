@@ -57,7 +57,7 @@ namespace UnitTestLawHouse
         {
             CaseCrud _sut = new CaseCrud();
             int expected = 1;
-            int response = _sut.NewCase("testCase", 2, 3, DateTime.Now, 4, 3500);
+            int response = _sut.NewCase("testCase", DateTime.Now, 3500, 1, 1, 1);
             Assert.AreEqual(response, expected);
         }
 

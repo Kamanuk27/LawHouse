@@ -1257,8 +1257,8 @@ namespace LawHouseTabForm
 
         private void btnCreateNewCase_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 string caseName = CrCaseName.Text;
                 string[] getServiceId =
                     CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -1266,17 +1266,18 @@ namespace LawHouseTabForm
                 DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
                 string[] getAdvoketId =
                     CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                int respEmplId = Convert.ToInt32(getAdvoketId[0]);
-                decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-                _caseHandler.NewCase(caseName, this.ClientId, serviceId, startTime, respEmplId, negoPrice);
+                int empId = Convert.ToInt32(getAdvoketId[0]);
+            int clientId = Convert.ToInt32(txtShowNewClientIdHere.Text);
+            decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
+                _caseHandler.NewCase(caseName, startTime, negoPrice, serviceId, empId, clientId);
                 ClearNewCaseTxt();
                 ActivateGetCasesGrid();
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("");
-            }
+            //}
+            //catch (Exception exception)
+            //{
+            //    //exception
+            //    MessageBox.Show("");
+            //}
 
         }
 

@@ -28,15 +28,15 @@ namespace BusinessLogic
         }
 
 
-        internal int NewCase(string caseName, int clientId, int serviceId, DateTime startTime, int empId, decimal negoPrice)
+        internal int NewCase(string caseName, DateTime startTime, decimal negoPrice, int serviceId, int empId, int clientId)
         {
             CaseM c = new CaseM();
             c.Name = caseName;
-            c.ClientId = clientId;
-            c.SubjectId = serviceId;
             c.StartDate = startTime;
-            c.RespEmpId = empId;
             c.NegPrice = negoPrice;
+            c.SubjectId = serviceId;
+            c.RespEmpId = empId;
+             c.ClientId = clientId;
             return _dbCase.NewCase(c);
         }
 

@@ -12,7 +12,7 @@ namespace DataAccess
         {
             _command.CommandText = "INSERT INTO  [dbo].[Case] (CaseName, StartDate, NegotiatedPrice, Subject_ID, " +
                                    "RespEmp_ID, Client_ID) VALUES " +
-                                   "(@CaseName, @StartDate, @NegotiatedPrice, @Subject_ID, @Client_ID, @RespEmp_ID)";
+                                   "(@CaseName, @StartDate, @NegotiatedPrice, @Subject_ID, @RespEmp_ID, @Client_ID)";
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@CaseName", c1.Name));
             _command.Parameters.Add(new SqlParameter("@StartDate", c1.StartDate));

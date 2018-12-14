@@ -25,9 +25,9 @@ namespace BusinessLogic
                 return _instance;
             }
         }
-        public int NewCase(string name, int clientId, int serviceId, DateTime startTime, int empId, decimal negPrice)
+        public int NewCase(string caseName, DateTime startTime, decimal negoPrice, int serviceId, int empId, int clientId)
         {
-            return _caseCrud.NewCase(name, clientId, serviceId, startTime, empId, negPrice);
+            return _caseCrud.NewCase(caseName, startTime, negoPrice, serviceId, empId, clientId);
         }
         public List<CaseM> GetCases(bool active)
         {

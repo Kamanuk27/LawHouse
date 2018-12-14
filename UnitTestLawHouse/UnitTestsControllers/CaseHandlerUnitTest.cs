@@ -22,7 +22,7 @@ namespace UnitTestLawHouse.UnitTestsControllers
         {
             CaseHandler _sut = CaseHandler.Instance;
             int expected = 1;
-            int response = _sut.NewCase("testCase", 2, 3, DateTime.Now, 4, 3500);
+            int response = _sut.NewCase("testCase", DateTime.Now, 0, 1, 1, 1);
             Assert.AreEqual(response, expected);
         }
         [TestMethod]
