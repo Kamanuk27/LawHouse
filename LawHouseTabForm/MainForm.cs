@@ -269,6 +269,7 @@ namespace LawHouseTabForm
             NewClientPost.Clear();
             NewClientMail.Clear();
             NewClientTelef.Clear();
+            txtClientID.Clear();
         }
 
         private void ClearNewCaseTxt()
@@ -944,42 +945,7 @@ namespace LawHouseTabForm
 
         #region Tilføj klient og sag
 
-        private void btnFindExistingClient_Click(object sender, EventArgs e)
-        {
-            string phoneNbr = NewClientTelef.Text;
-            var client = _clientHandler.GetClient(phoneNbr);
-
-            if (client.Id == 0)
-            {
-                MessageBox.Show("Klienten eksisterer ikke i vores database - opret ny klient");
-                txtShowNewClientIdHere.Text = string.Empty;
-                NewClientPost.Text = string.Empty;
-                //btnUpdateClient.Visible = false;
-                btnNewCase.Visible = false;
-                NewClientTelef.Text = string.Empty;
-            }
-            else
-            {
-                NewClientCprNo.Text = client.CprNo;
-                NewClientfName.Text = client.FirstName;
-                NewClientLName.Text = client.LastName;
-                NewClientAdress.Text = client.Address;
-                NewClientPost.Text = client.PostNo.ToString();
-                NewClientMail.Text = client.Email;
-                NewClientTelef.Text = client.TlfNo;
-                this.ClientId = client.Id;
-
-                //txtShowNewClientIdHere.Text = ClientId.ToString();
-                //btnNewCase.Visible = true;
-
-
-                btnFindExistingClient.Visible = false;
-                btnUpdateClient.Visible = true;
-            }
-        }
-
-
-      
+             
 
         #endregion
 
@@ -1287,6 +1253,7 @@ namespace LawHouseTabForm
 
         private void btnActivateUpdateClient_Click(object sender, EventArgs e)
         {
+            
             pnlCreateUpdateClient.Visible = true;
             btnUpdateClient.Visible = true;
             NewClientBtn.Visible = false;
@@ -1295,10 +1262,38 @@ namespace LawHouseTabForm
             clientsDataGrid.Visible = false;
             pnlClientsButtons.Visible = false;
             lblSeeAllActiveClients.Visible = false;
-            lblSeeAllDeactivatedClients.Visible = false; 
+            lblSeeAllDeactivatedClients.Visible = false;
+
+            if (String.IsNullOrEmpty(clientsDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
+            {
+                MessageBox.Show("Vælg en klient, der skal opdateres");
+
+            }
+            else
+            {
+                this.ClientId = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[0].Value);
+                int cpr = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[1].Value);
+                string fName = clientsDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+                string lName = clientsDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+                string address = clientsDataGrid.SelectedRows[0].Cells[4].Value.ToString();
+                int postNO = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[5].Value);
+                string email = clientsDataGrid.SelectedRows[0].Cells[6].Value.ToString();
+                string tlfNO = clientsDataGrid.SelectedRows[0].Cells[7].Value.ToString();
+
+                txtClientID.Text = ClientId.ToString();
+                NewClientCprNo.Text = cpr.ToString();
+                NewClientfName.Text = fName;
+                NewClientLName.Text = lName;
+                NewClientAdress.Text = address;
+                NewClientPost.Text = postNO.ToString();
+                NewClientMail.Text = email;
+                NewClientTelef.Text = tlfNO;
+
+            }
         }
 
-        private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
+
+private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
         {
             pnlCreateUpdateClient.Visible = true;
             btnUpdateClient.Visible = false;
@@ -1358,8 +1353,6 @@ namespace LawHouseTabForm
                 string tlf = NewClientTelef.Text;
 
                 _clientHandler.UpdateClient(this.ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
-                //txtShowNewClientIdHere.Text = ClientId.ToString();
-                //btnNewCase.Visible = false;
                 clientsDataGrid.Rows.Clear();
                 ActivateGetClientsGrid();
             }
@@ -1386,8 +1379,6 @@ namespace LawHouseTabForm
                 ClearNewClientTXT();
                 clientsDataGrid.Rows.Clear();
                 ActivateGetClientsGrid();
-                //txtShowNewClientIdHere.Text = ClientId.ToString();
-                //btnNewCase.Visible = true;
             }
             catch (Exception exception)
             {
@@ -1414,6 +1405,66 @@ namespace LawHouseTabForm
                     CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
                     CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
                 }
+            }
+        }
+
+        private void btnDeleteClientInfo_Click(object sender, EventArgs e)
+        {
+         
+            try
+            {
+                int ClientId = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[0].Value);
+                DialogResult dialogResult =
+                    MessageBox.Show("Er du sikker på at du vil deaktivere klient id " + ClientId + "? ", "Deaktiverer klienten", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int i = _clientHandler.CloseClient(ClientId);
+                    MessageBox.Show("Klienten kan nu findes inde under 'ikke aktive klienter'");
+                    clientsDataGrid.Rows.Clear();
+                    ActivateGetClientsGrid(true);
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vælg klient først");
+            }
+        }
+
+        private void btnFindExistingClient_Click_1(object sender, EventArgs e)
+        {
+            string phoneNbr = NewClientTelef.Text;
+            var client = _clientHandler.GetClient(phoneNbr);
+
+            if (client.Id == 0)
+            {
+                MessageBox.Show("Klienten eksisterer ikke i vores database - opret ny klient");
+                txtShowNewClientIdHere.Text = string.Empty;
+                NewClientPost.Text = string.Empty;
+                //btnUpdateClient.Visible = false;
+                btnNewCase.Visible = false;
+                NewClientTelef.Text = string.Empty;
+            }
+            else
+            {
+                NewClientCprNo.Text = client.CprNo;
+                NewClientfName.Text = client.FirstName;
+                NewClientLName.Text = client.LastName;
+                NewClientAdress.Text = client.Address;
+                NewClientPost.Text = client.PostNo.ToString();
+                NewClientMail.Text = client.Email;
+                NewClientTelef.Text = client.TlfNo;
+                this.ClientId = client.Id;
+
+                //txtShowNewClientIdHere.Text = ClientId.ToString();
+                //btnNewCase.Visible = true;
+
+
+                btnFindExistingClient.Visible = false;
+                btnUpdateClient.Visible = true;
             }
         }
     }
