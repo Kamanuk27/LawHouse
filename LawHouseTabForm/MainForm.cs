@@ -979,24 +979,7 @@ namespace LawHouseTabForm
         }
 
 
-        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (var s in _subjectHandler.GetSubjects())
-            {
-                string[] getServoceId =
-                    CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                string serviceId = getServoceId[0];
-
-                string startDate = CrCasetimeP.Value.ToLongDateString();
-
-                if (s.Id.ToString() == serviceId)
-                {
-                    CrCasePrice.Text = s.Price.ToString();
-                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
-                }
-            }
-        }
+      
 
         #endregion
 
@@ -1257,29 +1240,34 @@ namespace LawHouseTabForm
 
         private void btnCreateNewCase_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 string caseName = CrCaseName.Text;
                 string[] getServiceId =
-                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int serviceId = Convert.ToInt32(getServiceId[0]);
                 DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
                 string[] getAdvoketId =
-                    CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int empId = Convert.ToInt32(getAdvoketId[0]);
-            int clientId = Convert.ToInt32(txtShowNewClientIdHere.Text);
-            decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
+                int clientId = Convert.ToInt32(txtShowNewClientIdHere.Text);
+                if (CrCasePrice.Text == String.Empty)
+                {
+                    CrCasePrice.Text = 0.ToString();
+                }
+                decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
                 _caseHandler.NewCase(caseName, startTime, negoPrice, serviceId, empId, clientId);
                 ClearNewCaseTxt();
                 ActivateGetCasesGrid();
-            //}
-            //catch (Exception exception)
-            //{
-            //    //exception
-            //    MessageBox.Show("");
-            //}
-
+                btnCancelCreateNewCase_Click(sender, e);
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
         }
+    
 
         private void btnCancelCreateNewCase_Click(object sender, EventArgs e)
         {
@@ -1407,6 +1395,25 @@ namespace LawHouseTabForm
                 MessageBox.Show("");
                 btnNewCase.Visible = false;
 
+            }
+        }
+
+        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in _subjectHandler.GetSubjects())
+            {
+                string[] getServoceId =
+                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string serviceId = getServoceId[0];
+
+                string startDate = CrCasetimeP.Value.ToLongDateString();
+
+                if (s.Id.ToString() == serviceId)
+                {
+                    CrCasePrice.Text = s.Price.ToString();
+                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
+                    CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
+                }
             }
         }
     }
