@@ -271,6 +271,17 @@ namespace LawHouseTabForm
             NewClientTelef.Clear();
         }
 
+        private void ClearNewCaseTxt()
+        {
+            txtShowNewClientIdHere.Clear();
+            CrCaseName.Clear();
+            CrCaseServiceCom.Text = "";
+            CrCaseAdvokat.Text = "";
+            CrCasePrice.Clear();
+            CrCaseTimeUsed.Clear();
+            CrCaseEndDato.Clear();
+        }
+
 
         #endregion
 
@@ -278,6 +289,7 @@ namespace LawHouseTabForm
 
         private void ActivateGetCasesGrid(bool IsActive = true)
         {
+            CaseDataGrid.Rows.Clear();
             foreach (var c1 in _caseHandler.GetCases(IsActive))
             {
                 int n = CaseDataGrid.Rows.Add();
@@ -511,7 +523,6 @@ namespace LawHouseTabForm
                     int i = _caseHandler.DeleteCase(id);
                     MessageBox.Show(i.ToString());
                     ClearTxtBoxs();
-                    CaseDataGrid.Rows.Clear();
                     ActivateGetCasesGrid();
                 }
                 else
@@ -590,7 +601,6 @@ namespace LawHouseTabForm
                     int i = _caseHandler.CloseCase(id, totalPrice, endDate);
                     MessageBox.Show(i.ToString());
                     ClearTxtBoxs();
-                    CaseDataGrid.Rows.Clear();
                     ActivateGetCasesGrid();
                 }
                 else
@@ -934,60 +944,6 @@ namespace LawHouseTabForm
 
         #region Tilføj klient og sag
 
-        private void NewClientBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string cpr = NewClientCprNo.Text;
-                string fName = NewClientfName.Text;
-                string lName = NewClientLName.Text;
-                string address = NewClientAdress.Text;
-                int postNo = Convert.ToInt32(NewClientPost.Text);
-                string eMail = NewClientMail.Text;
-                string tlf = NewClientTelef.Text;
-                this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
-                MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
-                ClearNewClientTXT();
-
-                txtShowNewClientIdHere.Text = ClientId.ToString();
-                btnNewCase.Visible = true;
-
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("");
-                btnNewCase.Visible = false;
-
-            }
-
-        }
-
-        private void btnUpdateClient_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string cpr = NewClientCprNo.Text;
-                string fName = NewClientfName.Text;
-                string lName = NewClientLName.Text;
-                string address = NewClientAdress.Text;
-                int postNo = Convert.ToInt32(NewClientPost.Text);
-                string eMail = NewClientMail.Text;
-                string tlf = NewClientTelef.Text;
-
-                _clientHandler.UpdateClient(this.ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
-                txtShowNewClientIdHere.Text = ClientId.ToString();
-                btnNewCase.Visible = false;
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("");
-            }
-
-            //TRY CATCH FOR SIKKERHEDS SKYLD
-        }
-
         private void btnFindExistingClient_Click(object sender, EventArgs e)
         {
             string phoneNbr = NewClientTelef.Text;
@@ -1301,8 +1257,8 @@ namespace LawHouseTabForm
 
         private void btnCreateNewCase_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 string caseName = CrCaseName.Text;
                 string[] getServiceId =
                     CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -1311,16 +1267,16 @@ namespace LawHouseTabForm
                 string[] getAdvoketId =
                     CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 int respEmplId = Convert.ToInt32(getAdvoketId[0]);
-            int clientId = Convert.ToInt32(txtShowNewClientIdHere.Text);
                 decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-                _caseHandler.NewCase(caseName, clientId, serviceId, startTime, respEmplId, negoPrice);
+                _caseHandler.NewCase(caseName, this.ClientId, serviceId, startTime, respEmplId, negoPrice);
+                ClearNewCaseTxt();
                 ActivateGetCasesGrid();
-            //}
-            //catch (Exception exception)
-            //{
-            //    exception
-            //    MessageBox.Show("");
-            //}
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
 
         }
 
@@ -1400,7 +1356,57 @@ namespace LawHouseTabForm
             
         }
 
+        private void btnUpdateClient_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cpr = NewClientCprNo.Text;
+                string fName = NewClientfName.Text;
+                string lName = NewClientLName.Text;
+                string address = NewClientAdress.Text;
+                int postNo = Convert.ToInt32(NewClientPost.Text);
+                string eMail = NewClientMail.Text;
+                string tlf = NewClientTelef.Text;
 
-        
+                _clientHandler.UpdateClient(this.ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
+                //txtShowNewClientIdHere.Text = ClientId.ToString();
+                //btnNewCase.Visible = false;
+                clientsDataGrid.Rows.Clear();
+                ActivateGetClientsGrid();
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
+        }
+
+        private void NewClientBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cpr = NewClientCprNo.Text;
+                string fName = NewClientfName.Text;
+                string lName = NewClientLName.Text;
+                string address = NewClientAdress.Text;
+                int postNo = Convert.ToInt32(NewClientPost.Text);
+                string eMail = NewClientMail.Text;
+                string tlf = NewClientTelef.Text;
+                this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
+                MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
+                ClearNewClientTXT();
+                clientsDataGrid.Rows.Clear();
+                ActivateGetClientsGrid();
+                //txtShowNewClientIdHere.Text = ClientId.ToString();
+                //btnNewCase.Visible = true;
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+                btnNewCase.Visible = false;
+
+            }
+        }
     }
 }

@@ -38,29 +38,16 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
-            this.pnlAllOpenCases = new System.Windows.Forms.Panel();
             this.pnlCreateNewCase = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
             this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
             this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.btnNewCase = new System.Windows.Forms.Button();
             this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
             this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -68,6 +55,39 @@
             this.CrCasePrice = new System.Windows.Forms.TextBox();
             this.CrCaseEndDato = new System.Windows.Forms.TextBox();
             this.CrCaseName = new System.Windows.Forms.TextBox();
+            this.btnNewCase = new System.Windows.Forms.Button();
+            this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
+            this.btnActivateAddServiceBoxes = new System.Windows.Forms.Button();
+            this.lblCaseName = new System.Windows.Forms.Label();
+            this.lblHeaderServices = new System.Windows.Forms.Label();
+            this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
+            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnDeleteExsService = new System.Windows.Forms.Button();
+            this.BtnAddNewService = new System.Windows.Forms.Button();
+            this.BtnUpdateExsService = new System.Windows.Forms.Button();
+            this.pnlActivateServiceBoxes = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblHoursUsed = new System.Windows.Forms.Label();
+            this.lblKm = new System.Windows.Forms.Label();
+            this.txtServiceComment = new System.Windows.Forms.RichTextBox();
+            this.txtServiceKm = new System.Windows.Forms.TextBox();
+            this.txtHoursService = new System.Windows.Forms.TextBox();
+            this.ServiceDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ServiceEmploeeCombox = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
+            this.pnlAllOpenCases = new System.Windows.Forms.Panel();
             this.btnActivateCreateNewCase = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -102,37 +122,6 @@
             this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAllActiveCases = new System.Windows.Forms.Label();
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
-            this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
-            this.btnActivateAddServiceBoxes = new System.Windows.Forms.Button();
-            this.lblCaseName = new System.Windows.Forms.Label();
-            this.lblHeaderServices = new System.Windows.Forms.Label();
-            this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
-            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnDeleteExsService = new System.Windows.Forms.Button();
-            this.BtnAddNewService = new System.Windows.Forms.Button();
-            this.BtnUpdateExsService = new System.Windows.Forms.Button();
-            this.pnlActivateServiceBoxes = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblHoursUsed = new System.Windows.Forms.Label();
-            this.lblKm = new System.Windows.Forms.Label();
-            this.txtServiceComment = new System.Windows.Forms.RichTextBox();
-            this.txtServiceKm = new System.Windows.Forms.TextBox();
-            this.txtHoursService = new System.Windows.Forms.TextBox();
-            this.ServiceDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ServiceEmploeeCombox = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
             this.tabEmployees = new System.Windows.Forms.TabPage();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lLblHelpEmployeesTab = new System.Windows.Forms.LinkLabel();
@@ -216,6 +205,14 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.clientsDataGrid = new System.Windows.Forms.DataGridView();
+            this.Client_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_CprNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lLblHelpAddClientCaseTab = new System.Windows.Forms.LinkLabel();
             this.tabShowAllProServ = new System.Windows.Forms.TabPage();
@@ -241,6 +238,7 @@
             this.PServiceKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProvServices = new System.Windows.Forms.TabPage();
+            this.lblAddSubject = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lLblHelpSubjectsTab = new System.Windows.Forms.LinkLabel();
             this.btnCnclSubjectEdit = new System.Windows.Forms.Button();
@@ -264,16 +262,6 @@
             this.btnUpdateSubj = new System.Windows.Forms.Button();
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.lblAddSubject = new System.Windows.Forms.Label();
-            this.Client_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_CprNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -286,14 +274,14 @@
             label29 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabCases.SuspendLayout();
-            this.pnlAllOpenCases.SuspendLayout();
             this.pnlCreateNewCase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
             this.pnlUpdateEditServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).BeginInit();
             this.pnlActivateServiceBoxes.SuspendLayout();
+            this.pnlAllOpenCases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
             this.tabEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlAddSubjectToEmp.SuspendLayout();
@@ -445,42 +433,6 @@
             this.tabCases.Text = "Sager";
             this.tabCases.UseVisualStyleBackColor = true;
             // 
-            // pnlAllOpenCases
-            // 
-            this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlAllOpenCases.Controls.Add(this.btnActivateCreateNewCase);
-            this.pnlAllOpenCases.Controls.Add(this.label10);
-            this.pnlAllOpenCases.Controls.Add(this.label1);
-            this.pnlAllOpenCases.Controls.Add(this.btnGetCasesbyClient);
-            this.pnlAllOpenCases.Controls.Add(this.tlfTxtForCases);
-            this.pnlAllOpenCases.Controls.Add(this.lblAllCLosedCases);
-            this.pnlAllOpenCases.Controls.Add(this.label6);
-            this.pnlAllOpenCases.Controls.Add(this.UpdateButt);
-            this.pnlAllOpenCases.Controls.Add(this.CalculatePrice);
-            this.pnlAllOpenCases.Controls.Add(this.EndCaseTimePictxt);
-            this.pnlAllOpenCases.Controls.Add(this.RespEmpCombo);
-            this.pnlAllOpenCases.Controls.Add(this.ClosedCaseBut);
-            this.pnlAllOpenCases.Controls.Add(this.label13);
-            this.pnlAllOpenCases.Controls.Add(this.NegPricetxt);
-            this.pnlAllOpenCases.Controls.Add(label11);
-            this.pnlAllOpenCases.Controls.Add(label8);
-            this.pnlAllOpenCases.Controls.Add(label7);
-            this.pnlAllOpenCases.Controls.Add(this.pictureBox4);
-            this.pnlAllOpenCases.Controls.Add(this.btnReturnToShowOpenCases);
-            this.pnlAllOpenCases.Controls.Add(this.btnShowClosedCases);
-            this.pnlAllOpenCases.Controls.Add(this.search_button);
-            this.pnlAllOpenCases.Controls.Add(this.searchBox);
-            this.pnlAllOpenCases.Controls.Add(this.lLblHelpViewAllCasesTab);
-            this.pnlAllOpenCases.Controls.Add(this.DeleteButt);
-            this.pnlAllOpenCases.Controls.Add(this.CaseDataGrid);
-            this.pnlAllOpenCases.Controls.Add(this.lblAllActiveCases);
-            this.pnlAllOpenCases.Controls.Add(this.TotalPricetxt);
-            this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
-            this.pnlAllOpenCases.Name = "pnlAllOpenCases";
-            this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
-            this.pnlAllOpenCases.TabIndex = 282;
-            // 
             // pnlCreateNewCase
             // 
             this.pnlCreateNewCase.Controls.Add(this.linkLabel1);
@@ -489,7 +441,6 @@
             this.pnlCreateNewCase.Controls.Add(this.txtShowNewClientIdHere);
             this.pnlCreateNewCase.Controls.Add(this.CrCaseServiceCom);
             this.pnlCreateNewCase.Controls.Add(this.label35);
-            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
             this.pnlCreateNewCase.Controls.Add(this.CrCasetimeP);
             this.pnlCreateNewCase.Controls.Add(this.CrCaseAdvokat);
             this.pnlCreateNewCase.Controls.Add(this.label20);
@@ -503,11 +454,23 @@
             this.pnlCreateNewCase.Controls.Add(label26);
             this.pnlCreateNewCase.Controls.Add(label28);
             this.pnlCreateNewCase.Controls.Add(label29);
+            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
             this.pnlCreateNewCase.Location = new System.Drawing.Point(0, 2);
             this.pnlCreateNewCase.Name = "pnlCreateNewCase";
             this.pnlCreateNewCase.Size = new System.Drawing.Size(843, 635);
             this.pnlCreateNewCase.TabIndex = 346;
             this.pnlCreateNewCase.Visible = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.linkLabel1.Location = new System.Drawing.Point(31, 568);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(263, 18);
+            this.linkLabel1.TabIndex = 414;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Hjælp (View all create update sag)";
             // 
             // btnCancelCreateNewCase
             // 
@@ -550,18 +513,6 @@
             this.label35.Size = new System.Drawing.Size(121, 18);
             this.label35.TabIndex = 409;
             this.label35.Text = "Opret ny sag";
-            // 
-            // btnNewCase
-            // 
-            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
-            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNewCase.Name = "btnNewCase";
-            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnNewCase.TabIndex = 408;
-            this.btnNewCase.Text = "Tilføj sag";
-            this.btnNewCase.UseVisualStyleBackColor = true;
-            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
             // 
             // CrCasetimeP
             // 
@@ -631,379 +582,17 @@
             this.CrCaseName.Size = new System.Drawing.Size(192, 22);
             this.CrCaseName.TabIndex = 401;
             // 
-            // btnActivateCreateNewCase
-            // 
-            this.btnActivateCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnActivateCreateNewCase.Location = new System.Drawing.Point(138, 414);
-            this.btnActivateCreateNewCase.Name = "btnActivateCreateNewCase";
-            this.btnActivateCreateNewCase.Size = new System.Drawing.Size(114, 45);
-            this.btnActivateCreateNewCase.TabIndex = 345;
-            this.btnActivateCreateNewCase.Text = "Opret ny sag";
-            this.btnActivateCreateNewCase.UseVisualStyleBackColor = true;
-            this.btnActivateCreateNewCase.Click += new System.EventHandler(this.btnActivateCreateNewCase_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(399, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 14);
-            this.label10.TabIndex = 344;
-            this.label10.Text = "Indtast tlf nr.:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 14);
-            this.label1.TabIndex = 343;
-            this.label1.Text = "Find alle sager for klient:";
-            // 
-            // btnGetCasesbyClient
-            // 
-            this.btnGetCasesbyClient.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnGetCasesbyClient.Location = new System.Drawing.Point(651, 118);
-            this.btnGetCasesbyClient.Name = "btnGetCasesbyClient";
-            this.btnGetCasesbyClient.Size = new System.Drawing.Size(71, 24);
-            this.btnGetCasesbyClient.TabIndex = 342;
-            this.btnGetCasesbyClient.Text = "Vis";
-            this.btnGetCasesbyClient.UseVisualStyleBackColor = true;
-            this.btnGetCasesbyClient.Click += new System.EventHandler(this.btnGetCasesbyClient_Click);
-            // 
-            // tlfTxtForCases
-            // 
-            this.tlfTxtForCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.tlfTxtForCases.Location = new System.Drawing.Point(496, 118);
-            this.tlfTxtForCases.Name = "tlfTxtForCases";
-            this.tlfTxtForCases.Size = new System.Drawing.Size(149, 22);
-            this.tlfTxtForCases.TabIndex = 341;
-            // 
-            // lblAllCLosedCases
-            // 
-            this.lblAllCLosedCases.AutoSize = true;
-            this.lblAllCLosedCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAllCLosedCases.Location = new System.Drawing.Point(16, 60);
-            this.lblAllCLosedCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAllCLosedCases.Name = "lblAllCLosedCases";
-            this.lblAllCLosedCases.Size = new System.Drawing.Size(188, 18);
-            this.lblAllCLosedCases.TabIndex = 340;
-            this.lblAllCLosedCases.Text = "Alle afsluttede sager";
-            this.lblAllCLosedCases.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 471);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 18);
-            this.label6.TabIndex = 339;
-            this.label6.Text = "Opdater/Afslut sag";
-            // 
-            // UpdateButt
-            // 
-            this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
-            this.UpdateButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateButt.Location = new System.Drawing.Point(128, 562);
-            this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
-            this.UpdateButt.Name = "UpdateButt";
-            this.UpdateButt.Size = new System.Drawing.Size(114, 45);
-            this.UpdateButt.TabIndex = 285;
-            this.UpdateButt.Text = "Opdater";
-            this.UpdateButt.UseVisualStyleBackColor = false;
-            this.UpdateButt.Click += new System.EventHandler(this.UpdateButt_Click);
-            // 
-            // CalculatePrice
-            // 
-            this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CalculatePrice.Location = new System.Drawing.Point(410, 562);
-            this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.CalculatePrice.Name = "CalculatePrice";
-            this.CalculatePrice.Size = new System.Drawing.Size(99, 45);
-            this.CalculatePrice.TabIndex = 296;
-            this.CalculatePrice.Text = "Beregn pris";
-            this.CalculatePrice.UseVisualStyleBackColor = true;
-            this.CalculatePrice.Click += new System.EventHandler(this.CalculatePrice_Click);
-            // 
-            // EndCaseTimePictxt
-            // 
-            this.EndCaseTimePictxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.EndCaseTimePictxt.Location = new System.Drawing.Point(412, 500);
-            this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
-            this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
-            this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 22);
-            this.EndCaseTimePictxt.TabIndex = 295;
-            // 
-            // RespEmpCombo
-            // 
-            this.RespEmpCombo.Font = new System.Drawing.Font("Verdana", 9F);
-            this.RespEmpCombo.FormattingEnabled = true;
-            this.RespEmpCombo.Location = new System.Drawing.Point(128, 503);
-            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
-            this.RespEmpCombo.Name = "RespEmpCombo";
-            this.RespEmpCombo.Size = new System.Drawing.Size(168, 22);
-            this.RespEmpCombo.TabIndex = 293;
-            this.RespEmpCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RespEmpCombo_KeyPress);
-            // 
-            // ClosedCaseBut
-            // 
-            this.ClosedCaseBut.BackColor = System.Drawing.Color.Transparent;
-            this.ClosedCaseBut.Font = new System.Drawing.Font("Verdana", 9F);
-            this.ClosedCaseBut.Location = new System.Drawing.Point(513, 562);
-            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
-            this.ClosedCaseBut.Name = "ClosedCaseBut";
-            this.ClosedCaseBut.Size = new System.Drawing.Size(66, 45);
-            this.ClosedCaseBut.TabIndex = 292;
-            this.ClosedCaseBut.Text = "Luk sag";
-            this.ClosedCaseBut.UseVisualStyleBackColor = false;
-            this.ClosedCaseBut.Visible = false;
-            this.ClosedCaseBut.Click += new System.EventHandler(this.ClosedCaseBut_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label13.Location = new System.Drawing.Point(335, 506);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 14);
-            this.label13.TabIndex = 291;
-            this.label13.Text = "Slut Dato:";
-            // 
-            // NegPricetxt
-            // 
-            this.NegPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NegPricetxt.Location = new System.Drawing.Point(128, 536);
-            this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
-            this.NegPricetxt.Name = "NegPricetxt";
-            this.NegPricetxt.Size = new System.Drawing.Size(168, 22);
-            this.NegPricetxt.TabIndex = 289;
-            this.NegPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NegPricetxt_KeyPress);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox4.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox4.TabIndex = 338;
-            this.pictureBox4.TabStop = false;
-            // 
-            // btnReturnToShowOpenCases
-            // 
-            this.btnReturnToShowOpenCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnReturnToShowOpenCases.Location = new System.Drawing.Point(19, 414);
-            this.btnReturnToShowOpenCases.Name = "btnReturnToShowOpenCases";
-            this.btnReturnToShowOpenCases.Size = new System.Drawing.Size(114, 45);
-            this.btnReturnToShowOpenCases.TabIndex = 337;
-            this.btnReturnToShowOpenCases.Text = "Vis åbne sager";
-            this.btnReturnToShowOpenCases.UseVisualStyleBackColor = true;
-            this.btnReturnToShowOpenCases.Visible = false;
-            this.btnReturnToShowOpenCases.Click += new System.EventHandler(this.btnReturnToShowOpenCases_Click);
-            // 
-            // btnShowClosedCases
-            // 
-            this.btnShowClosedCases.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnShowClosedCases.Location = new System.Drawing.Point(19, 414);
-            this.btnShowClosedCases.Name = "btnShowClosedCases";
-            this.btnShowClosedCases.Size = new System.Drawing.Size(114, 45);
-            this.btnShowClosedCases.TabIndex = 336;
-            this.btnShowClosedCases.Text = "Vis lukkede sager";
-            this.btnShowClosedCases.UseVisualStyleBackColor = true;
-            this.btnShowClosedCases.Click += new System.EventHandler(this.btnShowClosedCases_Click);
-            // 
-            // search_button
-            // 
-            this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
-            this.search_button.Location = new System.Drawing.Point(1092, 119);
-            this.search_button.Margin = new System.Windows.Forms.Padding(2);
-            this.search_button.Name = "search_button";
-            this.search_button.Size = new System.Drawing.Size(89, 24);
-            this.search_button.TabIndex = 334;
-            this.search_button.Text = "Søg";
-            this.search_button.UseVisualStyleBackColor = true;
-            this.search_button.Click += new System.EventHandler(this.search_button_Click);
-            // 
-            // searchBox
-            // 
-            this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
-            this.searchBox.Location = new System.Drawing.Point(886, 121);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(202, 22);
-            this.searchBox.TabIndex = 335;
-            // 
-            // lLblHelpViewAllCasesTab
-            // 
-            this.lLblHelpViewAllCasesTab.AutoSize = true;
-            this.lLblHelpViewAllCasesTab.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(1076, 572);
-            this.lLblHelpViewAllCasesTab.Name = "lLblHelpViewAllCasesTab";
-            this.lLblHelpViewAllCasesTab.Size = new System.Drawing.Size(171, 18);
-            this.lLblHelpViewAllCasesTab.TabIndex = 331;
-            this.lLblHelpViewAllCasesTab.TabStop = true;
-            this.lLblHelpViewAllCasesTab.Text = "Hjælp (View all cases)";
-            // 
-            // DeleteButt
-            // 
-            this.DeleteButt.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.DeleteButt.Location = new System.Drawing.Point(258, 414);
-            this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
-            this.DeleteButt.Name = "DeleteButt";
-            this.DeleteButt.Size = new System.Drawing.Size(114, 45);
-            this.DeleteButt.TabIndex = 294;
-            this.DeleteButt.Text = "Slet sag";
-            this.DeleteButt.UseVisualStyleBackColor = false;
-            this.DeleteButt.Click += new System.EventHandler(this.DeleteButt_Click);
-            // 
-            // CaseDataGrid
-            // 
-            this.CaseDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CaseDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.CaseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Case_ID,
-            this.CaseName,
-            this.Client,
-            this.StartDate,
-            this.EndDate,
-            this.ServiceName,
-            this.HoursEstimate,
-            this.NegotiatedPrice,
-            this.TotalPrice,
-            this.Resp_empl});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CaseDataGrid.DefaultCellStyle = dataGridViewCellStyle18;
-            this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
-            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle19;
-            this.CaseDataGrid.RowTemplate.Height = 30;
-            this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
-            this.CaseDataGrid.TabIndex = 284;
-            this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
-            this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
-            // 
-            // Case_ID
-            // 
-            this.Case_ID.FillWeight = 30F;
-            this.Case_ID.HeaderText = "ID";
-            this.Case_ID.Name = "Case_ID";
-            this.Case_ID.ReadOnly = true;
-            this.Case_ID.Width = 30;
-            // 
-            // CaseName
-            // 
-            this.CaseName.FillWeight = 170F;
-            this.CaseName.HeaderText = "Sagsnavn";
-            this.CaseName.Name = "CaseName";
-            this.CaseName.ReadOnly = true;
-            this.CaseName.Width = 170;
-            // 
-            // Client
-            // 
-            this.Client.FillWeight = 170F;
-            this.Client.HeaderText = "Klient";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            this.Client.Width = 170;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Startdato";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "Slutdato";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.FillWeight = 150F;
-            this.ServiceName.HeaderText = "Servicetype";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Width = 150;
-            // 
-            // HoursEstimate
-            // 
-            this.HoursEstimate.FillWeight = 70F;
-            this.HoursEstimate.HeaderText = "Timer";
-            this.HoursEstimate.Name = "HoursEstimate";
-            this.HoursEstimate.ReadOnly = true;
-            this.HoursEstimate.Width = 70;
-            // 
-            // NegotiatedPrice
-            // 
-            this.NegotiatedPrice.FillWeight = 90F;
-            this.NegotiatedPrice.HeaderText = "Aftalt pris";
-            this.NegotiatedPrice.Name = "NegotiatedPrice";
-            this.NegotiatedPrice.ReadOnly = true;
-            this.NegotiatedPrice.Width = 90;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 90F;
-            this.TotalPrice.HeaderText = "Slut pris";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 90;
-            // 
-            // Resp_empl
-            // 
-            this.Resp_empl.FillWeight = 150F;
-            this.Resp_empl.HeaderText = "Advokat";
-            this.Resp_empl.Name = "Resp_empl";
-            this.Resp_empl.ReadOnly = true;
-            this.Resp_empl.Width = 150;
-            // 
-            // lblAllActiveCases
-            // 
-            this.lblAllActiveCases.AutoSize = true;
-            this.lblAllActiveCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAllActiveCases.Location = new System.Drawing.Point(16, 60);
-            this.lblAllActiveCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAllActiveCases.Name = "lblAllActiveCases";
-            this.lblAllActiveCases.Size = new System.Drawing.Size(152, 18);
-            this.lblAllActiveCases.TabIndex = 282;
-            this.lblAllActiveCases.Text = "Alle aktive sager";
-            // 
-            // TotalPricetxt
-            // 
-            this.TotalPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.TotalPricetxt.Location = new System.Drawing.Point(410, 536);
-            this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
-            this.TotalPricetxt.Name = "TotalPricetxt";
-            this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
-            this.TotalPricetxt.TabIndex = 290;
-            this.TotalPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalPricetxt_KeyPress);
+            // btnNewCase
+            // 
+            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
+            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCase.Name = "btnNewCase";
+            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnNewCase.TabIndex = 408;
+            this.btnNewCase.Text = "Tilføj sag";
+            this.btnNewCase.UseVisualStyleBackColor = true;
+            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
             // 
             // pnlUpdateEditServices
             // 
@@ -1078,14 +667,6 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -1094,19 +675,11 @@
             this.Comments,
             this.Hours,
             this.Km});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ServiceDataGrid.DefaultCellStyle = dataGridViewCellStyle21;
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -1372,6 +945,400 @@
             this.btnReturnToCasesPnl.Text = "Retur";
             this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
             this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
+            // 
+            // pnlAllOpenCases
+            // 
+            this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.btnActivateCreateNewCase);
+            this.pnlAllOpenCases.Controls.Add(this.label10);
+            this.pnlAllOpenCases.Controls.Add(this.label1);
+            this.pnlAllOpenCases.Controls.Add(this.btnGetCasesbyClient);
+            this.pnlAllOpenCases.Controls.Add(this.tlfTxtForCases);
+            this.pnlAllOpenCases.Controls.Add(this.lblAllCLosedCases);
+            this.pnlAllOpenCases.Controls.Add(this.label6);
+            this.pnlAllOpenCases.Controls.Add(this.UpdateButt);
+            this.pnlAllOpenCases.Controls.Add(this.CalculatePrice);
+            this.pnlAllOpenCases.Controls.Add(this.EndCaseTimePictxt);
+            this.pnlAllOpenCases.Controls.Add(this.RespEmpCombo);
+            this.pnlAllOpenCases.Controls.Add(this.ClosedCaseBut);
+            this.pnlAllOpenCases.Controls.Add(this.label13);
+            this.pnlAllOpenCases.Controls.Add(this.NegPricetxt);
+            this.pnlAllOpenCases.Controls.Add(label11);
+            this.pnlAllOpenCases.Controls.Add(label8);
+            this.pnlAllOpenCases.Controls.Add(label7);
+            this.pnlAllOpenCases.Controls.Add(this.pictureBox4);
+            this.pnlAllOpenCases.Controls.Add(this.btnReturnToShowOpenCases);
+            this.pnlAllOpenCases.Controls.Add(this.btnShowClosedCases);
+            this.pnlAllOpenCases.Controls.Add(this.search_button);
+            this.pnlAllOpenCases.Controls.Add(this.searchBox);
+            this.pnlAllOpenCases.Controls.Add(this.lLblHelpViewAllCasesTab);
+            this.pnlAllOpenCases.Controls.Add(this.DeleteButt);
+            this.pnlAllOpenCases.Controls.Add(this.CaseDataGrid);
+            this.pnlAllOpenCases.Controls.Add(this.lblAllActiveCases);
+            this.pnlAllOpenCases.Controls.Add(this.TotalPricetxt);
+            this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
+            this.pnlAllOpenCases.Name = "pnlAllOpenCases";
+            this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
+            this.pnlAllOpenCases.TabIndex = 282;
+            // 
+            // btnActivateCreateNewCase
+            // 
+            this.btnActivateCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnActivateCreateNewCase.Location = new System.Drawing.Point(138, 414);
+            this.btnActivateCreateNewCase.Name = "btnActivateCreateNewCase";
+            this.btnActivateCreateNewCase.Size = new System.Drawing.Size(114, 45);
+            this.btnActivateCreateNewCase.TabIndex = 345;
+            this.btnActivateCreateNewCase.Text = "Opret ny sag";
+            this.btnActivateCreateNewCase.UseVisualStyleBackColor = true;
+            this.btnActivateCreateNewCase.Click += new System.EventHandler(this.btnActivateCreateNewCase_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(399, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 14);
+            this.label10.TabIndex = 344;
+            this.label10.Text = "Indtast tlf nr.:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(399, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 14);
+            this.label1.TabIndex = 343;
+            this.label1.Text = "Find alle sager for klient:";
+            // 
+            // btnGetCasesbyClient
+            // 
+            this.btnGetCasesbyClient.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnGetCasesbyClient.Location = new System.Drawing.Point(651, 118);
+            this.btnGetCasesbyClient.Name = "btnGetCasesbyClient";
+            this.btnGetCasesbyClient.Size = new System.Drawing.Size(71, 24);
+            this.btnGetCasesbyClient.TabIndex = 342;
+            this.btnGetCasesbyClient.Text = "Vis";
+            this.btnGetCasesbyClient.UseVisualStyleBackColor = true;
+            this.btnGetCasesbyClient.Click += new System.EventHandler(this.btnGetCasesbyClient_Click);
+            // 
+            // tlfTxtForCases
+            // 
+            this.tlfTxtForCases.Font = new System.Drawing.Font("Verdana", 9F);
+            this.tlfTxtForCases.Location = new System.Drawing.Point(496, 118);
+            this.tlfTxtForCases.Name = "tlfTxtForCases";
+            this.tlfTxtForCases.Size = new System.Drawing.Size(149, 22);
+            this.tlfTxtForCases.TabIndex = 341;
+            // 
+            // lblAllCLosedCases
+            // 
+            this.lblAllCLosedCases.AutoSize = true;
+            this.lblAllCLosedCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAllCLosedCases.Location = new System.Drawing.Point(16, 60);
+            this.lblAllCLosedCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAllCLosedCases.Name = "lblAllCLosedCases";
+            this.lblAllCLosedCases.Size = new System.Drawing.Size(188, 18);
+            this.lblAllCLosedCases.TabIndex = 340;
+            this.lblAllCLosedCases.Text = "Alle afsluttede sager";
+            this.lblAllCLosedCases.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 471);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 18);
+            this.label6.TabIndex = 339;
+            this.label6.Text = "Opdater/Afslut sag";
+            // 
+            // UpdateButt
+            // 
+            this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
+            this.UpdateButt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.UpdateButt.Location = new System.Drawing.Point(128, 562);
+            this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
+            this.UpdateButt.Name = "UpdateButt";
+            this.UpdateButt.Size = new System.Drawing.Size(114, 45);
+            this.UpdateButt.TabIndex = 285;
+            this.UpdateButt.Text = "Opdater";
+            this.UpdateButt.UseVisualStyleBackColor = false;
+            this.UpdateButt.Click += new System.EventHandler(this.UpdateButt_Click);
+            // 
+            // CalculatePrice
+            // 
+            this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CalculatePrice.Location = new System.Drawing.Point(410, 562);
+            this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.CalculatePrice.Name = "CalculatePrice";
+            this.CalculatePrice.Size = new System.Drawing.Size(99, 45);
+            this.CalculatePrice.TabIndex = 296;
+            this.CalculatePrice.Text = "Beregn pris";
+            this.CalculatePrice.UseVisualStyleBackColor = true;
+            this.CalculatePrice.Click += new System.EventHandler(this.CalculatePrice_Click);
+            // 
+            // EndCaseTimePictxt
+            // 
+            this.EndCaseTimePictxt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.EndCaseTimePictxt.Location = new System.Drawing.Point(412, 500);
+            this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
+            this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
+            this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 22);
+            this.EndCaseTimePictxt.TabIndex = 295;
+            // 
+            // RespEmpCombo
+            // 
+            this.RespEmpCombo.Font = new System.Drawing.Font("Verdana", 9F);
+            this.RespEmpCombo.FormattingEnabled = true;
+            this.RespEmpCombo.Location = new System.Drawing.Point(128, 503);
+            this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
+            this.RespEmpCombo.Name = "RespEmpCombo";
+            this.RespEmpCombo.Size = new System.Drawing.Size(168, 22);
+            this.RespEmpCombo.TabIndex = 293;
+            this.RespEmpCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RespEmpCombo_KeyPress);
+            // 
+            // ClosedCaseBut
+            // 
+            this.ClosedCaseBut.BackColor = System.Drawing.Color.Transparent;
+            this.ClosedCaseBut.Font = new System.Drawing.Font("Verdana", 9F);
+            this.ClosedCaseBut.Location = new System.Drawing.Point(513, 562);
+            this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
+            this.ClosedCaseBut.Name = "ClosedCaseBut";
+            this.ClosedCaseBut.Size = new System.Drawing.Size(66, 45);
+            this.ClosedCaseBut.TabIndex = 292;
+            this.ClosedCaseBut.Text = "Luk sag";
+            this.ClosedCaseBut.UseVisualStyleBackColor = false;
+            this.ClosedCaseBut.Visible = false;
+            this.ClosedCaseBut.Click += new System.EventHandler(this.ClosedCaseBut_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label13.Location = new System.Drawing.Point(335, 506);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 14);
+            this.label13.TabIndex = 291;
+            this.label13.Text = "Slut Dato:";
+            // 
+            // NegPricetxt
+            // 
+            this.NegPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NegPricetxt.Location = new System.Drawing.Point(128, 536);
+            this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
+            this.NegPricetxt.Name = "NegPricetxt";
+            this.NegPricetxt.Size = new System.Drawing.Size(168, 22);
+            this.NegPricetxt.TabIndex = 289;
+            this.NegPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NegPricetxt_KeyPress);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox4.Location = new System.Drawing.Point(877, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(141, 100);
+            this.pictureBox4.TabIndex = 338;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnReturnToShowOpenCases
+            // 
+            this.btnReturnToShowOpenCases.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnReturnToShowOpenCases.Location = new System.Drawing.Point(19, 414);
+            this.btnReturnToShowOpenCases.Name = "btnReturnToShowOpenCases";
+            this.btnReturnToShowOpenCases.Size = new System.Drawing.Size(114, 45);
+            this.btnReturnToShowOpenCases.TabIndex = 337;
+            this.btnReturnToShowOpenCases.Text = "Vis åbne sager";
+            this.btnReturnToShowOpenCases.UseVisualStyleBackColor = true;
+            this.btnReturnToShowOpenCases.Visible = false;
+            this.btnReturnToShowOpenCases.Click += new System.EventHandler(this.btnReturnToShowOpenCases_Click);
+            // 
+            // btnShowClosedCases
+            // 
+            this.btnShowClosedCases.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnShowClosedCases.Location = new System.Drawing.Point(19, 414);
+            this.btnShowClosedCases.Name = "btnShowClosedCases";
+            this.btnShowClosedCases.Size = new System.Drawing.Size(114, 45);
+            this.btnShowClosedCases.TabIndex = 336;
+            this.btnShowClosedCases.Text = "Vis lukkede sager";
+            this.btnShowClosedCases.UseVisualStyleBackColor = true;
+            this.btnShowClosedCases.Click += new System.EventHandler(this.btnShowClosedCases_Click);
+            // 
+            // search_button
+            // 
+            this.search_button.Font = new System.Drawing.Font("Verdana", 9F);
+            this.search_button.Location = new System.Drawing.Point(1092, 119);
+            this.search_button.Margin = new System.Windows.Forms.Padding(2);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(89, 24);
+            this.search_button.TabIndex = 334;
+            this.search_button.Text = "Søg";
+            this.search_button.UseVisualStyleBackColor = true;
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
+            // 
+            // searchBox
+            // 
+            this.searchBox.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.searchBox.Font = new System.Drawing.Font("Verdana", 9F);
+            this.searchBox.Location = new System.Drawing.Point(886, 121);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(202, 22);
+            this.searchBox.TabIndex = 335;
+            // 
+            // lLblHelpViewAllCasesTab
+            // 
+            this.lLblHelpViewAllCasesTab.AutoSize = true;
+            this.lLblHelpViewAllCasesTab.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.lLblHelpViewAllCasesTab.Location = new System.Drawing.Point(1076, 572);
+            this.lLblHelpViewAllCasesTab.Name = "lLblHelpViewAllCasesTab";
+            this.lLblHelpViewAllCasesTab.Size = new System.Drawing.Size(171, 18);
+            this.lLblHelpViewAllCasesTab.TabIndex = 331;
+            this.lLblHelpViewAllCasesTab.TabStop = true;
+            this.lLblHelpViewAllCasesTab.Text = "Hjælp (View all cases)";
+            // 
+            // DeleteButt
+            // 
+            this.DeleteButt.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteButt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.DeleteButt.Location = new System.Drawing.Point(258, 414);
+            this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
+            this.DeleteButt.Name = "DeleteButt";
+            this.DeleteButt.Size = new System.Drawing.Size(114, 45);
+            this.DeleteButt.TabIndex = 294;
+            this.DeleteButt.Text = "Slet sag";
+            this.DeleteButt.UseVisualStyleBackColor = false;
+            this.DeleteButt.Click += new System.EventHandler(this.DeleteButt_Click);
+            // 
+            // CaseDataGrid
+            // 
+            this.CaseDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.CaseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Case_ID,
+            this.CaseName,
+            this.Client,
+            this.StartDate,
+            this.EndDate,
+            this.ServiceName,
+            this.HoursEstimate,
+            this.NegotiatedPrice,
+            this.TotalPrice,
+            this.Resp_empl});
+            this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
+            this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.CaseDataGrid.Name = "CaseDataGrid";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.CaseDataGrid.RowTemplate.Height = 30;
+            this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
+            this.CaseDataGrid.TabIndex = 284;
+            this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
+            this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
+            // 
+            // Case_ID
+            // 
+            this.Case_ID.FillWeight = 30F;
+            this.Case_ID.HeaderText = "ID";
+            this.Case_ID.Name = "Case_ID";
+            this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 30;
+            // 
+            // CaseName
+            // 
+            this.CaseName.FillWeight = 170F;
+            this.CaseName.HeaderText = "Sagsnavn";
+            this.CaseName.Name = "CaseName";
+            this.CaseName.ReadOnly = true;
+            this.CaseName.Width = 170;
+            // 
+            // Client
+            // 
+            this.Client.FillWeight = 170F;
+            this.Client.HeaderText = "Klient";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            this.Client.Width = 170;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Startdato";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "Slutdato";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 150F;
+            this.ServiceName.HeaderText = "Servicetype";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Width = 150;
+            // 
+            // HoursEstimate
+            // 
+            this.HoursEstimate.FillWeight = 70F;
+            this.HoursEstimate.HeaderText = "Timer";
+            this.HoursEstimate.Name = "HoursEstimate";
+            this.HoursEstimate.ReadOnly = true;
+            this.HoursEstimate.Width = 70;
+            // 
+            // NegotiatedPrice
+            // 
+            this.NegotiatedPrice.FillWeight = 90F;
+            this.NegotiatedPrice.HeaderText = "Aftalt pris";
+            this.NegotiatedPrice.Name = "NegotiatedPrice";
+            this.NegotiatedPrice.ReadOnly = true;
+            this.NegotiatedPrice.Width = 90;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 90F;
+            this.TotalPrice.HeaderText = "Slut pris";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 90;
+            // 
+            // Resp_empl
+            // 
+            this.Resp_empl.FillWeight = 150F;
+            this.Resp_empl.HeaderText = "Advokat";
+            this.Resp_empl.Name = "Resp_empl";
+            this.Resp_empl.ReadOnly = true;
+            this.Resp_empl.Width = 150;
+            // 
+            // lblAllActiveCases
+            // 
+            this.lblAllActiveCases.AutoSize = true;
+            this.lblAllActiveCases.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAllActiveCases.Location = new System.Drawing.Point(16, 60);
+            this.lblAllActiveCases.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAllActiveCases.Name = "lblAllActiveCases";
+            this.lblAllActiveCases.Size = new System.Drawing.Size(152, 18);
+            this.lblAllActiveCases.TabIndex = 282;
+            this.lblAllActiveCases.Text = "Alle aktive sager";
+            // 
+            // TotalPricetxt
+            // 
+            this.TotalPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
+            this.TotalPricetxt.Location = new System.Drawing.Point(410, 536);
+            this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
+            this.TotalPricetxt.Name = "TotalPricetxt";
+            this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
+            this.TotalPricetxt.TabIndex = 290;
+            this.TotalPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalPricetxt_KeyPress);
             // 
             // tabEmployees
             // 
@@ -1850,14 +1817,6 @@
             // 
             // EmplGridView
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmplGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -1871,14 +1830,6 @@
             this.dataGridViewTextBoxColumn1,
             this.Position,
             this.Money});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmplGridView.DefaultCellStyle = dataGridViewCellStyle24;
             this.EmplGridView.Location = new System.Drawing.Point(13, 136);
             this.EmplGridView.Margin = new System.Windows.Forms.Padding(2);
             this.EmplGridView.Name = "EmplGridView";
@@ -2140,6 +2091,7 @@
             this.btnUpdateClient.Text = "Opdater klient";
             this.btnUpdateClient.UseVisualStyleBackColor = true;
             this.btnUpdateClient.Visible = false;
+            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
             // NewClientBtn
             // 
@@ -2152,6 +2104,7 @@
             this.NewClientBtn.Text = "Tilføj ny klient";
             this.NewClientBtn.UseVisualStyleBackColor = true;
             this.NewClientBtn.Visible = false;
+            this.NewClientBtn.Click += new System.EventHandler(this.NewClientBtn_Click);
             // 
             // NewClientTelef
             // 
@@ -2307,14 +2260,6 @@
             // 
             // clientsDataGrid
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.clientsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.clientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Client_Id,
@@ -2325,18 +2270,64 @@
             this.PostNO,
             this.Client_Email,
             this.Client_TlfNo});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.clientsDataGrid.DefaultCellStyle = dataGridViewCellStyle26;
             this.clientsDataGrid.Location = new System.Drawing.Point(55, 157);
             this.clientsDataGrid.Name = "clientsDataGrid";
             this.clientsDataGrid.Size = new System.Drawing.Size(846, 334);
             this.clientsDataGrid.TabIndex = 355;
+            // 
+            // Client_Id
+            // 
+            this.Client_Id.FillWeight = 80F;
+            this.Client_Id.HeaderText = "Klient-ID";
+            this.Client_Id.Name = "Client_Id";
+            this.Client_Id.ReadOnly = true;
+            this.Client_Id.Width = 80;
+            // 
+            // Client_CprNO
+            // 
+            this.Client_CprNO.HeaderText = "Cpr. nr.";
+            this.Client_CprNO.Name = "Client_CprNO";
+            this.Client_CprNO.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "Fornavn";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Efternavn";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // Client_Address
+            // 
+            this.Client_Address.FillWeight = 120F;
+            this.Client_Address.HeaderText = "Adresse";
+            this.Client_Address.Name = "Client_Address";
+            this.Client_Address.ReadOnly = true;
+            this.Client_Address.Width = 120;
+            // 
+            // PostNO
+            // 
+            this.PostNO.FillWeight = 80F;
+            this.PostNO.HeaderText = "Postnr.";
+            this.PostNO.Name = "PostNO";
+            this.PostNO.ReadOnly = true;
+            this.PostNO.Width = 80;
+            // 
+            // Client_Email
+            // 
+            this.Client_Email.HeaderText = "Email";
+            this.Client_Email.Name = "Client_Email";
+            this.Client_Email.ReadOnly = true;
+            // 
+            // Client_TlfNo
+            // 
+            this.Client_TlfNo.HeaderText = "Tlf nr.";
+            this.Client_TlfNo.Name = "Client_TlfNo";
+            this.Client_TlfNo.ReadOnly = true;
             // 
             // pictureBox2
             // 
@@ -2531,14 +2522,6 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridEmployeeServicesP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2546,14 +2529,6 @@
             this.PServiceHours,
             this.PServiceKm,
             this.PServiceComment});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridEmployeeServicesP.DefaultCellStyle = dataGridViewCellStyle28;
             this.GridEmployeeServicesP.Location = new System.Drawing.Point(55, 246);
             this.GridEmployeeServicesP.Name = "GridEmployeeServicesP";
             this.GridEmployeeServicesP.Size = new System.Drawing.Size(814, 330);
@@ -2618,6 +2593,18 @@
             this.tabProvServices.TabIndex = 3;
             this.tabProvServices.Text = "Tjenesteydelser/Efteruddannelse";
             this.tabProvServices.UseVisualStyleBackColor = true;
+            // 
+            // lblAddSubject
+            // 
+            this.lblAddSubject.AutoSize = true;
+            this.lblAddSubject.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAddSubject.Location = new System.Drawing.Point(739, 168);
+            this.lblAddSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddSubject.Name = "lblAddSubject";
+            this.lblAddSubject.Size = new System.Drawing.Size(280, 18);
+            this.lblAddSubject.TabIndex = 304;
+            this.lblAddSubject.Text = "Tilføj tjenesteydelse/efterudd.";
+            this.lblAddSubject.Visible = false;
             // 
             // pictureBox6
             // 
@@ -2763,14 +2750,6 @@
             // 
             // ServiceGridView
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ServiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.ServiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -2778,14 +2757,6 @@
             this.dataGridViewTextBoxColumn4,
             this.Time,
             this.Price});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ServiceGridView.DefaultCellStyle = dataGridViewCellStyle16;
             this.ServiceGridView.Location = new System.Drawing.Point(150, 165);
             this.ServiceGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceGridView.Name = "ServiceGridView";
@@ -2879,83 +2850,6 @@
             this.label48.TabIndex = 281;
             this.label48.Text = "Tjenesteydelser/Efteruddannelser";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.linkLabel1.Location = new System.Drawing.Point(31, 568);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(263, 18);
-            this.linkLabel1.TabIndex = 414;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Hjælp (View all create update sag)";
-            // 
-            // lblAddSubject
-            // 
-            this.lblAddSubject.AutoSize = true;
-            this.lblAddSubject.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAddSubject.Location = new System.Drawing.Point(739, 168);
-            this.lblAddSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAddSubject.Name = "lblAddSubject";
-            this.lblAddSubject.Size = new System.Drawing.Size(280, 18);
-            this.lblAddSubject.TabIndex = 304;
-            this.lblAddSubject.Text = "Tilføj tjenesteydelse/efterudd.";
-            this.lblAddSubject.Visible = false;
-            // 
-            // Client_Id
-            // 
-            this.Client_Id.FillWeight = 80F;
-            this.Client_Id.HeaderText = "Klient-ID";
-            this.Client_Id.Name = "Client_Id";
-            this.Client_Id.ReadOnly = true;
-            this.Client_Id.Width = 80;
-            // 
-            // Client_CprNO
-            // 
-            this.Client_CprNO.HeaderText = "Cpr. nr.";
-            this.Client_CprNO.Name = "Client_CprNO";
-            this.Client_CprNO.ReadOnly = true;
-            // 
-            // FirstName
-            // 
-            this.FirstName.HeaderText = "Fornavn";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            this.LastName.HeaderText = "Efternavn";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            // 
-            // Client_Address
-            // 
-            this.Client_Address.FillWeight = 120F;
-            this.Client_Address.HeaderText = "Adresse";
-            this.Client_Address.Name = "Client_Address";
-            this.Client_Address.ReadOnly = true;
-            this.Client_Address.Width = 120;
-            // 
-            // PostNO
-            // 
-            this.PostNO.FillWeight = 80F;
-            this.PostNO.HeaderText = "Postnr.";
-            this.PostNO.Name = "PostNO";
-            this.PostNO.ReadOnly = true;
-            this.PostNO.Width = 80;
-            // 
-            // Client_Email
-            // 
-            this.Client_Email.HeaderText = "Email";
-            this.Client_Email.Name = "Client_Email";
-            this.Client_Email.ReadOnly = true;
-            // 
-            // Client_TlfNo
-            // 
-            this.Client_TlfNo.HeaderText = "Tlf nr.";
-            this.Client_TlfNo.Name = "Client_TlfNo";
-            this.Client_TlfNo.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2967,18 +2861,18 @@
             this.Text = "LawHouse";
             this.TabControl.ResumeLayout(false);
             this.tabCases.ResumeLayout(false);
-            this.pnlAllOpenCases.ResumeLayout(false);
-            this.pnlAllOpenCases.PerformLayout();
             this.pnlCreateNewCase.ResumeLayout(false);
             this.pnlCreateNewCase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
             this.pnlUpdateEditServices.ResumeLayout(false);
             this.pnlUpdateEditServices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).EndInit();
             this.pnlActivateServiceBoxes.ResumeLayout(false);
             this.pnlActivateServiceBoxes.PerformLayout();
+            this.pnlAllOpenCases.ResumeLayout(false);
+            this.pnlAllOpenCases.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
             this.tabEmployees.ResumeLayout(false);
             this.tabEmployees.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
