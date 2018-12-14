@@ -35,7 +35,17 @@ namespace LawHouseTabForm
             ActivateGetClientsGrid();
             EmplGridStart();
             GetServices();
+
+            clientsDataGrid.Font = new System.Drawing.Font("Verdana", 10f);
+            CaseDataGrid.Font = new System.Drawing.Font("Verdana", 10f);
+            ServiceDataGrid.Font = new System.Drawing.Font("Verdana", 10f);
+            ServiceGridView.Font = new System.Drawing.Font("Verdana", 10f);
+            GridEmployeeServicesP.Font = new System.Drawing.Font("Verdana", 10f);
+            EmplGridView.Font = new System.Drawing.Font("Verdana", 10f);
+            
         }
+
+        
 
         #region Show All in Form
 
@@ -1249,6 +1259,7 @@ namespace LawHouseTabForm
         {
             pnlCreateNewCase.Visible = true;
             pnlUpdateEditServices.Visible = true;
+            btnNewCase.Visible = true; 
         }
 
         private void btnActivateUpdateClient_Click(object sender, EventArgs e)
@@ -1272,7 +1283,7 @@ namespace LawHouseTabForm
             else
             {
                 this.ClientId = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[0].Value);
-                int cpr = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[1].Value);
+                string cpr = clientsDataGrid.SelectedRows[0].Cells[1].Value.ToString();
                 string fName = clientsDataGrid.SelectedRows[0].Cells[2].Value.ToString();
                 string lName = clientsDataGrid.SelectedRows[0].Cells[3].Value.ToString();
                 string address = clientsDataGrid.SelectedRows[0].Cells[4].Value.ToString();
@@ -1344,6 +1355,7 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
         {
             try
             {
+                int ClientId = Convert.ToInt32(txtClientID.Text);
                 string cpr = NewClientCprNo.Text;
                 string fName = NewClientfName.Text;
                 string lName = NewClientLName.Text;
@@ -1352,14 +1364,17 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 string eMail = NewClientMail.Text;
                 string tlf = NewClientTelef.Text;
 
-                _clientHandler.UpdateClient(this.ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
+                _clientHandler.UpdateClient(ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
                 clientsDataGrid.Rows.Clear();
                 ActivateGetClientsGrid();
+                pnlCreateUpdateClient.Visible = false;
+                clientsDataGrid.Visible = true;
+                pnlClientsButtons.Visible = true; 
             }
             catch (Exception exception)
             {
                 //exception
-                MessageBox.Show("");
+                MessageBox.Show("Klienten er ikke blevet opdateret");
             }
         }
 
@@ -1422,6 +1437,8 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                     MessageBox.Show("Klienten kan nu findes inde under 'ikke aktive klienter'");
                     clientsDataGrid.Rows.Clear();
                     ActivateGetClientsGrid(true);
+                    btnShowAllActiveClients.Visible = true;
+                    btnShowDeactivatedClients.Visible = false; 
                 }
                 else
                 {
