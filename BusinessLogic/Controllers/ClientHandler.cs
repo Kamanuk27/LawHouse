@@ -35,7 +35,7 @@ namespace BusinessLogic
 
         public List<ClientM> GetClients(bool active)
         {
-            return _clientCrud.GetCliens(active);
+            return _clientCrud.GetClients(active);
         }
 
         public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)

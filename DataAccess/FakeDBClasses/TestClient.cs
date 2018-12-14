@@ -20,6 +20,13 @@ namespace DataAccess
             client.TlfNo = tlf;
             return client;
         }
+        public List<ClientM> GetClients(bool active)
+        {
+            List<ClientM> clients = new List<ClientM>();
+            clients.Add(new ClientM());
+            clients.Add(new ClientM());
+            return clients;
+        }
 
         public int UpdateClient(ClientM client)
         {
@@ -29,11 +36,6 @@ namespace DataAccess
         public int CloseClient(int id)
         {
             return 1;
-        }
-
-        public List<ClientM> GetCliens(bool active)
-        {
-            throw new NotImplementedException();
         }
     }
 }

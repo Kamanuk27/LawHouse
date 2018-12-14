@@ -37,6 +37,22 @@ namespace UnitTestLawHouse.UnitTestsCrudClasses
         }
 
         [TestMethod]
+        public void TestGetClientsReturnTwoClients()
+        {
+            ClientCrud _sut = new ClientCrud();
+            int actual = _sut.GetClients(true).Count;
+            Assert.AreEqual(2, actual);
+        }
+
+        [TestMethod]
+        public void TestGetClientsReturnListOfClientM()
+        {
+            ClientCrud _sut = new ClientCrud();
+            Type expected = typeof(ClientM);
+            Type actual = _sut.GetClients(true)[0].GetType();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void TestNewClientReturnOne()
         {
             ClientCrud _sut = new ClientCrud();

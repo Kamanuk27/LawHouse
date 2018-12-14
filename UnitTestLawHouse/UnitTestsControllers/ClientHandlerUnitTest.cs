@@ -36,6 +36,22 @@ namespace UnitTestLawHouse.UnitTestsControllers
         }
 
         [TestMethod]
+        public void TestGetClientsReturnTwoClients()
+        {
+            ClientHandler _sut = new ClientHandler();
+            int actual = _sut.GetClients(true).Count;
+            Assert.AreEqual(2, actual);
+        }
+
+        [TestMethod]
+        public void TestGetClientsReturnListOfClientM()
+        {
+            ClientHandler _sut = new ClientHandler();
+            Type expected = typeof(ClientM);
+            Type actual = _sut.GetClients(true)[0].GetType();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void TestNewClientReturnOne()
         {
             ClientHandler _sut = ClientHandler.Instance;

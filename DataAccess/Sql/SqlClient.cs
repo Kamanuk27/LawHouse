@@ -19,7 +19,7 @@ namespace DataAccess
             return ExecuteNonQuery();
         }
 
-        public List<ClientM> GetCliens(bool active)
+        public List<ClientM> GetClients(bool active)
         {
             List<ClientM> clients = new List<ClientM>();
 
