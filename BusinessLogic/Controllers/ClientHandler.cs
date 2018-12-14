@@ -33,7 +33,7 @@ namespace BusinessLogic
             return _clientCrud.GetClient(tlf);
         }
 
-        public List<ClientM> GetCliens(bool active)
+        public List<ClientM> GetClients(bool active)
         {
             return _clientCrud.GetCliens(active);
         }

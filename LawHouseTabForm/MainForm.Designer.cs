@@ -28,25 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label label11;
+            System.Windows.Forms.Label label8;
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label22;
             System.Windows.Forms.Label label24;
             System.Windows.Forms.Label label25;
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.Label label11;
-            System.Windows.Forms.Label label8;
-            System.Windows.Forms.Label label7;
-            System.Windows.Forms.Label label5;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
+            this.pnlCreateNewCase = new System.Windows.Forms.Panel();
+            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
+            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
+            this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.btnNewCase = new System.Windows.Forms.Button();
+            this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
+            this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.CrCaseTimeUsed = new System.Windows.Forms.TextBox();
+            this.CrCasePrice = new System.Windows.Forms.TextBox();
+            this.CrCaseEndDato = new System.Windows.Forms.TextBox();
+            this.CrCaseName = new System.Windows.Forms.TextBox();
+            this.btnActivateCreateNewCase = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGetCasesbyClient = new System.Windows.Forms.Button();
             this.tlfTxtForCases = new System.Windows.Forms.TextBox();
@@ -82,7 +105,6 @@
             this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
-            this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
             this.btnActivateAddServiceBoxes = new System.Windows.Forms.Button();
             this.lblCaseName = new System.Windows.Forms.Label();
             this.lblHeaderServices = new System.Windows.Forms.Label();
@@ -110,6 +132,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
             this.tabEmployees = new System.Windows.Forms.TabPage();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lLblHelpEmployeesTab = new System.Windows.Forms.LinkLabel();
@@ -163,24 +186,19 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tabClients = new System.Windows.Forms.TabPage();
+            this.pnlClientsButtons = new System.Windows.Forms.Panel();
+            this.btnActivateUpdateClient = new System.Windows.Forms.Button();
+            this.btnActivateCreateNewClient = new System.Windows.Forms.Button();
+            this.btnShowDeactivatedClients = new System.Windows.Forms.Button();
+            this.btnShowAllActiveClients = new System.Windows.Forms.Button();
+            this.lblSeeAllDeactivatedClients = new System.Windows.Forms.Label();
+            this.lblSeeAllActiveClients = new System.Windows.Forms.Label();
+            this.pnlCreateUpdateClient = new System.Windows.Forms.Panel();
+            this.btnCloseAddUpdateClientPnl = new System.Windows.Forms.Button();
+            this.lblCreateNewClient = new System.Windows.Forms.Label();
             this.btnFindExistingClient = new System.Windows.Forms.Button();
-            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
-            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lLblHelpAddClientCaseTab = new System.Windows.Forms.LinkLabel();
             this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.btnNewCase = new System.Windows.Forms.Button();
-            this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
-            this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.CrCaseTimeUsed = new System.Windows.Forms.TextBox();
-            this.CrCasePrice = new System.Windows.Forms.TextBox();
-            this.CrCaseEndDato = new System.Windows.Forms.TextBox();
-            this.CrCaseName = new System.Windows.Forms.TextBox();
             this.NewClientBtn = new System.Windows.Forms.Button();
             this.NewClientTelef = new System.Windows.Forms.TextBox();
             this.NewClientMail = new System.Windows.Forms.TextBox();
@@ -188,7 +206,7 @@
             this.NewClientAdress = new System.Windows.Forms.TextBox();
             this.NewClientLName = new System.Windows.Forms.TextBox();
             this.NewClientfName = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lblUpdateClient = new System.Windows.Forms.Label();
             this.NewClientCprNo = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -197,6 +215,9 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.clientsDataGrid = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lLblHelpAddClientCaseTab = new System.Windows.Forms.LinkLabel();
             this.tabShowAllProServ = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -243,20 +264,30 @@
             this.btnUpdateSubj = new System.Windows.Forms.Button();
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblAddSubject = new System.Windows.Forms.Label();
+            this.Client_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_CprNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            label11 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             label22 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label28 = new System.Windows.Forms.Label();
             label29 = new System.Windows.Forms.Label();
-            label11 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabCases.SuspendLayout();
             this.pnlAllOpenCases.SuspendLayout();
+            this.pnlCreateNewCase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
             this.pnlUpdateEditServices.SuspendLayout();
@@ -268,7 +299,10 @@
             this.pnlAddSubjectToEmp.SuspendLayout();
             this.pnlAddUpdateEmplFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tabClients.SuspendLayout();
+            this.pnlClientsButtons.SuspendLayout();
+            this.pnlCreateUpdateClient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabShowAllProServ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -279,71 +313,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new System.Drawing.Font("Verdana", 9F);
-            label22.Location = new System.Drawing.Point(543, 233);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(89, 14);
-            label22.TabIndex = 335;
-            label22.Text = "Start Dato: *";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new System.Drawing.Font("Verdana", 9F);
-            label24.Location = new System.Drawing.Point(543, 204);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(130, 14);
-            label24.TabIndex = 334;
-            label24.Text = "Vælg Servicetype: *";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new System.Drawing.Font("Verdana", 9F);
-            label25.Location = new System.Drawing.Point(543, 349);
-            label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(129, 14);
-            label25.TabIndex = 330;
-            label25.Text = "Forventet slutdato:";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Font = new System.Drawing.Font("Verdana", 9F);
-            label26.Location = new System.Drawing.Point(543, 262);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(124, 14);
-            label26.TabIndex = 333;
-            label26.Text = "Ansvarlig Advokat:";
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Font = new System.Drawing.Font("Verdana", 9F);
-            label28.Location = new System.Drawing.Point(543, 291);
-            label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(101, 14);
-            label28.TabIndex = 332;
-            label28.Text = "Aftalt/fast pris:";
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Font = new System.Drawing.Font("Verdana", 9F);
-            label29.Location = new System.Drawing.Point(543, 175);
-            label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(136, 14);
-            label29.TabIndex = 331;
-            label29.Text = "Indtast Sagsnavn: *";
-            // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Verdana", 9F);
-            label11.Location = new System.Drawing.Point(654, 518);
+            label11.Location = new System.Drawing.Point(337, 539);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(58, 14);
             label11.TabIndex = 288;
@@ -353,7 +327,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Verdana", 9F);
-            label8.Location = new System.Drawing.Point(339, 485);
+            label8.Location = new System.Drawing.Point(22, 506);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(63, 14);
             label8.TabIndex = 287;
@@ -363,7 +337,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Verdana", 9F);
-            label7.Location = new System.Drawing.Point(339, 518);
+            label7.Location = new System.Drawing.Point(22, 539);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(101, 14);
             label7.TabIndex = 286;
@@ -373,21 +347,81 @@
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Verdana", 9F);
-            label5.Location = new System.Drawing.Point(543, 148);
+            label5.Location = new System.Drawing.Point(88, 188);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(86, 14);
-            label5.TabIndex = 351;
-            label5.Text = "Client ID: **";
+            label5.Size = new System.Drawing.Size(126, 14);
+            label5.TabIndex = 412;
+            label5.Text = "Indtast klient ID: *";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new System.Drawing.Font("Verdana", 9F);
+            label22.Location = new System.Drawing.Point(88, 273);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(89, 14);
+            label22.TabIndex = 400;
+            label22.Text = "Start Dato: *";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new System.Drawing.Font("Verdana", 9F);
+            label24.Location = new System.Drawing.Point(88, 244);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(130, 14);
+            label24.TabIndex = 399;
+            label24.Text = "Vælg Servicetype: *";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new System.Drawing.Font("Verdana", 9F);
+            label25.Location = new System.Drawing.Point(88, 389);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(129, 14);
+            label25.TabIndex = 395;
+            label25.Text = "Forventet slutdato:";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new System.Drawing.Font("Verdana", 9F);
+            label26.Location = new System.Drawing.Point(88, 302);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(124, 14);
+            label26.TabIndex = 398;
+            label26.Text = "Ansvarlig Advokat:";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new System.Drawing.Font("Verdana", 9F);
+            label28.Location = new System.Drawing.Point(88, 331);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(101, 14);
+            label28.TabIndex = 397;
+            label28.Text = "Aftalt/fast pris:";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new System.Drawing.Font("Verdana", 9F);
+            label29.Location = new System.Drawing.Point(88, 215);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(136, 14);
+            label29.TabIndex = 396;
+            label29.Text = "Indtast Sagsnavn: *";
             // 
             // TabControl
             // 
             this.TabControl.Controls.Add(this.tabCases);
             this.TabControl.Controls.Add(this.tabEmployees);
-            this.TabControl.Controls.Add(this.tabPage1);
+            this.TabControl.Controls.Add(this.tabClients);
             this.TabControl.Controls.Add(this.tabShowAllProServ);
             this.TabControl.Controls.Add(this.tabProvServices);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControl.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Margin = new System.Windows.Forms.Padding(2);
             this.TabControl.Name = "TabControl";
@@ -398,6 +432,7 @@
             // 
             // tabCases
             // 
+            this.tabCases.Controls.Add(this.pnlCreateNewCase);
             this.tabCases.Controls.Add(this.pnlUpdateEditServices);
             this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -413,6 +448,7 @@
             // pnlAllOpenCases
             // 
             this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.btnActivateCreateNewCase);
             this.pnlAllOpenCases.Controls.Add(this.label10);
             this.pnlAllOpenCases.Controls.Add(this.label1);
             this.pnlAllOpenCases.Controls.Add(this.btnGetCasesbyClient);
@@ -444,6 +480,177 @@
             this.pnlAllOpenCases.Name = "pnlAllOpenCases";
             this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
             this.pnlAllOpenCases.TabIndex = 282;
+            // 
+            // pnlCreateNewCase
+            // 
+            this.pnlCreateNewCase.Controls.Add(this.linkLabel1);
+            this.pnlCreateNewCase.Controls.Add(this.btnCancelCreateNewCase);
+            this.pnlCreateNewCase.Controls.Add(label5);
+            this.pnlCreateNewCase.Controls.Add(this.txtShowNewClientIdHere);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseServiceCom);
+            this.pnlCreateNewCase.Controls.Add(this.label35);
+            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
+            this.pnlCreateNewCase.Controls.Add(this.CrCasetimeP);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseAdvokat);
+            this.pnlCreateNewCase.Controls.Add(this.label20);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseTimeUsed);
+            this.pnlCreateNewCase.Controls.Add(this.CrCasePrice);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseEndDato);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseName);
+            this.pnlCreateNewCase.Controls.Add(label22);
+            this.pnlCreateNewCase.Controls.Add(label24);
+            this.pnlCreateNewCase.Controls.Add(label25);
+            this.pnlCreateNewCase.Controls.Add(label26);
+            this.pnlCreateNewCase.Controls.Add(label28);
+            this.pnlCreateNewCase.Controls.Add(label29);
+            this.pnlCreateNewCase.Location = new System.Drawing.Point(0, 2);
+            this.pnlCreateNewCase.Name = "pnlCreateNewCase";
+            this.pnlCreateNewCase.Size = new System.Drawing.Size(843, 635);
+            this.pnlCreateNewCase.TabIndex = 346;
+            this.pnlCreateNewCase.Visible = false;
+            // 
+            // btnCancelCreateNewCase
+            // 
+            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(337, 423);
+            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
+            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnCancelCreateNewCase.TabIndex = 413;
+            this.btnCancelCreateNewCase.Text = "Fortryd";
+            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
+            this.btnCancelCreateNewCase.Click += new System.EventHandler(this.btnCancelCreateNewCase_Click);
+            // 
+            // txtShowNewClientIdHere
+            // 
+            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(243, 185);
+            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
+            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
+            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
+            this.txtShowNewClientIdHere.TabIndex = 411;
+            // 
+            // CrCaseServiceCom
+            // 
+            this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseServiceCom.FormattingEnabled = true;
+            this.CrCaseServiceCom.Location = new System.Drawing.Point(243, 239);
+            this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseServiceCom.Name = "CrCaseServiceCom";
+            this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseServiceCom.TabIndex = 410;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(91, 134);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(121, 18);
+            this.label35.TabIndex = 409;
+            this.label35.Text = "Opret ny sag";
+            // 
+            // btnNewCase
+            // 
+            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
+            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCase.Name = "btnNewCase";
+            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnNewCase.TabIndex = 408;
+            this.btnNewCase.Text = "Tilføj sag";
+            this.btnNewCase.UseVisualStyleBackColor = true;
+            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
+            // 
+            // CrCasetimeP
+            // 
+            this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCasetimeP.Location = new System.Drawing.Point(243, 269);
+            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCasetimeP.Name = "CrCasetimeP";
+            this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
+            this.CrCasetimeP.TabIndex = 407;
+            // 
+            // CrCaseAdvokat
+            // 
+            this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseAdvokat.FormattingEnabled = true;
+            this.CrCaseAdvokat.Location = new System.Drawing.Point(243, 299);
+            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseAdvokat.Name = "CrCaseAdvokat";
+            this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseAdvokat.TabIndex = 406;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label20.Location = new System.Drawing.Point(88, 360);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(146, 14);
+            this.label20.TabIndex = 405;
+            this.label20.Text = "Forventet tidsforbrug:";
+            // 
+            // CrCaseTimeUsed
+            // 
+            this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseTimeUsed.Location = new System.Drawing.Point(243, 357);
+            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
+            this.CrCaseTimeUsed.ReadOnly = true;
+            this.CrCaseTimeUsed.Size = new System.Drawing.Size(131, 22);
+            this.CrCaseTimeUsed.TabIndex = 404;
+            // 
+            // CrCasePrice
+            // 
+            this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCasePrice.Location = new System.Drawing.Point(243, 329);
+            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCasePrice.Name = "CrCasePrice";
+            this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
+            this.CrCasePrice.TabIndex = 403;
+            // 
+            // CrCaseEndDato
+            // 
+            this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseEndDato.Location = new System.Drawing.Point(243, 385);
+            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseEndDato.Name = "CrCaseEndDato";
+            this.CrCaseEndDato.ReadOnly = true;
+            this.CrCaseEndDato.Size = new System.Drawing.Size(131, 22);
+            this.CrCaseEndDato.TabIndex = 402;
+            // 
+            // CrCaseName
+            // 
+            this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseName.Location = new System.Drawing.Point(243, 211);
+            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseName.Name = "CrCaseName";
+            this.CrCaseName.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseName.TabIndex = 401;
+            // 
+            // btnActivateCreateNewCase
+            // 
+            this.btnActivateCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnActivateCreateNewCase.Location = new System.Drawing.Point(138, 414);
+            this.btnActivateCreateNewCase.Name = "btnActivateCreateNewCase";
+            this.btnActivateCreateNewCase.Size = new System.Drawing.Size(114, 45);
+            this.btnActivateCreateNewCase.TabIndex = 345;
+            this.btnActivateCreateNewCase.Text = "Opret ny sag";
+            this.btnActivateCreateNewCase.UseVisualStyleBackColor = true;
+            this.btnActivateCreateNewCase.Click += new System.EventHandler(this.btnActivateCreateNewCase_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(399, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 14);
+            this.label10.TabIndex = 344;
+            this.label10.Text = "Indtast tlf nr.:";
             // 
             // label1
             // 
@@ -490,7 +697,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(339, 450);
+            this.label6.Location = new System.Drawing.Point(22, 471);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 18);
             this.label6.TabIndex = 339;
@@ -500,7 +707,7 @@
             // 
             this.UpdateButt.BackColor = System.Drawing.Color.Transparent;
             this.UpdateButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateButt.Location = new System.Drawing.Point(445, 541);
+            this.UpdateButt.Location = new System.Drawing.Point(128, 562);
             this.UpdateButt.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateButt.Name = "UpdateButt";
             this.UpdateButt.Size = new System.Drawing.Size(114, 45);
@@ -512,7 +719,7 @@
             // CalculatePrice
             // 
             this.CalculatePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CalculatePrice.Location = new System.Drawing.Point(727, 541);
+            this.CalculatePrice.Location = new System.Drawing.Point(410, 562);
             this.CalculatePrice.Margin = new System.Windows.Forms.Padding(2);
             this.CalculatePrice.Name = "CalculatePrice";
             this.CalculatePrice.Size = new System.Drawing.Size(99, 45);
@@ -524,7 +731,7 @@
             // EndCaseTimePictxt
             // 
             this.EndCaseTimePictxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.EndCaseTimePictxt.Location = new System.Drawing.Point(729, 479);
+            this.EndCaseTimePictxt.Location = new System.Drawing.Point(412, 500);
             this.EndCaseTimePictxt.Margin = new System.Windows.Forms.Padding(2);
             this.EndCaseTimePictxt.Name = "EndCaseTimePictxt";
             this.EndCaseTimePictxt.Size = new System.Drawing.Size(167, 22);
@@ -534,7 +741,7 @@
             // 
             this.RespEmpCombo.Font = new System.Drawing.Font("Verdana", 9F);
             this.RespEmpCombo.FormattingEnabled = true;
-            this.RespEmpCombo.Location = new System.Drawing.Point(445, 482);
+            this.RespEmpCombo.Location = new System.Drawing.Point(128, 503);
             this.RespEmpCombo.Margin = new System.Windows.Forms.Padding(2);
             this.RespEmpCombo.Name = "RespEmpCombo";
             this.RespEmpCombo.Size = new System.Drawing.Size(168, 22);
@@ -545,7 +752,7 @@
             // 
             this.ClosedCaseBut.BackColor = System.Drawing.Color.Transparent;
             this.ClosedCaseBut.Font = new System.Drawing.Font("Verdana", 9F);
-            this.ClosedCaseBut.Location = new System.Drawing.Point(830, 541);
+            this.ClosedCaseBut.Location = new System.Drawing.Point(513, 562);
             this.ClosedCaseBut.Margin = new System.Windows.Forms.Padding(2);
             this.ClosedCaseBut.Name = "ClosedCaseBut";
             this.ClosedCaseBut.Size = new System.Drawing.Size(66, 45);
@@ -559,7 +766,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label13.Location = new System.Drawing.Point(652, 485);
+            this.label13.Location = new System.Drawing.Point(335, 506);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 14);
@@ -569,7 +776,7 @@
             // NegPricetxt
             // 
             this.NegPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NegPricetxt.Location = new System.Drawing.Point(445, 515);
+            this.NegPricetxt.Location = new System.Drawing.Point(128, 536);
             this.NegPricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.NegPricetxt.Name = "NegPricetxt";
             this.NegPricetxt.Size = new System.Drawing.Size(168, 22);
@@ -645,7 +852,7 @@
             // 
             this.DeleteButt.BackColor = System.Drawing.Color.Transparent;
             this.DeleteButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.DeleteButt.Location = new System.Drawing.Point(138, 414);
+            this.DeleteButt.Location = new System.Drawing.Point(258, 414);
             this.DeleteButt.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteButt.Name = "DeleteButt";
             this.DeleteButt.Size = new System.Drawing.Size(114, 45);
@@ -656,11 +863,19 @@
             // 
             // CaseDataGrid
             // 
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle55;
+            this.CaseDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CaseDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.CaseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CaseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Case_ID,
@@ -673,11 +888,19 @@
             this.NegotiatedPrice,
             this.TotalPrice,
             this.Resp_empl});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CaseDataGrid.DefaultCellStyle = dataGridViewCellStyle18;
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -748,7 +971,7 @@
             // TotalPrice
             // 
             this.TotalPrice.FillWeight = 90F;
-            this.TotalPrice.HeaderText = "Total pris";
+            this.TotalPrice.HeaderText = "Slut pris";
             this.TotalPrice.Name = "TotalPrice";
             this.TotalPrice.ReadOnly = true;
             this.TotalPrice.Width = 90;
@@ -775,7 +998,7 @@
             // TotalPricetxt
             // 
             this.TotalPricetxt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.TotalPricetxt.Location = new System.Drawing.Point(727, 515);
+            this.TotalPricetxt.Location = new System.Drawing.Point(410, 536);
             this.TotalPricetxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalPricetxt.Name = "TotalPricetxt";
             this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
@@ -786,7 +1009,6 @@
             // 
             this.pnlUpdateEditServices.Controls.Add(this.pictureBox3);
             this.pnlUpdateEditServices.Controls.Add(this.lLblHelpCaseServices2Tab);
-            this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
             this.pnlUpdateEditServices.Controls.Add(this.btnActivateAddServiceBoxes);
             this.pnlUpdateEditServices.Controls.Add(this.lblCaseName);
             this.pnlUpdateEditServices.Controls.Add(this.lblHeaderServices);
@@ -795,9 +1017,10 @@
             this.pnlUpdateEditServices.Controls.Add(this.BtnAddNewService);
             this.pnlUpdateEditServices.Controls.Add(this.BtnUpdateExsService);
             this.pnlUpdateEditServices.Controls.Add(this.pnlActivateServiceBoxes);
+            this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
             this.pnlUpdateEditServices.Location = new System.Drawing.Point(2, 2);
             this.pnlUpdateEditServices.Name = "pnlUpdateEditServices";
-            this.pnlUpdateEditServices.Size = new System.Drawing.Size(1193, 641);
+            this.pnlUpdateEditServices.Size = new System.Drawing.Size(1196, 641);
             this.pnlUpdateEditServices.TabIndex = 281;
             this.pnlUpdateEditServices.Visible = false;
             // 
@@ -814,24 +1037,12 @@
             // 
             this.lLblHelpCaseServices2Tab.AutoSize = true;
             this.lLblHelpCaseServices2Tab.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.lLblHelpCaseServices2Tab.Location = new System.Drawing.Point(1076, 572);
+            this.lLblHelpCaseServices2Tab.Location = new System.Drawing.Point(73, 577);
             this.lLblHelpCaseServices2Tab.Name = "lLblHelpCaseServices2Tab";
             this.lLblHelpCaseServices2Tab.Size = new System.Drawing.Size(50, 18);
             this.lLblHelpCaseServices2Tab.TabIndex = 329;
             this.lLblHelpCaseServices2Tab.TabStop = true;
             this.lLblHelpCaseServices2Tab.Text = "Hjælp";
-            // 
-            // btnReturnToCasesPnl
-            // 
-            this.btnReturnToCasesPnl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnReturnToCasesPnl.Location = new System.Drawing.Point(92, 464);
-            this.btnReturnToCasesPnl.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReturnToCasesPnl.Name = "btnReturnToCasesPnl";
-            this.btnReturnToCasesPnl.Size = new System.Drawing.Size(97, 45);
-            this.btnReturnToCasesPnl.TabIndex = 328;
-            this.btnReturnToCasesPnl.Text = "Retur";
-            this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
-            this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
             // 
             // btnActivateAddServiceBoxes
             // 
@@ -867,8 +1078,14 @@
             // 
             // ServiceDataGrid
             // 
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -877,11 +1094,19 @@
             this.Comments,
             this.Hours,
             this.Km});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ServiceDataGrid.DefaultCellStyle = dataGridViewCellStyle21;
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -939,7 +1164,7 @@
             // 
             this.BtnDeleteExsService.BackColor = System.Drawing.Color.Transparent;
             this.BtnDeleteExsService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.BtnDeleteExsService.Location = new System.Drawing.Point(621, 569);
+            this.BtnDeleteExsService.Location = new System.Drawing.Point(607, 570);
             this.BtnDeleteExsService.Margin = new System.Windows.Forms.Padding(2);
             this.BtnDeleteExsService.Name = "BtnDeleteExsService";
             this.BtnDeleteExsService.Size = new System.Drawing.Size(121, 36);
@@ -953,7 +1178,7 @@
             // 
             this.BtnAddNewService.BackColor = System.Drawing.Color.Transparent;
             this.BtnAddNewService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.BtnAddNewService.Location = new System.Drawing.Point(371, 569);
+            this.BtnAddNewService.Location = new System.Drawing.Point(357, 570);
             this.BtnAddNewService.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAddNewService.Name = "BtnAddNewService";
             this.BtnAddNewService.Size = new System.Drawing.Size(121, 36);
@@ -966,7 +1191,7 @@
             // BtnUpdateExsService
             // 
             this.BtnUpdateExsService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.BtnUpdateExsService.Location = new System.Drawing.Point(496, 569);
+            this.BtnUpdateExsService.Location = new System.Drawing.Point(482, 570);
             this.BtnUpdateExsService.Margin = new System.Windows.Forms.Padding(2);
             this.BtnUpdateExsService.Name = "BtnUpdateExsService";
             this.BtnUpdateExsService.Size = new System.Drawing.Size(121, 36);
@@ -991,7 +1216,7 @@
             this.pnlActivateServiceBoxes.Controls.Add(this.label16);
             this.pnlActivateServiceBoxes.Controls.Add(this.label15);
             this.pnlActivateServiceBoxes.Controls.Add(this.label14);
-            this.pnlActivateServiceBoxes.Location = new System.Drawing.Point(277, 399);
+            this.pnlActivateServiceBoxes.Location = new System.Drawing.Point(263, 400);
             this.pnlActivateServiceBoxes.Name = "pnlActivateServiceBoxes";
             this.pnlActivateServiceBoxes.Size = new System.Drawing.Size(478, 165);
             this.pnlActivateServiceBoxes.TabIndex = 181;
@@ -1004,9 +1229,9 @@
             this.label2.Location = new System.Drawing.Point(4, 13);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 14);
+            this.label2.Size = new System.Drawing.Size(149, 14);
             this.label2.TabIndex = 181;
-            this.label2.Text = "Indtast info om ydelse:";
+            this.label2.Text = "Tilføj/rediger ydelse:";
             // 
             // lblHoursUsed
             // 
@@ -1136,6 +1361,18 @@
             this.label14.TabIndex = 169;
             this.label14.Text = "Medarbejder:";
             // 
+            // btnReturnToCasesPnl
+            // 
+            this.btnReturnToCasesPnl.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnReturnToCasesPnl.Location = new System.Drawing.Point(92, 464);
+            this.btnReturnToCasesPnl.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturnToCasesPnl.Name = "btnReturnToCasesPnl";
+            this.btnReturnToCasesPnl.Size = new System.Drawing.Size(97, 45);
+            this.btnReturnToCasesPnl.TabIndex = 328;
+            this.btnReturnToCasesPnl.Text = "Retur";
+            this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
+            this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
+            // 
             // tabEmployees
             // 
             this.tabEmployees.Controls.Add(this.pictureBox5);
@@ -1175,7 +1412,7 @@
             this.lLblHelpEmployeesTab.AutoSize = true;
             this.lLblHelpEmployeesTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpEmployeesTab.Name = "lLblHelpEmployeesTab";
-            this.lLblHelpEmployeesTab.Size = new System.Drawing.Size(50, 18);
+            this.lLblHelpEmployeesTab.Size = new System.Drawing.Size(59, 18);
             this.lLblHelpEmployeesTab.TabIndex = 329;
             this.lLblHelpEmployeesTab.TabStop = true;
             this.lLblHelpEmployeesTab.Text = "Hjælp";
@@ -1613,8 +1850,14 @@
             // 
             // EmplGridView
             // 
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Verdana", 8.25F);
-            this.EmplGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmplGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.EmplGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmplGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -1628,6 +1871,14 @@
             this.dataGridViewTextBoxColumn1,
             this.Position,
             this.Money});
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmplGridView.DefaultCellStyle = dataGridViewCellStyle24;
             this.EmplGridView.Location = new System.Drawing.Point(13, 136);
             this.EmplGridView.Margin = new System.Windows.Forms.Padding(2);
             this.EmplGridView.Name = "EmplGridView";
@@ -1718,104 +1969,374 @@
             this.Money.ReadOnly = true;
             this.Money.Width = 60;
             // 
-            // tabPage1
+            // tabClients
             // 
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.btnFindExistingClient);
-            this.tabPage1.Controls.Add(this.btnCancelCreateNewCase);
-            this.tabPage1.Controls.Add(label5);
-            this.tabPage1.Controls.Add(this.txtShowNewClientIdHere);
-            this.tabPage1.Controls.Add(this.pictureBox2);
-            this.tabPage1.Controls.Add(this.lLblHelpAddClientCaseTab);
-            this.tabPage1.Controls.Add(this.btnUpdateClient);
-            this.tabPage1.Controls.Add(this.CrCaseServiceCom);
-            this.tabPage1.Controls.Add(this.label35);
-            this.tabPage1.Controls.Add(this.btnNewCase);
-            this.tabPage1.Controls.Add(this.CrCasetimeP);
-            this.tabPage1.Controls.Add(this.CrCaseAdvokat);
-            this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.CrCaseTimeUsed);
-            this.tabPage1.Controls.Add(this.CrCasePrice);
-            this.tabPage1.Controls.Add(this.CrCaseEndDato);
-            this.tabPage1.Controls.Add(this.CrCaseName);
-            this.tabPage1.Controls.Add(label22);
-            this.tabPage1.Controls.Add(label24);
-            this.tabPage1.Controls.Add(label25);
-            this.tabPage1.Controls.Add(label26);
-            this.tabPage1.Controls.Add(label28);
-            this.tabPage1.Controls.Add(label29);
-            this.tabPage1.Controls.Add(this.NewClientBtn);
-            this.tabPage1.Controls.Add(this.NewClientTelef);
-            this.tabPage1.Controls.Add(this.NewClientMail);
-            this.tabPage1.Controls.Add(this.NewClientPost);
-            this.tabPage1.Controls.Add(this.NewClientAdress);
-            this.tabPage1.Controls.Add(this.NewClientLName);
-            this.tabPage1.Controls.Add(this.NewClientfName);
-            this.tabPage1.Controls.Add(this.label36);
-            this.tabPage1.Controls.Add(this.NewClientCprNo);
-            this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.label32);
-            this.tabPage1.Controls.Add(this.label31);
-            this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.label21);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(1198, 639);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Opret klient og sag";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabClients.Controls.Add(this.pnlClientsButtons);
+            this.tabClients.Controls.Add(this.lblSeeAllDeactivatedClients);
+            this.tabClients.Controls.Add(this.lblSeeAllActiveClients);
+            this.tabClients.Controls.Add(this.pnlCreateUpdateClient);
+            this.tabClients.Controls.Add(this.clientsDataGrid);
+            this.tabClients.Controls.Add(this.pictureBox2);
+            this.tabClients.Controls.Add(this.lLblHelpAddClientCaseTab);
+            this.tabClients.Location = new System.Drawing.Point(4, 27);
+            this.tabClients.Margin = new System.Windows.Forms.Padding(2);
+            this.tabClients.Name = "tabClients";
+            this.tabClients.Padding = new System.Windows.Forms.Padding(2);
+            this.tabClients.Size = new System.Drawing.Size(1198, 639);
+            this.tabClients.TabIndex = 4;
+            this.tabClients.Text = "Klienter";
+            this.tabClients.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // pnlClientsButtons
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(682, 117);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 26);
-            this.label3.TabIndex = 354;
-            this.label3.Text = "**Du kan ikke oprette sag uden klient ID,\r\n   søg på tlf nr eller opret ny klient" +
-    "";
+            this.pnlClientsButtons.Controls.Add(this.btnActivateUpdateClient);
+            this.pnlClientsButtons.Controls.Add(this.btnActivateCreateNewClient);
+            this.pnlClientsButtons.Controls.Add(this.btnShowDeactivatedClients);
+            this.pnlClientsButtons.Controls.Add(this.btnShowAllActiveClients);
+            this.pnlClientsButtons.Location = new System.Drawing.Point(55, 497);
+            this.pnlClientsButtons.Name = "pnlClientsButtons";
+            this.pnlClientsButtons.Size = new System.Drawing.Size(421, 79);
+            this.pnlClientsButtons.TabIndex = 378;
+            // 
+            // btnActivateUpdateClient
+            // 
+            this.btnActivateUpdateClient.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivateUpdateClient.Location = new System.Drawing.Point(12, 13);
+            this.btnActivateUpdateClient.Name = "btnActivateUpdateClient";
+            this.btnActivateUpdateClient.Size = new System.Drawing.Size(90, 45);
+            this.btnActivateUpdateClient.TabIndex = 356;
+            this.btnActivateUpdateClient.Text = "Opdater klient";
+            this.btnActivateUpdateClient.UseVisualStyleBackColor = true;
+            this.btnActivateUpdateClient.Click += new System.EventHandler(this.btnActivateUpdateClient_Click);
+            // 
+            // btnActivateCreateNewClient
+            // 
+            this.btnActivateCreateNewClient.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivateCreateNewClient.Location = new System.Drawing.Point(108, 13);
+            this.btnActivateCreateNewClient.Name = "btnActivateCreateNewClient";
+            this.btnActivateCreateNewClient.Size = new System.Drawing.Size(90, 45);
+            this.btnActivateCreateNewClient.TabIndex = 357;
+            this.btnActivateCreateNewClient.Text = "Tilføj nye klient";
+            this.btnActivateCreateNewClient.UseVisualStyleBackColor = true;
+            this.btnActivateCreateNewClient.Click += new System.EventHandler(this.btnActivateCreateNewClient_Click);
+            // 
+            // btnShowDeactivatedClients
+            // 
+            this.btnShowDeactivatedClients.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDeactivatedClients.Location = new System.Drawing.Point(213, 13);
+            this.btnShowDeactivatedClients.Name = "btnShowDeactivatedClients";
+            this.btnShowDeactivatedClients.Size = new System.Drawing.Size(186, 45);
+            this.btnShowDeactivatedClients.TabIndex = 375;
+            this.btnShowDeactivatedClients.Text = "Vis ikke aktive klienter";
+            this.btnShowDeactivatedClients.UseVisualStyleBackColor = true;
+            this.btnShowDeactivatedClients.Click += new System.EventHandler(this.btnShowDeactivatedClients_Click);
+            // 
+            // btnShowAllActiveClients
+            // 
+            this.btnShowAllActiveClients.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAllActiveClients.Location = new System.Drawing.Point(213, 13);
+            this.btnShowAllActiveClients.Name = "btnShowAllActiveClients";
+            this.btnShowAllActiveClients.Size = new System.Drawing.Size(186, 45);
+            this.btnShowAllActiveClients.TabIndex = 376;
+            this.btnShowAllActiveClients.Text = "Vis alle aktive klienter";
+            this.btnShowAllActiveClients.UseVisualStyleBackColor = true;
+            this.btnShowAllActiveClients.Visible = false;
+            this.btnShowAllActiveClients.Click += new System.EventHandler(this.btnShowAllActiveClients_Click);
+            // 
+            // lblSeeAllDeactivatedClients
+            // 
+            this.lblSeeAllDeactivatedClients.AutoSize = true;
+            this.lblSeeAllDeactivatedClients.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeeAllDeactivatedClients.Location = new System.Drawing.Point(52, 102);
+            this.lblSeeAllDeactivatedClients.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeeAllDeactivatedClients.Name = "lblSeeAllDeactivatedClients";
+            this.lblSeeAllDeactivatedClients.Size = new System.Drawing.Size(191, 18);
+            this.lblSeeAllDeactivatedClients.TabIndex = 377;
+            this.lblSeeAllDeactivatedClients.Text = "Se ikke aktive klienter";
+            this.lblSeeAllDeactivatedClients.Visible = false;
+            // 
+            // lblSeeAllActiveClients
+            // 
+            this.lblSeeAllActiveClients.AutoSize = true;
+            this.lblSeeAllActiveClients.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeeAllActiveClients.Location = new System.Drawing.Point(52, 99);
+            this.lblSeeAllActiveClients.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeeAllActiveClients.Name = "lblSeeAllActiveClients";
+            this.lblSeeAllActiveClients.Size = new System.Drawing.Size(185, 18);
+            this.lblSeeAllActiveClients.TabIndex = 374;
+            this.lblSeeAllActiveClients.Text = "Se alle aktive klienter";
+            // 
+            // pnlCreateUpdateClient
+            // 
+            this.pnlCreateUpdateClient.Controls.Add(this.btnCloseAddUpdateClientPnl);
+            this.pnlCreateUpdateClient.Controls.Add(this.lblCreateNewClient);
+            this.pnlCreateUpdateClient.Controls.Add(this.btnFindExistingClient);
+            this.pnlCreateUpdateClient.Controls.Add(this.btnUpdateClient);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientBtn);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientTelef);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientMail);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientPost);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientAdress);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientLName);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientfName);
+            this.pnlCreateUpdateClient.Controls.Add(this.lblUpdateClient);
+            this.pnlCreateUpdateClient.Controls.Add(this.NewClientCprNo);
+            this.pnlCreateUpdateClient.Controls.Add(this.label33);
+            this.pnlCreateUpdateClient.Controls.Add(this.label32);
+            this.pnlCreateUpdateClient.Controls.Add(this.label31);
+            this.pnlCreateUpdateClient.Controls.Add(this.label30);
+            this.pnlCreateUpdateClient.Controls.Add(this.label27);
+            this.pnlCreateUpdateClient.Controls.Add(this.label21);
+            this.pnlCreateUpdateClient.Controls.Add(this.label19);
+            this.pnlCreateUpdateClient.Location = new System.Drawing.Point(8, 36);
+            this.pnlCreateUpdateClient.Name = "pnlCreateUpdateClient";
+            this.pnlCreateUpdateClient.Size = new System.Drawing.Size(435, 429);
+            this.pnlCreateUpdateClient.TabIndex = 354;
+            this.pnlCreateUpdateClient.Visible = false;
+            // 
+            // btnCloseAddUpdateClientPnl
+            // 
+            this.btnCloseAddUpdateClientPnl.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnCloseAddUpdateClientPnl.Location = new System.Drawing.Point(240, 319);
+            this.btnCloseAddUpdateClientPnl.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCloseAddUpdateClientPnl.Name = "btnCloseAddUpdateClientPnl";
+            this.btnCloseAddUpdateClientPnl.Size = new System.Drawing.Size(90, 45);
+            this.btnCloseAddUpdateClientPnl.TabIndex = 373;
+            this.btnCloseAddUpdateClientPnl.Text = "Afslut";
+            this.btnCloseAddUpdateClientPnl.UseVisualStyleBackColor = true;
+            this.btnCloseAddUpdateClientPnl.Click += new System.EventHandler(this.btnCloseAddUpdateClientPnl_Click);
+            // 
+            // lblCreateNewClient
+            // 
+            this.lblCreateNewClient.AutoSize = true;
+            this.lblCreateNewClient.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateNewClient.Location = new System.Drawing.Point(51, 63);
+            this.lblCreateNewClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCreateNewClient.Name = "lblCreateNewClient";
+            this.lblCreateNewClient.Size = new System.Drawing.Size(123, 18);
+            this.lblCreateNewClient.TabIndex = 372;
+            this.lblCreateNewClient.Text = "Tilføj ny klient";
+            this.lblCreateNewClient.Visible = false;
             // 
             // btnFindExistingClient
             // 
             this.btnFindExistingClient.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnFindExistingClient.Location = new System.Drawing.Point(313, 312);
+            this.btnFindExistingClient.Location = new System.Drawing.Point(297, 281);
             this.btnFindExistingClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnFindExistingClient.Name = "btnFindExistingClient";
             this.btnFindExistingClient.Size = new System.Drawing.Size(90, 22);
-            this.btnFindExistingClient.TabIndex = 353;
+            this.btnFindExistingClient.TabIndex = 371;
             this.btnFindExistingClient.Text = "Søg på tlf";
             this.btnFindExistingClient.UseVisualStyleBackColor = true;
-            this.btnFindExistingClient.Click += new System.EventHandler(this.btnFindExistingClient_Click);
             // 
-            // btnCancelCreateNewCase
+            // btnUpdateClient
             // 
-            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(792, 383);
-            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
-            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnCancelCreateNewCase.TabIndex = 352;
-            this.btnCancelCreateNewCase.Text = "Fortryd";
-            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
-            this.btnCancelCreateNewCase.Visible = false;
-            this.btnCancelCreateNewCase.Click += new System.EventHandler(this.btnCancelCreateNewCase_Click);
+            this.btnUpdateClient.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnUpdateClient.Location = new System.Drawing.Point(147, 319);
+            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateClient.Name = "btnUpdateClient";
+            this.btnUpdateClient.Size = new System.Drawing.Size(90, 45);
+            this.btnUpdateClient.TabIndex = 370;
+            this.btnUpdateClient.Text = "Opdater klient";
+            this.btnUpdateClient.UseVisualStyleBackColor = true;
+            this.btnUpdateClient.Visible = false;
             // 
-            // txtShowNewClientIdHere
+            // NewClientBtn
             // 
-            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(698, 145);
-            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
-            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
-            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
-            this.txtShowNewClientIdHere.TabIndex = 350;
-            this.txtShowNewClientIdHere.Text = "Find/Opret klient";
-            this.txtShowNewClientIdHere.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtShowNewClientIdHere_KeyPress);
+            this.NewClientBtn.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientBtn.Location = new System.Drawing.Point(147, 319);
+            this.NewClientBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientBtn.Name = "NewClientBtn";
+            this.NewClientBtn.Size = new System.Drawing.Size(90, 45);
+            this.NewClientBtn.TabIndex = 369;
+            this.NewClientBtn.Text = "Tilføj ny klient";
+            this.NewClientBtn.UseVisualStyleBackColor = true;
+            this.NewClientBtn.Visible = false;
+            // 
+            // NewClientTelef
+            // 
+            this.NewClientTelef.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientTelef.Location = new System.Drawing.Point(147, 281);
+            this.NewClientTelef.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientTelef.Name = "NewClientTelef";
+            this.NewClientTelef.Size = new System.Drawing.Size(146, 22);
+            this.NewClientTelef.TabIndex = 368;
+            // 
+            // NewClientMail
+            // 
+            this.NewClientMail.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientMail.Location = new System.Drawing.Point(147, 252);
+            this.NewClientMail.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientMail.Name = "NewClientMail";
+            this.NewClientMail.Size = new System.Drawing.Size(198, 22);
+            this.NewClientMail.TabIndex = 367;
+            // 
+            // NewClientPost
+            // 
+            this.NewClientPost.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientPost.Location = new System.Drawing.Point(147, 223);
+            this.NewClientPost.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientPost.Name = "NewClientPost";
+            this.NewClientPost.Size = new System.Drawing.Size(124, 22);
+            this.NewClientPost.TabIndex = 366;
+            // 
+            // NewClientAdress
+            // 
+            this.NewClientAdress.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientAdress.Location = new System.Drawing.Point(147, 194);
+            this.NewClientAdress.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientAdress.Name = "NewClientAdress";
+            this.NewClientAdress.Size = new System.Drawing.Size(200, 22);
+            this.NewClientAdress.TabIndex = 365;
+            // 
+            // NewClientLName
+            // 
+            this.NewClientLName.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientLName.Location = new System.Drawing.Point(147, 165);
+            this.NewClientLName.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientLName.Name = "NewClientLName";
+            this.NewClientLName.Size = new System.Drawing.Size(183, 22);
+            this.NewClientLName.TabIndex = 364;
+            // 
+            // NewClientfName
+            // 
+            this.NewClientfName.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientfName.Location = new System.Drawing.Point(147, 136);
+            this.NewClientfName.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientfName.Name = "NewClientfName";
+            this.NewClientfName.Size = new System.Drawing.Size(177, 22);
+            this.NewClientfName.TabIndex = 363;
+            // 
+            // lblUpdateClient
+            // 
+            this.lblUpdateClient.AutoSize = true;
+            this.lblUpdateClient.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateClient.Location = new System.Drawing.Point(48, 63);
+            this.lblUpdateClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateClient.Name = "lblUpdateClient";
+            this.lblUpdateClient.Size = new System.Drawing.Size(125, 18);
+            this.lblUpdateClient.TabIndex = 362;
+            this.lblUpdateClient.Text = "Opdater klient";
+            this.lblUpdateClient.Visible = false;
+            // 
+            // NewClientCprNo
+            // 
+            this.NewClientCprNo.Font = new System.Drawing.Font("Verdana", 9F);
+            this.NewClientCprNo.Location = new System.Drawing.Point(147, 107);
+            this.NewClientCprNo.Margin = new System.Windows.Forms.Padding(2);
+            this.NewClientCprNo.Name = "NewClientCprNo";
+            this.NewClientCprNo.Size = new System.Drawing.Size(133, 22);
+            this.NewClientCprNo.TabIndex = 361;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label33.Location = new System.Drawing.Point(51, 288);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(55, 14);
+            this.label33.TabIndex = 360;
+            this.label33.Text = "TlfNo: *";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label32.Location = new System.Drawing.Point(51, 258);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(57, 14);
+            this.label32.TabIndex = 359;
+            this.label32.Text = "Email: *";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label31.Location = new System.Drawing.Point(51, 228);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(69, 14);
+            this.label31.TabIndex = 358;
+            this.label31.Text = "PostNo: *";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label30.Location = new System.Drawing.Point(51, 198);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(75, 14);
+            this.label30.TabIndex = 357;
+            this.label30.Text = "Address: *";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label27.Location = new System.Drawing.Point(51, 168);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(87, 14);
+            this.label27.TabIndex = 356;
+            this.label27.Text = "LastName: *";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label21.Location = new System.Drawing.Point(51, 138);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(87, 14);
+            this.label21.TabIndex = 355;
+            this.label21.Text = "FirstName: *";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label19.Location = new System.Drawing.Point(51, 108);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 14);
+            this.label19.TabIndex = 354;
+            this.label19.Text = "CprNo: *";
+            // 
+            // clientsDataGrid
+            // 
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.clientsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.clientsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Client_Id,
+            this.Client_CprNO,
+            this.FirstName,
+            this.LastName,
+            this.Client_Address,
+            this.PostNO,
+            this.Client_Email,
+            this.Client_TlfNo});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.clientsDataGrid.DefaultCellStyle = dataGridViewCellStyle26;
+            this.clientsDataGrid.Location = new System.Drawing.Point(55, 157);
+            this.clientsDataGrid.Name = "clientsDataGrid";
+            this.clientsDataGrid.Size = new System.Drawing.Size(846, 334);
+            this.clientsDataGrid.TabIndex = 355;
             // 
             // pictureBox2
             // 
@@ -1831,295 +2352,10 @@
             this.lLblHelpAddClientCaseTab.AutoSize = true;
             this.lLblHelpAddClientCaseTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpAddClientCaseTab.Name = "lLblHelpAddClientCaseTab";
-            this.lLblHelpAddClientCaseTab.Size = new System.Drawing.Size(50, 18);
+            this.lLblHelpAddClientCaseTab.Size = new System.Drawing.Size(59, 18);
             this.lLblHelpAddClientCaseTab.TabIndex = 348;
             this.lLblHelpAddClientCaseTab.TabStop = true;
             this.lLblHelpAddClientCaseTab.Text = "Hjælp";
-            // 
-            // btnUpdateClient
-            // 
-            this.btnUpdateClient.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnUpdateClient.Location = new System.Drawing.Point(257, 350);
-            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateClient.Name = "btnUpdateClient";
-            this.btnUpdateClient.Size = new System.Drawing.Size(90, 45);
-            this.btnUpdateClient.TabIndex = 346;
-            this.btnUpdateClient.Text = "Opdater klient";
-            this.btnUpdateClient.UseVisualStyleBackColor = true;
-            this.btnUpdateClient.Visible = false;
-            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
-            // 
-            // CrCaseServiceCom
-            // 
-            this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseServiceCom.FormattingEnabled = true;
-            this.CrCaseServiceCom.Location = new System.Drawing.Point(698, 199);
-            this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseServiceCom.Name = "CrCaseServiceCom";
-            this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseServiceCom.TabIndex = 345;
-            this.CrCaseServiceCom.SelectedIndexChanged += new System.EventHandler(this.CrCaseServiceCom_SelectedIndexChanged);
-            this.CrCaseServiceCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCaseServiceCom_KeyPress);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label35.Location = new System.Drawing.Point(537, 98);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(114, 18);
-            this.label35.TabIndex = 344;
-            this.label35.Text = "Opret ny sag";
-            // 
-            // btnNewCase
-            // 
-            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnNewCase.Location = new System.Drawing.Point(698, 383);
-            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNewCase.Name = "btnNewCase";
-            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnNewCase.TabIndex = 343;
-            this.btnNewCase.Text = "Tilføj sag";
-            this.btnNewCase.UseVisualStyleBackColor = true;
-            this.btnNewCase.Visible = false;
-            this.btnNewCase.Click += new System.EventHandler(this.NewCaseButt_Click);
-            // 
-            // CrCasetimeP
-            // 
-            this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasetimeP.Location = new System.Drawing.Point(698, 229);
-            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCasetimeP.Name = "CrCasetimeP";
-            this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
-            this.CrCasetimeP.TabIndex = 342;
-            // 
-            // CrCaseAdvokat
-            // 
-            this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseAdvokat.FormattingEnabled = true;
-            this.CrCaseAdvokat.Location = new System.Drawing.Point(698, 259);
-            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseAdvokat.Name = "CrCaseAdvokat";
-            this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseAdvokat.TabIndex = 341;
-            this.CrCaseAdvokat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCaseAdvokat_KeyPress);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label20.Location = new System.Drawing.Point(543, 320);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(146, 14);
-            this.label20.TabIndex = 340;
-            this.label20.Text = "Forventet tidsforbrug:";
-            // 
-            // CrCaseTimeUsed
-            // 
-            this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseTimeUsed.Location = new System.Drawing.Point(698, 317);
-            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
-            this.CrCaseTimeUsed.ReadOnly = true;
-            this.CrCaseTimeUsed.Size = new System.Drawing.Size(131, 22);
-            this.CrCaseTimeUsed.TabIndex = 339;
-            // 
-            // CrCasePrice
-            // 
-            this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasePrice.Location = new System.Drawing.Point(698, 289);
-            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCasePrice.Name = "CrCasePrice";
-            this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
-            this.CrCasePrice.TabIndex = 338;
-            this.CrCasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCasePrice_KeyPress);
-            // 
-            // CrCaseEndDato
-            // 
-            this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseEndDato.Location = new System.Drawing.Point(698, 345);
-            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseEndDato.Name = "CrCaseEndDato";
-            this.CrCaseEndDato.ReadOnly = true;
-            this.CrCaseEndDato.Size = new System.Drawing.Size(131, 22);
-            this.CrCaseEndDato.TabIndex = 337;
-            // 
-            // CrCaseName
-            // 
-            this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseName.Location = new System.Drawing.Point(698, 171);
-            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseName.Name = "CrCaseName";
-            this.CrCaseName.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseName.TabIndex = 336;
-            // 
-            // NewClientBtn
-            // 
-            this.NewClientBtn.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientBtn.Location = new System.Drawing.Point(163, 350);
-            this.NewClientBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientBtn.Name = "NewClientBtn";
-            this.NewClientBtn.Size = new System.Drawing.Size(90, 45);
-            this.NewClientBtn.TabIndex = 329;
-            this.NewClientBtn.Text = "Tilføj ny klient";
-            this.NewClientBtn.UseVisualStyleBackColor = true;
-            this.NewClientBtn.Click += new System.EventHandler(this.NewClientBtn_Click);
-            // 
-            // NewClientTelef
-            // 
-            this.NewClientTelef.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientTelef.Location = new System.Drawing.Point(163, 312);
-            this.NewClientTelef.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientTelef.Name = "NewClientTelef";
-            this.NewClientTelef.Size = new System.Drawing.Size(146, 22);
-            this.NewClientTelef.TabIndex = 328;
-            this.NewClientTelef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewClientTelef_KeyPress);
-            // 
-            // NewClientMail
-            // 
-            this.NewClientMail.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientMail.Location = new System.Drawing.Point(163, 283);
-            this.NewClientMail.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientMail.Name = "NewClientMail";
-            this.NewClientMail.Size = new System.Drawing.Size(198, 22);
-            this.NewClientMail.TabIndex = 327;
-            // 
-            // NewClientPost
-            // 
-            this.NewClientPost.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientPost.Location = new System.Drawing.Point(163, 254);
-            this.NewClientPost.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientPost.Name = "NewClientPost";
-            this.NewClientPost.Size = new System.Drawing.Size(124, 22);
-            this.NewClientPost.TabIndex = 326;
-            this.NewClientPost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewClientPost_KeyPress);
-            // 
-            // NewClientAdress
-            // 
-            this.NewClientAdress.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientAdress.Location = new System.Drawing.Point(163, 225);
-            this.NewClientAdress.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientAdress.Name = "NewClientAdress";
-            this.NewClientAdress.Size = new System.Drawing.Size(200, 22);
-            this.NewClientAdress.TabIndex = 325;
-            // 
-            // NewClientLName
-            // 
-            this.NewClientLName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientLName.Location = new System.Drawing.Point(163, 196);
-            this.NewClientLName.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientLName.Name = "NewClientLName";
-            this.NewClientLName.Size = new System.Drawing.Size(183, 22);
-            this.NewClientLName.TabIndex = 324;
-            // 
-            // NewClientfName
-            // 
-            this.NewClientfName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientfName.Location = new System.Drawing.Point(163, 167);
-            this.NewClientfName.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientfName.Name = "NewClientfName";
-            this.NewClientfName.Size = new System.Drawing.Size(177, 22);
-            this.NewClientfName.TabIndex = 323;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(64, 94);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(276, 18);
-            this.label36.TabIndex = 322;
-            this.label36.Text = "Find/Opdater eller tilføj ny klient";
-            // 
-            // NewClientCprNo
-            // 
-            this.NewClientCprNo.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewClientCprNo.Location = new System.Drawing.Point(163, 138);
-            this.NewClientCprNo.Margin = new System.Windows.Forms.Padding(2);
-            this.NewClientCprNo.Name = "NewClientCprNo";
-            this.NewClientCprNo.Size = new System.Drawing.Size(133, 22);
-            this.NewClientCprNo.TabIndex = 321;
-            this.NewClientCprNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewClientCprNo_KeyPress);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label33.Location = new System.Drawing.Point(67, 319);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(55, 14);
-            this.label33.TabIndex = 320;
-            this.label33.Text = "TlfNo: *";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label32.Location = new System.Drawing.Point(67, 289);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(57, 14);
-            this.label32.TabIndex = 319;
-            this.label32.Text = "Email: *";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label31.Location = new System.Drawing.Point(67, 259);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(69, 14);
-            this.label31.TabIndex = 318;
-            this.label31.Text = "PostNo: *";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label30.Location = new System.Drawing.Point(67, 229);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(75, 14);
-            this.label30.TabIndex = 317;
-            this.label30.Text = "Address: *";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label27.Location = new System.Drawing.Point(67, 199);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(87, 14);
-            this.label27.TabIndex = 316;
-            this.label27.Text = "LastName: *";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label21.Location = new System.Drawing.Point(67, 169);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 14);
-            this.label21.TabIndex = 315;
-            this.label21.Text = "FirstName: *";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label19.Location = new System.Drawing.Point(67, 139);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 14);
-            this.label19.TabIndex = 314;
-            this.label19.Text = "CprNo: *";
             // 
             // tabShowAllProServ
             // 
@@ -2211,7 +2447,7 @@
             this.lLblHelpEmployeeServicesTab.AutoSize = true;
             this.lLblHelpEmployeeServicesTab.Location = new System.Drawing.Point(1076, 572);
             this.lLblHelpEmployeeServicesTab.Name = "lLblHelpEmployeeServicesTab";
-            this.lLblHelpEmployeeServicesTab.Size = new System.Drawing.Size(50, 18);
+            this.lLblHelpEmployeeServicesTab.Size = new System.Drawing.Size(59, 18);
             this.lLblHelpEmployeeServicesTab.TabIndex = 9;
             this.lLblHelpEmployeeServicesTab.TabStop = true;
             this.lLblHelpEmployeeServicesTab.Text = "Hjælp";
@@ -2295,8 +2531,14 @@
             // 
             // GridEmployeeServicesP
             // 
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridEmployeeServicesP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridEmployeeServicesP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.GridEmployeeServicesP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridEmployeeServicesP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CaseProvidedServiceId,
@@ -2304,6 +2546,14 @@
             this.PServiceHours,
             this.PServiceKm,
             this.PServiceComment});
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridEmployeeServicesP.DefaultCellStyle = dataGridViewCellStyle28;
             this.GridEmployeeServicesP.Location = new System.Drawing.Point(55, 246);
             this.GridEmployeeServicesP.Name = "GridEmployeeServicesP";
             this.GridEmployeeServicesP.Size = new System.Drawing.Size(814, 330);
@@ -2349,6 +2599,7 @@
             // 
             // tabProvServices
             // 
+            this.tabProvServices.Controls.Add(this.lblAddSubject);
             this.tabProvServices.Controls.Add(this.pictureBox6);
             this.tabProvServices.Controls.Add(this.lLblHelpSubjectsTab);
             this.tabProvServices.Controls.Add(this.btnCnclSubjectEdit);
@@ -2365,7 +2616,7 @@
             this.tabProvServices.Padding = new System.Windows.Forms.Padding(2);
             this.tabProvServices.Size = new System.Drawing.Size(1198, 639);
             this.tabProvServices.TabIndex = 3;
-            this.tabProvServices.Text = "Tjenesteydelser og efteruddannelse";
+            this.tabProvServices.Text = "Tjenesteydelser/Efteruddannelse";
             this.tabProvServices.UseVisualStyleBackColor = true;
             // 
             // pictureBox6
@@ -2380,9 +2631,9 @@
             // lLblHelpSubjectsTab
             // 
             this.lLblHelpSubjectsTab.AutoSize = true;
-            this.lLblHelpSubjectsTab.Location = new System.Drawing.Point(1076, 572);
+            this.lLblHelpSubjectsTab.Location = new System.Drawing.Point(41, 589);
             this.lLblHelpSubjectsTab.Name = "lLblHelpSubjectsTab";
-            this.lLblHelpSubjectsTab.Size = new System.Drawing.Size(50, 18);
+            this.lLblHelpSubjectsTab.Size = new System.Drawing.Size(59, 18);
             this.lLblHelpSubjectsTab.TabIndex = 302;
             this.lLblHelpSubjectsTab.TabStop = true;
             this.lLblHelpSubjectsTab.Text = "Hjælp";
@@ -2390,12 +2641,12 @@
             // btnCnclSubjectEdit
             // 
             this.btnCnclSubjectEdit.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnCnclSubjectEdit.Location = new System.Drawing.Point(551, 450);
+            this.btnCnclSubjectEdit.Location = new System.Drawing.Point(933, 369);
             this.btnCnclSubjectEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnCnclSubjectEdit.Name = "btnCnclSubjectEdit";
             this.btnCnclSubjectEdit.Size = new System.Drawing.Size(71, 45);
             this.btnCnclSubjectEdit.TabIndex = 301;
-            this.btnCnclSubjectEdit.Text = "Fortryd";
+            this.btnCnclSubjectEdit.Text = "Afbryd";
             this.btnCnclSubjectEdit.UseVisualStyleBackColor = true;
             this.btnCnclSubjectEdit.Visible = false;
             this.btnCnclSubjectEdit.Click += new System.EventHandler(this.btnCnclSubjectEdit_Click);
@@ -2410,7 +2661,7 @@
             this.pnlAddViewSubjects.Controls.Add(this.label50);
             this.pnlAddViewSubjects.Controls.Add(this.label49);
             this.pnlAddViewSubjects.Controls.Add(this.label47);
-            this.pnlAddViewSubjects.Location = new System.Drawing.Point(651, 245);
+            this.pnlAddViewSubjects.Location = new System.Drawing.Point(742, 218);
             this.pnlAddViewSubjects.Name = "pnlAddViewSubjects";
             this.pnlAddViewSubjects.Size = new System.Drawing.Size(280, 146);
             this.pnlAddViewSubjects.TabIndex = 300;
@@ -2502,16 +2753,24 @@
             // btnActivatAddSubjects
             // 
             this.btnActivatAddSubjects.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnActivatAddSubjects.Location = new System.Drawing.Point(77, 450);
+            this.btnActivatAddSubjects.Location = new System.Drawing.Point(150, 506);
             this.btnActivatAddSubjects.Name = "btnActivatAddSubjects";
             this.btnActivatAddSubjects.Size = new System.Drawing.Size(120, 45);
             this.btnActivatAddSubjects.TabIndex = 299;
-            this.btnActivatAddSubjects.Text = "Tilføj efteruddannelse";
+            this.btnActivatAddSubjects.Text = "Tilføj";
             this.btnActivatAddSubjects.UseVisualStyleBackColor = true;
             this.btnActivatAddSubjects.Click += new System.EventHandler(this.btnActivatAddSubjects_Click);
             // 
             // ServiceGridView
             // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.ServiceGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -2519,7 +2778,15 @@
             this.dataGridViewTextBoxColumn4,
             this.Time,
             this.Price});
-            this.ServiceGridView.Location = new System.Drawing.Point(77, 109);
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ServiceGridView.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ServiceGridView.Location = new System.Drawing.Point(150, 165);
             this.ServiceGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceGridView.Name = "ServiceGridView";
             this.ServiceGridView.RowTemplate.Height = 24;
@@ -2565,7 +2832,7 @@
             // btnDeleteSubj
             // 
             this.btnDeleteSubj.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnDeleteSubj.Location = new System.Drawing.Point(844, 394);
+            this.btnDeleteSubj.Location = new System.Drawing.Point(858, 369);
             this.btnDeleteSubj.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteSubj.Name = "btnDeleteSubj";
             this.btnDeleteSubj.Size = new System.Drawing.Size(71, 45);
@@ -2578,7 +2845,7 @@
             // btnUpdateSubj
             // 
             this.btnUpdateSubj.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnUpdateSubj.Location = new System.Drawing.Point(766, 394);
+            this.btnUpdateSubj.Location = new System.Drawing.Point(780, 369);
             this.btnUpdateSubj.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSubj.Name = "btnUpdateSubj";
             this.btnUpdateSubj.Size = new System.Drawing.Size(71, 45);
@@ -2591,7 +2858,7 @@
             // btnMakeNewSubj
             // 
             this.btnMakeNewSubj.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnMakeNewSubj.Location = new System.Drawing.Point(766, 394);
+            this.btnMakeNewSubj.Location = new System.Drawing.Point(780, 369);
             this.btnMakeNewSubj.Margin = new System.Windows.Forms.Padding(2);
             this.btnMakeNewSubj.Name = "btnMakeNewSubj";
             this.btnMakeNewSubj.Size = new System.Drawing.Size(71, 45);
@@ -2605,22 +2872,89 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label48.Location = new System.Drawing.Point(74, 71);
+            this.label48.Location = new System.Drawing.Point(147, 127);
             this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(335, 18);
+            this.label48.Size = new System.Drawing.Size(314, 18);
             this.label48.TabIndex = 281;
-            this.label48.Text = "Tjenesteydelser og efteruddannelser";
+            this.label48.Text = "Tjenesteydelser/Efteruddannelser";
             // 
-            // label10
+            // linkLabel1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(399, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 14);
-            this.label10.TabIndex = 344;
-            this.label10.Text = "Indtast tlf nr.:";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.linkLabel1.Location = new System.Drawing.Point(31, 568);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(263, 18);
+            this.linkLabel1.TabIndex = 414;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Hjælp (View all create update sag)";
+            // 
+            // lblAddSubject
+            // 
+            this.lblAddSubject.AutoSize = true;
+            this.lblAddSubject.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAddSubject.Location = new System.Drawing.Point(739, 168);
+            this.lblAddSubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddSubject.Name = "lblAddSubject";
+            this.lblAddSubject.Size = new System.Drawing.Size(280, 18);
+            this.lblAddSubject.TabIndex = 304;
+            this.lblAddSubject.Text = "Tilføj tjenesteydelse/efterudd.";
+            this.lblAddSubject.Visible = false;
+            // 
+            // Client_Id
+            // 
+            this.Client_Id.FillWeight = 80F;
+            this.Client_Id.HeaderText = "Klient-ID";
+            this.Client_Id.Name = "Client_Id";
+            this.Client_Id.ReadOnly = true;
+            this.Client_Id.Width = 80;
+            // 
+            // Client_CprNO
+            // 
+            this.Client_CprNO.HeaderText = "Cpr. nr.";
+            this.Client_CprNO.Name = "Client_CprNO";
+            this.Client_CprNO.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "Fornavn";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Efternavn";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // Client_Address
+            // 
+            this.Client_Address.FillWeight = 120F;
+            this.Client_Address.HeaderText = "Adresse";
+            this.Client_Address.Name = "Client_Address";
+            this.Client_Address.ReadOnly = true;
+            this.Client_Address.Width = 120;
+            // 
+            // PostNO
+            // 
+            this.PostNO.FillWeight = 80F;
+            this.PostNO.HeaderText = "Postnr.";
+            this.PostNO.Name = "PostNO";
+            this.PostNO.ReadOnly = true;
+            this.PostNO.Width = 80;
+            // 
+            // Client_Email
+            // 
+            this.Client_Email.HeaderText = "Email";
+            this.Client_Email.Name = "Client_Email";
+            this.Client_Email.ReadOnly = true;
+            // 
+            // Client_TlfNo
+            // 
+            this.Client_TlfNo.HeaderText = "Tlf nr.";
+            this.Client_TlfNo.Name = "Client_TlfNo";
+            this.Client_TlfNo.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -2635,6 +2969,8 @@
             this.tabCases.ResumeLayout(false);
             this.pnlAllOpenCases.ResumeLayout(false);
             this.pnlAllOpenCases.PerformLayout();
+            this.pnlCreateNewCase.ResumeLayout(false);
+            this.pnlCreateNewCase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
             this.pnlUpdateEditServices.ResumeLayout(false);
@@ -2651,8 +2987,12 @@
             this.pnlAddUpdateEmplFields.ResumeLayout(false);
             this.pnlAddUpdateEmplFields.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabClients.ResumeLayout(false);
+            this.tabClients.PerformLayout();
+            this.pnlClientsButtons.ResumeLayout(false);
+            this.pnlCreateUpdateClient.ResumeLayout(false);
+            this.pnlCreateUpdateClient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabShowAllProServ.ResumeLayout(false);
             this.tabShowAllProServ.PerformLayout();
@@ -2682,34 +3022,7 @@
         private System.Windows.Forms.Button btnUpdateSubj;
         private System.Windows.Forms.Button btnMakeNewSubj;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnUpdateClient;
-        private System.Windows.Forms.ComboBox CrCaseServiceCom;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Button btnNewCase;
-        private System.Windows.Forms.DateTimePicker CrCasetimeP;
-        private System.Windows.Forms.ComboBox CrCaseAdvokat;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox CrCaseTimeUsed;
-        private System.Windows.Forms.TextBox CrCasePrice;
-        private System.Windows.Forms.TextBox CrCaseEndDato;
-        private System.Windows.Forms.TextBox CrCaseName;
-        private System.Windows.Forms.Button NewClientBtn;
-        private System.Windows.Forms.TextBox NewClientTelef;
-        private System.Windows.Forms.TextBox NewClientMail;
-        private System.Windows.Forms.TextBox NewClientPost;
-        private System.Windows.Forms.TextBox NewClientAdress;
-        private System.Windows.Forms.TextBox NewClientLName;
-        private System.Windows.Forms.TextBox NewClientfName;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox NewClientCprNo;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabClients;
         private System.Windows.Forms.Label lblAnsatte;
         private System.Windows.Forms.Button btnActivateAddEmpFields;
         private System.Windows.Forms.Panel pnlAddUpdateEmplFields;
@@ -2785,16 +3098,6 @@
         private System.Windows.Forms.Button ClosedCaseBut;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView CaseDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoursEstimate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NegotiatedPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
         private System.Windows.Forms.TextBox TotalPricetxt;
         private System.Windows.Forms.Label lblAllActiveCases;
         private System.Windows.Forms.TextBox NegPricetxt;
@@ -2859,10 +3162,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PServiceHours;
         private System.Windows.Forms.DataGridViewTextBoxColumn PServiceKm;
         private System.Windows.Forms.DataGridViewTextBoxColumn PServiceComment;
-        private System.Windows.Forms.TextBox txtShowNewClientIdHere;
-        private System.Windows.Forms.Button btnCancelCreateNewCase;
-        private System.Windows.Forms.Button btnFindExistingClient;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblAllCLosedCases;
@@ -2870,6 +3169,69 @@
         private System.Windows.Forms.TextBox tlfTxtForCases;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnActivateCreateNewCase;
+        private System.Windows.Forms.Panel pnlCreateNewCase;
+        private System.Windows.Forms.Button btnCancelCreateNewCase;
+        private System.Windows.Forms.TextBox txtShowNewClientIdHere;
+        private System.Windows.Forms.ComboBox CrCaseServiceCom;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button btnNewCase;
+        private System.Windows.Forms.DateTimePicker CrCasetimeP;
+        private System.Windows.Forms.ComboBox CrCaseAdvokat;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox CrCaseTimeUsed;
+        private System.Windows.Forms.TextBox CrCasePrice;
+        private System.Windows.Forms.TextBox CrCaseEndDato;
+        private System.Windows.Forms.TextBox CrCaseName;
+        private System.Windows.Forms.Panel pnlCreateUpdateClient;
+        private System.Windows.Forms.Button btnFindExistingClient;
+        private System.Windows.Forms.Button btnUpdateClient;
+        private System.Windows.Forms.Button NewClientBtn;
+        private System.Windows.Forms.TextBox NewClientTelef;
+        private System.Windows.Forms.TextBox NewClientMail;
+        private System.Windows.Forms.TextBox NewClientPost;
+        private System.Windows.Forms.TextBox NewClientAdress;
+        private System.Windows.Forms.TextBox NewClientLName;
+        private System.Windows.Forms.TextBox NewClientfName;
+        private System.Windows.Forms.Label lblUpdateClient;
+        private System.Windows.Forms.TextBox NewClientCprNo;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridView clientsDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoursEstimate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NegotiatedPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
+        private System.Windows.Forms.Button btnActivateCreateNewClient;
+        private System.Windows.Forms.Button btnActivateUpdateClient;
+        private System.Windows.Forms.Label lblCreateNewClient;
+        private System.Windows.Forms.Button btnCloseAddUpdateClientPnl;
+        private System.Windows.Forms.Label lblSeeAllActiveClients;
+        private System.Windows.Forms.Button btnShowDeactivatedClients;
+        private System.Windows.Forms.Button btnShowAllActiveClients;
+        private System.Windows.Forms.Label lblSeeAllDeactivatedClients;
+        private System.Windows.Forms.Panel pnlClientsButtons;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblAddSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_CprNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PostNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_TlfNo;
     }
 }
 

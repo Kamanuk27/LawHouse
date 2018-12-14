@@ -32,6 +32,7 @@ namespace LawHouseTabForm
 
             FillComboBoxes();
             ActivateGetCasesGrid();
+            ActivateGetClientsGrid();
             EmplGridStart();
             GetServices();
         }
@@ -293,6 +294,24 @@ namespace LawHouseTabForm
             }
         }
 
+
+        private void ActivateGetClientsGrid(bool active = true)
+        {
+
+            foreach (var cl in _clientHandler.GetClients(active))
+            {
+                int n = clientsDataGrid.Rows.Add();
+                clientsDataGrid.Rows[n].Cells[0].Value = cl.Id;
+                clientsDataGrid.Rows[n].Cells[1].Value = cl.CprNo;
+                clientsDataGrid.Rows[n].Cells[2].Value = cl.FirstName;
+                clientsDataGrid.Rows[n].Cells[3].Value = cl.LastName;
+                clientsDataGrid.Rows[n].Cells[4].Value = cl.Address;
+                clientsDataGrid.Rows[n].Cells[5].Value = cl.PostNo;
+                clientsDataGrid.Rows[n].Cells[6].Value = cl.Email;
+                clientsDataGrid.Rows[n].Cells[7].Value = cl.TlfNo;
+            }
+        }
+
         private void ShowProvidedServicesOnGrid()
         {
             ServiceDataGrid.Rows.Clear();
@@ -345,6 +364,7 @@ namespace LawHouseTabForm
 
         private void search_button_Click(object sender, EventArgs e)
         {
+
             for (int i = 0; i < CaseDataGrid.RowCount; i++)
             {
                 CaseDataGrid.Rows[i].Selected = false;
@@ -993,8 +1013,8 @@ namespace LawHouseTabForm
                 NewClientTelef.Text = client.TlfNo;
                 this.ClientId = client.Id;
 
-                txtShowNewClientIdHere.Text = ClientId.ToString();
-                btnNewCase.Visible = true;
+                //txtShowNewClientIdHere.Text = ClientId.ToString();
+                //btnNewCase.Visible = true;
 
 
                 btnFindExistingClient.Visible = false;
@@ -1002,28 +1022,6 @@ namespace LawHouseTabForm
             }
         }
 
-        private void NewCaseButt_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string caseName = CrCaseName.Text;
-                string[] getServoceId =
-                    CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int serviceId = Convert.ToInt32(getServoceId[0]);
-                DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
-                string[] getAdvoketId =
-                    CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int respEmplId = Convert.ToInt32(getAdvoketId[0]);
-                decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
-                _caseHandler.NewCase(caseName, this.ClientId, serviceId, startTime, respEmplId, negoPrice);
-                ActivateGetCasesGrid();
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("");
-            }
-        }
 
         private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1039,9 +1037,7 @@ namespace LawHouseTabForm
                 {
                     CrCasePrice.Text = s.Price.ToString();
                     CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = (Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString()) +
-                                          TimeSpan.FromDays(s.TimeEstimate)).ToShortDateString();
-                   
+                    CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
                 }
             }
         }
@@ -1097,6 +1093,7 @@ namespace LawHouseTabForm
             btnMakeNewSubj.Visible = true;
             pnlAddViewSubjects.Visible = true;
             btnCnclSubjectEdit.Visible = true;
+            lblAddSubject.Visible = true; 
         }
 
         private void btnMakeNewSubj_Click(object sender, EventArgs e)
@@ -1173,6 +1170,7 @@ namespace LawHouseTabForm
             txtAddViewSubjectHoursEst.Clear();
             txtAddViewSubjectName.Clear();
             TxtAddViewSubjectTimeEst.Clear();
+            lblAddSubject.Visible = false; 
 
 
         }
@@ -1208,8 +1206,8 @@ namespace LawHouseTabForm
 
             foreach (Control ctrl in selectedTab.Controls)
             {
-                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name
-                                                             || selectedTab.Name == tabEmployees.Name)
+                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name 
+                    || selectedTab.Name == tabClients.Name || selectedTab.Name == tabEmployees.Name)
                 {
                     if (ctrl is TextBox)
                     {
@@ -1230,6 +1228,7 @@ namespace LawHouseTabForm
                     ServiceDataGrid.Rows.Clear();
                     ClearAddUpdateServiceBox();
                     pnlActivateServiceBoxes.Visible = false;
+                    pnlCreateNewCase.Visible = false;
                 }
                 else
                 {
@@ -1261,11 +1260,6 @@ namespace LawHouseTabForm
                     }
                 }
             }
-        }
-
-        private void btnCancelCreateNewCase_Click(object sender, EventArgs e)
-        {
-            //Slet felter
         }
 
         private void btnGetCasesbyClient_Click(object sender, EventArgs e)
@@ -1304,5 +1298,108 @@ namespace LawHouseTabForm
                 }
             }
         }
+
+        private void btnCreateNewCase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string caseName = CrCaseName.Text;
+                string[] getServiceId =
+                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int serviceId = Convert.ToInt32(getServiceId[0]);
+                DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
+                string[] getAdvoketId =
+                    CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int respEmplId = Convert.ToInt32(getAdvoketId[0]);
+                decimal negoPrice = Convert.ToInt32(CrCasePrice.Text);
+                _caseHandler.NewCase(caseName, this.ClientId, serviceId, startTime, respEmplId, negoPrice);
+                ActivateGetCasesGrid();
+            }
+            catch (Exception exception)
+            {
+                //exception
+                MessageBox.Show("");
+            }
+
+        }
+
+        private void btnCancelCreateNewCase_Click(object sender, EventArgs e)
+        {
+            pnlUpdateEditServices.Visible = false;
+            ServiceDataGrid.Rows.Clear();
+            ClearAddUpdateServiceBox();
+            pnlUpdateEditServices.Visible = false; 
+            pnlAllOpenCases.Visible = true;
+            pnlCreateNewCase.Visible = false; 
+        }
+
+        private void btnActivateCreateNewCase_Click(object sender, EventArgs e)
+        {
+            pnlCreateNewCase.Visible = true;
+            pnlUpdateEditServices.Visible = true;
+        }
+
+        private void btnActivateUpdateClient_Click(object sender, EventArgs e)
+        {
+            pnlCreateUpdateClient.Visible = true;
+            btnUpdateClient.Visible = true;
+            NewClientBtn.Visible = false;
+            lblUpdateClient.Visible = true;
+            lblCreateNewClient.Visible = false;
+            clientsDataGrid.Visible = false;
+            pnlClientsButtons.Visible = false;
+            lblSeeAllActiveClients.Visible = false;
+            lblSeeAllDeactivatedClients.Visible = false; 
+        }
+
+        private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
+        {
+            pnlCreateUpdateClient.Visible = true;
+            btnUpdateClient.Visible = false;
+            NewClientBtn.Visible = true;
+            lblCreateNewClient.Visible = true;
+            lblUpdateClient.Visible = false;
+            pnlClientsButtons.Visible = false;
+            clientsDataGrid.Visible = false;
+            lblSeeAllActiveClients.Visible = false;
+            lblSeeAllDeactivatedClients.Visible = false;
+        }
+
+        private void btnCloseAddUpdateClientPnl_Click(object sender, EventArgs e)
+        {
+            pnlCreateUpdateClient.Visible = false;
+            clientsDataGrid.Rows.Clear();
+            ActivateGetClientsGrid(true);
+            lblSeeAllActiveClients.Visible = true;
+            clientsDataGrid.Visible = true;
+            pnlClientsButtons.Visible = true; 
+
+
+        }
+
+        private void btnShowDeactivatedClients_Click(object sender, EventArgs e)
+        {
+            clientsDataGrid.Rows.Clear();
+            ActivateGetClientsGrid(false);
+            btnShowDeactivatedClients.Visible = false;
+            btnShowAllActiveClients.Visible = true;
+            lblSeeAllActiveClients.Visible = false;
+            lblSeeAllDeactivatedClients.Visible = true;
+
+        }
+
+        private void btnShowAllActiveClients_Click(object sender, EventArgs e)
+        {
+            clientsDataGrid.Rows.Clear();
+            ActivateGetClientsGrid(true);
+            btnShowDeactivatedClients.Visible = true;
+            btnShowAllActiveClients.Visible = false;
+            lblSeeAllActiveClients.Visible = true;
+            lblSeeAllDeactivatedClients.Visible = false;
+            
+        }
+
+
+        
     }
 }

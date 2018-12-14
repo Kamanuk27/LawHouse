@@ -21,15 +21,15 @@ namespace DataAccess
 
         public List<ClientM> GetCliens(bool active)
         {
-            List<ClientM> cliens = new List<ClientM>();
+            List<ClientM> clients = new List<ClientM>();
 
             if (active == true)
             {
-                _command.CommandText = "SELECT * FROM Client WHERE CprNo = IS NOT NULL";
+                _command.CommandText = "SELECT * FROM Client WHERE CprNo IS NOT NULL";
             }
             else
             {
-                _command.CommandText = "SELECT * FROM Client WHERE CprNo = IS NULL";
+                _command.CommandText = "SELECT * FROM Client WHERE CprNo IS NULL";
             }
             _command.Parameters.Clear();
             PrepareSql();
@@ -48,11 +48,11 @@ namespace DataAccess
                     c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
                     c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
                     c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
-                    cliens.Add(c);
+                    clients.Add(c);
                 }
             }
             _connection.Close();
-            return cliens;
+            return clients;
         }
 
         public ClientM GetClient(string tlf)
