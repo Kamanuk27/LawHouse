@@ -1039,7 +1039,9 @@ namespace LawHouseTabForm
                 {
                     CrCasePrice.Text = s.Price.ToString();
                     CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
+                    CrCaseEndDato.Text = (Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString()) +
+                                          TimeSpan.FromDays(s.TimeEstimate)).ToShortDateString();
+                   
                 }
             }
         }
