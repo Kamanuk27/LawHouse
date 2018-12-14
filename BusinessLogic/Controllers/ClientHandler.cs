@@ -33,6 +33,11 @@ namespace BusinessLogic
             return _clientCrud.GetClient(tlf);
         }
 
+        public List<ClientM> GetCliens(bool active)
+        {
+            return _clientCrud.GetCliens(active);
+        }
+
         public int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
         {
             return _clientCrud.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);

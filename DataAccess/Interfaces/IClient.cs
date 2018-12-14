@@ -14,5 +14,6 @@ namespace DataAccess
         ClientM GetClient(string tlf);
         int UpdateClient(ClientM client);
         int CloseClient(int id);
+        List<ClientM> GetCliens(bool active);
     }
 }

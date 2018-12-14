@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using DataAccess.Sql;
 using LawHouseLibrary.Models;
@@ -16,6 +17,42 @@ namespace DataAccess
             _command.Parameters.Add(new SqlParameter("@id", id));
 
             return ExecuteNonQuery();
+        }
+
+        public List<ClientM> GetCliens(bool active)
+        {
+            List<ClientM> cliens = new List<ClientM>();
+
+            if (active == true)
+            {
+                _command.CommandText = "SELECT * FROM Client WHERE CprNo = IS NOT NULL";
+            }
+            else
+            {
+                _command.CommandText = "SELECT * FROM Client WHERE CprNo = IS NULL";
+            }
+            _command.Parameters.Clear();
+            PrepareSql();
+            SqlDataReader reader = null;
+            reader = _command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    ClientM c = new ClientM();
+                    c.Id = reader["ID"] != DBNull.Value ? Convert.ToInt32(reader["ID"]) : default(int);
+                    c.CprNo = reader["CprNo"] != DBNull.Value ? reader["CprNo"].ToString() : string.Empty;
+                    c.FirstName = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : string.Empty;
+                    c.LastName = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : string.Empty;
+                    c.Address = reader["Address"] != DBNull.Value ? reader["Address"].ToString() : string.Empty;
+                    c.PostNo = reader["PostNo"] != DBNull.Value ? Convert.ToInt32(reader["PostNo"]) : default(int);
+                    c.Email = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
+                    c.TlfNo = reader["TlfNo"] != DBNull.Value ? reader["TlfNo"].ToString() : string.Empty;
+                    cliens.Add(c);
+                }
+            }
+            _connection.Close();
+            return cliens;
         }
 
         public ClientM GetClient(string tlf)

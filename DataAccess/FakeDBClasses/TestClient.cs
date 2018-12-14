@@ -30,5 +30,10 @@ namespace DataAccess
         {
             return 1;
         }
+
+        public List<ClientM> GetCliens(bool active)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

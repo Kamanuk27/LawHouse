@@ -21,6 +21,11 @@ namespace BusinessLogic
             return _dbClient.GetClient(tlf);
         }
 
+        internal List<ClientM> GetCliens(bool active)
+        {
+            return _dbClient.GetCliens(active);
+        }
+
         internal int NewClient(string cpr, string fName, string lName, string address, int postNo, string eMail, string tlf)
         {
             ClientM client = new ClientM();
