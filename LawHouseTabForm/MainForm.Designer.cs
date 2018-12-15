@@ -38,8 +38,8 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
@@ -425,8 +425,8 @@
             // 
             // tabCases
             // 
-            this.tabCases.Controls.Add(this.pnlUpdateEditServices);
             this.tabCases.Controls.Add(this.pnlAllOpenCases);
+            this.tabCases.Controls.Add(this.pnlUpdateEditServices);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCases.Location = new System.Drawing.Point(4, 27);
             this.tabCases.Margin = new System.Windows.Forms.Padding(2);
@@ -439,7 +439,6 @@
             // 
             // pnlUpdateEditServices
             // 
-            this.pnlUpdateEditServices.Controls.Add(this.pnlCreateNewCase);
             this.pnlUpdateEditServices.Controls.Add(this.pictureBox3);
             this.pnlUpdateEditServices.Controls.Add(this.lLblHelpCaseServices2Tab);
             this.pnlUpdateEditServices.Controls.Add(this.btnActivateAddServiceBoxes);
@@ -451,6 +450,7 @@
             this.pnlUpdateEditServices.Controls.Add(this.BtnUpdateExsService);
             this.pnlUpdateEditServices.Controls.Add(this.pnlActivateServiceBoxes);
             this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
+            this.pnlUpdateEditServices.Controls.Add(this.pnlCreateNewCase);
             this.pnlUpdateEditServices.Location = new System.Drawing.Point(2, 2);
             this.pnlUpdateEditServices.Name = "pnlUpdateEditServices";
             this.pnlUpdateEditServices.Size = new System.Drawing.Size(1196, 641);
@@ -482,7 +482,7 @@
             this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
             this.pnlCreateNewCase.Location = new System.Drawing.Point(0, 0);
             this.pnlCreateNewCase.Name = "pnlCreateNewCase";
-            this.pnlCreateNewCase.Size = new System.Drawing.Size(1191, 635);
+            this.pnlCreateNewCase.Size = new System.Drawing.Size(1047, 635);
             this.pnlCreateNewCase.TabIndex = 346;
             this.pnlCreateNewCase.Visible = false;
             // 
@@ -694,8 +694,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -1250,8 +1250,8 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -2565,7 +2565,6 @@
             this.btnFindExistingClient.Text = "Søg på tlf";
             this.btnFindExistingClient.UseVisualStyleBackColor = true;
             this.btnFindExistingClient.Visible = false;
-            //this.btnFindExistingClient.Click += new System.EventHandler(this.btnFindExistingClient_Click_1);
             // 
             // btnUpdateClient
             // 

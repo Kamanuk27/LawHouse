@@ -558,6 +558,7 @@ namespace LawHouseTabForm
                     RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int respEmpId = Convert.ToInt32(getRespEmpId[0]);
                 int i = _caseHandler.UpdateCase(id, negPrice, respEmpId);
+                ActivateGetCasesGrid();
                 if (i == 1)
                 {
                     MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
@@ -1085,7 +1086,8 @@ namespace LawHouseTabForm
             txtAddViewSubjectHoursEst.Clear();
             txtAddViewSubjectName.Clear();
             TxtAddViewSubjectTimeEst.Clear();
-            lblAddSubject.Visible = false; 
+            lblAddSubject.Visible = false;
+            btnCnclSubjectEdit.Visible = false; 
 
 
         }
@@ -1328,7 +1330,8 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             ActivateGetClientsGrid(true);
             lblSeeAllActiveClients.Visible = true;
             clientsDataGrid.Visible = true;
-            pnlClientsButtons.Visible = true; 
+            pnlClientsButtons.Visible = true;
+            clearAllBoxesInpnlCreateUpdClient();
 
 
         }
@@ -1373,13 +1376,29 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 ActivateGetClientsGrid();
                 pnlCreateUpdateClient.Visible = false;
                 clientsDataGrid.Visible = true;
-                pnlClientsButtons.Visible = true; 
+                pnlClientsButtons.Visible = true;
+                clearAllBoxesInpnlCreateUpdClient();
             }
             catch (Exception exception)
             {
                 //exception
                 MessageBox.Show("Klienten er ikke blevet opdateret");
             }
+        }
+
+        private void clearAllBoxesInpnlCreateUpdClient()
+        {
+            txtClientID.Clear();
+            NewClientCprNo.Clear();
+            NewClientfName.Clear();
+            NewClientLName.Clear();
+            NewClientAdress.Clear();
+            NewClientPost.Clear();
+            NewClientMail.Clear();
+            NewClientTelef.Clear();
+
+
+
         }
 
         private void NewClientBtn_Click(object sender, EventArgs e)
@@ -1401,6 +1420,7 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 pnlCreateUpdateClient.Visible = false;
                 clientsDataGrid.Visible = true;
                 pnlClientsButtons.Visible = true;
+                clearAllBoxesInpnlCreateUpdClient();
             }
             catch (Exception exception)
             {
