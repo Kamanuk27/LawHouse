@@ -372,6 +372,7 @@ namespace LawHouseTabForm
 
         private void GetServices()
         {
+            ServiceGridView.Rows.Clear();
             foreach (var c1 in _subjectHandler.GetSubjects())
             {
                 int n = ServiceGridView.Rows.Add();
@@ -1063,15 +1064,29 @@ namespace LawHouseTabForm
         {
             try
             {
-                _subjectHandler.DeleteSubject(SubjectId);
-                GetServices();
-                FillLServInsertCom();
-                FillCrCaseServiceCom();
+                if (SubjectId == 0)
+                {
+                    MessageBox.Show("Vælg en tjenesteydelse først");
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Er du sikker?", $"Sletter sagen {SubjectId}", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        _subjectHandler.DeleteSubject(SubjectId);
+                        GetServices();
+                        FillLServInsertCom();
+                        FillCrCaseServiceCom();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Annulleret");
+                    }
+                }
             }
             catch (Exception exception)
             {
-                //exception
-                MessageBox.Show("");
+                MessageBox.Show(exception.Message);
             }
         }
 
