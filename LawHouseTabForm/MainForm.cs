@@ -1331,6 +1331,8 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             lblSeeAllActiveClients.Visible = true;
             clientsDataGrid.Visible = true;
             pnlClientsButtons.Visible = true;
+            btnShowAllActiveClients.Visible = false;
+            btnShowDeactivatedClients.Visible = true; 
             clearAllBoxesInpnlCreateUpdClient();
 
 
@@ -1378,6 +1380,9 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 clientsDataGrid.Visible = true;
                 pnlClientsButtons.Visible = true;
                 clearAllBoxesInpnlCreateUpdClient();
+                btnShowDeactivatedClients.Visible = true;
+                btnShowAllActiveClients.Visible = false; 
+
             }
             catch (Exception exception)
             {
