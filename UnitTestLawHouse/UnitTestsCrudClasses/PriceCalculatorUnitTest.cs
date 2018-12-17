@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLawHouse
 {
+    // Stanja
     [TestClass]
     public class PriceCalculatorUnitTest
     {
