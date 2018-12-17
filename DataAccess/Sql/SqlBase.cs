@@ -36,7 +36,6 @@ namespace DataAccess.Sql
 
             if (affectedRows == 1)
             {         
-                //Rettes - returnerer ikke ID endnu.
                 _command.CommandText = "SELECT @@IDENTITY as ID";
                 SqlDataReader reader = _command.ExecuteReader(); 
                 reader.Read();

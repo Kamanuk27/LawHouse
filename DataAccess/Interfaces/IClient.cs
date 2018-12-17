@@ -6,7 +6,6 @@ namespace DataAccess
     //Lisa
     public interface IClient
     {
-
         int NewClient(ClientM client);
         ClientM GetClient(string tlf);
         List<ClientM> GetClients(bool active);

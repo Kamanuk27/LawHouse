@@ -6,11 +6,6 @@ namespace DataAccess
     public class DatabaseFactory
     {
         private static DatabaseFactory _instance;
-        
-        internal DatabaseFactory()
-        {
-
-        }
         public static DatabaseFactory Instance
         {
             get

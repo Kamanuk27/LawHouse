@@ -8,7 +8,6 @@ namespace BusinessLogic
     //Andriy
     internal class EmployeeCrud
     {
-
         internal IEmployee _dbEmployee;
         internal EmployeeCrud()
         {
