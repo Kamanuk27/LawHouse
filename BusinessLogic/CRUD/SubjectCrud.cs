@@ -1,15 +1,12 @@
 ﻿using DataAccess;
 using LawHouseLibrary.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
     internal class SubjectCrud
     {
+        // Andriy
         internal ISubject _dbSubject;
         internal SubjectCrud()
         {

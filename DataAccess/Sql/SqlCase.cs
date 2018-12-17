@@ -6,6 +6,7 @@ using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
+    //Stanja
     class SqlCase : SqlBase, ICase
     {         
         public int NewCase(CaseM c1)

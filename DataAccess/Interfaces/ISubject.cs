@@ -1,12 +1,9 @@
 ﻿using LawHouseLibrary.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
+    //Andriy
     public interface ISubject
     {
         int NewSubject(SubjectM subject);

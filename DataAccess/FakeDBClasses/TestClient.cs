@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
     class TestClient : IClient
     {
-
+        //Lisa
         public int NewClient(ClientM client)
         {
             return 1;

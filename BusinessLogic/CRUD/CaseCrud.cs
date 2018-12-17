@@ -1,14 +1,12 @@
 ﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess;
 
 
 namespace BusinessLogic
 {
+    // Stanja
     internal class CaseCrud
     {
         internal ICase _dbCase;

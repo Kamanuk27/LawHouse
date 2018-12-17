@@ -8,7 +8,7 @@ namespace DataAccess
 {
     class SqlSubject : SqlBase, ISubject
     {
-
+        //Andriy
         public int DeleteSubject(int id)
         {
             DeleteSubjectFromEmployee(id);

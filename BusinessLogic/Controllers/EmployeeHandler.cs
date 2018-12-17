@@ -1,13 +1,11 @@
 ﻿using LawHouseLibrary.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-   public class EmployeeHandler
+    // Andriy
+    public class EmployeeHandler
     {
         private static EmployeeHandler _instance;
         private EmployeeCrud _employeeCrud;

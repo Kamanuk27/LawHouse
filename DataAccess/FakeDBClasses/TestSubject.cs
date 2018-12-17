@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
+    // Andriy
     class TestSubject : ISubject
     {
         public int DeleteSubject(int id)
