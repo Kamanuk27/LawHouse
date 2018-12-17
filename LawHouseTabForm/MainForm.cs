@@ -45,8 +45,6 @@ namespace LawHouseTabForm
             
         }
 
-        
-
         #region Show All in Form
 
         #region FillComboTxt
@@ -180,36 +178,48 @@ namespace LawHouseTabForm
                 e.Handled = true;
         }
 
-        private void NewClientCprNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void NewClientCprNo_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
                 e.Handled = true;
         }
-
-        private void NewClientPost_KeyPress(object sender, KeyPressEventArgs e)
+        private void NewClientPost_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
                 e.Handled = true;
         }
-
-        private void NewClientTelef_KeyPress(object sender, KeyPressEventArgs e)
+        private void NewClientTelef_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
                 e.Handled = true;
         }
-
-        private void CrCasePrice_KeyPress(object sender, KeyPressEventArgs e)
+        private void CrCasePrice_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar == (char) Keys.Oemcomma)
                 e.Handled = true;
         }
-
-
+      
         #endregion
 
         #region ReadOnly
+        private void cmbBoxFindEmplID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
+        private void ServiceEmploeeCombox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
 
-        private void CrCaseServiceCom_KeyPress(object sender, KeyPressEventArgs e)
+        private void LServInsertCom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
+
+        private void CrCaseServiceCom_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
             return;
@@ -221,19 +231,12 @@ namespace LawHouseTabForm
             return;
         }
 
-        private void CrCaseAdvokat_KeyPress(object sender, KeyPressEventArgs e)
+        private void CrCaseAdvokat_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
             return;
         }
-
-        private void txtShowNewClientIdHere_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-            return;
-        }
-
-
+        
         #endregion
 
         #region ClearTxt
@@ -317,7 +320,6 @@ namespace LawHouseTabForm
             }
         }
 
-
         private void ActivateGetClientsGrid(bool active = true)
         {
 
@@ -385,760 +387,13 @@ namespace LawHouseTabForm
         }
 
         #endregion
-
-        private void search_button_Click(object sender, EventArgs e)
-        {
-
-            for (int i = 0; i < CaseDataGrid.RowCount; i++)
-            {
-                CaseDataGrid.Rows[i].Selected = false;
-                for (int j = 0; j < CaseDataGrid.ColumnCount; j++)
-                {
-                    if (CaseDataGrid.Rows[i].Cells[j].Value != null)
-                    {
-                        if (CaseDataGrid.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
-                        {
-                            CaseDataGrid.Rows[i].Selected = true;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        //Ansatte
-        private void cmbBoxFindEmplID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (var s in _employeeHandler.GetEmployees())
-            {
-                string[] getEmployeeId =
-                    cmbBoxFindEmplID.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                this.EmployeeID = Convert.ToInt32(getEmployeeId[0]);
-            }
-        }
-
-        #endregion Show All in Form
-
-        #region Abne sager
-
-        private void btnActivateAddServiceBoxes_Click(object sender, EventArgs e)
-        {
-            ClearAddUpdateServiceBox();
-
-            BtnDeleteExsService.Visible = false;
-            BtnUpdateExsService.Visible = false;
-            pnlActivateServiceBoxes.Visible = true;
-            BtnAddNewService.Visible = true;
-        }
-
-        private void BtnAddNewService_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DateTime date = Convert.ToDateTime(ServiceDateTimePicker.Value.ToShortDateString());
-                int hours = txtHoursService.Text != null ? Convert.ToInt32(txtHoursService.Text) : 0;
-                int km = txtServiceKm.Text != null ? Convert.ToInt32(txtServiceKm.Text) : 0;
-                string comment = txtServiceComment.Text;
-                string[] names =
-                    ServiceEmploeeCombox.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int respEmpl = Convert.ToInt32(names[0]);
-                int i = _pServiceHandler.NewProvidedService(this.CaseId, date, hours, km, comment, respEmpl);
-                MessageBox.Show("Ydelsen er tilføjet til sagen");
-                ClearAddUpdateServiceBox();
-                ServiceDataGrid.Rows.Clear();
-                ShowProvidedServicesOnGrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Fejl - Ny service ikke tilføjet");
-            }
-        }
-
-        private void BtnUpdateExsService_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
-                DateTime date = Convert.ToDateTime(ServiceDateTimePicker.Value.ToShortDateString());
-                int houres = Convert.ToInt32(txtHoursService.Text);
-                int km = Convert.ToInt32(txtServiceKm.Text);
-                string comment = txtServiceComment.Text;
-                int i = _pServiceHandler.UpdateProvidedService(id, houres, km, date, comment);
-                MessageBox.Show($"Ydelse {id} er blevet opdateret");
-                ClearAddUpdateServiceBox();
-                ServiceDataGrid.Rows.Clear();
-                ShowProvidedServicesOnGrid();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Vælg ydelse først");
-            }
-        }
-
-        private void BtnDeleteExsService_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
-                DialogResult dialogResult =
-                    MessageBox.Show("Er du sikker? ", "Sletter ydelsen", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    int i = _pServiceHandler.DeleteProvidedService(id);
-                    MessageBox.Show(i.ToString());
-                    ClearAddUpdateServiceBox();
-                    ServiceDataGrid.Rows.Clear();
-                    ShowProvidedServicesOnGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Annulleret");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Vælg ydelse først");
-            }
-
-        }
-
-        private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                CaseId = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-                string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-                string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-                lblCaseName.Text = $"Nr.{CaseId}, {name}";
-                ShowProvidedServicesOnGrid();
-                pnlUpdateEditServices.Visible = true;
-            }
-            catch (Exception exception)
-            {
-            }
-        }
-
-        private void DeleteButt_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
-            {
-                MessageBox.Show("Vælg en sag, der skal slettes");
-            }
-            else
-            {
-
-                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sagen", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    int i = _caseHandler.DeleteCase(id);
-                    MessageBox.Show(i.ToString());
-                    ClearTxtBoxs();
-                    ActivateGetCasesGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Annulleret");
-                }
-            }
-        }
-
-        private void UpdateButt_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
-            {
-                MessageBox.Show("Vælg en sag, der skal opdateres");
-            }
-            else
-            {
-                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
-                //string respEmpl = RespEmpCombo.Text;
-                string[] getRespEmpId =
-                    RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int respEmpId = Convert.ToInt32(getRespEmpId[0]);
-                int i = _caseHandler.UpdateCase(id, negPrice, respEmpId);
-                ActivateGetCasesGrid();
-                if (i == 1)
-                {
-                    MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
-                }
-                else
-                {
-                    MessageBox.Show("Sagen kunne ikke opdateres. Prøv igen");
-                }
-
-            }
-
-        }
-
-        private void CalculatePrice_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
-                {
-                    MessageBox.Show("Vælg en sag for prisberegningen");
-                }
-                else
-                {
-                    int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                    decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-
-                    decimal price = _pServiceHandler.GetPrice(id, negPrice);
-                    ClosedCaseBut.Visible = true;
-                    TotalPricetxt.Text = price.ToString();
-                }
-
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("Vælg en sag først");
-            }
-
-        }
-
-        private void ClosedCaseBut_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult dialogResult =
-                    MessageBox.Show("Er du sikker? ", "Afslutter sagen", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                    decimal totalPrice = Convert.ToDecimal(TotalPricetxt.Text);
-                    DateTime endDate = Convert.ToDateTime(EndCaseTimePictxt.Value.ToShortDateString());
-                    int i = _caseHandler.CloseCase(id, totalPrice, endDate);
-                    MessageBox.Show(i.ToString());
-                    ClearTxtBoxs();
-                    ActivateGetCasesGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Annulleret");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Vælg en sag først");
-
-            }
-        }
-
-        private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
-                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
-                string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
-                RespEmpCombo.Text = respEmp;
-                NegPricetxt.Text = negPrice.ToString();
-            }
-            catch (Exception exception)
-            {
-            }
-        }
-
-        private void btnReturnToCasesPnl_Click(object sender, EventArgs e)
-        {
-            pnlUpdateEditServices.Visible = false;
-            ServiceDataGrid.Rows.Clear();
-            ClearAddUpdateServiceBox();
-            pnlActivateServiceBoxes.Visible = false;
-        }
-
-        #endregion
-
-        #region Tjenesteydelser og efteruddannelse
-
-        private void ServiceDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                ClearAddUpdateServiceBox();
-                ServiceEmploeeCombox.Text = ServiceDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-                ServiceDateTimePicker.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-                txtServiceComment.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
-                txtHoursService.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-                txtServiceKm.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
-                pnlActivateServiceBoxes.Visible = true;
-                BtnDeleteExsService.Visible = true;
-                BtnUpdateExsService.Visible = true;
-            }
-            catch (Exception exception)
-            {
-            }
-        }
-
-
-        private void SubjectGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                SubjectId = Convert.ToInt32(ServiceGridView.SelectedRows[0].Cells[0].Value);
-                txtAddViewSubjectName.Text = ServiceGridView.SelectedRows[0].Cells[1].Value.ToString();
-                txtAddViewSubjectHoursEst.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
-                TxtAddViewSubjectTimeEst.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
-                txtAddViewSubjectFixPrc.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
-
-                pnlAddViewSubjects.Visible = true;
-                btnUpdateSubj.Visible = true;
-                btnDeleteSubj.Visible = true;
-                btnMakeNewSubj.Visible = false;
-                btnActivatAddSubjects.Visible = false;
-                btnCnclSubjectEdit.Visible = true;
-            }
-            catch (Exception exception)
-            {
-            }
-        }
-
-        #endregion
-
-        #region TabAnsatte
-
-        //ansatte
-        private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                SendUpdateEmployeeFieldsInfo();
-                AddEmpBoxes(false);
-                DeleteEmpl.Visible = true;
-                UpdateEmpl.Visible = true;
-            }
-            catch (Exception exception)
-            {
-            }
-        }
-
-        //ID 
-        private void NewEmplButt_Click(object sender, EventArgs e)
-        {
-            showAllEmployeeGrid();
-            try
-            {
-                string cpr = NECprTxt.Text;
-                string fName = NEFnameTxt.Text;
-                string lName = NELnameTxt.Text;
-                string address = NEAdressTxt.Text;
-                int postNo = Convert.ToInt32(NEPostTxt.Text);
-                string eMail = NEEmailTxt.Text;
-                string tlf = NETlfTxt.Text;
-                DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
-                string position = NEmplPosition.Text;
-                decimal money = Convert.ToDecimal(NEmplMoney.Text);
-                this.EmployeeID =
-                    _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position,
-                        money);
-                ClearTxt();
-                EmplGridView.Rows.Clear();
-                EmplGridStart();
-                FillEmployeeComBox();
-                FillAdvokatEmployeeComBox();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("");
-            }
-        }
-
-        private void showAllEmployeeGrid()
-        {
-            EmplGridView.Visible = true;
-            lblAnsatte.Visible = true;
-
-            btnActivateUpdEmpFields.Visible = true;
-            btnActivateAddEmpFields.Visible = true;
-            btnEditEmpCancel.Visible = false;
-            NewEmplButt.Visible = false;
-            UpdateEmpl.Visible = false;
-
-            pnlAddUpdateEmplFields.Visible = false;
-            pnlAddSubjectToEmp.Visible = false;
-            btnDelSubjFromEmp.Visible = true;
-        }
-
-        private void UpdateEmpl_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string fName = NEFnameTxt.Text;
-                string lName = NELnameTxt.Text;
-                string address = NEAdressTxt.Text;
-                int postNo = Convert.ToInt32(NEPostTxt.Text);
-                string eMail = NEEmailTxt.Text;
-                string tlf = NETlfTxt.Text;
-                DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
-                string position = NEmplPosition.Text;
-                decimal money = Convert.ToDecimal(NEmplMoney.Text);
-                _employeeHandler.UpdateEmployee(EmployeeID, fName, lName, address, postNo, eMail, tlf, position, money);
-                ClearTxt();
-                EmplGridView.Rows.Clear();
-                EmplGridStart();
-                showUpdtEmployeeBoxes();
-                btnEditEmpCancel_Click(sender, e);
-                FillEmployeeComBox();
-                FillAdvokatEmployeeComBox();
-            }
-            //exception
-            catch (Exception exception)
-            {
-                MessageBox.Show("");
-            }
-        }
-
-        private void showUpdtEmployeeBoxes()
-        {
-
-            NewEmplButt.Visible = false;
-            UpdateEmpl.Visible = true;
-            btnActivateAddEmpFields.Visible = true;
-            btnActivateUpdEmpFields.Visible = true;
-            pnlAddSubjectToEmp.Visible = false;
-            btnEditEmpCancel.Visible = false;
-            // lblAnsatte.Visible = true;
-            lblOpdaterMedInfo.Visible = true;
-            EmplGridView.Visible = false;
-            btnDelSubjFromEmp.Visible = true;
-        }
-
-
-        private void DeleteEmpl_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult dialogResult =
-                    MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmployeeID}", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    int i = _employeeHandler.CloseEmployee(EmployeeID);
-                    MessageBox.Show(i.ToString());
-                    ClearTxt();
-                    EmplGridView.Rows.Clear();
-                    EmplGridStart();
-                    btnEditEmpCancel_Click(sender, e);
-                    FillEmployeeComBox();
-                    FillAdvokatEmployeeComBox();
-                }
-                else
-                {
-                    MessageBox.Show("Annulleret");
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Vælg en sag først");
-            }
-
-        }
-
-        private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
-        {
-            ClearTxt();
-            AddEmpBoxes(true);
-        }
-
-        private void AddEmpBoxes(bool IsNewEmployee)
-        {
-            EmplGridView.Visible = false;
-            lblAnsatte.Visible = false;
-            btnEditEmpCancel.Visible = true;
-            btnActivateAddEmpFields.Visible = false;
-            btnActivateUpdEmpFields.Visible = false;
-            pnlAddUpdateEmplFields.Visible = true;
-            pnlAddSubjectToEmp.Visible = true;
-
-            if (IsNewEmployee)
-            {
-                lblTilfNyMeda.Visible = true;
-                lblOpdaterMedInfo.Visible = false;
-                NewEmplButt.Visible = true;
-            }
-            else
-            {
-                lblTilfNyMeda.Visible = false;
-                lblOpdaterMedInfo.Visible = true;
-                UpdateEmpl.Visible = true;
-                DeleteEmpl.Visible = true;
-            }
-        }
-
-        private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
-        {
-            SendUpdateEmployeeFieldsInfo();
-            AddEmpBoxes(false);
-        }
-
-        private void SendUpdateEmployeeFieldsInfo()
-        {
-            //try
-            this.EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
-            NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
-            NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
-            NELnameTxt.Text = EmplGridView.SelectedRows[0].Cells[3].Value.ToString();
-            NEAdressTxt.Text = EmplGridView.SelectedRows[0].Cells[4].Value.ToString();
-            NEPostTxt.Text = EmplGridView.SelectedRows[0].Cells[5].Value.ToString();
-            NEEmailTxt.Text = EmplGridView.SelectedRows[0].Cells[6].Value.ToString();
-            NETlfTxt.Text = EmplGridView.SelectedRows[0].Cells[7].Value.ToString();
-            NEmplStartDate.Value = Convert.ToDateTime(EmplGridView.SelectedRows[0].Cells[8].Value.ToString());
-            NEmplPosition.Text = EmplGridView.SelectedRows[0].Cells[9].Value.ToString();
-            NEmplMoney.Text = EmplGridView.SelectedRows[0].Cells[10].Value.ToString();
-
-            showSpecializationInListbox(EmployeeID);
-        }
-
-        private void btnEditEmpCancel_Click(object sender, EventArgs e)
-        {
-            EmplGridView.Visible = true;
-            lblAnsatte.Visible = true;
-
-            lblOpdaterMedInfo.Visible = false;
-            lblTilfNyMeda.Visible = false;
-
-            btnActivateUpdEmpFields.Visible = true;
-            btnActivateAddEmpFields.Visible = true;
-            NewEmplButt.Visible = false;
-            UpdateEmpl.Visible = false;
-
-            btnEditEmpCancel.Visible = false;
-            pnlAddUpdateEmplFields.Visible = false;
-            pnlAddSubjectToEmp.Visible = false;
-            pnlAddUpdateEmplFields.Visible = false;
-            pnlAddSubjectToEmp.Visible = false;
-            DeleteEmpl.Visible = false;
-            lstBoxShowEmpSpecialization.Items.Clear();
-
-        }
-
-        private void btnDelSubjFromEmp_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
-                string[] getSubjectId = getItem.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int id = Convert.ToInt32(getSubjectId[0]);
-                _employeeHandler.DeleteSubjectFromEmployee(EmployeeID, id);
-                lstBoxShowEmpSpecialization.Items.Clear();
-                showSpecializationInListbox(EmployeeID);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Vælg en ydelse først");
-            }
-
-        }
-
-        private void AddSubjectToEmplBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string[] getServiceId =
-                    LServInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                int subjectId = Convert.ToInt32(getServiceId[0]);
-                _employeeHandler.AddSubjectToEmployee(EmployeeID, subjectId);
-                lstBoxShowEmpSpecialization.Items.Clear();
-                showSpecializationInListbox(EmployeeID);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Vælg en ydelse/ansatte først");
-
-            }
-
-        }
-
-
-        #endregion
-
-        #region Tilføj klient og sag
-
-             
-
-        #endregion
-
-        #region Alle ydelser på ansat
-
-        private void btnShowPrServices_Click(object sender, EventArgs e)
-        {
-            getPrServicesByEmployee();
-            showTotalKmAndHours();
-        }
-
-        private void showTotalKmAndHours()
-        {
-            int[] total = _pServiceHandler.GetworkDone();
-            totalHoursUseForPeriod.Text = total[1].ToString();
-            totalKmDrivenInPeriod.Text = total[0].ToString();
-        }
-
-        private void getPrServicesByEmployee()
-        {
-            try
-            {
-                GridEmployeeServicesP.Rows.Clear();
-                DateTime startDate = Convert.ToDateTime(dateTimeFrom.Value.ToShortDateString());
-                DateTime endDate = Convert.ToDateTime(dateTimeTo.Value.ToShortDateString());
-                foreach (var ps in _pServiceHandler.GetProvidedServicesByEmplId(this.EmployeeID, startDate, endDate))
-                {
-                    int n = GridEmployeeServicesP.Rows.Add();
-                    GridEmployeeServicesP.Rows[n].Cells[0].Value = ps.CaseID;
-                    GridEmployeeServicesP.Rows[n].Cells[1].Value = ps.Date.ToShortDateString();
-                    GridEmployeeServicesP.Rows[n].Cells[2].Value = ps.Hours;
-                    GridEmployeeServicesP.Rows[n].Cells[3].Value = ps.Km;
-                    GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
-                }
-
-            }
-            catch (Exception e)
-            {
-                //exception
-                MessageBox.Show("");
-            }
-
-        }
-
-        #endregion
-
-
-        private void btnActivatAddSubjects_Click(object sender, EventArgs e)
-        {
-            btnMakeNewSubj.Visible = true;
-            pnlAddViewSubjects.Visible = true;
-            btnCnclSubjectEdit.Visible = true;
-            lblAddSubject.Visible = true; 
-        }
-
-        private void btnMakeNewSubj_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string name = txtAddViewSubjectName.Text;
-                int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
-                int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
-                if (txtAddViewSubjectFixPrc.Text == string.Empty)
-                {
-                    txtAddViewSubjectFixPrc.Text = 0.ToString();
-                }
-
-                decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
-                _subjectHandler.NewSubject(name, hours, time, price);
-                GetServices();
-                FillLServInsertCom();
-                FillCrCaseServiceCom();
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("");
-            }
-        }
-
-        private void btnUpdateSubj_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string name = txtAddViewSubjectName.Text;
-                int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
-                int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
-                decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
-                _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
-                ServiceGridView.Rows.Clear();
-                GetServices();
-                FillLServInsertCom();
-                FillCrCaseServiceCom();
-
-            }
-            catch (Exception exception)
-            {
-                //exception
-                MessageBox.Show("");
-            }
-        }
-
-        private void btnDeleteSubj_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (SubjectId == 0)
-                {
-                    MessageBox.Show("Vælg en tjenesteydelse først");
-                }
-                else
-                {
-                    DialogResult dialogResult = MessageBox.Show("Er du sikker?", $"Sletter sagen {SubjectId}", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        _subjectHandler.DeleteSubject(SubjectId);
-                        GetServices();
-                        FillLServInsertCom();
-                        FillCrCaseServiceCom();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Annulleret");
-                    }
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-        }
-
-        private void btnCnclSubjectEdit_Click(object sender, EventArgs e)
-        {
-            pnlAddViewSubjects.Visible = false;
-            btnDeleteSubj.Visible = false;
-            btnActivatAddSubjects.Visible = true;
-            btnMakeNewSubj.Visible = false;
-            btnUpdateSubj.Visible = false;
-            txtAddViewSubjectFixPrc.Clear();
-            txtAddViewSubjectHoursEst.Clear();
-            txtAddViewSubjectName.Clear();
-            TxtAddViewSubjectTimeEst.Clear();
-            lblAddSubject.Visible = false;
-            btnCnclSubjectEdit.Visible = false; 
-
-
-        }
-
-        private void btnShowClosedCases_Click(object sender, EventArgs e)
-        {
-
-            CaseDataGrid.Rows.Clear();
-            ActivateGetCasesGrid(false);
-            btnShowClosedCases.Visible = false;
-            btnReturnToShowOpenCases.Visible = true;
-            lblAllActiveCases.Visible = false;
-            lblAllCLosedCases.Visible = true;
-
-        }
-
-        private void btnReturnToShowOpenCases_Click(object sender, EventArgs e)
-        {
-
-            CaseDataGrid.Rows.Clear();
-            ActivateGetCasesGrid(true);
-            btnShowClosedCases.Visible = true;
-            btnReturnToShowOpenCases.Visible = false;
-            lblAllActiveCases.Visible = true;
-            lblAllCLosedCases.Visible = false;
-        }
-
-
-
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedTab = TabControl.SelectedTab;
 
             foreach (Control ctrl in selectedTab.Controls)
             {
-                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name 
+                if (selectedTab.Name == tabProvServices.Name || selectedTab.Name == tabCases.Name
                     || selectedTab.Name == tabClients.Name || selectedTab.Name == tabEmployees.Name)
                 {
                     if (ctrl is TextBox)
@@ -1203,6 +458,322 @@ namespace LawHouseTabForm
             }
         }
 
+        private void search_button_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < CaseDataGrid.RowCount; i++)
+            {
+                CaseDataGrid.Rows[i].Selected = false;
+                for (int j = 0; j < CaseDataGrid.ColumnCount; j++)
+                {
+                    if (CaseDataGrid.Rows[i].Cells[j].Value != null)
+                    {
+                        if (CaseDataGrid.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
+                        {
+                            CaseDataGrid.Rows[i].Selected = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        private void btnClientSearch_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clientsDataGrid.RowCount; i++)
+            {
+                clientsDataGrid.Rows[i].Selected = false;
+                for (int j = 0; j < clientsDataGrid.ColumnCount; j++)
+                {
+                    if (clientsDataGrid.Rows[i].Cells[j].Value != null)
+                    {
+                        if (clientsDataGrid.Rows[i].Cells[j].Value.ToString().Contains(txtClientSearch.Text))
+                        {
+                            clientsDataGrid.Rows[i].Selected = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cmbBoxFindEmplID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in _employeeHandler.GetEmployees())
+            {
+                string[] getEmployeeId =
+                    cmbBoxFindEmplID.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                this.EmployeeID = Convert.ToInt32(getEmployeeId[0]);
+            }
+        }
+        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var s in _subjectHandler.GetSubjects())
+            {
+                string[] getServoceId =
+                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string serviceId = getServoceId[0];
+                if (s.Id.ToString() == serviceId)
+                {
+                    CrCasePrice.Text = s.Price.ToString();
+                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
+                    CrCaseEndDato.Text = (Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString()) +
+                                          TimeSpan.FromDays(s.TimeEstimate)).ToShortDateString();
+                }
+            }
+        }
+
+
+        #endregion Show All in Form
+
+        #region Sager
+
+        private void btnActivateAddServiceBoxes_Click(object sender, EventArgs e)
+        {
+            ClearAddUpdateServiceBox();
+
+            BtnDeleteExsService.Visible = false;
+            BtnUpdateExsService.Visible = false;
+            pnlActivateServiceBoxes.Visible = true;
+            BtnAddNewService.Visible = true;
+        }
+
+        private void BtnAddNewService_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime date = Convert.ToDateTime(ServiceDateTimePicker.Value.ToShortDateString());
+                int hours = txtHoursService.Text != null ? Convert.ToInt32(txtHoursService.Text) : 0;
+                int km = txtServiceKm.Text != null ? Convert.ToInt32(txtServiceKm.Text) : 0;
+                string comment = txtServiceComment.Text;
+                string[] names =
+                    ServiceEmploeeCombox.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int respEmpl = Convert.ToInt32(names[0]);
+                _pServiceHandler.NewProvidedService(this.CaseId, date, hours, km, comment, respEmpl);
+                MessageBox.Show("Ydelsen er tilføjet til sagen");
+                ClearAddUpdateServiceBox();
+                ServiceDataGrid.Rows.Clear();
+                ShowProvidedServicesOnGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fejl - Ny service ikke tilføjet");
+            }
+        }
+
+        private void BtnUpdateExsService_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
+                DateTime date = Convert.ToDateTime(ServiceDateTimePicker.Value.ToShortDateString());
+                int houres = Convert.ToInt32(txtHoursService.Text);
+                int km = Convert.ToInt32(txtServiceKm.Text);
+                string comment = txtServiceComment.Text;
+                int i = _pServiceHandler.UpdateProvidedService(id, houres, km, date, comment);
+                MessageBox.Show($"Ydelse {id} er blevet opdateret");
+                ClearAddUpdateServiceBox();
+                ServiceDataGrid.Rows.Clear();
+                ShowProvidedServicesOnGrid();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vælg ydelse først");
+            }
+        }
+
+        private void BtnDeleteExsService_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(ServiceDataGrid.SelectedRows[0].Cells[0].Value);
+                DialogResult dialogResult =
+                    MessageBox.Show("Er du sikker? ", "Sletter ydelsen", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int i = _pServiceHandler.DeleteProvidedService(id);
+                    MessageBox.Show($"Ydelse {id} er blevet slettet");
+                    ClearAddUpdateServiceBox();
+                    ServiceDataGrid.Rows.Clear();
+                    ShowProvidedServicesOnGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vælg ydelse først");
+            }
+
+        }
+
+        private void CaseDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                CaseId = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+                string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
+                string name = CaseDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+                lblCaseName.Text = $"Nr.{CaseId}, {name}";
+                ShowProvidedServicesOnGrid();
+                pnlUpdateEditServices.Visible = true;
+            }
+            catch (Exception exception)
+            {
+            }
+        }
+
+        private void DeleteButt_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
+            {
+                MessageBox.Show("Vælg en sag, der skal slettes");
+            }
+            else
+            {
+                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                DialogResult dialogResult = MessageBox.Show("Er du sikker? ", "Sletter Sagen", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    _caseHandler.DeleteCase(id);
+                    MessageBox.Show($"Sage {id} er blevet slettet");
+                    ClearTxtBoxs();
+                    ActivateGetCasesGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
+            }
+        }
+
+        private void UpdateButt_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
+            {
+                MessageBox.Show("Vælg en sag, der skal opdateres");
+            }
+            else
+            {
+                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                decimal negPrice = Convert.ToDecimal(NegPricetxt.Text);
+                string[] getRespEmpId = RespEmpCombo.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int respEmpId = Convert.ToInt32(getRespEmpId[0]);
+                int i = _caseHandler.UpdateCase(id, negPrice, respEmpId);
+                ActivateGetCasesGrid();
+                if (i == 1)
+                {
+                    MessageBox.Show($"Sagen nr. {id} er blevet opdateret");
+                }
+                else
+                {
+                    MessageBox.Show("Sagen kunne ikke opdateres. Prøv igen");
+                }
+
+            }
+
+        }
+
+        private void CalculatePrice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(CaseDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
+                {
+                    MessageBox.Show("Vælg en sag for prisberegningen");
+                }
+                else
+                {
+                    int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                    decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+
+                    decimal price = _pServiceHandler.GetPrice(id, negPrice);
+                    ClosedCaseBut.Visible = true;
+                    TotalPricetxt.Text = price.ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void ClosedCaseBut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult =
+                    MessageBox.Show("Er du sikker? ", "Afslutter sagen", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                    decimal totalPrice = Convert.ToDecimal(TotalPricetxt.Text);
+                    DateTime endDate = Convert.ToDateTime(EndCaseTimePictxt.Value.ToShortDateString());
+                    int i = _caseHandler.CloseCase(id, totalPrice, endDate);
+                    MessageBox.Show($"Sage {id} er lukket");
+                    ClearTxtBoxs();
+                    ActivateGetCasesGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vælg en sag først");
+
+            }
+        }
+
+        private void CaseDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(CaseDataGrid.SelectedRows[0].Cells[0].Value);
+                decimal negPrice = Convert.ToDecimal(CaseDataGrid.SelectedRows[0].Cells[7].Value);
+                string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
+                RespEmpCombo.Text = respEmp;
+                NegPricetxt.Text = negPrice.ToString();
+            }
+            catch (Exception exception)
+            {
+            }
+        }
+
+        private void btnReturnToCasesPnl_Click(object sender, EventArgs e)
+        {
+            pnlUpdateEditServices.Visible = false;
+            ServiceDataGrid.Rows.Clear();
+            ClearAddUpdateServiceBox();
+            pnlActivateServiceBoxes.Visible = false;
+        }
+        private void btnShowClosedCases_Click(object sender, EventArgs e)
+        {
+
+            CaseDataGrid.Rows.Clear();
+            ActivateGetCasesGrid(false);
+            btnShowClosedCases.Visible = false;
+            btnReturnToShowOpenCases.Visible = true;
+            lblAllActiveCases.Visible = false;
+            lblAllCLosedCases.Visible = true;
+
+        }
+
+        private void btnReturnToShowOpenCases_Click(object sender, EventArgs e)
+        {
+
+            CaseDataGrid.Rows.Clear();
+            ActivateGetCasesGrid(true);
+            btnShowClosedCases.Visible = true;
+            btnReturnToShowOpenCases.Visible = false;
+            lblAllActiveCases.Visible = true;
+            lblAllCLosedCases.Visible = false;
+        }
+
         private void btnGetCasesbyClient_Click(object sender, EventArgs e)
         {
             string phoneNbr = tlfTxtForCases.Text;
@@ -1235,7 +806,7 @@ namespace LawHouseTabForm
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show(exception.Message);
                 }
             }
         }
@@ -1246,11 +817,11 @@ namespace LawHouseTabForm
             {
                 string caseName = CrCaseName.Text;
                 string[] getServiceId =
-                    CrCaseServiceCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 int serviceId = Convert.ToInt32(getServiceId[0]);
                 DateTime startTime = Convert.ToDateTime(CrCasetimeP.Value.ToShortDateString());
                 string[] getAdvoketId =
-                    CrCaseAdvokat.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                    CrCaseAdvokat.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 int empId = Convert.ToInt32(getAdvoketId[0]);
                 int clientId = Convert.ToInt32(txtShowNewClientIdHere.Text);
                 if (CrCasePrice.Text == String.Empty)
@@ -1266,31 +837,471 @@ namespace LawHouseTabForm
             catch (Exception exception)
             {
                 //exception
-                MessageBox.Show("");
+                MessageBox.Show(exception.Message);
             }
         }
-    
 
         private void btnCancelCreateNewCase_Click(object sender, EventArgs e)
         {
             pnlUpdateEditServices.Visible = false;
             ServiceDataGrid.Rows.Clear();
             ClearAddUpdateServiceBox();
-            pnlUpdateEditServices.Visible = false; 
+            pnlUpdateEditServices.Visible = false;
             pnlAllOpenCases.Visible = true;
-            pnlCreateNewCase.Visible = false; 
+            pnlCreateNewCase.Visible = false;
         }
 
         private void btnActivateCreateNewCase_Click(object sender, EventArgs e)
         {
             pnlCreateNewCase.Visible = true;
             pnlUpdateEditServices.Visible = true;
-            btnNewCase.Visible = true; 
+            btnNewCase.Visible = true;
+        }
+        private void SubjectGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                SubjectId = Convert.ToInt32(ServiceGridView.SelectedRows[0].Cells[0].Value);
+                txtAddViewSubjectName.Text = ServiceGridView.SelectedRows[0].Cells[1].Value.ToString();
+                txtAddViewSubjectHoursEst.Text = ServiceGridView.SelectedRows[0].Cells[2].Value.ToString();
+                TxtAddViewSubjectTimeEst.Text = ServiceGridView.SelectedRows[0].Cells[3].Value.ToString();
+                txtAddViewSubjectFixPrc.Text = ServiceGridView.SelectedRows[0].Cells[4].Value.ToString();
+
+                pnlAddViewSubjects.Visible = true;
+                btnUpdateSubj.Visible = true;
+                btnDeleteSubj.Visible = true;
+                btnMakeNewSubj.Visible = false;
+                btnActivatAddSubjects.Visible = false;
+                btnCnclSubjectEdit.Visible = true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
+        #endregion
+
+        #region Tjenesteydelser/efteruddannelse
+
+        private void ServiceDataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                ClearAddUpdateServiceBox();
+                ServiceEmploeeCombox.Text = ServiceDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+                ServiceDateTimePicker.Text = ServiceDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+                txtServiceComment.Text = ServiceDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+                txtHoursService.Text = ServiceDataGrid.SelectedRows[0].Cells[4].Value.ToString();
+                txtServiceKm.Text = ServiceDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+                pnlActivateServiceBoxes.Visible = true;
+                BtnDeleteExsService.Visible = true;
+                BtnUpdateExsService.Visible = true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnActivatAddSubjects_Click(object sender, EventArgs e)
+        {
+            btnMakeNewSubj.Visible = true;
+            pnlAddViewSubjects.Visible = true;
+            btnCnclSubjectEdit.Visible = true;
+            lblAddSubject.Visible = true; 
+        }
+
+        private void btnMakeNewSubj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = txtAddViewSubjectName.Text;
+                int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
+                int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+                if (txtAddViewSubjectFixPrc.Text == string.Empty)
+                {
+                    txtAddViewSubjectFixPrc.Text = 0.ToString();
+                }
+                decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
+                _subjectHandler.NewSubject(name, hours, time, price);
+                MessageBox.Show("Tjenesteydelser/Efteruddannelse er tilføjret");
+                GetServices();
+                FillLServInsertCom();
+                FillCrCaseServiceCom();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnUpdateSubj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = txtAddViewSubjectName.Text;
+                int hours = Convert.ToInt32(txtAddViewSubjectHoursEst.Text);
+                int time = Convert.ToInt32(TxtAddViewSubjectTimeEst.Text);
+                decimal price = Convert.ToDecimal(txtAddViewSubjectFixPrc.Text);
+                _subjectHandler.UpdateSubject(SubjectId, name, hours, time, price);
+                MessageBox.Show($"Tjenesteydelser {name} er opdateret");
+                ServiceGridView.Rows.Clear();
+                GetServices();
+                FillLServInsertCom();
+                FillCrCaseServiceCom();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnDeleteSubj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (SubjectId == 0)
+                {
+                    MessageBox.Show("Vælg en tjenesteydelse først");
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Er du sikker?", $"Sletter tjenesteydelse {SubjectId}", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        _subjectHandler.DeleteSubject(SubjectId);
+                        MessageBox.Show($"Tjenesteydelse {SubjectId} er slettet");
+                        GetServices();
+                        FillLServInsertCom();
+                        FillCrCaseServiceCom();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Annulleret");
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void btnCnclSubjectEdit_Click(object sender, EventArgs e)
+        {
+            pnlAddViewSubjects.Visible = false;
+            btnDeleteSubj.Visible = false;
+            btnActivatAddSubjects.Visible = true;
+            btnMakeNewSubj.Visible = false;
+            btnUpdateSubj.Visible = false;
+            txtAddViewSubjectFixPrc.Clear();
+            txtAddViewSubjectHoursEst.Clear();
+            txtAddViewSubjectName.Clear();
+            TxtAddViewSubjectTimeEst.Clear();
+            lblAddSubject.Visible = false;
+            btnCnclSubjectEdit.Visible = false;
+        }
+        #endregion
+
+        #region Medarbejdere
+
+        private void EmlGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                SendUpdateEmployeeFieldsInfo();
+                AddEmpBoxes(false);
+                DeleteEmpl.Visible = true;
+                UpdateEmpl.Visible = true;
+            }
+            catch (Exception exception)
+            {
+            }
+        }
+
+        private void NewEmplButt_Click(object sender, EventArgs e)
+        {
+            showAllEmployeeGrid();
+            try
+            {
+                string cpr = NECprTxt.Text;
+                string fName = NEFnameTxt.Text;
+                string lName = NELnameTxt.Text;
+                string address = NEAdressTxt.Text;
+                int postNo = Convert.ToInt32(NEPostTxt.Text);
+                string eMail = NEEmailTxt.Text;
+                string tlf = NETlfTxt.Text;
+                DateTime start = Convert.ToDateTime(NEmplStartDate.Value.ToShortDateString());
+                string position = NEmplPosition.Text;
+                decimal money = Convert.ToDecimal(NEmplMoney.Text);
+                this.EmployeeID =
+                    _employeeHandler.NewEmployee(cpr, fName, lName, address, postNo, eMail, tlf, start, position,
+                        money);
+                ClearTxt();
+                EmplGridView.Rows.Clear();
+                EmplGridStart();
+                FillEmployeeComBox();
+                FillAdvokatEmployeeComBox();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void showAllEmployeeGrid()
+        {
+            EmplGridView.Visible = true;
+            lblAnsatte.Visible = true;
+
+            btnActivateUpdEmpFields.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            btnEditEmpCancel.Visible = false;
+            NewEmplButt.Visible = false;
+            UpdateEmpl.Visible = false;
+
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            btnDelSubjFromEmp.Visible = true;
+        }
+
+        private void UpdateEmpl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fName = NEFnameTxt.Text;
+                string lName = NELnameTxt.Text;
+                string address = NEAdressTxt.Text;
+                int postNo = Convert.ToInt32(NEPostTxt.Text);
+                string eMail = NEEmailTxt.Text;
+                string tlf = NETlfTxt.Text;
+                string position = NEmplPosition.Text;
+                decimal money = Convert.ToDecimal(NEmplMoney.Text);
+                _employeeHandler.UpdateEmployee(EmployeeID, fName, lName, address, postNo, eMail, tlf, position, money);
+                MessageBox.Show($"Medarbejder {fName} {lName} er opdateret");
+                ClearTxt();
+                EmplGridView.Rows.Clear();
+                EmplGridStart();
+                showUpdtEmployeeBoxes();
+                btnEditEmpCancel_Click(sender, e);
+                FillEmployeeComBox();
+                FillAdvokatEmployeeComBox();
+            }
+            //exception
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void showUpdtEmployeeBoxes()
+        {
+            NewEmplButt.Visible = false;
+            UpdateEmpl.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            btnActivateUpdEmpFields.Visible = true;
+            pnlAddSubjectToEmp.Visible = false;
+            btnEditEmpCancel.Visible = false;
+            lblOpdaterMedInfo.Visible = true;
+            EmplGridView.Visible = false;
+            btnDelSubjFromEmp.Visible = true;
+        }
+        
+        private void DeleteEmpl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dialogResult =
+                    MessageBox.Show("Er du sikker? ", $"Sletter Sagen {EmployeeID}", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string fName = NEFnameTxt.Text;
+                    string lName = NELnameTxt.Text;
+                    _employeeHandler.CloseEmployee(EmployeeID);
+                    MessageBox.Show($"Medarbejder {fName} {lName} er slettet");
+                    ClearTxt();
+                    EmplGridView.Rows.Clear();
+                    EmplGridStart();
+                    btnEditEmpCancel_Click(sender, e);
+                    FillEmployeeComBox();
+                    FillAdvokatEmployeeComBox();
+                }
+                else
+                {
+                    MessageBox.Show("Annulleret");
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg en sag først");
+            }
+
+        }
+
+        private void btnActivateAddEmpFields_Click(object sender, EventArgs e)
+        {
+            ClearTxt();
+            AddEmpBoxes(true);
+        }
+
+        private void AddEmpBoxes(bool IsNewEmployee)
+        {
+            EmplGridView.Visible = false;
+            lblAnsatte.Visible = false;
+            btnEditEmpCancel.Visible = true;
+            btnActivateAddEmpFields.Visible = false;
+            btnActivateUpdEmpFields.Visible = false;
+            pnlAddUpdateEmplFields.Visible = true;
+            pnlAddSubjectToEmp.Visible = true;
+
+            if (IsNewEmployee)
+            {
+                lblTilfNyMeda.Visible = true;
+                lblOpdaterMedInfo.Visible = false;
+                NewEmplButt.Visible = true;
+            }
+            else
+            {
+                lblTilfNyMeda.Visible = false;
+                lblOpdaterMedInfo.Visible = true;
+                UpdateEmpl.Visible = true;
+                DeleteEmpl.Visible = true;
+            }
+        }
+
+        private void btnActivateUpdEmpFields_Click(object sender, EventArgs e)
+        {
+            SendUpdateEmployeeFieldsInfo();
+            AddEmpBoxes(false);
+        }
+
+        private void SendUpdateEmployeeFieldsInfo()
+        {
+            try
+            {
+                EmployeeID = Convert.ToInt32(EmplGridView.SelectedRows[0].Cells[0].Value);
+                NECprTxt.Text = EmplGridView.SelectedRows[0].Cells[1].Value.ToString();
+                NEFnameTxt.Text = EmplGridView.SelectedRows[0].Cells[2].Value.ToString();
+                NELnameTxt.Text = EmplGridView.SelectedRows[0].Cells[3].Value.ToString();
+                NEAdressTxt.Text = EmplGridView.SelectedRows[0].Cells[4].Value.ToString();
+                NEPostTxt.Text = EmplGridView.SelectedRows[0].Cells[5].Value.ToString();
+                NEEmailTxt.Text = EmplGridView.SelectedRows[0].Cells[6].Value.ToString();
+                NETlfTxt.Text = EmplGridView.SelectedRows[0].Cells[7].Value.ToString();
+                NEmplStartDate.Value = Convert.ToDateTime(EmplGridView.SelectedRows[0].Cells[8].Value.ToString());
+                NEmplPosition.Text = EmplGridView.SelectedRows[0].Cells[9].Value.ToString();
+                NEmplMoney.Text = EmplGridView.SelectedRows[0].Cells[10].Value.ToString();
+                showSpecializationInListbox(EmployeeID);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        private void btnEditEmpCancel_Click(object sender, EventArgs e)
+        {
+            EmplGridView.Visible = true;
+            lblAnsatte.Visible = true;
+
+            lblOpdaterMedInfo.Visible = false;
+            lblTilfNyMeda.Visible = false;
+
+            btnActivateUpdEmpFields.Visible = true;
+            btnActivateAddEmpFields.Visible = true;
+            NewEmplButt.Visible = false;
+            UpdateEmpl.Visible = false;
+
+            btnEditEmpCancel.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            pnlAddUpdateEmplFields.Visible = false;
+            pnlAddSubjectToEmp.Visible = false;
+            DeleteEmpl.Visible = false;
+            lstBoxShowEmpSpecialization.Items.Clear();
+
+        }
+
+        private void btnDelSubjFromEmp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string getItem = lstBoxShowEmpSpecialization.SelectedItem.ToString();
+                string[] getSubjectId = getItem.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int id = Convert.ToInt32(getSubjectId[0]);
+                _employeeHandler.DeleteSubjectFromEmployee(EmployeeID, id);
+                lstBoxShowEmpSpecialization.Items.Clear();
+                showSpecializationInListbox(EmployeeID);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg en ydelse først");
+            }
+
+        }
+
+        private void AddSubjectToEmplBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] getServiceId =
+                    LServInsertCom.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+                int subjectId = Convert.ToInt32(getServiceId[0]);
+                _employeeHandler.AddSubjectToEmployee(EmployeeID, subjectId);
+                lstBoxShowEmpSpecialization.Items.Clear();
+                showSpecializationInListbox(EmployeeID);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Vælg en ydelse/ansatte først");
+            }
+        }
+
+        #endregion
+
+        #region Alle ydelser på ansat
+
+        private void btnShowPrServices_Click(object sender, EventArgs e)
+        {
+            getPrServicesByEmployee();
+            showTotalKmAndHours();
+        }
+
+        private void showTotalKmAndHours()
+        {
+            int[] total = _pServiceHandler.GetworkDone();
+            totalHoursUseForPeriod.Text = total[1].ToString();
+            totalKmDrivenInPeriod.Text = total[0].ToString();
+        }
+
+        private void getPrServicesByEmployee()
+        {
+            try
+            {
+                GridEmployeeServicesP.Rows.Clear();
+                DateTime startDate = Convert.ToDateTime(dateTimeFrom.Value.ToShortDateString());
+                DateTime endDate = Convert.ToDateTime(dateTimeTo.Value.ToShortDateString());
+                foreach (var ps in _pServiceHandler.GetProvidedServicesByEmplId(this.EmployeeID, startDate, endDate))
+                {
+                    int n = GridEmployeeServicesP.Rows.Add();
+                    GridEmployeeServicesP.Rows[n].Cells[0].Value = ps.CaseID;
+                    GridEmployeeServicesP.Rows[n].Cells[1].Value = ps.Date.ToShortDateString();
+                    GridEmployeeServicesP.Rows[n].Cells[2].Value = ps.Hours;
+                    GridEmployeeServicesP.Rows[n].Cells[3].Value = ps.Km;
+                    GridEmployeeServicesP.Rows[n].Cells[4].Value = ps.Comment;
+                }
+            }
+            catch (Exception e)
+            {
+               MessageBox.Show(e.Message);
+            }
+        }
+
+        #endregion
+
+        #region Klienter
         private void btnActivateUpdateClient_Click(object sender, EventArgs e)
         {
-            
             pnlCreateUpdateClient.Visible = true;
             btnUpdateClient.Visible = true;
             NewClientBtn.Visible = false;
@@ -1306,8 +1317,7 @@ namespace LawHouseTabForm
             if (String.IsNullOrEmpty(clientsDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
             {
                 MessageBox.Show("Vælg en klient, der skal opdateres");
-
-            }
+                }
             else
             {
                 this.ClientId = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[0].Value);
@@ -1318,7 +1328,6 @@ namespace LawHouseTabForm
                 int postNO = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[5].Value);
                 string email = clientsDataGrid.SelectedRows[0].Cells[6].Value.ToString();
                 string tlfNO = clientsDataGrid.SelectedRows[0].Cells[7].Value.ToString();
-
                 txtClientID.Text = ClientId.ToString();
                 NewClientCprNo.Text = cpr.ToString();
                 NewClientfName.Text = fName;
@@ -1327,12 +1336,10 @@ namespace LawHouseTabForm
                 NewClientPost.Text = postNO.ToString();
                 NewClientMail.Text = email;
                 NewClientTelef.Text = tlfNO;
-
             }
         }
 
-
-private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
+        private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
         {
             pnlCreateUpdateClient.Visible = true;
             btnUpdateClient.Visible = false;
@@ -1358,8 +1365,6 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             btnShowAllActiveClients.Visible = false;
             btnShowDeactivatedClients.Visible = true; 
             clearAllBoxesInpnlCreateUpdClient();
-
-
         }
 
         private void btnShowDeactivatedClients_Click(object sender, EventArgs e)
@@ -1370,7 +1375,6 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             btnShowAllActiveClients.Visible = true;
             lblSeeAllActiveClients.Visible = false;
             lblSeeAllDeactivatedClients.Visible = true;
-
         }
 
         private void btnShowAllActiveClients_Click(object sender, EventArgs e)
@@ -1381,7 +1385,6 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             btnShowAllActiveClients.Visible = false;
             lblSeeAllActiveClients.Visible = true;
             lblSeeAllDeactivatedClients.Visible = false;
-            
         }
 
         private void btnUpdateClient_Click(object sender, EventArgs e)
@@ -1396,8 +1399,8 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 int postNo = Convert.ToInt32(NewClientPost.Text);
                 string eMail = NewClientMail.Text;
                 string tlf = NewClientTelef.Text;
-
                 _clientHandler.UpdateClient(ClientId, fName, lName, cpr, address, postNo, eMail, tlf);
+                MessageBox.Show($"Klient {fName} {lName} er opdateret");
                 clientsDataGrid.Rows.Clear();
                 ActivateGetClientsGrid();
                 pnlCreateUpdateClient.Visible = false;
@@ -1405,12 +1408,10 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 pnlClientsButtons.Visible = true;
                 clearAllBoxesInpnlCreateUpdClient();
                 btnShowDeactivatedClients.Visible = true;
-                btnShowAllActiveClients.Visible = false; 
-
+                btnShowAllActiveClients.Visible = false;
             }
             catch (Exception exception)
             {
-                //exception
                 MessageBox.Show("Klienten er ikke blevet opdateret");
             }
         }
@@ -1425,9 +1426,6 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             NewClientPost.Clear();
             NewClientMail.Clear();
             NewClientTelef.Clear();
-
-
-
         }
 
         private void NewClientBtn_Click(object sender, EventArgs e)
@@ -1442,7 +1440,7 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                 string eMail = NewClientMail.Text;
                 string tlf = NewClientTelef.Text;
                 this.ClientId = _clientHandler.NewClient(cpr, fName, lName, address, postNo, eMail, tlf);
-                MessageBox.Show("Klient med id nummer: " + ClientId.ToString() + " er oprettet");
+                MessageBox.Show($"Klient {fName}{lName} er oprettet");
                 ClearNewClientTXT();
                 clientsDataGrid.Rows.Clear();
                 ActivateGetClientsGrid();
@@ -1453,32 +1451,11 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             }
             catch (Exception exception)
             {
-                //exception
-                MessageBox.Show("");
+                MessageBox.Show(exception.Message);
                 btnNewCase.Visible = false;
-
             }
         }
-
-        private void CrCaseServiceCom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (var s in _subjectHandler.GetSubjects())
-            {
-                string[] getServoceId =
-                    CrCaseServiceCom.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                string serviceId = getServoceId[0];
-
-                string startDate = CrCasetimeP.Value.ToLongDateString();
-
-                if (s.Id.ToString() == serviceId)
-                {
-                    CrCasePrice.Text = s.Price.ToString();
-                    CrCaseTimeUsed.Text = s.HoursEstimate.ToString();
-                    CrCaseEndDato.Text = s.TimeEstimate.ToString(); // SKAL SES PÅ
-                }
-            }
-        }
-
+        
         private void btnDeleteClientInfo_Click(object sender, EventArgs e)
         {
          
@@ -1489,7 +1466,7 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
                     MessageBox.Show("Er du sikker på at du vil deaktivere klient id " + ClientId + "? ", "Deaktiverer klienten", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int i = _clientHandler.CloseClient(ClientId);
+                    _clientHandler.CloseClient(ClientId);
                     MessageBox.Show("Klienten kan nu findes inde under 'ikke aktive klienter'");
                     clientsDataGrid.Rows.Clear();
                     ActivateGetClientsGrid(true);
@@ -1505,6 +1482,7 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             {
                 MessageBox.Show("Vælg klient først");
             }
-        }        
+        }
+        #endregion
     }
 }
