@@ -1496,40 +1496,6 @@ private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
             {
                 MessageBox.Show("Vælg klient først");
             }
-        }
-
-        //private void btnFindExistingClient_Click_1(object sender, EventArgs e)
-        //{
-        //    string phoneNbr = NewClientTelef.Text;
-        //    var client = _clientHandler.GetClient(phoneNbr);
-
-        //    if (client.Id == 0)
-        //    {
-        //        MessageBox.Show("Klienten eksisterer ikke i vores database - opret ny klient");
-        //        txtShowNewClientIdHere.Text = string.Empty;
-        //        NewClientPost.Text = string.Empty;
-        //        //btnUpdateClient.Visible = false;
-        //        btnNewCase.Visible = false;
-        //        NewClientTelef.Text = string.Empty;
-        //    }
-        //    else
-        //    {
-        //        NewClientCprNo.Text = client.CprNo;
-        //        NewClientfName.Text = client.FirstName;
-        //        NewClientLName.Text = client.LastName;
-        //        NewClientAdress.Text = client.Address;
-        //        NewClientPost.Text = client.PostNo.ToString();
-        //        NewClientMail.Text = client.Email;
-        //        NewClientTelef.Text = client.TlfNo;
-        //        this.ClientId = client.Id;
-
-        //        //txtShowNewClientIdHere.Text = ClientId.ToString();
-        //        //btnNewCase.Visible = true;
-
-
-        //        btnFindExistingClient.Visible = false;
-        //        btnUpdateClient.Visible = true;
-        //    }
-        //}
+        }        
     }
 }

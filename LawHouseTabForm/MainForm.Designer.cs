@@ -38,10 +38,56 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
+            this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
+            this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
+            this.btnActivateAddServiceBoxes = new System.Windows.Forms.Button();
+            this.lblCaseName = new System.Windows.Forms.Label();
+            this.lblHeaderServices = new System.Windows.Forms.Label();
+            this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
+            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnDeleteExsService = new System.Windows.Forms.Button();
+            this.BtnAddNewService = new System.Windows.Forms.Button();
+            this.BtnUpdateExsService = new System.Windows.Forms.Button();
+            this.pnlActivateServiceBoxes = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblHoursUsed = new System.Windows.Forms.Label();
+            this.lblKm = new System.Windows.Forms.Label();
+            this.txtServiceComment = new System.Windows.Forms.RichTextBox();
+            this.txtServiceKm = new System.Windows.Forms.TextBox();
+            this.txtHoursService = new System.Windows.Forms.TextBox();
+            this.ServiceDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ServiceEmploeeCombox = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
+            this.pnlCreateNewCase = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
+            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
+            this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
+            this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.CrCaseTimeUsed = new System.Windows.Forms.TextBox();
+            this.CrCasePrice = new System.Windows.Forms.TextBox();
+            this.CrCaseEndDato = new System.Windows.Forms.TextBox();
+            this.CrCaseName = new System.Windows.Forms.TextBox();
+            this.btnNewCase = new System.Windows.Forms.Button();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
             this.btnActivateCreateNewCase = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -57,7 +103,6 @@
             this.ClosedCaseBut = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.NegPricetxt = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnReturnToShowOpenCases = new System.Windows.Forms.Button();
             this.btnShowClosedCases = new System.Windows.Forms.Button();
             this.search_button = new System.Windows.Forms.Button();
@@ -65,49 +110,19 @@
             this.lLblHelpViewAllCasesTab = new System.Windows.Forms.LinkLabel();
             this.DeleteButt = new System.Windows.Forms.Button();
             this.CaseDataGrid = new System.Windows.Forms.DataGridView();
+            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAllActiveCases = new System.Windows.Forms.Label();
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
-            this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
-            this.btnActivateAddServiceBoxes = new System.Windows.Forms.Button();
-            this.lblCaseName = new System.Windows.Forms.Label();
-            this.lblHeaderServices = new System.Windows.Forms.Label();
-            this.ServiceDataGrid = new System.Windows.Forms.DataGridView();
-            this.BtnDeleteExsService = new System.Windows.Forms.Button();
-            this.BtnAddNewService = new System.Windows.Forms.Button();
-            this.BtnUpdateExsService = new System.Windows.Forms.Button();
-            this.pnlActivateServiceBoxes = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblKm = new System.Windows.Forms.Label();
-            this.txtServiceComment = new System.Windows.Forms.RichTextBox();
-            this.txtServiceKm = new System.Windows.Forms.TextBox();
-            this.txtHoursService = new System.Windows.Forms.TextBox();
-            this.ServiceDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ServiceEmploeeCombox = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
-            this.pnlCreateNewCase = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
-            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
-            this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
-            this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.CrCaseTimeUsed = new System.Windows.Forms.TextBox();
-            this.CrCasePrice = new System.Windows.Forms.TextBox();
-            this.CrCaseEndDato = new System.Windows.Forms.TextBox();
-            this.CrCaseName = new System.Windows.Forms.TextBox();
-            this.btnNewCase = new System.Windows.Forms.Button();
             this.tabEmployees = new System.Windows.Forms.TabPage();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lLblHelpEmployeesTab = new System.Windows.Forms.LinkLabel();
             this.pnlAddSubjectToEmp = new System.Windows.Forms.Panel();
             this.btnDelSubjFromEmp = new System.Windows.Forms.Button();
@@ -161,7 +176,6 @@
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabShowAllProServ = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDateToo = new System.Windows.Forms.Label();
             this.lblDateFrom = new System.Windows.Forms.Label();
@@ -183,7 +197,6 @@
             this.PServiceComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProvServices = new System.Windows.Forms.TabPage();
             this.lblAddSubject = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lLblHelpSubjectsTab = new System.Windows.Forms.LinkLabel();
             this.btnCnclSubjectEdit = new System.Windows.Forms.Button();
             this.pnlAddViewSubjects = new System.Windows.Forms.Panel();
@@ -197,6 +210,11 @@
             this.label47 = new System.Windows.Forms.Label();
             this.btnActivatAddSubjects = new System.Windows.Forms.Button();
             this.ServiceGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeleteSubj = new System.Windows.Forms.Button();
             this.btnUpdateSubj = new System.Windows.Forms.Button();
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
@@ -242,32 +260,12 @@
             this.PostNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client_TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lLblHelpAddClientCaseTab = new System.Windows.Forms.LinkLabel();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Service_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Km = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblHoursUsed = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -280,31 +278,29 @@
             label29 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabCases.SuspendLayout();
-            this.pnlAllOpenCases.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
             this.pnlUpdateEditServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).BeginInit();
             this.pnlActivateServiceBoxes.SuspendLayout();
             this.pnlCreateNewCase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.pnlAllOpenCases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
             this.tabEmployees.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlAddSubjectToEmp.SuspendLayout();
             this.pnlAddUpdateEmplFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).BeginInit();
             this.tabShowAllProServ.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).BeginInit();
             this.tabProvServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.pnlAddViewSubjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
             this.tabClients.SuspendLayout();
             this.pnlCreateUpdateClient.SuspendLayout();
             this.pnlClientsButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -427,8 +423,9 @@
             // 
             // tabCases
             // 
-            this.tabCases.Controls.Add(this.pnlAllOpenCases);
+            this.tabCases.Controls.Add(this.pnlCreateNewCase);
             this.tabCases.Controls.Add(this.pnlUpdateEditServices);
+            this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCases.Location = new System.Drawing.Point(4, 27);
             this.tabCases.Margin = new System.Windows.Forms.Padding(2);
@@ -439,9 +436,538 @@
             this.tabCases.Text = "Sager";
             this.tabCases.UseVisualStyleBackColor = true;
             // 
+            // pnlUpdateEditServices
+            // 
+            this.pnlUpdateEditServices.Controls.Add(this.lLblHelpCaseServices2Tab);
+            this.pnlUpdateEditServices.Controls.Add(this.btnActivateAddServiceBoxes);
+            this.pnlUpdateEditServices.Controls.Add(this.lblCaseName);
+            this.pnlUpdateEditServices.Controls.Add(this.lblHeaderServices);
+            this.pnlUpdateEditServices.Controls.Add(this.ServiceDataGrid);
+            this.pnlUpdateEditServices.Controls.Add(this.BtnDeleteExsService);
+            this.pnlUpdateEditServices.Controls.Add(this.BtnAddNewService);
+            this.pnlUpdateEditServices.Controls.Add(this.BtnUpdateExsService);
+            this.pnlUpdateEditServices.Controls.Add(this.pnlActivateServiceBoxes);
+            this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
+            this.pnlUpdateEditServices.Location = new System.Drawing.Point(5, 2);
+            this.pnlUpdateEditServices.Name = "pnlUpdateEditServices";
+            this.pnlUpdateEditServices.Size = new System.Drawing.Size(1179, 641);
+            this.pnlUpdateEditServices.TabIndex = 281;
+            this.pnlUpdateEditServices.Visible = false;
+            // 
+            // lLblHelpCaseServices2Tab
+            // 
+            this.lLblHelpCaseServices2Tab.AutoSize = true;
+            this.lLblHelpCaseServices2Tab.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lLblHelpCaseServices2Tab.Location = new System.Drawing.Point(16, 609);
+            this.lLblHelpCaseServices2Tab.Name = "lLblHelpCaseServices2Tab";
+            this.lLblHelpCaseServices2Tab.Size = new System.Drawing.Size(42, 14);
+            this.lLblHelpCaseServices2Tab.TabIndex = 329;
+            this.lLblHelpCaseServices2Tab.TabStop = true;
+            this.lLblHelpCaseServices2Tab.Text = "Hjælp";
+            // 
+            // btnActivateAddServiceBoxes
+            // 
+            this.btnActivateAddServiceBoxes.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnActivateAddServiceBoxes.Location = new System.Drawing.Point(92, 414);
+            this.btnActivateAddServiceBoxes.Name = "btnActivateAddServiceBoxes";
+            this.btnActivateAddServiceBoxes.Size = new System.Drawing.Size(97, 45);
+            this.btnActivateAddServiceBoxes.TabIndex = 182;
+            this.btnActivateAddServiceBoxes.Text = "Tilføj ny ydelse";
+            this.btnActivateAddServiceBoxes.UseVisualStyleBackColor = true;
+            this.btnActivateAddServiceBoxes.Click += new System.EventHandler(this.btnActivateAddServiceBoxes_Click);
+            // 
+            // lblCaseName
+            // 
+            this.lblCaseName.AutoSize = true;
+            this.lblCaseName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCaseName.Location = new System.Drawing.Point(228, 42);
+            this.lblCaseName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCaseName.Name = "lblCaseName";
+            this.lblCaseName.Size = new System.Drawing.Size(60, 18);
+            this.lblCaseName.TabIndex = 180;
+            this.lblCaseName.Text = "label3";
+            // 
+            // lblHeaderServices
+            // 
+            this.lblHeaderServices.AutoSize = true;
+            this.lblHeaderServices.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderServices.Location = new System.Drawing.Point(89, 42);
+            this.lblHeaderServices.Name = "lblHeaderServices";
+            this.lblHeaderServices.Size = new System.Drawing.Size(143, 18);
+            this.lblHeaderServices.TabIndex = 175;
+            this.lblHeaderServices.Text = "Ydelser på sag:";
+            // 
+            // ServiceDataGrid
+            // 
+            this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Service_Id,
+            this.Empl_id,
+            this.Date,
+            this.Comments,
+            this.Hours,
+            this.Km});
+            this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
+            this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.ServiceDataGrid.Name = "ServiceDataGrid";
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle41;
+            this.ServiceDataGrid.RowTemplate.Height = 37;
+            this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
+            this.ServiceDataGrid.TabIndex = 176;
+            this.ServiceDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ServiceDataGrid_CellMouseDoubleClick);
+            // 
+            // Service_Id
+            // 
+            this.Service_Id.FillWeight = 50F;
+            this.Service_Id.HeaderText = "ID";
+            this.Service_Id.Name = "Service_Id";
+            this.Service_Id.ReadOnly = true;
+            this.Service_Id.Visible = false;
+            this.Service_Id.Width = 30;
+            // 
+            // Empl_id
+            // 
+            this.Empl_id.FillWeight = 170F;
+            this.Empl_id.HeaderText = "Medarbejder";
+            this.Empl_id.Name = "Empl_id";
+            this.Empl_id.ReadOnly = true;
+            this.Empl_id.Width = 150;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Dato";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Comments
+            // 
+            this.Comments.FillWeight = 225F;
+            this.Comments.HeaderText = "Kommentar";
+            this.Comments.Name = "Comments";
+            this.Comments.ReadOnly = true;
+            this.Comments.Width = 225;
+            // 
+            // Hours
+            // 
+            this.Hours.FillWeight = 60F;
+            this.Hours.HeaderText = "Timer";
+            this.Hours.Name = "Hours";
+            this.Hours.ReadOnly = true;
+            this.Hours.Width = 60;
+            // 
+            // Km
+            // 
+            this.Km.FillWeight = 65F;
+            this.Km.HeaderText = "Km";
+            this.Km.Name = "Km";
+            this.Km.ReadOnly = true;
+            this.Km.Width = 65;
+            // 
+            // BtnDeleteExsService
+            // 
+            this.BtnDeleteExsService.BackColor = System.Drawing.Color.Transparent;
+            this.BtnDeleteExsService.Font = new System.Drawing.Font("Verdana", 9F);
+            this.BtnDeleteExsService.Location = new System.Drawing.Point(607, 570);
+            this.BtnDeleteExsService.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnDeleteExsService.Name = "BtnDeleteExsService";
+            this.BtnDeleteExsService.Size = new System.Drawing.Size(121, 36);
+            this.BtnDeleteExsService.TabIndex = 179;
+            this.BtnDeleteExsService.Text = "Slet";
+            this.BtnDeleteExsService.UseVisualStyleBackColor = false;
+            this.BtnDeleteExsService.Visible = false;
+            this.BtnDeleteExsService.Click += new System.EventHandler(this.BtnDeleteExsService_Click);
+            // 
+            // BtnAddNewService
+            // 
+            this.BtnAddNewService.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAddNewService.Font = new System.Drawing.Font("Verdana", 9F);
+            this.BtnAddNewService.Location = new System.Drawing.Point(357, 570);
+            this.BtnAddNewService.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAddNewService.Name = "BtnAddNewService";
+            this.BtnAddNewService.Size = new System.Drawing.Size(121, 36);
+            this.BtnAddNewService.TabIndex = 178;
+            this.BtnAddNewService.Text = "Tilføj ydelse";
+            this.BtnAddNewService.UseVisualStyleBackColor = false;
+            this.BtnAddNewService.Visible = false;
+            this.BtnAddNewService.Click += new System.EventHandler(this.BtnAddNewService_Click);
+            // 
+            // BtnUpdateExsService
+            // 
+            this.BtnUpdateExsService.Font = new System.Drawing.Font("Verdana", 9F);
+            this.BtnUpdateExsService.Location = new System.Drawing.Point(482, 570);
+            this.BtnUpdateExsService.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnUpdateExsService.Name = "BtnUpdateExsService";
+            this.BtnUpdateExsService.Size = new System.Drawing.Size(121, 36);
+            this.BtnUpdateExsService.TabIndex = 177;
+            this.BtnUpdateExsService.Text = "Opdater";
+            this.BtnUpdateExsService.UseVisualStyleBackColor = true;
+            this.BtnUpdateExsService.Visible = false;
+            this.BtnUpdateExsService.Click += new System.EventHandler(this.BtnUpdateExsService_Click);
+            // 
+            // pnlActivateServiceBoxes
+            // 
+            this.pnlActivateServiceBoxes.Controls.Add(this.label12);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label3);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label2);
+            this.pnlActivateServiceBoxes.Controls.Add(this.lblHoursUsed);
+            this.pnlActivateServiceBoxes.Controls.Add(this.lblKm);
+            this.pnlActivateServiceBoxes.Controls.Add(this.txtServiceComment);
+            this.pnlActivateServiceBoxes.Controls.Add(this.txtServiceKm);
+            this.pnlActivateServiceBoxes.Controls.Add(this.txtHoursService);
+            this.pnlActivateServiceBoxes.Controls.Add(this.ServiceDateTimePicker);
+            this.pnlActivateServiceBoxes.Controls.Add(this.ServiceEmploeeCombox);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label18);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label17);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label16);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label15);
+            this.pnlActivateServiceBoxes.Controls.Add(this.label14);
+            this.pnlActivateServiceBoxes.Location = new System.Drawing.Point(243, 400);
+            this.pnlActivateServiceBoxes.Name = "pnlActivateServiceBoxes";
+            this.pnlActivateServiceBoxes.Size = new System.Drawing.Size(498, 165);
+            this.pnlActivateServiceBoxes.TabIndex = 181;
+            this.pnlActivateServiceBoxes.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label12.Location = new System.Drawing.Point(14, 46);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 14);
+            this.label12.TabIndex = 183;
+            this.label12.Text = "medarbejder:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label3.Location = new System.Drawing.Point(14, 72);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 14);
+            this.label3.TabIndex = 182;
+            this.label3.Text = "dato:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 14);
+            this.label2.TabIndex = 181;
+            this.label2.Text = "Tilføj/rediger ydelse:";
+            // 
+            // lblHoursUsed
+            // 
+            this.lblHoursUsed.AutoSize = true;
+            this.lblHoursUsed.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblHoursUsed.Location = new System.Drawing.Point(14, 98);
+            this.lblHoursUsed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHoursUsed.Name = "lblHoursUsed";
+            this.lblHoursUsed.Size = new System.Drawing.Size(85, 14);
+            this.lblHoursUsed.TabIndex = 180;
+            this.lblHoursUsed.Text = "timeforbrug:";
+            // 
+            // lblKm
+            // 
+            this.lblKm.AutoSize = true;
+            this.lblKm.Font = new System.Drawing.Font("Verdana", 9F);
+            this.lblKm.Location = new System.Drawing.Point(14, 124);
+            this.lblKm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKm.Name = "lblKm";
+            this.lblKm.Size = new System.Drawing.Size(59, 14);
+            this.lblKm.TabIndex = 179;
+            this.lblKm.Text = "km kørt:";
+            // 
+            // txtServiceComment
+            // 
+            this.txtServiceComment.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtServiceComment.Location = new System.Drawing.Point(327, 43);
+            this.txtServiceComment.Margin = new System.Windows.Forms.Padding(2);
+            this.txtServiceComment.Name = "txtServiceComment";
+            this.txtServiceComment.Size = new System.Drawing.Size(158, 106);
+            this.txtServiceComment.TabIndex = 178;
+            this.txtServiceComment.Text = "";
+            // 
+            // txtServiceKm
+            // 
+            this.txtServiceKm.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtServiceKm.Location = new System.Drawing.Point(114, 121);
+            this.txtServiceKm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtServiceKm.Name = "txtServiceKm";
+            this.txtServiceKm.Size = new System.Drawing.Size(158, 22);
+            this.txtServiceKm.TabIndex = 177;
+            this.txtServiceKm.Text = "0";
+            this.txtServiceKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtServiceKm_KeyPress);
+            // 
+            // txtHoursService
+            // 
+            this.txtHoursService.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtHoursService.Location = new System.Drawing.Point(114, 95);
+            this.txtHoursService.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHoursService.Name = "txtHoursService";
+            this.txtHoursService.Size = new System.Drawing.Size(158, 22);
+            this.txtHoursService.TabIndex = 176;
+            this.txtHoursService.Text = "0";
+            this.txtHoursService.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoursService_KeyPress);
+            // 
+            // ServiceDateTimePicker
+            // 
+            this.ServiceDateTimePicker.Font = new System.Drawing.Font("Verdana", 9F);
+            this.ServiceDateTimePicker.Location = new System.Drawing.Point(114, 69);
+            this.ServiceDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.ServiceDateTimePicker.Name = "ServiceDateTimePicker";
+            this.ServiceDateTimePicker.Size = new System.Drawing.Size(158, 22);
+            this.ServiceDateTimePicker.TabIndex = 175;
+            // 
+            // ServiceEmploeeCombox
+            // 
+            this.ServiceEmploeeCombox.Font = new System.Drawing.Font("Verdana", 9F);
+            this.ServiceEmploeeCombox.FormattingEnabled = true;
+            this.ServiceEmploeeCombox.Location = new System.Drawing.Point(114, 43);
+            this.ServiceEmploeeCombox.Margin = new System.Windows.Forms.Padding(2);
+            this.ServiceEmploeeCombox.Name = "ServiceEmploeeCombox";
+            this.ServiceEmploeeCombox.Size = new System.Drawing.Size(158, 22);
+            this.ServiceEmploeeCombox.TabIndex = 174;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label18.Location = new System.Drawing.Point(-92, 149);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(31, 14);
+            this.label18.TabIndex = 173;
+            this.label18.Text = "Km:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label17.Location = new System.Drawing.Point(-92, 123);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(46, 14);
+            this.label17.TabIndex = 172;
+            this.label17.Text = "Timer:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label16.Location = new System.Drawing.Point(324, 21);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 14);
+            this.label16.TabIndex = 171;
+            this.label16.Text = "Kommentar:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label15.Location = new System.Drawing.Point(-92, 100);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 14);
+            this.label15.TabIndex = 170;
+            this.label15.Text = "Dato:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label14.Location = new System.Drawing.Point(-92, 72);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(92, 14);
+            this.label14.TabIndex = 169;
+            this.label14.Text = "Medarbejder:";
+            // 
+            // btnReturnToCasesPnl
+            // 
+            this.btnReturnToCasesPnl.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnReturnToCasesPnl.Location = new System.Drawing.Point(92, 464);
+            this.btnReturnToCasesPnl.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturnToCasesPnl.Name = "btnReturnToCasesPnl";
+            this.btnReturnToCasesPnl.Size = new System.Drawing.Size(97, 45);
+            this.btnReturnToCasesPnl.TabIndex = 328;
+            this.btnReturnToCasesPnl.Text = "Retur";
+            this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
+            this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
+            // 
+            // pnlCreateNewCase
+            // 
+            this.pnlCreateNewCase.Controls.Add(this.linkLabel1);
+            this.pnlCreateNewCase.Controls.Add(this.btnCancelCreateNewCase);
+            this.pnlCreateNewCase.Controls.Add(label5);
+            this.pnlCreateNewCase.Controls.Add(this.txtShowNewClientIdHere);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseServiceCom);
+            this.pnlCreateNewCase.Controls.Add(this.label35);
+            this.pnlCreateNewCase.Controls.Add(this.CrCasetimeP);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseAdvokat);
+            this.pnlCreateNewCase.Controls.Add(this.label20);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseTimeUsed);
+            this.pnlCreateNewCase.Controls.Add(this.CrCasePrice);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseEndDato);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseName);
+            this.pnlCreateNewCase.Controls.Add(label22);
+            this.pnlCreateNewCase.Controls.Add(label24);
+            this.pnlCreateNewCase.Controls.Add(label25);
+            this.pnlCreateNewCase.Controls.Add(label26);
+            this.pnlCreateNewCase.Controls.Add(label28);
+            this.pnlCreateNewCase.Controls.Add(label29);
+            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
+            this.pnlCreateNewCase.Location = new System.Drawing.Point(3, 1);
+            this.pnlCreateNewCase.Name = "pnlCreateNewCase";
+            this.pnlCreateNewCase.Size = new System.Drawing.Size(936, 635);
+            this.pnlCreateNewCase.TabIndex = 346;
+            this.pnlCreateNewCase.Visible = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 9F);
+            this.linkLabel1.Location = new System.Drawing.Point(16, 609);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(224, 14);
+            this.linkLabel1.TabIndex = 414;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Hjælp (View all create update sag)";
+            // 
+            // btnCancelCreateNewCase
+            // 
+            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(337, 423);
+            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
+            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnCancelCreateNewCase.TabIndex = 413;
+            this.btnCancelCreateNewCase.Text = "Fortryd";
+            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
+            this.btnCancelCreateNewCase.Click += new System.EventHandler(this.btnCancelCreateNewCase_Click);
+            // 
+            // txtShowNewClientIdHere
+            // 
+            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(243, 185);
+            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
+            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
+            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
+            this.txtShowNewClientIdHere.TabIndex = 411;
+            // 
+            // CrCaseServiceCom
+            // 
+            this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseServiceCom.FormattingEnabled = true;
+            this.CrCaseServiceCom.Location = new System.Drawing.Point(243, 239);
+            this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseServiceCom.Name = "CrCaseServiceCom";
+            this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseServiceCom.TabIndex = 410;
+            this.CrCaseServiceCom.SelectedIndexChanged += new System.EventHandler(this.CrCaseServiceCom_SelectedIndexChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(91, 134);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(121, 18);
+            this.label35.TabIndex = 409;
+            this.label35.Text = "Opret ny sag";
+            // 
+            // CrCasetimeP
+            // 
+            this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCasetimeP.Location = new System.Drawing.Point(243, 269);
+            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCasetimeP.Name = "CrCasetimeP";
+            this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
+            this.CrCasetimeP.TabIndex = 407;
+            // 
+            // CrCaseAdvokat
+            // 
+            this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseAdvokat.FormattingEnabled = true;
+            this.CrCaseAdvokat.Location = new System.Drawing.Point(243, 299);
+            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseAdvokat.Name = "CrCaseAdvokat";
+            this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseAdvokat.TabIndex = 406;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label20.Location = new System.Drawing.Point(88, 360);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(146, 14);
+            this.label20.TabIndex = 405;
+            this.label20.Text = "Forventet tidsforbrug:";
+            // 
+            // CrCaseTimeUsed
+            // 
+            this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseTimeUsed.Location = new System.Drawing.Point(243, 357);
+            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
+            this.CrCaseTimeUsed.ReadOnly = true;
+            this.CrCaseTimeUsed.Size = new System.Drawing.Size(131, 22);
+            this.CrCaseTimeUsed.TabIndex = 404;
+            // 
+            // CrCasePrice
+            // 
+            this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCasePrice.Location = new System.Drawing.Point(243, 329);
+            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCasePrice.Name = "CrCasePrice";
+            this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
+            this.CrCasePrice.TabIndex = 403;
+            // 
+            // CrCaseEndDato
+            // 
+            this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseEndDato.Location = new System.Drawing.Point(243, 385);
+            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseEndDato.Name = "CrCaseEndDato";
+            this.CrCaseEndDato.ReadOnly = true;
+            this.CrCaseEndDato.Size = new System.Drawing.Size(131, 22);
+            this.CrCaseEndDato.TabIndex = 402;
+            // 
+            // CrCaseName
+            // 
+            this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseName.Location = new System.Drawing.Point(243, 211);
+            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseName.Name = "CrCaseName";
+            this.CrCaseName.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseName.TabIndex = 401;
+            // 
+            // btnNewCase
+            // 
+            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
+            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCase.Name = "btnNewCase";
+            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnNewCase.TabIndex = 408;
+            this.btnNewCase.Text = "Tilføj sag";
+            this.btnNewCase.UseVisualStyleBackColor = true;
+            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
+            // 
             // pnlAllOpenCases
             // 
             this.pnlAllOpenCases.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlAllOpenCases.Controls.Add(this.pictureBox4);
             this.pnlAllOpenCases.Controls.Add(this.btnActivateCreateNewCase);
             this.pnlAllOpenCases.Controls.Add(this.label10);
             this.pnlAllOpenCases.Controls.Add(this.label1);
@@ -459,7 +985,6 @@
             this.pnlAllOpenCases.Controls.Add(label11);
             this.pnlAllOpenCases.Controls.Add(label8);
             this.pnlAllOpenCases.Controls.Add(label7);
-            this.pnlAllOpenCases.Controls.Add(this.pictureBox4);
             this.pnlAllOpenCases.Controls.Add(this.btnReturnToShowOpenCases);
             this.pnlAllOpenCases.Controls.Add(this.btnShowClosedCases);
             this.pnlAllOpenCases.Controls.Add(this.search_button);
@@ -627,15 +1152,6 @@
             this.NegPricetxt.TabIndex = 289;
             this.NegPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NegPricetxt_KeyPress);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox4.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox4.TabIndex = 338;
-            this.pictureBox4.TabStop = false;
-            // 
             // btnReturnToShowOpenCases
             // 
             this.btnReturnToShowOpenCases.Font = new System.Drawing.Font("Verdana", 9F);
@@ -707,8 +1223,6 @@
             // 
             // CaseDataGrid
             // 
-            this.CaseDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.CaseDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CaseDataGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.CaseDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -727,14 +1241,90 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
             this.CaseDataGrid.TabIndex = 284;
             this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
             this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
+            // 
+            // Case_ID
+            // 
+            this.Case_ID.FillWeight = 60F;
+            this.Case_ID.HeaderText = "ID";
+            this.Case_ID.Name = "Case_ID";
+            this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 60;
+            // 
+            // CaseName
+            // 
+            this.CaseName.FillWeight = 160F;
+            this.CaseName.HeaderText = "Sagsnavn";
+            this.CaseName.Name = "CaseName";
+            this.CaseName.ReadOnly = true;
+            this.CaseName.Width = 160;
+            // 
+            // Client
+            // 
+            this.Client.FillWeight = 160F;
+            this.Client.HeaderText = "Klient";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            this.Client.Width = 160;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Startdato";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "Slutdato";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 150F;
+            this.ServiceName.HeaderText = "Servicetype";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Width = 150;
+            // 
+            // HoursEstimate
+            // 
+            this.HoursEstimate.FillWeight = 60F;
+            this.HoursEstimate.HeaderText = "Timer";
+            this.HoursEstimate.Name = "HoursEstimate";
+            this.HoursEstimate.ReadOnly = true;
+            this.HoursEstimate.Width = 60;
+            // 
+            // NegotiatedPrice
+            // 
+            this.NegotiatedPrice.FillWeight = 90F;
+            this.NegotiatedPrice.HeaderText = "Aftalt pris";
+            this.NegotiatedPrice.Name = "NegotiatedPrice";
+            this.NegotiatedPrice.ReadOnly = true;
+            this.NegotiatedPrice.Width = 90;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 80F;
+            this.TotalPrice.HeaderText = "Slut pris";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 80;
+            // 
+            // Resp_empl
+            // 
+            this.Resp_empl.FillWeight = 160F;
+            this.Resp_empl.HeaderText = "Ansvarlig advokat";
+            this.Resp_empl.Name = "Resp_empl";
+            this.Resp_empl.ReadOnly = true;
+            this.Resp_empl.Width = 160;
             // 
             // lblAllActiveCases
             // 
@@ -756,475 +1346,6 @@
             this.TotalPricetxt.Size = new System.Drawing.Size(168, 22);
             this.TotalPricetxt.TabIndex = 290;
             this.TotalPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalPricetxt_KeyPress);
-            // 
-            // pnlUpdateEditServices
-            // 
-            this.pnlUpdateEditServices.Controls.Add(this.pictureBox3);
-            this.pnlUpdateEditServices.Controls.Add(this.lLblHelpCaseServices2Tab);
-            this.pnlUpdateEditServices.Controls.Add(this.btnActivateAddServiceBoxes);
-            this.pnlUpdateEditServices.Controls.Add(this.lblCaseName);
-            this.pnlUpdateEditServices.Controls.Add(this.lblHeaderServices);
-            this.pnlUpdateEditServices.Controls.Add(this.ServiceDataGrid);
-            this.pnlUpdateEditServices.Controls.Add(this.BtnDeleteExsService);
-            this.pnlUpdateEditServices.Controls.Add(this.BtnAddNewService);
-            this.pnlUpdateEditServices.Controls.Add(this.BtnUpdateExsService);
-            this.pnlUpdateEditServices.Controls.Add(this.pnlActivateServiceBoxes);
-            this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
-            this.pnlUpdateEditServices.Controls.Add(this.pnlCreateNewCase);
-            this.pnlUpdateEditServices.Location = new System.Drawing.Point(2, 2);
-            this.pnlUpdateEditServices.Name = "pnlUpdateEditServices";
-            this.pnlUpdateEditServices.Size = new System.Drawing.Size(1196, 641);
-            this.pnlUpdateEditServices.TabIndex = 281;
-            this.pnlUpdateEditServices.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox3.TabIndex = 330;
-            this.pictureBox3.TabStop = false;
-            // 
-            // lLblHelpCaseServices2Tab
-            // 
-            this.lLblHelpCaseServices2Tab.AutoSize = true;
-            this.lLblHelpCaseServices2Tab.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lLblHelpCaseServices2Tab.Location = new System.Drawing.Point(16, 609);
-            this.lLblHelpCaseServices2Tab.Name = "lLblHelpCaseServices2Tab";
-            this.lLblHelpCaseServices2Tab.Size = new System.Drawing.Size(42, 14);
-            this.lLblHelpCaseServices2Tab.TabIndex = 329;
-            this.lLblHelpCaseServices2Tab.TabStop = true;
-            this.lLblHelpCaseServices2Tab.Text = "Hjælp";
-            // 
-            // btnActivateAddServiceBoxes
-            // 
-            this.btnActivateAddServiceBoxes.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnActivateAddServiceBoxes.Location = new System.Drawing.Point(92, 414);
-            this.btnActivateAddServiceBoxes.Name = "btnActivateAddServiceBoxes";
-            this.btnActivateAddServiceBoxes.Size = new System.Drawing.Size(97, 45);
-            this.btnActivateAddServiceBoxes.TabIndex = 182;
-            this.btnActivateAddServiceBoxes.Text = "Tilføj ny ydelse";
-            this.btnActivateAddServiceBoxes.UseVisualStyleBackColor = true;
-            this.btnActivateAddServiceBoxes.Click += new System.EventHandler(this.btnActivateAddServiceBoxes_Click);
-            // 
-            // lblCaseName
-            // 
-            this.lblCaseName.AutoSize = true;
-            this.lblCaseName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCaseName.Location = new System.Drawing.Point(228, 42);
-            this.lblCaseName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCaseName.Name = "lblCaseName";
-            this.lblCaseName.Size = new System.Drawing.Size(60, 18);
-            this.lblCaseName.TabIndex = 180;
-            this.lblCaseName.Text = "label3";
-            // 
-            // lblHeaderServices
-            // 
-            this.lblHeaderServices.AutoSize = true;
-            this.lblHeaderServices.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHeaderServices.Location = new System.Drawing.Point(89, 42);
-            this.lblHeaderServices.Name = "lblHeaderServices";
-            this.lblHeaderServices.Size = new System.Drawing.Size(143, 18);
-            this.lblHeaderServices.TabIndex = 175;
-            this.lblHeaderServices.Text = "Ydelser på sag:";
-            // 
-            // ServiceDataGrid
-            // 
-            this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Service_Id,
-            this.Empl_id,
-            this.Date,
-            this.Comments,
-            this.Hours,
-            this.Km});
-            this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
-            this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
-            this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.ServiceDataGrid.RowTemplate.Height = 37;
-            this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
-            this.ServiceDataGrid.TabIndex = 176;
-            this.ServiceDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ServiceDataGrid_CellMouseDoubleClick);
-            // 
-            // BtnDeleteExsService
-            // 
-            this.BtnDeleteExsService.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDeleteExsService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.BtnDeleteExsService.Location = new System.Drawing.Point(607, 570);
-            this.BtnDeleteExsService.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnDeleteExsService.Name = "BtnDeleteExsService";
-            this.BtnDeleteExsService.Size = new System.Drawing.Size(121, 36);
-            this.BtnDeleteExsService.TabIndex = 179;
-            this.BtnDeleteExsService.Text = "Slet";
-            this.BtnDeleteExsService.UseVisualStyleBackColor = false;
-            this.BtnDeleteExsService.Visible = false;
-            this.BtnDeleteExsService.Click += new System.EventHandler(this.BtnDeleteExsService_Click);
-            // 
-            // BtnAddNewService
-            // 
-            this.BtnAddNewService.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAddNewService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.BtnAddNewService.Location = new System.Drawing.Point(357, 570);
-            this.BtnAddNewService.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnAddNewService.Name = "BtnAddNewService";
-            this.BtnAddNewService.Size = new System.Drawing.Size(121, 36);
-            this.BtnAddNewService.TabIndex = 178;
-            this.BtnAddNewService.Text = "Tilføj ydelse";
-            this.BtnAddNewService.UseVisualStyleBackColor = false;
-            this.BtnAddNewService.Visible = false;
-            this.BtnAddNewService.Click += new System.EventHandler(this.BtnAddNewService_Click);
-            // 
-            // BtnUpdateExsService
-            // 
-            this.BtnUpdateExsService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.BtnUpdateExsService.Location = new System.Drawing.Point(482, 570);
-            this.BtnUpdateExsService.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnUpdateExsService.Name = "BtnUpdateExsService";
-            this.BtnUpdateExsService.Size = new System.Drawing.Size(121, 36);
-            this.BtnUpdateExsService.TabIndex = 177;
-            this.BtnUpdateExsService.Text = "Opdater";
-            this.BtnUpdateExsService.UseVisualStyleBackColor = true;
-            this.BtnUpdateExsService.Visible = false;
-            this.BtnUpdateExsService.Click += new System.EventHandler(this.BtnUpdateExsService_Click);
-            // 
-            // pnlActivateServiceBoxes
-            // 
-            this.pnlActivateServiceBoxes.Controls.Add(this.label12);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label3);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label2);
-            this.pnlActivateServiceBoxes.Controls.Add(this.lblHoursUsed);
-            this.pnlActivateServiceBoxes.Controls.Add(this.lblKm);
-            this.pnlActivateServiceBoxes.Controls.Add(this.txtServiceComment);
-            this.pnlActivateServiceBoxes.Controls.Add(this.txtServiceKm);
-            this.pnlActivateServiceBoxes.Controls.Add(this.txtHoursService);
-            this.pnlActivateServiceBoxes.Controls.Add(this.ServiceDateTimePicker);
-            this.pnlActivateServiceBoxes.Controls.Add(this.ServiceEmploeeCombox);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label18);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label17);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label16);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label15);
-            this.pnlActivateServiceBoxes.Controls.Add(this.label14);
-            this.pnlActivateServiceBoxes.Location = new System.Drawing.Point(243, 400);
-            this.pnlActivateServiceBoxes.Name = "pnlActivateServiceBoxes";
-            this.pnlActivateServiceBoxes.Size = new System.Drawing.Size(498, 165);
-            this.pnlActivateServiceBoxes.TabIndex = 181;
-            this.pnlActivateServiceBoxes.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 14);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 14);
-            this.label2.TabIndex = 181;
-            this.label2.Text = "Tilføj/rediger ydelse:";
-            // 
-            // lblKm
-            // 
-            this.lblKm.AutoSize = true;
-            this.lblKm.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblKm.Location = new System.Drawing.Point(14, 124);
-            this.lblKm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKm.Name = "lblKm";
-            this.lblKm.Size = new System.Drawing.Size(59, 14);
-            this.lblKm.TabIndex = 179;
-            this.lblKm.Text = "km kørt:";
-            // 
-            // txtServiceComment
-            // 
-            this.txtServiceComment.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtServiceComment.Location = new System.Drawing.Point(327, 43);
-            this.txtServiceComment.Margin = new System.Windows.Forms.Padding(2);
-            this.txtServiceComment.Name = "txtServiceComment";
-            this.txtServiceComment.Size = new System.Drawing.Size(158, 106);
-            this.txtServiceComment.TabIndex = 178;
-            this.txtServiceComment.Text = "";
-            // 
-            // txtServiceKm
-            // 
-            this.txtServiceKm.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtServiceKm.Location = new System.Drawing.Point(114, 121);
-            this.txtServiceKm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtServiceKm.Name = "txtServiceKm";
-            this.txtServiceKm.Size = new System.Drawing.Size(158, 22);
-            this.txtServiceKm.TabIndex = 177;
-            this.txtServiceKm.Text = "0";
-            this.txtServiceKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtServiceKm_KeyPress);
-            // 
-            // txtHoursService
-            // 
-            this.txtHoursService.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtHoursService.Location = new System.Drawing.Point(114, 95);
-            this.txtHoursService.Margin = new System.Windows.Forms.Padding(2);
-            this.txtHoursService.Name = "txtHoursService";
-            this.txtHoursService.Size = new System.Drawing.Size(158, 22);
-            this.txtHoursService.TabIndex = 176;
-            this.txtHoursService.Text = "0";
-            this.txtHoursService.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoursService_KeyPress);
-            // 
-            // ServiceDateTimePicker
-            // 
-            this.ServiceDateTimePicker.Font = new System.Drawing.Font("Verdana", 9F);
-            this.ServiceDateTimePicker.Location = new System.Drawing.Point(114, 69);
-            this.ServiceDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.ServiceDateTimePicker.Name = "ServiceDateTimePicker";
-            this.ServiceDateTimePicker.Size = new System.Drawing.Size(158, 22);
-            this.ServiceDateTimePicker.TabIndex = 175;
-            // 
-            // ServiceEmploeeCombox
-            // 
-            this.ServiceEmploeeCombox.Font = new System.Drawing.Font("Verdana", 9F);
-            this.ServiceEmploeeCombox.FormattingEnabled = true;
-            this.ServiceEmploeeCombox.Location = new System.Drawing.Point(114, 43);
-            this.ServiceEmploeeCombox.Margin = new System.Windows.Forms.Padding(2);
-            this.ServiceEmploeeCombox.Name = "ServiceEmploeeCombox";
-            this.ServiceEmploeeCombox.Size = new System.Drawing.Size(158, 22);
-            this.ServiceEmploeeCombox.TabIndex = 174;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label18.Location = new System.Drawing.Point(-92, 149);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(31, 14);
-            this.label18.TabIndex = 173;
-            this.label18.Text = "Km:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label17.Location = new System.Drawing.Point(-92, 123);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 14);
-            this.label17.TabIndex = 172;
-            this.label17.Text = "Timer:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label16.Location = new System.Drawing.Point(324, 21);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 14);
-            this.label16.TabIndex = 171;
-            this.label16.Text = "Kommentar:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label15.Location = new System.Drawing.Point(-92, 100);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 14);
-            this.label15.TabIndex = 170;
-            this.label15.Text = "Dato:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label14.Location = new System.Drawing.Point(-92, 72);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 14);
-            this.label14.TabIndex = 169;
-            this.label14.Text = "Medarbejder:";
-            // 
-            // btnReturnToCasesPnl
-            // 
-            this.btnReturnToCasesPnl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnReturnToCasesPnl.Location = new System.Drawing.Point(92, 464);
-            this.btnReturnToCasesPnl.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReturnToCasesPnl.Name = "btnReturnToCasesPnl";
-            this.btnReturnToCasesPnl.Size = new System.Drawing.Size(97, 45);
-            this.btnReturnToCasesPnl.TabIndex = 328;
-            this.btnReturnToCasesPnl.Text = "Retur";
-            this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
-            this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
-            // 
-            // pnlCreateNewCase
-            // 
-            this.pnlCreateNewCase.Controls.Add(this.pictureBox7);
-            this.pnlCreateNewCase.Controls.Add(this.linkLabel1);
-            this.pnlCreateNewCase.Controls.Add(this.btnCancelCreateNewCase);
-            this.pnlCreateNewCase.Controls.Add(label5);
-            this.pnlCreateNewCase.Controls.Add(this.txtShowNewClientIdHere);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseServiceCom);
-            this.pnlCreateNewCase.Controls.Add(this.label35);
-            this.pnlCreateNewCase.Controls.Add(this.CrCasetimeP);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseAdvokat);
-            this.pnlCreateNewCase.Controls.Add(this.label20);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseTimeUsed);
-            this.pnlCreateNewCase.Controls.Add(this.CrCasePrice);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseEndDato);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseName);
-            this.pnlCreateNewCase.Controls.Add(label22);
-            this.pnlCreateNewCase.Controls.Add(label24);
-            this.pnlCreateNewCase.Controls.Add(label25);
-            this.pnlCreateNewCase.Controls.Add(label26);
-            this.pnlCreateNewCase.Controls.Add(label28);
-            this.pnlCreateNewCase.Controls.Add(label29);
-            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
-            this.pnlCreateNewCase.Location = new System.Drawing.Point(0, 0);
-            this.pnlCreateNewCase.Name = "pnlCreateNewCase";
-            this.pnlCreateNewCase.Size = new System.Drawing.Size(1047, 635);
-            this.pnlCreateNewCase.TabIndex = 346;
-            this.pnlCreateNewCase.Visible = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox7.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox7.TabIndex = 415;
-            this.pictureBox7.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 9F);
-            this.linkLabel1.Location = new System.Drawing.Point(16, 609);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(224, 14);
-            this.linkLabel1.TabIndex = 414;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Hjælp (View all create update sag)";
-            // 
-            // btnCancelCreateNewCase
-            // 
-            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(337, 423);
-            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
-            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnCancelCreateNewCase.TabIndex = 413;
-            this.btnCancelCreateNewCase.Text = "Fortryd";
-            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
-            this.btnCancelCreateNewCase.Click += new System.EventHandler(this.btnCancelCreateNewCase_Click);
-            // 
-            // txtShowNewClientIdHere
-            // 
-            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(243, 185);
-            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
-            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
-            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
-            this.txtShowNewClientIdHere.TabIndex = 411;
-            // 
-            // CrCaseServiceCom
-            // 
-            this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseServiceCom.FormattingEnabled = true;
-            this.CrCaseServiceCom.Location = new System.Drawing.Point(243, 239);
-            this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseServiceCom.Name = "CrCaseServiceCom";
-            this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseServiceCom.TabIndex = 410;
-            this.CrCaseServiceCom.SelectedIndexChanged += new System.EventHandler(this.CrCaseServiceCom_SelectedIndexChanged);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label35.Location = new System.Drawing.Point(91, 134);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(121, 18);
-            this.label35.TabIndex = 409;
-            this.label35.Text = "Opret ny sag";
-            // 
-            // CrCasetimeP
-            // 
-            this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasetimeP.Location = new System.Drawing.Point(243, 269);
-            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCasetimeP.Name = "CrCasetimeP";
-            this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
-            this.CrCasetimeP.TabIndex = 407;
-            // 
-            // CrCaseAdvokat
-            // 
-            this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseAdvokat.FormattingEnabled = true;
-            this.CrCaseAdvokat.Location = new System.Drawing.Point(243, 299);
-            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseAdvokat.Name = "CrCaseAdvokat";
-            this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseAdvokat.TabIndex = 406;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label20.Location = new System.Drawing.Point(88, 360);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(146, 14);
-            this.label20.TabIndex = 405;
-            this.label20.Text = "Forventet tidsforbrug:";
-            // 
-            // CrCaseTimeUsed
-            // 
-            this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseTimeUsed.Location = new System.Drawing.Point(243, 357);
-            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
-            this.CrCaseTimeUsed.ReadOnly = true;
-            this.CrCaseTimeUsed.Size = new System.Drawing.Size(131, 22);
-            this.CrCaseTimeUsed.TabIndex = 404;
-            // 
-            // CrCasePrice
-            // 
-            this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasePrice.Location = new System.Drawing.Point(243, 329);
-            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCasePrice.Name = "CrCasePrice";
-            this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
-            this.CrCasePrice.TabIndex = 403;
-            // 
-            // CrCaseEndDato
-            // 
-            this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseEndDato.Location = new System.Drawing.Point(243, 385);
-            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseEndDato.Name = "CrCaseEndDato";
-            this.CrCaseEndDato.ReadOnly = true;
-            this.CrCaseEndDato.Size = new System.Drawing.Size(131, 22);
-            this.CrCaseEndDato.TabIndex = 402;
-            // 
-            // CrCaseName
-            // 
-            this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseName.Location = new System.Drawing.Point(243, 211);
-            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseName.Name = "CrCaseName";
-            this.CrCaseName.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseName.TabIndex = 401;
-            // 
-            // btnNewCase
-            // 
-            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
-            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNewCase.Name = "btnNewCase";
-            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnNewCase.TabIndex = 408;
-            this.btnNewCase.Text = "Tilføj sag";
-            this.btnNewCase.UseVisualStyleBackColor = true;
-            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
             // 
             // tabEmployees
             // 
@@ -1250,15 +1371,6 @@
             this.tabEmployees.TabIndex = 2;
             this.tabEmployees.Text = "Medarbejdere";
             this.tabEmployees.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox5.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox5.TabIndex = 330;
-            this.pictureBox5.TabStop = false;
             // 
             // lLblHelpEmployeesTab
             // 
@@ -1808,7 +1920,6 @@
             // tabShowAllProServ
             // 
             this.tabShowAllProServ.Controls.Add(this.label9);
-            this.tabShowAllProServ.Controls.Add(this.pictureBox1);
             this.tabShowAllProServ.Controls.Add(this.label4);
             this.tabShowAllProServ.Controls.Add(this.lblDateToo);
             this.tabShowAllProServ.Controls.Add(this.lblDateFrom);
@@ -1823,6 +1934,7 @@
             this.tabShowAllProServ.Controls.Add(this.dateTimeFrom);
             this.tabShowAllProServ.Controls.Add(this.cmbBoxFindEmplID);
             this.tabShowAllProServ.Controls.Add(this.GridEmployeeServicesP);
+            this.tabShowAllProServ.Controls.Add(this.pictureBox1);
             this.tabShowAllProServ.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabShowAllProServ.Location = new System.Drawing.Point(4, 27);
             this.tabShowAllProServ.Name = "tabShowAllProServ";
@@ -1841,15 +1953,6 @@
             this.label9.Size = new System.Drawing.Size(341, 18);
             this.label9.TabIndex = 15;
             this.label9.Text = "Se ydelser udført for en given periode";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 86);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -2034,7 +2137,6 @@
             // tabProvServices
             // 
             this.tabProvServices.Controls.Add(this.lblAddSubject);
-            this.tabProvServices.Controls.Add(this.pictureBox6);
             this.tabProvServices.Controls.Add(this.lLblHelpSubjectsTab);
             this.tabProvServices.Controls.Add(this.btnCnclSubjectEdit);
             this.tabProvServices.Controls.Add(this.pnlAddViewSubjects);
@@ -2044,6 +2146,7 @@
             this.tabProvServices.Controls.Add(this.btnUpdateSubj);
             this.tabProvServices.Controls.Add(this.btnMakeNewSubj);
             this.tabProvServices.Controls.Add(this.label48);
+            this.tabProvServices.Controls.Add(this.pictureBox6);
             this.tabProvServices.Location = new System.Drawing.Point(4, 27);
             this.tabProvServices.Margin = new System.Windows.Forms.Padding(2);
             this.tabProvServices.Name = "tabProvServices";
@@ -2064,15 +2167,6 @@
             this.lblAddSubject.TabIndex = 304;
             this.lblAddSubject.Text = "Tilføj tjenesteydelse/efterudd.";
             this.lblAddSubject.Visible = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox6.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(141, 100);
-            this.pictureBox6.TabIndex = 303;
-            this.pictureBox6.TabStop = false;
             // 
             // lLblHelpSubjectsTab
             // 
@@ -2226,6 +2320,40 @@
             this.ServiceGridView.TabIndex = 298;
             this.ServiceGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SubjectGridView_CellMouseDoubleClick);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 150F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tjenesteydelse";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Forventet timeforbrug";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Forventet dagsforbrug";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Fast pris";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
             // btnDeleteSubj
             // 
             this.btnDeleteSubj.Font = new System.Drawing.Font("Verdana", 9F);
@@ -2281,8 +2409,8 @@
             this.tabClients.Controls.Add(this.pnlCreateUpdateClient);
             this.tabClients.Controls.Add(this.pnlClientsButtons);
             this.tabClients.Controls.Add(this.clientsDataGrid);
-            this.tabClients.Controls.Add(this.pictureBox2);
             this.tabClients.Controls.Add(this.lLblHelpAddClientCaseTab);
+            this.tabClients.Controls.Add(this.pictureBox2);
             this.tabClients.Location = new System.Drawing.Point(4, 27);
             this.tabClients.Margin = new System.Windows.Forms.Padding(2);
             this.tabClients.Name = "tabClients";
@@ -2729,15 +2857,6 @@
             this.Client_TlfNo.ReadOnly = true;
             this.Client_TlfNo.Width = 110;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(877, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(134, 86);
-            this.pictureBox2.TabIndex = 349;
-            this.pictureBox2.TabStop = false;
-            // 
             // lLblHelpAddClientCaseTab
             // 
             this.lLblHelpAddClientCaseTab.AutoSize = true;
@@ -2749,195 +2868,55 @@
             this.lLblHelpAddClientCaseTab.TabStop = true;
             this.lLblHelpAddClientCaseTab.Text = "Hjælp";
             // 
-            // dataGridViewTextBoxColumn2
+            // pictureBox4
             // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox4.Location = new System.Drawing.Point(1020, -1);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox4.TabIndex = 338;
+            this.pictureBox4.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn3
+            // pictureBox5
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 150F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tjenesteydelse";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox5.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox5.TabIndex = 330;
+            this.pictureBox5.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn4
+            // pictureBox1
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Forventet timeforbrug";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
-            // Time
+            // pictureBox6
             // 
-            this.Time.HeaderText = "Forventet dagsforbrug";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox6.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox6.TabIndex = 303;
+            this.pictureBox6.TabStop = false;
             // 
-            // Price
+            // pictureBox2
             // 
-            this.Price.HeaderText = "Fast pris";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // Service_Id
-            // 
-            this.Service_Id.FillWeight = 50F;
-            this.Service_Id.HeaderText = "ID";
-            this.Service_Id.Name = "Service_Id";
-            this.Service_Id.ReadOnly = true;
-            this.Service_Id.Visible = false;
-            this.Service_Id.Width = 30;
-            // 
-            // Empl_id
-            // 
-            this.Empl_id.FillWeight = 170F;
-            this.Empl_id.HeaderText = "Medarbejder";
-            this.Empl_id.Name = "Empl_id";
-            this.Empl_id.ReadOnly = true;
-            this.Empl_id.Width = 150;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Dato";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Comments
-            // 
-            this.Comments.FillWeight = 225F;
-            this.Comments.HeaderText = "Kommentar";
-            this.Comments.Name = "Comments";
-            this.Comments.ReadOnly = true;
-            this.Comments.Width = 225;
-            // 
-            // Hours
-            // 
-            this.Hours.FillWeight = 60F;
-            this.Hours.HeaderText = "Timer";
-            this.Hours.Name = "Hours";
-            this.Hours.ReadOnly = true;
-            this.Hours.Width = 60;
-            // 
-            // Km
-            // 
-            this.Km.FillWeight = 65F;
-            this.Km.HeaderText = "Km";
-            this.Km.Name = "Km";
-            this.Km.ReadOnly = true;
-            this.Km.Width = 65;
-            // 
-            // lblHoursUsed
-            // 
-            this.lblHoursUsed.AutoSize = true;
-            this.lblHoursUsed.Font = new System.Drawing.Font("Verdana", 9F);
-            this.lblHoursUsed.Location = new System.Drawing.Point(14, 98);
-            this.lblHoursUsed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHoursUsed.Name = "lblHoursUsed";
-            this.lblHoursUsed.Size = new System.Drawing.Size(85, 14);
-            this.lblHoursUsed.TabIndex = 180;
-            this.lblHoursUsed.Text = "timeforbrug:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label3.Location = new System.Drawing.Point(14, 72);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 14);
-            this.label3.TabIndex = 182;
-            this.label3.Text = "dato:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label12.Location = new System.Drawing.Point(14, 46);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 14);
-            this.label12.TabIndex = 183;
-            this.label12.Text = "medarbejder:";
-            // 
-            // Case_ID
-            // 
-            this.Case_ID.FillWeight = 60F;
-            this.Case_ID.HeaderText = "ID";
-            this.Case_ID.Name = "Case_ID";
-            this.Case_ID.ReadOnly = true;
-            this.Case_ID.Width = 60;
-            // 
-            // CaseName
-            // 
-            this.CaseName.FillWeight = 160F;
-            this.CaseName.HeaderText = "Sagsnavn";
-            this.CaseName.Name = "CaseName";
-            this.CaseName.ReadOnly = true;
-            this.CaseName.Width = 160;
-            // 
-            // Client
-            // 
-            this.Client.FillWeight = 160F;
-            this.Client.HeaderText = "Klient";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            this.Client.Width = 160;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Startdato";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "Slutdato";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.FillWeight = 150F;
-            this.ServiceName.HeaderText = "Servicetype";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Width = 150;
-            // 
-            // HoursEstimate
-            // 
-            this.HoursEstimate.FillWeight = 60F;
-            this.HoursEstimate.HeaderText = "Timer";
-            this.HoursEstimate.Name = "HoursEstimate";
-            this.HoursEstimate.ReadOnly = true;
-            this.HoursEstimate.Width = 60;
-            // 
-            // NegotiatedPrice
-            // 
-            this.NegotiatedPrice.FillWeight = 90F;
-            this.NegotiatedPrice.HeaderText = "Aftalt pris";
-            this.NegotiatedPrice.Name = "NegotiatedPrice";
-            this.NegotiatedPrice.ReadOnly = true;
-            this.NegotiatedPrice.Width = 90;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 80F;
-            this.TotalPrice.HeaderText = "Slut pris";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 80;
-            // 
-            // Resp_empl
-            // 
-            this.Resp_empl.FillWeight = 160F;
-            this.Resp_empl.HeaderText = "Ansvarlig advokat";
-            this.Resp_empl.Name = "Resp_empl";
-            this.Resp_empl.ReadOnly = true;
-            this.Resp_empl.Width = 160;
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox2.TabIndex = 349;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -2948,24 +2927,21 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "LawHouse";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.TabControl.ResumeLayout(false);
             this.tabCases.ResumeLayout(false);
-            this.pnlAllOpenCases.ResumeLayout(false);
-            this.pnlAllOpenCases.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
             this.pnlUpdateEditServices.ResumeLayout(false);
             this.pnlUpdateEditServices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).EndInit();
             this.pnlActivateServiceBoxes.ResumeLayout(false);
             this.pnlActivateServiceBoxes.PerformLayout();
             this.pnlCreateNewCase.ResumeLayout(false);
             this.pnlCreateNewCase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.pnlAllOpenCases.ResumeLayout(false);
+            this.pnlAllOpenCases.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
             this.tabEmployees.ResumeLayout(false);
             this.tabEmployees.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnlAddSubjectToEmp.ResumeLayout(false);
             this.pnlAddSubjectToEmp.PerformLayout();
             this.pnlAddUpdateEmplFields.ResumeLayout(false);
@@ -2973,11 +2949,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).EndInit();
             this.tabShowAllProServ.ResumeLayout(false);
             this.tabShowAllProServ.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).EndInit();
             this.tabProvServices.ResumeLayout(false);
             this.tabProvServices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnlAddViewSubjects.ResumeLayout(false);
             this.pnlAddViewSubjects.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).EndInit();
@@ -2987,6 +2961,10 @@
             this.pnlCreateUpdateClient.PerformLayout();
             this.pnlClientsButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -3114,7 +3092,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -3197,7 +3174,6 @@
         private System.Windows.Forms.Label lblClientID;
         private System.Windows.Forms.TextBox txtClientID;
         private System.Windows.Forms.Button btnDeleteClientInfo;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
