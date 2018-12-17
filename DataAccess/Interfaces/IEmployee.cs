@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-   public interface IEmployee
+    //Andriy
+    public interface IEmployee
     {
         int NewEmployee(EmployeeM employee);
         List<EmployeeM> GetEmployees();

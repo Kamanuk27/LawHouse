@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
+    //Stanja
     public interface IProvidedService
     {
         int NewProvidedService(ProvidedServiceM s1);

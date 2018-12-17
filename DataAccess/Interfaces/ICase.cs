@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
+    //Stanja
     public interface ICase
     {
         int NewCase(CaseM c1);

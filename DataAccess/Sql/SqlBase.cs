@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 
 namespace DataAccess.Sql
 {
+    // Lisa
     internal abstract class SqlBase
     {
 
