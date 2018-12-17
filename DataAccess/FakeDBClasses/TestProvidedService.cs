@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
+    //Stanja
     internal class TestProvidedService : IProvidedService
     {
         public int NewProvidedService(ProvidedServiceM s1)

@@ -6,11 +6,11 @@ using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
+    //Andriy
     internal class SqlEmployee : SqlBase, IEmployee
-   {
-        
-        public int NewEmployee(EmployeeM e)
-        {
+    {
+         public int NewEmployee(EmployeeM e)
+         {
             string sqlString = "INSERT INTO Employee (CprNo, FirstName, LastName, Address, PostNo, Email, TlfNo, StartDate, Position, PayRatePrHour) VALUES " +
                                " (@CprNo, @FirstName, @LastName, @Address, @PostNo, @Email, @TlfNo, @StartDate, @Position, @PayRatePrHour)";
 

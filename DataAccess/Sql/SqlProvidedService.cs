@@ -8,7 +8,7 @@ namespace DataAccess
 {
     internal class SqlProvidedService : SqlBase, IProvidedService
     {
-       
+       //Stanja
         public int NewProvidedService(ProvidedServiceM s1)
         {
             string sqlString = "INSERT INTO ProvidedService (Employee_ID, Case_ID, Date, Hours, Km, Comment) VALUES " +
