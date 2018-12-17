@@ -1,14 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LawHouseLibrary.Models
+﻿namespace LawHouseLibrary.Models
 {
     public class ClientM
     {
+        // Lisa
         public int Id { get; set; }
         public string CprNo { get; set; }
         public string FirstName { get; set; }
