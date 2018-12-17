@@ -101,12 +101,13 @@ namespace DataAccess
 
         public int UpdateProvidedService(ProvidedServiceM s1)
         {
-            _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km WHERE ID = @id";
+            _command.CommandText = "UPDATE [dbo].[ProvidedService] SET Date = @Date, Hours = @Hours, Km = @Km, Comment = @comment WHERE ID = @id";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@Date", s1.Date));
             _command.Parameters.Add(new SqlParameter("@Hours", s1.Hours));
             _command.Parameters.Add(new SqlParameter("@Km", s1.Km));
+            _command.Parameters.Add(new SqlParameter("@comment", s1.Comment));
             _command.Parameters.Add(new SqlParameter("@id", s1.Id));
 
             return ExecuteNonQuery();
