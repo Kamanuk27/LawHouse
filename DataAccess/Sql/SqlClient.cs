@@ -104,11 +104,12 @@ namespace DataAccess
 
         public int UpdateClient(ClientM client)
         {
-            _command.CommandText = "UPDATE Client SET Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo " +
+            _command.CommandText = "UPDATE Client SET CprNo = @cpr, Address = @Address, PostNo = @PostNo, Email = @Email,  TlfNo = @TlfNo " +
                                   "WHERE ID = @id";
 
             _command.Parameters.Clear();
             _command.Parameters.Add(new SqlParameter("@id", client.Id));
+            _command.Parameters.Add(new SqlParameter("@cpr", client.CprNo));
             _command.Parameters.Add(new SqlParameter("@Address", client.Address));
             _command.Parameters.Add(new SqlParameter("@PostNo", client.PostNo));
             _command.Parameters.Add(new SqlParameter("@Email", client.Email));
