@@ -443,7 +443,7 @@ namespace LawHouseTabForm
                     ServiceEmploeeCombox.Text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 int respEmpl = Convert.ToInt32(names[0]);
                 int i = _pServiceHandler.NewProvidedService(this.CaseId, date, hours, km, comment, respEmpl);
-                MessageBox.Show("Ydelses id: " + i.ToString() + " er tilføjet til sagen");
+                MessageBox.Show("Ydelsen er tilføjet til sagen");
                 ClearAddUpdateServiceBox();
                 ServiceDataGrid.Rows.Clear();
                 ShowProvidedServicesOnGrid();
@@ -464,7 +464,7 @@ namespace LawHouseTabForm
                 int km = Convert.ToInt32(txtServiceKm.Text);
                 string comment = txtServiceComment.Text;
                 int i = _pServiceHandler.UpdateProvidedService(id, houres, km, date, comment);
-                MessageBox.Show(i.ToString());
+                MessageBox.Show($"Ydelse {id} er blevet opdateret");
                 ClearAddUpdateServiceBox();
                 ServiceDataGrid.Rows.Clear();
                 ShowProvidedServicesOnGrid();
