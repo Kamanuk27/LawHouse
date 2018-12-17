@@ -38,8 +38,8 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
@@ -510,8 +510,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle57;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -1241,8 +1241,8 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle58;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -1473,12 +1473,12 @@
             // btnEditEmpCancel
             // 
             this.btnEditEmpCancel.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnEditEmpCancel.Location = new System.Drawing.Point(294, 472);
+            this.btnEditEmpCancel.Location = new System.Drawing.Point(294, 423);
             this.btnEditEmpCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditEmpCancel.Name = "btnEditEmpCancel";
             this.btnEditEmpCancel.Size = new System.Drawing.Size(97, 45);
             this.btnEditEmpCancel.TabIndex = 327;
-            this.btnEditEmpCancel.Text = "Fortryd";
+            this.btnEditEmpCancel.Text = "Fortryd/\r\nTilbage";
             this.btnEditEmpCancel.UseVisualStyleBackColor = true;
             this.btnEditEmpCancel.Visible = false;
             this.btnEditEmpCancel.Click += new System.EventHandler(this.btnEditEmpCancel_Click);
@@ -1755,7 +1755,7 @@
             // NewEmplButt
             // 
             this.NewEmplButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewEmplButt.Location = new System.Drawing.Point(191, 472);
+            this.NewEmplButt.Location = new System.Drawing.Point(192, 423);
             this.NewEmplButt.Margin = new System.Windows.Forms.Padding(2);
             this.NewEmplButt.Name = "NewEmplButt";
             this.NewEmplButt.Size = new System.Drawing.Size(97, 45);
@@ -1804,10 +1804,10 @@
             // UpdateEmpl
             // 
             this.UpdateEmpl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateEmpl.Location = new System.Drawing.Point(121, 423);
+            this.UpdateEmpl.Location = new System.Drawing.Point(191, 423);
             this.UpdateEmpl.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateEmpl.Name = "UpdateEmpl";
-            this.UpdateEmpl.Size = new System.Drawing.Size(93, 45);
+            this.UpdateEmpl.Size = new System.Drawing.Size(97, 45);
             this.UpdateEmpl.TabIndex = 300;
             this.UpdateEmpl.Text = "Opdater ";
             this.UpdateEmpl.UseVisualStyleBackColor = true;

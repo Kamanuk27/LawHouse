@@ -1161,6 +1161,15 @@ namespace LawHouseTabForm
                     ClearAddUpdateServiceBox();
                     pnlActivateServiceBoxes.Visible = false;
                     pnlCreateNewCase.Visible = false;
+                    pnlAddUpdateEmplFields.Visible = false;
+                    pnlAddSubjectToEmp.Visible = false;
+                    NewEmplButt.Visible = false;
+                    UpdateEmpl.Visible = false;
+                    DeleteEmpl.Visible = false;
+                    btnEditEmpCancel.Visible = false;
+                    EmplGridView.Visible = true;
+                    btnActivateUpdEmpFields.Visible = true;
+                    btnActivateAddEmpFields.Visible = true;
                 }
                 else
                 {
