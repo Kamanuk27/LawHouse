@@ -3,7 +3,7 @@ using LawHouseLibrary.Models;
 
 namespace DataAccess
 {
-    class TestClient : IClient
+    class FakeClient : IClient
     {
         //Lisa
         public int NewClient(ClientM client)

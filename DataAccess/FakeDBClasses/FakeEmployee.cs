@@ -4,7 +4,7 @@ using LawHouseLibrary.Models;
 namespace DataAccess
 {
     // Andriy
-    internal class TestEmployee: IEmployee
+    internal class FakeEmployee: IEmployee
 
     {
         public int NewEmployee(EmployeeM employee)

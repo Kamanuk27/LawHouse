@@ -28,7 +28,7 @@ namespace DataAccess
             }
             else
             {
-                percistance = new TestCase();
+                percistance = new FakeCase();
             }
 
             return percistance;
@@ -45,7 +45,7 @@ namespace DataAccess
             }
             else
             {
-                percistance = new TestClient();
+                percistance = new FakeClient();
             }
 
             return percistance;
@@ -61,7 +61,7 @@ namespace DataAccess
             }
             else
             {
-                percistance = new TestEmployee();
+                percistance = new FakeEmployee();
             }
 
             return percistance;
@@ -78,7 +78,7 @@ namespace DataAccess
             }
             else
             {
-                percistance = new TestSubject();
+                percistance = new FakeSubject();
             }
 
             return percistance;
@@ -94,7 +94,7 @@ namespace DataAccess
             }
             else
             {
-                percistance = new TestProvidedService();
+                percistance = new FakeProvidedService();
             }
 
             return percistance;

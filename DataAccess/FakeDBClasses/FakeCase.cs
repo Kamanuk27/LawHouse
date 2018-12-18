@@ -4,7 +4,7 @@ using LawHouseLibrary.Models;
 namespace DataAccess
 {
     //Stanja
-    class TestCase : ICase
+    class FakeCase : ICase
     {
         public int CloseCase(CaseM c1)
         {

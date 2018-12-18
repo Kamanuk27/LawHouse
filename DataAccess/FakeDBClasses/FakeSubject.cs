@@ -4,7 +4,7 @@ using LawHouseLibrary.Models;
 namespace DataAccess
 {
     // Andriy
-    class TestSubject : ISubject
+    class FakeSubject : ISubject
     {
         public int DeleteSubject(int id)
         {

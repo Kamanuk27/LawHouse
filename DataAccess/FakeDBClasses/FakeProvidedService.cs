@@ -5,7 +5,7 @@ using LawHouseLibrary.Models;
 namespace DataAccess
 {
     //Stanja
-    internal class TestProvidedService : IProvidedService
+    internal class FakeProvidedService : IProvidedService
     {
         public int NewProvidedService(ProvidedServiceM s1)
         {
