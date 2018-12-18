@@ -121,4 +121,19 @@
   <data name="LawHouse-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LawHouse-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ManualKlienter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manuals\ManualKlienter.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ManualMedarbejdere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manuals\ManualMedarbejdere.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ManualSager" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manuals\ManualSager.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ManualTjenesteydelserEfteruddannelser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manuals\ManualTjenesteydelserEfteruddannelser.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ManualYdelser_Udført" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manuals\ManualYdelserUdført.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -69,5 +69,55 @@ namespace LawHouseTabForm.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ManualKlienter {
+            get {
+                object obj = ResourceManager.GetObject("ManualKlienter", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ManualMedarbejdere {
+            get {
+                object obj = ResourceManager.GetObject("ManualMedarbejdere", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ManualSager {
+            get {
+                object obj = ResourceManager.GetObject("ManualSager", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ManualTjenesteydelserEfteruddannelser {
+            get {
+                object obj = ResourceManager.GetObject("ManualTjenesteydelserEfteruddannelser", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ManualYdelser_Udført {
+            get {
+                object obj = ResourceManager.GetObject("ManualYdelser_Udført", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
