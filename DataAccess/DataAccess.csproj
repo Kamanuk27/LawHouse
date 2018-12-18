@@ -55,11 +55,11 @@
     <Compile Include="Sql\SqlClient.cs" />
     <Compile Include="Sql\SqlProvidedService.cs" />
     <Compile Include="Sql\SqlSubject.cs" />
-    <Compile Include="FakeDBClasses\TestCase.cs" />
-    <Compile Include="FakeDBClasses\TestClient.cs" />
-    <Compile Include="FakeDBClasses\TestEmployee.cs" />
-    <Compile Include="FakeDBClasses\TestProvidedService.cs" />
-    <Compile Include="FakeDBClasses\TestSubject.cs" />
+    <Compile Include="FakeDBClasses\FakeCase.cs" />
+    <Compile Include="FakeDBClasses\FakeClient.cs" />
+    <Compile Include="FakeDBClasses\FakeEmployee.cs" />
+    <Compile Include="FakeDBClasses\FakeProvidedService.cs" />
+    <Compile Include="FakeDBClasses\FakeSubject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
