@@ -62,7 +62,7 @@ namespace BusinessLogic
 
         internal decimal CalculatePrice(int caseId)
         {
-            List< ProvidedServiceM> Services = _dbProvidedService.GetProvidedServices(caseId);
+            List <ProvidedServiceM> Services = _dbProvidedService.GetProvidedServices(caseId);
             if (Services.Count > 0)
             {
                 PriceCalculator calculator = new PriceCalculator();

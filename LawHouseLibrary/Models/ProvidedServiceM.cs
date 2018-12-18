@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LawHouseLibrary.Models
 {
+    // Stanja
     public class ProvidedServiceM
     {
         public int Id { get; set; }
