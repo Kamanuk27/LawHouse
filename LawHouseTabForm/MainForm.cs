@@ -42,7 +42,6 @@ namespace LawHouseTabForm
             ServiceGridView.Font = new System.Drawing.Font("Verdana", 10f);
             GridEmployeeServicesP.Font = new System.Drawing.Font("Verdana", 10f);
             EmplGridView.Font = new System.Drawing.Font("Verdana", 10f);
-            
         }
 
         #region Show All in Form
@@ -240,7 +239,6 @@ namespace LawHouseTabForm
         #endregion
 
         #region ClearTxt
-
         private void ClearTxtBoxs()
         {
             RespEmpCombo.Text = "";
@@ -295,7 +293,17 @@ namespace LawHouseTabForm
             CrCaseTimeUsed.Clear();
             CrCaseEndDato.Clear();
         }
-
+        private void clearAllBoxesInpnlCreateUpdClient()
+        {
+            txtClientID.Clear();
+            NewClientCprNo.Clear();
+            NewClientfName.Clear();
+            NewClientLName.Clear();
+            NewClientAdress.Clear();
+            NewClientPost.Clear();
+            NewClientMail.Clear();
+            NewClientTelef.Clear();
+        }
 
         #endregion
 
@@ -322,7 +330,6 @@ namespace LawHouseTabForm
 
         private void ActivateGetClientsGrid(bool active = true)
         {
-
             foreach (var cl in _clientHandler.GetClients(active))
             {
                 int n = clientsDataGrid.Rows.Add();
@@ -522,8 +529,7 @@ namespace LawHouseTabForm
                 }
             }
         }
-
-
+        
         #endregion Show All in Form
 
         #region Sager
@@ -836,7 +842,6 @@ namespace LawHouseTabForm
             }
             catch (Exception exception)
             {
-                //exception
                 MessageBox.Show(exception.Message);
             }
         }
@@ -1319,25 +1324,17 @@ namespace LawHouseTabForm
             if (String.IsNullOrEmpty(clientsDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
             {
                 MessageBox.Show("Vælg en klient, der skal opdateres");
-                }
+            }
             else
             {
-                this.ClientId = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[0].Value);
-                string cpr = clientsDataGrid.SelectedRows[0].Cells[1].Value.ToString();
-                string fName = clientsDataGrid.SelectedRows[0].Cells[2].Value.ToString();
-                string lName = clientsDataGrid.SelectedRows[0].Cells[3].Value.ToString();
-                string address = clientsDataGrid.SelectedRows[0].Cells[4].Value.ToString();
-                int postNO = Convert.ToInt32(clientsDataGrid.SelectedRows[0].Cells[5].Value);
-                string email = clientsDataGrid.SelectedRows[0].Cells[6].Value.ToString();
-                string tlfNO = clientsDataGrid.SelectedRows[0].Cells[7].Value.ToString();
-                txtClientID.Text = ClientId.ToString();
-                NewClientCprNo.Text = cpr.ToString();
-                NewClientfName.Text = fName;
-                NewClientLName.Text = lName;
-                NewClientAdress.Text = address;
-                NewClientPost.Text = postNO.ToString();
-                NewClientMail.Text = email;
-                NewClientTelef.Text = tlfNO;
+                txtClientID.Text = clientsDataGrid.SelectedRows[0].Cells[0].Value.ToString();
+                NewClientCprNo.Text = clientsDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+                NewClientfName.Text = clientsDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+                NewClientLName.Text = clientsDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+                NewClientAdress.Text = clientsDataGrid.SelectedRows[0].Cells[4].Value.ToString();
+                NewClientPost.Text = clientsDataGrid.SelectedRows[0].Cells[5].Value.ToString();
+                NewClientMail.Text = clientsDataGrid.SelectedRows[0].Cells[6].Value.ToString();
+                NewClientTelef.Text = clientsDataGrid.SelectedRows[0].Cells[7].Value.ToString();
             }
         }
 
@@ -1422,19 +1419,7 @@ namespace LawHouseTabForm
             }
         }
 
-        private void clearAllBoxesInpnlCreateUpdClient()
-        {
-            txtClientID.Clear();
-            NewClientCprNo.Clear();
-            NewClientfName.Clear();
-            NewClientLName.Clear();
-            NewClientAdress.Clear();
-            NewClientPost.Clear();
-            NewClientMail.Clear();
-            NewClientTelef.Clear();
-        }
-
-        private void NewClientBtn_Click(object sender, EventArgs e)
+       private void NewClientBtn_Click(object sender, EventArgs e)
         {
             try
             {
