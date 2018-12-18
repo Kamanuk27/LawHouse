@@ -1302,6 +1302,8 @@ namespace LawHouseTabForm
         #region Klienter
         private void btnActivateUpdateClient_Click(object sender, EventArgs e)
         {
+            txtClientSearch.Visible = false;
+            btnClientSearch.Visible = false;
             pnlCreateUpdateClient.Visible = true;
             btnUpdateClient.Visible = true;
             NewClientBtn.Visible = false;
@@ -1341,6 +1343,8 @@ namespace LawHouseTabForm
 
         private void btnActivateCreateNewClient_Click(object sender, EventArgs e)
         {
+            txtClientSearch.Visible = false;
+            btnClientSearch.Visible = false;
             pnlCreateUpdateClient.Visible = true;
             btnUpdateClient.Visible = false;
             NewClientBtn.Visible = true;
@@ -1356,6 +1360,8 @@ namespace LawHouseTabForm
 
         private void btnCloseAddUpdateClientPnl_Click(object sender, EventArgs e)
         {
+            txtClientSearch.Visible = true;
+            btnClientSearch.Visible = true;
             pnlCreateUpdateClient.Visible = false;
             clientsDataGrid.Rows.Clear();
             ActivateGetClientsGrid(true);
