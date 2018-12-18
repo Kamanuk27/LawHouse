@@ -133,7 +133,6 @@
             this.btnCloseAddUpdateClientPnl = new System.Windows.Forms.Button();
             this.lblSeeAllDeactivatedClients = new System.Windows.Forms.Label();
             this.lblCreateNewClient = new System.Windows.Forms.Label();
-            this.btnFindExistingClient = new System.Windows.Forms.Button();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.NewClientBtn = new System.Windows.Forms.Button();
             this.NewClientTelef = new System.Windows.Forms.TextBox();
@@ -1411,7 +1410,6 @@
             this.pnlCreateUpdateClient.Controls.Add(this.btnCloseAddUpdateClientPnl);
             this.pnlCreateUpdateClient.Controls.Add(this.lblSeeAllDeactivatedClients);
             this.pnlCreateUpdateClient.Controls.Add(this.lblCreateNewClient);
-            this.pnlCreateUpdateClient.Controls.Add(this.btnFindExistingClient);
             this.pnlCreateUpdateClient.Controls.Add(this.btnUpdateClient);
             this.pnlCreateUpdateClient.Controls.Add(this.NewClientBtn);
             this.pnlCreateUpdateClient.Controls.Add(this.NewClientTelef);
@@ -1502,22 +1500,10 @@
             this.lblCreateNewClient.Text = "Tilføj ny klient";
             this.lblCreateNewClient.Visible = false;
             // 
-            // btnFindExistingClient
-            // 
-            this.btnFindExistingClient.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnFindExistingClient.Location = new System.Drawing.Point(297, 281);
-            this.btnFindExistingClient.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFindExistingClient.Name = "btnFindExistingClient";
-            this.btnFindExistingClient.Size = new System.Drawing.Size(90, 22);
-            this.btnFindExistingClient.TabIndex = 371;
-            this.btnFindExistingClient.Text = "Søg på tlf";
-            this.btnFindExistingClient.UseVisualStyleBackColor = true;
-            this.btnFindExistingClient.Visible = false;
-            // 
             // btnUpdateClient
             // 
             this.btnUpdateClient.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnUpdateClient.Location = new System.Drawing.Point(54, 319);
+            this.btnUpdateClient.Location = new System.Drawing.Point(53, 319);
             this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(90, 45);
@@ -3157,7 +3143,6 @@
         private System.Windows.Forms.TextBox CrCaseEndDato;
         private System.Windows.Forms.TextBox CrCaseName;
         private System.Windows.Forms.Panel pnlCreateUpdateClient;
-        private System.Windows.Forms.Button btnFindExistingClient;
         private System.Windows.Forms.Button btnUpdateClient;
         private System.Windows.Forms.Button NewClientBtn;
         private System.Windows.Forms.TextBox NewClientTelef;

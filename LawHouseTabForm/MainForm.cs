@@ -425,6 +425,10 @@ namespace LawHouseTabForm
                     EmplGridView.Visible = true;
                     btnActivateUpdEmpFields.Visible = true;
                     btnActivateAddEmpFields.Visible = true;
+                    txtClientSearch.Visible = true;
+                    btnClientSearch.Visible = true;
+                    pnlCreateUpdateClient.Visible = false;
+                    clientsDataGrid.Visible = true;
                 }
                 else
                 {
@@ -1313,6 +1317,8 @@ namespace LawHouseTabForm
             lblSeeAllDeactivatedClients.Visible = false;
             txtClientID.Visible = true;
             lblClientID.Visible = true;
+            txtClientSearch.Visible = false;
+            btnClientSearch.Visible = false;             
 
             if (String.IsNullOrEmpty(clientsDataGrid.SelectedRows[0].Cells[0].Value.ToString()))
             {
@@ -1352,6 +1358,8 @@ namespace LawHouseTabForm
             lblSeeAllDeactivatedClients.Visible = false;
             txtClientID.Visible = false;
             lblClientID.Visible = false; 
+            txtClientSearch.Visible = false;
+            btnClientSearch.Visible = false;
         }
 
         private void btnCloseAddUpdateClientPnl_Click(object sender, EventArgs e)
@@ -1365,6 +1373,8 @@ namespace LawHouseTabForm
             btnShowAllActiveClients.Visible = false;
             btnShowDeactivatedClients.Visible = true; 
             clearAllBoxesInpnlCreateUpdClient();
+            txtClientSearch.Visible = true;
+            btnClientSearch.Visible = true;
         }
 
         private void btnShowDeactivatedClients_Click(object sender, EventArgs e)
@@ -1409,6 +1419,8 @@ namespace LawHouseTabForm
                 clearAllBoxesInpnlCreateUpdClient();
                 btnShowDeactivatedClients.Visible = true;
                 btnShowAllActiveClients.Visible = false;
+                txtClientSearch.Visible = true;
+                btnClientSearch.Visible = true;
             }
             catch (Exception exception)
             {
@@ -1448,6 +1460,8 @@ namespace LawHouseTabForm
                 clientsDataGrid.Visible = true;
                 pnlClientsButtons.Visible = true;
                 clearAllBoxesInpnlCreateUpdClient();
+                txtClientSearch.Visible = true;
+                btnClientSearch.Visible = true;
             }
             catch (Exception exception)
             {
@@ -1484,5 +1498,6 @@ namespace LawHouseTabForm
             }
         }
         #endregion
+
     }
 }
