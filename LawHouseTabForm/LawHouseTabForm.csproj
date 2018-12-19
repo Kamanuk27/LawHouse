@@ -68,7 +68,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ManualSager.pdf" />
     <None Include="Manuals\ManualKlienter.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -395,6 +395,41 @@ namespace LawHouseTabForm
         }
 
         #endregion
+
+        #region HelpLink
+        private void lLblHelpViewAllCasesTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualSager.pdf");
+            Process.Start(startInfo);
+
+        }
+
+        private void lLblHelpAddClientCaseTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualKlienter.pdf");
+            Process.Start(startInfo);
+        }
+
+        private void lLblHelpEmployeeServicesTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualYdelserUdført.pdf");
+            Process.Start(startInfo);
+        }
+
+        private void lLblHelpEmployeesTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualMedarbejdere.pdf");
+            Process.Start(startInfo);
+        }
+
+        private void lLblHelpSubjectsTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualTjenesteydelserEfteruddannelser.pdf");
+            Process.Start(startInfo);
+        }
+
+        #endregion
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedTab = TabControl.SelectedTab;
@@ -758,7 +793,6 @@ namespace LawHouseTabForm
         private void btnReturnToCasesPnl_Click(object sender, EventArgs e)
         {
             pnlUpdateEditServices.Visible = false;
-            BtnAddNewService.Visible = false;
             ServiceDataGrid.Rows.Clear();
             ClearAddUpdateServiceBox();
             pnlActivateServiceBoxes.Visible = false;
@@ -1491,40 +1525,8 @@ namespace LawHouseTabForm
             }
         }
 
-        private void lLblHelpViewAllCasesTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           
-            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualSager.pdf");
-            Process.Start(startInfo);
-
-        }
-
-        private void lLblHelpAddClientCaseTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualKlienter.pdf");
-            Process.Start(startInfo);
-        }
-
-        private void lLblHelpEmployeeServicesTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualYdelserUdført.pdf");
-            Process.Start(startInfo);
-        }
-
-        private void lLblHelpEmployeesTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualMedarbejdere.pdf");
-            Process.Start(startInfo);
-        }
-
-        private void lLblHelpSubjectsTab_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo(@"Manuals\ManualTjenesteydelserEfteruddannelser.pdf");
-            Process.Start(startInfo);
-        }
-
+      
         #endregion
-
 
     }
 }
