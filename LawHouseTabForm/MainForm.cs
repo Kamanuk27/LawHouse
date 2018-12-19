@@ -758,6 +758,7 @@ namespace LawHouseTabForm
         private void btnReturnToCasesPnl_Click(object sender, EventArgs e)
         {
             pnlUpdateEditServices.Visible = false;
+            BtnAddNewService.Visible = false;
             ServiceDataGrid.Rows.Clear();
             ClearAddUpdateServiceBox();
             pnlActivateServiceBoxes.Visible = false;
