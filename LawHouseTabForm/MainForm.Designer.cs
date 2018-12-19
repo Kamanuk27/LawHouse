@@ -38,11 +38,12 @@
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label29;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
             this.pnlAllOpenCases = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnActivateCreateNewCase = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,6 +77,19 @@
             this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAllActiveCases = new System.Windows.Forms.Label();
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
+            this.pnlCreateNewCase = new System.Windows.Forms.Panel();
+            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
+            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
+            this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
+            this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.CrCaseTimeUsed = new System.Windows.Forms.TextBox();
+            this.CrCasePrice = new System.Windows.Forms.TextBox();
+            this.CrCaseEndDato = new System.Windows.Forms.TextBox();
+            this.CrCaseName = new System.Windows.Forms.TextBox();
+            this.btnNewCase = new System.Windows.Forms.Button();
             this.pnlUpdateEditServices = new System.Windows.Forms.Panel();
             this.lLblHelpCaseServices2Tab = new System.Windows.Forms.LinkLabel();
             this.btnActivateAddServiceBoxes = new System.Windows.Forms.Button();
@@ -108,19 +122,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnReturnToCasesPnl = new System.Windows.Forms.Button();
-            this.pnlCreateNewCase = new System.Windows.Forms.Panel();
-            this.btnCancelCreateNewCase = new System.Windows.Forms.Button();
-            this.txtShowNewClientIdHere = new System.Windows.Forms.TextBox();
-            this.CrCaseServiceCom = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.CrCasetimeP = new System.Windows.Forms.DateTimePicker();
-            this.CrCaseAdvokat = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.CrCaseTimeUsed = new System.Windows.Forms.TextBox();
-            this.CrCasePrice = new System.Windows.Forms.TextBox();
-            this.CrCaseEndDato = new System.Windows.Forms.TextBox();
-            this.CrCaseName = new System.Windows.Forms.TextBox();
-            this.btnNewCase = new System.Windows.Forms.Button();
             this.tabClients = new System.Windows.Forms.TabPage();
             this.btnClientSearch = new System.Windows.Forms.Button();
             this.txtClientSearch = new System.Windows.Forms.TextBox();
@@ -164,6 +165,7 @@
             this.Client_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client_TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lLblHelpAddClientCaseTab = new System.Windows.Forms.LinkLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabShowAllProServ = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -185,7 +187,9 @@
             this.PServiceHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceKm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PServiceComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabEmployees = new System.Windows.Forms.TabPage();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lLblHelpEmployeesTab = new System.Windows.Forms.LinkLabel();
             this.pnlAddSubjectToEmp = new System.Windows.Forms.Panel();
             this.btnDelSubjFromEmp = new System.Windows.Forms.Button();
@@ -261,10 +265,6 @@
             this.btnUpdateSubj = new System.Windows.Forms.Button();
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -279,28 +279,28 @@
             this.TabControl.SuspendLayout();
             this.tabCases.SuspendLayout();
             this.pnlAllOpenCases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).BeginInit();
+            this.pnlCreateNewCase.SuspendLayout();
             this.pnlUpdateEditServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).BeginInit();
             this.pnlActivateServiceBoxes.SuspendLayout();
-            this.pnlCreateNewCase.SuspendLayout();
             this.tabClients.SuspendLayout();
             this.pnlCreateUpdateClient.SuspendLayout();
             this.pnlClientsButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabShowAllProServ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabEmployees.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlAddSubjectToEmp.SuspendLayout();
             this.pnlAddUpdateEmplFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmplGridView)).BeginInit();
             this.tabProvServices.SuspendLayout();
             this.pnlAddViewSubjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -423,9 +423,9 @@
             // 
             // tabCases
             // 
-            this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Controls.Add(this.pnlCreateNewCase);
             this.tabCases.Controls.Add(this.pnlUpdateEditServices);
+            this.tabCases.Controls.Add(this.pnlAllOpenCases);
             this.tabCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCases.Location = new System.Drawing.Point(4, 27);
             this.tabCases.Margin = new System.Windows.Forms.Padding(2);
@@ -471,6 +471,16 @@
             this.pnlAllOpenCases.Name = "pnlAllOpenCases";
             this.pnlAllOpenCases.Size = new System.Drawing.Size(1194, 635);
             this.pnlAllOpenCases.TabIndex = 282;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox4.Location = new System.Drawing.Point(1020, -1);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox4.TabIndex = 338;
+            this.pictureBox4.TabStop = false;
             // 
             // btnActivateCreateNewCase
             // 
@@ -714,8 +724,8 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -820,6 +830,159 @@
             this.TotalPricetxt.TabIndex = 290;
             this.TotalPricetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TotalPricetxt_KeyPress);
             // 
+            // pnlCreateNewCase
+            // 
+            this.pnlCreateNewCase.Controls.Add(this.btnCancelCreateNewCase);
+            this.pnlCreateNewCase.Controls.Add(label5);
+            this.pnlCreateNewCase.Controls.Add(this.txtShowNewClientIdHere);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseServiceCom);
+            this.pnlCreateNewCase.Controls.Add(this.label35);
+            this.pnlCreateNewCase.Controls.Add(this.CrCasetimeP);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseAdvokat);
+            this.pnlCreateNewCase.Controls.Add(this.label20);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseTimeUsed);
+            this.pnlCreateNewCase.Controls.Add(this.CrCasePrice);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseEndDato);
+            this.pnlCreateNewCase.Controls.Add(this.CrCaseName);
+            this.pnlCreateNewCase.Controls.Add(label22);
+            this.pnlCreateNewCase.Controls.Add(label24);
+            this.pnlCreateNewCase.Controls.Add(label25);
+            this.pnlCreateNewCase.Controls.Add(label26);
+            this.pnlCreateNewCase.Controls.Add(label28);
+            this.pnlCreateNewCase.Controls.Add(label29);
+            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
+            this.pnlCreateNewCase.Location = new System.Drawing.Point(3, 1);
+            this.pnlCreateNewCase.Name = "pnlCreateNewCase";
+            this.pnlCreateNewCase.Size = new System.Drawing.Size(936, 635);
+            this.pnlCreateNewCase.TabIndex = 346;
+            this.pnlCreateNewCase.Visible = false;
+            // 
+            // btnCancelCreateNewCase
+            // 
+            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(337, 423);
+            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
+            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnCancelCreateNewCase.TabIndex = 413;
+            this.btnCancelCreateNewCase.Text = "Fortryd";
+            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
+            this.btnCancelCreateNewCase.Click += new System.EventHandler(this.btnCancelCreateNewCase_Click);
+            // 
+            // txtShowNewClientIdHere
+            // 
+            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
+            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(243, 185);
+            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
+            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
+            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
+            this.txtShowNewClientIdHere.TabIndex = 411;
+            // 
+            // CrCaseServiceCom
+            // 
+            this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseServiceCom.FormattingEnabled = true;
+            this.CrCaseServiceCom.Location = new System.Drawing.Point(243, 239);
+            this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseServiceCom.Name = "CrCaseServiceCom";
+            this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseServiceCom.TabIndex = 410;
+            this.CrCaseServiceCom.SelectedIndexChanged += new System.EventHandler(this.CrCaseServiceCom_SelectedIndexChanged);
+            this.CrCaseServiceCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCaseServiceCom_KeyPress_1);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(91, 134);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(121, 18);
+            this.label35.TabIndex = 409;
+            this.label35.Text = "Opret ny sag";
+            // 
+            // CrCasetimeP
+            // 
+            this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCasetimeP.Location = new System.Drawing.Point(243, 269);
+            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCasetimeP.Name = "CrCasetimeP";
+            this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
+            this.CrCasetimeP.TabIndex = 407;
+            // 
+            // CrCaseAdvokat
+            // 
+            this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseAdvokat.FormattingEnabled = true;
+            this.CrCaseAdvokat.Location = new System.Drawing.Point(243, 299);
+            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseAdvokat.Name = "CrCaseAdvokat";
+            this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseAdvokat.TabIndex = 406;
+            this.CrCaseAdvokat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCaseAdvokat_KeyPress_1);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Verdana", 9F);
+            this.label20.Location = new System.Drawing.Point(88, 360);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(146, 14);
+            this.label20.TabIndex = 405;
+            this.label20.Text = "Forventet tidsforbrug:";
+            // 
+            // CrCaseTimeUsed
+            // 
+            this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseTimeUsed.Location = new System.Drawing.Point(243, 357);
+            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
+            this.CrCaseTimeUsed.ReadOnly = true;
+            this.CrCaseTimeUsed.Size = new System.Drawing.Size(131, 22);
+            this.CrCaseTimeUsed.TabIndex = 404;
+            // 
+            // CrCasePrice
+            // 
+            this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCasePrice.Location = new System.Drawing.Point(243, 329);
+            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCasePrice.Name = "CrCasePrice";
+            this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
+            this.CrCasePrice.TabIndex = 403;
+            this.CrCasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCasePrice_KeyPress_1);
+            // 
+            // CrCaseEndDato
+            // 
+            this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseEndDato.Location = new System.Drawing.Point(243, 385);
+            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseEndDato.Name = "CrCaseEndDato";
+            this.CrCaseEndDato.ReadOnly = true;
+            this.CrCaseEndDato.Size = new System.Drawing.Size(131, 22);
+            this.CrCaseEndDato.TabIndex = 402;
+            // 
+            // CrCaseName
+            // 
+            this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
+            this.CrCaseName.Location = new System.Drawing.Point(243, 211);
+            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
+            this.CrCaseName.Name = "CrCaseName";
+            this.CrCaseName.Size = new System.Drawing.Size(192, 22);
+            this.CrCaseName.TabIndex = 401;
+            // 
+            // btnNewCase
+            // 
+            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
+            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
+            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNewCase.Name = "btnNewCase";
+            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
+            this.btnNewCase.TabIndex = 408;
+            this.btnNewCase.Text = "Tilføj sag";
+            this.btnNewCase.UseVisualStyleBackColor = true;
+            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
+            // 
             // pnlUpdateEditServices
             // 
             this.pnlUpdateEditServices.Controls.Add(this.lLblHelpCaseServices2Tab);
@@ -894,8 +1057,8 @@
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -1186,159 +1349,6 @@
             this.btnReturnToCasesPnl.Text = "Retur";
             this.btnReturnToCasesPnl.UseVisualStyleBackColor = true;
             this.btnReturnToCasesPnl.Click += new System.EventHandler(this.btnReturnToCasesPnl_Click);
-            // 
-            // pnlCreateNewCase
-            // 
-            this.pnlCreateNewCase.Controls.Add(this.btnCancelCreateNewCase);
-            this.pnlCreateNewCase.Controls.Add(label5);
-            this.pnlCreateNewCase.Controls.Add(this.txtShowNewClientIdHere);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseServiceCom);
-            this.pnlCreateNewCase.Controls.Add(this.label35);
-            this.pnlCreateNewCase.Controls.Add(this.CrCasetimeP);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseAdvokat);
-            this.pnlCreateNewCase.Controls.Add(this.label20);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseTimeUsed);
-            this.pnlCreateNewCase.Controls.Add(this.CrCasePrice);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseEndDato);
-            this.pnlCreateNewCase.Controls.Add(this.CrCaseName);
-            this.pnlCreateNewCase.Controls.Add(label22);
-            this.pnlCreateNewCase.Controls.Add(label24);
-            this.pnlCreateNewCase.Controls.Add(label25);
-            this.pnlCreateNewCase.Controls.Add(label26);
-            this.pnlCreateNewCase.Controls.Add(label28);
-            this.pnlCreateNewCase.Controls.Add(label29);
-            this.pnlCreateNewCase.Controls.Add(this.btnNewCase);
-            this.pnlCreateNewCase.Location = new System.Drawing.Point(3, 1);
-            this.pnlCreateNewCase.Name = "pnlCreateNewCase";
-            this.pnlCreateNewCase.Size = new System.Drawing.Size(936, 635);
-            this.pnlCreateNewCase.TabIndex = 346;
-            this.pnlCreateNewCase.Visible = false;
-            // 
-            // btnCancelCreateNewCase
-            // 
-            this.btnCancelCreateNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnCancelCreateNewCase.Location = new System.Drawing.Point(337, 423);
-            this.btnCancelCreateNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelCreateNewCase.Name = "btnCancelCreateNewCase";
-            this.btnCancelCreateNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnCancelCreateNewCase.TabIndex = 413;
-            this.btnCancelCreateNewCase.Text = "Fortryd";
-            this.btnCancelCreateNewCase.UseVisualStyleBackColor = true;
-            this.btnCancelCreateNewCase.Click += new System.EventHandler(this.btnCancelCreateNewCase_Click);
-            // 
-            // txtShowNewClientIdHere
-            // 
-            this.txtShowNewClientIdHere.Font = new System.Drawing.Font("Verdana", 9F);
-            this.txtShowNewClientIdHere.Location = new System.Drawing.Point(243, 185);
-            this.txtShowNewClientIdHere.Margin = new System.Windows.Forms.Padding(2);
-            this.txtShowNewClientIdHere.Name = "txtShowNewClientIdHere";
-            this.txtShowNewClientIdHere.Size = new System.Drawing.Size(192, 22);
-            this.txtShowNewClientIdHere.TabIndex = 411;
-            // 
-            // CrCaseServiceCom
-            // 
-            this.CrCaseServiceCom.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseServiceCom.FormattingEnabled = true;
-            this.CrCaseServiceCom.Location = new System.Drawing.Point(243, 239);
-            this.CrCaseServiceCom.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseServiceCom.Name = "CrCaseServiceCom";
-            this.CrCaseServiceCom.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseServiceCom.TabIndex = 410;
-            this.CrCaseServiceCom.SelectedIndexChanged += new System.EventHandler(this.CrCaseServiceCom_SelectedIndexChanged);
-            this.CrCaseServiceCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCaseServiceCom_KeyPress_1);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
-            this.label35.Location = new System.Drawing.Point(91, 134);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(121, 18);
-            this.label35.TabIndex = 409;
-            this.label35.Text = "Opret ny sag";
-            // 
-            // CrCasetimeP
-            // 
-            this.CrCasetimeP.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasetimeP.Location = new System.Drawing.Point(243, 269);
-            this.CrCasetimeP.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCasetimeP.Name = "CrCasetimeP";
-            this.CrCasetimeP.Size = new System.Drawing.Size(192, 22);
-            this.CrCasetimeP.TabIndex = 407;
-            // 
-            // CrCaseAdvokat
-            // 
-            this.CrCaseAdvokat.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseAdvokat.FormattingEnabled = true;
-            this.CrCaseAdvokat.Location = new System.Drawing.Point(243, 299);
-            this.CrCaseAdvokat.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseAdvokat.Name = "CrCaseAdvokat";
-            this.CrCaseAdvokat.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseAdvokat.TabIndex = 406;
-            this.CrCaseAdvokat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCaseAdvokat_KeyPress_1);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Verdana", 9F);
-            this.label20.Location = new System.Drawing.Point(88, 360);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(146, 14);
-            this.label20.TabIndex = 405;
-            this.label20.Text = "Forventet tidsforbrug:";
-            // 
-            // CrCaseTimeUsed
-            // 
-            this.CrCaseTimeUsed.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseTimeUsed.Location = new System.Drawing.Point(243, 357);
-            this.CrCaseTimeUsed.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseTimeUsed.Name = "CrCaseTimeUsed";
-            this.CrCaseTimeUsed.ReadOnly = true;
-            this.CrCaseTimeUsed.Size = new System.Drawing.Size(131, 22);
-            this.CrCaseTimeUsed.TabIndex = 404;
-            // 
-            // CrCasePrice
-            // 
-            this.CrCasePrice.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCasePrice.Location = new System.Drawing.Point(243, 329);
-            this.CrCasePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCasePrice.Name = "CrCasePrice";
-            this.CrCasePrice.Size = new System.Drawing.Size(131, 22);
-            this.CrCasePrice.TabIndex = 403;
-            this.CrCasePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrCasePrice_KeyPress_1);
-            // 
-            // CrCaseEndDato
-            // 
-            this.CrCaseEndDato.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseEndDato.Location = new System.Drawing.Point(243, 385);
-            this.CrCaseEndDato.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseEndDato.Name = "CrCaseEndDato";
-            this.CrCaseEndDato.ReadOnly = true;
-            this.CrCaseEndDato.Size = new System.Drawing.Size(131, 22);
-            this.CrCaseEndDato.TabIndex = 402;
-            // 
-            // CrCaseName
-            // 
-            this.CrCaseName.Font = new System.Drawing.Font("Verdana", 9F);
-            this.CrCaseName.Location = new System.Drawing.Point(243, 211);
-            this.CrCaseName.Margin = new System.Windows.Forms.Padding(2);
-            this.CrCaseName.Name = "CrCaseName";
-            this.CrCaseName.Size = new System.Drawing.Size(192, 22);
-            this.CrCaseName.TabIndex = 401;
-            // 
-            // btnNewCase
-            // 
-            this.btnNewCase.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnNewCase.Location = new System.Drawing.Point(243, 423);
-            this.btnNewCase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNewCase.Name = "btnNewCase";
-            this.btnNewCase.Size = new System.Drawing.Size(90, 45);
-            this.btnNewCase.TabIndex = 408;
-            this.btnNewCase.Text = "Tilføj sag";
-            this.btnNewCase.UseVisualStyleBackColor = true;
-            this.btnNewCase.Click += new System.EventHandler(this.btnCreateNewCase_Click);
             // 
             // tabClients
             // 
@@ -1819,6 +1829,16 @@
             this.lLblHelpAddClientCaseTab.Text = "Hjælp";
             this.lLblHelpAddClientCaseTab.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLblHelpAddClientCaseTab_LinkClicked);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox2.TabIndex = 349;
+            this.pictureBox2.TabStop = false;
+            // 
             // tabShowAllProServ
             // 
             this.tabShowAllProServ.Controls.Add(this.label9);
@@ -2038,6 +2058,16 @@
             this.PServiceComment.ReadOnly = true;
             this.PServiceComment.Width = 400;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabEmployees
             // 
             this.tabEmployees.Controls.Add(this.pictureBox5);
@@ -2062,6 +2092,16 @@
             this.tabEmployees.TabIndex = 2;
             this.tabEmployees.Text = "Medarbejdere";
             this.tabEmployees.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
+            this.pictureBox5.Location = new System.Drawing.Point(1019, 1);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(174, 109);
+            this.pictureBox5.TabIndex = 330;
+            this.pictureBox5.TabStop = false;
             // 
             // lLblHelpEmployeesTab
             // 
@@ -2881,46 +2921,6 @@
             this.label48.TabIndex = 281;
             this.label48.Text = "Tjenesteydelser/Efteruddannelser";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox4.Location = new System.Drawing.Point(1020, -1);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(174, 109);
-            this.pictureBox4.TabIndex = 338;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(1019, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(174, 109);
-            this.pictureBox2.TabIndex = 349;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1019, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 109);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::LawHouseTabForm.Properties.Resources.LawHouse_Logo;
-            this.pictureBox5.Location = new System.Drawing.Point(1019, 1);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(174, 109);
-            this.pictureBox5.TabIndex = 330;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox6
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2939,31 +2939,36 @@
             this.Controls.Add(this.TabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Text = "LawHouse";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.TabControl.ResumeLayout(false);
             this.tabCases.ResumeLayout(false);
             this.pnlAllOpenCases.ResumeLayout(false);
             this.pnlAllOpenCases.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CaseDataGrid)).EndInit();
+            this.pnlCreateNewCase.ResumeLayout(false);
+            this.pnlCreateNewCase.PerformLayout();
             this.pnlUpdateEditServices.ResumeLayout(false);
             this.pnlUpdateEditServices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceDataGrid)).EndInit();
             this.pnlActivateServiceBoxes.ResumeLayout(false);
             this.pnlActivateServiceBoxes.PerformLayout();
-            this.pnlCreateNewCase.ResumeLayout(false);
-            this.pnlCreateNewCase.PerformLayout();
             this.tabClients.ResumeLayout(false);
             this.tabClients.PerformLayout();
             this.pnlCreateUpdateClient.ResumeLayout(false);
             this.pnlCreateUpdateClient.PerformLayout();
             this.pnlClientsButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clientsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabShowAllProServ.ResumeLayout(false);
             this.tabShowAllProServ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridEmployeeServicesP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabEmployees.ResumeLayout(false);
             this.tabEmployees.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnlAddSubjectToEmp.ResumeLayout(false);
             this.pnlAddSubjectToEmp.PerformLayout();
             this.pnlAddUpdateEmplFields.ResumeLayout(false);
@@ -2974,10 +2979,6 @@
             this.pnlAddViewSubjects.ResumeLayout(false);
             this.pnlAddViewSubjects.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
