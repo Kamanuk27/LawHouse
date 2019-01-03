@@ -449,7 +449,7 @@
             this.pnlUpdateEditServices.Controls.Add(this.BtnUpdateExsService);
             this.pnlUpdateEditServices.Controls.Add(this.pnlActivateServiceBoxes);
             this.pnlUpdateEditServices.Controls.Add(this.btnReturnToCasesPnl);
-            this.pnlUpdateEditServices.Location = new System.Drawing.Point(5, 2);
+            this.pnlUpdateEditServices.Location = new System.Drawing.Point(5, 0);
             this.pnlUpdateEditServices.Name = "pnlUpdateEditServices";
             this.pnlUpdateEditServices.Size = new System.Drawing.Size(1179, 641);
             this.pnlUpdateEditServices.TabIndex = 281;

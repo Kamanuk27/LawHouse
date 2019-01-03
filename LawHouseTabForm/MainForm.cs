@@ -455,6 +455,7 @@ namespace LawHouseTabForm
                     }
 
                     pnlUpdateEditServices.Visible = false;
+                    pnlAllOpenCases.Visible = true; 
                     ServiceDataGrid.Rows.Clear();
                     ClearAddUpdateServiceBox();
                     pnlActivateServiceBoxes.Visible = false;
@@ -621,6 +622,7 @@ namespace LawHouseTabForm
                 ClearAddUpdateServiceBox();
                 ServiceDataGrid.Rows.Clear();
                 ShowProvidedServicesOnGrid();
+                BtnAddNewService.Visible = true;
             }
             catch (Exception)
             {
@@ -879,6 +881,7 @@ namespace LawHouseTabForm
                 ClearNewCaseTxt();
                 ActivateGetCasesGrid();
                 btnCancelCreateNewCase_Click(sender, e);
+                pnlAllOpenCases.Visible = true; 
             }
             catch (Exception exception)
             {
@@ -888,7 +891,6 @@ namespace LawHouseTabForm
 
         private void btnCancelCreateNewCase_Click(object sender, EventArgs e)
         {
-            pnlUpdateEditServices.Visible = false;
             ServiceDataGrid.Rows.Clear();
             ClearAddUpdateServiceBox();
             pnlUpdateEditServices.Visible = false;
@@ -899,8 +901,9 @@ namespace LawHouseTabForm
         private void btnActivateCreateNewCase_Click(object sender, EventArgs e)
         {
             pnlCreateNewCase.Visible = true;
-            pnlUpdateEditServices.Visible = true;
+            pnlUpdateEditServices.Visible = false;
             btnNewCase.Visible = true;
+            pnlAllOpenCases.Visible = false;
         }
         private void SubjectGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -942,6 +945,7 @@ namespace LawHouseTabForm
                 pnlActivateServiceBoxes.Visible = true;
                 BtnDeleteExsService.Visible = true;
                 BtnUpdateExsService.Visible = true;
+                BtnAddNewService.Visible = false;
             }
             catch (Exception exception)
             {
