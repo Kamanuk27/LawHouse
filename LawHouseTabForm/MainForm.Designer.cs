@@ -113,16 +113,6 @@
             this.lLblHelpViewAllCasesTab = new System.Windows.Forms.LinkLabel();
             this.DeleteButt = new System.Windows.Forms.Button();
             this.CaseDataGrid = new System.Windows.Forms.DataGridView();
-            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAllActiveCases = new System.Windows.Forms.Label();
             this.TotalPricetxt = new System.Windows.Forms.TextBox();
             this.tabClients = new System.Windows.Forms.TabPage();
@@ -269,6 +259,16 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Case_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoursEstimate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NegotiatedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Resp_empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -1003,9 +1003,9 @@
             this.pnlAllOpenCases.Controls.Add(this.searchBox);
             this.pnlAllOpenCases.Controls.Add(this.lLblHelpViewAllCasesTab);
             this.pnlAllOpenCases.Controls.Add(this.DeleteButt);
-            this.pnlAllOpenCases.Controls.Add(this.CaseDataGrid);
             this.pnlAllOpenCases.Controls.Add(this.lblAllActiveCases);
             this.pnlAllOpenCases.Controls.Add(this.TotalPricetxt);
+            this.pnlAllOpenCases.Controls.Add(this.CaseDataGrid);
             this.pnlAllOpenCases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAllOpenCases.Location = new System.Drawing.Point(2, 2);
             this.pnlAllOpenCases.Name = "pnlAllOpenCases";
@@ -1272,82 +1272,6 @@
             this.CaseDataGrid.TabIndex = 284;
             this.CaseDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseClick);
             this.CaseDataGrid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CaseDataGrid_CellMouseDoubleClick);
-            // 
-            // Case_ID
-            // 
-            this.Case_ID.FillWeight = 60F;
-            this.Case_ID.HeaderText = "ID";
-            this.Case_ID.Name = "Case_ID";
-            this.Case_ID.ReadOnly = true;
-            this.Case_ID.Width = 60;
-            // 
-            // CaseName
-            // 
-            this.CaseName.FillWeight = 160F;
-            this.CaseName.HeaderText = "Sagsnavn";
-            this.CaseName.Name = "CaseName";
-            this.CaseName.ReadOnly = true;
-            this.CaseName.Width = 160;
-            // 
-            // Client
-            // 
-            this.Client.FillWeight = 160F;
-            this.Client.HeaderText = "Klient";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            this.Client.Width = 160;
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Startdato";
-            this.StartDate.Name = "StartDate";
-            this.StartDate.ReadOnly = true;
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "Slutdato";
-            this.EndDate.Name = "EndDate";
-            this.EndDate.ReadOnly = true;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.FillWeight = 150F;
-            this.ServiceName.HeaderText = "Servicetype";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Width = 150;
-            // 
-            // HoursEstimate
-            // 
-            this.HoursEstimate.FillWeight = 60F;
-            this.HoursEstimate.HeaderText = "Timer";
-            this.HoursEstimate.Name = "HoursEstimate";
-            this.HoursEstimate.ReadOnly = true;
-            this.HoursEstimate.Width = 60;
-            // 
-            // NegotiatedPrice
-            // 
-            this.NegotiatedPrice.FillWeight = 90F;
-            this.NegotiatedPrice.HeaderText = "Aftalt pris";
-            this.NegotiatedPrice.Name = "NegotiatedPrice";
-            this.NegotiatedPrice.ReadOnly = true;
-            this.NegotiatedPrice.Width = 90;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 80F;
-            this.TotalPrice.HeaderText = "Slut pris";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 80;
-            // 
-            // Resp_empl
-            // 
-            this.Resp_empl.FillWeight = 160F;
-            this.Resp_empl.HeaderText = "Ansvarlig advokat";
-            this.Resp_empl.Name = "Resp_empl";
-            this.Resp_empl.ReadOnly = true;
-            this.Resp_empl.Width = 160;
             // 
             // lblAllActiveCases
             // 
@@ -2713,9 +2637,9 @@
             this.label53.Location = new System.Drawing.Point(11, 74);
             this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(82, 13);
+            this.label53.Size = new System.Drawing.Size(89, 13);
             this.label53.TabIndex = 292;
-            this.label53.Text = "Tids-estimat:";
+            this.label53.Text = "Dage-estimat:";
             // 
             // label50
             // 
@@ -2954,6 +2878,84 @@
             this.Money.Name = "Money";
             this.Money.ReadOnly = true;
             this.Money.Width = 60;
+            // 
+            // Case_ID
+            // 
+            this.Case_ID.FillWeight = 60F;
+            this.Case_ID.HeaderText = "ID";
+            this.Case_ID.Name = "Case_ID";
+            this.Case_ID.ReadOnly = true;
+            this.Case_ID.Width = 60;
+            // 
+            // CaseName
+            // 
+            this.CaseName.FillWeight = 160F;
+            this.CaseName.HeaderText = "Sagsnavn";
+            this.CaseName.Name = "CaseName";
+            this.CaseName.ReadOnly = true;
+            this.CaseName.Width = 160;
+            // 
+            // Client
+            // 
+            this.Client.FillWeight = 160F;
+            this.Client.HeaderText = "Klient";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            this.Client.Width = 160;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Startdato";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.FillWeight = 110F;
+            this.EndDate.HeaderText = "Forv. slutdato";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
+            this.EndDate.Width = 110;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 150F;
+            this.ServiceName.HeaderText = "Servicetype";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Width = 150;
+            // 
+            // HoursEstimate
+            // 
+            this.HoursEstimate.FillWeight = 60F;
+            this.HoursEstimate.HeaderText = "Timer";
+            this.HoursEstimate.Name = "HoursEstimate";
+            this.HoursEstimate.ReadOnly = true;
+            this.HoursEstimate.Width = 60;
+            // 
+            // NegotiatedPrice
+            // 
+            this.NegotiatedPrice.FillWeight = 90F;
+            this.NegotiatedPrice.HeaderText = "Aftalt pris";
+            this.NegotiatedPrice.Name = "NegotiatedPrice";
+            this.NegotiatedPrice.ReadOnly = true;
+            this.NegotiatedPrice.Width = 90;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 70F;
+            this.TotalPrice.HeaderText = "Slut pris";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 70;
+            // 
+            // Resp_empl
+            // 
+            this.Resp_empl.FillWeight = 160F;
+            this.Resp_empl.HeaderText = "Ansvarlig advokat";
+            this.Resp_empl.Name = "Resp_empl";
+            this.Resp_empl.ReadOnly = true;
+            this.Resp_empl.Width = 160;
             // 
             // MainForm
             // 
@@ -3213,16 +3215,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblHoursUsed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoursEstimate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NegotiatedPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
         private System.Windows.Forms.Button btnClientSearch;
         private System.Windows.Forms.TextBox txtClientSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
@@ -3236,6 +3228,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Position;
         private System.Windows.Forms.DataGridViewTextBoxColumn Money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Case_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoursEstimate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NegotiatedPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
     }
 }
 

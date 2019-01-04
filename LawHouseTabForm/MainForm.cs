@@ -990,6 +990,13 @@ namespace LawHouseTabForm
                 GetServices();
                 FillLServInsertCom();
                 FillCrCaseServiceCom();
+                pnlAddViewSubjects.Visible = false;
+                btnUpdateSubj.Visible = false;
+                btnDeleteSubj.Visible = false;
+                btnCnclSubjectEdit.Visible = false;
+                btnMakeNewSubj.Visible = false;
+                btnActivatAddSubjects.Visible = true;
+                lblAddSubject.Visible = false;
             }
             catch (Exception exception)
             {
@@ -1011,6 +1018,13 @@ namespace LawHouseTabForm
                 GetServices();
                 FillLServInsertCom();
                 FillCrCaseServiceCom();
+                pnlAddViewSubjects.Visible = false;
+                btnUpdateSubj.Visible = false;
+                btnDeleteSubj.Visible = false;
+                btnCnclSubjectEdit.Visible = false;
+                btnMakeNewSubj.Visible = false;
+                btnActivatAddSubjects.Visible = true;
+                lblAddSubject.Visible = false;
             }
             catch (Exception exception)
             {
@@ -1036,6 +1050,13 @@ namespace LawHouseTabForm
                         GetServices();
                         FillLServInsertCom();
                         FillCrCaseServiceCom();
+                        pnlAddViewSubjects.Visible = false;
+                        btnUpdateSubj.Visible = false;
+                        btnDeleteSubj.Visible = false;
+                        btnCnclSubjectEdit.Visible = false;
+                        btnMakeNewSubj.Visible = false;
+                        btnActivatAddSubjects.Visible = true;
+                        lblAddSubject.Visible = false;
                     }
                     else
                     {
