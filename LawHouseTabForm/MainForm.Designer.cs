@@ -40,6 +40,8 @@
             System.Windows.Forms.Label label29;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabCases = new System.Windows.Forms.TabPage();
@@ -231,17 +233,6 @@
             this.DeleteEmpl = new System.Windows.Forms.Button();
             this.UpdateEmpl = new System.Windows.Forms.Button();
             this.EmplGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CprNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProvServices = new System.Windows.Forms.TabPage();
             this.lblAddSubject = new System.Windows.Forms.Label();
             this.lLblHelpSubjectsTab = new System.Windows.Forms.LinkLabel();
@@ -267,6 +258,17 @@
             this.btnMakeNewSubj = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CprNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TlfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label11 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -465,6 +467,7 @@
             this.lLblHelpCaseServices2Tab.TabIndex = 329;
             this.lLblHelpCaseServices2Tab.TabStop = true;
             this.lLblHelpCaseServices2Tab.Text = "Hjælp";
+            this.lLblHelpCaseServices2Tab.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLblHelpViewAllCasesTab_LinkClicked);
             // 
             // btnActivateAddServiceBoxes
             // 
@@ -500,6 +503,14 @@
             // 
             // ServiceDataGrid
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ServiceDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Service_Id,
@@ -508,11 +519,19 @@
             this.Comments,
             this.Hours,
             this.Km});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ServiceDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.ServiceDataGrid.Location = new System.Drawing.Point(92, 106);
             this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.ServiceDataGrid.Name = "ServiceDataGrid";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ServiceDataGrid.RowTemplate.Height = 37;
             this.ServiceDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ServiceDataGrid.Size = new System.Drawing.Size(649, 288);
@@ -1245,8 +1264,8 @@
             this.CaseDataGrid.Location = new System.Drawing.Point(19, 147);
             this.CaseDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.CaseDataGrid.Name = "CaseDataGrid";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CaseDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.CaseDataGrid.RowTemplate.Height = 30;
             this.CaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CaseDataGrid.Size = new System.Drawing.Size(1163, 262);
@@ -2207,7 +2226,7 @@
             // btnEditEmpCancel
             // 
             this.btnEditEmpCancel.Font = new System.Drawing.Font("Verdana", 9F);
-            this.btnEditEmpCancel.Location = new System.Drawing.Point(294, 423);
+            this.btnEditEmpCancel.Location = new System.Drawing.Point(335, 423);
             this.btnEditEmpCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditEmpCancel.Name = "btnEditEmpCancel";
             this.btnEditEmpCancel.Size = new System.Drawing.Size(97, 45);
@@ -2489,7 +2508,7 @@
             // NewEmplButt
             // 
             this.NewEmplButt.Font = new System.Drawing.Font("Verdana", 9F);
-            this.NewEmplButt.Location = new System.Drawing.Point(192, 423);
+            this.NewEmplButt.Location = new System.Drawing.Point(133, 423);
             this.NewEmplButt.Margin = new System.Windows.Forms.Padding(2);
             this.NewEmplButt.Name = "NewEmplButt";
             this.NewEmplButt.Size = new System.Drawing.Size(97, 45);
@@ -2525,7 +2544,7 @@
             // DeleteEmpl
             // 
             this.DeleteEmpl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.DeleteEmpl.Location = new System.Drawing.Point(294, 423);
+            this.DeleteEmpl.Location = new System.Drawing.Point(234, 423);
             this.DeleteEmpl.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteEmpl.Name = "DeleteEmpl";
             this.DeleteEmpl.Size = new System.Drawing.Size(97, 45);
@@ -2538,7 +2557,7 @@
             // UpdateEmpl
             // 
             this.UpdateEmpl.Font = new System.Drawing.Font("Verdana", 9F);
-            this.UpdateEmpl.Location = new System.Drawing.Point(191, 423);
+            this.UpdateEmpl.Location = new System.Drawing.Point(133, 423);
             this.UpdateEmpl.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateEmpl.Name = "UpdateEmpl";
             this.UpdateEmpl.Size = new System.Drawing.Size(97, 45);
@@ -2572,84 +2591,6 @@
             this.EmplGridView.Size = new System.Drawing.Size(1113, 365);
             this.EmplGridView.TabIndex = 299;
             this.EmplGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EmlGridView_CellMouseDoubleClick);
-            // 
-            // Id
-            // 
-            this.Id.FillWeight = 50F;
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 50;
-            // 
-            // CprNo
-            // 
-            this.CprNo.HeaderText = "Cpr Nr";
-            this.CprNo.Name = "CprNo";
-            this.CprNo.ReadOnly = true;
-            // 
-            // FName
-            // 
-            this.FName.HeaderText = "First name";
-            this.FName.Name = "FName";
-            this.FName.ReadOnly = true;
-            // 
-            // LName
-            // 
-            this.LName.HeaderText = "Last name";
-            this.LName.Name = "LName";
-            this.LName.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.FillWeight = 130F;
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 130;
-            // 
-            // PostNr
-            // 
-            this.PostNr.FillWeight = 60F;
-            this.PostNr.HeaderText = "Post nr";
-            this.PostNr.Name = "PostNr";
-            this.PostNr.ReadOnly = true;
-            this.PostNr.Width = 60;
-            // 
-            // Email
-            // 
-            this.Email.FillWeight = 170F;
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 170;
-            // 
-            // TlfNo
-            // 
-            this.TlfNo.FillWeight = 80F;
-            this.TlfNo.HeaderText = "Tlf nr";
-            this.TlfNo.Name = "TlfNo";
-            this.TlfNo.ReadOnly = true;
-            this.TlfNo.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Start dato";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Position
-            // 
-            this.Position.HeaderText = "Position";
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
-            // 
-            // Money
-            // 
-            this.Money.FillWeight = 60F;
-            this.Money.HeaderText = "Pay rate ";
-            this.Money.Name = "Money";
-            this.Money.ReadOnly = true;
-            this.Money.Width = 60;
             // 
             // tabProvServices
             // 
@@ -2822,7 +2763,7 @@
             // 
             // ServiceGridView
             // 
-            this.ServiceGridView.ColumnHeadersHeight = 46;
+            this.ServiceGridView.ColumnHeadersHeight = 41;
             this.ServiceGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -2931,6 +2872,88 @@
             this.pictureBox6.Size = new System.Drawing.Size(174, 109);
             this.pictureBox6.TabIndex = 303;
             this.pictureBox6.TabStop = false;
+            // 
+            // Id
+            // 
+            this.Id.FillWeight = 50F;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // CprNo
+            // 
+            this.CprNo.HeaderText = "Cpr Nr";
+            this.CprNo.Name = "CprNo";
+            this.CprNo.ReadOnly = true;
+            // 
+            // FName
+            // 
+            this.FName.FillWeight = 110F;
+            this.FName.HeaderText = "First name";
+            this.FName.Name = "FName";
+            this.FName.ReadOnly = true;
+            this.FName.Width = 110;
+            // 
+            // LName
+            // 
+            this.LName.FillWeight = 110F;
+            this.LName.HeaderText = "Last name";
+            this.LName.Name = "LName";
+            this.LName.ReadOnly = true;
+            this.LName.Width = 110;
+            // 
+            // Address
+            // 
+            this.Address.FillWeight = 130F;
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 130;
+            // 
+            // PostNr
+            // 
+            this.PostNr.FillWeight = 60F;
+            this.PostNr.HeaderText = "Post nr";
+            this.PostNr.Name = "PostNr";
+            this.PostNr.ReadOnly = true;
+            this.PostNr.Width = 60;
+            // 
+            // Email
+            // 
+            this.Email.FillWeight = 170F;
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 170;
+            // 
+            // TlfNo
+            // 
+            this.TlfNo.FillWeight = 80F;
+            this.TlfNo.HeaderText = "Tlf nr";
+            this.TlfNo.Name = "TlfNo";
+            this.TlfNo.ReadOnly = true;
+            this.TlfNo.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Start dato";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Position
+            // 
+            this.Position.HeaderText = "Position";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            // 
+            // Money
+            // 
+            this.Money.FillWeight = 60F;
+            this.Money.HeaderText = "Pay rate ";
+            this.Money.Name = "Money";
+            this.Money.ReadOnly = true;
+            this.Money.Width = 60;
             // 
             // MainForm
             // 
@@ -3173,17 +3196,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PostNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client_Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client_TlfNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CprNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PostNr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TlfNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Money;
         private System.Windows.Forms.Label lblClientID;
         private System.Windows.Forms.TextBox txtClientID;
         private System.Windows.Forms.Button btnDeleteClientInfo;
@@ -3213,6 +3225,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Resp_empl;
         private System.Windows.Forms.Button btnClientSearch;
         private System.Windows.Forms.TextBox txtClientSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CprNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PostNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TlfNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Money;
     }
 }
 

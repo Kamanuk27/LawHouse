@@ -38,11 +38,17 @@ namespace LawHouseTabForm
             GetServices();
 
             clientsDataGrid.Font = new System.Drawing.Font("Verdana", 10f);
+            clientsDataGrid.RowsDefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9f);
             CaseDataGrid.Font = new System.Drawing.Font("Verdana", 10f);
+            CaseDataGrid.RowsDefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9f);
             ServiceDataGrid.Font = new System.Drawing.Font("Verdana", 10f);
+            ServiceDataGrid.RowsDefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9f);
             ServiceGridView.Font = new System.Drawing.Font("Verdana", 10f);
+            ServiceGridView.RowsDefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9f);
             GridEmployeeServicesP.Font = new System.Drawing.Font("Verdana", 10f);
+            GridEmployeeServicesP.RowsDefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9f);
             EmplGridView.Font = new System.Drawing.Font("Verdana", 10f);
+            EmplGridView.RowsDefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9f);
         }
 
         #region Show All in Form
@@ -601,6 +607,8 @@ namespace LawHouseTabForm
                 ClearAddUpdateServiceBox();
                 ServiceDataGrid.Rows.Clear();
                 ShowProvidedServicesOnGrid();
+                pnlActivateServiceBoxes.Visible = false;
+                BtnAddNewService.Visible = false;
             }
             catch (Exception ex)
             {
@@ -622,7 +630,7 @@ namespace LawHouseTabForm
                 ClearAddUpdateServiceBox();
                 ServiceDataGrid.Rows.Clear();
                 ShowProvidedServicesOnGrid();
-                BtnAddNewService.Visible = true;
+                pnlActivateServiceBoxes.Visible = false;
             }
             catch (Exception)
             {
@@ -644,6 +652,7 @@ namespace LawHouseTabForm
                     ClearAddUpdateServiceBox();
                     ServiceDataGrid.Rows.Clear();
                     ShowProvidedServicesOnGrid();
+                    pnlActivateServiceBoxes.Visible = false;
                 }
                 else
                 {
@@ -668,6 +677,7 @@ namespace LawHouseTabForm
                 lblCaseName.Text = $"Nr.{CaseId}, {name}";
                 ShowProvidedServicesOnGrid();
                 pnlUpdateEditServices.Visible = true;
+                BtnAddNewService.Visible = false;
             }
             catch (Exception exception)
             {
@@ -786,6 +796,8 @@ namespace LawHouseTabForm
                 string respEmp = CaseDataGrid.SelectedRows[0].Cells[9].Value.ToString();
                 RespEmpCombo.Text = respEmp;
                 NegPricetxt.Text = negPrice.ToString();
+                TotalPricetxt.Text = String.Empty;
+                ClosedCaseBut.Visible = false;
             }
             catch (Exception exception)
             {
